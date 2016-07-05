@@ -1,0 +1,310 @@
+<div class="content-background"></div>
+<div class="content home">
+    <div id="app_logo"></div>
+    <!--<form name="newregistration" method="post" action="ccregister.profile">-->
+    <form id="newregistration" name="newregistration" class="input-group col9 center">
+        <input type="hidden" id="is_email_required" value="false">
+        <input type="hidden" name="marketingemailsflag" id="marketingemailsflag" value="">
+        <h3 class="header">Sign Up with Commuter Connections</h3>
+        <br/>
+        <div class="info">
+            If you have had a Commuter Connections account in the past, DO NOT CREATE a new account. Contact Commuter
+            Connections to reactivate your account at 800-745-7433.
+            Fields with * are required.
+        </div>
+        <br/>
+        <h4>Member Information</h4>
+        <div class="blank_line"></div>
+        <label for="firstName">First Name</label>
+        <input name="firstName" id="firstName" type="text" autocapitalize="on" placeholder="">
+        <label for="middleName">Middle Name</label>
+        <input name="middleName" id="middleName" type="text" autocapitalize="on" placeholder="" maxlength="3" size="3">
+        <label>Last Name *</label>
+        <input name="lastName" type="text" autocapitalize="on" placeholder="">
+
+        <label>Username *</label>
+        <p>
+            Must be 8 to 12 alphanumeric characters, such as johnDoe1
+        </p>
+        <input type="text" id="userName" name="userName" size="12" value="" placeholder="">
+
+        <label>Password *</label>
+        <p>
+            Must be 8 to 12 alphanumeric characters, such as doe4john2
+        </p>
+        <input type="password" name="password1" size="12" value="" placeholder="">
+
+        <label>Confirm Password *</label>
+        <p>
+            Must be same as password
+        </p>
+        <input type="password" name="password2" size="12" value="" placeholder="">
+
+        <label for="pwdQuestion">Password Recovery Question *</label>
+        <select id="pwdQuestion" name="pwdQuestion" style="visibility: visible;">
+            <option value="">Please Select One</option>
+            <option value="What is your mothers maiden name?">What is your mothers maiden name?</option>
+            <option value="What is your favorite color?">What is your favorite color?</option>
+            <option value="What is your pets name?">What is your pets name?</option>
+            <option value="What is your school name?">What is your school name?</option>
+        </select>
+        <label>Password Recovery Answer *</label>
+        <input type="text" name="pwdAnswer" size="37" value="" placeholder="">
+
+        <br>
+        <h4>Contact Information</h4>
+        <label for="title1">I prefer to be addressed as</label>
+        <span>
+            <input type="radio" name="title" value="" checked="">None&nbsp;&nbsp;
+            <input type="radio" name="title" value="Mr">Mr&nbsp;&nbsp;
+            <input type="radio" name="title" value="Miss">Miss&nbsp;&nbsp;
+            <input type="radio" name="title" value="Ms">Ms&nbsp;&nbsp;
+            <input type="radio" name="title" value="Mrs">Mrs&nbsp;&nbsp;
+            <input type="radio" name="title" value="Dr">Dr&nbsp;&nbsp;
+            <input type="radio" name="title" value="Oth" onclick="javascript:alert('Please enter in the text box next to the option. \nFor Ex: Capt., Col., Lt.');
+                document.getElementById('title1').focus();">Other&nbsp;&nbsp;
+            <input type="text" name="title1" value="" id="title1" size="10" maxlength="15"><br>
+        </span>
+        <label for="email1">E-mail Address</label>
+        <p>Email addresses will only be shared with commuters permission.</p>
+        <input type="text" id="email1" name="email1" size="35" value="">
+        <label for="email2">Confirm E-mail Address</label>
+        <p>Email addresses will only be shared with commuters permission.</p>
+        <input id="email2" type="text" name="email2" size="35" value="">
+        <p>At least one contact telephone number is required</p>
+        <label for="phone1">Home Phone Number</label>
+        <br>
+        <input type="hidden" name="phoneType" value="HOME">
+        <input class="normal_size" type="text" id="phone1" name="phone1" size="3" maxlength="3" value=""
+               onkeydown="TabNext(this, 'down', 3)" onkeyup="TabNext(this, 'up', 3, this.form.phone2)">
+        - <input class="normal_size" type="text" name="phone2" size="3" maxlength="3" value=""
+                 onkeydown="TabNext(this, 'down', 3)" onkeyup="TabNext(this, 'up', 3, this.form.phone3)">
+        - <input class="normal_size" type="text" name="phone3" size="4" maxlength="4" value="">
+        <br><label for="cphone1">Cell Phone Number</label>
+        <br>
+        <input type="hidden" name="phoneType" value="CELL">
+        <input type="text" id="cphone1" name="cphone1" class="normal_size" size="3" maxlength="3" value=""
+               onkeydown="TabNext(this, 'down', 3)" onkeyup="TabNext(this, 'up', 3, this.form.cphone2)">
+        - <input type="text" name="cphone2" class="normal_size" size="3" maxlength="3" value=""
+                 onkeydown="TabNext(this, 'down', 3)" onkeyup="TabNext(this, 'up', 3, this.form.cphone3)">
+        - <input type="text" name="cphone3" class="normal_size" size="4" maxlength="4" value="">
+        <br>
+        <label for="wphone1">Work Phone</label>
+        <br>
+        <input type="text" id="wphone1" name="wphone1" class="normal_size" size="3" maxlength="3" value=""
+               onkeydown="TabNext(this, 'down', 3)" onkeyup="TabNext(this, 'up', 3, this.form.wphone2)">
+        - <input type="text" name="wphone2" class="normal_size" size="3" maxlength="3" value=""
+                 onkeydown="TabNext(this, 'down', 3)" onkeyup="TabNext(this, 'up', 3, this.form.wphone3)">
+        - <input type="text" name="wphone3" class="normal_size" size="4" maxlength="4" value="">
+        <br>
+        Workphone Extension: <input type="text" name="wphone4" class="normal_size" size="5" maxlength="5" value="">
+        <br><br>
+        <h4>Home Address</h4>
+        <p class="info">All commuters must have a home address, for Rideshare and GRH. DO NOT use a PO Box as your home
+            address. Commuters can add a separate mailing or PO Box address by editing their profile later.</p>
+        <label for="addrType">Address Type</label>
+        <select id="addrType" name="addrType">
+            <option value="HOME">Home Address</option>
+            <option value="MAIL">Mailing Address</option>
+        </select>
+        <label>Street Address *<input id="addrStreet1" type="text" name="addrStreet1" id="addrStreet1" size="35"
+                                      value=""></label>
+        <label>Apt # <input type="text" name="aptNo" id="aptNo" size="6" maxlength="6" value=""></label>
+        <input type="hidden" name="addrStreet2" id="addrStreet2" size="35" value="">
+        <label>City *<input type="text" name="addrCity" id="addrCity" size="35" value=""></label>
+        <label>State *
+            <select name="addrState" id="addrState">
+                <option value=""></option>
+                <option value="DE">DELAWARE</option>
+                <option value="DC">DISTRICT OF COLUMBIA</option>
+                <option value="MD">MARYLAND</option>
+                <option value="NJ">NEW JERSEY</option>
+                <option value="NY">NEW YORK</option>
+                <option value="NC">NORTH CAROLINA</option>
+                <option value="PA">PENNSYLVANIA</option>
+                <option value="TN">TENNESSEE</option>
+                <option value="VA">VIRGINIA</option>
+                <option value="WV">WEST VIRGINIA</option>
+            </select></label>
+        <p>Please make sure to use your HOME zip code and not your WORK zip code.</p>
+        <label>Zip Code *
+            <input type="text" name="addrZip" id="addrZip" size="10" maxlength="10" value=""
+                   onblur="checkAddressBoundary('https://tdm.commuterconnections.org/mwcog/AjaxController?addrStreet1=')"></label>
+        <br><br>
+        <h4>Commute Information</h4>
+        <label>Current Commute Mode *<select name="commuteMode">
+            <option value="">Please select one</option>
+            <option value="7">Bicycle</option>
+            <option value="21">Bicycle/Local Transit</option>
+            <option value="23">Bicycle/Marc</option>
+            <option value="25">Bicycle/Metrorail</option>
+            <option value="22">Bicycle/VRE</option>
+            <option value="1">CARPOOL</option>
+            <option value="16">Carpool/Local Transit</option>
+            <option value="19">Carpool/Metrobus</option>
+            <option value="15">Carpool/Metrorail</option>
+            <option value="17">Carpool/VRE</option>
+            <option value="32">Combination</option>
+            <option value="2">Company Vanpool</option>
+            <option value="9">Drive Alone</option>
+            <option value="75">Holiday</option>
+            <option value="12">Local Transit</option>
+            <option value="6">MARC</option>
+            <option value="24">Marc/Local Transit</option>
+            <option value="13">Marc/Metrorail</option>
+            <option value="20">MetroAccess</option>
+            <option value="4">Metrobus</option>
+            <option value="3">Metrorail</option>
+            <option value="28">Metrorail/Local Transit</option>
+            <option value="11">Metrorail/Metrobus</option>
+            <option value="29">OTHER</option>
+            <option value="31">Public Transit</option>
+            <option value="76">Sick Day</option>
+            <option value="5">VRE</option>
+            <option value="26">VRE/Local Transit</option>
+            <option value="18">VRE/Metrobus</option>
+            <option value="14">VRE/Metrorail</option>
+            <option value="77">Vacation</option>
+            <option value="10">Vanpool</option>
+            <option value="27">Vanpool/Metrorail</option>
+            <option value="8">Walk</option>
+
+        </select></label>
+        <label>How did you learn about us? *
+            <select name="hearAboutUs" style="visibility: visible;">
+                <option value="">Please select one</option>
+                <option value="R1_0">Brochure/Promo Materials</option>
+                <option value="R1_5">Bus/Train Schedule</option>
+                <option value="R1_10">Bus/Train sign</option>
+                <option value="R1_6">Direct Mail</option>
+                <option value="R1_7">Employer</option>
+                <option value="R1_8">Employer Survey</option>
+                <option value="R1_9">Fair/Onsite Event</option>
+                <option value="R1_11">Government Office</option>
+                <option value="R1_12">Highway Sign</option>
+                <option value="R1_13">Information (411)</option>
+                <option value="R1_1">Internet</option>
+                <option value="R1_15">Library</option>
+                <option value="R1_16">Mobile Billboard</option>
+                <option value="R1_17">Newsletter</option>
+                <option value="R1_18">Newspaper</option>
+                <option value="R1_19">Newspaper (Local)</option>
+                <option value="R1_4">Other</option>
+                <option value="R1_20">Other Ridesharing Org</option>
+                <option value="R1_21">Postcard (COG)</option>
+                <option value="R1_22">Presentation</option>
+                <option value="R1_2">Radio</option>
+                <option value="R1_23">Real Estate/Welcome wagon</option>
+                <option value="R1_24">Referral from Transit.Org</option>
+                <option value="R1_26">TV</option>
+                <option value="R1_3">Television</option>
+                <option value="R1_25">Theater Slide</option>
+                <option value="R1_27">Van Sign</option>
+                <option value="R1_34">Voice Mail Messages</option>
+                <option value="R1_28">Was/Is Applicant</option>
+                <option value="R1_29">White Pages</option>
+                <option value="R1_30">Word of Mouth</option>
+                <option value="R1_33">Yellow Pages - Local</option>
+                <option value="R1_31">Yellow Pages - Verizon</option>
+                <option value="R1_32">Yellow Pages - Yellow Book</option>
+            </select></label>
+
+        <br>
+        <h4>Employer Search</h4>
+        <span class="info">Please be as general as possible when searching for employers.  Start by searching on your EMPLOYER STREET address only.  You can narrow the search later if need be.</span>
+        <label>Employer Street Number *<input type="text" name="employerStNo" id="employerStNo" size="35"
+                                              value=""></label>
+        <label>Employer Street Name *<input type="text" name="employerStreet" id="employerStreet" size="35"
+                                            value=""></label>
+        <button class="btn" type="button" name="searchEmp" id="searchEmp" value="Search"
+                onclick="searchEmployerDuringRegn('https://tdm.commuterconnections.org/mwcog/AjaxController', document.getElementById('employerStNo').value, document.getElementById('employerStreet').value)">
+            <span class="icon icon-search"></span>Search
+        </button>
+        <br>
+        <h5>Disclaimer</h5>
+        <p class="share">
+            <input type="checkbox" id="marketingEmails" name="marketingEmails" checked="">
+            General communications you receive from Commuter Connections will pertain to carpools, vanpools and/or your
+            Guaranteed Ride Home (GRH) account or other programs you have registered for.
+            From time to time, Commuter Connections sends emails about free special commuter events such as Bike to Work
+            Day and other information related to commuting.
+            If you do not wish to receive these additional communications, please uncheck this box.
+        </p>
+        <p class="share"><input type="checkbox" name="disclaimer" value="yes">I agree to the <a
+                href="http://www.commuterconnections.org/quick-links/terms-of-use" target="_new">Terms of Use</a> and <a
+                href="http://www.commuterconnections.org/quick-links/privacy-policy" target="_new">Privacy Policy</a> of
+            Commuter Connections.</p>
+
+    </form>
+    <div class="content-padded"><button id="signup_submit" class="btn btn-primary btn-block" type="submit">Create Account</button><button id="goback" class="btn btn-block">Go Back</button>
+    </div>
+    <br><br>
+    <div class="bar-standard ">
+        Brought to you by Metropolitan Washington
+        Council of Governments.
+        <a href="#"><b>Learn More ></b></a>
+    </div>
+</div>
+<script type="text/javascript" src="https://tdm.commuterconnections.org/mwcog/includes/javascript/SiteValidations.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://tdm.commuterconnections.org/mwcog/includes/javascript/AjaxValidations.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://tdm.commuterconnections.org/mwcog/includes/javascript/JavascriptUtils.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://tdm.commuterconnections.org/mwcog/includes/javascript/ProfileValidations.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://tdm.commuterconnections.org/mwcog/includes/javascript/EmployerValidations.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://tdm.commuterconnections.org/mwcog/includes/javascript/CommuterValidations.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://tdm.commuterconnections.org/mwcog/includes/javascript/GRHValidations.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://tdm.commuterconnections.org/mwcog/includes/javascript/PoolValidations.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://tdm.commuterconnections.org/mwcog/includes/javascript/SpecialEventsValidations.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://tdm.commuterconnections.org/mwcog/includes/javascript/IncentivesValidations.js"></script>
+
+<script type="text/javascript">
+    var imageSite_Id=10001;
+    var imageSysAdmin=false;
+</script>
+<script type="text/javascript" src="https://tdm.commuterconnections.org/mwcog/includes/javascript/ClickHandlers.js"></script>
+<script type="text/javascript">
+    var httpRequest;
+
+    function getProfile(baseURL, username) {
+        var url = baseURL + username;
+        if (username == "") {
+            alert("Please enter a user name.");
+            document.getElementById('userName').focus();
+            return false;
+        } else if (username.length < 8 || username.length > 12) {
+            alert("User Name must be 8 to 12 characters.");
+            document.getElementById('userName').focus();
+            return false;
+        }
+        try {
+            httpRequest = new XMLHttpRequest();
+        } catch (e) {
+            try {
+                httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {
+                    alert("Your browser does not support AJAX!");
+                    return false;
+                }
+            }
+        }
+        httpRequest.open("GET", url, true);
+        httpRequest.onreadystatechange = function() {
+            processRequest(); };
+        httpRequest.send(null);
+    }
+
+    function processRequest() {
+        if (httpRequest.readyState == 4) {
+            document.getElementById("profileSection").innerHTML = httpRequest.responseText;
+        }
+    }
+</script>
+
+
+<script>
+    $(document).ready(function ($) {
+        $('.info').info();
+    });
+</script>

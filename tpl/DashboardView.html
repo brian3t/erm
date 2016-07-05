@@ -1,0 +1,25 @@
+<header class="bar bar-nav">
+    <i class="fa fa-user"></i>&nbsp;
+    <span>Welcome <%= first_name %></span>
+    <div class="pull-right popup_btn"><a href="#popover"><img class="pull-right" src="img/popup_menu.png"></a></div>
+</header>
+<div id="popover" class="popover">
+    <ul class="table-view">
+        <li class="table-view-cell edit_profile">EDIT PROFILE</li>
+        <li class="table-view-cell logout">LOGOUT</li>
+    </ul>
+</div>
+<div class='content dashboard'>
+    <div class="padding-row"></div>
+    <div class="details" id="dashboard_info">
+        Name: <%= commuter_data.commuterName %><br/>
+        Supervisor name: <%= commuter_data.supFName %> <%= commuter_data.supLName %>
+    </div>
+    <div class="padding-row"></div>
+    <div class="inset">
+        <button class="btn btn-positive btn-big-square request" onclick="app.router.navigate('/request_ride');app.router.request_ride();">
+            <span>Request A Ride</span></button>
+        <button class="btn btn-positive btn-big-square offer" onclick="app.router.navigate('/view_riders'); app.router.view_riders();">
+            <span>Offer To Drive</span></button>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.navbar_teal , .navbar_teal a{color: white}
+.panel.clickable{cursor: pointer}
+.heading-elements.left{left:0;right:inherit}
+.panel-title.with_elements{margin-left: 30px;}
+.icons-list a[data-action="collapse"]:after{
+    content: "\ed5b";
+}
+.icons-list a.rotate-180[data-action="collapse"]:after{
+    content: "\ed5a";
+}
+.contact-details{height: 140px;}

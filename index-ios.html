@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/ratchet.device.min.css" />
+    <!--<link href="ratchet/ratchet.min.css" rel="stylesheet">-->
+    <!--<link href="ratchet/ratchet-theme-android.css" rel="stylesheet">-->
+    <link href="css/pageslider.css" rel="stylesheet">
+    <link href="css/compass/stylesheets/styles.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />-->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+    <title>Hello World</title>
+</head>
+<body>
+<div class="app">
+    <h1>Apache Cordova</h1>
+    <div id="deviceready" class="blink">
+        <p class="event listening">Connecting to Device</p>
+        <p class="event received">Device is Ready</p>
+    </div>
+</div>
+<div id="fb-root"></div>
+<div id="loading"></div>
+
+<script src="build/lib/fastclick.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.map"></script>-->
+<!--<script src="lib/underscore.js"></script>-->
+<script src="lib/backbone.js"></script>
+<script src="lib/pageslider.js_brian_fix"></script>
+<!--<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>-->
+<script src="ratchet/ratchet.min.js"></script>
+<!--<script src="ratchet/ratchet.js"></script>-->
+<!--<script src="ratchet/modals.js"></script>-->
+
+<script src="js/app.js"></script>
+<script src="js/utils/templates.js"></script>
+<script src="js/utils/restful.js"></script>
+<script src="js/utils/misc.js"></script>
+
+<script src="js/models/DrugModel.js"></script>
+<script src="js/models/PlanModel.js"></script>
+<script src="js/models/FormularyModel.js"></script>
+
+<!--<script src="js/adapters/memory-adapter.js"></script>-->
+<script src="build/js/adapters/memory-adapter.min.js"></script>
+<script src="js/adapters/rest-adapter.js"></script>
+<script src="js/routers/AppRouter.js"></script>
+
+<script src="js/views/HomeView.js"></script>
+<script src="js/views/PlanListView.js"></script>
+<script src="js/views/PlanView.js"></script>
+<script src="js/views/DrugListView.js"></script>
+<script src="js/views/DrugView.js"></script>
+<script src="js/views/FormularyView.js"></script>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
