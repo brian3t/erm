@@ -8,6 +8,6 @@ app.utils.restful = (function (){
             result += k + "/" + arr[k] + "/";
         }
         return result;
-    }
+    };
     return {assocArrayToRESTString: assocArrayToRESTString}
 }());

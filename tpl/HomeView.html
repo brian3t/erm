@@ -47,24 +47,29 @@
                 <div class="content">
 
                     <!-- Simple login form -->
-                    <form id="login_form" data-toggle="validator">
+                    <form id="login-form" data-toggle="validator" role="form">
                         <div class="panel panel-body login-form">
                             <div class="text-center">
                                 <img src="assets/images/logo.png">
                             </div>
+                            <br>
+                            <h5 class="text-center content-group">
+                                Login to your account
+                                <small class="display-block">Enter your credentials below</small>
+                            </h5>
 
-                            <div class="form-group ">
-                                <input id="username" type="text" class="form-control" placeholder="Username" required>
-                                <div class="form-control-feedback">
+                            <div class="form-group has-feedback has-feedback-left">
+                                <input id="username" name="login-form[login]" type="text" class="form-control" placeholder="User Email" required data-error="Please enter your email" data-feedback='{"success":"aaa","error":"bbb"}'}>
+                                <div class="glyphicon form-control-feedback">
                                     <i class="icon-user text-muted"></i>
                                 </div>
+                                <div class="help-block with-errors"></div>
                             </div>
 
-                            <div class="form-group">
-                                <input id="password" type="text" class="form-control" placeholder="Password" required
-                                       data-minlength="6" data-error="Minimum 6 characters">
+                            <div class="form-group has-feedback has-feedback-left">
+                                <input id="password" name="login-form[password]" type="password" class="form-control" placeholder="Password" required data-minlength="6" data-error="Oh nose! That password just won't work" >
                                 <div class="help-block with-errors"></div>
-                                <div class="form-control-feedback">
+                                <div class="glyphicon form-control-feedback">
                                     <i class="icon-lock2 text-muted"></i>
                                 </div>
                             </div>
@@ -75,7 +80,7 @@
                             </div>
 
                             <div class="text-center">
-                                <a href="login_password_recover.html">Forgot password?</a>
+                                <a href="#">Forgot password?</a>
                             </div>
                         </div>
                     </form>
@@ -84,7 +89,8 @@
 
                     <!-- Footer -->
                     <div class="footer text-muted text-center">
-                        &copy; 2016. <a href="#">ERM</a> by <a href="http://superbappsolutions.com" target="_blank">Superbappsolutions.com</a>
+                        &copy; 2016 <a target="_blank" href="http://entertainmentdirectmetrics.com">Entertainment Direct Metrics LLC</a>
+                        <!--by <a href="http://superbappsolutions.com" target="_blank">Superbappsolutions.com</a>-->
                     </div>
                     <!-- /footer -->
 

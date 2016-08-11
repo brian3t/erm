@@ -4,21 +4,20 @@ const IS_LOCAL = (document.URL.indexOf('local') !== -1);
 var app = {views: {}, models: {}, routers: {}, utils: {}, adapters: {}};
 var current_pos = {};
 var config = {
-    restUrl: "https://api.carpoolnow.mediabeef.com/v1/",
-    commuterUrl: 'https://tdm.commuterconnections.org/mwcog/'
+    restUrl: "https://api.entertainmentdirectmetrics/v1/"
 };
 if (IS_LOCAL) {
-    config.restUrl = 'https://api.capoapi/v1/';
+    config.restUrl = 'https://api.ermlocal/v1/';
 }
 var backboneInit = function () {
     app.router = new app.routers.AppRouter();
-    app.utils.templates.load(["HomeView", "LoginView", "AccountSettingView"], function () {
+    app.utils.templates.load(["HomeView", "AccountSettingView"], function () {
         app.router = new app.routers.AppRouter();
         Backbone.history.stop();
         Backbone.history.start();
     });
-    app.cur_rider = new app.models.Cuser;
-    app.cur_rider.sync = function(){return false};
+    app.user_profile = new app.models.UserProfile;
+    app.user_profile.sync = function(){return false};
     $.ajaxSetup({cache: true});
     $(document).ajaxStart(function () {
         $("#loading").show();

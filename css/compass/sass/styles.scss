@@ -34,3 +34,17 @@
   font-weight: 900;
   src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIrO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
+
+@mixin text-center{
+  text-align: center;
+}
+.center-vert{
+  @include text-center;
+  display: block;
+  float: none;
+  margin: 0 auto;
+
+}
+div.form-control-feedback > [class^="icon-"], [class*=" icon-"]{
+  top:-7px;
+}

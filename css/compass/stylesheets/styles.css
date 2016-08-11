@@ -34,5 +34,17 @@
   font-weight: 900;
   src: local("Roboto Black"), local("Roboto-Black"), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIrO3LdcAZYWl9Si6vvxL-qU.woff) format("woff");
 }
+/* line 41, ../sass/styles.scss */
+.center-vert {
+  text-align: center;
+  display: block;
+  float: none;
+  margin: 0 auto;
+}
+
+/* line 48, ../sass/styles.scss */
+div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
+  top: -7px;
+}
 
 /*# sourceMappingURL=styles.css.map */

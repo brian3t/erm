@@ -1,0 +1,3 @@
+cd css/compass
+compass watch
+

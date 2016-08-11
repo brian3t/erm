@@ -37,6 +37,7 @@ app.routers.AppRouter = Backbone.Router.extend({
             app.homeView.delegateEvents(); // delegate events when the view is recycled
         }
         app.slider.slidePage(app.homeView.$el);
+        app.homeView.dom_ready();
 
     },
 
@@ -47,7 +48,7 @@ app.routers.AppRouter = Backbone.Router.extend({
             app.accountSettingView= new app.views.AccountSettingView();
             app.accountSettingView.render();
         } else {
-            console.log('reusing home view');
+            console.log('reusing accountsetting view');
             app.accountSettingView.delegateEvents(); // delegate events when the view is recycled
         }
         app.slider.slidePage(app.accountSettingView.$el);

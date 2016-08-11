@@ -1205,7 +1205,7 @@ select[multiple].form-group-xs .form-control {
 /* Form helpers
 ----------------------------------*/
 .has-feedback .form-control {
-  padding-right: 36px;
+  padding-right: 54px;
 }
 .has-feedback .form-control.input-xlg {
   padding-right: 42px;
