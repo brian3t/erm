@@ -23,9 +23,21 @@ app.views.HomeView = Backbone.View.extend({
 
             $.post(config.restUrl + 'user/login', $('#login-form').serialize(), function (resp) {
                 if (resp.status == 'ok') {
-                    app.user_profile.set(resp.profile);
-                    app.router.navigate('/account_setting', {trigger: true});
-                    app.router.account_setting();
+                    app.cur_user.set({id: resp.id, username: $('#username').val(), password: $('#password').val()});
+                    // app.cur_profile.set(resp.profile);
+                    app.cur_user.fetch();
+                    console.log(app.cur_user.attributes);
+                    app.navbar_view = new app.views.NavbarView({});
+
+                    app.router.navigate('dashboard', {trigger: true});
+                    // app.router.dashboard();
+                } else {
+                    var message = 'Oh nose! That password just won\'t work';
+                    if (resp.message == 'Username does not exist') {
+                        message = 'This email does not exist in our system';
+                    }
+                    $('#password').next('div.help-block').html('<ul class="list-unstyled"><li>' + message + '</li></ul>')
+                        .parent('div.form-group').addClass('has-error');
                 }
             }, 'json');
 
@@ -46,11 +58,11 @@ app.views.HomeView = Backbone.View.extend({
 )
 ;
 
-app.cuser = new app.models.Cuser;
-if (IS_DEBUG) {
-    window.localStorage.removeItem('cuser');
-}
-app.local_store_cuser = {};
+// app.user = new app.models.User;
+// if (IS_DEBUG) {
+//     window.localStorage.removeItem('user');
+// }
+// app.local_store_user = {};
 
 //testing backbone localstorage
 // var Model = Backbone.Model.extend({
@@ -64,3 +76,18 @@ app.local_store_cuser = {};
 //     }
 // });
 
+/*
+ testing
+ */
+
+// var superbapp = new app.models.Company({city:'San Diego', name:'superbappsolutions.com'});
+// var brian = new app.models.User({name:'Brian', company: superbapp});
+// var steve = new app.models.User({name:'Steve'});
+//
+// superbapp.set('user', [brian,steve]);
+//
+// console.log(superbapp.get('user').pluck('name'));
+
+app.cur_user = new app.models.User({});
+app.cur_profile = new app.models.Profile({});
+app.cur_user.set('profile', app.cur_profile);

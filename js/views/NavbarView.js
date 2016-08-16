@@ -1,13 +1,12 @@
-app.views.DashboardView = Backbone.View.extend({
+app.views.NavbarView = Backbone.View.extend({
     model: app.cur_user,
     initialize: function () {
         this.render();
     },
 
     render: function () {
-        this.$el.html(this.template(this.model.attributes));
-        this.$('#navbar').html(app.navbar_view.render());
-        return this;
+        this.$el.html(this.template(app.cur_user.attributes));
+        return this.$el.html();
     },
 
     events: {

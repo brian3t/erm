@@ -1,8 +1,18 @@
-app.models.UserProfile = Backbone.Model.extend({
+app.models.Profile = Backbone.RelationalModel.extend({
         initialize: function () {
         },
         // urlRoot: config.restUrl + '/profile',
-        localStorage: true,
+        relations: [{
+            type:Backbone.HasOne,
+            key: 'user',
+            relatedModel: 'app.models.User',
+            reverseRelation:{
+                key:'profile',
+                includeInJSON:'id'
+            }
+        }],
+
+        localStorage: false,
         bio: null,
         gravatar_email: null,
         gravatar_id: null,

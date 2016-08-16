@@ -14,7 +14,7 @@ app.routers.AppRouter = Backbone.Router.extend({
         app.slider.slidePageSp = (function (_super) {
             return function () {
                 var result = _super.apply(this, arguments);
-                console.log("Assign class after sliding");
+                // console.log("Assign class after sliding");
                 var current_view = Backbone.history.getFragment() == '' ? 'home' : Backbone.history.getFragment();
                 $('div.page').attr('current_view', current_view);
                 return result;
@@ -42,6 +42,18 @@ app.routers.AppRouter = Backbone.Router.extend({
     },
 
 
+    dashboard: function () {
+        // Since the home view never changes, we instantiate it and render it only once
+        if (!app.dashboardView) {
+            app.dashboardView= new app.views.DashboardView();
+            app.dashboardView.render();
+        } else {
+            console.log('reusing dashboard view');
+            app.dashboardView.delegateEvents(); // delegate events when the view is recycled
+        }
+        app.slider.slidePage(app.dashboardView.$el);
+
+    },
     account_setting: function () {
         // Since the home view never changes, we instantiate it and render it only once
         if (!app.accountSettingView) {

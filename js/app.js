@@ -1,5 +1,5 @@
 const IS_DEBUG = true;
-const CLEAR_LOCAL_STORAGE = false;
+const CLEAR_LOCAL_STORAGE = true;
 const IS_LOCAL = (document.URL.indexOf('local') !== -1);
 var app = {views: {}, models: {}, routers: {}, utils: {}, adapters: {}};
 var current_pos = {};
@@ -10,14 +10,13 @@ if (IS_LOCAL) {
     config.restUrl = 'https://api.ermlocal/v1/';
 }
 var backboneInit = function () {
+
     app.router = new app.routers.AppRouter();
-    app.utils.templates.load(["HomeView", "AccountSettingView"], function () {
+    app.utils.templates.load(["NavbarView", "HomeView", "AccountSettingView", "DashboardView"], function () {
         app.router = new app.routers.AppRouter();
         Backbone.history.stop();
         Backbone.history.start();
     });
-    app.user_profile = new app.models.UserProfile;
-    app.user_profile.sync = function(){return false};
     $.ajaxSetup({cache: true});
     $(document).ajaxStart(function () {
         $("#loading").show();
@@ -26,6 +25,7 @@ var backboneInit = function () {
         $("#loading").hide();
     });
     isInWeb = (typeof isInWeb !== "boolean" ? "true" : isInWeb);
+
 };
 var capp = {
     initialize: function () {
@@ -148,12 +148,12 @@ function doOnOrientationChange() {
     switch (window.orientation) {
         case -90:
         case 90:
-            console.log('landscape');
+            // console.log('landscape');
             $('body').addClass('landscape');
             break;
         default:
-            console.log(window.orientation);
-            console.log('portrait');
+            // console.log(window.orientation);
+            // console.log('portrait');
             $('body').removeClass('landscape');
             break;
     }
