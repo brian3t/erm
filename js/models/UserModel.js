@@ -10,18 +10,23 @@ app.models.User = Backbone.RelationalModel.extend({
                 key: 'user',
                 includeInJSON: 'id'
             }
-        },{
-            type:Backbone.HasOne,
-            key:'profile',
-            relatedModel:'app.models.Profile',
-            reverseRelation:{
-                key:'user',
-                includeInJSON:'id'
+        }, {
+            type: Backbone.HasOne,
+            key: 'profile',
+            relatedModel: 'app.models.Profile',
+            reverseRelation: {
+                key: 'user',
+                includeInJSON: 'id'
             }
         }],
         localStorage: false,
         username: null,
-        password: null
+        password: null,
+        company: {name: null},
+        profile: {avatar: null}
+    },
+    {
+        company: {}
     }
     // ,
 //     {

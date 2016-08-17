@@ -25,12 +25,14 @@ app.views.HomeView = Backbone.View.extend({
                 if (resp.status == 'ok') {
                     app.cur_user.set({id: resp.id, username: $('#username').val(), password: $('#password').val()});
                     // app.cur_profile.set(resp.profile);
-                    app.cur_user.fetch();
-                    console.log(app.cur_user.attributes);
-                    app.navbar_view = new app.views.NavbarView({});
+                    var jqxhr = app.cur_user.fetch({
+                        success: function () {
+                            app.navbar_view = new app.views.NavbarView({model: app.cur_user});
+                            // app.router.dashboard();
+                            app.router.navigate('dashboard', {trigger: true});
+                        }
+                    });
 
-                    app.router.navigate('dashboard', {trigger: true});
-                    // app.router.dashboard();
                 } else {
                     var message = 'Oh nose! That password just won\'t work';
                     if (resp.message == 'Username does not exist') {

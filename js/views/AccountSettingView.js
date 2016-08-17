@@ -6,8 +6,8 @@ app.views.AccountSettingView = Backbone.View.extend({
 
     render: function () {
         this.$el.html(this.template(this.model.attributes));
+        this.$('#navbar').html(app.navbar_view.render());
         return this;
-
     },
 
     events: {

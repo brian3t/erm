@@ -4,8 +4,7 @@ app.routers.AppRouter = Backbone.Router.extend({
         "": "home",
         "drugs/:id": "drugDetails",
         "dashboard": "dashboard",
-        "view_riders": "view_riders",
-        "request_ride": "request_ride"
+        "account_setting": "account_setting",
         // ,"formulary/:f_id/:drug_id/:state": "formularyDetails"
     },
 
@@ -17,6 +16,7 @@ app.routers.AppRouter = Backbone.Router.extend({
                 // console.log("Assign class after sliding");
                 var current_view = Backbone.history.getFragment() == '' ? 'home' : Backbone.history.getFragment();
                 $('div.page').attr('current_view', current_view);
+                element_ready();
                 return result;
             }
         })(app.slider.slidePage);
