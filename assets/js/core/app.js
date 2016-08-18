@@ -47,8 +47,13 @@ element_ready = function(){
 
 
     // Toggle visible state of heading elements
-    $('.heading-elements-toggle').on('click', function() {
-        $(this).parent().children('.heading-elements').toggleClass('visible');
+    $('.panel-heading').on('click', function(e) {
+        if (e.target.nodeName !=='A'){
+            return;
+        }
+        // $(this).parent().children('.heading-elements').toggleClass('visible');
+        $(this).parent().find('.icon-arrow-right13').toggle();
+        $(this).parent().find('.icon-arrow-down12').toggle();
     });
 
 
@@ -111,7 +116,7 @@ element_ready = function(){
     $('.panel [data-action=reload]').click(function (e) {
         e.preventDefault();
         var block = $(this).parent().parent().parent().parent().parent();
-        $(block).block({ 
+        $(block).block({
             message: '<i class="icon-spinner2 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
@@ -129,7 +134,7 @@ element_ready = function(){
         // For demo purposes
         window.setTimeout(function () {
            $(block).unblock();
-        }, 2000); 
+        }, 2000);
     });
 
 
@@ -137,7 +142,7 @@ element_ready = function(){
     $('.category-title [data-action=reload]').click(function (e) {
         e.preventDefault();
         var block = $(this).parent().parent().parent().parent();
-        $(block).block({ 
+        $(block).block({
             message: '<i class="icon-spinner2 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#000',
@@ -156,15 +161,15 @@ element_ready = function(){
         // For demo purposes
         window.setTimeout(function () {
            $(block).unblock();
-        }, 2000); 
-    }); 
+        }, 2000);
+    });
 
 
     // Light sidebar categories
     $('.sidebar-default .category-title [data-action=reload]').click(function (e) {
         e.preventDefault();
         var block = $(this).parent().parent().parent().parent();
-        $(block).block({ 
+        $(block).block({
             message: '<i class="icon-spinner2 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
@@ -182,8 +187,8 @@ element_ready = function(){
         // For demo purposes
         window.setTimeout(function () {
            $(block).unblock();
-        }, 2000); 
-    }); 
+        }, 2000);
+    });
 
 
 
@@ -294,7 +299,7 @@ element_ready = function(){
     // Add active state to all dropdown parent levels
     $('.dropdown-menu:not(.dropdown-content), .dropdown-menu:not(.dropdown-content) .dropdown-submenu').has('li.active').addClass('active').parents('.navbar-nav .dropdown:not(.language-switch), .navbar-nav .dropup:not(.language-switch)').addClass('active');
 
-    
+
 
     // Main navigation tooltips positioning
     // -------------------------
@@ -323,7 +328,7 @@ element_ready = function(){
         }
     });
 
-        
+
     // Alternate navigation
     $('.navigation-alt').find('li').has('ul').children('a').on('click', function (e) {
         e.preventDefault();
@@ -335,7 +340,7 @@ element_ready = function(){
         if ($('.navigation-alt').hasClass('navigation-accordion')) {
             $(this).parent('li').not('.disabled').siblings(':has(.has-ul)').removeClass('active').children('ul').slideUp(200);
         }
-    }); 
+    });
 
 
 
@@ -439,7 +444,7 @@ element_ready = function(){
 
         // Opposite sidebar visibility
         $('body').toggleClass('sidebar-opposite-visible');
-        
+
         // If visible
         if ($('body').hasClass('sidebar-opposite-visible')) {
 
@@ -548,7 +553,7 @@ element_ready = function(){
     $(window).on('resize', function() {
         setTimeout(function() {
             containerHeight();
-            
+
             if($(window).width() <= 768) {
 
                 // Add mini sidebar indicator

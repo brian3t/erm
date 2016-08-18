@@ -30,8 +30,8 @@ app.routers.AppRouter = Backbone.Router.extend({
     home: function () {
         // Since the home view never changes, we instantiate it and render it only once
         if (!app.homeView) {
-        app.homeView = new app.views.HomeView();
-        app.homeView.render();
+            app.homeView = new app.views.HomeView();
+            app.homeView.render();
         } else {
             console.log('reusing home view');
             app.homeView.delegateEvents(); // delegate events when the view is recycled
@@ -45,7 +45,7 @@ app.routers.AppRouter = Backbone.Router.extend({
     dashboard: function () {
         // Since the home view never changes, we instantiate it and render it only once
         if (!app.dashboardView) {
-            app.dashboardView= new app.views.DashboardView();
+            app.dashboardView = new app.views.DashboardView();
             app.dashboardView.render();
         } else {
             console.log('reusing dashboard view');
@@ -57,7 +57,7 @@ app.routers.AppRouter = Backbone.Router.extend({
     account_setting: function () {
         // Since the home view never changes, we instantiate it and render it only once
         if (!app.accountSettingView) {
-            app.accountSettingView= new app.views.AccountSettingView();
+            app.accountSettingView = new app.views.AccountSettingView();
             app.accountSettingView.render();
         } else {
             console.log('reusing accountsetting view');

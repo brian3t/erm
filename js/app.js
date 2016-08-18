@@ -11,7 +11,6 @@ if (IS_LOCAL) {
 }
 var backboneInit = function () {
 
-    app.router = new app.routers.AppRouter();
     app.utils.templates.load(["NavbarView", "HomeView", "MyAccountSettingView", "AccountSettingView", "DashboardView"], function () {
         app.router = new app.routers.AppRouter();
         Backbone.history.stop();
@@ -38,7 +37,7 @@ var capp = {
         window.addEventListener('orientationchange', doOnOrientationChange);
         // Initial execution if needed
         doOnOrientationChange();
-        
+
 // onSuccess Callback
 // This method accepts a Position object, which contains the
 // current GPS coordinates
