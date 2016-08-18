@@ -23,10 +23,10 @@ app.models.User = Backbone.RelationalModel.extend({
         username: null,
         password: null,
         company: {name: null},
-        profile: {avatar: null}
-    },
-    {
-        company: {}
+        profile: {avatar: null},
+        defaults: {
+            company: {name: null}
+        }
     }
     // ,
 //     {

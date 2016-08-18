@@ -12,7 +12,7 @@ if (IS_LOCAL) {
 var backboneInit = function () {
 
     app.router = new app.routers.AppRouter();
-    app.utils.templates.load(["NavbarView", "HomeView", "AccountSettingView", "DashboardView"], function () {
+    app.utils.templates.load(["NavbarView", "HomeView", "MyAccountSettingView", "AccountSettingView", "DashboardView"], function () {
         app.router = new app.routers.AppRouter();
         Backbone.history.stop();
         Backbone.history.start();

@@ -1,4 +1,4 @@
-app.views.AccountSettingView = Backbone.View.extend({
+app.views.MyAccountSettingView = Backbone.View.extend({
     model: app.cur_user,
     initialize: function () {
         this.render();
@@ -6,9 +6,7 @@ app.views.AccountSettingView = Backbone.View.extend({
 
     render: function () {
         this.$el.html(this.template(this.model.attributes));
-        this.$('#navbar').html(app.navbar_view.render());
-        this.$('#my_account_setting').html((new app.views.MyAccountSettingView()).render().html());
-        return this;
+        return this.$el;
     },
 
     events: {
