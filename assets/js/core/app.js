@@ -47,14 +47,14 @@ element_ready = function(){
 
 
     // Toggle visible state of heading elements
-    $('.panel-heading').on('click', function(e) {
-        if (e.target.nodeName !=='A'){
-            return;
-        }
-        // $(this).parent().children('.heading-elements').toggleClass('visible');
-        $(this).parent().find('.icon-arrow-right13').toggle();
-        $(this).parent().find('.icon-arrow-down12').toggle();
-    });
+    // $('.panel-heading').on('click', function(e) {
+    //     if (e.target.nodeName !=='A'){
+    //         return;
+    //     }
+    //     // $(this).parent().children('.heading-elements').toggleClass('visible');
+    //     $(this).parent().find('.icon-arrow-right13').toggle();
+    //     $(this).parent().find('.icon-arrow-down12').toggle();
+    // });
 
 
 
@@ -619,7 +619,7 @@ element_ready = function(){
     });
 
 
-
+    $('.select').select2();
 };
 $(document).ready(function($){
     $('.first_level.panel-heading').click();
