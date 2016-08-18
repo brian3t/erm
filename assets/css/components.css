@@ -1086,7 +1086,7 @@ a.badge,
   }
 }
 .content {
-  padding: 0 20px 60px 20px;
+  padding: 0 10px 50px 10px;
 }
 .content:after {
   content: '';
@@ -1094,7 +1094,7 @@ a.badge,
   clear: both;
 }
 .content:first-child {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 body[class*=navbar-bottom] .content {
   padding-bottom: 20px;
