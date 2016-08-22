@@ -108,6 +108,7 @@
                                         </select>
                                         </label>
                                         <label class="col-md-6">Phone Number <input name="phone_number"
+                                                                                    class="form-control"
                                                                                     value="phone_number"
                                                                                     type="text"></label>
 
@@ -124,23 +125,70 @@
 
                                         <div class="col-md-6">
                                             <label class="display-block">Upload profile image</label>
-                                            <input type="file" class="file-styled">
+                                            <input type="file" name="profile[image]" class="file-styled">
                                             <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="text-right hidden">
-                                    <button type="submit" class="btn btn-primary">Save <i
-                                            class="icon-arrow-right14 position-right"></i></button>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-6">Website URL<input name="website_url" type="text"
+                                                                                  value="Website URL"
+                                                                                  class="form-control"></label>
+
+                                        <label class="col-md-6">Twitter ID<input name="twitter_id"
+                                                                                 type="text"
+                                                                                 value="Twitter ID"
+                                                                                 class="form-control"></label>
+
+                                    </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-6">Facebook ID<input name="facebook_id" type="text"
+                                                                                  value="Facebook ID"
+                                                                                  class="form-control"></label>
+
+                                        <label class="col-md-6">Instagram ID<input name="instagram_id"
+                                                                                   type="text"
+                                                                                   value="Instagram ID"
+                                                                                   class="form-control"></label>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-6">Google ID<input name="google_id" type="text"
+                                                                                value="Google ID"
+                                                                                class="form-control"></label>
+
+                                        <label class="col-md-6">Yahoo ID<input name="yahoo_id"
+                                                                               type="text"
+                                                                               value="Yahoo ID"
+                                                                               class="form-control"></label>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-6">LinkedIn ID<input name="linkedin_id" type="text"
+                                                                                  value="LinkedIn ID"
+                                                                                  class="form-control"></label>
+
+                                    </div>
+                                </div>
+
                             </form>
                         </div>
                     </div>
                     <!-- /profile info -->
 
 
-                    <!-- Account settings -->
+                    <!-- Account login -->
                     <div class="panel panel-flat">
                         <div class="panel-heading">
                             <h6 class="panel-title">Account login</h6>
@@ -151,15 +199,15 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label>Username</label>
-                                            <input type="text" value="Kopyov" readonly="readonly"
-                                                   class="form-control">
+                                            <label>Username<input name="username" type="text" value="Username" readonly
+                                                                  class="form-control"></label>
+
                                         </div>
 
                                         <div class="col-md-6">
-                                            <label>Current password</label>
-                                            <input type="password" value="password" readonly="readonly"
-                                                   class="form-control">
+                                            <label>Current password<input type="password" value="password" name="password"
+                                                                          class="form-control"></label>
+
                                         </div>
                                     </div>
                                 </div>
@@ -168,92 +216,18 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label>New password</label>
-                                            <input type="password" placeholder="Enter new password"
+                                            <input name="new_password" type="password" placeholder="Enter new password"
                                                    class="form-control">
                                         </div>
 
                                         <div class="col-md-6">
                                             <label>Repeat password</label>
-                                            <input type="password" placeholder="Repeat new password"
+                                            <input id="repeat_password" type="password" placeholder="Repeat new password"
                                                    class="form-control">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Profile visibility</label>
-
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="visibility" class="styled"
-                                                           checked="checked">
-                                                    Visible to everyone
-                                                </label>
-                                            </div>
-
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="visibility"
-                                                           class="styled">
-                                                    Visible to friends only
-                                                </label>
-                                            </div>
-
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="visibility"
-                                                           class="styled">
-                                                    Visible to my connections only
-                                                </label>
-                                            </div>
-
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="visibility"
-                                                           class="styled">
-                                                    Visible to my colleagues only
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label>Notifications</label>
-
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="styled"
-                                                           checked="checked">
-                                                    Password expiration notification
-                                                </label>
-                                            </div>
-
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="styled"
-                                                           checked="checked">
-                                                    New message notification
-                                                </label>
-                                            </div>
-
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="styled"
-                                                           checked="checked">
-                                                    New task notification
-                                                </label>
-                                            </div>
-
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="styled">
-                                                    New contact request notification
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
                                 <div class="text-right">
                                     <button type="submit" class="btn btn-primary">Save <i
