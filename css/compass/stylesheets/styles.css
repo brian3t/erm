@@ -47,4 +47,9 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   top: -7px;
 }
 
+/* line 51, ../sass/styles.scss */
+.heading-elements {
+  display: none;
+}
+
 /*# sourceMappingURL=styles.css.map */

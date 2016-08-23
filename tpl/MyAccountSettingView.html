@@ -1,52 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Global stylesheets -->
-    <link href="/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
-    <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="/assets/css/core.css" rel="stylesheet" type="text/css">
-    <link href="/assets/css/components.css" rel="stylesheet" type="text/css">
-    <link href="/assets/css/colors.css" rel="stylesheet" type="text/css">
-
-    <link href="/assets/css/site.css" rel="stylesheet" type="text/css">
-    <!-- /global stylesheets -->
-    <!--<link href="/ratchet/ratchet.css" rel="stylesheet">-->
-    <link href="/lib/page-slider.css" rel="stylesheet">
-    <link href="/css/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/compass/stylesheets/styles.css" rel="stylesheet">
-    <title>ERM</title>
-</head>
-<script src="/lib/jquery.js"></script>
-
-<!-- Core JS files -->
-<!--<script type="text/javascript" src="/assets/js/plugins/loaders/pace.min.js"></script>-->
-<script type="text/javascript" src="/js/bootstrap.js"></script>
-<script type="text/javascript" src="/lib/validator.min.js"></script>
-<script type="text/javascript" src="/assets/js/plugins/loaders/blockui.min.js"></script>
-
-<!-- /core JS files -->
-
-<!-- Theme JS files -->
-<script type="text/javascript" src="/assets/js/plugins/forms/selects/select2.min.js"></script>
-<script type="text/javascript" src="/assets/js/plugins/forms/styling/uniform.min.js"></script>
-<!-- //Theme JS files -->
-
-<script src="/lib/fastclick.min.js"></script>
-<script src="/lib/underscore-min.js"></script>
-<script src="/lib/underscore.string.min.js"></script>
-<!--<script src="/lib/lodash.min.js"></script>-->
-<script src="/lib/backbone-min.js"></script>
-<script src="/lib/backbone-relational.min.js"></script>
-<script src="/lib/backbone-localstorage.min.js"></script>
-<script src="/lib/page-slider.js"></script>
-<script type="text/javascript" src="/assets/js/core/app.js"></script>
-
-<div class="page-container">
-    <div id="my_account_setting" class="panel clickable panel-flat">
 
         <div class="panel-heading">
             <h6 class="panel-title"><i class="icon-arrow-right13" style="display: none"></i><i
                     class="icon-arrow-down12"></i>My Account</h6>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse" class=""></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="panel-body">
@@ -59,7 +21,7 @@
                         </div>
 
                         <div class="panel-body">
-                            <form action="#">
+                            <form class="edit" id="account_info" action="#" data-model="cur_user">
                                 <div class="form-group">
                                     <div class="row">
                                         <label class="col-md-6">First Name <input name="first_name" type="text"
@@ -243,6 +205,9 @@
                     <div class="panel panel-flat">
                         <div class="panel-heading">
                             <h6 class="panel-title">Arsonhouse</h6>
+                            <div class="heading-elements">
+                                <span class="badge badge-success heading-text">team_count</span>
+                            </div>
                         </div>
 
                         <ul class="media-list media-list-linked pb-5">
@@ -250,28 +215,14 @@
 
                             <li class="media">
                                 <a href="#" class="media-link">
-                                    <div class="media-left"><img src="assets/images/james.jpg"
+                                    <div class="media-left"><img src= "https://api.ermlocal/img/avatar/3/01.jpg"
                                                                  class="img-circle" alt=""></div>
                                     <div class="media-body">
-                                        <span class="media-heading text-semibold">James Alexander</span>
-                                        <span class="media-annotation">job_title</span>
+                                        <span class="media-heading text-semibold">user.name</span>
+                                        <span class="media-annotation">user.job_title</span>
                                     </div>
                                     <div class="media-right media-middle">
                                         <i class="icon-medal"></i>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="media">
-                                <a href="#" class="media-link">
-                                    <div class="media-left"><img src="assets/images/pp01.jpg"
-                                                                 class="img-circle" alt=""></div>
-                                    <div class="media-body">
-                                        <span class="media-heading text-semibold">Jeremy Victorino</span>
-                                        <span class="media-annotation">Senior designer</span>
-                                    </div>
-                                    <div class="media-right media-middle">
-
                                     </div>
                                 </a>
                             </li>
@@ -297,12 +248,11 @@
             </div>
         </div>
 
-    </div>
-</div>
-</html>
-
 <script>
     $(document).ready(function () {
-        element_ready();
+//        $('#account_info').find(':input').blur(function (e) {
+//            app.cur_user.set({"this.name":this.val()});
+//            console.info(app.cur_user);
+//        })
     });
 </script>

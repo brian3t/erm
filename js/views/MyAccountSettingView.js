@@ -12,7 +12,6 @@ app.views.MyAccountSettingView = Backbone.View.extend({
     events: {
         "click .logout": "back"
     },
-
     back: function (event) {
         // app.router.navigate('#', {trigger: true, replace: true});
     }
