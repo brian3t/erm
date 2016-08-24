@@ -22,9 +22,15 @@ app.views.AccountSettingView = Backbone.View.extend({
         var model = form.data('model');//user
         new_attr = {};
         new_attr[target.prop('name')] = target.val();
-        target.prepend('<span class="glyphicon glyphicon-upload"></span>');
+        target.before('<span class="glyphicon glyphicon-upload"></span>');
         app[model].save(new_attr, {patch:true, success: function () {
-            target.prev().html();
+            target.prev('span.glyphicon-upload').remove();
+            target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
+            setTimeout(function(){
+                target.prev('span').fadeOut(1400);
+            }, 2000);
+        }, error: function () {
+            target.prev('span.glyphicon-upload').remove();
         }});
     },
 

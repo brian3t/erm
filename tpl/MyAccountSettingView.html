@@ -1,252 +1,287 @@
+<div class="panel-heading">
+    <h6 class="panel-title"><i class="icon-arrow-right13" style="display: none"></i><i
+            class="icon-arrow-down12"></i>My Account</h6>
+    <div class="heading-elements">
+        <ul class="icons-list">
+            <li><a data-action="collapse" class=""></a></li>
+            <li><a data-action="reload"></a></li>
+            <li><a data-action="close"></a></li>
+        </ul>
+    </div>
+</div>
 
-        <div class="panel-heading">
-            <h6 class="panel-title"><i class="icon-arrow-right13" style="display: none"></i><i
-                    class="icon-arrow-down12"></i>My Account</h6>
-            <div class="heading-elements">
-                <ul class="icons-list">
-                    <li><a data-action="collapse" class=""></a></li>
-                    <li><a data-action="reload"></a></li>
-                    <li><a data-action="close"></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-lg-9">
-                    <!-- Profile info -->
-                    <div class="panel panel-flat">
-                        <div class="panel-heading">
-                            <h6 class="panel-title">Account information</h6>
-                        </div>
-
-                        <div class="panel-body">
-                            <form class="edit" id="account_info" action="#" data-model="cur_user">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-md-6">First Name <input name="first_name" type="text"
-                                                                                  value="first_name"
-                                                                                  class="form-control">
-                                        </label>
-                                        <label class="col-md-6">Last Name<input name="last_name" type="text"
-                                                                                value="last_name" class="form-control">
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-md-6">Job Title<input name="job_title" type="text"
-                                                                                value="job_title" class="form-control"></label>
-
-                                        <label class="col-md-6">Line of Business<input name="line_of_business"
-                                                                                       type="text"
-                                                                                       value="line_of_business"
-                                                                                       class="form-control"></label>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-md-6">Union Memberships<input name="union_memberships"
-                                                                                        type="text"
-                                                                                        value="union_memberships"
-                                                                                        class="form-control"></label>
-                                        <label class="col-md-6">Email<input name="email" type="email" value="email"
-                                                                            class="form-control"></label>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-md-6">Phone Number Type<select name="phone_number_type"
-                                                                                         class="form-control">
-                                            <option value="Home"></option>
-                                            <option value="Business"></option>
-                                            <option value="Cell"></option>
-                                            <option value="Fax"></option>
-                                            <option value="Other"></option>
-                                        </select>
-                                        </label>
-                                        <label class="col-md-6">Phone Number <input name="phone_number"
-                                                                                    class="form-control"
-                                                                                    value="phone_number"
-                                                                                    type="text"></label>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Birthday</label>
-                                            <input type="date" value="birthdate"
-                                                   class="form-control">
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label class="display-block">Upload profile image</label>
-                                            <input type="file" name="profile[image]" class="file-styled">
-                                            <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-md-6">Website URL<input name="website_url" type="text"
-                                                                                  value="Website URL"
-                                                                                  class="form-control"></label>
-
-                                        <label class="col-md-6">Twitter ID<input name="twitter_id"
-                                                                                 type="text"
-                                                                                 value="Twitter ID"
-                                                                                 class="form-control"></label>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-md-6">Facebook ID<input name="facebook_id" type="text"
-                                                                                  value="Facebook ID"
-                                                                                  class="form-control"></label>
-
-                                        <label class="col-md-6">Instagram ID<input name="instagram_id"
-                                                                                   type="text"
-                                                                                   value="Instagram ID"
-                                                                                   class="form-control"></label>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-md-6">Google ID<input name="google_id" type="text"
-                                                                                value="Google ID"
-                                                                                class="form-control"></label>
-
-                                        <label class="col-md-6">Yahoo ID<input name="yahoo_id"
-                                                                               type="text"
-                                                                               value="Yahoo ID"
-                                                                               class="form-control"></label>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-md-6">LinkedIn ID<input name="linkedin_id" type="text"
-                                                                                  value="LinkedIn ID"
-                                                                                  class="form-control"></label>
-
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                    <!-- /profile info -->
-
-
-                    <!-- Account login -->
-                    <div class="panel panel-flat">
-                        <div class="panel-heading">
-                            <h6 class="panel-title">Account Login</h6>
-                        </div>
-
-                        <div class="panel-body">
-                            <form action="#">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Username<input name="username" type="text" value="Username" readonly
-                                                                  class="form-control"></label>
-
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label>Current password<input type="password" value="password" name="password"
-                                                                          class="form-control"></label>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>New password</label>
-                                            <input name="new_password" type="password" placeholder="Enter new password"
-                                                   class="form-control">
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label>Repeat password</label>
-                                            <input id="repeat_password" type="password" placeholder="Repeat new password"
-                                                   class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="text-right">
-                                    <button type="submit" class="btn btn-primary">Save <i
-                                            class="icon-arrow-right14 position-right"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- /account settings -->
+<div class="panel-body">
+    <div class="row">
+        <div class="col-lg-9">
+            <!-- Profile info -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h6 class="panel-title">Account information</h6>
                 </div>
-                <div class="col-lg-3">
-                    <!-- Connections -->
-                    <div class="panel panel-flat">
-                        <div class="panel-heading">
-                            <h6 class="panel-title">Arsonhouse</h6>
-                            <div class="heading-elements">
-                                <span class="badge badge-success heading-text">team_count</span>
+
+                <div class="panel-body">
+                    <form class="edit" id="account_info" action="#" data-model="cur_user">
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-6">First Name <input name="first_name" type="text"
+                                                                          value="first_name"
+                                                                          class="form-control">
+                                </label>
+                                <label class="col-md-6">Last Name <input name="last_name" type="text"
+                                                                         value="last_name" class="form-control">
+                                </label>
                             </div>
                         </div>
 
-                        <ul class="media-list media-list-linked pb-5">
-                            <li class="media-header">My Team</li>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-6">Job Title <input name="job_title" type="text"
+                                                                         value="job_title" class="form-control"></label>
 
-                            <li class="media">
-                                <a href="#" class="media-link">
-                                    <div class="media-left"><img src= "https://api.ermlocal/img/avatar/3/01.jpg"
-                                                                 class="img-circle" alt=""></div>
-                                    <div class="media-body">
-                                        <span class="media-heading text-semibold">user.name</span>
-                                        <span class="media-annotation">user.job_title</span>
-                                    </div>
-                                    <div class="media-right media-middle">
-                                        <i class="icon-medal"></i>
-                                    </div>
-                                </a>
-                            </li>
+                                <label class="col-md-6">Line of Business <select name="line_of_business"
+                                                                                 class="form-control">
+                                    <option value="">Please Select</option>
+                                    <option value="Management">Management</option>
+                                    <option value="Agency">Agency</option>
+                                    <option value="Management">Management</option>
+                                    <option value="Promotion">Promotion</option>
+                                    <option value="Venue">Venue</option>
+                                    <option value="Network">Network</option>
+                                    <option value="Studio">Studio</option>
+                                    <option value="Public Relations">Public Relations</option>
+                                    <option value="Consulting">Consulting</option>
+                                    <option value="Talent">Talent</option>
+                                    <option value="Client">Client</option>
+                                    <option value="Production Company">Production Company</option>
+                                    <option value="Photography">Photography</option>
+                                    <option value="Editing">Editing</option>
+                                    <option value="Business Management">Business Management</option>
+                                    <option value="Tour Management">Tour Management</option>
+                                    <option value="Personal">Personal</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                </label>
 
+                            </div>
+                        </div>
 
-                            <li class="media-header">My Clients</li>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-6">Union Memberships <select name="union_memberships"
+                                                                                  class="form-control">
+                                    <option value="">Please Select</option>
+                                    <option value="SAG-AFTRA">SAG-AFTRA</option>
+                                    <option value="WGAW">WGAW</option>
+                                    <option value="Directors Guild of America">Directors Guild of America</option>
+                                    <option value="ATA">ATA</option>
+                                    <option value="Producers Guild of America">Producers Guild of America</option>
+                                    <option value="AMPTP">AMPTP</option>
+                                    <option value="ASCAP">ASCAP</option>
+                                    <option value="I.A.T.S.E.">I.A.T.S.E.</option>
+                                    <option value="International Cinematographers Guild">International Cinematographers
+                                        Guild
+                                    </option>
+                                    <option value="Teamsters Union 399">Teamsters Union 399</option>
+                                    <option value="MPEG">MPEG</option>
+                                    <option value="Animation Guild">Animation Guild</option>
+                                    <option value="Motion Picture Sound Editors">Motion Picture Sound Editors</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                </label>
+                                <label class="col-md-6">Email <input name="email" type="email" value="email"
+                                                                     class="form-control"></label>
+                            </div>
+                        </div>
 
-                            <!--<li class="media">-->
-                                <!--<a href="#" class="media-link">-->
-                                    <!--<div class="media-left"><img src="assets/images/pp02.jpg"-->
-                                                                 <!--class="img-circle" alt=""></div>-->
-                                    <!--<div class="media-body">-->
-                                        <!--<span class="media-heading text-semibold">Margo Baker</span>-->
-                                        <!--<span class="media-annotation">'16 Jan 1st - '16 Mar 3rd</span>-->
-                                    <!--</div>-->
-                                <!--</a>-->
-                            <!--</li>-->
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-6">Phone Number Type <select name="phone_number_type"
+                                                                                  class="form-control">
+                                    <option value="Home"></option>
+                                    <option value="Business"></option>
+                                    <option value="Cell"></option>
+                                    <option value="Fax"></option>
+                                    <option value="Other"></option>
+                                </select>
+                                </label>
+                                <label class="col-md-6">Phone Number <input name="phone_number"
+                                                                            class="form-control"
+                                                                            value="phone_number"
+                                                                            type="text"></label>
 
-                        </ul>
-                    </div>
-                    <!-- /connections -->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Birthday </label>
+                                    <input name="birthdate" type="date" value="birthdate"
+                                           class="form-control">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="display-block">Upload profile image </label>
+                                    <input type="file" name="profile[image]" class="file-styled">
+                                    <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-6">Website URL <input name="website_url" type="text"
+                                                                           value="Website URL"
+                                                                           class="form-control"></label>
+
+                                <label class="col-md-6">Twitter ID <input name="twitter_id"
+                                                                          type="text"
+                                                                          value="Twitter ID"
+                                                                          class="form-control"></label>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-6">Facebook ID <input name="facebook_id" type="text"
+                                                                           value="Facebook ID"
+                                                                           class="form-control"></label>
+
+                                <label class="col-md-6">Instagram ID <input name="instagram_id"
+                                                                            type="text"
+                                                                            value="Instagram ID"
+                                                                            class="form-control"></label>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-6">Google ID <input name="google_id" type="text"
+                                                                         value="Google ID"
+                                                                         class="form-control"></label>
+
+                                <label class="col-md-6">Yahoo ID <input name="yahoo_id"
+                                                                        type="text"
+                                                                        value="Yahoo ID"
+                                                                        class="form-control"></label>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-6">LinkedIn ID <input name="linkedin_id" type="text"
+                                                                           value="LinkedIn ID"
+                                                                           class="form-control"></label>
+
+                            </div>
+                        </div>
+
+                    </form>
                 </div>
             </div>
+            <!-- /profile info -->
+
+
+            <!-- Account login -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h6 class="panel-title">Account Login</h6>
+                </div>
+
+                <div class="panel-body">
+                    <form action="#">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Username<input name="username" type="text" value="Username" readonly
+                                                          class="form-control"></label>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label>Current password<input type="password" value="password" name="password"
+                                                                  class="form-control"></label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>New password</label>
+                                    <input name="new_password" type="password" placeholder="Enter new password"
+                                           class="form-control">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label>Repeat password</label>
+                                    <input id="repeat_password" type="password" placeholder="Repeat new password"
+                                           class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary">Save <i
+                                    class="icon-arrow-right14 position-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /account settings -->
         </div>
+        <div class="col-lg-3">
+            <!-- Connections -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h6 class="panel-title">Arsonhouse</h6>
+                    <div class="heading-elements">
+                        <span class="badge badge-success heading-text">team_count</span>
+                    </div>
+                </div>
+
+                <ul class="media-list media-list-linked pb-5">
+                    <li class="media-header">My Team</li>
+
+                    <li class="media">
+                        <a href="#" class="media-link">
+                            <div class="media-left"><img src="https://api.ermlocal/img/avatar/3/01.jpg"
+                                                         class="img-circle" alt=""></div>
+                            <div class="media-body">
+                                <span class="media-heading text-semibold">user.name</span>
+                                <span class="media-annotation">user.job_title</span>
+                            </div>
+                            <div class="media-right media-middle">
+                                <i class="icon-medal"></i>
+                            </div>
+                        </a>
+                    </li>
+
+
+                    <li class="media-header">My Clients</li>
+
+                    <!--<li class="media">-->
+                    <!--<a href="#" class="media-link">-->
+                    <!--<div class="media-left"><img src="assets/images/pp02.jpg"-->
+                    <!--class="img-circle" alt=""></div>-->
+                    <!--<div class="media-body">-->
+                    <!--<span class="media-heading text-semibold">Margo Baker</span>-->
+                    <!--<span class="media-annotation">'16 Jan 1st - '16 Mar 3rd</span>-->
+                    <!--</div>-->
+                    <!--</a>-->
+                    <!--</li>-->
+
+                </ul>
+            </div>
+            <!-- /connections -->
+        </div>
+    </div>
+</div>
 
 <script>
     $(document).ready(function () {
