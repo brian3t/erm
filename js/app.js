@@ -4,10 +4,12 @@ const IS_LOCAL = (document.URL.indexOf('local') !== -1);
 var app = {views: {}, models: {}, routers: {}, utils: {}, adapters: {}};
 var current_pos = {};
 var config = {
-    restUrl: "https://api.entertainmentdirectmetrics.com/v1/"
+    restUrl: "https://api.entertainmentdirectmetrics.com/v1/",
+    apiUrl: 'https://api.entertainmentdirectmetrics.com/'
 };
 if (IS_LOCAL) {
     config.restUrl = 'https://api.ermlocal/v1/';
+    config.apiUrl = 'https://api.ermlocal/'
 }
 var backboneInit = function () {
 

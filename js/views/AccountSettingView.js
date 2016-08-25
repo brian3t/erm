@@ -14,11 +14,12 @@ app.views.AccountSettingView = Backbone.View.extend({
 
     events: {
         "click .logout": "back",
-        "blur .edit": "update_ajax"
+        "blur .edit": "update_ajax",
+        "click #update_pwd": "update_pwd"
     },
     update_ajax: function (e) {
         var target = $(e.target);
-        if (target.hasClass('file-caption') || target.prop('type') == 'file'){
+        if (target.hasClass('file-caption') || target.prop('type') == 'file') {
             return;
         }
         var form = target.parents('form');
@@ -26,20 +27,65 @@ app.views.AccountSettingView = Backbone.View.extend({
         new_attr = {};
         new_attr[target.prop('name')] = target.val();
         target.before('<span class="glyphicon glyphicon-upload"></span>');
-        app[model].save(new_attr, {patch:true, success: function () {
-            target.prev('span.glyphicon-upload').remove();
-            target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
-            setTimeout(function(){
-                target.prev('span').fadeOut(1400);
-            }, 2000);
-        }, error: function () {
-            target.prev('span.glyphicon-upload').remove();
-        }});
+        app[model].save(new_attr, {
+            patch: true, success: function () {
+                target.prev('span.glyphicon-upload').remove();
+                target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
+                setTimeout(function () {
+                    target.prev('span').fadeOut(1400);
+                }, 2000);
+            }, error: function () {
+                target.prev('span.glyphicon-upload').remove();
+            }
+        });
+    },
+    update_pwd: function (e) {
+        //verify current pwd
+        var cur_pw = app.cur_user.get('password');
+        if ($('input[name="password"]').val() !== cur_pw) {
+            app_alert("Your current password doesn't match. Please try again");
+            return;
+        }
+        //verify new pwd with repeat pwd
+        var new_pwd = $('input[name="new_password"]').val();
+        if (new_pwd !== $('input[name="repeat_password"]').val()) {
+            app_alert("Your repeat password does not match your new password.");
+            return;
+        }
+        //if they both works send them over
+        app.cur_user.save({password: new_pwd});
+        $.post(config.restUrl + 'settings/account', {
+            "settings-form": {
+                email:app.cur_user.get('email'),
+                username: app.cur_user.get('username'),
+                new_password: new_pwd,
+                current_password: cur_pw
+            }
+        },
+        function (data) {
+            if (data == true) {
+                app_alert("Success");
+            } else {
+                app_alert("Failed")
+            }
+        });
+        // , {
+        //     patch: true,
+        //     success: function () {
+        //         app_alert("Your password has been successfully updated");
+        //     },
+        //     error: function () {
+        //         app_alert("Your password can not be changed. Please contact us at support@entertainmentdirectmetrics.com");
+        //     }
+        // })
     },
 
     dom_ready: function () {
-        $('#profile_image').fileinput({dropZoneEnabled: false,
-            uploadUrl:config.restUrl+ 'profile/image?user_id=' +app.cur_user.get('id')});
+        $('#profile_image').fileinput({
+            dropZoneEnabled: false,
+            uploadUrl: config.restUrl + 'profile/image?user_id=' + app.cur_user.get('id'),
+            maxFileCount: 1
+        });
     },
     back: function (event) {
         // app.router.navigate('#', {trigger: true, replace: true});

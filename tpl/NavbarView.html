@@ -183,7 +183,7 @@
 
         <li class="dropdown dropdown-user">
             <a class="dropdown-toggle" data-toggle="dropdown">
-                <img src="https://api.entertainmentdirectmetrics.com/img/avatar/<%= id %>/<%= profile.get('avatar') %>" alt="">
+                <img src="<%= config.apiUrl %>img/avatar/<%= id %>/<%= profile.get('avatar') %>" alt="">
                 <span id="name"><%= name %></span>
                 <i class="caret"></i>
             </a>
