@@ -64,7 +64,7 @@ app.routers.AppRouter = Backbone.Router.extend({
             app.accountSettingView.delegateEvents(); // delegate events when the view is recycled
         }
         app.slider.slidePage(app.accountSettingView.$el);
-
+        app.accountSettingView.dom_ready();
     }
 
 });

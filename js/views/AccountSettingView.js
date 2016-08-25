@@ -18,6 +18,9 @@ app.views.AccountSettingView = Backbone.View.extend({
     },
     update_ajax: function (e) {
         var target = $(e.target);
+        if (target.hasClass('file-caption') || target.prop('type') == 'file'){
+            return;
+        }
         var form = target.parents('form');
         var model = form.data('model');//user
         new_attr = {};
@@ -34,6 +37,10 @@ app.views.AccountSettingView = Backbone.View.extend({
         }});
     },
 
+    dom_ready: function () {
+        $('#profile_image').fileinput({dropZoneEnabled: false,
+            uploadUrl:config.restUrl+ 'profile/image?user_id=' +app.cur_user.get('id')});
+    },
     back: function (event) {
         // app.router.navigate('#', {trigger: true, replace: true});
     }

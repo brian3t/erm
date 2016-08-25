@@ -619,6 +619,7 @@ element_ready = function(){
     });
 
     $('.select').select2();
+    // $('input[type="file"]').fileinput();
 };
 $(document).ready(function($){
     $('.first_level.panel-heading').click();
