@@ -139,7 +139,9 @@ app_alert = function (message, alertCallback, title, buttonName) {
     }
     if (isInWeb) {
         alert(message);
-        alertCallback();
+        if (_.isFunction(alertCallback)) {
+            alertCallback();
+        }
     } else {
         navigator.notification.alert(message, alertCallback, title, buttonName);
     }

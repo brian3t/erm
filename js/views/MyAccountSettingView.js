@@ -8,6 +8,9 @@ app.views.MyAccountSettingView = Backbone.View.extend({
         this.$el.html(this.template(this.model.attributes));
         return this.$el;
     },
+    dom_ready: function () {
+        $('#change_password').validator();
+    },
 
     events: {
         "click .logout": "back"

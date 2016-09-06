@@ -1,13 +1,14 @@
 app.views.AccountSettingView = Backbone.View.extend({
     model: app.cur_user,
+    my_account_setting_view: null,
     initialize: function () {
+        this.my_account_setting_view = new app.views.MyAccountSettingView();
         this.render();
     },
-
     render: function () {
         this.$el.html(this.template(this.model.attributes));
         this.$('#navbar').html(app.navbar_view.render());
-        this.$('#my_account_setting').html((new app.views.MyAccountSettingView()).render().html());
+        this.$('#my_account_setting').html(this.my_account_setting_view.render().html());
         this.delegateEvents();
         return this;
     },
@@ -55,20 +56,32 @@ app.views.AccountSettingView = Backbone.View.extend({
         //if they both works send them over
         app.cur_user.save({password: new_pwd});
         $.post(config.restUrl + 'settings/account', {
-            "settings-form": {
-                email:app.cur_user.get('email'),
-                username: app.cur_user.get('username'),
-                new_password: new_pwd,
-                current_password: cur_pw
-            }
-        },
-        function (data) {
-            if (data == true) {
-                app_alert("Success");
-            } else {
-                app_alert("Failed")
-            }
-        });
+                "settings-form": {
+                    email: app.cur_user.get('email'),
+                    username: app.cur_user.get('username'),
+                    new_password: new_pwd,
+                    current_password: cur_pw
+                }
+            },
+            function (data) {
+                var result = false;
+                if (!_.isArray(data)) {
+                    result = false;
+                } else {
+                    result = (data[0] == true);
+                }
+
+                if (result) {
+                    app_alert("Success. Your password has been updated.");
+                } else {
+                    app_alert("Our server is having issue with your request. Please contact our support team for help. " + data.toString());
+                    app.cur_user.save({password: cur_pw});
+                }
+            })
+            .error(function (data) {
+                console.info('Our server is having issue with your request. Please contact our support team for help. ' + data.responseText);
+                app.cur_user.save({password: cur_pw});
+            });
         // , {
         //     patch: true,
         //     success: function () {
@@ -86,6 +99,7 @@ app.views.AccountSettingView = Backbone.View.extend({
             uploadUrl: config.restUrl + 'profile/image?user_id=' + app.cur_user.get('id'),
             maxFileCount: 1
         });
+        this.my_account_setting_view.dom_ready();
     },
     back: function (event) {
         // app.router.navigate('#', {trigger: true, replace: true});
