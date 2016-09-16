@@ -4,10 +4,132 @@
  *
  *  Common less file with imports of plugins and pages
  *
- *  Version: 1.2
- *  Latest update: Nov 12, 2015
+ *  Version: 1.3
+ *  Latest update: Feb 5, 2016
  *
  * ---------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------
+ *
+ *  # Global less file
+ *
+ *  Common less file with imports of plugins and pages
+ *
+ *  Version: 1.0
+ *  Latest update: Feb 5, 2016
+ *
+ * ---------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------
+*
+*  # Utilites
+*
+*  Additional animations, transitions, transforms and other utilities
+*
+*  Version: 1.0
+*  Latest update: Mar 10, 2016
+*
+* ---------------------------------------------------------------------------- */
+.no-transitions * {
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+.btn,
+.navbar-link,
+.nav-tabs > li > a,
+.nav-tabs > li > a:after,
+.nav-pills > li > a,
+.nav li > a > .label,
+.nav li > a > .badge,
+.breadcrumb > li > a,
+.breadcrumb-elements > li > a,
+.tt-suggestion,
+.tokenfield .token,
+.selectboxit-btn,
+.bootstrap-select .btn-default,
+.select2-results__option,
+.select2-selection__choice__remove,
+.dropdown-menu > li > a,
+.dropdown-menu > li > label,
+.wizard .actions a,
+.checker span:after,
+.choice span:after,
+.selectboxit-option-anchor,
+.dt-autofill-list ul li,
+.dt-autofill-button .btn,
+.dataTable .select-checkbox:before,
+.dataTable .select-checkbox:after,
+.pika-button,
+.sp-input,
+.navbar-nav > li > a,
+.dropdown-content-footer a,
+.icons-list > li > a,
+.picker__nav--prev,
+.picker__nav--next,
+.multiselect.btn-default,
+.list-group-item,
+.pagination > li > a,
+.pagination > li > span,
+.pager > li > a,
+.pager > li > span,
+.datepicker-dropdown .day,
+a.label,
+a.badge,
+.ui-datepicker-buttonpane > button,
+.ui-button,
+.ui-menu-item,
+.ui-selectmenu-button,
+.ui-datepicker a,
+.media-link,
+.menu-list li > a,
+.plupload_file_action > a,
+.dataTables_paginate .paginate_button,
+.dataTables_filter input,
+.dt-button,
+.picker__list-item,
+.picker__day,
+.picker__footer,
+.sp-replacer,
+.sp-cancel,
+.sp-choose,
+.sp-palette-toggle,
+.daterangepicker td,
+.daterangepicker th,
+.noUi-handle,
+.fc-button,
+.plupload_button,
+.picker__footer button,
+.picker__list button,
+.AnyTime-btn,
+.plupload_filelist li,
+.password-indicator-group.input-group-addon,
+.password-indicator-label-absolute,
+.select2-selection--single:not([class*=bg-]),
+.select2-selection--multiple:not([class*=bg-]) .select2-selection__choice,
+.bootstrap-select.btn-group .dropdown-menu > li > a .check-mark {
+  -webkit-transition: all ease-in-out 0.15s;
+  -o-transition: all ease-in-out 0.15s;
+  transition: all ease-in-out 0.15s;
+}
+.close,
+.tag [data-role="remove"] {
+  -webkit-transition: opacity ease-in-out 0.15s;
+  -o-transition: opacity ease-in-out 0.15s;
+  transition: opacity ease-in-out 0.15s;
+}
+.checker span {
+  -webkit-transition: border-color ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s;
+}
+.table tr,
+.table th,
+.table td,
+.htContextMenu td,
+.ranges ul li {
+  -webkit-transition: background-color ease-in-out 0.15s;
+  -o-transition: background-color ease-in-out 0.15s;
+  transition: background-color ease-in-out 0.15s;
+}
 /* ------------------------------------------------------------------------------
  *
  *  # Sidebar layouts
@@ -66,6 +188,7 @@
 }
 .sidebar-content {
   position: relative;
+  padding-bottom: 8px;
 }
 .sidebar-all-hidden .sidebar-main,
 .sidebar-all-hidden .sidebar-secondary,
@@ -85,7 +208,7 @@
 .category-title {
   position: relative;
   margin: 0;
-  padding: 10px 20px;
+  padding: 12px 20px;
   padding-right: 46px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }

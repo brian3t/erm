@@ -87,7 +87,7 @@
                                     <option value="Other" <%= union_memberships == 'Other' ? "selected" : "" %> >Other</option>
                                 </select>
                                 </label>
-                                <label class="col-md-6">Email <input name="email" type="email" value="email"
+                                <label class="col-md-6">Email <input name="email" type="email" value= <%= email %>
                                                                      class="form-control"></label>
                             </div>
                         </div>
@@ -130,13 +130,13 @@
                         <div class="form-group">
                             <div class="row">
                                 <label class="col-md-6">Website URL <input name="website_url" type="text"
-                                                                           value= <%= website_url %>
+                                                                           value= <%= _.isEmpty(website_url)?'""':website_url %>
                                                                            class="form-control"></label>
 
                                 <label class="col-md-6">Twitter ID <input name="twitter_id"
                                                                           type="text"
-                                                                          value= <%= twitter_id %>
-                                                                          class="form-control"></label>
+                                                                          value= <%= _.isEmpty(twitter_id)?'""':twitter_id %>
+                                                                           class="form-control"></label>
 
                             </div>
                         </div>
@@ -144,12 +144,12 @@
                         <div class="form-group">
                             <div class="row">
                                 <label class="col-md-6">Facebook ID <input name="facebook_id" type="text"
-                                                                           value= <%= facebook_id %>
+                                                                           value= <%= _.isEmpty(facebook_id)?'""':facebook_id %>
                                                                            class="form-control"></label>
 
                                 <label class="col-md-6">Instagram ID <input name="instagram_id"
                                                                             type="text"
-                                                                            value= <%= instagram_id %>
+                                                                            value= <%= _.isEmpty(instagram_id)?'""':instagram_id %>
                                                                             class="form-control"></label>
 
                             </div>
@@ -158,12 +158,12 @@
                         <div class="form-group">
                             <div class="row">
                                 <label class="col-md-6">Google ID <input name="google_id" type="text"
-                                                                         value= <%= google_id %>
+                                                                         value= <%= _.isEmpty(google_id)?'""':google_id %>
                                                                          class="form-control"></label>
 
                                 <label class="col-md-6">Yahoo ID <input name="yahoo_id"
                                                                         type="text"
-                                                                        value= <%= yahoo_id %>
+                                                                        value= <%= _.isEmpty(yahoo_id)?'""':yahoo_id %>
                                                                         class="form-control"></label>
 
                             </div>
@@ -172,7 +172,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <label class="col-md-6">LinkedIn ID <input name="linkedin_id" type="text"
-                                                                           value= <%= linkedin_id %>
+                                                                           value= <%= _.isEmpty(linkedin_id)?'""':linkedin_id %>
                                                                            class="form-control"></label>
 
                             </div>
@@ -196,7 +196,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label>Username<input name="username" type="text" value="Username" readonly
+                                    <label>Username<input name="username" type="text" value=<%= email %> readonly
                                                           class="form-control"></label>
 
                                 </div>

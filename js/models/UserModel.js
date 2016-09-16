@@ -25,6 +25,7 @@ app.models.User = Backbone.RelationalModel.extend({
         // company: {name: null},
         // profile: {avatar: null},
         defaults: {
+            twitter_id: null,
             company: {name: null},
             profile: {avatar: null}
         }
