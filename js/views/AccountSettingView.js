@@ -19,6 +19,7 @@ app.views.AccountSettingView = Backbone.View.extend({
     events: {
         "click .logout": "back",
         "blur .edit": "update_ajax",
+        "change .multi_select": "update_ajax",
         "click #update_pwd": "update_pwd"
     },
     update_ajax: function (e) {
@@ -34,6 +35,10 @@ app.views.AccountSettingView = Backbone.View.extend({
         app[model].save(new_attr, {
             patch: true, success: function () {
                 target.prev('span.glyphicon-upload').remove();
+                //dont bother if it's multiselect
+                if (target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple')){
+                    return;
+                }
                 target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
                 setTimeout(function () {
                     target.prev('span').fadeOut(1400);
@@ -42,6 +47,9 @@ app.views.AccountSettingView = Backbone.View.extend({
                 target.prev('span.glyphicon-upload').remove();
             }
         });
+    },
+    update_ajax_multi: function (e) {
+
     },
     update_pwd: function (e) {
         //verify current pwd

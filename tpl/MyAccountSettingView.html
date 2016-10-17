@@ -67,7 +67,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <label class="col-md-6">Union Memberships <select name="union_memberships"
-                                                                                  class="form-control">
+                                                                                  class="form-control multi_select" multiple="multiple">
                                     <option value="" <%= union_memberships == '' ? "selected" : "" %> >Please Select</option>
                                     <option value="SAG-AFTRA" <%= union_memberships == 'SAG-AFTRA' ? "selected" : "" %> >SAG-AFTRA</option>
                                     <option value="WGAW" <%= union_memberships == 'WGAW' ? "selected" : "" %> >WGAW</option>
@@ -86,6 +86,14 @@
                                     <option value="Motion Picture Sound Editors" <%= union_memberships == 'Motion Picture Sound Editors' ? "selected" : "" %> >Motion Picture Sound Editors</option>
                                     <option value="Other" <%= union_memberships == 'Other' ? "selected" : "" %> >Other</option>
                                 </select>
+                                    <%
+                                    $(document).on('select2_ready', function(){
+                                        var union = $(':input[name="union_memberships"]').select2();
+                                        console.info(union_memberships);
+                                        console.info(["WGAW"]);
+                                        union.val(union_memberships).trigger('change');
+                                    });
+                                    %>
                                 </label>
                                 <label class="col-md-6">Email <input name="email" type="email" value= <%= email %>
                                                                      class="form-control"></label>

@@ -2849,9 +2849,9 @@ label.checkbox-switch.checkbox-inline {
   -ms-user-select: none;
   user-select: none;
 }
-.select2-selection--multiple:not([class*=bg-]):not([class*=border-]) {
-  border-color: transparent;
-}
+/*.select2-selection--multiple:not([class*=bg-]):not([class*=border-]) {*/
+  /*border-color: transparent;*/
+/*}*/
 .select2-selection--multiple:not([class*=bg-])[class*=border-] {
   border-top-color: transparent;
   border-left-color: transparent;
