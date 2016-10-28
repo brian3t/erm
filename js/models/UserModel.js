@@ -32,14 +32,15 @@ app.models.User = Backbone.RelationalModel.extend({
     }
     // ,
 //     {
-//     id_commuter: null,
-//     enrolled: null,
-//     username: null,
-//     addresses: {},
-//     commuter_data: {},
-//     arrive_after: null,
 //     hashed_password: null,
 //     remember_checkbox: null
 //
 // }
 );
+
+//todob add fields??
+
+app.user_collection = Backbone.Collection.extend({
+    model: app.models.User,
+    url: config.restUrl + 'user'
+});

@@ -5,6 +5,7 @@ app.routers.AppRouter = Backbone.Router.extend({
         "drugs/:id": "drugDetails",
         "dashboard": "dashboard",
         "account_setting": "account_setting",
+        "contact": "contact",
         // ,"formulary/:f_id/:drug_id/:state": "formularyDetails"
     },
 
@@ -65,6 +66,19 @@ app.routers.AppRouter = Backbone.Router.extend({
         }
         app.slider.slidePage(app.accountSettingView.$el);
         app.accountSettingView.dom_ready();
+    },
+
+    contact: function () {
+        // Since the home view never changes, we instantiate it and render it only once
+        if (!app.contactView) {
+            app.contactView = new app.views.ContactView();
+            app.contactView.render();
+        } else {
+            console.log('reusing contactView view');
+            app.contactView.delegateEvents(); // delegate events when the view is recycled
+        }
+        app.slider.slidePage(app.contactView.$el);
+        app.contactView.dom_ready();
     }
 
 });

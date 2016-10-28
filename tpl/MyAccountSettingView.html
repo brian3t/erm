@@ -89,8 +89,6 @@
                                     <%
                                     $(document).on('select2_ready', function(){
                                         var union = $(':input[name="union_memberships"]').select2();
-                                        console.info(union_memberships);
-                                        console.info(["WGAW"]);
                                         union.val(union_memberships).trigger('change');
                                     });
                                     %>

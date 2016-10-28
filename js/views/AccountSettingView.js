@@ -4,14 +4,14 @@ app.views.AccountSettingView = Backbone.View.extend({
     my_company_setting_view: null,
     initialize: function () {
         this.my_account_setting_view = new app.views.MyAccountSettingView();
-        this.my_company_setting_view = new app.views.MyAccountSettingView();
+        // this.my_company_setting_view = new app.views.MyCompanySettingView();
         this.render();
     },
     render: function () {
         this.$el.html(this.template(this.model.attributes));
         this.$('#navbar').html(app.navbar_view.render());
         this.$('#my_account_setting').html(this.my_account_setting_view.render().html());
-        this.$('#my_company_setting_view').html(this.my_company_setting_view.render().html());
+        // this.$('#my_company_setting_view').html(this.my_company_setting_view.render().html());
         this.delegateEvents();
         return this;
     },
