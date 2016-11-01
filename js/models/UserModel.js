@@ -40,7 +40,7 @@ app.models.User = Backbone.RelationalModel.extend({
 
 //todob add fields??
 
-app.user_collection = Backbone.Collection.extend({
+app.models.User_collection = Backbone.Collection.extend({
     model: app.models.User,
     url: config.restUrl + 'user'
 });
