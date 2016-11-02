@@ -10,7 +10,7 @@ app.views.ContactView = Backbone.View.extend({
         this.$('#navbar').html(app.navbar_view.render());
         this.$('#contacts').html(this.user_list_view.render());
         this.delegateEvents();
-        return this;
+        return this.$el.html();
     },
 
     events: {

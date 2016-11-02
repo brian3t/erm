@@ -1,204 +1,207 @@
-<div class="form-group">
-    <div class="row">
-        <label class="col-md-6">First Name <input name="first_name" type="text"
-                                                  value="<%= first_name %>"
-                                                  class="form-control">
-        </label>
-        <label class="col-md-6">Last Name <input name="last_name" type="text"
-                                                 value="<%= last_name %>" class="form-control">
-        </label>
-    </div>
-</div>
+<form class="edit account_info" action="#" data-model="user" data-id="<%= id %>">
 
-<div class="form-group">
-    <div class="row">
-        <label class="col-md-6">Job Title <input name="job_title" type="text"
-                                                 value="<%= job_title %>" class="form-control"></label>
-
-        <label class="col-md-6">Line of Business <select name="line_of_business"
-                                                         class="form-control">
-            <option value=""
-            <%= line_of_business == '' ? "selected" : "" %> >Please Select</option>
-            <option value="Management"
-            <%= line_of_business == 'Management' ? "selected" : "" %> >Management</option>
-            <option value="Agency"
-            <%= line_of_business == 'Agency' ? "selected" : "" %> >Agency</option>
-            <option value="Promotion"
-            <%= line_of_business == 'Promotion' ? "selected" : "" %> >Promotion</option>
-            <option value="Venue"
-            <%= line_of_business == 'Venue' ? "selected" : "" %> >Venue</option>
-            <option value="Network"
-            <%= line_of_business == 'Network' ? "selected" : "" %> >Network</option>
-            <option value="Studio"
-            <%= line_of_business == 'Studio' ? "selected" : "" %> >Studio</option>
-            <option value="Public Relations"
-            <%= line_of_business == 'Public Relations' ? "selected" : "" %> >Public Relations</option>
-            <option value="Consulting"
-            <%= line_of_business == 'Consulting' ? "selected" : "" %> >Consulting</option>
-            <option value="Talent"
-            <%= line_of_business == 'Talent' ? "selected" : "" %> >Talent</option>
-            <option value="Client"
-            <%= line_of_business == 'Client' ? "selected" : "" %> >Client</option>
-            <option value="Production Company"
-            <%= line_of_business == 'Production Company' ? "selected" : "" %> >Production Company</option>
-            <option value="Photography"
-            <%= line_of_business == 'Photography' ? "selected" : "" %> >Photography</option>
-            <option value="Editing"
-            <%= line_of_business == 'Editing' ? "selected" : "" %> >Editing</option>
-            <option value="Business Management"
-            <%= line_of_business == 'Business Management' ? "selected" : "" %> >Business Management</option>
-            <option value="Tour Management"
-            <%= line_of_business == 'Tour Management' ? "selected" : "" %> >Tour Management</option>
-            <option value="Personal"
-            <%= line_of_business == 'Personal' ? "selected" : "" %> >Personal</option>
-            <option value="Other"
-            <%= line_of_business == 'Other' ? "selected" : "" %> >Other</option>
-        </select>
-        </label>
-
-    </div>
-</div>
-
-<div class="form-group">
-    <div class="row">
-        <label class="col-md-6">Union Memberships <select name="union_memberships"
-                                                          class="form-control multi_select" multiple="multiple">
-            <option value=""
-            <%= union_memberships == '' ? "selected" : "" %> >Please Select</option>
-            <option value="SAG-AFTRA"
-            <%= union_memberships == 'SAG-AFTRA' ? "selected" : "" %> >SAG-AFTRA</option>
-            <option value="WGAW"
-            <%= union_memberships == 'WGAW' ? "selected" : "" %> >WGAW</option>
-            <option value="Directors Guild of America"
-            <%= union_memberships == 'Directors Guild of America' ? "selected" : "" %> >Directors Guild of
-            America</option>
-            <option value="ATA"
-            <%= union_memberships == 'ATA' ? "selected" : "" %> >ATA</option>
-            <option value="Producers Guild of America"
-            <%= union_memberships == 'Producers Guild of America' ? "selected" : "" %> >Producers Guild of
-            America</option>
-            <option value="AMPTP"
-            <%= union_memberships == 'AMPTP' ? "selected" : "" %> >AMPTP</option>
-            <option value="ASCAP"
-            <%= union_memberships == 'ASCAP' ? "selected" : "" %> >ASCAP</option>
-            <option value="I.A.T.S.E."
-            <%= union_memberships == 'I.A.T.S.E.' ? "selected" : "" %> >I.A.T.S.E.</option>
-            <option value="International Cinematographers Guild"
-            <%= union_memberships == 'International Cinematographers Guild' ? "selected" : "" %> >International
-            Cinematographers
-            Guild
-            </option>
-            <option value="Teamsters Union 399"
-            <%= union_memberships == 'Teamsters Union 399' ? "selected" : "" %> >Teamsters Union 399</option>
-            <option value="MPEG"
-            <%= union_memberships == 'MPEG' ? "selected" : "" %> >MPEG</option>
-            <option value="Animation Guild"
-            <%= union_memberships == 'Animation Guild' ? "selected" : "" %> >Animation Guild</option>
-            <option value="Motion Picture Sound Editors"
-            <%= union_memberships == 'Motion Picture Sound Editors' ? "selected" : "" %> >Motion Picture Sound
-            Editors</option>
-            <option value="Other"
-            <%= union_memberships == 'Other' ? "selected" : "" %> >Other</option>
-        </select>
-            <%
-            $(document).on('select2_ready', function(){
-            var union = $(':input[name="union_memberships"]').select2();
-            union.val(union_memberships).trigger('change');
-            });
-            %>
-        </label>
-        <label class="col-md-6">Email <input name="email" type="email" value=<%= email %>
-            class="form-control"></label>
-    </div>
-</div>
-
-<div class="form-group">
-    <div class="row">
-        <label class="col-md-6">Phone Number Type <select name="phone_number_type"
-                                                          class="form-control">
-            <option value="Home"
-            <%= phone_number_type == 'Home' ? "selected" : "" %> >Home</option>
-            <option value="Business"
-            <%= phone_number_type == 'Business' ? "selected" : "" %> >Business</option>
-            <option value="Cell"
-            <%= phone_number_type == 'Cell' ? "selected" : "" %> >Cell</option>
-            <option value="Fax"
-            <%= phone_number_type == 'Fax' ? "selected" : "" %> >Fax</option>
-            <option value="Other"
-            <%= phone_number_type == 'Other' ? "selected" : "" %> >Other</option>
-        </select>
-        </label>
-        <label class="col-md-6">Phone Number <input name="phone_number"
-                                                    class="form-control"
-                                                    value=<%= phone_number %>
-            type="text"></label>
-
-    </div>
-</div>
-
-<div class="form-group">
-    <div class="row">
-        <div class="col-md-6">
-            <label>Birthday </label>
-            <input name="birthdate" type="date" value=<%= birthdate %>
-            class="form-control">
-        </div>
-
-        <div class="col-md-6">
-            <label class="display-block">Upload new profile image </label>
-            <input id="profile_image" type="file" name="profile[image]" class="file-styled">
-            <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+    <div class="form-group">
+        <div class="row">
+            <label class="col-md-6">First Name <input name="first_name" type="text"
+                                                      value="<%= first_name %>"
+                                                      class="form-control">
+            </label>
+            <label class="col-md-6">Last Name <input name="last_name" type="text"
+                                                     value="<%= last_name %>" class="form-control">
+            </label>
         </div>
     </div>
-</div>
 
-<div class="form-group">
-    <div class="row">
-        <label class="col-md-6">Website URL <input name="website_url" type="text"
-                                                   value=<%= _.isEmpty(website_url)?'""':website_url %>
-            class="form-control"></label>
+    <div class="form-group">
+        <div class="row">
+            <label class="col-md-6">Job Title <input name="job_title" type="text"
+                                                     value="<%= job_title %>" class="form-control"></label>
 
-        <label class="col-md-6">Twitter ID <input name="twitter_id"
-                                                  type="text"
-                                                  value=<%= _.isEmpty(twitter_id)?'""':twitter_id %>
-            class="form-control"></label>
+            <label class="col-md-6">Line of Business <select name="line_of_business"
+                                                             class="form-control">
+                <option value=""
+                <%= line_of_business == '' ? "selected" : "" %> >Please Select</option>
+                <option value="Management"
+                <%= line_of_business == 'Management' ? "selected" : "" %> >Management</option>
+                <option value="Agency"
+                <%= line_of_business == 'Agency' ? "selected" : "" %> >Agency</option>
+                <option value="Promotion"
+                <%= line_of_business == 'Promotion' ? "selected" : "" %> >Promotion</option>
+                <option value="Venue"
+                <%= line_of_business == 'Venue' ? "selected" : "" %> >Venue</option>
+                <option value="Network"
+                <%= line_of_business == 'Network' ? "selected" : "" %> >Network</option>
+                <option value="Studio"
+                <%= line_of_business == 'Studio' ? "selected" : "" %> >Studio</option>
+                <option value="Public Relations"
+                <%= line_of_business == 'Public Relations' ? "selected" : "" %> >Public Relations</option>
+                <option value="Consulting"
+                <%= line_of_business == 'Consulting' ? "selected" : "" %> >Consulting</option>
+                <option value="Talent"
+                <%= line_of_business == 'Talent' ? "selected" : "" %> >Talent</option>
+                <option value="Client"
+                <%= line_of_business == 'Client' ? "selected" : "" %> >Client</option>
+                <option value="Production Company"
+                <%= line_of_business == 'Production Company' ? "selected" : "" %> >Production Company</option>
+                <option value="Photography"
+                <%= line_of_business == 'Photography' ? "selected" : "" %> >Photography</option>
+                <option value="Editing"
+                <%= line_of_business == 'Editing' ? "selected" : "" %> >Editing</option>
+                <option value="Business Management"
+                <%= line_of_business == 'Business Management' ? "selected" : "" %> >Business Management</option>
+                <option value="Tour Management"
+                <%= line_of_business == 'Tour Management' ? "selected" : "" %> >Tour Management</option>
+                <option value="Personal"
+                <%= line_of_business == 'Personal' ? "selected" : "" %> >Personal</option>
+                <option value="Other"
+                <%= line_of_business == 'Other' ? "selected" : "" %> >Other</option>
+            </select>
+            </label>
 
+        </div>
     </div>
-</div>
 
-<div class="form-group">
-    <div class="row">
-        <label class="col-md-6">Facebook ID <input name="facebook_id" type="text"
-                                                   value=<%= _.isEmpty(facebook_id)?'""':facebook_id %>
-            class="form-control"></label>
+    <div class="form-group">
+        <div class="row">
+            <label class="col-md-6">Union Memberships <select name="union_memberships"
+                                                              class="form-control multi_select" multiple="multiple">
+                <option value=""
+                <%= union_memberships == '' ? "selected" : "" %> >Please Select</option>
+                <option value="SAG-AFTRA"
+                <%= union_memberships == 'SAG-AFTRA' ? "selected" : "" %> >SAG-AFTRA</option>
+                <option value="WGAW"
+                <%= union_memberships == 'WGAW' ? "selected" : "" %> >WGAW</option>
+                <option value="Directors Guild of America"
+                <%= union_memberships == 'Directors Guild of America' ? "selected" : "" %> >Directors Guild of
+                America</option>
+                <option value="ATA"
+                <%= union_memberships == 'ATA' ? "selected" : "" %> >ATA</option>
+                <option value="Producers Guild of America"
+                <%= union_memberships == 'Producers Guild of America' ? "selected" : "" %> >Producers Guild of
+                America</option>
+                <option value="AMPTP"
+                <%= union_memberships == 'AMPTP' ? "selected" : "" %> >AMPTP</option>
+                <option value="ASCAP"
+                <%= union_memberships == 'ASCAP' ? "selected" : "" %> >ASCAP</option>
+                <option value="I.A.T.S.E."
+                <%= union_memberships == 'I.A.T.S.E.' ? "selected" : "" %> >I.A.T.S.E.</option>
+                <option value="International Cinematographers Guild"
+                <%= union_memberships == 'International Cinematographers Guild' ? "selected" : "" %> >International
+                Cinematographers
+                Guild
+                </option>
+                <option value="Teamsters Union 399"
+                <%= union_memberships == 'Teamsters Union 399' ? "selected" : "" %> >Teamsters Union 399</option>
+                <option value="MPEG"
+                <%= union_memberships == 'MPEG' ? "selected" : "" %> >MPEG</option>
+                <option value="Animation Guild"
+                <%= union_memberships == 'Animation Guild' ? "selected" : "" %> >Animation Guild</option>
+                <option value="Motion Picture Sound Editors"
+                <%= union_memberships == 'Motion Picture Sound Editors' ? "selected" : "" %> >Motion Picture Sound
+                Editors</option>
+                <option value="Other"
+                <%= union_memberships == 'Other' ? "selected" : "" %> >Other</option>
+            </select>
+                <%
+                $(document).on('select2_ready', function(){
+                var union = $(':input[name="union_memberships"]').select2();
+                union.val(union_memberships).trigger('change');
+                });
+                %>
+            </label>
+            <label class="col-md-6">Email <input name="email" type="email" value=<%= email %>
+                class="form-control"></label>
+        </div>
+    </div>
 
-        <label class="col-md-6">Instagram ID <input name="instagram_id"
+    <div class="form-group">
+        <div class="row">
+            <label class="col-md-6">Phone Number Type <select name="phone_number_type"
+                                                              class="form-control">
+                <option value="Home"
+                <%= phone_number_type == 'Home' ? "selected" : "" %> >Home</option>
+                <option value="Business"
+                <%= phone_number_type == 'Business' ? "selected" : "" %> >Business</option>
+                <option value="Cell"
+                <%= phone_number_type == 'Cell' ? "selected" : "" %> >Cell</option>
+                <option value="Fax"
+                <%= phone_number_type == 'Fax' ? "selected" : "" %> >Fax</option>
+                <option value="Other"
+                <%= phone_number_type == 'Other' ? "selected" : "" %> >Other</option>
+            </select>
+            </label>
+            <label class="col-md-6">Phone Number <input name="phone_number"
+                                                        class="form-control"
+                                                        value=<%= phone_number %>
+                type="text"></label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Birthday </label>
+                <input name="birthdate" type="date" value=<%= birthdate %>
+                class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label class="display-block">Upload new profile image </label>
+                <input id="profile_image" type="file" name="profile[image]" class="file-styled">
+                <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <label class="col-md-6">Website URL <input name="website_url" type="text"
+                                                       value=<%= _.isEmpty(website_url)?'""':website_url %>
+                class="form-control"></label>
+
+            <label class="col-md-6">Twitter ID <input name="twitter_id"
+                                                      type="text"
+                                                      value=<%= _.isEmpty(twitter_id)?'""':twitter_id %>
+                class="form-control"></label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <label class="col-md-6">Facebook ID <input name="facebook_id" type="text"
+                                                       value=<%= _.isEmpty(facebook_id)?'""':facebook_id %>
+                class="form-control"></label>
+
+            <label class="col-md-6">Instagram ID <input name="instagram_id"
+                                                        type="text"
+                                                        value=<%= _.isEmpty(instagram_id)?'""':instagram_id %>
+                class="form-control"></label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <label class="col-md-6">Google ID <input name="google_id" type="text"
+                                                     value=<%= _.isEmpty(google_id)?'""':google_id %>
+                class="form-control"></label>
+
+            <label class="col-md-6">Yahoo ID <input name="yahoo_id"
                                                     type="text"
-                                                    value=<%= _.isEmpty(instagram_id)?'""':instagram_id %>
-            class="form-control"></label>
+                                                    value=<%= _.isEmpty(yahoo_id)?'""':yahoo_id %>
+                class="form-control"></label>
 
+        </div>
     </div>
-</div>
 
-<div class="form-group">
-    <div class="row">
-        <label class="col-md-6">Google ID <input name="google_id" type="text"
-                                                 value=<%= _.isEmpty(google_id)?'""':google_id %>
-            class="form-control"></label>
+    <div class="form-group">
+        <div class="row">
+            <label class="col-md-6">LinkedIn ID <input name="linkedin_id" type="text"
+                                                       value=<%= _.isEmpty(linkedin_id)?'""':linkedin_id %>
+                class="form-control"></label>
 
-        <label class="col-md-6">Yahoo ID <input name="yahoo_id"
-                                                type="text"
-                                                value=<%= _.isEmpty(yahoo_id)?'""':yahoo_id %>
-            class="form-control"></label>
-
+        </div>
     </div>
-</div>
-
-<div class="form-group">
-    <div class="row">
-        <label class="col-md-6">LinkedIn ID <input name="linkedin_id" type="text"
-                                                   value=<%= _.isEmpty(linkedin_id)?'""':linkedin_id %>
-            class="form-control"></label>
-
-    </div>
-</div>
+</form>

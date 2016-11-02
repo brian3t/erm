@@ -1,0 +1,16 @@
+<table class="table-responsive">
+    <!--<thead>-->
+    <!--<tr>-->
+    <!--<th>Username</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <tbody>
+    <% _.each(collection, function(user,i){ %>
+        <tr>
+            <td><%= user.get('first_name') %></td>
+            <td><%= user.get('last_name') %></td>
+        </tr>
+    <% }); %>
+
+    </tbody>
+</table>
