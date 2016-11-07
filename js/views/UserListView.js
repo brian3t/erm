@@ -71,7 +71,7 @@ app.views.UserView = Backbone.View.extend({
     },
     update_ajax: function (e) {
         var target = $(e.target);
-        if (target.hasClass('file-caption') || target.prop('type') == 'file') {
+        if (target.hasClass('file-caption') || target.prop('type') == 'file' || target.prop('readonly') == true) {
             return;
         }
         var form = target.parents('form');
@@ -100,15 +100,16 @@ app.views.UserView = Backbone.View.extend({
     },
     toggle_edit_mode: function (e) {
         var $e = $(e.currentTarget);
-        var span_text = $($e.parent()).nextUntil('span.toggle_state');
+        var span_text = $e.parentsUntil('div.row').find('span.toggle_state');
         var is_checked = $e.prop('checked');
-        var form = $($e.parent('div')).nextUntil('form');
+        var $form = $($e.parentsUntil('.form_wrapper').find('form'));
         if (is_checked) {
             span_text.text('on');
-
+            $($form.find(':input')).removeAttr('readonly');
         }
         else {
             span_text.text('off');
+            $($form.find(':input')).attr('readonly', true);
         }
     },
     initialize: function () {
