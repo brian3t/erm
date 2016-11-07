@@ -27,7 +27,7 @@ app.views.UserListView = Backbone.View.extend({
             this.cur_model_index = 0;
             this.user_form_view.model = first_user;
             $('#user_form_wrapper').html(this.user_form_view.render());
-            this.user_form_view.delegateEvents();
+            this.user_form_view.after_render();
         }
         //todob dont use global id in selector
         $('#user_search_list').html(this.user_search_list_view.render());
@@ -63,7 +63,6 @@ app.views.UserView = Backbone.View.extend({
     events: {
         "blur .edit": "update_ajax",
         "change .multi_select": "update_ajax",
-        "blur input[name='first_name']": "fired",
         "change .edit_switch": "toggle_edit_mode"
     },
     fired: function (e) {
@@ -84,7 +83,7 @@ app.views.UserView = Backbone.View.extend({
             patch: true, success: function () {
                 target.prev('span.glyphicon-upload').remove();
                 //dont bother if it's multiselect
-                if (target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple')){
+                if (target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple')) {
                     return;
                 }
                 target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
@@ -101,7 +100,16 @@ app.views.UserView = Backbone.View.extend({
     },
     toggle_edit_mode: function (e) {
         var $e = $(e.currentTarget);
+        var span_text = $($e.parent()).nextUntil('span.toggle_state');
+        var is_checked = $e.prop('checked');
+        var form = $($e.parent('div')).nextUntil('form');
+        if (is_checked) {
+            span_text.text('on');
 
+        }
+        else {
+            span_text.text('off');
+        }
     },
     initialize: function () {
         this.delegateEvents();
@@ -112,8 +120,13 @@ app.views.UserView = Backbone.View.extend({
     // },
 
     render: function () {
-        //todob dont use global selector
         this.$el.html(this.template(this.model.attributes));
         return this.$el;
+    },
+    after_render: function () {
+        var $edit_switch = $('.edit_switch');
+        $edit_switch.bootstrapToggle();
+        this.delegateEvents();
     }
+
 });
