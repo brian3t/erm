@@ -127,6 +127,7 @@ app.views.UserView = Backbone.View.extend({
     after_render: function () {
         var $edit_switch = $('.edit_switch');
         $edit_switch.bootstrapToggle();
+        $('.multi_select').select2();
         this.delegateEvents();
     }
 

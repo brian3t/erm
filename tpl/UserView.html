@@ -63,47 +63,46 @@
 
         </div>
     </div>
-
     <div class="form-group">
         <div class="row">
             <label class="col-md-6">Union Memberships <select name="union_memberships" readonly
                                                               class="form-control multi_select" multiple="multiple">
                 <option value=""
-                <%= union_memberships == '' ? "selected" : "" %> >Please Select</option>
+                <%= (union_memberships.length == 0) ? "selected" : "" %> >Please Select</option>
                 <option value="SAG-AFTRA"
-                <%= union_memberships == 'SAG-AFTRA' ? "selected" : "" %> >SAG-AFTRA</option>
+                <%= ($.inArray('SAG-AFTRA', union_memberships) != -1) ? "selected" : "" %> >SAG-AFTRA</option>
                 <option value="WGAW"
-                <%= union_memberships == 'WGAW' ? "selected" : "" %> >WGAW</option>
+                <%= $.inArray('WGAW', union_memberships) != -1  ? "selected" : "" %> >WGAW</option>
                 <option value="Directors Guild of America"
-                <%= union_memberships == 'Directors Guild of America' ? "selected" : "" %> >Directors Guild of
+                <%= $.inArray('Directors Guild of America', union_memberships) != -1  ? "selected" : "" %> >Directors Guild of
                 America</option>
                 <option value="ATA"
-                <%= union_memberships == 'ATA' ? "selected" : "" %> >ATA</option>
+                <%= $.inArray('ATA', union_memberships) != -1  ? "selected" : "" %> >ATA</option>
                 <option value="Producers Guild of America"
-                <%= union_memberships == 'Producers Guild of America' ? "selected" : "" %> >Producers Guild of
+                <%= $.inArray('Producers Guild of America', union_memberships) != -1  ? "selected" : "" %> >Producers Guild of
                 America</option>
                 <option value="AMPTP"
-                <%= union_memberships == 'AMPTP' ? "selected" : "" %> >AMPTP</option>
+                <%= $.inArray('AMPTP', union_memberships) != -1  ? "selected" : "" %> >AMPTP</option>
                 <option value="ASCAP"
-                <%= union_memberships == 'ASCAP' ? "selected" : "" %> >ASCAP</option>
+                <%= $.inArray('ASCAP', union_memberships) != -1  ? "selected" : "" %> >ASCAP</option>
                 <option value="I.A.T.S.E."
-                <%= union_memberships == 'I.A.T.S.E.' ? "selected" : "" %> >I.A.T.S.E.</option>
+                <%= $.inArray('I.A.T.S.E.', union_memberships) != -1  ? "selected" : "" %> >I.A.T.S.E.</option>
                 <option value="International Cinematographers Guild"
-                <%= union_memberships == 'International Cinematographers Guild' ? "selected" : "" %> >International
+                <%= $.inArray('International Cinematographers Guild', union_memberships) != -1  ? "selected" : "" %> >International
                 Cinematographers
                 Guild
                 </option>
                 <option value="Teamsters Union 399"
-                <%= union_memberships == 'Teamsters Union 399' ? "selected" : "" %> >Teamsters Union 399</option>
+                <%= $.inArray('Teamsters Union 399', union_memberships) != -1  ? "selected" : "" %> >Teamsters Union 399</option>
                 <option value="MPEG"
-                <%= union_memberships == 'MPEG' ? "selected" : "" %> >MPEG</option>
+                <%= $.inArray('MPEG', union_memberships) != -1  ? "selected" : "" %> >MPEG</option>
                 <option value="Animation Guild"
-                <%= union_memberships == 'Animation Guild' ? "selected" : "" %> >Animation Guild</option>
+                <%= $.inArray('Animation Guild', union_memberships) != -1  ? "selected" : "" %> >Animation Guild</option>
                 <option value="Motion Picture Sound Editors"
-                <%= union_memberships == 'Motion Picture Sound Editors' ? "selected" : "" %> >Motion Picture Sound
+                <%= $.inArray('Motion Picture Sound Editors', union_memberships) != -1  ? "selected" : "" %> >Motion Picture Sound
                 Editors</option>
                 <option value="Other"
-                <%= union_memberships == 'Other' ? "selected" : "" %> >Other</option>
+                <%= $.inArray('Other', union_memberships) != -1  ? "selected" : "" %> >Other</option>
             </select>
                 <%
                 $(document).on('select2_ready', function(){
