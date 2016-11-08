@@ -28,6 +28,9 @@ app.models.User = Backbone.RelationalModel.extend({
             twitter_id: null,
             company: {name: null},
             profile: {avatar: null}
+        },
+        getFullName: function () {
+            return this.get('first_name') + ' ' + this.get('last_name');
         }
     }
     // ,

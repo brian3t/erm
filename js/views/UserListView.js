@@ -3,7 +3,7 @@
  */
 app.views.UserListView = Backbone.View.extend({
     tagName: 'div',
-    className: 'user_list_view',
+    className: 'container row panel-body',
     collection: {},
     cur_model_index: 0,//current model that is being selected out of collection
     initialize: function () {
@@ -13,9 +13,22 @@ app.views.UserListView = Backbone.View.extend({
         this.user_search_list_view = new app.views.UserSearchListView({collection: this.collection});
         this.user_form_view = new app.views.UserView();
         this.listenTo(this.collection, 'update', this.render);
-        this.delegateEvents();
     },
-
+    events: {
+        "click a.select_item": "select_item",
+        "keyup #user_search": "filter_item"
+    },
+    filter_item: function (e) {
+        this.user_search_list_view.text_to_filter = e.currentTarget.value;
+        this.user_search_list_view.render();
+        this.user_search_list_view.after_render();
+    },
+    select_item: function (e) {
+        var $target = $(e.currentTarget);
+        this.user_form_view.model = this.collection.at($target.data('index'));
+        this.user_form_view.render();
+        this.user_form_view.after_render();
+    },
     user_form_view: {},
     user_search_list_view: {},
     render: function () {
@@ -31,25 +44,38 @@ app.views.UserListView = Backbone.View.extend({
         }
         //todob dont use global id in selector
         $('#user_search_list').html(this.user_search_list_view.render());
-        this.user_search_list_view.delegateEvents();
-        return this.$el.html();
-
+        this.user_search_list_view.after_render();
+        this.delegateEvents();
+        return this.el;
+    },
+    after_render: function () {
+        this.delegateEvents();
     }
 });
 
 app.views.UserSearchListView = Backbone.View.extend({
-    tagName: "div",
+    tagName: "table",
     collection: {},
-    className: "table-responsive",
-
+    className: "table-responsive item_list",
     initialize: function () {
         this.listenTo(this.collection, 'change reset add remove', this.render);
         this.listenTo(this.collection, 'destroy', this.close)
     },
-
+    text_to_filter: '',
     render: function () {
-        this.$el.html(this.template({collection: this.collection.models}));
-        return this.$el.html();
+        var self = this;
+        var models = this.collection;
+        if (this.text_to_filter != '') {
+            models = models.filter(function (v) {
+                var full_name = v.getFullName();
+                return (full_name.indexOf(self.text_to_filter) != -1);
+            });
+        }
+        this.$el.html(this.template({collection: models}));
+        return this.el;
+    },
+    after_render: function () {
+        this.delegateEvents();
     },
     close: function () {
 
@@ -105,11 +131,11 @@ app.views.UserView = Backbone.View.extend({
         var $form = $($e.parentsUntil('.form_wrapper').find('form'));
         if (is_checked) {
             span_text.text('on');
-            $($form.find(':input')).removeAttr('readonly');
+            $($form.find(':input')).removeAttr('disabled');
         }
         else {
             span_text.text('off');
-            $($form.find(':input')).attr('readonly', true);
+            $($form.find(':input')).prop('disabled', true);
         }
     },
     initialize: function () {

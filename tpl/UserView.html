@@ -5,11 +5,11 @@
 
     <div class="form-group">
         <div class="row">
-            <label class="col-md-6">First Name <input name="first_name" readonly type="text"
+            <label class="col-md-6">First Name <input name="first_name" disabled type="text"
                                                       value="<%= first_name %>"
                                                       class="form-control">
             </label>
-            <label class="col-md-6">Last Name <input name="last_name" readonly type="text"
+            <label class="col-md-6">Last Name <input name="last_name" disabled type="text"
                                                      value="<%= last_name %>" class="form-control">
             </label>
         </div>
@@ -17,10 +17,10 @@
 
     <div class="form-group">
         <div class="row">
-            <label class="col-md-6">Job Title <input name="job_title" readonly type="text"
+            <label class="col-md-6">Job Title <input name="job_title" disabled type="text"
                                                      value="<%= job_title %>" class="form-control"></label>
 
-            <label class="col-md-6">Line of Business <select name="line_of_business" readonly
+            <label class="col-md-6">Line of Business <select name="line_of_business" disabled 
                                                              class="form-control">
                 <option value=""
                 <%= line_of_business == '' ? "selected" : "" %> >Please Select</option>
@@ -65,7 +65,7 @@
     </div>
     <div class="form-group">
         <div class="row">
-            <label class="col-md-6">Union Memberships <select name="union_memberships" readonly
+            <label class="col-md-6">Union Memberships <select name="union_memberships" disabled 
                                                               class="form-control multi_select" multiple="multiple">
                 <option value=""
                 <%= (union_memberships.length == 0) ? "selected" : "" %> >Please Select</option>
@@ -111,14 +111,14 @@
                 });
                 %>
             </label>
-            <label class="col-md-6">Email <input name="email" readonly type="email" value=<%= email %>
+            <label class="col-md-6">Email <input name="email" disabled type="email" value=<%= email %>
                 class="form-control"></label>
         </div>
     </div>
 
     <div class="form-group">
         <div class="row">
-            <label class="col-md-6">Phone Number Type <select name="phone_number_type" readonly
+            <label class="col-md-6">Phone Number Type <select name="phone_number_type" disabled 
                                                               class="form-control">
                 <option value="Home"
                 <%= phone_number_type == 'Home' ? "selected" : "" %> >Home</option>
@@ -132,7 +132,7 @@
                 <%= phone_number_type == 'Other' ? "selected" : "" %> >Other</option>
             </select>
             </label>
-            <label class="col-md-6">Phone Number <input name="phone_number" readonly
+            <label class="col-md-6">Phone Number <input name="phone_number" disabled 
                                                         class="form-control"
                                                         value=<%= phone_number %>
                 type="text"></label>
@@ -144,13 +144,13 @@
         <div class="row">
             <div class="col-md-6">
                 <label>Birthday </label>
-                <input name="birthdate" readonly type="date" value=<%= birthdate %>
+                <input name="birthdate" disabled type="date" value=<%= birthdate %>
                 class="form-control">
             </div>
 
             <div class="col-md-6">
                 <label class="display-block">Upload new profile image </label>
-                <input id="profile_image" type="file" name="profile[image]" readonly class="file-styled">
+                <input id="profile_image" type="file" name="profile[image]" disabled class="file-styled">
                 <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
             </div>
         </div>
@@ -158,11 +158,11 @@
 
     <div class="form-group">
         <div class="row">
-            <label class="col-md-6">Website URL <input name="website_url" readonly type="text"
+            <label class="col-md-6">Website URL <input name="website_url" disabled type="text"
                                                        value=<%= _.isEmpty(website_url)?'""':website_url %>
                 class="form-control"></label>
 
-            <label class="col-md-6">Twitter ID <input name="twitter_id" readonly
+            <label class="col-md-6">Twitter ID <input name="twitter_id" disabled 
                                                       type="text"
                                                       value=<%= _.isEmpty(twitter_id)?'""':twitter_id %>
                 class="form-control"></label>
@@ -172,11 +172,11 @@
 
     <div class="form-group">
         <div class="row">
-            <label class="col-md-6">Facebook ID <input name="facebook_id" readonly type="text"
+            <label class="col-md-6">Facebook ID <input name="facebook_id" disabled type="text"
                                                        value=<%= _.isEmpty(facebook_id)?'""':facebook_id %>
                 class="form-control"></label>
 
-            <label class="col-md-6">Instagram ID <input name="instagram_id" readonly
+            <label class="col-md-6">Instagram ID <input name="instagram_id" disabled 
                                                         type="text"
                                                         value=<%= _.isEmpty(instagram_id)?'""':instagram_id %>
                 class="form-control"></label>
@@ -186,11 +186,11 @@
 
     <div class="form-group">
         <div class="row">
-            <label class="col-md-6">Google ID <input name="google_id" readonly type="text"
+            <label class="col-md-6">Google ID <input name="google_id" disabled type="text"
                                                      value=<%= _.isEmpty(google_id)?'""':google_id %>
                 class="form-control"></label>
 
-            <label class="col-md-6">Yahoo ID <input name="yahoo_id" readonly
+            <label class="col-md-6">Yahoo ID <input name="yahoo_id" disabled 
                                                     type="text"
                                                     value=<%= _.isEmpty(yahoo_id)?'""':yahoo_id %>
                 class="form-control"></label>
@@ -200,7 +200,7 @@
 
     <div class="form-group">
         <div class="row">
-            <label class="col-md-6">LinkedIn ID <input name="linkedin_id" readonly type="text"
+            <label class="col-md-6">LinkedIn ID <input name="linkedin_id" disabled type="text"
                                                        value=<%= _.isEmpty(linkedin_id)?'""':linkedin_id %>
                 class="form-control"></label>
 
