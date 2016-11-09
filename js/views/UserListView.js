@@ -6,6 +6,12 @@ app.views.UserListView = Backbone.View.extend({
     className: 'container row panel-body',
     collection: {},
     cur_model_index: 0,//current model that is being selected out of collection
+    $action_btns: {},
+    $create_btn: {},
+    $save_btn: {},
+    $reset_btn: {},
+    $cancel_btn: {},
+
     initialize: function () {
         var self = this;
         this.collection = new app.models.User_collection();
@@ -16,10 +22,38 @@ app.views.UserListView = Backbone.View.extend({
     },
     events: {
         "click a.select_item": "select_item",
-        "keyup #user_search": "filter_item"
+        "keyup #user_search": "filter_item",
+        "click button.toggle_create_mode": "toggle_create_item",
+        "click button.reset": "reset_form",
+        "click button.save": "save_form"
+    },
+    toggle_create_item: function () {
+        this.$create_btn.toggle();
+        this.$save_btn.toggle();
+        this.$reset_btn.toggle();
+        this.$cancel_btn.toggle();
+        this.$el.find('#user_form_wrapper').toggle();
+        this.$el.find('#create_user').toggle();
+        $('form[data-toggle="validator"]').validator();
+    },
+    save_form: function () {
+        var form_data = flat_array_to_assoc(this.$el.find('#create_user > form').serializeArray());
+        var new_user = new app.models.User();
+        var company = app.cur_user.get('company');
+        form_data['company_id'] = company.get('id');
+        new_user.save(form_data, {success: function (new_model) {
+            new_user.set('company', company);
+            console.info(new_model);
+        }, error: function (response) {
+            console.info(response);
+        }});
+    },
+    reset_form: function () {
+        this.$el.find('#create_user > form').trigger('reset');
+        $('.multi_select').select2('val', null);
     },
     filter_item: function (e) {
-        this.user_search_list_view.text_to_filter = e.currentTarget.value;
+        this.user_search_list_view.text_to_filter = e.currentTarget.value.toLowerCase();
         this.user_search_list_view.render();
         this.user_search_list_view.after_render();
     },
@@ -46,6 +80,11 @@ app.views.UserListView = Backbone.View.extend({
         $('#user_search_list').html(this.user_search_list_view.render());
         this.user_search_list_view.after_render();
         this.delegateEvents();
+        this.$action_btns = $('.action_buttons');
+        this.$create_btn = this.$action_btns.find('.create');
+        this.$save_btn = this.$action_btns.find('.save');
+        this.$reset_btn = this.$action_btns.find('.reset');
+        this.$cancel_btn = this.$action_btns.find('.cancel');
         return this.el;
     },
     after_render: function () {
@@ -65,12 +104,11 @@ app.views.UserSearchListView = Backbone.View.extend({
     render: function () {
         var self = this;
         var models = this.collection;
-        if (this.text_to_filter != '') {
-            models = models.filter(function (v) {
-                var full_name = v.getFullName();
-                return (full_name.indexOf(self.text_to_filter) != -1);
-            });
-        }
+        models = models.filter(function (v) {
+            if (this.text_to_filter == '') return true;
+            var full_name = v.getFullName();
+            return (full_name.toLowerCase().indexOf(self.text_to_filter) != -1);
+        });
         this.$el.html(this.template({collection: models}));
         return this.el;
     },
@@ -84,6 +122,7 @@ app.views.UserSearchListView = Backbone.View.extend({
 app.views.UserView = Backbone.View.extend({
     tagName: "div",
     id: "user_form",
+    className: "col-sm-12",
     model: app.models.User,
     // className: "col-md-10 edit account_info",
     events: {

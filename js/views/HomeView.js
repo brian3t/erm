@@ -29,7 +29,11 @@ app.views.HomeView = Backbone.View.extend({
                         success: function () {
                             app.navbar_view = new app.views.NavbarView({model: app.cur_user});
                             // app.router.dashboard();
-                            app.router.navigate('dashboard', {trigger: true});
+                            if (!IS_LOCAL) {
+                                app.router.navigate('dashboard', {trigger: true});
+                            } else {
+                                app.router.navigate('contact', {trigger: true});
+                            }
                         }
                     });
 

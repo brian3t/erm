@@ -19,6 +19,7 @@ app.views.ContactView = Backbone.View.extend({
     },
 
     dom_ready: function () {
+        this.delegateEvents();
     },
     back: function (event) {
         // app.router.navigate('#', {trigger: true, replace: true});

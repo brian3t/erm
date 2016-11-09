@@ -223,6 +223,26 @@ function array_keys_to_underscore(arr) {
     }
 }
 
+/**
+ * Convert jQuery's serializeArray() array into assoc array
+ * @param arr
+ * @returns assoc array, e.g. {'name': 'John', 'age': 22}
+ */
+function flat_array_to_assoc(arr) {
+    if (!_.isArray(arr)){ return {}}
+    var result = {};
+    arr.forEach(function (e) {
+        if (_.isObject(e)){
+            e = _.toArray(e);
+            if (e.length == 2) // ["first_name", "John"]
+            {
+                result[e[0]] = e[1];
+            }
+        }
+    });
+    return result;
+}
+
 function ratchet_popover_dismiss() {
     var popovers = $('.popover');
     $(popovers).removeClass('visible');

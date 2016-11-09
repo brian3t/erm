@@ -9,3 +9,4 @@
     content: "\ed5a";
 }
 .contact-details{height: 140px;}
+#user_search_list{max-height: 200px; overflow-y: auto; overflow-x: hidden}
