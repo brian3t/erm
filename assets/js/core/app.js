@@ -620,10 +620,16 @@ element_ready = function(){
     });
 
     $('.select').select2();
-    $('.multi_select').select2();
+    // $('.multi_select').select2();
     $(document).trigger('select2_ready');
     // $('input[type="file"]').fileinput();
 };
 $(document).ready(function($){
     $('.first_level.panel-heading').click();
+});
+$(document).ajaxStart(function () {
+    $('body').addClass('whirl traditional');
+});
+$(document).ajaxComplete(function () {
+    $('body').removeClass('whirl traditional');
 });

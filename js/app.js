@@ -161,3 +161,16 @@ function doOnOrientationChange() {
             break;
     }
 }
+app_confirm = function (message, callback, title) {
+    if (isInWeb) {
+        var response = confirm(message);
+        callback(response);
+
+    } else {
+        if (app.is_notification_active) {
+            return true;
+        }
+        app.is_notification_active = true;
+        navigator.notification.confirm(message, callback, title, ["Yes", "No"]);
+    }
+};

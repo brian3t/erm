@@ -20,10 +20,8 @@
             <label class="col-md-6">Job Title <input name="job_title" disabled type="text"
                                                      value="<%= job_title %>" class="form-control"></label>
 
-            <label class="col-md-6">Line of Business <select name="line_of_business" disabled 
+            <label class="col-md-6">Line of Business <select name="line_of_business" disabled
                                                              class="form-control">
-                <option value=""
-                <%= line_of_business == '' ? "selected" : "" %> >Please Select</option>
                 <option value="Management"
                 <%= line_of_business == 'Management' ? "selected" : "" %> >Management</option>
                 <option value="Agency"
@@ -65,60 +63,32 @@
     </div>
     <div class="form-group">
         <div class="row">
-            <label class="col-md-6">Union Memberships <select name="union_memberships" disabled 
+            <label class="col-md-6">Union Memberships <select name="union_memberships" disabled
                                                               class="form-control multi_select" multiple="multiple">
-                <option value=""
-                <%= (union_memberships.length == 0) ? "selected" : "" %> >Please Select</option>
-                <option value="SAG-AFTRA"
-                <%= ($.inArray('SAG-AFTRA', union_memberships) != -1) ? "selected" : "" %> >SAG-AFTRA</option>
-                <option value="WGAW"
-                <%= $.inArray('WGAW', union_memberships) != -1  ? "selected" : "" %> >WGAW</option>
-                <option value="Directors Guild of America"
-                <%= $.inArray('Directors Guild of America', union_memberships) != -1  ? "selected" : "" %> >Directors Guild of
-                America</option>
-                <option value="ATA"
-                <%= $.inArray('ATA', union_memberships) != -1  ? "selected" : "" %> >ATA</option>
-                <option value="Producers Guild of America"
-                <%= $.inArray('Producers Guild of America', union_memberships) != -1  ? "selected" : "" %> >Producers Guild of
-                America</option>
-                <option value="AMPTP"
-                <%= $.inArray('AMPTP', union_memberships) != -1  ? "selected" : "" %> >AMPTP</option>
-                <option value="ASCAP"
-                <%= $.inArray('ASCAP', union_memberships) != -1  ? "selected" : "" %> >ASCAP</option>
-                <option value="I.A.T.S.E."
-                <%= $.inArray('I.A.T.S.E.', union_memberships) != -1  ? "selected" : "" %> >I.A.T.S.E.</option>
-                <option value="International Cinematographers Guild"
-                <%= $.inArray('International Cinematographers Guild', union_memberships) != -1  ? "selected" : "" %> >International
-                Cinematographers
-                Guild
+                <option value="SAG-AFTRA">SAG-AFTRA</option>
+                <option value="WGAW">WGAW</option>
+                <option value="Directors Guild of America">Directors Guild of America</option>
+                <option value="ATA">ATA</option>
+                <option value="Producers Guild of America">Producers Guild of America</option>
+                <option value="AMPTP">AMPTP</option>
+                <option value="ASCAP">ASCAP</option>
+                <option value="I.A.T.S.E.">I.A.T.S.E.</option>
+                <option value="International Cinematographers Guild">International Cinematographers Guild
                 </option>
-                <option value="Teamsters Union 399"
-                <%= $.inArray('Teamsters Union 399', union_memberships) != -1  ? "selected" : "" %> >Teamsters Union 399</option>
-                <option value="MPEG"
-                <%= $.inArray('MPEG', union_memberships) != -1  ? "selected" : "" %> >MPEG</option>
-                <option value="Animation Guild"
-                <%= $.inArray('Animation Guild', union_memberships) != -1  ? "selected" : "" %> >Animation Guild</option>
-                <option value="Motion Picture Sound Editors"
-                <%= $.inArray('Motion Picture Sound Editors', union_memberships) != -1  ? "selected" : "" %> >Motion Picture Sound
-                Editors</option>
-                <option value="Other"
-                <%= $.inArray('Other', union_memberships) != -1  ? "selected" : "" %> >Other</option>
+                <option value="Teamsters Union 399">Teamsters Union 399</option>
+                <option value="MPEG">MPEG</option>
+                <option value="Animation Guild">Animation Guild</option>
+                <option value="Motion Picture Sound Editors">Motion Picture Sound Editors</option>
+                <option value="Other">Other</option>
             </select>
-                <%
-                $(document).on('select2_ready', function(){
-                var union = $(':input[name="union_memberships"]').select2();
-                union.val(union_memberships).trigger('change');
-                });
-                %>
             </label>
-            <label class="col-md-6">Email <input name="email" disabled type="email" value=<%= email %>
-                class="form-control"></label>
+            <label class="col-md-6">Email <input name="email" disabled type="email" value=<%= email %> class="form-control"></label>
         </div>
     </div>
 
     <div class="form-group">
         <div class="row">
-            <label class="col-md-6">Phone Number Type <select name="phone_number_type" disabled 
+            <label class="col-md-6">Phone Number Type <select name="phone_number_type" disabled
                                                               class="form-control">
                 <option value="Home"
                 <%= phone_number_type == 'Home' ? "selected" : "" %> >Home</option>
@@ -132,7 +102,7 @@
                 <%= phone_number_type == 'Other' ? "selected" : "" %> >Other</option>
             </select>
             </label>
-            <label class="col-md-6">Phone Number <input name="phone_number" disabled 
+            <label class="col-md-6">Phone Number <input name="phone_number" disabled
                                                         class="form-control"
                                                         value=<%= phone_number %>
                 type="text"></label>
@@ -149,9 +119,7 @@
             </div>
 
             <div class="col-md-6">
-                <label class="display-block">Upload new profile image </label>
-                <input id="profile_image" type="file" name="profile[image]" disabled class="file-styled">
-                <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+                <label class="display-block">Notes <br/><textarea id="note" class="form-control" name="note"><%= note %></textarea></label>
             </div>
         </div>
     </div>
@@ -162,7 +130,7 @@
                                                        value=<%= _.isEmpty(website_url)?'""':website_url %>
                 class="form-control"></label>
 
-            <label class="col-md-6">Twitter ID <input name="twitter_id" disabled 
+            <label class="col-md-6">Twitter ID <input name="twitter_id" disabled
                                                       type="text"
                                                       value=<%= _.isEmpty(twitter_id)?'""':twitter_id %>
                 class="form-control"></label>
@@ -176,7 +144,7 @@
                                                        value=<%= _.isEmpty(facebook_id)?'""':facebook_id %>
                 class="form-control"></label>
 
-            <label class="col-md-6">Instagram ID <input name="instagram_id" disabled 
+            <label class="col-md-6">Instagram ID <input name="instagram_id" disabled
                                                         type="text"
                                                         value=<%= _.isEmpty(instagram_id)?'""':instagram_id %>
                 class="form-control"></label>
@@ -190,7 +158,7 @@
                                                      value=<%= _.isEmpty(google_id)?'""':google_id %>
                 class="form-control"></label>
 
-            <label class="col-md-6">Yahoo ID <input name="yahoo_id" disabled 
+            <label class="col-md-6">Yahoo ID <input name="yahoo_id" disabled
                                                     type="text"
                                                     value=<%= _.isEmpty(yahoo_id)?'""':yahoo_id %>
                 class="form-control"></label>
@@ -206,4 +174,5 @@
 
         </div>
     </div>
+    <button type="button" style="display: none;" class="btn btn-danger delete">Delete This Contact</button>
 </form>

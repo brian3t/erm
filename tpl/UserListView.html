@@ -6,31 +6,20 @@
 </div>
 <div class="col-sm-10">
     <div class="action_buttons">
-        <button type="button" class="btn btn-primary toggle_create_mode create"><span class="glyphicon glyphicon-plus"></span> Create new
-            Contact
+        <button type="button" class="btn btn-primary toggle_create_mode create"><span
+                class="glyphicon glyphicon-plus"></span> Create new Contact
         </button>
-        <button type="button" class="btn btn-primary save" style="display: none"><span
-                class="glyphicon glyphicon-floppy-save"
-        ></span> Save
-        </button>
-        <button type="button" class="btn btn-default reset" style="display: none"><span class="glyphicon glyphicon-repeat"
-        ></span> Reset Form
-        </button>
-        <button type="button" class="btn btn-default toggle_create_mode cancel" style="display: none">Cancel</button>
     </div>
     <hr>
     <div id="user_form_wrapper" class="col-sm-12 form_wrapper">
     </div>
     <div id="create_user" style="display: none">
-        <form class="account_info create" action="#" data-model="user" data-toggle="validator" role="form">
-            <div class="form-group">
+        <form class="account_info create" action="#" data-model="user" data-toggle="validator" data-disable=true role="form">
+            <div class="form-group has-feedback">
                 <div class="row">
-                    <label class="col-md-6">First Name <input name="first_name" type="text"
-
-                                                              class="form-control">
-                    </label>
-                    <label class="col-md-6">Last Name <input name="last_name" type="text"
-                                                             class="form-control">
+                    <label class="col-md-6">First Name <input name="first_name" type="text" required class="form-control">
+                        <span class="help-block with-errors"></span></label>
+                    <label class="col-md-6">Last Name <input name="last_name" type="text" class="form-control">
                     </label>
                 </div>
             </div>
@@ -101,65 +90,49 @@
 
                 </div>
             </div>
-            <div class="form-group has-feedback">
+            <div class="form-group">
                 <div class="row">
-                    <label class="col-md-6">Union Memberships <select name="union_memberships"
-                                                                      class="form-control multi_select"
-                                                                      multiple="multiple">
-                        <option value="">
-                            Please Select
+                    <label class="col-md-6">Union Memberships <select name="union_memberships" class="form-control multi_select" multiple="multiple">
+                        <option value=""> Please Select
                         </option>
-                        <option value="SAG-AFTRA">
-                            SAG-AFTRA
+                        <option value="SAG-AFTRA"> SAG-AFTRA
                         </option>
-                        <option value="WGAW">
-                            WGAW
+                        <option value="WGAW"> WGAW
                         </option>
-                        <option value="Directors Guild of America">
-                            Directors Guild of America
+                        <option value="Directors Guild of America"> Directors Guild of America
                         </option>
-                        <option value="ATA">
-                            ATA
+                        <option value="ATA"> ATA
                         </option>
-                        <option value="Producers Guild of America">
-                            Producers Guild of America
+                        <option value="Producers Guild of America"> Producers Guild of America
                         </option>
-                        <option value="AMPTP">
-                            AMPTP
+                        <option value="AMPTP"> AMPTP
                         </option>
-                        <option value="ASCAP">
-                            ASCAP
+                        <option value="ASCAP"> ASCAP
                         </option>
-                        <option value="I.A.T.S.E.">
-                            I.A.T.S.E.
+                        <option value="I.A.T.S.E."> I.A.T.S.E.
                         </option>
-                        <option value="International Cinematographers Guild">
-                            International
+                        <option value="International Cinematographers Guild">International
                             Cinematographers
                             Guild
                         </option>
-                        <option value="Teamsters Union 399">
-                            Teamsters Union 399
+                        <option value="Teamsters Union 399"> Teamsters Union 399
                         </option>
-                        <option value="MPEG">
-                            MPEG
+                        <option value="MPEG"> MPEG
                         </option>
-                        <option value="Animation Guild">
-                            Animation Guild
+                        <option value="Animation Guild"> Animation Guild
                         </option>
-                        <option value="Motion Picture Sound Editors">
-                            Motion Picture Sound
+                        <option value="Motion Picture Sound Editors"> Motion Picture Sound
                             Editors
                         </option>
-                        <option value="Other">
-                            Other
+                        <option value="Other">Other
                         </option>
                     </select>
                         <%
                         %>
                     </label>
                     <label class="col-md-6">Email <input name="email" type="email"
-                                                         class="form-control" required data-error="Please enter a valid email address" >
+                                                         class="form-control"
+                                                         data-error="Please enter a valid email address">
                         <span class="help-block with-errors"></span>
                     </label>
                 </div>
@@ -203,9 +176,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="display-block">Upload new profile image </label>
-                        <input id="profile_image" type="file" name="profile[image]" class="file-styled">
-                        <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+                        <label class="display-block">Notes <br/><textarea id="note" class="form-control" name="note"></textarea></label>
                     </div>
                 </div>
             </div>
@@ -259,6 +230,17 @@
                                                                class="form-control"></label>
 
                 </div>
+            </div>
+            <div class="action_buttons">
+                <button type="submit" class="btn btn-primary save" style="display: none"><span
+                        class="glyphicon glyphicon-floppy-save"
+                ></span> Save
+                </button>
+                <button type="button" class="btn btn-default reset" style="display: none"><span
+                        class="glyphicon glyphicon-repeat"
+                ></span> Reset Form
+                </button>
+                <button type="button" class="btn btn-default toggle_create_mode cancel" style="display: none">Cancel</button>
             </div>
         </form>
 

@@ -225,18 +225,31 @@ function array_keys_to_underscore(arr) {
 
 /**
  * Convert jQuery's serializeArray() array into assoc array
+ * Also merge input of the same name into array, e.g. union_memberships = Agent & union_memberships = Other
+ * becomes union_memberships = [Agent, Other]
  * @param arr
- * @returns assoc array, e.g. {'name': 'John', 'age': 22}
+ * @returns assoc array, e.g. {'name': 'John', 'age': 22, 'array': ['a','b'] }
  */
 function flat_array_to_assoc(arr) {
-    if (!_.isArray(arr)){ return {}}
+    if (!_.isArray(arr)) {
+        return {}
+    }
     var result = {};
     arr.forEach(function (e) {
-        if (_.isObject(e)){
+        if (_.isObject(e)) {
             e = _.toArray(e);
             if (e.length == 2) // ["first_name", "John"]
             {
-                result[e[0]] = e[1];
+                var key = e[0];
+                if (!_.has(result, key)) {
+                    result[key] = e[1];
+                } else {
+                    if (_.isString(result[key])){
+                        result[key] = Array(result[key]);
+                    }
+                    result[key].push(e[1]);
+                }
+
             }
         }
     });
@@ -266,18 +279,22 @@ function start_case(s) {
 }
 
 function lat_lng_distance(lat1, lon1, lat2, lon2, unit) {
-    var radlat1 = Math.PI * lat1/180;
-    var radlat2 = Math.PI * lat2/180;
-    var theta = lon1-lon2;
-    var radtheta = Math.PI * theta/180;
+    var radlat1 = Math.PI * lat1 / 180;
+    var radlat2 = Math.PI * lat2 / 180;
+    var theta = lon1 - lon2;
+    var radtheta = Math.PI * theta / 180;
     var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
     dist = Math.acos(dist);
-    dist = dist * 180/Math.PI;
+    dist = dist * 180 / Math.PI;
     dist = dist * 60 * 1.1515;
-    if (!unit){
+    if (!unit) {
         unit = 'N';
     }
-    if (unit=="K") { dist = dist * 1.609344 }
-    if (unit=="N") { dist = dist * 0.8684 }
+    if (unit == "K") {
+        dist = dist * 1.609344
+    }
+    if (unit == "N") {
+        dist = dist * 0.8684
+    }
     return dist;
 }

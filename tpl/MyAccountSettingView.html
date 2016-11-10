@@ -87,10 +87,10 @@
                                     <option value="Other" <%= union_memberships == 'Other' ? "selected" : "" %> >Other</option>
                                 </select>
                                     <%
-                                    $(document).on('select2_ready', function(){
-                                        var union = $(':input[name="union_memberships"]').select2();
-                                        union.val(union_memberships).trigger('change');
-                                    });
+                                    <!--$(document).on('select2_ready', function(){-->
+                                        <!--var union = $(':input[name="union_memberships"]').select2();-->
+                                        <!--union.val(union_memberships).trigger('change');-->
+                                    <!--});-->
                                     %>
                                 </label>
                                 <label class="col-md-6">Email <input name="email" type="email" value= <%= email %>
