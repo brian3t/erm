@@ -109,6 +109,33 @@
 
         </div>
     </div>
+    <div class="form-group">
+        <div class="row">
+            <label class="col-md-4">Address 1 <input type="text" name="address1" value="<%= address1 %>" disabled
+                                                     class="form-control">
+            </label>
+            <label class="col-md-4">Address 2 <input name="address2" value="<%= address2 %>" disabled
+                                                     maxlength="800" class="form-control"
+                                                     type="text"></label>
+            <label class="col-md-4">City<input type="text" name="city" value="<%= city %>" disabled
+                                               maxlength="255" class="form-control">
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <label class="col-md-4">State<input name="state" value="<%= state %>" disabled
+                                                maxlength="8" class="form-control"
+                                                type="text"></label>
+            <label class="col-md-4">Zip/Postal Code <input name="zipcode" value="<%= zipcode %>" disabled
+                                                           maxlength="20" class="form-control"
+                                                           type="text"></label>
+            <label class="col-md-4">Country/Region<input name="country" value="<%= country %>" disabled
+                                                         maxlength="80" class="form-control"
+                                                         type="text"></label>
+        </div>
+    </div>
 
     <div class="form-group">
         <div class="row">
@@ -174,5 +201,5 @@
 
         </div>
     </div>
-    <button type="button" style="display: none;" class="btn btn-danger delete">Delete This Contact</button>
+    <button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Contact</button>
 </form>
