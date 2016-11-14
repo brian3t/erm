@@ -13,7 +13,6 @@ app.views.UserListView = Backbone.View.extend({
     $cancel_btn: {},
 
     initialize: function () {
-        var self = this;
         this.collection = new app.models.User_collection();
         this.collection.fetch();
         this.user_search_list_view = new app.views.UserSearchListView({collection: this.collection});
@@ -35,18 +34,16 @@ app.views.UserListView = Backbone.View.extend({
         this.$cancel_btn.toggle();
         this.$el.find('#user_form_wrapper').toggle();
         this.$el.find('#create_user').toggle();
-        $('form[data-toggle="validator"]').validator();
+        this.reset_form();
     },
     save_form: function (e) {
         e.preventDefault();
         var $form = $(this.$el.find('#create_user > form'));
         var form_data = flat_array_to_assoc($form.serializeArray());
         var new_user = new app.models.User();
-        var company = app.cur_user.get('company');
-        new_user.set('company', company);
+        new_user.setCompany(app.cur_user.get('company'));
         new_user.set('username', 'contact_' + form_data['first_name'].replace(' ', '') + (new Date).toISOString() + Math.random().toString().substr(1, 3));
         form_data['email'] = 'contact_' + form_data['first_name'].replace(' ', '') + '@' + (new Date).getTime() + '.' + Math.random().toString().substr(1, 3);
-        // form_data['company_id'] = company.get('id');
         var self = this;
         new_user.save(form_data, {
             success: function (new_model) {
@@ -71,16 +68,12 @@ app.views.UserListView = Backbone.View.extend({
                 cur_model.destroy();
             }
         });
-        // var $e = $(e.eventTarget);
-
     },
     filter_item: function (e) {
         this.user_search_list_view.text_to_filter = e.currentTarget.value.toLowerCase();
         this.user_search_list_view.render();
         this.user_search_list_view.after_render();
-    }
-
-    ,
+    },
     select_item: function (e) {
         var $target = $(e.currentTarget);
         this.cur_model_index = $target.data('index');
@@ -89,10 +82,8 @@ app.views.UserListView = Backbone.View.extend({
         this.user_form_view.after_render();
     }
     ,
-    user_form_view: {}
-    ,
-    user_search_list_view: {}
-    ,
+    user_form_view: {},
+    user_search_list_view: {},
     render: function () {
         this.$el.empty();
         //get first user in collection
@@ -113,8 +104,7 @@ app.views.UserListView = Backbone.View.extend({
         this.$reset_btn = this.$action_btns.find('.reset');
         this.$cancel_btn = this.$action_btns.find('.cancel');
         return this.el;
-    }
-    ,
+    },
     after_render: function () {
         this.delegateEvents();
     }
@@ -142,9 +132,6 @@ app.views.UserSearchListView = Backbone.View.extend({
     },
     after_render: function () {
         this.delegateEvents();
-    },
-    close: function () {
-
     }
 });
 app.views.UserView = Backbone.View.extend({
@@ -152,15 +139,10 @@ app.views.UserView = Backbone.View.extend({
     id: "user_form",
     className: "col-sm-12",
     model: app.models.User,
-    // className: "col-md-10 edit account_info",
     events: {
         "blur .edit": "update_ajax",
         "change .multi_select": "update_ajax",
         "change .edit_switch": "toggle_edit_mode"
-    },
-    fired: function (e) {
-        console.log("Event fired");
-        console.info(e);
     },
     update_ajax: function (e) {
         var target = $(e.target);
@@ -170,28 +152,25 @@ app.views.UserView = Backbone.View.extend({
         var is_multi_select = target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple');
         var form = target.parents('form');
         var model = form.data('model');//user
-        new_attr = {};
+        var new_attr = {};
         new_attr[target.prop('name')] = target.val();
         if (!is_multi_select) {
             target.before('<span class="glyphicon glyphicon-upload"></span>');
         }
         this.model.save(new_attr, {
             patch: true, success: function () {
-                target.prev('span.glyphicon-upload').remove();
+                target.prevAll('span.glyphicon-upload').remove();
                 if (is_multi_select) {
                     return;
                 }
                 target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
                 setTimeout(function () {
-                    target.prev('span').fadeOut(1400);
+                    target.prevAll('span.glyphicon-ok-circle').fadeOut(1400);
                 }, 2000);
             }, error: function () {
-                target.prev('span.glyphicon-upload').remove();
+                target.prevAll('span.glyphicon-upload').remove();
             }
         });
-    },
-    update_ajax_multi: function (e) {
-
     },
     toggle_edit_mode: function (e) {
         var $e = $(e.currentTarget);
@@ -211,10 +190,6 @@ app.views.UserView = Backbone.View.extend({
     initialize: function () {
         this.delegateEvents();
     },
-    // bind_event: function () {
-    //     this.model.on("add change", this.render, this);
-    //     this.model.on("destroy", this.close, this);
-    // },
 
     render: function () {
         this.$el.html(this.template(this.model.attributes));
@@ -226,6 +201,7 @@ app.views.UserView = Backbone.View.extend({
         var $edit_switch = $('.edit_switch');
         $edit_switch.bootstrapToggle();
         $('.multi_select').select2();
+        $('form[data-toggle="validator"]').validator();
         this.delegateEvents();
     }
 

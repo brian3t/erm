@@ -22,8 +22,9 @@ app.models.User = Backbone.RelationalModel.extend({
         localStorage: false,
         username: null,
         password: null,
-        // company: {name: null},
+
         // profile: {avatar: null},
+
         defaults: {
             twitter_id: null,
             company: {name: null},
@@ -31,14 +32,16 @@ app.models.User = Backbone.RelationalModel.extend({
         },
         getFullName: function () {
             return this.get('first_name') + ' ' + this.get('last_name');
+        },
+        setCompany: function (company) {
+            this.company = company;
+            this.set('company_id', company.get('id'));
         }
     }
-    // ,
-//     {
-//     hashed_password: null,
-//     remember_checkbox: null
-//
-// }
+    ,
+    {
+        state: null
+    }
 );
 
 //todob add fields??
