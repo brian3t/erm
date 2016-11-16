@@ -193,8 +193,12 @@ app.views.VenueView = Backbone.View.extend({
 
     render: function () {
         this.$el.html(this.template(this.model.attributes));
-        var union = this.$el.find(':input[name="union_memberships"]').select2();
-        union.val(this.model.get('union_memberships')).trigger('change');
+        var timezone = this.$el.find(':input[name="timezone"]');
+        timezone.val(this.model.get('timezone')).trigger('change');
+        var organizer = this.$el.find(':input[name="company_id"]');
+        organizer.val(this.model.get('company_id')).trigger('change');
+        var pri_ticket_company = this.$el.find(':input[name="primary_ticketing_company_id"]');
+        pri_ticket_company.val(this.model.get('primary_ticketing_company_id')).trigger('change');
         return this.$el;
     },
     after_render: function () {

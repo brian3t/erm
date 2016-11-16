@@ -6,7 +6,7 @@ app.utils.templates = (function() {
 
         $.each(views, function(index, view) {
             if (app.views[view]) {
-                deferreds.push($.get('tpl/' + view + '.html', function(data) {
+                deferreds.push($.get('tpl/' + view + '.ejs', function(data) {
                     app.views[view].prototype.template = _.template(data);
                 }, 'html'));
             } else {

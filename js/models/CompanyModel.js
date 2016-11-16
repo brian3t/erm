@@ -9,3 +9,10 @@ app.models.Company = Backbone.RelationalModel.extend({
         }
     }]
 });
+
+app.collections.Company = Backbone.Collection.extend({
+    model: app.models.Company,
+    initialize: function () {
+        this.url = config.restUrl + 'company';
+    }
+});

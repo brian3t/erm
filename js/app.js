@@ -1,7 +1,7 @@
 const IS_DEBUG = true;
 const CLEAR_LOCAL_STORAGE = true;
 const IS_LOCAL = (document.URL.indexOf('local') !== -1);
-var app = {views: {}, models: {}, routers: {}, utils: {}, adapters: {}};
+var app = {views: {}, models: {}, routers: {}, utils: {}, adapters: {}, collections: {}};
 var current_pos = {};
 var config = {
     restUrl: "https://api.entertainmentdirectmetrics.com/v1/",
@@ -28,7 +28,8 @@ var backboneInit = function () {
         $("#loading").hide();
     });
     isInWeb = (typeof isInWeb !== "boolean" ? "true" : isInWeb);
-
+    app.collections.companies = new app.collections.Company();
+    app.collections.companies.fetch();
 };
 var capp = {
     initialize: function () {
