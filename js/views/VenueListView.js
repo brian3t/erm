@@ -15,13 +15,13 @@ app.views.VenueListView = Backbone.View.extend({
     initialize: function () {
         this.collection = new app.models.Venue_collection();
         this.collection.fetch();
-        this.user_search_list_view = new app.views.UserSearchListView({collection: this.collection});
-        this.user_form_view = new app.views.UserView();
+        this.venue_search_list_view = new app.views.VenueSearchListView({collection: this.collection});
+        this.venue_form_view = new app.views.VenueView();
         this.listenTo(this.collection, 'update', this.render);
     },
     events: {
         "click a.select_item": "select_item",
-        "keyup #user_search": "filter_item",
+        "keyup #venue_search": "filter_item",
         "click button.toggle_create_mode": "toggle_create_item",
         "click button.reset": "reset_form",
         "click button.save": "save_form",
@@ -32,20 +32,20 @@ app.views.VenueListView = Backbone.View.extend({
         this.$save_btn.toggle();
         this.$reset_btn.toggle();
         this.$cancel_btn.toggle();
-        this.$el.find('#user_form_wrapper').toggle();
-        this.$el.find('#create_user').toggle();
+        this.$el.find('#venue_form_wrapper').toggle();
+        this.$el.find('#create_venue').toggle();
         this.reset_form();
     },
     save_form: function (e) {
         e.preventDefault();
-        var $form = $(this.$el.find('#create_user > form'));
+        var $form = $(this.$el.find('#create_venue > form'));
         var form_data = flat_array_to_assoc($form.serializeArray());
-        var new_user = new app.models.User();
-        new_user.setCompany(app.cur_user.get('company'));
-        new_user.set('username', 'contact_' + form_data['first_name'].replace(' ', '') + (new Date).toISOString() + Math.random().toString().substr(1, 3));
+        var new_venue = new app.models.Venue();
+        new_venue.setCompany(app.cur_venue.get('company'));
+        new_venue.set('venuename', 'contact_' + form_data['first_name'].replace(' ', '') + (new Date).toISOString() + Math.random().toString().substr(1, 3));
         form_data['email'] = 'contact_' + form_data['first_name'].replace(' ', '') + '@' + (new Date).getTime() + '.' + Math.random().toString().substr(1, 3);
         var self = this;
-        new_user.save(form_data, {
+        new_venue.save(form_data, {
             success: function (new_model) {
                 self.toggle_create_item();
                 self.collection.add(new_model);
@@ -56,7 +56,7 @@ app.views.VenueListView = Backbone.View.extend({
         });
     },
     reset_form: function () {
-        this.$el.find('#create_user > form').trigger('reset');
+        this.$el.find('#create_venue > form').trigger('reset');
         $('.multi_select').select2('val', null);
     },
     delete_model: function (e) {
@@ -70,33 +70,33 @@ app.views.VenueListView = Backbone.View.extend({
         });
     },
     filter_item: function (e) {
-        this.user_search_list_view.text_to_filter = e.currentTarget.value.toLowerCase();
-        this.user_search_list_view.render();
-        this.user_search_list_view.after_render();
+        this.venue_search_list_view.text_to_filter = e.currentTarget.value.toLowerCase();
+        this.venue_search_list_view.render();
+        this.venue_search_list_view.after_render();
     },
     select_item: function (e) {
         var $target = $(e.currentTarget);
         this.cur_model_index = $target.data('index');
-        this.user_form_view.model = this.collection.at(this.cur_model_index);
-        this.user_form_view.render();
-        this.user_form_view.after_render();
+        this.venue_form_view.model = this.collection.at(this.cur_model_index);
+        this.venue_form_view.render();
+        this.venue_form_view.after_render();
     }
     ,
-    user_form_view: {},
-    user_search_list_view: {},
+    venue_form_view: {},
+    venue_search_list_view: {},
     render: function () {
         this.$el.empty();
-        //get first user in collection
-        var first_user = this.collection.first();
+        //get first venue in collection
+        var first_venue = this.collection.first();
         this.$el.html(this.template());
-        if (_.isObject(first_user)) {
+        if (_.isObject(first_venue)) {
             this.cur_model_index = 0;
-            this.user_form_view.model = first_user;
-            $('#user_form_wrapper').html(this.user_form_view.render());
-            this.user_form_view.after_render();
+            this.venue_form_view.model = first_venue;
+            $('#venue_form_wrapper').html(this.venue_form_view.render());
+            this.venue_form_view.after_render();
         }
-        this.$el.find('#user_search_list').html(this.user_search_list_view.render());
-        this.user_search_list_view.after_render();
+        this.$el.find('#venue_search_list').html(this.venue_search_list_view.render());
+        this.venue_search_list_view.after_render();
         this.delegateEvents();
         this.$action_btns = $('.action_buttons');
         this.$create_btn = this.$action_btns.find('.create');
@@ -110,7 +110,7 @@ app.views.VenueListView = Backbone.View.extend({
     }
 });
 
-app.views.UserSearchListView = Backbone.View.extend({
+app.views.VenueSearchListView = Backbone.View.extend({
     tagName: "table",
     collection: {},
     className: "table-responsive item_list",
@@ -124,8 +124,8 @@ app.views.UserSearchListView = Backbone.View.extend({
         var models = this.collection;
         models = models.filter(function (v) {
             if (this.text_to_filter == '') return true;
-            var full_name = v.getFullName();
-            return (full_name.toLowerCase().indexOf(self.text_to_filter) != -1);
+            var name = v.get('name');
+            return (name.toLowerCase().indexOf(self.text_to_filter) != -1);
         });
         this.$el.html(this.template({collection: models}));
         return this.el;
@@ -134,11 +134,11 @@ app.views.UserSearchListView = Backbone.View.extend({
         this.delegateEvents();
     }
 });
-app.views.UserView = Backbone.View.extend({
+app.views.VenueView = Backbone.View.extend({
     tagName: "div",
-    id: "user_form",
+    id: "venue_form",
     className: "col-sm-12",
-    model: app.models.User,
+    model: app.models.Venue,
     events: {
         "blur .edit": "update_ajax",
         "change .multi_select": "update_ajax",
@@ -151,7 +151,7 @@ app.views.UserView = Backbone.View.extend({
         }
         var is_multi_select = target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple');
         var form = target.parents('form');
-        var model = form.data('model');//user
+        var model = form.data('model');//venue
         var new_attr = {};
         new_attr[target.prop('name')] = target.val();
         if (!is_multi_select) {

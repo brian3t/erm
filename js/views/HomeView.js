@@ -32,7 +32,7 @@ app.views.HomeView = Backbone.View.extend({
                             if (!IS_LOCAL) {
                                 app.router.navigate('dashboard', {trigger: true});
                             } else {
-                                app.router.navigate('contact', {trigger: true});
+                                app.router.navigate('venues', {trigger: true});
                             }
                         }
                     });

@@ -6,6 +6,7 @@ app.routers.AppRouter = Backbone.Router.extend({
         "dashboard": "dashboard",
         "account_setting": "account_setting",
         "contact": "contact",
+        "venues": "venues"
         // ,"formulary/:f_id/:drug_id/:state": "formularyDetails"
     },
 
@@ -80,17 +81,17 @@ app.routers.AppRouter = Backbone.Router.extend({
         app.slider.slidePage(app.contactView.$el);
         app.contactView.dom_ready();
     },
-    venue: function () {
+    venues: function () {
         // Since the home view never changes, we instantiate it and render it only once
-        if (!app.venueView) {
-            app.venueView = new app.views.venueView();
-            app.venueView.render();
+        if (!app.venuesView) {
+            app.venuesView = new app.views.VenuesView();
+            app.venuesView.render();
         } else {
-            console.log('reusing venueView view');
-            app.venueView.delegateEvents(); // delegate events when the view is recycled
+            console.log('reusing venuesView view');
+            app.venuesView.delegateEvents(); // delegate events when the view is recycled
         }
-        app.slider.slidePage(app.venueView.$el);
-        app.venueView.dom_ready();
+        app.slider.slidePage(app.venuesView.$el);
+        app.venuesView.dom_ready();
     }
 
 });

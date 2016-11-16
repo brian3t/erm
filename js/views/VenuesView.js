@@ -1,4 +1,4 @@
-app.views.VenueView = Backbone.View.extend({
+app.views.VenuesView = Backbone.View.extend({
     venue_list_view: {},
     initialize: function () {
         this.venue_list_view = new app.views.VenueListView();

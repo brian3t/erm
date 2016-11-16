@@ -1,0 +1,276 @@
+<div class="col-sm-3">
+    <input type="search" id="venue_search" class="col-sm-12" name="venue_search" placeholder="Filter venues">
+    <div id="venue_search_list" class="col-sm-12">
+
+    </div>
+</div>
+<div class="col-sm-9">
+    <div class="action_buttons">
+        <button type="button" class="btn btn-primary toggle_create_mode create"><span
+                class="glyphicon glyphicon-plus"></span> Create new Venue
+        </button>
+    </div>
+    <hr>
+    <div id="venue_form_wrapper" class="col-sm-12 form_wrapper">
+    </div>
+    <div id="create_venue" style="display: none">
+        <form class="account_info create" action="#" data-model="venue" data-toggle="validator" data-disable=true role="form">
+            <div class="form-group has-feedback">
+                <div class="row">
+                    <label class="col-md-6">First Name <input name="first_name" type="text" required class="form-control">
+                        <span class="help-block with-errors"></span></label>
+                    <label class="col-md-6">Last Name <input name="last_name" type="text" class="form-control">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-md-6">Job Title <input name="job_title" type="text"
+                                                             class="form-control"></label>
+
+                    <label class="col-md-6">Line of Business <select name="line_of_business"
+                                                                     class="form-control">
+                        <option value="">
+                            Please Select
+                        </option>
+                        <option value="Management">
+                            Management
+                        </option>
+                        <option value="Agency">
+                            Agency
+                        </option>
+                        <option value="Promotion">
+                            Promotion
+                        </option>
+                        <option value="Venue">
+                            Venue
+                        </option>
+                        <option value="Network">
+                            Network
+                        </option>
+                        <option value="Studio">
+                            Studio
+                        </option>
+                        <option value="Public Relations">
+                            Public Relations
+                        </option>
+                        <option value="Consulting">
+                            Consulting
+                        </option>
+                        <option value="Talent">
+                            Talent
+                        </option>
+                        <option value="Client">
+                            Client
+                        </option>
+                        <option value="Production Company">
+                            Production Company
+                        </option>
+                        <option value="Photography">
+                            Photography
+                        </option>
+                        <option value="Editing">
+                            Editing
+                        </option>
+                        <option value="Business Management">
+                            Business Management
+                        </option>
+                        <option value="Tour Management">
+                            Tour Management
+                        </option>
+                        <option value="Personal">
+                            Personal
+                        </option>
+                        <option value="Other">
+                            Other
+                        </option>
+                    </select>
+                    </label>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-md-6">Union Memberships <select name="union_memberships" class="form-control multi_select" multiple="multiple">
+                        <option value=""> Please Select
+                        </option>
+                        <option value="SAG-AFTRA"> SAG-AFTRA
+                        </option>
+                        <option value="WGAW"> WGAW
+                        </option>
+                        <option value="Directors Guild of America"> Directors Guild of America
+                        </option>
+                        <option value="ATA"> ATA
+                        </option>
+                        <option value="Producers Guild of America"> Producers Guild of America
+                        </option>
+                        <option value="AMPTP"> AMPTP
+                        </option>
+                        <option value="ASCAP"> ASCAP
+                        </option>
+                        <option value="I.A.T.S.E."> I.A.T.S.E.
+                        </option>
+                        <option value="International Cinematographers Guild">International
+                            Cinematographers
+                            Guild
+                        </option>
+                        <option value="Teamsters Union 399"> Teamsters Union 399
+                        </option>
+                        <option value="MPEG"> MPEG
+                        </option>
+                        <option value="Animation Guild"> Animation Guild
+                        </option>
+                        <option value="Motion Picture Sound Editors"> Motion Picture Sound
+                            Editors
+                        </option>
+                        <option value="Other">Other
+                        </option>
+                    </select>
+                        <%
+                        %>
+                    </label>
+                    <label class="col-md-6">Email <input name="email" type="email"
+                                                         class="form-control"
+                                                         data-error="Please enter a valid email address">
+                        <span class="help-block with-errors"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-md-6">Phone Number Type <select name="phone_number_type"
+                                                                      class="form-control">
+                        <option value="Home">
+                            Home
+                        </option>
+                        <option value="Business">
+                            Business
+                        </option>
+                        <option value="Cell">
+                            Cell
+                        </option>
+                        <option value="Fax">
+                            Fax
+                        </option>
+                        <option value="Other">
+                            Other
+                        </option>
+                    </select>
+                    </label>
+                    <label class="col-md-6">Phone Number <input name="phone_number"
+                                                                class="form-control"
+
+                                                                type="text"></label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-md-4">Address 1 <input type="text" name="address1"
+                                                             class="form-control">
+                    </label>
+                    <label class="col-md-4">Address 2 <input name="address2"
+                                                             maxlength="800" class="form-control"
+                                                             type="text"></label>
+                    <label class="col-md-4">City<input type="text" name="city"
+                                                       maxlength="255" class="form-control">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-md-4">State<input name="state"  disabled
+                                                        maxlength="8" class="form-control"
+                                                        type="text"></label>
+                    <label class="col-md-4">Zip/Postal Code <input name="zipcode"
+                                                                   maxlength="20" class="form-control"
+                                                                   type="text"></label>
+                    <label class="col-md-4">Country/Region<input name="country"
+                                                                 maxlength="80" class="form-control"
+                                                                   type="text"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Birthday
+                            <input name="birthdate" type="date"
+                                   class="form-control"></label>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="display-block">Notes <br/><textarea id="note" class="form-control" name="note"></textarea></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-md-6">Website URL <input name="website_url" type="text"
+
+                                                               class="form-control"></label>
+
+                    <label class="col-md-6">Twitter ID <input name="twitter_id"
+                                                              type="text"
+
+                                                              class="form-control"></label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-md-6">Facebook ID <input name="facebook_id" type="text"
+
+                                                               class="form-control"></label>
+
+                    <label class="col-md-6">Instagram ID <input name="instagram_id"
+                                                                type="text"
+
+                                                                class="form-control"></label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-md-6">Google ID <input name="google_id" type="text"
+
+                                                             class="form-control"></label>
+
+                    <label class="col-md-6">Yahoo ID <input name="yahoo_id"
+                                                            type="text"
+
+                                                            class="form-control"></label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-md-6">LinkedIn ID <input name="linkedin_id" type="text"
+
+                                                               class="form-control"></label>
+
+                </div>
+            </div>
+            <div class="action_buttons">
+                <button type="submit" class="btn btn-primary save" style="display: none"><span
+                        class="glyphicon glyphicon-floppy-save"
+                ></span> Save
+                </button>
+                <button type="button" class="btn btn-default reset" style="display: none"><span
+                        class="glyphicon glyphicon-repeat"
+                ></span> Reset Form
+                </button>
+                <button type="button" class="btn btn-default toggle_create_mode cancel" style="display: none">Cancel</button>
+            </div>
+        </form>
+
+    </div>
+</div>
