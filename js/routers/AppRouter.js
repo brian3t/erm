@@ -79,6 +79,18 @@ app.routers.AppRouter = Backbone.Router.extend({
         }
         app.slider.slidePage(app.contactView.$el);
         app.contactView.dom_ready();
+    },
+    venue: function () {
+        // Since the home view never changes, we instantiate it and render it only once
+        if (!app.venueView) {
+            app.venueView = new app.views.venueView();
+            app.venueView.render();
+        } else {
+            console.log('reusing venueView view');
+            app.venueView.delegateEvents(); // delegate events when the view is recycled
+        }
+        app.slider.slidePage(app.venueView.$el);
+        app.venueView.dom_ready();
     }
 
 });
