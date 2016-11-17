@@ -1,276 +1,524 @@
 <div class="col-sm-3">
-    <input type="search" id="venue_search" class="col-sm-12" name="venue_search" placeholder="Filter venues">
-    <div id="venue_search_list" class="col-sm-12">
+	<input type="search" id="venue_search" class="col-sm-12" name="venue_search" placeholder="Filter venues">
+	<div id="venue_search_list" class="col-sm-12">
 
-    </div>
+	</div>
 </div>
 <div class="col-sm-9">
-    <div class="action_buttons">
-        <button type="button" class="btn btn-primary toggle_create_mode create"><span
-                class="glyphicon glyphicon-plus"></span> Create new Venue
-        </button>
-    </div>
-    <hr>
-    <div id="venue_form_wrapper" class="col-sm-12 form_wrapper">
-    </div>
-    <div id="create_venue" style="display: none">
-        <form class="account_info create" action="#" data-model="venue" data-toggle="validator" data-disable=true role="form">
-            <div class="form-group has-feedback">
-                <div class="row">
-                    <label class="col-md-6">First Name <input name="first_name" type="text" required class="form-control">
-                        <span class="help-block with-errors"></span></label>
-                    <label class="col-md-6">Last Name <input name="last_name" type="text" class="form-control">
-                    </label>
-                </div>
-            </div>
+	<div class="action_buttons">
+		<button type="button" class="btn btn-primary toggle_create_mode create"><span
+					class="glyphicon glyphicon-plus"></span> Create new Venue
+		</button>
+	</div>
+	<hr>
+	<div id="venue_form_wrapper" class="col-sm-12 form_wrapper">
+	</div>
+	<div id="create_venue" style="display: none">
+		<form class="account_info create" action="#" data-model="venue" data-toggle="validator" data-disable=true
+			  role="form">
 
-            <div class="form-group">
-                <div class="row">
-                    <label class="col-md-6">Job Title <input name="job_title" type="text"
-                                                             class="form-control"></label>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-md-6">Venue Name<input name="name" type="text"
 
-                    <label class="col-md-6">Line of Business <select name="line_of_business"
-                                                                     class="form-control">
-                        <option value="">
-                            Please Select
-                        </option>
-                        <option value="Management">
-                            Management
-                        </option>
-                        <option value="Agency">
-                            Agency
-                        </option>
-                        <option value="Promotion">
-                            Promotion
-                        </option>
-                        <option value="Venue">
-                            Venue
-                        </option>
-                        <option value="Network">
-                            Network
-                        </option>
-                        <option value="Studio">
-                            Studio
-                        </option>
-                        <option value="Public Relations">
-                            Public Relations
-                        </option>
-                        <option value="Consulting">
-                            Consulting
-                        </option>
-                        <option value="Talent">
-                            Talent
-                        </option>
-                        <option value="Client">
-                            Client
-                        </option>
-                        <option value="Production Company">
-                            Production Company
-                        </option>
-                        <option value="Photography">
-                            Photography
-                        </option>
-                        <option value="Editing">
-                            Editing
-                        </option>
-                        <option value="Business Management">
-                            Business Management
-                        </option>
-                        <option value="Tour Management">
-                            Tour Management
-                        </option>
-                        <option value="Personal">
-                            Personal
-                        </option>
-                        <option value="Other">
-                            Other
-                        </option>
-                    </select>
-                    </label>
+															 class="form-control">
+					</label>
+					<label class="col-md-6">Previous Name <input name="previous_name" type="text"
+															 class="form-control">
+					</label>
+				</div>
+			</div>
 
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <label class="col-md-6">Union Memberships <select name="union_memberships" class="form-control multi_select" multiple="multiple">
-                        <option value=""> Please Select
-                        </option>
-                        <option value="SAG-AFTRA"> SAG-AFTRA
-                        </option>
-                        <option value="WGAW"> WGAW
-                        </option>
-                        <option value="Directors Guild of America"> Directors Guild of America
-                        </option>
-                        <option value="ATA"> ATA
-                        </option>
-                        <option value="Producers Guild of America"> Producers Guild of America
-                        </option>
-                        <option value="AMPTP"> AMPTP
-                        </option>
-                        <option value="ASCAP"> ASCAP
-                        </option>
-                        <option value="I.A.T.S.E."> I.A.T.S.E.
-                        </option>
-                        <option value="International Cinematographers Guild">International
-                            Cinematographers
-                            Guild
-                        </option>
-                        <option value="Teamsters Union 399"> Teamsters Union 399
-                        </option>
-                        <option value="MPEG"> MPEG
-                        </option>
-                        <option value="Animation Guild"> Animation Guild
-                        </option>
-                        <option value="Motion Picture Sound Editors"> Motion Picture Sound
-                            Editors
-                        </option>
-                        <option value="Other">Other
-                        </option>
-                    </select>
-                        <%
-                        %>
-                    </label>
-                    <label class="col-md-6">Email <input name="email" type="email"
-                                                         class="form-control"
-                                                         data-error="Please enter a valid email address">
-                        <span class="help-block with-errors"></span>
-                    </label>
-                </div>
-            </div>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-md-6">Venue Type<select name="venue_type"
+															  class="form-control">
+							<option value=""></option>
+							<option value="Amphitheater">Amphitheater</option>
+							<option value="Arena">Arena</option>
+							<option value="Bandshell">Bandshell</option>
+							<option value="Club">Club</option>
+							<option value="College">College</option>
+							<option value="Concert Hall">Concert Hall</option>
+							<option value="Operahouse">Operahouse</option>
+							<option value="Other">Other</option>
+							<option value="Private">Private</option>
+							<option value="Stadium">Stadium</option>
+							<option value="Theater">Theater</option>
+						</select>
+					</label>
+					<label class="col-md-6">Notes<textarea name="note" type="text"
+														   class="form-control"></textarea>
+					</label>
+				</div>
+			</div>
+			<h4>Promoter Deal</h4>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-md-12">Ticket Rebate <textarea name="ticket_rebate" type="text"
 
-            <div class="form-group">
-                <div class="row">
-                    <label class="col-md-6">Phone Number Type <select name="phone_number_type"
-                                                                      class="form-control">
-                        <option value="Home">
-                            Home
-                        </option>
-                        <option value="Business">
-                            Business
-                        </option>
-                        <option value="Cell">
-                            Cell
-                        </option>
-                        <option value="Fax">
-                            Fax
-                        </option>
-                        <option value="Other">
-                            Other
-                        </option>
-                    </select>
-                    </label>
-                    <label class="col-md-6">Phone Number <input name="phone_number"
-                                                                class="form-control"
+																	 class="form-control"></textarea>
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-md-12">Other Deal <textarea name="other_deal" type="text"
 
-                                                                type="text"></label>
+																  class="form-control"></textarea>
+					</label>
+				</div>
+			</div>
 
-                </div>
-            </div>
+			<h4>Contact Info</h4>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-md-6">Address 1<input name="address1" type="text"
 
-            <div class="form-group">
-                <div class="row">
-                    <label class="col-md-4">Address 1 <input type="text" name="address1"
-                                                             class="form-control">
-                    </label>
-                    <label class="col-md-4">Address 2 <input name="address2"
-                                                             maxlength="800" class="form-control"
-                                                             type="text"></label>
-                    <label class="col-md-4">City<input type="text" name="city"
-                                                       maxlength="255" class="form-control">
-                    </label>
-                </div>
-            </div>
+															class="form-control">
+					</label>
+					<label class="col-md-6">Address 2 <input name="address2" type="text"
+															 class="form-control">
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-md-6">City<input name="city" type="text"
 
-            <div class="form-group">
-                <div class="row">
-                    <label class="col-md-4">State<input name="state"  disabled
-                                                        maxlength="8" class="form-control"
-                                                        type="text"></label>
-                    <label class="col-md-4">Zip/Postal Code <input name="zipcode"
-                                                                   maxlength="20" class="form-control"
-                                                                   type="text"></label>
-                    <label class="col-md-4">Country/Region<input name="country"
-                                                                 maxlength="80" class="form-control"
-                                                                   type="text"></label>
-                </div>
-            </div>
+													   class="form-control">
+					</label>
+					<label class="col-md-6">State/Province <input name="state" type="text"
+																  class="form-control">
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-md-4">Zip/Postal Code<input name="zipcode" type="text"
 
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label>Birthday
-                            <input name="birthdate" type="date"
-                                   class="form-control"></label>
-                    </div>
+																  class="form-control">
+					</label>
+					<label class="col-md-4">Country/Region <input name="country" type="text"
+																  class="form-control">
+					</label>
+					<label class="col-md-4">Timezone<select name="timezone"
+															class="form-control">
+							<option value=""></option>
+							<option value="ACDT Australian Central Daylight Savings Time">ACDT Australian Central
+								Daylight Savings Time
+							</option>
+							<option value="ACST Australian Central Standard Time">ACST Australian Central Standard
+								Time
+							</option>
+							<option value="ACT Acre Time">ACT Acre Time</option>
+							<option value="ACT ASEAN Common Time">ACT ASEAN Common Time</option>
+							<option value="ADT Atlantic Daylight Time">ADT Atlantic Daylight Time</option>
+							<option value="AEDT Australian Eastern Daylight Savings Time">AEDT Australian Eastern
+								Daylight Savings Time
+							</option>
+							<option value="AEST Australian Eastern Standard Time">AEST Australian Eastern Standard
+								Time
+							</option>
+							<option value="AFT Afghanistan Time">AFT Afghanistan Time</option>
+							<option value="AKDT Alaska Daylight Time">AKDT Alaska Daylight Time</option>
+							<option value="AKST Alaska Standard Time">AKST Alaska Standard Time</option>
+							<option value="AMST Amazon Summer Time (Brazil)[1]">AMST Amazon Summer Time (Brazil)[1]
+							</option>
+							<option value="AMT Amazon Time (Brazil)[2]">AMT Amazon Time (Brazil)[2]</option>
+							<option value="AMT Armenia Time">AMT Armenia Time</option>
+							<option value="ART Argentina Time">ART Argentina Time</option>
+							<option value="AST Arabia Standard Time">AST Arabia Standard Time</option>
+							<option value="AST Atlantic Standard Time">AST Atlantic Standard Time</option>
+							<option value="AWDT Australian Western Daylight Time">AWDT Australian Western Daylight
+								Time
+							</option>
+							<option value="AWST Australian Western Standard Time">AWST Australian Western Standard
+								Time
+							</option>
+							<option value="AZOST Azores Standard Time">AZOST Azores Standard Time</option>
+							<option value="AZT Azerbaijan Time">AZT Azerbaijan Time</option>
+							<option value="BDT Brunei Time">BDT Brunei Time</option>
+							<option value="BDT Bangladesh Daylight Time (Bangladesh Daylight saving time keeps UTC+06 offset) [3]">
+								BDT Bangladesh Daylight Time (Bangladesh Daylight saving time keeps UTC+06 offset)
+								[3]
+							</option>
+							<option value="BIOT British Indian Ocean Time">BIOT British Indian Ocean Time</option>
+							<option value="BIT Baker Island Time">BIT Baker Island Time</option>
+							<option value="BOT Bolivia Time">BOT Bolivia Time</option>
+							<option value="BRST Brasilia Summer Time">BRST Brasilia Summer Time</option>
+							<option value="BRT Brasilia Time">BRT Brasilia Time</option>
+							<option value="BST Bangladesh Standard Time">BST Bangladesh Standard Time</option>
+							<option value="BST Bougainville Standard Time[4]">BST Bougainville Standard Time[4]</option>
+							<option value="BST British Summer Time (British Standard Time from Feb 1968 to Oct 1971)">
+								BST British Summer Time (British Standard Time from Feb 1968 to Oct 1971)
+							</option>
+							<option value="BTT Bhutan Time">BTT Bhutan Time</option>
+							<option value="CAT Central Africa Time">CAT Central Africa Time</option>
+							<option value="CCT Cocos Islands Time">CCT Cocos Islands Time</option>
+							<option value="CDT Central Daylight Time (North America)">CDT Central Daylight Time (North
+								America)
+							</option>
+							<option value="CDT Cuba Daylight Time[5]">CDT Cuba Daylight Time[5]</option>
+							<option value="CEDT Central European Daylight Time">CEDT Central European Daylight Time
+							</option>
+							<option value="CEST Central European Summer Time (Cf. HAEC)">CEST Central European Summer
+								Time (Cf. HAEC)
+							</option>
+							<option value="CET Central European Time">CET Central European Time</option>
+							<option value="CHADT Chatham Daylight Time">CHADT Chatham Daylight Time</option>
+							<option value="CHAST Chatham Standard Time">CHAST Chatham Standard Time</option>
+							<option value="CHOT Choibalsan">CHOT Choibalsan</option>
+							<option value="ChST Chamorro Standard Time">ChST Chamorro Standard Time</option>
+							<option value="CHUT Chuuk Time">CHUT Chuuk Time</option>
+							<option value="CIST Clipperton Island Standard Time">CIST Clipperton Island Standard Time
+							</option>
+							<option value="CIT Central Indonesia Time">CIT Central Indonesia Time</option>
+							<option value="CKT Cook Island Time">CKT Cook Island Time</option>
+							<option value="CLST Chile Summer Time">CLST Chile Summer Time</option>
+							<option value="CLT Chile Standard Time">CLT Chile Standard Time</option>
+							<option value="COST Colombia Summer Time">COST Colombia Summer Time</option>
+							<option value="COT Colombia Time">COT Colombia Time</option>
+							<option value="CST Central Standard Time (North America)">CST Central Standard Time (North
+								America)
+							</option>
+							<option value="CST China Standard Time">CST China Standard Time</option>
+							<option value="CST Central Standard Time (Australia)">CST Central Standard Time
+								(Australia)
+							</option>
+							<option value="CST Central Summer Time (Australia)">CST Central Summer Time (Australia)
+							</option>
+							<option value="CST Cuba Standard Time">CST Cuba Standard Time</option>
+							<option value="CT China time">CT China time</option>
+							<option value="CVT Cape Verde Time">CVT Cape Verde Time</option>
+							<option value="CWST Central Western Standard Time (Australia) unofficial">CWST Central
+								Western Standard Time (Australia) unofficial
+							</option>
+							<option value="CXT Christmas Island Time">CXT Christmas Island Time</option>
+							<option value="DAVT Davis Time">DAVT Davis Time</option>
+							<option value="DDUT Dumont d'Urville Time">DDUT Dumont d'Urville Time</option>
+							<option value="DFT AIX specific equivalent of Central European Time[6]">DFT AIX specific
+								equivalent of Central European Time[6]
+							</option>
+							<option value="EASST Easter Island Standard Summer Time">EASST Easter Island Standard Summer
+								Time
+							</option>
+							<option value="EAST Easter Island Standard Time">EAST Easter Island Standard Time</option>
+							<option value="EAT East Africa Time">EAT East Africa Time</option>
+							<option value="ECT Eastern Caribbean Time (does not recognise DST)">ECT Eastern Caribbean
+								Time (does not recognise DST)
+							</option>
+							<option value="ECT Ecuador Time">ECT Ecuador Time</option>
+							<option value="EDT Eastern Daylight Time (North America)">EDT Eastern Daylight Time (North
+								America)
+							</option>
+							<option value="EEDT Eastern European Daylight Time">EEDT Eastern European Daylight Time
+							</option>
+							<option value="EEST Eastern European Summer Time">EEST Eastern European Summer Time</option>
+							<option value="EET Eastern European Time">EET Eastern European Time</option>
+							<option value="EGST Eastern Greenland Summer Time">EGST Eastern Greenland Summer Time
+							</option>
+							<option value="EGT Eastern Greenland Time">EGT Eastern Greenland Time</option>
+							<option value="EIT Eastern Indonesian Time">EIT Eastern Indonesian Time</option>
+							<option value="EST Eastern Standard Time (North America)">EST Eastern Standard Time (North
+								America)
+							</option>
+							<option value="EST Eastern Standard Time (Australia)">EST Eastern Standard Time
+								(Australia)
+							</option>
+							<option value="FET Further-eastern European Time">FET Further-eastern European Time</option>
+							<option value="FJT Fiji Time">FJT Fiji Time</option>
+							<option value="FKST Falkland Islands Standard Time">FKST Falkland Islands Standard Time
+							</option>
+							<option value="FKST Falkland Islands Summer Time">FKST Falkland Islands Summer Time</option>
+							<option value="FKT Falkland Islands Time">FKT Falkland Islands Time</option>
+							<option value="FNT Fernando de Noronha Time">FNT Fernando de Noronha Time</option>
+							<option value="GALT Galapagos Time">GALT Galapagos Time</option>
+							<option value="GAMT Gambier Islands">GAMT Gambier Islands</option>
+							<option value="GET Georgia Standard Time">GET Georgia Standard Time</option>
+							<option value="GFT French Guiana Time">GFT French Guiana Time</option>
+							<option value="GILT Gilbert Island Time">GILT Gilbert Island Time</option>
+							<option value="GIT Gambier Island Time">GIT Gambier Island Time</option>
+							<option value="GMT Greenwich Mean Time">GMT Greenwich Mean Time</option>
+							<option value="GST South Georgia and the South Sandwich Islands">GST South Georgia and the
+								South Sandwich Islands
+							</option>
+							<option value="GST Gulf Standard Time">GST Gulf Standard Time</option>
+							<option value="GYT Guyana Time">GYT Guyana Time</option>
+							<option value="HADT Hawaii-Aleutian Daylight Time">HADT Hawaii-Aleutian Daylight Time
+							</option>
+							<option value="HAEC Heure Avancée d'Europe Centrale francised name for CEST">HAEC Heure
+								Avancée d'Europe Centrale francised name for CEST
+							</option>
+							<option value="HAST Hawaii-Aleutian Standard Time">HAST Hawaii-Aleutian Standard Time
+							</option>
+							<option value="HKT Hong Kong Time">HKT Hong Kong Time</option>
+							<option value="HMT Heard and McDonald Islands Time">HMT Heard and McDonald Islands Time
+							</option>
+							<option value="HOVT Khovd Time">HOVT Khovd Time</option>
+							<option value="HST Hawaii Standard Time">HST Hawaii Standard Time</option>
+							<option value="IBST International Business Standard Time">IBST International Business
+								Standard Time
+							</option>
+							<option value="ICT Indochina Time">ICT Indochina Time</option>
+							<option value="IDT Israel Daylight Time">IDT Israel Daylight Time</option>
+							<option value="IOT Indian Ocean Time">IOT Indian Ocean Time</option>
+							<option value="IRDT Iran Daylight Time">IRDT Iran Daylight Time</option>
+							<option value="IRKT Irkutsk Time">IRKT Irkutsk Time</option>
+							<option value="IRST Iran Standard Time">IRST Iran Standard Time</option>
+							<option value="IST Indian Standard Time">IST Indian Standard Time</option>
+							<option value="IST Irish Standard Time[7]">IST Irish Standard Time[7]</option>
+							<option value="IST Israel Standard Time">IST Israel Standard Time</option>
+							<option value="JST Japan Standard Time">JST Japan Standard Time</option>
+							<option value="KGT Kyrgyzstan time">KGT Kyrgyzstan time</option>
+							<option value="KOST Kosrae Time">KOST Kosrae Time</option>
+							<option value="KRAT Krasnoyarsk Time">KRAT Krasnoyarsk Time</option>
+							<option value="KST Korea Standard Time">KST Korea Standard Time</option>
+							<option value="LHST Lord Howe Standard Time">LHST Lord Howe Standard Time</option>
+							<option value="LHST Lord Howe Summer Time">LHST Lord Howe Summer Time</option>
+							<option value="LINT Line Islands Time">LINT Line Islands Time</option>
+							<option value="MAGT Magadan Time">MAGT Magadan Time</option>
+							<option value="MART Marquesas Islands Time">MART Marquesas Islands Time</option>
+							<option value="MAWT Mawson Station Time">MAWT Mawson Station Time</option>
+							<option value="MDT Mountain Daylight Time (North America)">MDT Mountain Daylight Time (North
+								America)
+							</option>
+							<option value="MET Middle European Time Same zone as CET">MET Middle European Time Same zone
+								as CET
+							</option>
+							<option value="MEST Middle European Summer Time Same zone as CEST">MEST Middle European
+								Summer Time Same zone as CEST
+							</option>
+							<option value="MHT Marshall Islands">MHT Marshall Islands</option>
+							<option value="MIST Macquarie Island Station Time">MIST Macquarie Island Station Time
+							</option>
+							<option value="MIT Marquesas Islands Time">MIT Marquesas Islands Time</option>
+							<option value="MMT Myanmar Time">MMT Myanmar Time</option>
+							<option value="MSK Moscow Time">MSK Moscow Time</option>
+							<option value="MST Malaysia Standard Time">MST Malaysia Standard Time</option>
+							<option value="MST Mountain Standard Time (North America)">MST Mountain Standard Time (North
+								America)
+							</option>
+							<option value="MST Myanmar Standard Time">MST Myanmar Standard Time</option>
+							<option value="MUT Mauritius Time">MUT Mauritius Time</option>
+							<option value="MVT Maldives Time">MVT Maldives Time</option>
+							<option value="MYT Malaysia Time">MYT Malaysia Time</option>
+							<option value="NCT New Caledonia Time">NCT New Caledonia Time</option>
+							<option value="NDT Newfoundland Daylight Time">NDT Newfoundland Daylight Time</option>
+							<option value="NFT Norfolk Time">NFT Norfolk Time</option>
+							<option value="NPT Nepal Time">NPT Nepal Time</option>
+							<option value="NST Newfoundland Standard Time">NST Newfoundland Standard Time</option>
+							<option value="NT Newfoundland Time">NT Newfoundland Time</option>
+							<option value="NUT Niue Time">NUT Niue Time</option>
+							<option value="NZDT New Zealand Daylight Time">NZDT New Zealand Daylight Time</option>
+							<option value="NZST New Zealand Standard Time">NZST New Zealand Standard Time</option>
+							<option value="OMST Omsk Time">OMST Omsk Time</option>
+							<option value="ORAT Oral Time">ORAT Oral Time</option>
+							<option value="PDT Pacific Daylight Time (North America)">PDT Pacific Daylight Time (North
+								America)
+							</option>
+							<option value="PET Peru Time">PET Peru Time</option>
+							<option value="PETT Kamchatka Time">PETT Kamchatka Time</option>
+							<option value="PGT Papua New Guinea Time">PGT Papua New Guinea Time</option>
+							<option value="PHOT Phoenix Island Time">PHOT Phoenix Island Time</option>
+							<option value="PKT Pakistan Standard Time">PKT Pakistan Standard Time</option>
+							<option value="PMDT Saint Pierre and Miquelon Daylight time">PMDT Saint Pierre and Miquelon
+								Daylight time
+							</option>
+							<option value="PMST Saint Pierre and Miquelon Standard Time">PMST Saint Pierre and Miquelon
+								Standard Time
+							</option>
+							<option value="PONT Pohnpei Standard Time">PONT Pohnpei Standard Time</option>
+							<option value="PST Pacific Standard Time (North America)">PST Pacific Standard Time (North
+								America)
+							</option>
+							<option value="PST Philippine Standard Time">PST Philippine Standard Time</option>
+							<option value="PYST Paraguay Summer Time (South America)[8]">PYST Paraguay Summer Time
+								(South America)[8]
+							</option>
+							<option value="PYT Paraguay Time (South America)[9]">PYT Paraguay Time (South America)[9]
+							</option>
+							<option value="RET Réunion Time">RET Réunion Time</option>
+							<option value="ROTT Rothera Research Station Time">ROTT Rothera Research Station Time
+							</option>
+							<option value="SAKT Sakhalin Island time">SAKT Sakhalin Island time</option>
+							<option value="SAMT Samara Time">SAMT Samara Time</option>
+							<option value="SAST South African Standard Time">SAST South African Standard Time</option>
+							<option value="SBT Solomon Islands Time">SBT Solomon Islands Time</option>
+							<option value="SCT Seychelles Time">SCT Seychelles Time</option>
+							<option value="SGT Singapore Time">SGT Singapore Time</option>
+							<option value="SLST Sri Lanka Standard Time">SLST Sri Lanka Standard Time</option>
+							<option value="SRET Srednekolymsk Time">SRET Srednekolymsk Time</option>
+							<option value="SRT Suriname Time">SRT Suriname Time</option>
+							<option value="SST Samoa Standard Time">SST Samoa Standard Time</option>
+							<option value="SST Singapore Standard Time">SST Singapore Standard Time</option>
+							<option value="SYOT Showa Station Time">SYOT Showa Station Time</option>
+							<option value="TAHT Tahiti Time">TAHT Tahiti Time</option>
+							<option value="THA Thailand Standard Time">THA Thailand Standard Time</option>
+							<option value="TFT Indian/Kerguelen">TFT Indian/Kerguelen</option>
+							<option value="TJT Tajikistan Time">TJT Tajikistan Time</option>
+							<option value="TKT Tokelau Time">TKT Tokelau Time</option>
+							<option value="TLT Timor Leste Time">TLT Timor Leste Time</option>
+							<option value="TMT Turkmenistan Time">TMT Turkmenistan Time</option>
+							<option value="TOT Tonga Time">TOT Tonga Time</option>
+							<option value="TVT Tuvalu Time">TVT Tuvalu Time</option>
+							<option value="UCT Coordinated Universal Time">UCT Coordinated Universal Time</option>
+							<option value="ULAT Ulaanbaatar Time">ULAT Ulaanbaatar Time</option>
+							<option value="USZ1 Kaliningrad Time">USZ1 Kaliningrad Time</option>
+							<option value="UTC Coordinated Universal Time">UTC Coordinated Universal Time</option>
+							<option value="UYST Uruguay Summer Time">UYST Uruguay Summer Time</option>
+							<option value="UYT Uruguay Standard Time">UYT Uruguay Standard Time</option>
+							<option value="UZT Uzbekistan Time">UZT Uzbekistan Time</option>
+							<option value="VET Venezuelan Standard Time">VET Venezuelan Standard Time</option>
+							<option value="VLAT Vladivostok Time">VLAT Vladivostok Time</option>
+							<option value="VOLT Volgograd Time">VOLT Volgograd Time</option>
+							<option value="VOST Vostok Station Time">VOST Vostok Station Time</option>
+							<option value="VUT Vanuatu Time">VUT Vanuatu Time</option>
+							<option value="WAKT Wake Island Time">WAKT Wake Island Time</option>
+							<option value="WAST West Africa Summer Time">WAST West Africa Summer Time</option>
+							<option value="WAT West Africa Time">WAT West Africa Time</option>
+							<option value="WEDT Western European Daylight Time">WEDT Western European Daylight Time
+							</option>
+							<option value="WEST Western European Summer Time">WEST Western European Summer Time</option>
+							<option value="WET Western European Time">WET Western European Time</option>
+							<option value="WIT Western Indonesian Time">WIT Western Indonesian Time</option>
+							<option value="WST Western Standard Time">WST Western Standard Time</option>
+							<option value="YAKT Yakutsk Time">YAKT Yakutsk Time</option>
+							<option value="YEKT Yekaterinburg Time">YEKT Yekaterinburg Time</option>
+							<option value="Z Zulu Time (Coordinated Universal Time)">Z Zulu Time (Coordinated Universal
+								Time)
+							</option>
+						</select>
+					</label>
+				</div>
 
-                    <div class="col-md-6">
-                        <label class="display-block">Notes <br/><textarea id="note" class="form-control" name="note"></textarea></label>
-                    </div>
-                </div>
-            </div>
+				<div class="row">
+					<label class="col-md-6">Owner<input name="owner" type="text"
 
-            <div class="form-group">
-                <div class="row">
-                    <label class="col-md-6">Website URL <input name="website_url" type="text"
+														class="form-control">
+					</label>
+					<label class="col-md-6">Venue Manager<select name="company_id"
 
-                                                               class="form-control"></label>
+																 class="form-control">
+							<% _.each(app.collections.companies.models, function (a_company) { %>
+							<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
+							<% }); %>
+						</select>
+					</label>
+				</div>
 
-                    <label class="col-md-6">Twitter ID <input name="twitter_id"
-                                                              type="text"
+				<div class="row">
+					<label class="col-md-6">General Info Email<input name="general_info_email" type="text"
 
-                                                              class="form-control"></label>
+																	 class="form-control">
+					</label>
+					<label class="col-md-6">Main Office Phone<input name="main_office_phone" type="text"
 
-                </div>
-            </div>
+																	class="form-control">
+					</label>
+				</div>
 
-            <div class="form-group">
-                <div class="row">
-                    <label class="col-md-6">Facebook ID <input name="facebook_id" type="text"
+				<div class="row">
+					<label class="col-md-4">Box Office Phone<input name="box_office_phone" type="text"
 
-                                                               class="form-control"></label>
+																   class="form-control">
+					</label>
+					<label class="col-md-4">Fax Phone<input name="fax_phone" type="text"
+															class="form-control">
+					</label>
+					<label class="col-md-4">Other Phone<input name="other_phone" type="text"
+															  class="form-control">
+					</label>
+				</div>
+			</div>
+			<h4>Ticketing Info</h4>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-md-6">Primary Ticketing Company<select name="primary_ticketing_company_id"
+																			 class="form-control">
+							<% _.each(app.collections.companies.models, function (a_company) { %>
+							<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
+							<% }); %>
+						</select>
+					</label>
+					<label class="col-md-6">Other Seating Capacity<input name="other_seating_capacity"
+																		 type="number"
 
-                    <label class="col-md-6">Instagram ID <input name="instagram_id"
-                                                                type="text"
+																		 class="form-control">
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-md-6">End Stage Seating Capacity<input name="end_stage_seating_capacity"
+																			 type="number"
 
-                                                                class="form-control"></label>
+																			 class="form-control">
+					</label>
+					<label class="col-md-6">Full Stage Seating Capacity<input name="full_stage_seating_capacity"
+																			  type="number"
 
-                </div>
-            </div>
+																			  class="form-control">
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-md-6">Half Stage Seating Capacity<input name="half_stage_seating_capacity"
+																			  type="number"
 
-            <div class="form-group">
-                <div class="row">
-                    <label class="col-md-6">Google ID <input name="google_id" type="text"
+																			  class="form-control">
+					</label>
+					<label class="col-md-6">In The Round Seating Capacity<input name="in_the_round_seating_capacity"
+																				type="number"
 
-                                                             class="form-control"></label>
+																				class="form-control">
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-md-6"><input class="form-control" name="other_seating_capacity_name"
+												   type="text" placeholder="Other Seating Capacity..."
+						>
+					</label>
+					<label class="col-md-6"><input class="form-control" name="other_seating_capacity_value"
+												   type="number"
+						>
+					</label>
+				</div>
+			</div>
 
-                    <label class="col-md-6">Yahoo ID <input name="yahoo_id"
-                                                            type="text"
+			<h4>Links</h4>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-md-6">Web Page<input name="webpage" type="text"
+														   class="form-control">
+					</label>
+					<label class="col-md-6">Facebook<input name="facebook" type="text"
+														   class="form-control">
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-md-6">Yahoo<input name="yahoo" type="text"
+														class="form-control">
+					</label>
+					<label class="col-md-6">Linkedin<input name="linkedin" type="text"
+														   class="form-control">
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-md-4">Twitter<input name="twitter" type="text"
+														  class="form-control">
+					</label>
+					<label class="col-md-4">Instagram<input name="instagram" type="text"
+															class="form-control">
+					</label>
+					<label class="col-md-4">Google<input name="google" type="text"
+														 class="form-control">
+					</label>
+				</div>
+			</div>
+			<div class="action_buttons">
+				<button type="submit" class="btn btn-primary save" style="display: none"><span
+							class="glyphicon glyphicon-floppy-save"
+					></span> Save
+				</button>
+				<button type="button" class="btn btn-default reset" style="display: none"><span
+							class="glyphicon glyphicon-repeat"
+					></span> Reset Form
+				</button>
+				<button type="button" class="btn btn-default toggle_create_mode cancel" style="display: none">Cancel</button>
+			</div>
+		</form>
 
-                                                            class="form-control"></label>
-
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="row">
-                    <label class="col-md-6">LinkedIn ID <input name="linkedin_id" type="text"
-
-                                                               class="form-control"></label>
-
-                </div>
-            </div>
-            <div class="action_buttons">
-                <button type="submit" class="btn btn-primary save" style="display: none"><span
-                        class="glyphicon glyphicon-floppy-save"
-                ></span> Save
-                </button>
-                <button type="button" class="btn btn-default reset" style="display: none"><span
-                        class="glyphicon glyphicon-repeat"
-                ></span> Reset Form
-                </button>
-                <button type="button" class="btn btn-default toggle_create_mode cancel" style="display: none">Cancel</button>
-            </div>
-        </form>
-
-    </div>
+	</div>
 </div>

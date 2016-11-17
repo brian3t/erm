@@ -41,17 +41,15 @@ app.views.VenueListView = Backbone.View.extend({
         var $form = $(this.$el.find('#create_venue > form'));
         var form_data = flat_array_to_assoc($form.serializeArray());
         var new_venue = new app.models.Venue();
-        new_venue.setCompany(app.cur_venue.get('company'));
-        new_venue.set('venuename', 'contact_' + form_data['first_name'].replace(' ', '') + (new Date).toISOString() + Math.random().toString().substr(1, 3));
-        form_data['email'] = 'contact_' + form_data['first_name'].replace(' ', '') + '@' + (new Date).getTime() + '.' + Math.random().toString().substr(1, 3);
+        // new_venue.setOrganizer(app.cur_venue.get('company'));
         var self = this;
         new_venue.save(form_data, {
             success: function (new_model) {
                 self.toggle_create_item();
                 self.collection.add(new_model);
-                app_alert('Contact added');
+                app_alert('New Venue added');
             }, error: function (response) {
-                app_alert('There is an error saving this contact. Please contact support for more information');
+                app_alert('There is an error saving this venue. Please contact support for more information');
             }
         });
     },
@@ -61,7 +59,7 @@ app.views.VenueListView = Backbone.View.extend({
     },
     delete_model: function (e) {
         var self = this;
-        app_confirm("Are you sure to delete this contact?", function (response) {
+        app_confirm("Are you sure to delete this venue?", function (response) {
             if (response == true || response == 1) {
                 var cur_model = self.collection.at(self.cur_model_index);
                 self.collection.remove(cur_model);
@@ -193,12 +191,10 @@ app.views.VenueView = Backbone.View.extend({
 
     render: function () {
         this.$el.html(this.template(this.model.attributes));
-        var timezone = this.$el.find(':input[name="timezone"]');
-        timezone.val(this.model.get('timezone')).trigger('change');
-        var organizer = this.$el.find(':input[name="company_id"]');
-        organizer.val(this.model.get('company_id')).trigger('change');
-        var pri_ticket_company = this.$el.find(':input[name="primary_ticketing_company_id"]');
-        pri_ticket_company.val(this.model.get('primary_ticketing_company_id')).trigger('change');
+        var selects = this.$el.find('select');
+        _.each(selects, function (e) {
+            $(e).val(this.model.get($(e).prop('name')));
+        }, this);
         return this.$el;
     },
     after_render: function () {
