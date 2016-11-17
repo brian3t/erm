@@ -1,0 +1,99 @@
+<div class="content-background"></div>
+<div class="content home">
+    <div id="app_logo"></div>
+    <form id="forgotForm" class="input-group col9 center">
+        <div class="header">Forgot Password:</div>
+        <br/>
+        <div class="input-row">
+            <label><i class="fa fa-user"></i></label>
+            <input name="username" id="username" type="text" autocapitalize="off" placeholder="Username"
+                   onblur="getQuestion()">
+        </div>
+        <!--<label for="username">Username:</label>-->
+        <!--<input type="text" name="username" id="username" value="" placeholder="Username" autocapitalize="off" onblur="getQuestion()"/>-->
+
+        <label>Password Recovery Question:</label>
+        <div class="blank_line"></div>
+        <div id="question"></div>
+        <div class="blank_line"></div>
+        <input type="text" name="answer" id="answer" value="" placeholder="Password recovery answer"
+               autocapitalize="off">
+        <div class="blank_line"></div>
+        <label for="new_password">New Password:</label>
+        <div class="blank_line"></div>
+
+        <input type="password" name="new_password" id="new_password" value=""/>
+
+        <button id="submitButton" class="btn btn-primary btn-block" type="button" onclick="resetPassword()">Reset
+        </button>
+        <button id="go_back" class="btn btn-primary btn-block" type="button" onclick="window.history.back();">Go Back
+        </button>
+    </form>
+    <div class="bar-standard ">
+        Brought to you by Metropolitan Washington
+        Council of Governments.
+        <a href="#"><b>Learn More ></b></a>
+    </div>
+</div>
+<script>
+    function getQuestion() {
+
+        $.ajax({
+            url: config.commuterUrl + 'RecoverPasswordServlet?userName=' + $("#username").val(),
+            type: 'GET',
+            success: function (data) {
+                $("#question").text(data);
+            },
+            error: function (data) {
+
+                var text = data.responseText.split("<")[0];
+                $("#question").text(text);
+            }
+        });
+
+
+    }
+
+
+    function resetPassword() {
+        var answer = $("#answer").val();
+        var new_password = $("#new_password").val();
+        if (answer === "" || new_password === "") {
+            app_alert("Reset Password", "Password Recovery Answer and New Password are both required");
+            return false;
+        }
+        var success = false;
+        var question = $("#question").text();
+        var query = $.param({
+            action: "recoverpassword",
+            userName: $("#username").val(),
+            newPassword: new_password,
+            pwdQuestion: question,
+            pwdAnswer: answer
+        });
+        var reset_url = config.commuterUrl + 'json=' + query;
+        $.ajax({
+            url: reset_url,
+            type: 'GET',
+            success: function (data) {
+                if (data.response === "success") {
+                    app_alert("Your password has been changed.  Click Ok to return to the login screen.", null, "Reset Password", "OK");
+                    app.routers.route('home');
+                    app.routers.home();
+                }
+                else {
+                    app_alert("We were unable to change your password.  Please verify your Password Recovery Answer", null, "Reset Password", "OK");
+                }
+
+            }
+            ,
+            error: function (data) {
+                app_alert("We were unable to change your password.  Please verify your Password Recovery Answer", null, "Password reset", "OK");
+            }
+
+        });
+
+
+    }
+
+</script>

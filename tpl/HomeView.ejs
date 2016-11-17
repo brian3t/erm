@@ -1,0 +1,96 @@
+<div class="login-container">
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                ERM v0.6
+                <!--<img src="assets/images/logo_light.png" alt="">-->
+            </a>
+
+            <ul class="nav navbar-nav pull-right visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav navbar-right">
+
+            </ul>
+        </div>
+    </div>
+    <!-- /main navbar -->
+
+
+    <!-- Page container -->
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Content area -->
+                <div class="content">
+
+                    <!-- Simple login form -->
+                    <form id="login-form" data-toggle="validator" role="form">
+                        <div class="panel panel-body login-form">
+                            <div class="text-center">
+                                <img src="assets/images/logo.png">
+                            </div>
+                            <h5 class="text-center content-group">
+                                Login to your account
+                                <small class="display-block">Enter your credentials below</small>
+                            </h5>
+
+                            <div class="form-group has-feedback-left">
+                                <input id="username" name="login-form[login]" type="text" class="form-control" placeholder="User Email" required data-error="Please enter your email" data-feedback='{"success":"aaa","error":"bbb"}'}>
+                                <div class="glyphicon form-control-feedback">
+                                    <i class="icon-user text-muted"></i>
+                                </div>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group has-feedback-left">
+                                <input id="password" name="login-form[password]" type="password" class="form-control" placeholder="Password" required data-minlength="6" data-error="Minimum length of password is 6 characters!" >
+                                <div class="help-block with-errors"></div>
+                                <div class="glyphicon form-control-feedback">
+                                    <i class="icon-lock2 text-muted"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <button id="signin" type="button" class="btn btn-primary btn-block">Sign in <i
+                                        class="icon-circle-right2 position-right"></i></button>
+                            </div>
+
+                            <div class="text-center">
+                                <a href="#">Forgot password?</a>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- /simple login form -->
+
+
+                    <!-- Footer -->
+                    <div class="footer text-muted text-center">
+                        &copy; 2016 <a target="_blank" href="http://entertainmentdirectmetrics.com">Entertainment Direct Metrics LLC</a>
+                        <!--by <a href="http://superbappsolutions.com" target="_blank">Superbappsolutions.com</a>-->
+                    </div>
+                    <!-- /footer -->
+
+                </div>
+                <!-- /content area -->
+
+            </div>
+            <!-- /main content -->
+
+        </div>
+        <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+</div>
