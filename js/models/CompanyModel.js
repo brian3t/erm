@@ -1,4 +1,5 @@
 app.models.Company = Backbone.RelationalModel.extend({
+    urlRoot: config.restUrl + 'company',
     relations: [{
         type: Backbone.HasMany,
         key: 'user',

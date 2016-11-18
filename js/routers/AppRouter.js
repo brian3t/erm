@@ -6,7 +6,8 @@ app.routers.AppRouter = Backbone.Router.extend({
         "dashboard": "dashboard",
         "account_setting": "account_setting",
         "contact": "contact",
-        "venues": "venues"
+        "venues": "venues",
+        "companies": "companies"
         // ,"formulary/:f_id/:drug_id/:state": "formularyDetails"
     },
 
@@ -92,6 +93,18 @@ app.routers.AppRouter = Backbone.Router.extend({
         }
         app.slider.slidePage(app.venuesView.$el);
         app.venuesView.dom_ready();
+    },
+    companies: function () {
+        // Since the home view never changes, we instantiate it and render it only once
+        if (!app.companiesView) {
+            app.companiesView = new app.views.CompaniesView();
+            app.companiesView.render();
+        } else {
+            console.log('reusing companiesView view');
+            app.companiesView.delegateEvents(); // delegate events when the view is recycled
+        }
+        app.slider.slidePage(app.companiesView.$el);
+        app.companiesView.dom_ready();
     }
 
 });

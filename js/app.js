@@ -15,7 +15,8 @@ var backboneInit = function () {
 
     app.utils.templates.load(["NavbarView", "HomeView", "MyAccountSettingView", "AccountSettingView", "DashboardView",
         "ContactView", "UserListView", "UserSearchListView", "UserView",
-        "VenuesView", "VenueListView", "VenueSearchListView", "VenueView" ], function () {
+        "VenuesView", "VenueListView", "VenueSearchListView", "VenueView",
+        "CompaniesView", "CompanyListView", "CompanySearchListView", "CompanyView"], function () {
         app.router = new app.routers.AppRouter();
         Backbone.history.stop();
         Backbone.history.start();
