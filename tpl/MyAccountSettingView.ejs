@@ -23,11 +23,11 @@
                     <form class="edit" id="account_info" action="#" data-model="cur_user">
                         <div class="form-group">
                             <div class="row">
-                                <label class="col-md-6">First Name <input name="first_name" type="text"
+                                <label class="col-xs-6">First Name <input name="first_name" type="text"
                                                                           value="<%= first_name %>"
                                                                           class="form-control">
                                 </label>
-                                <label class="col-md-6">Last Name <input name="last_name" type="text"
+                                <label class="col-xs-6">Last Name <input name="last_name" type="text"
                                                                          value="<%= last_name %>" class="form-control">
                                 </label>
                             </div>
@@ -35,10 +35,10 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <label class="col-md-6">Job Title <input name="job_title" type="text"
+                                <label class="col-xs-6">Job Title <input name="job_title" type="text"
                                                                          value="<%= job_title %>" class="form-control"></label>
 
-                                <label class="col-md-6">Line of Business <select name="line_of_business"
+                                <label class="col-xs-6">Line of Business <select name="line_of_business"
                                                                                  class="form-control">
                                     <option value="" <%= line_of_business == '' ? "selected" : "" %> >Please Select</option>
                                     <option value="Management" <%= line_of_business == 'Management' ? "selected" : "" %> >Management</option>
@@ -66,7 +66,7 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <label class="col-md-6">Union Memberships <select name="union_memberships"
+                                <label class="col-xs-6">Union Memberships <select name="union_memberships"
                                                                                   class="form-control multi_select" multiple="multiple">
                                     <option value="" <%= union_memberships == '' ? "selected" : "" %> >Please Select</option>
                                     <option value="SAG-AFTRA" <%= union_memberships == 'SAG-AFTRA' ? "selected" : "" %> >SAG-AFTRA</option>
@@ -93,14 +93,14 @@
                                     <!--});-->
                                     %>
                                 </label>
-                                <label class="col-md-6">Email <input name="email" type="email" value= <%= email %>
+                                <label class="col-xs-6">Email <input name="email" type="email" value= <%= email %>
                                                                      class="form-control"></label>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="row">
-                                <label class="col-md-6">Phone Number Type <select name="phone_number_type"
+                                <label class="col-xs-6">Phone Number Type <select name="phone_number_type"
                                                                                   class="form-control">
                                     <option value="Home" <%= phone_number_type == 'Home' ? "selected" : "" %> >Home</option>
                                     <option value="Business" <%= phone_number_type == 'Business' ? "selected" : "" %> >Business</option>
@@ -109,7 +109,7 @@
                                     <option value="Other" <%= phone_number_type == 'Other' ? "selected" : "" %> >Other</option>
                                 </select>
                                 </label>
-                                <label class="col-md-6">Phone Number <input name="phone_number"
+                                <label class="col-xs-6">Phone Number <input name="phone_number"
                                                                             class="form-control"
                                                                             value=<%= phone_number %>
                                                                             type="text"></label>
@@ -119,13 +119,13 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-xs-6">
                                     <label>Birthday </label>
                                     <input name="birthdate" type="date" value=<%= birthdate %>
                                            class="form-control">
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-xs-6">
                                     <label class="display-block">Upload new profile image </label>
                                     <input id="profile_image" type="file" name="profile[image]" class="file-styled">
                                     <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
@@ -135,11 +135,11 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <label class="col-md-6">Website URL <input name="website_url" type="text"
+                                <label class="col-xs-6">Website URL <input name="website_url" type="text"
                                                                            value= <%= _.isEmpty(website_url)?'""':website_url %>
                                                                            class="form-control"></label>
 
-                                <label class="col-md-6">Twitter ID <input name="twitter_id"
+                                <label class="col-xs-6">Twitter ID <input name="twitter_id"
                                                                           type="text"
                                                                           value= <%= _.isEmpty(twitter_id)?'""':twitter_id %>
                                                                            class="form-control"></label>
@@ -149,11 +149,11 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <label class="col-md-6">Facebook ID <input name="facebook_id" type="text"
+                                <label class="col-xs-6">Facebook ID <input name="facebook_id" type="text"
                                                                            value= <%= _.isEmpty(facebook_id)?'""':facebook_id %>
                                                                            class="form-control"></label>
 
-                                <label class="col-md-6">Instagram ID <input name="instagram_id"
+                                <label class="col-xs-6">Instagram ID <input name="instagram_id"
                                                                             type="text"
                                                                             value= <%= _.isEmpty(instagram_id)?'""':instagram_id %>
                                                                             class="form-control"></label>
@@ -163,11 +163,11 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <label class="col-md-6">Google ID <input name="google_id" type="text"
+                                <label class="col-xs-6">Google ID <input name="google_id" type="text"
                                                                          value= <%= _.isEmpty(google_id)?'""':google_id %>
                                                                          class="form-control"></label>
 
-                                <label class="col-md-6">Yahoo ID <input name="yahoo_id"
+                                <label class="col-xs-6">Yahoo ID <input name="yahoo_id"
                                                                         type="text"
                                                                         value= <%= _.isEmpty(yahoo_id)?'""':yahoo_id %>
                                                                         class="form-control"></label>
@@ -177,7 +177,7 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <label class="col-md-6">LinkedIn ID <input name="linkedin_id" type="text"
+                                <label class="col-xs-6">LinkedIn ID <input name="linkedin_id" type="text"
                                                                            value= <%= _.isEmpty(linkedin_id)?'""':linkedin_id %>
                                                                            class="form-control"></label>
 
@@ -201,13 +201,13 @@
                         <input type="text" style="visibility: hidden;" name="action" value="change_password">
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-xs-6">
                                     <label>Username<input name="username" type="text" value=<%= email %> readonly
                                                           class="form-control"></label>
 
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-xs-6">
                                     <label>Current password<input type="password" name="password"
                                                                   class="form-control"></label>
                                     <div class="help-block with-errors"></div>
@@ -218,14 +218,14 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-xs-6">
                                     <label>New password</label>
                                     <input id="new_password" name="new_password" type="password" data-minlength="6" data-error="Minimum length of password is 6 characters!"  placeholder="Enter new password"
                                            class="form-control">
                                     <div class="help-block with-errors"></div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-xs-6">
                                     <label>Repeat password</label>
                                     <input name="repeat_password" type="password" placeholder="Repeat new password" data-minlength="6"  data-error="Minimum length of password is 6 characters!"
                                            data-match="#new_password" data-match-error="Repeat password does not match new password!"

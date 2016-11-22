@@ -6416,6 +6416,7 @@ a.list-group-item-danger:focus {
   background-color: #fff;
 }
 .panel-flat > .panel-heading > .panel-title {
+  font-weight: bold;
   margin-top: 2px;
   margin-bottom: 2px;
 }

@@ -19,7 +19,39 @@ var backboneInit = function () {
         "CompaniesView", "CompanyListView", "CompanySearchListView", "CompanyView"], function () {
         app.router = new app.routers.AppRouter();
         Backbone.history.stop();
-        Backbone.history.start();
+
+        // login again, using cookie
+        var login_string = document.cookie.match(/loginstring=(.*)/);
+        if (_.isArray(login_string) && login_string.length == 2) {
+            login_string = login_string[1];
+            $.post(config.restUrl + 'user/login', login_string, function (resp) {
+                if (resp.status == 'ok') {
+                    app.cur_user.set({id: resp.id, username: $('#username').val(), password: $('#password').val()});
+                    // app.cur_profile.set(resp.profile);
+                    var jqxhr = app.cur_user.fetch({
+                        success: function () {
+                            app.navbar_view = new app.views.NavbarView({model: app.cur_user});
+                            if (!Backbone.History.started) {
+                                Backbone.history.start();
+                            }
+                        }
+                    });
+
+                } else {
+                    if (!Backbone.History.started) {
+                        Backbone.history.start();
+                    }
+                    app.router.navigate('#', {trigger: true});
+                }
+            }, 'json');
+        }
+        else {
+            if (!Backbone.History.started) {
+                Backbone.history.start();
+            }
+            app.router.navigate('#', {trigger: true});
+        }
+
     });
     $.ajaxSetup({cache: true});
     $(document).ajaxStart(function () {

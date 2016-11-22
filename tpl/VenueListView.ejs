@@ -1,17 +1,17 @@
-<div class="col-sm-3">
-	<input type="search" id="venue_search" class="col-sm-12" name="venue_search" placeholder="Filter venues">
-	<div id="venue_search_list" class="col-sm-12">
+<div class="col-sm-3 col-xs-12">
+	<input type="search" id="venue_search" class="col-xs-12" name="venue_search" placeholder="Filter venues">
+	<div id="venue_search_list" class="col-xs-12 padded search_list">
 
 	</div>
 </div>
-<div class="col-sm-9">
+<div class="col-sm-9 col-xs-12">
 	<div class="action_buttons">
 		<button type="button" class="btn btn-primary toggle_create_mode create"><span
 					class="glyphicon glyphicon-plus"></span> Create new Venue
 		</button>
 	</div>
 	<hr>
-	<div id="venue_form_wrapper" class="col-sm-12 form_wrapper">
+	<div id="venue_form_wrapper" class="col-xs-12 form_wrapper">
 	</div>
 	<div id="create_venue" style="display: none">
 		<form class="account_info create" action="#" data-model="venue" data-toggle="validator" data-disable=true
@@ -19,11 +19,11 @@
 
 			<div class="form-group">
 				<div class="row">
-					<label class="col-md-6">Venue Name<input name="name" type="text"
+					<label class="col-xs-6">Venue Name<input name="name" type="text"
 
 															 class="form-control">
 					</label>
-					<label class="col-md-6">Previous Name <input name="previous_name" type="text"
+					<label class="col-xs-6">Previous Name <input name="previous_name" type="text"
 															 class="form-control">
 					</label>
 				</div>
@@ -31,7 +31,7 @@
 
 			<div class="form-group">
 				<div class="row">
-					<label class="col-md-6">Venue Type<select name="venue_type"
+					<label class="col-xs-6">Venue Type<select name="venue_type"
 															  class="form-control">
 							<option value=""></option>
 							<option value="Amphitheater">Amphitheater</option>
@@ -47,7 +47,7 @@
 							<option value="Theater">Theater</option>
 						</select>
 					</label>
-					<label class="col-md-6">Notes<textarea name="note" type="text"
+					<label class="col-xs-6">Notes<textarea name="note" type="text"
 														   class="form-control"></textarea>
 					</label>
 				</div>
@@ -55,13 +55,13 @@
 			<h4>Promoter Deal</h4>
 			<div class="form-group">
 				<div class="row">
-					<label class="col-md-12">Ticket Rebate <textarea name="ticket_rebate" type="text"
+					<label class="col-xs-12">Ticket Rebate <textarea name="ticket_rebate" type="text"
 
 																	 class="form-control"></textarea>
 					</label>
 				</div>
 				<div class="row">
-					<label class="col-md-12">Other Deal <textarea name="other_deal" type="text"
+					<label class="col-xs-12">Other Deal <textarea name="other_deal" type="text"
 
 																  class="form-control"></textarea>
 					</label>
@@ -71,32 +71,32 @@
 			<h4>Contact Info</h4>
 			<div class="form-group">
 				<div class="row">
-					<label class="col-md-6">Address 1<input name="address1" type="text"
+					<label class="col-xs-6">Address 1<input name="address1" type="text"
 
 															class="form-control">
 					</label>
-					<label class="col-md-6">Address 2 <input name="address2" type="text"
+					<label class="col-xs-6">Address 2 <input name="address2" type="text"
 															 class="form-control">
 					</label>
 				</div>
 				<div class="row">
-					<label class="col-md-6">City<input name="city" type="text"
+					<label class="col-xs-6">City<input name="city" type="text"
 
 													   class="form-control">
 					</label>
-					<label class="col-md-6">State/Province <input name="state" type="text"
+					<label class="col-xs-6">State/Province <input name="state" type="text"
 																  class="form-control">
 					</label>
 				</div>
 				<div class="row">
-					<label class="col-md-4">Zip/Postal Code<input name="zipcode" type="text"
+					<label class="col-xs-4">Zip/Postal Code<input name="zipcode" type="text"
 
 																  class="form-control">
 					</label>
-					<label class="col-md-4">Country/Region <input name="country" type="text"
+					<label class="col-xs-4">Country/Region <input name="country" type="text"
 																  class="form-control">
 					</label>
-					<label class="col-md-4">Timezone<select name="timezone"
+					<label class="col-xs-4">Timezone<select name="timezone"
 															class="form-control">
 							<option value=""></option>
 							<option value="ACDT Australian Central Daylight Savings Time">ACDT Australian Central
@@ -387,11 +387,11 @@
 				</div>
 
 				<div class="row">
-					<label class="col-md-6">Owner<input name="owner" type="text"
+					<label class="col-xs-6">Owner<input name="owner" type="text"
 
 														class="form-control">
 					</label>
-					<label class="col-md-6">Venue Manager<select name="company_id"
+					<label class="col-xs-6">Venue Manager<select name="company_id"
 
 																 class="form-control">
 							<% _.each(app.collections.companies.models, function (a_company) { %>
@@ -402,25 +402,25 @@
 				</div>
 
 				<div class="row">
-					<label class="col-md-6">General Info Email<input name="general_info_email" type="text"
+					<label class="col-xs-6">General Info Email<input name="general_info_email" type="text"
 
 																	 class="form-control">
 					</label>
-					<label class="col-md-6">Main Office Phone<input name="main_office_phone" type="text"
+					<label class="col-xs-6">Main Office Phone<input name="main_office_phone" type="text"
 
 																	class="form-control">
 					</label>
 				</div>
 
 				<div class="row">
-					<label class="col-md-4">Box Office Phone<input name="box_office_phone" type="text"
+					<label class="col-xs-4">Box Office Phone<input name="box_office_phone" type="text"
 
 																   class="form-control">
 					</label>
-					<label class="col-md-4">Fax Phone<input name="fax_phone" type="text"
+					<label class="col-xs-4">Fax Phone<input name="fax_phone" type="text"
 															class="form-control">
 					</label>
-					<label class="col-md-4">Other Phone<input name="other_phone" type="text"
+					<label class="col-xs-4">Other Phone<input name="other_phone" type="text"
 															  class="form-control">
 					</label>
 				</div>
@@ -428,49 +428,49 @@
 			<h4>Ticketing Info</h4>
 			<div class="form-group">
 				<div class="row">
-					<label class="col-md-6">Primary Ticketing Company<select name="primary_ticketing_company_id"
+					<label class="col-xs-6">Primary Ticketing Company<select name="primary_ticketing_company_id"
 																			 class="form-control">
 							<% _.each(app.collections.companies.models, function (a_company) { %>
 							<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
 							<% }); %>
 						</select>
 					</label>
-					<label class="col-md-6">Other Seating Capacity<input name="other_seating_capacity"
+					<label class="col-xs-6">Other Seating Capacity<input name="other_seating_capacity"
 																		 type="number"
 
 																		 class="form-control">
 					</label>
 				</div>
 				<div class="row">
-					<label class="col-md-6">End Stage Seating Capacity<input name="end_stage_seating_capacity"
+					<label class="col-xs-6">End Stage Seating Capacity<input name="end_stage_seating_capacity"
 																			 type="number"
 
 																			 class="form-control">
 					</label>
-					<label class="col-md-6">Full Stage Seating Capacity<input name="full_stage_seating_capacity"
+					<label class="col-xs-6">Full Stage Seating Capacity<input name="full_stage_seating_capacity"
 																			  type="number"
 
 																			  class="form-control">
 					</label>
 				</div>
 				<div class="row">
-					<label class="col-md-6">Half Stage Seating Capacity<input name="half_stage_seating_capacity"
+					<label class="col-xs-6">Half Stage Seating Capacity<input name="half_stage_seating_capacity"
 																			  type="number"
 
 																			  class="form-control">
 					</label>
-					<label class="col-md-6">In The Round Seating Capacity<input name="in_the_round_seating_capacity"
+					<label class="col-xs-6">In The Round Seating Capacity<input name="in_the_round_seating_capacity"
 																				type="number"
 
 																				class="form-control">
 					</label>
 				</div>
 				<div class="row">
-					<label class="col-md-6"><input class="form-control" name="other_seating_capacity_name"
+					<label class="col-xs-6"><input class="form-control" name="other_seating_capacity_name"
 												   type="text" placeholder="Other Seating Capacity..."
 						>
 					</label>
-					<label class="col-md-6"><input class="form-control" name="other_seating_capacity_value"
+					<label class="col-xs-6"><input class="form-control" name="other_seating_capacity_value"
 												   type="number"
 						>
 					</label>
@@ -480,29 +480,29 @@
 			<h4>Links</h4>
 			<div class="form-group">
 				<div class="row">
-					<label class="col-md-6">Web Page<input name="webpage" type="text"
+					<label class="col-xs-6">Web Page<input name="webpage" type="text"
 														   class="form-control">
 					</label>
-					<label class="col-md-6">Facebook<input name="facebook" type="text"
+					<label class="col-xs-6">Facebook<input name="facebook" type="text"
 														   class="form-control">
 					</label>
 				</div>
 				<div class="row">
-					<label class="col-md-6">Yahoo<input name="yahoo" type="text"
+					<label class="col-xs-6">Yahoo<input name="yahoo" type="text"
 														class="form-control">
 					</label>
-					<label class="col-md-6">Linkedin<input name="linkedin" type="text"
+					<label class="col-xs-6">Linkedin<input name="linkedin" type="text"
 														   class="form-control">
 					</label>
 				</div>
 				<div class="row">
-					<label class="col-md-4">Twitter<input name="twitter" type="text"
+					<label class="col-xs-4">Twitter<input name="twitter" type="text"
 														  class="form-control">
 					</label>
-					<label class="col-md-4">Instagram<input name="instagram" type="text"
+					<label class="col-xs-4">Instagram<input name="instagram" type="text"
 															class="form-control">
 					</label>
-					<label class="col-md-4">Google<input name="google" type="text"
+					<label class="col-xs-4">Google<input name="google" type="text"
 														 class="form-control">
 					</label>
 				</div>

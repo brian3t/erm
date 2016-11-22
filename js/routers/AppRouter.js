@@ -20,6 +20,9 @@ app.routers.AppRouter = Backbone.Router.extend({
                 var current_view = Backbone.history.getFragment() == '' ? 'home' : Backbone.history.getFragment();
                 $('div.page').attr('current_view', current_view);
                 element_ready();
+                var nav_bar = $('ul.nav.navbar-nav');
+                nav_bar.find('li').removeClass('active');
+                nav_bar.find('li.menu.' + current_view).addClass('active');
                 return result;
             }
         })(app.slider.slidePage);

@@ -1250,8 +1250,8 @@ body[class*=navbar-bottom] .content {
 *
 * ---------------------------------------------------------------------------- */
 .footer {
-  position: absolute;
-  bottom: 30px;
+  position: fixed;
+  bottom: 30px ;
 }
 .footer:not(.navbar-fixed-bottom) {
   z-index: 1000;
@@ -20100,4 +20100,9 @@ label.display-block {
 .progress-list > li span {
   float: right;
   display: block;
+}
+@media (max-height: 320px){
+  .footer {
+    display: none;
+  }
 }

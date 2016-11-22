@@ -6,6 +6,7 @@ app.views.NavbarView = Backbone.View.extend({
 
     render: function () {
         this.$el.html(this.template(app.cur_user.attributes));
+        this.delegateEvents();
         return this.$el.html();
     },
 
@@ -15,6 +16,7 @@ app.views.NavbarView = Backbone.View.extend({
 
     back: function (event) {
         ratchet_popover_dismiss();
+        document.cookie = "loginstring=";
         app.router.navigate('#', {trigger: true, replace: true});
     }
 });

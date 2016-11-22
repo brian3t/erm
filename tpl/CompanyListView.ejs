@@ -1,17 +1,17 @@
-<div class="col-sm-3">
-	<input type="search" id="company_search" class="col-sm-12" name="company_search" placeholder="Filter companies">
-	<div id="company_search_list" class="col-sm-12">
-
+<div class="col-sm-3 col-xs-12">
+	<input type="search" id="company_search" class="col-xs-12" name="company_search" placeholder="Filter companies">
+	<div id="company_search_list" class="col-xs-12 padded search_list">
+		<br/>
 	</div>
 </div>
-<div class="col-sm-9">
+<div class="col-sm-9 col-xs-12">
 	<div class="action_buttons">
 		<button type="button" class="btn btn-primary toggle_create_mode create"><span
 					class="glyphicon glyphicon-plus"></span> Create new Company
 		</button>
 	</div>
 	<hr>
-	<div id="company_form_wrapper" class="col-sm-12 form_wrapper">
+	<div id="company_form_wrapper" class="col-xs-12 form_wrapper">
 	</div>
 	<div id="create_company" style="display: none">
 		<form class="account_info create" action="#" data-model="company" data-toggle="validator" data-disable=true
@@ -19,26 +19,30 @@
 
 			<div class="form-group">
 				<div class="row">
-					<label class="col-md-6">Company Name<input name="name"  type="text"
+					<label class="col-xs-6">Company Name<input name="name" type="text"
 															   class="form-control">
 					</label>
-					<label class="col-md-6">Line of Business <select name="line_of_business" class="form-control">
+					<label class="col-xs-6">Line of Business <select name="line_of_business" class="form-control">
 							<option value=""></option>
-							<option value="Management">Management</option>
+							<option value=""></option>
 							<option value="Agency">Agency</option>
-							<option value="Promotion Venue">Promotion Venue</option>
-							<option value="Network">Network</option>
-							<option value="Studio">Studio</option>
-							<option value="Public Relations">Public Relations</option>
-							<option value="Consulting">Consulting</option>
-							<option value="Talent">Talent</option>
-							<option value="Client">Client</option>
-							<option value="Production Company">Production Company</option>
-							<option value="Photography">Photography</option>
-							<option value="Editing">Editing</option>
+							<option value="Artist">Artist</option>
 							<option value="Business Management">Business Management</option>
-							<option value="Tour Management">Tour Management</option>
+							<option value="Client">Client</option>
+							<option value="Consulting">Consulting</option>
+							<option value="Editing">Editing</option>
+							<option value="Management">Management</option>
+							<option value="Merchandise">Merchandise</option>
+							<option value="Network">Network</option>
 							<option value="Personal">Personal</option>
+							<option value="Photography">Photography</option>
+							<option value="Production Company">Production Company</option>
+							<option value="Promotion">Promotion</option>
+							<option value="Public Relations">Public Relations</option>
+							<option value="Studio">Studio</option>
+							<option value="Ticketing">Ticketing</option>
+							<option value="Tour Management">Tour Management</option>
+							<option value="Venue">Venue</option>
 							<option value="Other">Other</option>
 						</select>
 					</label>
@@ -47,7 +51,40 @@
 
 			<div class="form-group">
 				<div class="row">
-					<label class="col-md-6">General Email <input name="general_email"  type="text"
+					<label class="col-xs-6">General Email <input name="general_email" type="text"
+																 class="form-control">
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-6">Address 1 <input name="address1" type="text"
+															 class="form-control">
+					</label>
+					<label class="col-xs-6">Address 2 <input name="address2" type="text"
+															 class="form-control">
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-6">Zip/Postal Code<input name="postal_code" type="text"
+																  class="form-control">
+					</label>
+					<label class="col-xs-6">City <input name="city" type="text"
+														class="form-control">
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-6">State<input name="state" type="text"
+														class="form-control">
+					</label>
+					<label class="col-xs-6">Country/Region <input name="country" type="text"
 																  class="form-control">
 					</label>
 				</div>
@@ -55,93 +92,60 @@
 
 			<div class="form-group">
 				<div class="row">
-					<label class="col-md-6">Address 1 <input name="address1"  type="text"
-															  class="form-control">
-					</label>
-					<label class="col-md-6">Address 2 <input name="address2"  type="text"
-															  class="form-control">
-					</label>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="row">
-					<label class="col-md-6">Zip/Postal Code<input name="postal_code"  type="text"
-																   class="form-control">
-					</label>
-					<label class="col-md-6">City <input name="city"  type="text"
-														 class="form-control">
-					</label>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="row">
-					<label class="col-md-6">State<input name="state"  type="text"
-														 class="form-control">
-					</label>
-					<label class="col-md-6">Country/Region <input name="country"  type="text"
-																   class="form-control">
-					</label>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="row">
-					<label class="col-md-6">Work Phone<input name="work_phone"  type="text"
-															  class="form-control">
-					</label>
-					<label class="col-md-6">Fax <input name="fax"  type="text"
-													    class="form-control">
-					</label>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="row">
-					<label class="col-md-6">Web Page<input name="webpage"  type="text"
-														    class="form-control">
-					</label>
-					<label class="col-md-6">Facebook <input name="facebook"  type="text"
+					<label class="col-xs-6">Work Phone<input name="work_phone" type="text"
 															 class="form-control">
 					</label>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="row">
-					<label class="col-md-6">Yahoo <input name="yahoo"  type="text"
-														  class="form-control">
-					</label>
-					<label class="col-md-6">LinkedIn <input name="linkedin_company_page"  type="text"
-															 class="form-control">
+					<label class="col-xs-6">Fax <input name="fax" type="text"
+													   class="form-control">
 					</label>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<div class="row">
-					<label class="col-md-6">Twitter <input name="twitter"  type="text"
-														    class="form-control">
-					</label>
-					<label class="col-md-6">Instagram <input name="instagram"  type="text"
-															  class="form-control">
-					</label>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="row">
-					<label class="col-md-6">Google <input name="google"  type="text"
+					<label class="col-xs-6">Web Page<input name="webpage" type="text"
 														   class="form-control">
 					</label>
+					<label class="col-xs-6">Facebook <input name="facebook" type="text"
+															class="form-control">
+					</label>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<div class="row">
-					<label class="col-md-12">Notes <textarea name="note"  type="text"
-															  class="form-control"></textarea>
+					<label class="col-xs-6">Yahoo <input name="yahoo" type="text"
+														 class="form-control">
+					</label>
+					<label class="col-xs-6">LinkedIn <input name="linkedin_company_page" type="text"
+															class="form-control">
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-6">Twitter <input name="twitter" type="text"
+														   class="form-control">
+					</label>
+					<label class="col-xs-6">Instagram <input name="instagram" type="text"
+															 class="form-control">
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-6">Google <input name="google" type="text"
+														  class="form-control">
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-12">Notes <textarea name="note" type="text"
+															 class="form-control"></textarea>
 					</label>
 				</div>
 			</div>

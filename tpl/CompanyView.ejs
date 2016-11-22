@@ -5,27 +5,31 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-md-6">Company Name<input name="name" disabled type="text"
+			<label class="col-xs-6">Company Name<input name="name" disabled type="text"
 													   value="<%= name %>"
 													   class="form-control">
 			</label>
-			<label class="col-md-6">Line of Business <select name="line_of_business" disabled class="form-control">
+			<label class="col-xs-6">Line of Business <select name="line_of_business" disabled class="form-control">
 					<option value=""></option>
-					<option value="Management">Management</option>
+					<option value=""></option>
 					<option value="Agency">Agency</option>
-					<option value="Promotion Venue">Promotion Venue</option>
-					<option value="Network">Network</option>
-					<option value="Studio">Studio</option>
-					<option value="Public Relations">Public Relations</option>
-					<option value="Consulting">Consulting</option>
-					<option value="Talent">Talent</option>
-					<option value="Client">Client</option>
-					<option value="Production Company">Production Company</option>
-					<option value="Photography">Photography</option>
-					<option value="Editing">Editing</option>
+					<option value="Artist">Artist</option>
 					<option value="Business Management">Business Management</option>
-					<option value="Tour Management">Tour Management</option>
+					<option value="Client">Client</option>
+					<option value="Consulting">Consulting</option>
+					<option value="Editing">Editing</option>
+					<option value="Management">Management</option>
+					<option value="Merchandise">Merchandise</option>
+					<option value="Network">Network</option>
 					<option value="Personal">Personal</option>
+					<option value="Photography">Photography</option>
+					<option value="Production Company">Production Company</option>
+					<option value="Promotion">Promotion</option>
+					<option value="Public Relations">Public Relations</option>
+					<option value="Studio">Studio</option>
+					<option value="Ticketing">Ticketing</option>
+					<option value="Tour Management">Tour Management</option>
+					<option value="Venue">Venue</option>
 					<option value="Other">Other</option>
 				</select>
 			</label>
@@ -34,7 +38,7 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-md-6">General Email <input name="general_email" disabled type="text"
+			<label class="col-xs-6">General Email <input name="general_email" disabled type="text"
 														 value="<%= general_email %>" class="form-control">
 			</label>
 		</div>
@@ -42,10 +46,10 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-md-6">Address 1 <input name="address1" disabled type="text"
+			<label class="col-xs-6">Address 1 <input name="address1" disabled type="text"
 													 value="<%= address1 %>" class="form-control">
 			</label>
-			<label class="col-md-6">Address 2 <input name="address2" disabled type="text"
+			<label class="col-xs-6">Address 2 <input name="address2" disabled type="text"
 													 value="<%= address2 %>" class="form-control">
 			</label>
 		</div>
@@ -53,10 +57,10 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-md-6">Zip/Postal Code<input name="postal_code" disabled type="text"
+			<label class="col-xs-6">Zip/Postal Code<input name="postal_code" disabled type="text"
 														  value="<%= postal_code %>" class="form-control">
 			</label>
-			<label class="col-md-6">City <input name="city" disabled type="text"
+			<label class="col-xs-6">City <input name="city" disabled type="text"
 												value="<%= city %>" class="form-control">
 			</label>
 		</div>
@@ -64,10 +68,10 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-md-6">State<input name="state" disabled type="text"
+			<label class="col-xs-6">State<input name="state" disabled type="text"
 												value="<%= state %>" class="form-control">
 			</label>
-			<label class="col-md-6">Country/Region <input name="country" disabled type="text"
+			<label class="col-xs-6">Country/Region <input name="country" disabled type="text"
 														  value="<%= country %>" class="form-control">
 			</label>
 		</div>
@@ -75,10 +79,10 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-md-6">Work Phone<input name="work_phone" disabled type="text"
+			<label class="col-xs-6">Work Phone<input name="work_phone" disabled type="text"
 													 value="<%= work_phone %>" class="form-control">
 			</label>
-			<label class="col-md-6">Fax <input name="fax" disabled type="text"
+			<label class="col-xs-6">Fax <input name="fax" disabled type="text"
 											   value="<%= fax %>" class="form-control">
 			</label>
 		</div>
@@ -86,10 +90,10 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-md-6">Web Page<input name="webpage" disabled type="text"
+			<label class="col-xs-6">Web Page<input name="webpage" disabled type="text"
 												   value="<%= webpage %>" class="form-control">
 			</label>
-			<label class="col-md-6">Facebook <input name="facebook" disabled type="text"
+			<label class="col-xs-6">Facebook <input name="facebook" disabled type="text"
 													value="<%= facebook %>" class="form-control">
 			</label>
 		</div>
@@ -97,10 +101,10 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-md-6">Yahoo <input name="yahoo" disabled type="text"
+			<label class="col-xs-6">Yahoo <input name="yahoo" disabled type="text"
 												 value="<%= yahoo %>" class="form-control">
 			</label>
-			<label class="col-md-6">LinkedIn <input name="linkedin_company_page" disabled type="text"
+			<label class="col-xs-6">LinkedIn <input name="linkedin_company_page" disabled type="text"
 													value="<%= linkedin_company_page %>" class="form-control">
 			</label>
 		</div>
@@ -108,10 +112,10 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-md-6">Twitter <input name="twitter" disabled type="text"
+			<label class="col-xs-6">Twitter <input name="twitter" disabled type="text"
 												   value="<%= twitter %>" class="form-control">
 			</label>
-			<label class="col-md-6">Instagram <input name="instagram" disabled type="text"
+			<label class="col-xs-6">Instagram <input name="instagram" disabled type="text"
 													 value="<%= instagram %>" class="form-control">
 			</label>
 		</div>
@@ -119,7 +123,7 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-md-6">Google <input name="google" disabled type="text"
+			<label class="col-xs-6">Google <input name="google" disabled type="text"
 												  value="<%= google %>" class="form-control">
 			</label>
 		</div>
@@ -127,7 +131,7 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-md-12">Notes <textarea name="note" disabled type="text"
+			<label class="col-xs-12">Notes <textarea name="note" disabled type="text"
 													 value="<%= note %>" class="form-control"><%= note %></textarea>
 			</label>
 		</div>

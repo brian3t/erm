@@ -111,7 +111,7 @@ app.views.VenueListView = Backbone.View.extend({
 app.views.VenueSearchListView = Backbone.View.extend({
     tagName: "table",
     collection: {},
-    className: "table-responsive item_list",
+    className: "table table-responsive item_list",
     initialize: function () {
         this.listenTo(this.collection, 'change reset add remove', this.render);
         this.listenTo(this.collection, 'destroy', this.close)
@@ -126,6 +126,7 @@ app.views.VenueSearchListView = Backbone.View.extend({
             return (name.toLowerCase().indexOf(self.text_to_filter) != -1);
         });
         this.$el.html(this.template({collection: models}));
+        this.delegateEvents();
         return this.el;
     },
     after_render: function () {

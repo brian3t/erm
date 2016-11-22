@@ -14,6 +14,10 @@ app.models.Company = Backbone.RelationalModel.extend({
 app.collections.Company = Backbone.Collection.extend({
     model: app.models.Company,
     initialize: function () {
-        this.url = config.restUrl + 'company';
+        var param = {};
+        if (!_.isEmpty(app.cur_user.get('company').get('id'))){
+            param['company_id'] = app.cur_user.get('company').get('id');
+        }
+        this.url = config.restUrl + 'company?' +  $.param(param);
     }
 });
