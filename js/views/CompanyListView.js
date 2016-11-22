@@ -47,7 +47,6 @@ app.views.CompanyListView = Backbone.View.extend({
             success: function (new_model) {
                 self.toggle_create_item();
                 self.collection.add(new_model);
-                app_alert('New Company added');
             }, error: function (response) {
                 app_alert('There is an error saving this company. Please contact support for more information');
             }

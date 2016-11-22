@@ -49,7 +49,6 @@ app.views.UserListView = Backbone.View.extend({
             success: function (new_model) {
                 self.toggle_create_item();
                 self.collection.add(new_model);
-                app_alert('Contact added');
             }, error: function (response) {
                 app_alert('There is an error saving this contact. Please contact support for more information');
             }
