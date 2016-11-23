@@ -14,7 +14,14 @@ app.views.HomeView = Backbone.View.extend({
             $('#login-form').validator();
         },
         events: {
-            "click #signin ": "login"
+            "click #signin ": "login",
+            'keydown': 'keyAction'
+        },
+        keyAction: function(e) {
+            var code = e.keyCode || e.which;
+            if(code == 13) {
+                this.login();
+            }
         },
         login: function () {
             var homeview_class = app.views.HomeView;
