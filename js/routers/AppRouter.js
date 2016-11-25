@@ -81,6 +81,8 @@ app.routers.AppRouter = Backbone.Router.extend({
         } else {
             console.log('reusing contactView view');
             app.contactView.delegateEvents(); // delegate events when the view is recycled
+            app.contactView.user_list_view.delegateEvents();
+            app.contactView.user_list_view.user_form_view.delegateEvents();
         }
         app.slider.slidePage(app.contactView.$el);
         app.contactView.dom_ready();
@@ -93,6 +95,8 @@ app.routers.AppRouter = Backbone.Router.extend({
         } else {
             console.log('reusing venuesView view');
             app.venuesView.delegateEvents(); // delegate events when the view is recycled
+            app.venuesView.venue_list_view.delegateEvents();
+            app.venuesView.venue_list_view.venue_form_view.delegateEvents();
         }
         app.slider.slidePage(app.venuesView.$el);
         app.venuesView.dom_ready();
@@ -105,6 +109,8 @@ app.routers.AppRouter = Backbone.Router.extend({
         } else {
             console.log('reusing companiesView view');
             app.companiesView.delegateEvents(); // delegate events when the view is recycled
+            app.companiesView.company_list_view.delegateEvents();
+            app.companiesView.company_list_view.company_form_view.delegateEvents();
         }
         app.slider.slidePage(app.companiesView.$el);
         app.companiesView.dom_ready();

@@ -4,14 +4,15 @@
 		<br/>
 	</div>
 </div>
-<div class="col-sm-9 col-xs-12">
+<div class="col-sm-9 col-xs-12 form_wrapper">
 	<div class="action_buttons">
 		<button type="button" class="btn btn-primary toggle_create_mode create"><span
 					class="glyphicon glyphicon-plus"></span> Create new Company
 		</button>
+		<label><input class="edit_switch" type="checkbox">&nbsp;Edit mode is <span class="toggle_state">off</span></label>
 	</div>
 	<hr>
-	<div id="company_form_wrapper" class="col-xs-12 form_wrapper">
+	<div id="company_form_wrapper" class="col-xs-12 edit_form_wrapper">
 	</div>
 	<div id="create_company" style="display: none">
 		<form class="account_info create" action="#" data-model="company" data-toggle="validator" data-disable=true

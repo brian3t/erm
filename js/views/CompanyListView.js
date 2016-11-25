@@ -11,6 +11,7 @@ app.views.CompanyListView = Backbone.View.extend({
     $save_btn: {},
     $reset_btn: {},
     $cancel_btn: {},
+    switchery: {},
 
     initialize: function () {
         this.collection = app.collections.companies;
@@ -25,7 +26,23 @@ app.views.CompanyListView = Backbone.View.extend({
         "click button.toggle_create_mode": "toggle_create_item",
         "click button.reset": "reset_form",
         "click button.save": "save_form",
-        "click button.delete": "delete_model"
+        "click button.delete": "delete_model",
+        "change .edit_switch": "toggle_edit_mode"
+    },
+    toggle_edit_mode: function (e) {
+        var $e = $(e.currentTarget);
+        var span_text = $e.parentsUntil('div.row').find('span.toggle_state');
+        var is_checked = $e.prop('checked');
+        var $form = $($e.parentsUntil('.form_wrapper').parent().find('.edit_form_wrapper form.edit'));
+        $form.find('button.delete').toggle();
+        if (is_checked) {
+            span_text.text('on');
+            $($form.find(':input')).removeAttr('disabled');
+        }
+        else {
+            span_text.text('off');
+            $($form.find(':input')).prop('disabled', true);
+        }
     },
     toggle_create_item: function () {
         this.$create_btn.toggle();
@@ -94,6 +111,8 @@ app.views.CompanyListView = Backbone.View.extend({
         }
         this.$el.find('#company_search_list').html(this.company_search_list_view.render());
         this.company_search_list_view.after_render();
+        var edit_switch = this.$el.find('.edit_switch');
+        this.switchery = new Switchery(edit_switch[0]);
         this.delegateEvents();
         return this.el;
     },
@@ -139,8 +158,7 @@ app.views.CompanyView = Backbone.View.extend({
     model: app.models.Company,
     events: {
         "blur .edit": "update_ajax",
-        "change .multi_select": "update_ajax",
-        "change .edit_switch": "toggle_edit_mode"
+        "change .multi_select": "update_ajax"
     },
     update_ajax: function (e) {
         var target = $(e.target);
@@ -170,21 +188,6 @@ app.views.CompanyView = Backbone.View.extend({
             }
         });
     },
-    toggle_edit_mode: function (e) {
-        var $e = $(e.currentTarget);
-        var span_text = $e.parentsUntil('div.row').find('span.toggle_state');
-        var is_checked = $e.prop('checked');
-        var $form = $($e.parentsUntil('.form_wrapper').find('form'));
-        $form.find('button.delete').toggle();
-        if (is_checked) {
-            span_text.text('on');
-            $($form.find(':input')).removeAttr('disabled');
-        }
-        else {
-            span_text.text('off');
-            $($form.find(':input')).prop('disabled', true);
-        }
-    },
     initialize: function () {
         this.delegateEvents();
     },
@@ -195,11 +198,9 @@ app.views.CompanyView = Backbone.View.extend({
         _.each(selects, function (e) {
             $(e).val(this.model.get($(e).prop('name')));
         }, this);
-        return this.el;
+        return this.$el;
     },
     after_render: function () {
-        var $edit_switch = this.$el.find('.edit_switch');
-        $($edit_switch).bootstrapToggle();
         $(this.$el.find('.multi_select')).select2();
         $(this.$el.find('form[data-toggle="validator"]')).validator();
         this.delegateEvents();
