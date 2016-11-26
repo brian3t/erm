@@ -12,7 +12,6 @@ if (IS_LOCAL) {
     config.apiUrl = 'https://api.ermlocal/'
 }
 var backboneInit = function () {
-
     app.utils.templates.load(["NavbarView", "HomeView", "MyAccountSettingView", "AccountSettingView", "DashboardView",
         "ContactView", "UserListView", "UserSearchListView", "UserView",
         "VenuesView", "VenueListView", "VenueSearchListView", "VenueView",
