@@ -18,14 +18,15 @@ app.views.UserListView = Backbone.View.extend({
         var span_text = $e.parentsUntil('div.row').find('span.toggle_state');
         var is_checked = $e.prop('checked');
         var $form = $($e.parentsUntil('.form_wrapper').parent().find('.edit_form_wrapper form.edit'));
-        $form.find('button.delete').toggle();
         if (is_checked) {
             span_text.text('on');
             $($form.find(':input')).removeAttr('disabled');
+            this.$el.find('button.delete').show();
         }
         else {
             span_text.text('off');
             $($form.find(':input')).prop('disabled', true);
+            this.$el.find('button.delete').hide();
         }
     },
     initialize: function () {

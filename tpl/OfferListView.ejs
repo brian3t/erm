@@ -1,0 +1,44 @@
+<div class="col-sm-3 col-xs-12">
+	<input type="search" id="offer_search" class="col-xs-12" name="offer_search" placeholder="Filter offers">
+	<div id="offer_search_list" class="col-xs-12 padded search_list">
+		<br/>
+	</div>
+</div>
+<div class="col-sm-9 col-xs-12 form_wrapper">
+	<div class="action_buttons">
+		<button type="button" class="btn btn-primary toggle_create_mode create"><span
+					class="glyphicon glyphicon-plus"></span> Create new Offer
+		</button>
+		<label><input class="edit_switch" type="checkbox">&nbsp;Edit mode is <span class="toggle_state">off</span></label>
+	</div>
+	<hr>
+	<div id="offer_form_wrapper" class="col-xs-12 edit_form_wrapper">
+	</div>
+	<div id="create_offer" style="display: none">
+		<form class="account_info create" action="#" data-model="offer" data-toggle="validator" data-disable=true
+			  role="form">
+
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-6">Offer Event ID<input name="event_id" type="text"
+																 class="form-control">
+					</label>
+				</div>
+			</div>
+
+
+			<div class="action_buttons">
+				<button type="submit" class="btn btn-primary save" style="display: none"><span
+							class="glyphicon glyphicon-floppy-save"
+					></span> Save
+				</button>
+				<button type="button" class="btn btn-default reset" style="display: none"><span
+							class="glyphicon glyphicon-repeat"
+					></span> Reset Form
+				</button>
+				<button type="button" class="btn btn-default toggle_create_mode cancel" style="display: none">Cancel</button>
+			</div>
+		</form>
+
+	</div>
+</div>

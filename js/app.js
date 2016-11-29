@@ -15,7 +15,8 @@ var backboneInit = function () {
     app.utils.templates.load(["NavbarView", "HomeView", "MyAccountSettingView", "AccountSettingView", "DashboardView",
         "ContactView", "UserListView", "UserSearchListView", "UserView",
         "VenuesView", "VenueListView", "VenueSearchListView", "VenueView",
-        "CompaniesView", "CompanyListView", "CompanySearchListView", "CompanyView"], function () {
+        "CompaniesView", "CompanyListView", "CompanySearchListView", "CompanyView",
+        "OffersView", "OfferListView", "OfferSearchListView", "OfferView"], function () {
         app.router = new app.routers.AppRouter();
         Backbone.history.stop();
 
@@ -62,6 +63,8 @@ var backboneInit = function () {
     isInWeb = (typeof isInWeb !== "boolean" ? "true" : isInWeb);
     app.collections.companies = new app.collections.Company();
     app.collections.companies.fetch();
+    app.collections.offers = new app.collections.Offer();
+    app.collections.offers.fetch();
 };
 var capp = {
     initialize: function () {

@@ -1,7 +1,7 @@
 /*
- A list of Venues. With search box and list of items on the left
+ A list of Offers. With search box and list of items on the left
  */
-app.views.VenueListView = Backbone.View.extend({
+app.views.OfferListView = Backbone.View.extend({
     tagName: 'div',
     className: 'container row panel-body',
     collection: {},
@@ -14,15 +14,15 @@ app.views.VenueListView = Backbone.View.extend({
     switchery: {},
 
     initialize: function () {
-        this.collection = new app.models.Venue_collection();
+        this.collection = app.collections.offers;
         this.collection.fetch();
-        this.venue_search_list_view = new app.views.VenueSearchListView({collection: this.collection});
-        this.venue_form_view = new app.views.VenueView();
+        this.offer_search_list_view = new app.views.OfferSearchListView({collection: this.collection});
+        this.offer_form_view = new app.views.OfferView();
         this.listenTo(this.collection, 'update', this.render);
     },
     events: {
         "click a.select_item": "select_item",
-        "keyup #venue_search": "filter_item",
+        "keyup #offer_search": "filter_item",
         "click button.toggle_create_mode": "toggle_create_item",
         "click button.reset": "reset_form",
         "click button.save": "save_form",
@@ -50,33 +50,33 @@ app.views.VenueListView = Backbone.View.extend({
         this.$save_btn.toggle();
         this.$reset_btn.toggle();
         this.$cancel_btn.toggle();
-        this.$el.find('#venue_form_wrapper').toggle();
-        this.$el.find('#create_venue').toggle();
+        this.$el.find('#offer_form_wrapper').toggle();
+        this.$el.find('#create_offer').toggle();
         this.reset_form();
     },
     save_form: function (e) {
         e.preventDefault();
-        var $form = $(this.$el.find('#create_venue > form'));
+        var $form = $(this.$el.find('#create_offer > form'));
         var form_data = flat_array_to_assoc($form.serializeArray());
-        var new_venue = new app.models.Venue();
-        // new_venue.setOrganizer(app.cur_venue.get('company'));
+        var new_offer = new app.models.Offer();
+        // new_offer.setOrganizer(app.cur_offer.get('offer'));
         var self = this;
-        new_venue.save(form_data, {
+        new_offer.save(form_data, {
             success: function (new_model) {
                 self.toggle_create_item();
                 self.collection.add(new_model);
             }, error: function (response) {
-                app_alert('There is an error saving this venue. Please contact support for more information');
+                app_alert('There is an error saving this offer. Please contact support for more information');
             }
         });
     },
     reset_form: function () {
-        this.$el.find('#create_venue > form').trigger('reset');
+        this.$el.find('#create_offer > form').trigger('reset');
         $('.multi_select').select2('val', null);
     },
     delete_model: function (e) {
         var self = this;
-        app_confirm("Are you sure to delete this venue?", function (response) {
+        app_confirm("Are you sure to delete this offer?", function (response) {
             if (response == true || response == 1) {
                 var cur_model = self.collection.at(self.cur_model_index);
                 self.collection.remove(cur_model);
@@ -85,49 +85,49 @@ app.views.VenueListView = Backbone.View.extend({
         });
     },
     filter_item: function (e) {
-        this.venue_search_list_view.text_to_filter = e.currentTarget.value.toLowerCase();
-        this.venue_search_list_view.render();
-        this.venue_search_list_view.after_render();
+        this.offer_search_list_view.text_to_filter = e.currentTarget.value.toLowerCase();
+        this.offer_search_list_view.render();
+        this.offer_search_list_view.after_render();
     },
     select_item: function (e) {
         var $target = $(e.currentTarget);
         this.cur_model_index = $target.data('index');
-        this.venue_form_view.model = this.collection.at(this.cur_model_index);
-        this.venue_form_view.render();
-        this.venue_form_view.after_render();
+        this.offer_form_view.model = this.collection.at(this.cur_model_index);
+        this.offer_form_view.render();
+        this.offer_form_view.after_render();
     }
     ,
-    venue_form_view: {},
-    venue_search_list_view: {},
+    offer_form_view: {},
+    offer_search_list_view: {},
     render: function () {
         this.$el.empty();
-        //get first venue in collection
-        var first_venue = this.collection.first();
+        //get first offer in collection
+        var first_offer = this.collection.first();
         this.$el.html(this.template());
-        if (_.isObject(first_venue)) {
+        if (_.isObject(first_offer)) {
             this.cur_model_index = 0;
-            this.venue_form_view.model = first_venue;
-            $('#venue_form_wrapper').html(this.venue_form_view.render());
-            this.venue_form_view.after_render();
+            this.offer_form_view.model = first_offer;
+            $(this.$el.find('#offer_form_wrapper')).html(this.offer_form_view.render());
+            this.offer_form_view.after_render();
         }
-        this.$el.find('#venue_search_list').html(this.venue_search_list_view.render());
-        this.venue_search_list_view.after_render();
+        this.$el.find('#offer_search_list').html(this.offer_search_list_view.render());
+        this.offer_search_list_view.after_render();
         var edit_switch = this.$el.find('.edit_switch');
         this.switchery = new Switchery(edit_switch[0]);
         this.delegateEvents();
-        this.$action_btns = $('.action_buttons');
+        return this.el;
+    },
+    after_render: function () {
+        this.$action_btns = $(this.$el.find('.action_buttons'));
         this.$create_btn = this.$action_btns.find('.create');
         this.$save_btn = this.$action_btns.find('.save');
         this.$reset_btn = this.$action_btns.find('.reset');
         this.$cancel_btn = this.$action_btns.find('.cancel');
-        return this.el;
-    },
-    after_render: function () {
         this.delegateEvents();
     }
 });
 
-app.views.VenueSearchListView = Backbone.View.extend({
+app.views.OfferSearchListView = Backbone.View.extend({
     tagName: "table",
     collection: {},
     className: "table table-responsive item_list",
@@ -141,8 +141,8 @@ app.views.VenueSearchListView = Backbone.View.extend({
         var models = this.collection;
         models = models.filter(function (v) {
             if (this.text_to_filter == '') return true;
-            var name = v.get('name');
-            return (name.toLowerCase().indexOf(self.text_to_filter) != -1);
+            var booked_by = v.get('user');
+            return true;//todob implement filter here
         });
         this.$el.html(this.template({collection: models}));
         this.delegateEvents();
@@ -152,14 +152,14 @@ app.views.VenueSearchListView = Backbone.View.extend({
         this.delegateEvents();
     }
 });
-app.views.VenueView = Backbone.View.extend({
+app.views.OfferView = Backbone.View.extend({
     tagName: "div",
-    id: "venue_form",
+    id: "offer_form",
     className: "col-sm-12",
-    model: app.models.Venue,
+    model: app.models.Offer,
     events: {
         "blur .edit": "update_ajax",
-        "change .multi_select": "update_ajax",
+        "change .multi_select": "update_ajax"
     },
     update_ajax: function (e) {
         var target = $(e.target);
@@ -168,7 +168,7 @@ app.views.VenueView = Backbone.View.extend({
         }
         var is_multi_select = target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple');
         var form = target.parents('form');
-        var model = form.data('model');//venue
+        var model = form.data('model');//offer
         var new_attr = {};
         new_attr[target.prop('name')] = target.val();
         if (!is_multi_select) {
@@ -202,10 +202,8 @@ app.views.VenueView = Backbone.View.extend({
         return this.$el;
     },
     after_render: function () {
-        var $edit_switch = $('.edit_switch');
-        // $edit_switch.bootstrapToggle();
-        $('.multi_select').select2();
-        $('form[data-toggle="validator"]').validator();
+        $(this.$el.find('.multi_select')).select2();
+        $(this.$el.find('form[data-toggle="validator"]')).validator();
         this.delegateEvents();
     }
 

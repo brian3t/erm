@@ -1,0 +1,13 @@
+    <!--<thead>-->
+    <!--<tr>-->
+    <!--<th>Username</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <tbody>
+    <% _.each(collection, function(offer,i){ %>
+        <tr>
+            <td><a class="select_item" data-index="<%= i %>"><%= offer.get('event_id') %></a></td>
+        </tr>
+    <% }); %>
+
+    </tbody>
