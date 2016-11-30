@@ -3,11 +3,97 @@
 	<div class="form-group">
 		<div class="row">
 			<label class="col-xs-6">Offer Event ID<input name="event_id" disabled type="text"
-													   value="<%= event_id %>"
-													   class="form-control">
+														 value="<%= event_id %>"
+														 class="form-control">
+			</label>
+			<label class="col-xs-6">Show# <br/><input name="show_number" disabled type="text"
+													  value="<%= show_number %>"
+													  class=""> of <input name="show_total_num" disabled type="text"
+																		  value="<%= show_total_num %>"
+																		  class="">
+			</label>
+		</div>
+		<div class="row">
+			<label class="col-xs-4">Agency<select name="agency_id" disabled type="text"
+												  value="<%= agency_id %>"
+												  class="form-control">
+					<% _.each(app.collections.companies.models, function (a_company) { %>
+					<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
+					<% }); %>
+				</select>
+			</label>
+
+			<label class="col-xs-4">Agent<select name="agent_id" disabled type="text"
+												 value="<%= agent_id %>"
+												 class="form-control">
+					<% _.each(app.collections.agents.models, function (an_agent) { %>
+					<option value="<%= an_agent.get('id') %>"><%= an_agent.get('name') %></option>
+					<% }); %>
+				</select>
+			</label>
+			<label class="col-xs-4">Status<select name="status" disabled
+												  value="<%= status %>"
+												  class="form-control">
+					<option value=""></option>
+					<option value="New">New</option>
+					<option value="Submitted">Submitted</option>
+					<option value="Pending">Pending</option>
+					<option value="Reviewed">Reviewed</option>
+					<option value="Declined">Declined</option>
+					<option value="Confirmed">Confirmed</option>
+					<option value="Revised">Revised</option>
+					<option value="Signed">Signed</option>
+					<option value="Unsubmitted">Unsubmitted</option>
+				</select>
+			</label>
+
+		</div>
+		<div class="row">
+			<label class="col-xs-6">Created<input name="created_at" disabled readonly type="text"
+												  value="<%= created_at %>"
+												  class="form-control">
+			</label>
+			<label class="col-xs-6">Revised<input name="updated_at" disabled readonly type="text"
+												  value="<%= updated_at %>"
+												  class="form-control">
+			</label>
+		</div>
+		<div class="row">
+			<label class="col-xs-6">Booked By<input name="user_id" disabled readonly type="text"
+													value="<%= app.cur_user.getFullName() %>"
+													class="form-control">
+			</label>
+			<label class="col-xs-6">Offer Type<select name="offer_type" disabled type="text"
+													  value="<%= offer_type %>"
+													  class="form-control">
+					<option value=""></option>
+					<option value="Icon">Icon</option>
+					<option value="Co-Pro Promoter">Co-Pro Promoter</option>
+					<option value="Co-Pro Venue">Co-Pro Venue</option>
+					<option value="3rd Party">3rd Party</option>
+				</select>
+			</label>
+		</div>
+		<div class="row">
+			<label class="col-xs-6">Co-Pro Promoter<select name="copro_promoter_id" disabled
+													value="<%= copro_promoter_id %>"
+													class="form-control">
+					<% _.each(app.collections.promoters.models, function (an_agent) { %>
+					<option value="<%= an_agent.get('id') %>"><%= an_agent.get('name') %></option>
+					<% }); %>
+				</select>
+			</label>
+			<label class="col-xs-6">Offer Type<select name="offer_type" disabled type="text"
+													  value="<%= offer_type %>"
+													  class="form-control">
+					<option value=""></option>
+					<option value="Icon">Icon</option>
+					<option value="Co-Pro Promoter">Co-Pro Promoter</option>
+					<option value="Co-Pro Venue">Co-Pro Venue</option>
+					<option value="3rd Party">3rd Party</option>
+				</select>
 			</label>
 		</div>
 	</div>
-
 	<button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Offer</button>
 </form>

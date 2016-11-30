@@ -65,6 +65,12 @@ var backboneInit = function () {
     app.collections.companies.fetch();
     app.collections.offers = new app.collections.Offer();
     app.collections.offers.fetch();
+    app.collections.agents = new app.models.User_collection();
+    app.collections.agents.url = config.restUrl + 'user?' + $.param({'line_of_business': 'Agency'});//param here to get agents only
+    app.collections.agents.fetch();
+    app.collections.promoters = new app.collections.Company();
+    app.collections.promoters.url = config.restUrl + 'company?' + $.param({'line_of_business': 'Promotion Venue'});//param here to get promoters only
+    app.collections.promoters.fetch();
 };
 var capp = {
     initialize: function () {
@@ -156,11 +162,11 @@ else {
 
         event.eventName = "deviceready";
 
-        if (document.createEvent) {
-            document.dispatchEvent(event);
-        } else {
-            document.fireEvent("on" + event.eventType, event);
-        }
+        // if (document.createEvent) {
+        //     document.dispatchEvent(event);
+        // } else {
+        //     document.fireEvent("on" + event.eventType, event);
+        // }
     });
     capp.initialize();
 }
