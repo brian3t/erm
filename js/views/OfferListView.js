@@ -182,7 +182,7 @@ app.views.OfferView = Backbone.View.extend({
                 }
                 target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
                 setTimeout(function () {
-                    target.prevAll('span.glyphicon-ok-circle').fadeOut(1400);
+                    target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
                 }, 2000);
             }, error: function () {
                 target.prevAll('span.glyphicon-upload').remove();

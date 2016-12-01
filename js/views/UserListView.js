@@ -30,7 +30,7 @@ app.views.UserListView = Backbone.View.extend({
         }
     },
     initialize: function () {
-        this.collection = new app.models.User_collection();
+        this.collection = new app.collections.User_collection();
         this.collection.fetch();
         this.user_search_list_view = new app.views.UserSearchListView({collection: this.collection});
         this.user_form_view = new app.views.UserView();
@@ -184,7 +184,7 @@ app.views.UserView = Backbone.View.extend({
                 }
                 target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
                 setTimeout(function () {
-                    target.prevAll('span.glyphicon-ok-circle').fadeOut(1400);
+                    target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
                 }, 2000);
             }, error: function () {
                 target.prevAll('span.glyphicon-upload').remove();

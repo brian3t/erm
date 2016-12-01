@@ -639,3 +639,8 @@ $("input").keypress(function(event) {
         $("form").submit();
     }
 });
+function rebind_html_elements() {
+    $('input[type="checkbox"]').on('change', function (e) {
+        $(this).val($(this).prop('checked')?1:0);
+    });
+}

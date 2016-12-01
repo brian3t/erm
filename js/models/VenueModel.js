@@ -27,9 +27,9 @@ app.models.Venue = Backbone.RelationalModel.extend({
     }
 );
 
-app.models.Venue_collection = Backbone.Collection.extend({
+app.collections.Venue_collection = Backbone.Collection.extend({
     model: app.models.Venue,
     initialize: function () {
-        this.url = config.restUrl + 'venue?' + $.param({'company_id': app.cur_user.get('company').get('id')});
+        this.url = config.restUrl + 'venue';
     }
 });

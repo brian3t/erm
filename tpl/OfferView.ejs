@@ -76,23 +76,226 @@
 		</div>
 		<div class="row">
 			<label class="col-xs-6">Co-Pro Promoter<select name="copro_promoter_id" disabled
-													value="<%= copro_promoter_id %>"
-													class="form-control">
-					<% _.each(app.collections.promoters.models, function (an_agent) { %>
-					<option value="<%= an_agent.get('id') %>"><%= an_agent.get('name') %></option>
+														   value="<%= copro_promoter_id %>"
+														   class="form-control">
+					<% _.each(app.collections.promoters.models, function (a_promoter) { %>
+					<option value="<%= a_promoter.get('id') %>"><%= a_promoter.get('name') %></option>
 					<% }); %>
 				</select>
 			</label>
-			<label class="col-xs-6">Offer Type<select name="offer_type" disabled type="text"
-													  value="<%= offer_type %>"
-													  class="form-control">
-					<option value=""></option>
-					<option value="Icon">Icon</option>
-					<option value="Co-Pro Promoter">Co-Pro Promoter</option>
-					<option value="Co-Pro Venue">Co-Pro Venue</option>
-					<option value="3rd Party">3rd Party</option>
+			<label class="col-xs-6">Co-Pro Venue<select name="copro_venue_id" disabled
+														value="<%= copro_venue_id %>"
+														class="form-control">
+					<% _.each(app.collections.venues.models, function (a_venue) { %>
+					<option value="<%= a_venue.get('id') %>"><%= a_venue.get('name') %></option>
+					<% }); %>
 				</select>
 			</label>
+		</div>
+	</div>
+	<h4>General Information</h4>
+	<div class="form-group">
+		<div class="row">
+			<label class="col-xs-6">Artist<select name="artist_id" disabled
+												  value="<%= artist_id %>"
+												  class="form-control">
+					<% _.each(app.collections.artists.models, function (an_artist) { %>
+					<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
+					<% }); %>
+				</select>
+			</label>
+			<label class="col-xs-6">Venue<select name="venue_id" disabled
+												 value="<%= venue_id %>"
+												 class="form-control">
+					<% _.each(app.collections.venues.models, function (a_venue) { %>
+					<option value="<%= a_venue.get('id') %>"><%= a_venue.get('name') %></option>
+					<% }); %>
+				</select>
+			</label>
+		</div>
+		<div class="row">
+			<label class="col-xs-6">Show Date<input name="show_date" disabled type="date"
+													value="<%= show_date %>"
+													class="form-control">
+			</label>
+			<label class="col-xs-6">Show Date TBD<br><input name="is_tbd_date" disabled type="checkbox" value="<%= is_tbd_date %>"
+						<%= is_tbd_date ? "checked=1" : "checked=0" %>
+				>
+			</label>
+		</div>
+		<div class="row">
+			<label class="col-xs-4">Show Type<select name="show_type" disabled
+													 value="<%= show_type %>"
+													 class="form-control">
+					<option value=""></option>
+					<option value="Private">Private</option>
+					<option value="Public">Public</option>
+					<option value="College">College</option>
+					<option value="College - Private">College - Private</option>
+					<option value="Casino">Casino</option>
+					<option value="Fair">Fair</option>
+					<option value="Festival">Festival</option>
+				</select>
+			</label>
+			<label class="col-xs-4">Doors<br><input name="doors" disabled type="time" value="<%= doors %>" class="form-control">
+			</label>
+			<label class="col-xs-4">Showtime<br><input name="showtime" disabled type="time" value="<%= showtime %>" class="form-control">
+			</label>
+		</div>
+		<div class="row">
+			<label class="col-xs-12">Notes<textarea name="notes" disabled
+													value="<%= notes %>"
+													class="form-control"><%= notes %></textarea>
+			</label>
+		</div>
+	</div>
+	<h4>Ticket Scaling</h4>
+	<div class="form-group">
+		<div class="row">
+			<label class="col-xs-3">On Sale Date<input name="on_sale_date" type="date" disabled
+													   value="<%= on_sale_date %>"
+													   class="form-control">
+			</label>
+			<label class="col-xs-1">TBD <br><input type="checkbox" disabled
+												   value="<%= is_on_sale_date_tbd %>"
+						<%= is_on_sale_date_tbd ? "checked=1" : "checked=0" %> >
+			</label>
+			<label class="col-xs-5">Ticketing Company<select disabled name="ticketing_company_id" value="<%= ticketing_company_id %>"
+															 class="form-control">
+					<% _.each(app.collections.ticketing_companies.models, function (a_company) { %>
+					<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
+					<% }); %>
+				</select>
+			</label>
+			<label class="col-xs-3">On Sale Date<input type="date" disabled
+													   value="<%= on_sale_date %>"
+													   class="form-control">
+			</label>
+		</div>
+		<br>
+		<div class="row">
+			<label class="col-xs-1 text-bold"> </label>
+			<label class="col-xs-2 text-bold">Gross Tickets</label>
+			<label class="col-xs-1 text-bold">Kills/Comps</label>
+			<label class="col-xs-2 text-bold">Sellable Tickets</label>
+			<label class="col-xs-2 text-bold">Ticket Price</label>
+			<label class="col-xs-2 text-bold">Level Gross</label>
+		</div>
+		<%
+		l1_price = parseFloat(l1_price);
+		l2_price = parseFloat(l2_price);
+		l3_price = parseFloat(l3_price);
+		l4_price = parseFloat(l4_price);
+		l5_price = parseFloat(l5_price);
+		var l1_gross = (l1_gross_ticket - l1_kill) * l1_price;
+		var l2_gross = (l2_gross_ticket - l2_kill) * l2_price;
+		var l3_gross = (l3_gross_ticket - l3_kill) * l3_price;
+		var l4_gross = (l4_gross_ticket - l4_kill) * l4_price;
+		var l5_gross = (l5_gross_ticket - l5_kill) * l5_price;
+
+		var sum_gross = l1_gross + l2_gross + l3_gross + l4_gross + l5_gross;
+		var sum_gross_ticket = l1_gross_ticket + l2_gross_ticket + l3_gross_ticket + l4_gross_ticket + l5_gross_ticket;
+		var sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
+		%>
+		<div class="row ticket_scaling">
+			<label class="col-xs-1 ">Level 1</label>
+			<label class="col-xs-2"><input name="l1_gross_ticket" disabled type="number" value="<%= l1_gross_ticket %>" class="form-control"></label>
+			<label class="col-xs-1"><input name="l1_kill" disabled type="number" step="any" value="<%= l1_kill %>" class="form-control"></label>
+			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control" value="<%= l1_gross_ticket - l1_kill %>"></input></label>
+			<label class="col-xs-2"><input name="l1_price" disabled type="number" step="any" value="<%= l1_price %>" class="form-control"></label>
+			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number" value="<%= l1_gross %>"></label>
+		</div>
+		<div class="row ticket_scaling">
+			<label class="col-xs-1 ">Level 2</label>
+			<label class="col-xs-2"><input name="l2_gross_ticket" disabled type="number" value="<%= l2_gross_ticket %>" class="form-control"></label>
+			<label class="col-xs-1"><input name="l2_kill" disabled type="number" step="any" value="<%= l2_kill %>" class="form-control"></label>
+			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control" value="<%= l2_gross_ticket - l2_kill %>"></input></label>
+			<label class="col-xs-2"><input name="l2_price" disabled type="number" step="any" value="<%= l2_price %>" class="form-control"></label>
+			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number" value="<%= l2_gross %>"></label>
+		</div>
+		<div class="row ticket_scaling">
+			<label class="col-xs-1 ">Level 3</label>
+			<label class="col-xs-2"><input name="l3_gross_ticket" disabled type="number" value="<%= l3_gross_ticket %>" class="form-control"></label>
+			<label class="col-xs-1"><input name="l3_kill" disabled type="number" step="any" value="<%= l3_kill %>" class="form-control"></label>
+			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control" value="<%= l3_gross_ticket - l3_kill %>"></input></label>
+			<label class="col-xs-2"><input name="l3_price" disabled type="number" step="any" value="<%= l3_price %>" class="form-control"></label>
+			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number" value="<%= l3_gross %>"></label>
+		</div>
+		<div class="row ticket_scaling">
+			<label class="col-xs-1 ">Level 4</label>
+			<label class="col-xs-2"><input name="l4_gross_ticket" disabled type="number" value="<%= l4_gross_ticket %>" class="form-control"></label>
+			<label class="col-xs-1"><input name="l4_kill" disabled type="number" step="any" value="<%= l4_kill %>" class="form-control"></label>
+			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control" value="<%= l4_gross_ticket - l4_kill %>"></input></label>
+			<label class="col-xs-2"><input name="l4_price" disabled type="number" step="any" value="<%= l4_price %>" class="form-control"></label>
+			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number" value="<%= l4_gross %>"></label>
+		</div>
+		<div class="row ticket_scaling">
+			<label class="col-xs-1 ">Level 5</label>
+			<label class="col-xs-2"><input name="l5_gross_ticket" disabled type="number" value="<%= l5_gross_ticket %>" class="form-control"></label>
+			<label class="col-xs-1"><input name="l5_kill" disabled type="number" step="any" value="<%= l5_kill %>" class="form-control"></label>
+			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control" value="<%= l5_gross_ticket - l5_kill %>"></input></label>
+			<label class="col-xs-2"><input name="l5_price" disabled type="number" step="any" value="<%= l5_price %>" class="form-control"></label>
+			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number" value="<%= l5_gross %>"></label>
+		</div>
+		<div class="row sum">
+			<label class="col-xs-1 ">Total Gross</label>
+			<label class="col-xs-2"><input readonly type="number" value="<%= sum_gross_ticket %>" class="form-control text-blue"></label>
+			<label class="col-xs-1"><input readonly type="number" step="any" value="<%= sum_kill %>" class="form-control text-blue"></label>
+			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control" value="<%= sum_gross_ticket - sum_kill %>"></input></label>
+			<label class="col-xs-2"><input readonly type="number" step="any" class="form-control text-blue"></label>
+			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number" value="<%= sum_gross %>"></label>
+		</div>
+		<div class="row average">
+			<label class="col-xs-1 ">Average</label>
+			<label class="col-xs-2"><input readonly type="number" value="<%= sum_gross_ticket / 5 %>" class="form-control text-blue"></label>
+			<label class="col-xs-1"><input readonly type="number" step="any" value="<%= sum_kill / 5 %>" class="form-control text-blue"></label>
+			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control" value="<%= (sum_gross_ticket - sum_kill) / 5 %>"></input></label>
+			<label class="col-xs-2"><input readonly type="number" step="any" value="<%= (l1_price + l2_price + l3_price + l4_price + l5_price) / 5 %>" class="form-control text-blue"></label>
+			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number" value="<%= sum_gross / 5 %>"></label>
+		</div>
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<label class="col-xs-2 text_underlined">Gross Potential </label>
+			<div class="col-xs-2"></div>
+			<strong><input readonly type="number" step="any" value="<%= sum_gross %>" class="col-xs-2 text-blue"></strong>
+			<div class="col-xs-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<label class="col-xs-2">Tax % </label>
+			<input disabled name="tax" type="number" step="any" class="col-xs-2" value="<%= tax %>"></input>
+			<input id="tax_input" readonly type="number" value="<%= tax * sum_gross / 100 %>" class="col-xs-2 text-blue">
+			<input disabled class="col-xs-2" name="tax_note" placeholder="note" value="<%= tax_note %>"></input>
+		</div>
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<label class="col-xs-2">Tax per Ticket </label>
+			<input disabled name="tax_per_ticket" type="number" step="any" class="col-xs-2" value="<%= tax_per_ticket %>"></input>
+			<input readonly id="tax_per_ticket_total" type="number" value="<%= parseFloat(tax_per_ticket * (sum_gross_ticket - sum_kill)).toFixed(2) %>" class="col-xs-2">
+			<div class="col-xs-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<label class="col-xs-2 text_underlined">Net Potential </label>
+			<div class="col-xs-2"></div>
+			<input readonly id="net_potential" type="number" value="<%= parseFloat(sum_gross - (tax * sum_gross / 100) - (tax_per_ticket * (sum_gross_ticket - sum_kill))).toFixed(2) %>" class="col-xs-2">
+			<div class="col-xs-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<label class="col-xs-2">Facility Fee</label>
+			<input disabled name="facility_fee" type="number" step="any" class="col-xs-2" value="<%= facility_fee %>"></input>
+			<input readonly id="facility_fee_total" type="number" value="<%= facility_fee * (sum_gross_ticket - sum_kill) %>" class="col-xs-2 text-blue">
+			<input disabled class="col-xs-2" name="facility_fee_note" placeholder="note" value="<%= facility_fee_note %>"></input>
+		</div>
+	</div>
+	<h4>Artist Deal</h4>
+	<div class="form-group">
+		<div class="row">
+			<label class="col-xs-4">Artist Guarantee<input disabled name="artist_guarantee" value="<%= artist_guarantee %>" type="text" class="form-control"></label>
+			<label class="col-xs-3 text_underlined">Artist Deposit <input disabled name="artist_deposit" value="<%= artist_deposit %>" type="text" class="form-control"></label>
+			<div class="col-xs-2"></div>
+			<div class="col-xs-5"></div>
 		</div>
 	</div>
 	<button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Offer</button>

@@ -65,12 +65,20 @@ var backboneInit = function () {
     app.collections.companies.fetch();
     app.collections.offers = new app.collections.Offer();
     app.collections.offers.fetch();
-    app.collections.agents = new app.models.User_collection();
+    app.collections.agents = new app.collections.User_collection();
     app.collections.agents.url = config.restUrl + 'user?' + $.param({'line_of_business': 'Agency'});//param here to get agents only
     app.collections.agents.fetch();
     app.collections.promoters = new app.collections.Company();
-    app.collections.promoters.url = config.restUrl + 'company?' + $.param({'line_of_business': 'Promotion Venue'});//param here to get promoters only
+    app.collections.promoters.url = config.restUrl + 'company?' + $.param({'line_of_business': 'Promotion'});//param here to get promoters only
     app.collections.promoters.fetch();
+    app.collections.venues = new app.collections.Venue_collection();
+    app.collections.venues.fetch();
+    app.collections.artists = new app.collections.User_collection();
+    app.collections.artists.url = config.restUrl + 'user?' + $.param({'line_of_business': 'Artist'});//param here to get agents only
+    app.collections.artists.fetch();
+    app.collections.ticketing_companies = new app.collections.Company();
+    app.collections.ticketing_companies.url = config.restUrl + 'company?' + $.param({'line_of_business': 'Ticketing'});//param here to get agents only
+    app.collections.ticketing_companies.fetch();
 };
 var capp = {
     initialize: function () {

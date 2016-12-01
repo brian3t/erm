@@ -14,7 +14,7 @@ app.views.VenueListView = Backbone.View.extend({
     switchery: {},
 
     initialize: function () {
-        this.collection = new app.models.Venue_collection();
+        this.collection = new app.collections.Venue_collection();
         this.collection.fetch();
         this.venue_search_list_view = new app.views.VenueSearchListView({collection: this.collection});
         this.venue_form_view = new app.views.VenueView();
@@ -182,7 +182,7 @@ app.views.VenueView = Backbone.View.extend({
                 }
                 target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
                 setTimeout(function () {
-                    target.prevAll('span.glyphicon-ok-circle').fadeOut(1400);
+                    target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
                 }, 2000);
             }, error: function () {
                 target.prevAll('span.glyphicon-upload').remove();

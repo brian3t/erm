@@ -40,6 +40,7 @@ app.views.HomeView = Backbone.View.extend({
                                 app.router.navigate('dashboard', {trigger: true});
                             } else {
                                 app.router.navigate('offers', {trigger: true});
+                                $('.edit_switch').trigger('change');
                             }
                         }
                     });
