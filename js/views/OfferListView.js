@@ -197,7 +197,11 @@ app.views.OfferView = Backbone.View.extend({
         this.$el.html(this.template(this.model.attributes));
         var selects = this.$el.find('select');
         _.each(selects, function (e) {
-            $(e).val(this.model.get($(e).prop('name')));
+            var val = this.model.get($(e).prop('name'));
+            if (val == null){
+                val = '';
+            }
+            $(e).val(val);
         }, this);
         return this.$el;
     },

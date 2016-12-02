@@ -292,10 +292,23 @@
 	<h4>Artist Deal</h4>
 	<div class="form-group">
 		<div class="row">
-			<label class="col-xs-4">Artist Guarantee<input disabled name="artist_guarantee" value="<%= artist_guarantee %>" type="text" class="form-control"></label>
-			<label class="col-xs-3 text_underlined">Artist Deposit <input disabled name="artist_deposit" value="<%= artist_deposit %>" type="text" class="form-control"></label>
-			<div class="col-xs-2"></div>
-			<div class="col-xs-5"></div>
+			<label class="col-xs-3">Artist Guarantee<input disabled name="artist_guarantee" value="<%= artist_guarantee %>" type="text" class="form-control"></label>
+			<label class="col-xs-3">Artist Deposit <input disabled name="artist_deposit" value="<%= artist_deposit %>" type="text" class="form-control"></label>
+			<label class="col-xs-3">Offer<select disabled name="artist_offer_type" value="<%= artist_offer_type %>" class="form-control">
+					<option value=""></option><option value="Guarantee">Guarantee</option><option value="Split">Split</option><option value="Plus">Plus</option><option value="Vs.">Vs.</option><option value="Backend">Backend</option>				</select></label>
+			<label class="col-xs-3">Artist Production Buyout <select name="is_artist_production_buyout" value="<%= is_artist_production_buyout %>" type="text" class="form-control">
+					<option value=""></option><option value="1">Yes</option><option value="0">No</option>
+				</select>
+			</label>
+		</div>
+		<div class="row">
+			<label class="col-xs-2">Artist Split%<input disabled name="artist_split" value="<%= artist_split %>" type="number" class="form-control"></label>
+			<label class="col-xs-2">Promoter Split& <input readonly id="promoter_split" value="<%= 100 - artist_split %>" type="text" class="form-control"></label>
+			<label class="col-xs-2">Promoter Profit%<input disabled name="promoter_profit" value="<%= promoter_profit %>" type="number" class="form-control"></label>
+			<label class="col-xs-2">Expense Application <select name="expense_application" value="<%= expense_application %>" class="form-control">
+					<option value=""></option><option value="Net">Net</option><option value="Gross">Gross</option></select>
+			</label>
+			<label class="col-xs-3">Sponsorship<input disabled name="sponsorship" value="<%= sponsorship %>" type="text" class="form-control"></label>
 		</div>
 	</div>
 	<button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Offer</button>

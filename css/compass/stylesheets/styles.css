@@ -121,4 +121,7 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
 .padded {
   padding: 5px; }
 
+.text_underlined {
+  text-decoration: underline; }
+
 /*# sourceMappingURL=styles.css.map */
