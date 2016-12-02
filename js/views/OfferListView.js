@@ -171,7 +171,7 @@ app.views.OfferView = Backbone.View.extend({
         var model = form.data('model');//offer
         var new_attr = {};
         new_attr[target.prop('name')] = target.val();
-        if (!is_multi_select) {
+        if (!is_multi_select && target.parent().is('label')) {
             target.before('<span class="glyphicon glyphicon-upload"></span>');
         }
         this.model.save(new_attr, {

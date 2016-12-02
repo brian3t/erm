@@ -1,3 +1,33 @@
+<%
+l1_price = parseFloat(l1_price);
+l2_price = parseFloat(l2_price);
+l3_price = parseFloat(l3_price);
+l4_price = parseFloat(l4_price);
+l5_price = parseFloat(l5_price);
+var l1_gross = (l1_gross_ticket - l1_kill) * l1_price;
+var l2_gross = (l2_gross_ticket - l2_kill) * l2_price;
+var l3_gross = (l3_gross_ticket - l3_kill) * l3_price;
+var l4_gross = (l4_gross_ticket - l4_kill) * l4_price;
+var l5_gross = (l5_gross_ticket - l5_kill) * l5_price;
+
+var sum_gross = l1_gross + l2_gross + l3_gross + l4_gross + l5_gross;
+var sum_gross_ticket = l1_gross_ticket + l2_gross_ticket + l3_gross_ticket + l4_gross_ticket + l5_gross_ticket;
+var sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
+var playable_on = new Date(show_date);
+switch (post_show_lockout_unit) {
+	case 'Days':
+		playable_on = new Date(playable_on.setTime(playable_on.getTime() + post_show_lockout * 86400000));
+		break;
+	case 'Months':
+		playable_on = new Date(playable_on.setMonth(playable_on.getMonth() + post_show_lockout));
+		break;
+	default:
+		break;
+}
+var support_artist_total = support_artist_1_total + support_artist_2_total + support_artist_3_total;
+var general_expense_array = JSON.parse(general_expense);
+%>
+
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>">
 
 	<div class="form-group">
@@ -181,22 +211,6 @@
 			<label class="col-xs-2 text-bold">Ticket Price</label>
 			<label class="col-xs-2 text-bold">Level Gross</label>
 		</div>
-		<%
-		l1_price = parseFloat(l1_price);
-		l2_price = parseFloat(l2_price);
-		l3_price = parseFloat(l3_price);
-		l4_price = parseFloat(l4_price);
-		l5_price = parseFloat(l5_price);
-		var l1_gross = (l1_gross_ticket - l1_kill) * l1_price;
-		var l2_gross = (l2_gross_ticket - l2_kill) * l2_price;
-		var l3_gross = (l3_gross_ticket - l3_kill) * l3_price;
-		var l4_gross = (l4_gross_ticket - l4_kill) * l4_price;
-		var l5_gross = (l5_gross_ticket - l5_kill) * l5_price;
-
-		var sum_gross = l1_gross + l2_gross + l3_gross + l4_gross + l5_gross;
-		var sum_gross_ticket = l1_gross_ticket + l2_gross_ticket + l3_gross_ticket + l4_gross_ticket + l5_gross_ticket;
-		var sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
-		%>
 		<div class="row ticket_scaling">
 			<label class="col-xs-1 ">Level 1</label>
 			<label class="col-xs-2"><input name="l1_gross_ticket" disabled type="number" value="<%= l1_gross_ticket %>" class="form-control"></label>
@@ -295,21 +309,102 @@
 			<label class="col-xs-3">Artist Guarantee<input disabled name="artist_guarantee" value="<%= artist_guarantee %>" type="text" class="form-control"></label>
 			<label class="col-xs-3">Artist Deposit <input disabled name="artist_deposit" value="<%= artist_deposit %>" type="text" class="form-control"></label>
 			<label class="col-xs-3">Offer<select disabled name="artist_offer_type" value="<%= artist_offer_type %>" class="form-control">
-					<option value=""></option><option value="Guarantee">Guarantee</option><option value="Split">Split</option><option value="Plus">Plus</option><option value="Vs.">Vs.</option><option value="Backend">Backend</option>				</select></label>
+					<option value=""></option>
+					<option value="Guarantee">Guarantee</option>
+					<option value="Split">Split</option>
+					<option value="Plus">Plus</option>
+					<option value="Vs.">Vs.</option>
+					<option value="Backend">Backend</option>
+				</select></label>
 			<label class="col-xs-3">Artist Production Buyout <select name="is_artist_production_buyout" value="<%= is_artist_production_buyout %>" type="text" class="form-control">
-					<option value=""></option><option value="1">Yes</option><option value="0">No</option>
+					<option value=""></option>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
 				</select>
 			</label>
 		</div>
 		<div class="row">
-			<label class="col-xs-2">Artist Split%<input disabled name="artist_split" value="<%= artist_split %>" type="number" class="form-control"></label>
-			<label class="col-xs-2">Promoter Split& <input readonly id="promoter_split" value="<%= 100 - artist_split %>" type="text" class="form-control"></label>
-			<label class="col-xs-2">Promoter Profit%<input disabled name="promoter_profit" value="<%= promoter_profit %>" type="number" class="form-control"></label>
+			<label class="col-xs-2">Artist Split %<input disabled name="artist_split" value="<%= artist_split %>" type="number" class="form-control"></label>
+			<label class="col-xs-2">Promoter Split % <input readonly id="promoter_split" value="<%= 100 - artist_split %>" type="text" class="form-control"></label>
+			<label class="col-xs-2">Promoter Profit %<input disabled name="promoter_profit" value="<%= promoter_profit %>" type="number" class="form-control"></label>
 			<label class="col-xs-2">Expense Application <select name="expense_application" value="<%= expense_application %>" class="form-control">
-					<option value=""></option><option value="Net">Net</option><option value="Gross">Gross</option></select>
+					<option value=""></option>
+					<option value="Net">Net</option>
+					<option value="Gross">Gross</option>
+				</select>
 			</label>
-			<label class="col-xs-3">Sponsorship<input disabled name="sponsorship" value="<%= sponsorship %>" type="text" class="form-control"></label>
+			<label class="col-xs-4">Sponsorship<input disabled name="sponsorship" value="<%= sponsorship %>" type="text" class="form-control"></label>
 		</div>
+		<div class="row">
+			<label class="col-xs-3 has_inline_inputs">Radius Clause<br>
+				<input disabled name="radius_clause" value="<%= radius_clause %>" type="number" class="form-control">
+				<select disabled name="radius_clause_metric" value="<%= radius_clause_metric %>">
+					<option value=""></option>
+					<option value="Miles">Miles</option>
+					<option value="KM">KM</option>
+				</select></label>
+			<label class="col-xs-3 has_inline_inputs">Pre-Show Lockout <br>
+				<input disabled name="pre_show_lockout" value="<%= pre_show_lockout %>" type="number" class="form-control">
+				<select disabled name="pre_show_lockout_unit" value="<%= pre_show_lockout_unit %>">
+					<option value=""></option>
+					<option value="Days">Days</option>
+					<option value="Months">Months</option>
+				</select></label>
+			<label class="col-xs-3 has_inline_inputs">Post-Show Lockout <br>
+				<input disabled name="post_show_lockout" value="<%= post_show_lockout %>" type="number" class="form-control">
+				<select disabled name="post_show_lockout_unit" value="<%= post_show_lockout_unit %>">
+					<option value=""></option>
+					<option value="Days">Days</option>
+					<option value="Months">Months</option>
+				</select></label>
+			<label class="col-xs-3">Playable On <input readonly id="playable_on" value="<%= playable_on.toDateString() %>" type="text" class="form-control text-blue"></label>
+		</div>
+		<br>
+		<div class="row">
+			<label class="col-xs-12">Note<textarea disabled name="artist_deal_note" value="<%= artist_deal_note %>" class="form-control"><%= artist_deal_note %></textarea></label>
+		</div>
+	</div>
+	<h4>Support Artist Expenses</h4>
+	<div class="form-group">
+		<div class="row">
+			<div class="col-xs-10"></div>
+			<label class="col-xs-2">Total</label>
+		</div>
+		<div class="row">
+			<label class="label_wo_input col-xs-3">Support Artist 1</label>
+			<span class="col-xs-7"><select name="support_artist_1_id" value="<%= support_artist_1_id %>" class="form-control">
+					<% _.each(app.collections.artists.models, function (an_artist) { %>
+					<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
+					<% }); %>
+				</select></span>
+			<span class="col-xs-2"><input name="support_artist_1_total" value="<%= support_artist_1_total %>" type="number" step="any" class="form-control"></span>
+		</div>
+		<div class="row">
+			<label class="label_wo_input col-xs-3">Support Artist 2</label>
+			<span class="col-xs-7"><select name="support_artist_2_id" value="<%= support_artist_2_id %>" class="form-control">
+					<% _.each(app.collections.artists.models, function (an_artist) { %>
+					<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
+					<% }); %>
+				</select></span>
+			<span class="col-xs-2"><input name="support_artist_2_total" value="<%= support_artist_2_total %>" type="number" step="any" class="form-control"></span>
+		</div>
+		<div class="row">
+			<label class="label_wo_input col-xs-3">Support Artist 3</label>
+			<span class="col-xs-7"><select name="support_artist_3_id" value="<%= support_artist_3_id %>" class="form-control">
+					<% _.each(app.collections.artists.models, function (an_artist) { %>
+					<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
+					<% }); %>
+				</select></span>
+			<span class="col-xs-2"><input name="support_artist_3_total" value="<%= support_artist_3_total %>" type="number" step="any" class="form-control"></span>
+		</div>
+		<div class="row">
+			<label class="col-xs-10 pull-right text_underlined">Total Support Expenses</label>
+			<span class="col-xs-2"> 	<input class="form-control text-blue" readonly id="support_artist_total" type="text" value="<%= support_artist_total %>"></span>
+		</div>
+	</div>
+	<h4>General Expenses</h4>
+	<div class="form-group">
+		<input id="general_expense" name="general_expense" type="text" value='<%= general_expense %>'>
 	</div>
 	<button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Offer</button>
 </form>
