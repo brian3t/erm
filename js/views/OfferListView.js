@@ -152,7 +152,7 @@ app.views.OfferSearchListView = Backbone.View.extend({
         this.delegateEvents();
     }
 });
-app.views.OfferView = Backbone.View.extend({
+app.views.OfferView = Backbone.BBFormView.extend({
     tagName: "div",
     id: "offer_form",
     className: "col-sm-12",
@@ -160,34 +160,6 @@ app.views.OfferView = Backbone.View.extend({
     events: {
         "blur .edit": "update_ajax",
         "change .multi_select": "update_ajax"
-    },
-    update_ajax: function (e) {
-        var target = $(e.target);
-        if (e.target.tagName == 'BUTTON' || target.hasClass('file-caption') || target.prop('type') == 'file' || target.prop('readonly') == true) {
-            return;
-        }
-        var is_multi_select = target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple');
-        var form = target.parents('form');
-        var model = form.data('model');//offer
-        var new_attr = {};
-        new_attr[target.prop('name')] = target.val();
-        if (!is_multi_select && target.parent().is('label')) {
-            target.before('<span class="glyphicon glyphicon-upload"></span>');
-        }
-        this.model.save(new_attr, {
-            patch: true, success: function () {
-                target.prevAll('span.glyphicon-upload').remove();
-                if (is_multi_select) {
-                    return;
-                }
-                target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
-                setTimeout(function () {
-                    target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
-                }, 2000);
-            }, error: function () {
-                target.prevAll('span.glyphicon-upload').remove();
-            }
-        });
     },
     initialize: function () {
         this.delegateEvents();
@@ -198,11 +170,13 @@ app.views.OfferView = Backbone.View.extend({
         var selects = this.$el.find('select');
         _.each(selects, function (e) {
             var val = this.model.get($(e).prop('name'));
-            if (val == null){
+            if (val == null) {
                 val = '';
             }
             $(e).val(val);
         }, this);
+        var gen_exp_html = this.print_table_from_array(JSON.parse(this.model.get('general_expense')));
+        this.$el.find('#general_expense').html(gen_exp_html);
         return this.$el;
     },
     after_render: function () {
