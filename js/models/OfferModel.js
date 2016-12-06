@@ -10,6 +10,7 @@ app.models.Offer = Backbone.RelationalModel.extend({
         }
     }],
     general_expense_array: {},
+    production_expense_array: {},
     initialize: function () {
         this.general_expense_array = {
             'Advertising': 0,
@@ -77,9 +78,30 @@ app.models.Offer = Backbone.RelationalModel.extend({
             'Utilities': 0,
             'Venue Tax': 0,
             'Video': 0,
-            'Video - InHouse':false
+            'Video - InHouse': false
         };
-        this.set('general_expense', JSON.stringify(this.general_expense_array));
+        this.production_expense_array = {
+            'Tour Bus': 0,
+            'Tour Catering': 0,
+            'Tour Hotel': 0,
+            'Tour Labor': 0,
+            'Tour Manager': 0,
+            'Tour Misc': 0,
+            'Tour Production': 0,
+            'Tour Sound-Staging': 0,
+            'Tour Startup-End Cost': 0,
+            'Tour Support': 0,
+            'Tour Travel': 0,
+            'Tour Trucking': 0
+        };
+    },
+    reset_array_field: function () {
+        if (_.isEmpty(this.get('production_expense'))) {
+            this.save('production_expense', JSON.stringify(this.production_expense_array));
+        }
+        if (_.isEmpty(this.get('general_expense'))) {
+            this.save('general_expense', JSON.stringify(this.general_expense_array));
+        }
     }
 });
 
@@ -92,5 +114,14 @@ app.collections.Offer = Backbone.Collection.extend({
         // }
         this.url = config.restUrl + 'offer';
         // this.url = config.restUrl + 'offer?' +  $.param(param);
+    },
+    fetch: function(options) {
+        //Call Backbone's fetch
+        var result = Backbone.Collection.prototype.fetch.call(this, options);
+
+        this.forEach(function (model, i) {
+            model.reset_array_field();
+        });
+        return result;
     }
 });

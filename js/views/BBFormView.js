@@ -1,18 +1,20 @@
 Backbone.BBFormView = Backbone.View.extend({
     print_table_from_array: function (a) {
-        if (!_.isArray(a) && !_.isObject(a)){
+        if (!_.isArray(a) && !_.isObject(a)) {
             return false;
         }
         var dom = $('<div>').addClass('form-group');
-        _.each(a, function(v, k, l){
-            var label = $('<label>').addClass('col-xs-2 label_wo_input');
+        _.each(a, function (v, k, l) {
+            var label = $('<label>').addClass('col-xs-2 input_atomic');
             label.text(k);
+            var input_wrapper = $('<div class="col-xs-1">');
             var input = $('<input disabled>').addClass('form-control');
             //set checkbox here. updateajax to pull checked value too.
-            if (v === true || v === false){
+            if (v === true || v === 'true' || v === false || v === 'false') {
                 input.prop('type', 'checkbox');
                 input.removeClass('form-control');
-                if (v == true){
+                input_wrapper.addClass('input_atomic');
+                if (v === true || v === 'true') {
                     input.prop('checked', 'checked');
                 } else {
                     input.prop('checked', false);
@@ -20,7 +22,7 @@ Backbone.BBFormView = Backbone.View.extend({
             }
             input.data('key', k);
             input.val(v);
-            dom.append(label).append($('<div class="col-xs-1">').append(input));
+            dom.append(label).append(input_wrapper.append(input));
         }, this);
         return dom;
     },
@@ -33,7 +35,7 @@ Backbone.BBFormView = Backbone.View.extend({
         var form = target.parents('form');
         var model = form.data('model');//offer
         var new_attr = {};
-        if (_.isEmpty(target.prop('name'))){
+        if (_.isEmpty(target.prop('name'))) {
             //update ajax to the related JSON array field
             var wrapper_div = $(target.parents('div.array_field_wrapper'));
             var array_input = $('#' + wrapper_div.data('array_field_id'));
@@ -42,10 +44,10 @@ Backbone.BBFormView = Backbone.View.extend({
                 e = $(e);
                 var key = e.data('key');
                 var v = e.val();
-                if (e.prop('type') == 'checkbox'){
+                if (e.prop('type') == 'checkbox') {
                     v = e.prop('checked');
                 }
-                inputs[key] = e.val();
+                inputs[key] = v;
             });
             array_input.val(JSON.stringify(inputs));
             target = array_input;

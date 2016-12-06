@@ -25,7 +25,10 @@ switch (post_show_lockout_unit) {
 		break;
 }
 var support_artist_total = support_artist_1_total + support_artist_2_total + support_artist_3_total;
-var general_expense_array = JSON.parse(general_expense);
+
+var tour_production_expenses = 999;
+var general_expenses_total = 111;
+var total_estimated_expenses = 10000;
 %>
 
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>">
@@ -471,13 +474,52 @@ var general_expense_array = JSON.parse(general_expense);
 										  type="number" step="any" class="form-control"></span>
 		</div>
 		<div class="row">
-			<label class="col-xs-10 pull-right text_underlined">Total Support Expenses</label>
+			<label class="col-xs-10 text-right text_underlined">Total Support Expenses</label>
 			<span class="col-xs-2"> 	<input class="form-control text-blue" readonly id="support_artist_total"
 											  type="text" value="<%= support_artist_total %>"></span>
 		</div>
 	</div>
-	<h4>General Expenses	<input id="general_expense_input" hidden name="general_expense" type="text" value='<%= general_expense %>'>
+	<div class="clearfix"></div>
+	<h4>General Expenses <input id="general_expense_input" hidden name="general_expense" type="text" value='<%= general_expense %>'>
 	</h4>
-	<div id="general_expense" class="array_field_wrapper" data-array_field_id = 'general_expense_input'></div>
+	<div id="general_expense" class="array_field_wrapper" data-array_field_id='general_expense_input'></div>
+	<div class="clearfix"></div>
+	<h4>Production <input id="production_expense_input" hidden name="production_expense" type="text" value='<%= production_expense %>'>
+	</h4>
+	<div id="production_expense" class="array_field_wrapper" data-array_field_id='production_expense_input'></div>
+	<br>
+	<h4>House</h4>
+	<div class="form-group">
+		<div class="row">
+			<label class="col-xs-4">House Nut Total<input name="housenut_total" disabled type="number" step="any"
+														  value="<%= housenut_total %>"
+														  class="form-control"></label>
+		</div>
+		<div class="row">
+			<label class="col-xs-12">House Nut Expenses<textarea name="housenut_expense" disabled
+																 value="<%= housenut_expense %>"
+																 class="form-control"><%= housenut_expense %></textarea>
+			</label>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="row input_atomic">
+			<label class="col-xs-10 text-right ">Tour Production Expenses</label>
+			<input type="number" step="any" class="col-xs-2 text-blue" id="tour_production_expenses" value="<%= tour_production_expenses %>">
+		</div>
+		<div class="row input_atomic">
+			<label class="col-xs-10 text-right ">General Expenses</label>
+			<input type="number" step="any" class="col-xs-2 text-blue" id="general_expenses_total" value="<%= general_expenses_total %>">
+		</div>
+		<div class="row input_atomic">
+			<label class="col-xs-10 text-right text_underlined ">Total Estimated Expenses</label>
+			<input type="number" step="any" class="col-xs-2 text-bold text-blue" id="total_estimated_expenses" value="<%= total_estimated_expenses %>">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="row">Notes<textarea name="general_expense_note" disabled
+										  value="<%= general_expense_note %>"
+										  class="form-control"><%= general_expense_note %></textarea></label>
+	</div>
 	<button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Offer</button>
 </form>

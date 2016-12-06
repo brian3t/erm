@@ -177,6 +177,8 @@ app.views.OfferView = Backbone.BBFormView.extend({
         }, this);
         var gen_exp_html = this.print_table_from_array(JSON.parse(this.model.get('general_expense')));
         this.$el.find('#general_expense').html(gen_exp_html);
+        var prod_exp_html = this.print_table_from_array(JSON.parse(this.model.get('production_expense')));
+        this.$el.find('#production_expense').html(prod_exp_html);
         return this.$el;
     },
     after_render: function () {

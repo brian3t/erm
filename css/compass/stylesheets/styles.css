@@ -131,7 +131,7 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
 .has_inline_inputs input:not(.form-control), .has_inline_inputs select:not(.form-control) {
   margin-top: 8px; }
 
-label.label_wo_input {
+.input_atomic {
   line-height: 1.5384616;
   padding-top: 9px; }
 
@@ -150,5 +150,8 @@ label.label_wo_input {
 
 #back-to-top i {
   font-size: 300%; }
+
+.array_field_wrapper {
+  float: left; }
 
 /*# sourceMappingURL=styles.css.map */
