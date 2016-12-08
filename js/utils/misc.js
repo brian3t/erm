@@ -192,8 +192,17 @@ app.utils.misc = (function () {
                     map.directionsDisplay = null;
                 }
             }
+        },
+        calc_sum_from_array: function(a){
+            if (!_.isArray(a) && !_.isObject(a)){
+                return 0;
+            }
+            var result = 0;
+            _.each(a, function (v) {
+                result += parseFloat(v);
+            });
+            return result;
         }
-
 
     }
         ;
