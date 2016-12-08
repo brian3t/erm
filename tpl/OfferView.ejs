@@ -24,10 +24,10 @@ switch (post_show_lockout_unit) {
 	default:
 		break;
 }
-var support_artist_total = support_artist_1_total + support_artist_2_total + support_artist_3_total;
+var support_artist_total = parseFloat(support_artist_1_total) + parseFloat(support_artist_2_total) + parseFloat(support_artist_3_total);
 
 var tour_production_expenses = 999;
-var general_expenses_total = 111;
+var general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense));
 var total_estimated_expenses = 10000;
 %>
 
