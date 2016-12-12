@@ -159,12 +159,12 @@ app.views.OfferView = Backbone.BBFormView.extend({
     model: app.models.Offer,
     events: {
         "blur .edit": "update_ajax",
-        "change .multi_select": "update_ajax"
+        "change .multi_select": "update_ajax",
+        "change #var_expense :input": "update_ve"
     },
     initialize: function () {
         this.delegateEvents();
     },
-
     render: function () {
         this.$el.html(this.template(this.model.attributes));
         var selects = this.$el.find('select');
@@ -185,6 +185,33 @@ app.views.OfferView = Backbone.BBFormView.extend({
         $(this.$el.find('.multi_select')).select2();
         $(this.$el.find('form[data-toggle="validator"]')).validator();
         this.delegateEvents();
+    },
+    update_ve: function (e) {
+        e = $(e.target);
+        var ve_form = $('#var_expense');
+        var ve_values = flat_array_to_assoc(ve_form.find(':input:not([readonly])').serializeArray());
+        this.model.save('variable_expense', JSON.stringify(ve_values), {patch: true});
+
+        //now update sellout potential
+        //find all siblings
+        var $siblings = $(e.parent().parent().find(':input:not([readonly])'));
+        var min = $siblings.filter(function (i, v) {
+            return v.name.indexOf('_min') != -1;
+        });
+        var max = $siblings.filter(function (i, v) {
+            return v.name.indexOf('_max') != -1;
+        });
+        var $sellout_potential = $(e.parent().parent().find(':input[readonly]'));
+        var sellout_potential = 0;
+
+        if (sellout_potential < min.val()) {
+            sellout_potential = min.val();
+        }
+        if (sellout_potential > max.val()) {
+            sellout_potential = max.val();
+        }
+
+        //todob here guess what flat rate , per tix does
     }
 
 });

@@ -11,6 +11,8 @@ app.models.Offer = Backbone.RelationalModel.extend({
     }],
     general_expense_array: {},
     production_expense_array: {},
+    variable_expense_array: {},
+
     initialize: function () {
         this.general_expense_array = {
             'Advertising': 0,
@@ -94,6 +96,14 @@ app.models.Offer = Backbone.RelationalModel.extend({
             'Tour Travel': 0,
             'Tour Trucking': 0
         };
+        this.variable_expense_array = {
+            'rental_note': '',
+            'rental_flat_rate': 0,
+            'rental_per_ticket_dollar' : 0,
+            'rental_per_ticket_percent' : 0,
+            'rental_min' : 0,
+            'rental_max' : 0
+        };
     },
     reset_array_field: function () {
         if (_.isEmpty(this.get('production_expense'))) {
@@ -101,6 +111,9 @@ app.models.Offer = Backbone.RelationalModel.extend({
         }
         if (_.isEmpty(this.get('general_expense'))) {
             this.save('general_expense', JSON.stringify(this.general_expense_array));
+        }
+        if (_.isEmpty(this.get('variable_expense'))){
+            this.save('variable_expense', JSON.stringify((this.variable_expense_array)));
         }
     }
 });

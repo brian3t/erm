@@ -28,7 +28,7 @@ Backbone.BBFormView = Backbone.View.extend({
     },
     update_ajax: function (e) {
         var target = $(e.target);
-        if (e.target.tagName == 'BUTTON' || target.hasClass('file-caption') || target.prop('type') == 'file' || target.prop('readonly') == true) {
+        if (e.target.tagName == 'BUTTON' || target.hasClass('skip_ajax') || target.hasClass('file-caption') || target.prop('type') == 'file' || target.prop('readonly') == true) {
             return;
         }
         var is_multi_select = target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple');
@@ -62,7 +62,7 @@ Backbone.BBFormView = Backbone.View.extend({
                 if (is_multi_select) {
                     return;
                 }
-                target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
+                target.before('<span class="glyphicon glyphicon-ok-circle upload_in_progress"></span>');
                 setTimeout(function () {
                     target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
                 }, 2000);

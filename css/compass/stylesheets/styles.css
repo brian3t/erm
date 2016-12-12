@@ -154,4 +154,7 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
 .array_field_wrapper {
   float: left; }
 
+.upload_in_progress {
+  float: none; }
+
 /*# sourceMappingURL=styles.css.map */
