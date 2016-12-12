@@ -26,9 +26,9 @@ switch (post_show_lockout_unit) {
 }
 var support_artist_total = parseFloat(support_artist_1_total) + parseFloat(support_artist_2_total) + parseFloat(support_artist_3_total);
 
-var tour_production_expenses = 999;
+var tour_production_expenses = app.utils.misc.calc_sum_from_array(JSON.parse(production_expense));
 var general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense));
-var total_estimated_expenses = 10000;
+var total_estimated_expenses = tour_production_expenses + general_expenses_total;
 %>
 
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>">
@@ -520,6 +520,26 @@ var total_estimated_expenses = 10000;
 		<label class="row col-xs-12">Notes<textarea name="general_expense_note" disabled
 										  value="<%= general_expense_note %>"
 										  class="form-control"><%= general_expense_note %></textarea></label>
+	</div>
+	<h4>Variable Expenses</h4>
+	<div class="form-group var_expense">
+		<div class="text-center row">
+			<label class="col-xs-2 col-xs-offset-6 ">Per Ticket</label>
+			<label class="col-xs-2">Cap</label>
+		</div>
+		<div class="row text-center">
+			<label class="col-xs-1 col-xs-offset-3">Notes</label>
+			<label class="col-xs-2">Flat Rate</label>
+			<label class="col-xs-1">$</label>
+			<label class="col-xs-1">%</label>
+			<label class="col-xs-1">Min</label>
+			<label class="col-xs-1">Max</label>
+			<label class="col-xs-1">Sell Out Potential</label>
+		</div>
+		<div class="row">
+			<label class="col-xs-3 label_wo_input">Rental</label>
+			<input class="col-xs-1 form-control">
+		</div>
 	</div>
 	<br>
 	<div class="clearfix"></div>

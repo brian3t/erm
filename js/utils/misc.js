@@ -193,13 +193,16 @@ app.utils.misc = (function () {
                 }
             }
         },
-        calc_sum_from_array: function(a){
-            if (!_.isArray(a) && !_.isObject(a)){
+        calc_sum_from_array: function (a) {
+            if (!_.isArray(a) && !_.isObject(a)) {
                 return 0;
             }
             var result = 0;
             _.each(a, function (v) {
-                result += parseFloat(v);
+                if (isNumeric(v)) {
+                    v = parseFloat(v);
+                    result += v;
+                }
             });
             return result;
         }
@@ -253,7 +256,7 @@ function flat_array_to_assoc(arr) {
                 if (!_.has(result, key)) {
                     result[key] = e[1];
                 } else {
-                    if (_.isString(result[key])){
+                    if (_.isString(result[key])) {
                         result[key] = Array(result[key]);
                     }
                     result[key].push(e[1]);
@@ -306,4 +309,7 @@ function lat_lng_distance(lat1, lon1, lat2, lon2, unit) {
         dist = dist * 0.8684
     }
     return dist;
+}
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
 }
