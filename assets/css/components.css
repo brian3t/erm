@@ -1250,7 +1250,6 @@ body[class*=navbar-bottom] .content {
 *
 * ---------------------------------------------------------------------------- */
 .footer {
-  position: fixed;
   bottom: 30px ;
 }
 .footer:not(.navbar-fixed-bottom) {

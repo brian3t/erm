@@ -123,6 +123,7 @@ app.views.OfferListView = Backbone.View.extend({
         this.$save_btn = this.$action_btns.find('.save');
         this.$reset_btn = this.$action_btns.find('.reset');
         this.$cancel_btn = this.$action_btns.find('.cancel');
+        this.offer_form_view.after_render();
         this.delegateEvents();
     }
 });
@@ -237,7 +238,17 @@ app.views.OfferView = Backbone.BBFormView.extend({
             sellout_potential = max.val();
         }
         $sellout_potential.val(sellout_potential);
-        //todob calculate total. buttons for ASACP and BMI
+        //calculate total
+        var sellout_total = 0;
+        $('input.sellout_potential').each(function (i, v) {
+            sellout_total += parseFloat(v.value);
+        });
+        $('#total_variable_expense').val(sellout_total);
+        var $cc_fee_sellout = $('input.sellout_potential[data-category="cc_fee"]');
+        var $cc_box_office_sales_percent = $('input[name="cc_box_office_sales_percent"]');
+        if ($cc_box_office_sales_percent.val() > 0) {
+            $cc_fee_sellout.val($cc_fee_sellout.val() * $cc_box_office_sales_percent.val() / 100);
+        }
     }
 
 });
