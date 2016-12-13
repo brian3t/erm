@@ -288,7 +288,7 @@ var total_variable_expense = 999;
 		</div>
 		<div class="row sum">
 			<label class="col-xs-1 ">Total Gross</label>
-			<label class="col-xs-2"><input readonly type="number" value="<%= sum_gross_ticket %>"
+			<label class="col-xs-2"><input id="gross_ticket" readonly type="number" value="<%= sum_gross_ticket %>"
 										   class="form-control text-blue"></label>
 			<label class="col-xs-1"><input readonly type="number" step="any" value="<%= sum_kill %>"
 										   class="form-control text-blue"></label>
@@ -316,7 +316,7 @@ var total_variable_expense = 999;
 			<div class="col-xs-4"></div>
 			<label class="col-xs-2 text_underlined">Gross Potential </label>
 			<div class="col-xs-2"></div>
-			<strong><input readonly type="number" step="any" value="<%= sum_gross %>"
+			<strong><input readonly id="gross_potential" type="number" step="any" value="<%= sum_gross %>"
 						   class="col-xs-2 text-blue"></strong>
 			<div class="col-xs-2"></div>
 		</div>

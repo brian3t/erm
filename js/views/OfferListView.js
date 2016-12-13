@@ -193,6 +193,8 @@ app.views.OfferView = Backbone.BBFormView.extend({
         this.model.save('variable_expense', JSON.stringify(ve_values), {patch: true});
 
         //now update sellout potential
+        var gross_potential = parseFloat($('#gross_potential').val());
+        var gross_ticket = parseFloat($('#gross_ticket').val());
         //find all siblings
         var $siblings = $(e.parent().parent().find(':input:not([readonly])'));
         var min = $siblings.filter(function (i, v) {
@@ -201,17 +203,41 @@ app.views.OfferView = Backbone.BBFormView.extend({
         var max = $siblings.filter(function (i, v) {
             return v.name.indexOf('_max') != -1;
         });
+        var flat_rate = $siblings.filter(function (i, v) {
+            return v.name.indexOf('_flat_rate') != -1;
+        });
+        if (flat_rate.length == 1) {
+            flat_rate = parseFloat(flat_rate.val());
+        }
+        var per_tix_percent = $siblings.filter(function (i, v) {
+            return v.name.indexOf('_per_ticket_percent') != -1;
+        });
+        if (per_tix_percent.length == 1) {
+            per_tix_percent = parseFloat(per_tix_percent.val());
+        }
+        var per_tix_dollar = $siblings.filter(function (i, v) {
+            return v.name.indexOf('_per_ticket_dollar') != -1;
+        });
+        if (per_tix_dollar.length == 1) {
+            per_tix_dollar = parseFloat(per_tix_dollar.val());
+        }
+        //start assigning sellout potential
         var $sellout_potential = $(e.parent().parent().find(':input[readonly]'));
         var sellout_potential = 0;
-
-        if (sellout_potential < min.val()) {
-            sellout_potential = min.val();
+        if (per_tix_percent > 0) {
+            sellout_potential = gross_potential * per_tix_percent / 100;
         }
-        if (sellout_potential > max.val()) {
+        if (per_tix_dollar > 0) {
+            sellout_potential = gross_ticket * per_tix_dollar;
+        }
+        if (flat_rate > 0) {
+            sellout_potential = flat_rate;
+        }
+        if (max.val() > sellout_potential) {
             sellout_potential = max.val();
         }
-
-        //todob here guess what flat rate , per tix does
+        $sellout_potential.val(sellout_potential);
+        //todob calculate total. buttons for ASACP and BMI
     }
 
 });
