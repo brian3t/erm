@@ -56,6 +56,7 @@ Backbone.BBFormView = Backbone.View.extend({
         if (!is_multi_select && target.parent().is('label')) {
             target.before('<span class="glyphicon glyphicon-upload"></span>');
         }
+        var self = this.model;
         this.model.save(new_attr, {
             patch: true, success: function () {
                 target.prevAll('span.glyphicon-upload').remove();

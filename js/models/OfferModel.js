@@ -1,14 +1,55 @@
+"use strict";
 app.models.Offer = Backbone.RelationalModel.extend({
     urlRoot: config.restUrl + 'offer',
     relations: [{
         type: Backbone.HasOne,
         key: 'user',
+        autoFetch: true,
         relatedModel: 'app.models.User',
         reverseRelation: {
             key: 'offer',
             includeInJSON: 'id'
         }
-    }],
+    }
+    , {
+        type: Backbone.HasOne,
+        key: 'artist',
+        relatedModel: 'app.models.User',
+        reverseRelation: {
+            key: 'offer_as_artist',
+            includeInJSON: false
+        }
+    }
+    ],
+    venue: {},
+    after_sync: function () {
+        this.populate_artist();
+        this.populate_venue();
+    },
+    populate_artist: function () {
+        if (_.isNull(this.get('artist_id')))
+            return;
+        if (app.collections.artists.length == 0){
+            var self = this;
+            this.listenToOnce(app.collections.artists, 'sync', function () {
+                self.set('artist', app.collections.artists.get(self.get('artist_id')));
+            })
+        } else {
+            this.artist = app.collections.artists.get(this.get('artist_id'));
+        }
+    },
+    populate_venue: function () {
+        if (_.isNull(this.get('venue_id')))
+            return;
+        if (app.collections.venues.length == 0){
+            var self = this;
+            this.listenToOnce(app.collections.venues, 'sync', function () {
+                self.set('venue', app.collections.venues.get(self.get('venue_id')));
+            })
+        } else {
+            this.venue = app.collections.venues.get(this.get('venue_id'));
+        }
+    },
     general_expense_array: {},
     production_expense_array: {},
     variable_expense_array: {},
@@ -99,11 +140,13 @@ app.models.Offer = Backbone.RelationalModel.extend({
         this.variable_expense_array = {
             'rental_note': '',
             'rental_flat_rate': 0,
-            'rental_per_ticket_dollar' : 0,
-            'rental_per_ticket_percent' : 0,
-            'rental_min' : 0,
-            'rental_max' : 0
+            'rental_per_ticket_dollar': 0,
+            'rental_per_ticket_percent': 0,
+            'rental_min': 0,
+            'rental_max': 0
         };
+        this.after_sync();
+        this.listenTo(this, 'sync', this.after_sync);
     },
     reset_array_field: function () {
         if (_.isEmpty(this.get('production_expense'))) {
@@ -112,9 +155,12 @@ app.models.Offer = Backbone.RelationalModel.extend({
         if (_.isEmpty(this.get('general_expense'))) {
             this.save('general_expense', JSON.stringify(this.general_expense_array));
         }
-        if (_.isEmpty(this.get('variable_expense'))){
+        if (_.isEmpty(this.get('variable_expense'))) {
             this.save('variable_expense', JSON.stringify((this.variable_expense_array)));
         }
+    },
+    defaults: {
+        venue: {}
     }
 });
 
@@ -128,7 +174,7 @@ app.collections.Offer = Backbone.Collection.extend({
         this.url = config.restUrl + 'offer';
         // this.url = config.restUrl + 'offer?' +  $.param(param);
     },
-    fetch: function(options) {
+    fetch: function (options) {
         //Call Backbone's fetch
         var result = Backbone.Collection.prototype.fetch.call(this, options);
 

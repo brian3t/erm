@@ -25,6 +25,15 @@ app.models.User = Backbone.RelationalModel.extend({
             reverseRelation: {
                 key: 'user',
                 includeInJSON: 'id'
+            },
+            autoFetch: true
+        }, {
+            type: Backbone.HasMany,
+            key: 'offer_as_artist',
+            relatedModel: 'app.models.Offer',
+            reverseRelation: {
+                key: 'artist',
+                includeInJSON: false
             }
         }],
         localStorage: false,

@@ -31,6 +31,20 @@ var general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(gener
 var total_estimated_expenses = tour_production_expenses + general_expenses_total;
 
 var ve = JSON.parse(variable_expense);
+var total_ve = app.utils.misc.calc_sum_from_array(ve);
+
+var aw_net_potential = sum_gross;
+var aw_est_split_point = 0;
+var aw_est_expense = sum_gross - (total_estimated_expenses + total_ve);
+var aw_artist_split_percent = 0;
+var aw_artist_split = 0;
+var aw_artist_fee = artist_guarantee;
+var aw_promoter_split_percent = 0;
+var aw_promoter_split = 0;
+var aw_est_total = aw_est_expense + aw_artist_fee;
+var aw_artist_production = 0;
+var aw_breakeven_tix = 0;
+var aw_artist_walkout = 0;
 %>
 
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>">
@@ -610,8 +624,7 @@ var ve = JSON.parse(variable_expense);
 		</div>
 		<div class="row">
 			<label class="col-xs-2 input_atomic">ASCAP
-				<!--<button type="button" id="ascap_update" data-toggle="modal" data-target="#ascap_modal">Update</button>-->
-				<button disabled type="button" id="ascap_update">Update</button>
+				<button type="button" id="ascap_update" data-toggle="modal" data-target="#ascap_modal">Update</button>
 			</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="ascap_note" value="<%= ve['ascap_note'] %>"></div>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="ascap_flat_rate" value="<%= ve['ascap_flat_rate'] %>"></div>
@@ -622,7 +635,7 @@ var ve = JSON.parse(variable_expense);
 		</div>
 		<div class="row">
 			<label class="col-xs-2 input_atomic">BMI
-				<button disabled type="button" id="bmi_update">Update</button>
+				<button type="button" id="bmi_update" data-toggle="modal" data-target="#bmi_modal">Update</button>
 			</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="bmi_note" value="<%= ve['bmi_note'] %>"></div>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="bmi_flat_rate" value="<%= ve['bmi_flat_rate'] %>"></div>
@@ -650,55 +663,140 @@ var ve = JSON.parse(variable_expense);
 		<div class="row">
 			<label class="col-xs-2 col-xs-offset-8 input_atomic underlined">Total Variable Expenses</label>
 			<div class="col-xs-2">
-				<input readonly class="form-control skip_ajax text-blue" id="total_variable_expense"></div>
+				<input readonly class="form-control skip_ajax text-blue" id="total_variable_expense" value="<%= total_ve %>"></div>
 		</div>
 	</div>
 	<br>
 	<div class="clearfix"></div>
-	<button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Offer</button>
-</form>
+	<h4>Artist Walkout</h4>
+	<div class="form-group">
+		<label class="col-xs-2 input_atomic">Net Potential</label>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_net_potential" value="<%= aw_net_potential %>"></div>
+		<label class="col-xs-2 col-xs-offset-1 input_atomic">Est. Split Point</label>
+		<span class="col-xs-1"></span>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_est_split_point" value="<%= aw_est_split_point %>"></div>
+		<div class="clearfix"></div>
 
-<!-- Modals -->
-<div class="modal fade" id="ascap_modal" tabindex="-1" role="dialog" aria-labelledby="ascap_rules">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="ascap_rules">Update ASCAP Default Rates</h4>
-			</div>
-			<div class="modal-body">
-				<div class="row">
-					<label class="col-xs-6">Event ID <input class="form-control" readonly type="text" value="<%= event_id %>"></label>
-					<label class="col-xs-6">Artist <input class="form-control" readonly type="text" value="<%= artist_id %>"></label>
-					<label class="col-xs-6">Date <input class="form-control" readonly type="text" value="<%= show_date %>"></label>
-					<label class="col-xs-6">Venue <input class="form-control" readonly type="text" value="<%= venue_id %>"></label>
-					<br>
+		<label class="col-xs-2 input_atomic">Estimated Expenses</label>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_est_expense" value="<%= aw_est_expense %>"></div>
+		<label class="col-xs-2 col-xs-offset-1 input_atomic">Artist Split</label>
+		<div class="col-xs-1"><input readonly class="form-control text-blue" id="aw_artist_split_percent" value="<%= aw_artist_split_percent %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_artist_split" value="<%= aw_artist_split %>"></div>
+		<div class="clearfix"></div>
+
+		<label class="col-xs-2 input_atomic">Artist Fees</label>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_artist_fee" value="<%= aw_artist_fee %>"></div>
+		<label class="col-xs-2 col-xs-offset-1 input_atomic">Promoter Split</label>
+		<div class="col-xs-1"><input readonly class="form-control text-blue" id="aw_promoter_split_percent" value="<%= aw_promoter_split_percent %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_promoter_split" value="<%= aw_promoter_split %>"></div>
+		<div class="clearfix"></div>
+
+		<label class="col-xs-2 input_atomic text_underline">Estimated Total</label>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_est_total" value="<%= aw_est_total %>"></div>
+		<label class="col-xs-2 col-xs-offset-1 input_atomic">Artist Production</label>
+		<span class="col-xs-1"></span>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_artist_production" value="<%= aw_artist_production %>"></div>
+		<div class="clearfix"></div>
+
+		<label class="col-xs-2 input_atomic text_underline">Breakeven Tix</label>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_breakeven_tix" value="<%= aw_breakeven_tix %>"></div>
+		<label class="col-xs-2 col-xs-offset-1 input_atomic">Artist Walkout</label>
+		<span class="col-xs-1"></span>
+		<div class="col-xs-3"><input readonly class="form-control text_underlined text-blue" id="aw_artist_walkout" value="<%= aw_artist_walkout %>"></div>
+		<div class="clearfix"></div>
+
+	</div>
+
+
+	<br>
+	<div class="clearfix"></div>
+	<button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Offer</button>
+
+	<!-- Modals -->
+	<div class="modal fade" id="ascap_modal" tabindex="-1" role="dialog" aria-labelledby="ascap_rules">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="ascap_rules">Update ASCAP Default Rates</h4>
 				</div>
-				<div class="row">
-					<label class="col-xs-9 input_atomic">ASCAP Rate 0 - 2500 Tickets (%)</label>
-					<span class="col-xs-3"><input class="form-control" name="ascap_0_2500" value="0.85"></span>
+				<div class="modal-body">
+					<div class="row">
+						<label class="col-xs-6">Event ID <input class="form-control" readonly type="text" value="<%= event_id %>"></label>
+						<label class="col-xs-6">Artist <input class="form-control" readonly type="text" value="<%= _.isObject(artist)?artist.getFullName():'' %>"></label>
+						<label class="col-xs-6">Date <input class="form-control" readonly type="text" value="<%= show_date %>"></label>
+						<label class="col-xs-6">Venue <input class="form-control" readonly type="text" value="<%= venue.hasOwnProperty('get')?venue.get('name'):'' %>"></label>
+						<br>
+					</div>
+					<div class="row">
+						<label class="col-xs-9 input_atomic">ASCAP Rate 0 - 2500 Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="ascap_0_2500" value="<%= ascap_0_2500 %>"></span>
+					</div>
+					<div class="row">
+						<label class="col-xs-9 input_atomic">ASCAP Rate 2501 - 5000 Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="ascap_2501_5000" value="<%= ascap_2501_5000 %>"></span>
+					</div>
+					<div class="row">
+						<label class="col-xs-9 input_atomic">ASCAP Rate 5001 - 10000 Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="ascap_5001_10000" value="<%= ascap_5001_10000 %>"></span>
+					</div>
+					<div class="row">
+						<label class="col-xs-9 input_atomic">ASCAP Rate 10001 - 25000 Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="ascap_10001_25000" value="<%= ascap_10001_25000 %>"></span>
+					</div>
+					<div class="row">
+						<label class="col-xs-9 input_atomic">ASCAP Rate 25001 - X Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="ascap_25001_x" value="<%= ascap_25001_x %>"></span>
+					</div>
 				</div>
-				<div class="row">
-					<label class="col-xs-9 input_atomic">ASCAP Rate 2501 - 5000 Tickets (%)</label>
-					<span class="col-xs-3"><input class="form-control" name="ascap_2501_5000" value="0.45"></span>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
-				<div class="row">
-					<label class="col-xs-9 input_atomic">ASCAP Rate 5001 - 10000 Tickets (%)</label>
-					<span class="col-xs-3"><input class="form-control" name="ascap_5001_10000" value="0.30"></span>
-				</div>
-				<div class="row">
-					<label class="col-xs-9 input_atomic">ASCAP Rate 10001 - 25000 Tickets (%)</label>
-					<span class="col-xs-3"><input class="form-control" name="ascap_10001_25000" value="0.25"></span>
-				</div>
-				<div class="row">
-					<label class="col-xs-9 input_atomic">ASCAP Rate 25001 - X Tickets (%)</label>
-					<span class="col-xs-3"><input class="form-control" name="ascap_25001_x" value="0.15"></span>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
 			</div>
 		</div>
 	</div>
-</div>
+	<div class="modal fade" id="bmi_modal" tabindex="-1" role="dialog" aria-labelledby="bmi_rules">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="bmi_rules">Update BMI Default Rates</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<label class="col-xs-6">Event ID <input class="form-control" readonly type="text" value="<%= event_id %>"></label>
+						<label class="col-xs-6">Artist <input class="form-control" readonly type="text" value="<%= _.isObject(artist)?artist.getFullName():'' %>"></label>
+						<label class="col-xs-6">Date <input class="form-control" readonly type="text" value="<%= show_date %>"></label>
+						<label class="col-xs-6">Venue <input class="form-control" readonly type="text" value="<%= _.isObject(venue)?venue.get('name'):'' %>"></label>
+						<br>
+					</div>
+					<div class="row">
+						<label class="col-xs-9 input_atomic">BMI Rate 0 - 2500 Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="bmi_0_2500" value="<%= bmi_0_2500 %>"></span>
+					</div>
+					<div class="row">
+						<label class="col-xs-9 input_atomic">BMI Rate 2501 - 5000 Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="bmi_2501_5000" value="<%= bmi_2501_5000 %>"></span>
+					</div>
+					<div class="row">
+						<label class="col-xs-9 input_atomic">BMI Rate 5001 - 10000 Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="bmi_5001_10000" value="<%= bmi_5001_10000 %>"></span>
+					</div>
+					<div class="row">
+						<label class="col-xs-9 input_atomic">BMI Rate 10001 - 25000 Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="bmi_10001_25000" value="<%= bmi_10001_25000 %>"></span>
+					</div>
+					<div class="row">
+						<label class="col-xs-9 input_atomic">BMI Rate 25001 - X Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="bmi_25001_x" value="<%= bmi_25001_x %>"></span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</form>
+
