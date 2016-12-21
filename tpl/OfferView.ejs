@@ -1,50 +1,56 @@
 <%
+var V = {};//Array to store variables
 l1_price = parseFloat(l1_price);
 l2_price = parseFloat(l2_price);
 l3_price = parseFloat(l3_price);
 l4_price = parseFloat(l4_price);
 l5_price = parseFloat(l5_price);
-var l1_gross = (l1_gross_ticket - l1_kill) * l1_price;
-var l2_gross = (l2_gross_ticket - l2_kill) * l2_price;
-var l3_gross = (l3_gross_ticket - l3_kill) * l3_price;
-var l4_gross = (l4_gross_ticket - l4_kill) * l4_price;
-var l5_gross = (l5_gross_ticket - l5_kill) * l5_price;
+V.l1_gross = (l1_gross_ticket - l1_kill) * l1_price;
+V.l2_gross = (l2_gross_ticket - l2_kill) * l2_price;
+V.l3_gross = (l3_gross_ticket - l3_kill) * l3_price;
+V.l4_gross = (l4_gross_ticket - l4_kill) * l4_price;
+V.l5_gross = (l5_gross_ticket - l5_kill) * l5_price;
 
-var sum_gross = l1_gross + l2_gross + l3_gross + l4_gross + l5_gross;
-var sum_gross_ticket = l1_gross_ticket + l2_gross_ticket + l3_gross_ticket + l4_gross_ticket + l5_gross_ticket;
-var sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
-var playable_on = new Date(show_date);
+V.sum_gross = V.l1_gross + V.l2_gross + V.l3_gross + V.l4_gross + V.l5_gross;
+V.sum_gross_ticket = l1_gross_ticket + l2_gross_ticket + l3_gross_ticket + l4_gross_ticket + l5_gross_ticket;
+V.sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
+V.playable_on = new Date(show_date);
 switch (post_show_lockout_unit) {
 	case 'Days':
-		playable_on = new Date(playable_on.setTime(playable_on.getTime() + post_show_lockout * 86400000));
+		V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + post_show_lockout * 86400000));
 		break;
 	case 'Months':
-		playable_on = new Date(playable_on.setMonth(playable_on.getMonth() + post_show_lockout));
+		V.playable_on = new Date(V.playable_on.setMonth(V.playable_on.getMonth() + post_show_lockout));
 		break;
 	default:
 		break;
 }
-var support_artist_total = parseFloat(support_artist_1_total) + parseFloat(support_artist_2_total) + parseFloat(support_artist_3_total);
+V.support_artist_total = parseFloat(support_artist_1_total) + parseFloat(support_artist_2_total) + parseFloat(support_artist_3_total);
 
-var tour_production_expenses = app.utils.misc.calc_sum_from_array(JSON.parse(production_expense));
-var general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense));
-var total_estimated_expenses = tour_production_expenses + general_expenses_total;
+V.tour_production_expenses = app.utils.misc.calc_sum_from_array(JSON.parse(production_expense));
+V.general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense));
+V.total_estimated_expenses = V.tour_production_expenses + V.general_expenses_total;
 
-var ve = JSON.parse(variable_expense);
-var total_ve = app.utils.misc.calc_sum_from_array(ve);
+ve = JSON.parse(variable_expense);
+total_ve = app.utils.misc.calc_sum_from_array(ve);
 
-var aw_net_potential = sum_gross;
-var aw_est_split_point = 0;
-var aw_est_expense = sum_gross - (total_estimated_expenses + total_ve);
-var aw_artist_split_percent = 0;
-var aw_artist_split = 0;
-var aw_artist_fee = artist_guarantee;
-var aw_promoter_split_percent = 0;
-var aw_promoter_split = 0;
-var aw_est_total = aw_est_expense + aw_artist_fee;
-var aw_artist_production = 0;
-var aw_breakeven_tix = 0;
-var aw_artist_walkout = 0;
+V.aw_net_potential = V.sum_gross;
+V.aw_est_split_point = 0;
+V.aw_est_expense = V.sum_gross - (V.total_estimated_expenses + total_ve);
+V.aw_artist_split_percent = 0;
+V.aw_artist_split = 0;
+V.aw_artist_fee = artist_guarantee;
+V.aw_promoter_split_percent = 0;
+V.aw_promoter_split = 0;
+V.aw_est_total = V.aw_est_expense + V.aw_artist_fee;
+V.aw_artist_production = 0;
+V.aw_breakeven_tix = 0;
+V.aw_artist_walkout = 0;
+
+//format NAN
+_.each([V.support_artist_total, V.tour_production_expenses], function (v) {
+	console.info(v);
+});
 %>
 
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>">
@@ -245,7 +251,7 @@ var aw_artist_walkout = 0;
 			<label class="col-xs-2"><input name="l1_price" disabled type="number" step="any" value="<%= l1_price %>"
 										   class="form-control"></label>
 			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number"
-										   value="<%= l1_gross %>"></label>
+										   value="<%= V.l1_gross %>"></label>
 		</div>
 		<div class="row ticket_scaling">
 			<label class="col-xs-1 ">Level 2</label>
@@ -258,7 +264,7 @@ var aw_artist_walkout = 0;
 			<label class="col-xs-2"><input name="l2_price" disabled type="number" step="any" value="<%= l2_price %>"
 										   class="form-control"></label>
 			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number"
-										   value="<%= l2_gross %>"></label>
+										   value="<%= V.l2_gross %>"></label>
 		</div>
 		<div class="row ticket_scaling">
 			<label class="col-xs-1 ">Level 3</label>
@@ -271,7 +277,7 @@ var aw_artist_walkout = 0;
 			<label class="col-xs-2"><input name="l3_price" disabled type="number" step="any" value="<%= l3_price %>"
 										   class="form-control"></label>
 			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number"
-										   value="<%= l3_gross %>"></label>
+										   value="<%= V.l3_gross %>"></label>
 		</div>
 		<div class="row ticket_scaling">
 			<label class="col-xs-1 ">Level 4</label>
@@ -284,7 +290,7 @@ var aw_artist_walkout = 0;
 			<label class="col-xs-2"><input name="l4_price" disabled type="number" step="any" value="<%= l4_price %>"
 										   class="form-control"></label>
 			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number"
-										   value="<%= l4_gross %>"></label>
+										   value="<%= V.l4_gross %>"></label>
 		</div>
 		<div class="row ticket_scaling">
 			<label class="col-xs-1 ">Level 5</label>
@@ -297,39 +303,39 @@ var aw_artist_walkout = 0;
 			<label class="col-xs-2"><input name="l5_price" disabled type="number" step="any" value="<%= l5_price %>"
 										   class="form-control"></label>
 			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number"
-										   value="<%= l5_gross %>"></label>
+										   value="<%= V.l5_gross %>"></label>
 		</div>
 		<div class="row sum">
 			<label class="col-xs-1 ">Total Gross</label>
-			<label class="col-xs-2"><input id="gross_ticket" readonly type="number" value="<%= sum_gross_ticket %>"
+			<label class="col-xs-2"><input id="gross_ticket" readonly type="number" value="<%= V.sum_gross_ticket %>"
 										   class="form-control text-blue"></label>
-			<label class="col-xs-1"><input readonly type="number" step="any" value="<%= sum_kill %>"
+			<label class="col-xs-1"><input readonly type="number" step="any" value="<%= V.sum_kill %>"
 										   class="form-control text-blue"></label>
 			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control"
-										   value="<%= sum_gross_ticket - sum_kill %>"></input></label>
+										   value="<%= V.sum_gross_ticket - V.sum_kill %>"></input></label>
 			<label class="col-xs-2"><input readonly type="number" step="any" class="form-control text-blue"></label>
 			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number"
-										   value="<%= sum_gross %>"></label>
+										   value="<%= V.sum_gross %>"></label>
 		</div>
 		<div class="row average">
 			<label class="col-xs-1 ">Average</label>
-			<label class="col-xs-2"><input readonly type="number" value="<%= sum_gross_ticket / 5 %>"
+			<label class="col-xs-2"><input readonly type="number" value="<%= V.sum_gross_ticket / 5 %>"
 										   class="form-control text-blue"></label>
-			<label class="col-xs-1"><input readonly type="number" step="any" value="<%= sum_kill / 5 %>"
+			<label class="col-xs-1"><input readonly type="number" step="any" value="<%= V.sum_kill / 5 %>"
 										   class="form-control text-blue"></label>
 			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control"
-										   value="<%= (sum_gross_ticket - sum_kill) / 5 %>"></input></label>
+										   value="<%= (V.sum_gross_ticket - V.sum_kill) / 5 %>"></input></label>
 			<label class="col-xs-2"><input readonly type="number" step="any"
 										   value="<%= (l1_price + l2_price + l3_price + l4_price + l5_price) / 5 %>"
 										   class="form-control text-blue"></label>
 			<label class="col-xs-2"><input readonly class="gross text-blue form-control" type="number"
-										   value="<%= sum_gross / 5 %>"></label>
+										   value="<%= V.sum_gross / 5 %>"></label>
 		</div>
 		<div class="row">
 			<div class="col-xs-4"></div>
 			<label class="col-xs-2 text_underlined">Gross Potential </label>
 			<div class="col-xs-2"></div>
-			<strong><input readonly id="gross_potential" type="number" step="any" value="<%= sum_gross %>"
+			<strong><input readonly id="gross_potential" type="number" step="any" value="<%= V.sum_gross %>"
 						   class="col-xs-2 text-blue"></strong>
 			<div class="col-xs-2"></div>
 		</div>
@@ -337,7 +343,7 @@ var aw_artist_walkout = 0;
 			<div class="col-xs-4"></div>
 			<label class="col-xs-2">Tax % </label>
 			<input disabled name="tax" type="number" step="any" class="col-xs-2" value="<%= tax %>"></input>
-			<input id="tax_input" readonly type="number" value="<%= tax * sum_gross / 100 %>"
+			<input id="tax_input" readonly type="number" value="<%= tax * V.sum_gross / 100 %>"
 				   class="col-xs-2 text-blue">
 			<input disabled class="col-xs-2" name="tax_note" placeholder="note" value="<%= tax_note %>"></input>
 		</div>
@@ -347,7 +353,7 @@ var aw_artist_walkout = 0;
 			<input disabled name="tax_per_ticket" type="number" step="any" class="col-xs-2"
 				   value="<%= tax_per_ticket %>"></input>
 			<input readonly id="tax_per_ticket_total" type="number"
-				   value="<%= parseFloat(tax_per_ticket * (sum_gross_ticket - sum_kill)).toFixed(2) %>"
+				   value="<%= parseFloat(tax_per_ticket * (V.sum_gross_ticket - V.sum_kill)).toFixed(2) %>"
 				   class="col-xs-2">
 			<div class="col-xs-2"></div>
 		</div>
@@ -356,7 +362,7 @@ var aw_artist_walkout = 0;
 			<label class="col-xs-2 text_underlined">Net Potential </label>
 			<div class="col-xs-2"></div>
 			<input readonly id="net_potential" type="number"
-				   value="<%= parseFloat(sum_gross - (tax * sum_gross / 100) - (tax_per_ticket * (sum_gross_ticket - sum_kill))).toFixed(2) %>"
+				   value="<%= parseFloat(V.sum_gross - (tax * V.sum_gross / 100) - (tax_per_ticket * (V.sum_gross_ticket - V.sum_kill))).toFixed(2) %>"
 				   class="col-xs-2">
 			<div class="col-xs-2"></div>
 		</div>
@@ -366,7 +372,7 @@ var aw_artist_walkout = 0;
 			<input disabled name="facility_fee" type="number" step="any" class="col-xs-2"
 				   value="<%= facility_fee %>"></input>
 			<input readonly id="facility_fee_total" type="number"
-				   value="<%= facility_fee * (sum_gross_ticket - sum_kill) %>" class="col-xs-2 text-blue">
+				   value="<%= facility_fee * (V.sum_gross_ticket - V.sum_kill) %>" class="col-xs-2 text-blue">
 			<input disabled class="col-xs-2" name="facility_fee_note" placeholder="note"
 				   value="<%= facility_fee_note %>"></input>
 		</div>
@@ -441,7 +447,7 @@ var aw_artist_walkout = 0;
 					<option value="Months">Months</option>
 				</select></label>
 			<label class="col-xs-3">Playable On <input readonly id="playable_on"
-													   value="<%= playable_on.toDateString() %>" type="text"
+													   value="<%= V.playable_on.toDateString() %>" type="text"
 													   class="form-control text-blue"></label>
 		</div>
 		<br>
@@ -492,7 +498,7 @@ var aw_artist_walkout = 0;
 		<div class="row">
 			<label class="col-xs-10 text-right text_underlined">Total Support Expenses</label>
 			<span class="col-xs-2"> 	<input class="form-control text-blue" readonly id="support_artist_total"
-											  type="text" value="<%= support_artist_total %>"></span>
+											  type="text" value="<%= V.support_artist_total %>"></span>
 		</div>
 	</div>
 	<div class="clearfix"></div>
@@ -521,15 +527,15 @@ var aw_artist_walkout = 0;
 	<div class="form-group">
 		<div class="row input_atomic">
 			<label class="col-xs-10 text-right ">Tour Production Expenses</label>
-			<input type="number" step="any" class="col-xs-2 text-blue" id="tour_production_expenses" value="<%= tour_production_expenses %>">
+			<input type="number" step="any" class="col-xs-2 text-blue" id="tour_production_expenses" value="<%= V.tour_production_expenses %>">
 		</div>
 		<div class="row input_atomic">
 			<label class="col-xs-10 text-right ">General Expenses</label>
-			<input type="number" step="any" class="col-xs-2 text-blue" id="general_expenses_total" value="<%= general_expenses_total %>">
+			<input type="number" step="any" class="col-xs-2 text-blue" id="general_expenses_total" value="<%= V.general_expenses_total %>">
 		</div>
 		<div class="row input_atomic">
 			<label class="col-xs-10 text-right text_underlined ">Total Estimated Expenses</label>
-			<input type="number" step="any" class="col-xs-2 text-bold text-blue" id="total_estimated_expenses" value="<%= total_estimated_expenses %>">
+			<input type="number" step="any" class="col-xs-2 text-bold text-blue" id="total_estimated_expenses" value="<%= V.total_estimated_expenses %>">
 		</div>
 	</div>
 	<div class="form-group">
@@ -663,7 +669,7 @@ var aw_artist_walkout = 0;
 		<div class="row">
 			<label class="col-xs-2 col-xs-offset-8 input_atomic underlined">Total Variable Expenses</label>
 			<div class="col-xs-2">
-				<input readonly class="form-control skip_ajax text-blue" id="total_variable_expense" value="<%= total_ve %>"></div>
+				<input readonly class="form-control skip_ajax text-blue" id="total_variable_expense" value="<%= V.total_ve %>"></div>
 		</div>
 	</div>
 	<br>
@@ -671,38 +677,38 @@ var aw_artist_walkout = 0;
 	<h4>Artist Walkout</h4>
 	<div class="form-group">
 		<label class="col-xs-2 input_atomic">Net Potential</label>
-		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_net_potential" value="<%= aw_net_potential %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_net_potential" value="<%= V.aw_net_potential %>"></div>
 		<label class="col-xs-2 col-xs-offset-1 input_atomic">Est. Split Point</label>
 		<span class="col-xs-1"></span>
-		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_est_split_point" value="<%= aw_est_split_point %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_est_split_point" value="<%= V.aw_est_split_point %>"></div>
 		<div class="clearfix"></div>
 
 		<label class="col-xs-2 input_atomic">Estimated Expenses</label>
-		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_est_expense" value="<%= aw_est_expense %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_est_expense" value="<%= V.aw_est_expense %>"></div>
 		<label class="col-xs-2 col-xs-offset-1 input_atomic">Artist Split</label>
-		<div class="col-xs-1"><input readonly class="form-control text-blue" id="aw_artist_split_percent" value="<%= aw_artist_split_percent %>"></div>
-		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_artist_split" value="<%= aw_artist_split %>"></div>
+		<div class="col-xs-1"><input readonly class="form-control text-blue" id="aw_artist_split_percent" value="<%= V.aw_artist_split_percent %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_artist_split" value="<%= V.aw_artist_split %>"></div>
 		<div class="clearfix"></div>
 
 		<label class="col-xs-2 input_atomic">Artist Fees</label>
-		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_artist_fee" value="<%= aw_artist_fee %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_artist_fee" value="<%= V.aw_artist_fee %>"></div>
 		<label class="col-xs-2 col-xs-offset-1 input_atomic">Promoter Split</label>
-		<div class="col-xs-1"><input readonly class="form-control text-blue" id="aw_promoter_split_percent" value="<%= aw_promoter_split_percent %>"></div>
-		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_promoter_split" value="<%= aw_promoter_split %>"></div>
+		<div class="col-xs-1"><input readonly class="form-control text-blue" id="aw_promoter_split_percent" value="<%= V.aw_promoter_split_percent %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_promoter_split" value="<%= V.aw_promoter_split %>"></div>
 		<div class="clearfix"></div>
 
 		<label class="col-xs-2 input_atomic text_underline">Estimated Total</label>
-		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_est_total" value="<%= aw_est_total %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_est_total" value="<%= V.aw_est_total %>"></div>
 		<label class="col-xs-2 col-xs-offset-1 input_atomic">Artist Production</label>
 		<span class="col-xs-1"></span>
-		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_artist_production" value="<%= aw_artist_production %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_artist_production" value="<%= V.aw_artist_production %>"></div>
 		<div class="clearfix"></div>
 
 		<label class="col-xs-2 input_atomic text_underline">Breakeven Tix</label>
-		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_breakeven_tix" value="<%= aw_breakeven_tix %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text-blue" id="aw_breakeven_tix" value="<%= V.aw_breakeven_tix %>"></div>
 		<label class="col-xs-2 col-xs-offset-1 input_atomic">Artist Walkout</label>
 		<span class="col-xs-1"></span>
-		<div class="col-xs-3"><input readonly class="form-control text_underlined text-blue" id="aw_artist_walkout" value="<%= aw_artist_walkout %>"></div>
+		<div class="col-xs-3"><input readonly class="form-control text_underlined text-blue" id="aw_artist_walkout" value="<%= V.aw_artist_walkout %>"></div>
 		<div class="clearfix"></div>
 
 	</div>
@@ -723,9 +729,9 @@ var aw_artist_walkout = 0;
 				<div class="modal-body">
 					<div class="row">
 						<label class="col-xs-6">Event ID <input class="form-control" readonly type="text" value="<%= event_id %>"></label>
-						<label class="col-xs-6">Artist <input class="form-control" readonly type="text" value="<%= _.isObject(artist)?artist.getFullName():'' %>"></label>
+						<label class="col-xs-6">Artist <input class="form-control" readonly type="text" value="<%= _.isObject(artist) ? artist.getFullName() : '' %>"></label>
 						<label class="col-xs-6">Date <input class="form-control" readonly type="text" value="<%= show_date %>"></label>
-						<label class="col-xs-6">Venue <input class="form-control" readonly type="text" value="<%= venue.hasOwnProperty('get')?venue.get('name'):'' %>"></label>
+						<label class="col-xs-6">Venue <input class="form-control" readonly type="text" value="<%= venue.hasOwnProperty('get') ? venue.get('name') : '' %>"></label>
 						<br>
 					</div>
 					<div class="row">
@@ -765,9 +771,9 @@ var aw_artist_walkout = 0;
 				<div class="modal-body">
 					<div class="row">
 						<label class="col-xs-6">Event ID <input class="form-control" readonly type="text" value="<%= event_id %>"></label>
-						<label class="col-xs-6">Artist <input class="form-control" readonly type="text" value="<%= _.isObject(artist)?artist.getFullName():'' %>"></label>
+						<label class="col-xs-6">Artist <input class="form-control" readonly type="text" value="<%= artist.hasOwnProperty('getFullName') ? artist.getFullName() : '' %>"></label>
 						<label class="col-xs-6">Date <input class="form-control" readonly type="text" value="<%= show_date %>"></label>
-						<label class="col-xs-6">Venue <input class="form-control" readonly type="text" value="<%= _.isObject(venue)?venue.get('name'):'' %>"></label>
+						<label class="col-xs-6">Venue <input class="form-control" readonly type="text" value="<%= venue.hasOwnProperty('get') ? venue.get('name') : '' %>"></label>
 						<br>
 					</div>
 					<div class="row">
