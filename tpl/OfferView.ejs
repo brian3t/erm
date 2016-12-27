@@ -1,10 +1,20 @@
 <%
 var V = {};//Array to store variables
-l1_price = parseFloat(l1_price);
-l2_price = parseFloat(l2_price);
-l3_price = parseFloat(l3_price);
-l4_price = parseFloat(l4_price);
-l5_price = parseFloat(l5_price);
+l1_price = parseFloatOr0(l1_price);
+l2_price = parseFloatOr0(l2_price);
+l3_price = parseFloatOr0(l3_price);
+l4_price = parseFloatOr0(l4_price);
+l5_price = parseFloatOr0(l5_price);
+l1_kill = parseFloatOr0(l1_kill);
+l2_kill = parseFloatOr0(l2_kill);
+l3_kill = parseFloatOr0(l3_kill);
+l4_kill = parseFloatOr0(l4_kill);
+l5_kill = parseFloatOr0(l5_kill);
+l1_gross_ticket = parseFloatOr0(l1_gross_ticket);
+l2_gross_ticket = parseFloatOr0(l2_gross_ticket);
+l3_gross_ticket = parseFloatOr0(l3_gross_ticket);
+l4_gross_ticket = parseFloatOr0(l4_gross_ticket);
+l5_gross_ticket = parseFloatOr0(l5_gross_ticket);
 V.l1_gross = (l1_gross_ticket - l1_kill) * l1_price;
 V.l2_gross = (l2_gross_ticket - l2_kill) * l2_price;
 V.l3_gross = (l3_gross_ticket - l3_kill) * l3_price;
@@ -25,11 +35,14 @@ switch (post_show_lockout_unit) {
 	default:
 		break;
 }
-V.support_artist_total = parseFloat(support_artist_1_total) + parseFloat(support_artist_2_total) + parseFloat(support_artist_3_total);
+V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
 
 V.tour_production_expenses = app.utils.misc.calc_sum_from_array(JSON.parse(production_expense));
 V.general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense));
 V.total_estimated_expenses = V.tour_production_expenses + V.general_expenses_total;
+
+V.tax_per_ticket_total = parseFloatOr0(tax_per_ticket * (V.sum_gross_ticket - V.sum_kill)).toFixed(2);
+V.net_potential = (V.sum_gross - (tax * V.sum_gross / 100) - V.tax_per_ticket_total).toFixed(2);
 
 ve = JSON.parse(variable_expense);
 total_ve = app.utils.misc.calc_sum_from_array(ve);
@@ -48,9 +61,14 @@ V.aw_breakeven_tix = 0;
 V.aw_artist_walkout = 0;
 
 //format NAN
-_.each([V.support_artist_total, V.tour_production_expenses], function (v) {
-	console.info(v);
+$.each(V, function (i, v) {
+	if (isNumeric(V[i])) {
+	    V[i] = Number(V[i]);
+	}
 });
+
+console.info(V);
+
 %>
 
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>">
@@ -343,7 +361,7 @@ _.each([V.support_artist_total, V.tour_production_expenses], function (v) {
 			<div class="col-xs-4"></div>
 			<label class="col-xs-2">Tax % </label>
 			<input disabled name="tax" type="number" step="any" class="col-xs-2" value="<%= tax %>"></input>
-			<input id="tax_input" readonly type="number" value="<%= tax * V.sum_gross / 100 %>"
+			<input id="tax_input" readonly type="number" value="<%= Number((tax / 100 * V.sum_gross).toFixed(2)) %>"
 				   class="col-xs-2 text-blue">
 			<input disabled class="col-xs-2" name="tax_note" placeholder="note" value="<%= tax_note %>"></input>
 		</div>
@@ -353,7 +371,7 @@ _.each([V.support_artist_total, V.tour_production_expenses], function (v) {
 			<input disabled name="tax_per_ticket" type="number" step="any" class="col-xs-2"
 				   value="<%= tax_per_ticket %>"></input>
 			<input readonly id="tax_per_ticket_total" type="number"
-				   value="<%= parseFloat(tax_per_ticket * (V.sum_gross_ticket - V.sum_kill)).toFixed(2) %>"
+				   value="<%= V.tax_per_ticket_total %>"
 				   class="col-xs-2">
 			<div class="col-xs-2"></div>
 		</div>
@@ -362,7 +380,7 @@ _.each([V.support_artist_total, V.tour_production_expenses], function (v) {
 			<label class="col-xs-2 text_underlined">Net Potential </label>
 			<div class="col-xs-2"></div>
 			<input readonly id="net_potential" type="number"
-				   value="<%= parseFloat(V.sum_gross - (tax * V.sum_gross / 100) - (tax_per_ticket * (V.sum_gross_ticket - V.sum_kill))).toFixed(2) %>"
+				   value="<%= V.net_potential %>"
 				   class="col-xs-2">
 			<div class="col-xs-2"></div>
 		</div>

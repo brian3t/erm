@@ -313,3 +313,10 @@ function lat_lng_distance(lat1, lon1, lat2, lon2, unit) {
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
+function parseFloatOr0(v) {
+    v = parseFloat(v);
+    if (isNaN(v)){
+        v = 0;
+    }
+    return v;
+}
