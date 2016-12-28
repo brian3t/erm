@@ -65,7 +65,7 @@ Backbone.BBFormView = Backbone.View.extend({
                 }
                 target.before('<span class="glyphicon glyphicon-ok-circle upload_in_progress"></span>');
                 setTimeout(function () {
-                    target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
+                    // target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
                 }, 2000);
             }, error: function () {
                 target.prevAll('span.glyphicon-upload').remove();

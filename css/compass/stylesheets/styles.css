@@ -155,7 +155,8 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   float: left; }
 
 .upload_in_progress {
-  float: none; }
+  float: none;
+  position: absolute; }
 
 input[type='number'] {
   text-align: right; }

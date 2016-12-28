@@ -789,7 +789,7 @@ console.info(V);
 				<div class="modal-body">
 					<div class="row">
 						<label class="col-xs-6">Event ID <input class="form-control" readonly type="text" value="<%= event_id %>"></label>
-						<label class="col-xs-6">Artist <input class="form-control" readonly type="text" value="<%= artist.hasOwnProperty('getFullName') ? artist.getFullName() : '' %>"></label>
+						<label class="col-xs-6">Artist <input class="form-control" readonly type="text" value="<%= (artist && artist.hasOwnProperty('getFullName')) ? artist.getFullName() : '' %>"></label>
 						<label class="col-xs-6">Date <input class="form-control" readonly type="text" value="<%= show_date %>"></label>
 						<label class="col-xs-6">Venue <input class="form-control" readonly type="text" value="<%= venue.hasOwnProperty('get') ? venue.get('name') : '' %>"></label>
 						<br>
