@@ -114,6 +114,7 @@ app.views.OfferListView = Backbone.View.extend({
         this.offer_search_list_view.after_render();
         var edit_switch = this.$el.find('.edit_switch');
         this.switchery = new Switchery(edit_switch[0]);
+        edit_switch.trigger('change');
         this.delegateEvents();
         return this.el;
     },
@@ -185,6 +186,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
     after_render: function () {
         $(this.$el.find('.multi_select')).select2();
         $(this.$el.find('form[data-toggle="validator"]')).validator();
+        $('input.number').autoNumeric('init', {aSign:'$'});
         this.delegateEvents();
     },
     update_ve: function (e) {

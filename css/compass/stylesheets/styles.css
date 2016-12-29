@@ -153,12 +153,14 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
 
 .array_field_wrapper {
   float: left; }
+  .array_field_wrapper input {
+    font-size: 85%; }
 
 .upload_in_progress {
   float: none;
   position: absolute; }
 
-input[type='number'] {
+input[type='number'], input.number {
   text-align: right; }
 
 /*# sourceMappingURL=styles.css.map */

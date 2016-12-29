@@ -47,12 +47,15 @@ Backbone.BBFormView = Backbone.View.extend({
                 if (e.prop('type') == 'checkbox') {
                     v = e.prop('checked');
                 }
+                if (typeof v == 'string') {
+                    v = v.replace("$", "");
+                }
                 inputs[key] = v;
             });
             array_input.val(JSON.stringify(inputs));
             target = array_input;
         }
-        new_attr[target.prop('name')] = target.val();
+        new_attr[target.prop('name')] = target.val().replace('$', '');
         if (!is_multi_select && target.parent().is('label')) {
             target.before('<span class="glyphicon glyphicon-upload"></span>');
         }
@@ -65,7 +68,7 @@ Backbone.BBFormView = Backbone.View.extend({
                 }
                 target.before('<span class="glyphicon glyphicon-ok-circle upload_in_progress"></span>');
                 setTimeout(function () {
-                    // target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
+                    target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
                 }, 2000);
             }, error: function () {
                 target.prevAll('span.glyphicon-upload').remove();
