@@ -160,7 +160,7 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   float: none;
   position: absolute; }
 
-input[type='number'], input.number {
+input[type='number'], input.money {
   text-align: right; }
 
 /*# sourceMappingURL=styles.css.map */
