@@ -163,7 +163,7 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   padding: 5px
 }
 
-.text_underlined {
+.text_underlined, .underlined {
   text-decoration: underline;
 }
 
@@ -196,14 +196,36 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   text-decoration: none;
   color: #ffffff;
 }
+
 #back-to-top i {
   font-size: 300%;
 }
-.array_field_wrapper{
+
+.array_field_wrapper {
   float: left;
-  input{
+  input {
     font-size: 85%;
   }
 }
-.upload_in_progress{float: none; position: absolute}
-input[type='number'], input.money{text-align: right;}
+
+.upload_in_progress {
+  float: none;
+  position: absolute
+}
+
+input[type='number'], input.money {
+  text-align: right;
+}
+
+input.form-control, input.money {
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+.content-padded {
+  padding-right: 2px;
+  padding-left: 2px;
+  input, * input {
+    width: 100%;
+  }
+}

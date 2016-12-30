@@ -55,7 +55,12 @@ Backbone.BBFormView = Backbone.View.extend({
             array_input.val(JSON.stringify(inputs));
             target = array_input;
         }
-        var val = target.val().replace('$', '');
+        var val = target.val();
+        if (typeof val == 'undefined')
+        {
+            return -1;
+        }
+        val = val.replace('$', '');
         if (isNumeric(val)){
             val = parseFloat(val);
         }

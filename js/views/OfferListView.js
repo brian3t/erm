@@ -245,12 +245,25 @@ app.views.OfferView = Backbone.BBFormView.extend({
         $('input.sellout_potential').each(function (i, v) {
             sellout_total += parseFloat(v.value);
         });
-        $('#total_variable_expense').val(sellout_total);
+
         var $cc_fee_sellout = $('input.sellout_potential[data-category="cc_fee"]');
+        var artist_split_percent = parseFloat($('#aw_artist_split_percent').val());
         var $cc_box_office_sales_percent = $('input[name="cc_box_office_sales_percent"]');
         if ($cc_box_office_sales_percent.val() > 0) {
             $cc_fee_sellout.val($cc_fee_sellout.val() * $cc_box_office_sales_percent.val() / 100);
         }
+        $('#total_variable_expense').val(sellout_total);
+        var total_expense = parseFloat($('#total_fixed_expenses').val()) + sellout_total;
+        var estimated_total = total_expense + parseFloat($('#aw_artist_fee').val());
+        var net_potential = parseFloat($('#aw_net_potential').val());
+        var split_point = net_potential - total_expense;
+
+        $('#aw_est_expense').val(total_expense);
+        $('#aw_est_total').val(estimated_total);
+        $('#aw_breakeven_tix').val(Math.round(estimated_total / parseFloat($('#average_ticket_price').val())));
+        $('#aw_est_split_point').val(split_point);
+        $('#aw_artist_split').val(split_point * artist_split_percent / 100);
+        $('#aw_promoter_split').val(Number(split_point * (100 - artist_split_percent) / 100).toFixed(2));
     }
 
 });

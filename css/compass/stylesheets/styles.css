@@ -121,7 +121,7 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
 .padded {
   padding: 5px; }
 
-.text_underlined {
+.text_underlined, .underlined {
   text-decoration: underline; }
 
 .has_inline_inputs input, .has_inline_inputs select {
@@ -162,5 +162,15 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
 
 input[type='number'], input.money {
   text-align: right; }
+
+input.form-control, input.money {
+  padding-right: 2px;
+  padding-left: 2px; }
+
+.content-padded {
+  padding-right: 2px;
+  padding-left: 2px; }
+  .content-padded input, .content-padded * input {
+    width: 100%; }
 
 /*# sourceMappingURL=styles.css.map */
