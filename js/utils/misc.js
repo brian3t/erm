@@ -311,7 +311,7 @@ function lat_lng_distance(lat1, lon1, lat2, lon2, unit) {
     return dist;
 }
 function isNumeric(n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
+    return !isNaN(parseFloat(n)) && isFinite(parseFloat(n));
 }
 function parseFloatOr0(v) {
     v = parseFloat(v);

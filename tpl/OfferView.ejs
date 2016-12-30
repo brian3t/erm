@@ -39,7 +39,7 @@ switch (post_show_lockout_unit) {
 V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
 
 V.tour_production_expenses = app.utils.misc.calc_sum_from_array(JSON.parse(production_expense));
-V.general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense));
+V.general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense)) + housenut_total;
 V.total_estimated_expenses = V.tour_production_expenses + V.general_expenses_total;
 
 V.tax_per_ticket_total = parseFloatOr0(tax_per_ticket * (V.sum_gross_ticket - V.sum_kill)).toFixed(2);

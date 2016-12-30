@@ -55,7 +55,11 @@ Backbone.BBFormView = Backbone.View.extend({
             array_input.val(JSON.stringify(inputs));
             target = array_input;
         }
-        new_attr[target.prop('name')] = target.val().replace('$', '');
+        var val = target.val().replace('$', '');
+        if (isNumeric(val)){
+            val = parseFloat(val);
+        }
+        new_attr[target.prop('name')] = val;
         if (!is_multi_select && target.parent().is('label')) {
             target.before('<span class="glyphicon glyphicon-upload"></span>');
         }
