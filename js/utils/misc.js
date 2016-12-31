@@ -239,6 +239,7 @@ function array_keys_to_underscore(arr) {
  * Convert jQuery's serializeArray() array into assoc array
  * Also merge input of the same name into array, e.g. union_memberships = Agent & union_memberships = Other
  * becomes union_memberships = [Agent, Other]
+ * Also parse money value
  * @param arr
  * @returns assoc array, e.g. {'name': 'John', 'age': 22, 'array': ['a','b'] }
  */
@@ -253,13 +254,22 @@ function flat_array_to_assoc(arr) {
             if (e.length == 2) // ["first_name", "John"]
             {
                 var key = e[0];
+                var val = e[1];
+                if (typeof val=='string')
+                {
+                    val=val.replace('$','');
+                }
+                if (isNumeric(val)){
+                    val = Number(val.replace(/[^0-9\.]+/g,""));
+                    val = parseFloat(val);
+                }
                 if (!_.has(result, key)) {
-                    result[key] = e[1];
+                    result[key] = val;
                 } else {
                     if (_.isString(result[key])) {
                         result[key] = Array(result[key]);
                     }
-                    result[key].push(e[1]);
+                    result[key].push(val);
                 }
 
             }

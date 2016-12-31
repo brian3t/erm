@@ -42,7 +42,7 @@ V.total_ve = $('#total_variable_expense').val();
 V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
 
 V.tour_production_expenses = app.utils.misc.calc_sum_from_array(JSON.parse(production_expense));
-V.general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense)) + housenut_total;
+V.general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense)) + parseFloat(housenut_total);
 V.total_fixed_expenses = V.general_expenses_total + V.tour_production_expenses;
 
 V.tax_per_ticket_total = parseFloatOr0(tax_per_ticket * (V.sum_gross_ticket - V.sum_kill)).toFixed(2);
