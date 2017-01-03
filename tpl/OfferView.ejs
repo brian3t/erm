@@ -42,7 +42,7 @@ V.total_ve = $('#total_variable_expense').val();
 V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
 
 V.tour_production_expenses = app.utils.misc.calc_sum_from_array(JSON.parse(production_expense));
-V.general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense)) + parseFloat(housenut_total);
+V.general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense)) + parseFloatOr0(housenut_total);
 V.total_fixed_expenses = V.general_expenses_total + V.tour_production_expenses;
 
 V.tax_per_ticket_total = parseFloatOr0(tax_per_ticket * (V.sum_gross_ticket - V.sum_kill)).toFixed(2);
@@ -62,6 +62,8 @@ if (is_artist_production_buyout && is_artist_production_buyout == 1) {
 V.aw_promoter_split_percent = 0;
 V.aw_promoter_split = 0;
 V.aw_breakeven_tix = 0;
+
+V.total_comp_kill = artist_comp + production_comp + promotional_comp + house_comp + kill;
 
 //format NAN
 $.each(V, function (i, v) {
@@ -578,23 +580,23 @@ console.info(V);
 	<h4>Variable Expenses</h4>
 	<div class="form-group var_expense" id="var_expense">
 		<div class="text-center row">
-			<label class="col-xs-2 col-xs-offset-5 ">Per Ticket</label>
-			<label class="col-xs-3">Cap</label>
+			<label class="col-xs-2 col-xs-offset-55 ">Per Ticket</label>
+			<label class="col-xs-25">Cap</label>
 		</div>
 		<div class="row text-center">
-			<label class="col-xs-2 col-xs-offset-1">Notes</label>
-			<label class="col-xs-2">Flat Rate</label>
+			<label class="col-xs-2 col-xs-offset-2">Notes</label>
+			<label class="col-xs-15">Flat Rate</label>
 			<label class="col-xs-1">$</label>
 			<label class="col-xs-1">%</label>
 			<label class="col-xs-1">Min</label>
-			<label class="col-xs-2">Max</label>
+			<label class="col-xs-15">Max</label>
 			<label class="col-xs-2">Sell Out Potential</label>
 		</div>
 		<div class="row">
-			<label class="col-xs-1 input_atomic">Rental</label>
+			<label class="col-xs-2 input_atomic">Rental</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="rental_note"
 										 value="<%= ve['rental_note'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="rental_flat_rate"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="rental_flat_rate"
 										 value="<%= ve['rental_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="rental_per_ticket_dollar"
 										 value="<%= ve['rental_per_ticket_dollar'] %>"></div>
@@ -602,16 +604,16 @@ console.info(V);
 										 value="<%= ve['rental_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="rental_min"
 										 value="<%= ve['rental_min'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="rental_max"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="rental_max"
 										 value="<%= ve['rental_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="rental"></div>
 		</div>
 		<div class="row">
-			<label class="col-xs-1 input_atomic">Tix Commission</label>
+			<label class="col-xs-2 input_atomic">Tix Commission</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="tixcom_note"
 										 value="<%= ve['tixcom_note'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="tixcom_flat_rate"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tixcom_flat_rate"
 										 value="<%= ve['tixcom_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tixcom_per_ticket_dollar"
 										 value="<%= ve['tixcom_per_ticket_dollar'] %>"></div>
@@ -619,16 +621,16 @@ console.info(V);
 										 value="<%= ve['tixcom_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tixcom_min"
 										 value="<%= ve['tixcom_min'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="tixcom_max"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tixcom_max"
 										 value="<%= ve['tixcom_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="tixcom"></div>
 		</div>
 		<div class="row">
-			<label class="col-xs-1 input_atomic">Tix Service Fees</label>
+			<label class="col-xs-2 input_atomic">Tix Service Fees</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="tix_service_fee_note"
 										 value="<%= ve['tix_service_fee_note'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="tix_service_fee_flat_rate"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tix_service_fee_flat_rate"
 										 value="<%= ve['tix_service_fee_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tix_service_fee_per_ticket_dollar"
 										 value="<%= ve['tix_service_fee_per_ticket_dollar'] %>"></div>
@@ -636,16 +638,16 @@ console.info(V);
 										 value="<%= ve['tix_service_fee_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tix_service_fee_min"
 										 value="<%= ve['tix_service_fee_min'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="tix_service_fee_max"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tix_service_fee_max"
 										 value="<%= ve['tix_service_fee_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="tix_service_fee"></div>
 		</div>
 		<div class="row">
-			<label class="col-xs-1 input_atomic">Box Office Fees</label>
+			<label class="col-xs-2 input_atomic">Box Office Fees</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="box_office_fee_note"
 										 value="<%= ve['box_office_fee_note'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="box_office_fee_flat_rate"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="box_office_fee_flat_rate"
 										 value="<%= ve['box_office_fee_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="box_office_fee_per_ticket_dollar"
 										 value="<%= ve['box_office_fee_per_ticket_dollar'] %>"></div>
@@ -653,16 +655,16 @@ console.info(V);
 										 value="<%= ve['box_office_fee_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="box_office_fee_min"
 										 value="<%= ve['box_office_fee_min'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="box_office_fee_max"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="box_office_fee_max"
 										 value="<%= ve['box_office_fee_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="box_office_fee"></div>
 		</div>
 		<div class="row">
-			<label class="col-xs-1 input_atomic">Event Tax</label>
+			<label class="col-xs-2 input_atomic">Event Tax</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="event_tax_note"
 										 value="<%= ve['event_tax_note'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="event_tax_flat_rate"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="event_tax_flat_rate"
 										 value="<%= ve['event_tax_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="event_tax_per_ticket_dollar"
 										 value="<%= ve['event_tax_per_ticket_dollar'] %>"></div>
@@ -670,16 +672,16 @@ console.info(V);
 										 value="<%= ve['event_tax_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="event_tax_min"
 										 value="<%= ve['event_tax_min'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="event_tax_max"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="event_tax_max"
 										 value="<%= ve['event_tax_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="event_tax"></div>
 		</div>
 		<div class="row">
-			<label class="col-xs-1 input_atomic">Insurance</label>
+			<label class="col-xs-2 input_atomic">Insurance</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="insurance_note"
 										 value="<%= ve['insurance_note'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="insurance_flat_rate"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="insurance_flat_rate"
 										 value="<%= ve['insurance_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="insurance_per_ticket_dollar"
 										 value="<%= ve['insurance_per_ticket_dollar'] %>"></div>
@@ -687,16 +689,16 @@ console.info(V);
 										 value="<%= ve['insurance_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="insurance_min"
 										 value="<%= ve['insurance_min'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="insurance_max"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="insurance_max"
 										 value="<%= ve['insurance_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="insurance"></div>
 		</div>
 		<div class="row">
-			<label class="col-xs-1 input_atomic">SESEC</label>
+			<label class="col-xs-2 input_atomic">SESEC</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="sesec_note"
 										 value="<%= ve['sesec_note'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="sesec_flat_rate"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_flat_rate"
 										 value="<%= ve['sesec_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_per_ticket_dollar"
 										 value="<%= ve['sesec_per_ticket_dollar'] %>"></div>
@@ -704,48 +706,48 @@ console.info(V);
 										 value="<%= ve['sesec_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_min"
 										 value="<%= ve['sesec_min'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="sesec_max"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_max"
 										 value="<%= ve['sesec_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="sesec"></div>
 		</div>
 		<div class="row">
-			<label class="col-xs-1 input_atomic">ASCAP
+			<label class="col-xs-2 input_atomic">ASCAP
 				<button type="button" id="ascap_update" data-toggle="modal" data-target="#ascap_modal">Update</button>
 			</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="ascap_note"
 										 value="<%= ve['ascap_note'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="ascap_flat_rate"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="ascap_flat_rate"
 										 value="<%= ve['ascap_flat_rate'] %>"></div>
 			<span class="col-xs-2"></span>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="ascap_min"
 										 value="<%= ve['ascap_min'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="ascap_max"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="ascap_max"
 										 value="<%= ve['ascap_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="ascap"></div>
 		</div>
 		<div class="row">
-			<label class="col-xs-1 input_atomic">BMI
+			<label class="col-xs-2 input_atomic">BMI
 				<button type="button" id="bmi_update" data-toggle="modal" data-target="#bmi_modal">Update</button>
 			</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="bmi_note" value="<%= ve['bmi_note'] %>">
 			</div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="bmi_flat_rate"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_flat_rate"
 										 value="<%= ve['bmi_flat_rate'] %>"></div>
 			<span class="col-xs-2"></span>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="bmi_min"
 										 value="<%= ve['bmi_min'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="bmi_max"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_max"
 										 value="<%= ve['bmi_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="bmi"></div>
 		</div>
 		<div class="row">
-			<label class="col-xs-1 input_atomic">Credit Card Fees</label>
+			<label class="col-xs-2 input_atomic">Credit Card Fees</label>
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="cc_fee_note"
 										 value="<%= ve['cc_fee_note'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="cc_fee_flat_rate"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_flat_rate"
 										 value="<%= ve['cc_fee_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="cc_fee_per_ticket_dollar"
 										 value="<%= ve['cc_fee_per_ticket_dollar'] %>"></div>
@@ -753,15 +755,14 @@ console.info(V);
 										 value="<%= ve['cc_fee_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="cc_fee_min"
 										 value="<%= ve['cc_fee_min'] %>"></div>
-			<div class="col-xs-2"><input class="money  form-control skip_ajax" name="cc_fee_max"
+			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_max"
 										 value="<%= ve['cc_fee_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="cc_fee"></div>
 		</div>
 		<div class="row">
-			<label class="col-xs-1 input_atomic">Est. CC Box Office Sales (%)</label>
-			<div class="col-xs-5"></div>
-			<div class="col-xs-1"><input class="form-control skip_ajax" name="cc_box_office_sales_percent"
+			<label class="col-xs-2 input_atomic">Est. CC Box Office Sales (%)</label>
+			<div class="col-xs-1 col-xs-offset-55"><input class="form-control skip_ajax" name="cc_box_office_sales_percent"
 										 value="<%= ve['cc_box_office_sales_percent'] %>"></div>
 			<div class="col-xs-4"></div>
 		</div>
@@ -830,19 +831,34 @@ console.info(V);
 			</div>
 			<div class="row">
 				<label class="col-xs-5">Buyout</label>
-				<input class="col-xs-35	money"  name="merch_buyout_venue_sell" value="<%= merch_buyout_venue_sell %>">
-				<input class="col-xs-35	money	"  name="merch_buyout_artist_sell" value="<%= merch_buyout_artist_sell %>">
+				<input class="col-xs-35	money" name="merch_buyout_venue_sell" value="<%= merch_buyout_venue_sell %>">
+				<input class="col-xs-35	money	" name="merch_buyout_artist_sell" value="<%= merch_buyout_artist_sell %>">
 			</div>
 			<div class="row">
-				<label class="col-xs-5">Artist Split</label>
-				<input class="col-xs-35	money"  name="merch_artist_split_venue_sell" value="<%= merch_artist_split_venue_sell %>">
-				<input class="col-xs-35	money	"  name="merch_artist_split_artist_sell" value="<%= merch_artist_split_artist_sell %>">
+				<label class="col-xs-5">Artist Split (%)</label>
+				<input class="col-xs-35	" name="merch_artist_split_venue_sell" value="<%= merch_artist_split_venue_sell %>">
+				<input class="col-xs-35		" name="merch_artist_split_artist_sell" value="<%= merch_artist_split_artist_sell %>">
 			</div>
 			<div class="row">
-				<label class="col-xs-5">Venue Split</label>
-				<input class="col-xs-35	money"  name="merch_artist_split_venue_sell" value="<%= merch_artist_split_venue_sell %>">
-				<input class="col-xs-35	money	"  name="merch_artist_split_artist_sell" value="<%= merch_artist_split_artist_sell %>">
+				<label class="col-xs-5">Venue Split (%)</label>
+				<input class="col-xs-35	text-blue" name="merch_venue_split_venue_sell" value="<%= merch_venue_split_venue_sell %>">
+				<input class="col-xs-35	text-blue	" name="merch_venue_split_artist_sell" value="<%= merch_venue_split_artist_sell %>">
 			</div>
+			<div class="row">
+				<label class="col-xs-5">Artist Split Media (%)</label>
+				<input class="col-xs-35	" name="merch_artist_split_media_venue_sell" value="<%= merch_artist_split_media_venue_sell %>">
+				<input class="col-xs-35		" name="merch_artist_split_media_artist_sell" value="<%= merch_artist_split_media_artist_sell %>">
+			</div>
+			<div class="row">
+				<label class="col-xs-5">Venue Split Media (%)</label>
+				<input class="col-xs-35	text-blue" name="merch_venue_split_media_venue_sell" value="<%= merch_venue_split_media_venue_sell %>">
+				<input class="col-xs-35	text-blue	" name="merch_venue_split_media_artist_sell" value="<%= merch_venue_split_media_artist_sell %>">
+			</div>
+			<div class="row">
+				<label class="col-xs-12">&nbsp;</label>
+			</div>
+			<div class="row">
+				<label class="col-xs-12" for="merch_note">Merchandise Note <textarea name="merch_note" class="form-control" value="<%= merch_note %>"><%= merch_note %></textarea></label></div>
 		</div>
 	</div>
 	<div class="col-xs-6">
@@ -850,9 +866,42 @@ console.info(V);
 		<div class="form-group">
 			<div class="row">
 				<div class="col-xs-5"></div>
-				<label class="col-xs-35">Venue Sells</label>
-				<label class="col-xs-35">Artist Sells</label>
+				<label class="col-xs-35">Tickets</label>
+				<label class="col-xs-35">Notes</label>
 			</div>
+			<div class="row">
+				<label class="col-xs-5">Artist Comps</label>
+				<input class="col-xs-35	" type="number" step="1" name="artist_comp" value="<%= artist_comp %>">
+				<input class="col-xs-35	" name="artist_comp_note" value="<%= artist_comp_note %>">
+			</div>
+			<div class="row">
+				<label class="col-xs-5">Production Comps</label>
+				<input class="col-xs-35	" type="number" step="1" name="production_comp" value="<%= production_comp %>">
+				<input class="col-xs-35	" name="production_comp_note" value="<%= production_comp_note %>">
+			</div>
+			<div class="row">
+				<label class="col-xs-5">Promotional Comps</label>
+				<input class="col-xs-35	" type="number" step="1" name="promotional_comp" value="<%= promotional_comp %>">
+				<input class="col-xs-35	" name="promotional_comp_note" value="<%= promotional_comp_note %>">
+			</div>
+			<div class="row">
+				<label class="col-xs-5">House Comps</label>
+				<input class="col-xs-35	" type="number" step="1" name="house_comp" value="<%= house_comp %>">
+				<input class="col-xs-35	" name="house_comp_note" value="<%= house_comp_note %>">
+			</div>
+			<div class="row">
+				<label class="col-xs-5">Kills</label>
+				<input class="col-xs-35	" type="number" step="1" name="kill" value="<%= kill %>">
+				<input class="col-xs-35	" name="kill_note" value="<%= kill_note %>">
+			</div>
+			<div class="row">
+				<label class="col-xs-5 underlined">Total Comps & Kills</label>
+				<input readonly class="col-xs-35	text-blue" type="number" id="total_comp_kill" value="<%= V.total_comp_kill %>">
+				<div class="col-xs-35	"></div>
+			</div>
+			<div class="row">
+				<label class="col-xs-12" for="comp_kill_note">Comps & Kills Note <textarea name="comp_kill_note" class="form-control" value="<%= comp_kill_note %>"><%= comp_kill_note %></textarea></label></div>
+
 		</div>
 	</div>
 

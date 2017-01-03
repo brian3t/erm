@@ -229,4 +229,17 @@ input.form-control, input.money {
     width: 100%;
   }
 }
+*[class^="col-"]{
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.col-xs-55{width: 48.958333335%}
 .col-xs-35{width: 26.16666666%}
+.col-xs-25{width: 19.33333333%}
+.col-xs-15{width: 12.5%}
+.col-xs-offset-15{margin-left: 12.5%}
+.col-xs-offset-55{margin-left: 45.958333%}
+.col-xs-offset-65{margin-left: 54.16666667%}
