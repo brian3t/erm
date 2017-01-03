@@ -173,4 +173,7 @@ input.form-control, input.money {
   .content-padded input, .content-padded * input {
     width: 100%; }
 
+.col-xs-35 {
+  width: 26.16666666%; }
+
 /*# sourceMappingURL=styles.css.map */

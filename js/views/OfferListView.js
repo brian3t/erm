@@ -257,13 +257,15 @@ app.views.OfferView = Backbone.BBFormView.extend({
         var estimated_total = total_expense + parseFloat($('#aw_artist_fee').val());
         var net_potential = parseFloat($('#aw_net_potential').val());
         var split_point = net_potential - total_expense;
+        var artist_split = split_point * artist_split_percent / 100;
 
         $('#aw_est_expense').val(total_expense);
         $('#aw_est_total').val(estimated_total);
         $('#aw_breakeven_tix').val(Math.round(estimated_total / parseFloat($('#average_ticket_price').val())));
         $('#aw_est_split_point').val(split_point);
-        $('#aw_artist_split').val(split_point * artist_split_percent / 100);
+        $('#aw_artist_split').val(artist_split);
         $('#aw_promoter_split').val(Number(split_point * (100 - artist_split_percent) / 100).toFixed(2));
+        $('#aw_artist_walkout').val(artist_split + parseFloat($('#aw_artist_production').val()));
     }
 
 });

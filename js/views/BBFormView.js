@@ -56,12 +56,13 @@ Backbone.BBFormView = Backbone.View.extend({
             target = array_input;
         }
         var val = target.val();
-        if (typeof val == 'undefined')
-        {
+        if (typeof val == 'undefined') {
             return -1;
         }
-        val = val.replace('$', '');
-        if (isNumeric(val)){
+        if (target.hasClass('money')) {
+            val = val.replace('$', '').replace('.00', '').replace(',', '');
+        }
+        if (isNumeric(val)) {
             val = parseFloat(val);
         }
         new_attr[target.prop('name')] = val;

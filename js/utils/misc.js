@@ -251,9 +251,9 @@ function flat_array_to_assoc(arr) {
     arr.forEach(function (e) {
         if (_.isObject(e)) {
             e = _.toArray(e);
+            var key = e[0];
             if (e.length == 2) // ["first_name", "John"]
             {
-                var key = e[0];
                 var val = e[1];
                 if (typeof val=='string')
                 {
