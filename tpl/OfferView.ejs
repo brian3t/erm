@@ -1,78 +1,79 @@
 <%
 var V = {};//Array to store variables
-l1_price = parseFloatOr0(l1_price);
-l2_price = parseFloatOr0(l2_price);
-l3_price = parseFloatOr0(l3_price);
-l4_price = parseFloatOr0(l4_price);
-l5_price = parseFloatOr0(l5_price);
-l1_kill = parseFloatOr0(l1_kill);
-l2_kill = parseFloatOr0(l2_kill);
-l3_kill = parseFloatOr0(l3_kill);
-l4_kill = parseFloatOr0(l4_kill);
-l5_kill = parseFloatOr0(l5_kill);
-l1_gross_ticket = parseFloatOr0(l1_gross_ticket);
-l2_gross_ticket = parseFloatOr0(l2_gross_ticket);
-l3_gross_ticket = parseFloatOr0(l3_gross_ticket);
-l4_gross_ticket = parseFloatOr0(l4_gross_ticket);
-l5_gross_ticket = parseFloatOr0(l5_gross_ticket);
-V.l1_gross = (l1_gross_ticket - l1_kill) * l1_price;
-V.l2_gross = (l2_gross_ticket - l2_kill) * l2_price;
-V.l3_gross = (l3_gross_ticket - l3_kill) * l3_price;
-V.l4_gross = (l4_gross_ticket - l4_kill) * l4_price;
-V.l5_gross = (l5_gross_ticket - l5_kill) * l5_price;
+var ve = {};
+function recalculate_offer_values() {
+	l1_price = parseFloatOr0(l1_price);
+	l2_price = parseFloatOr0(l2_price);
+	l3_price = parseFloatOr0(l3_price);
+	l4_price = parseFloatOr0(l4_price);
+	l5_price = parseFloatOr0(l5_price);
+	l1_kill = parseFloatOr0(l1_kill);
+	l2_kill = parseFloatOr0(l2_kill);
+	l3_kill = parseFloatOr0(l3_kill);
+	l4_kill = parseFloatOr0(l4_kill);
+	l5_kill = parseFloatOr0(l5_kill);
+	l1_gross_ticket = parseFloatOr0(l1_gross_ticket);
+	l2_gross_ticket = parseFloatOr0(l2_gross_ticket);
+	l3_gross_ticket = parseFloatOr0(l3_gross_ticket);
+	l4_gross_ticket = parseFloatOr0(l4_gross_ticket);
+	l5_gross_ticket = parseFloatOr0(l5_gross_ticket);
+	V.l1_gross = (l1_gross_ticket - l1_kill) * l1_price;
+	V.l2_gross = (l2_gross_ticket - l2_kill) * l2_price;
+	V.l3_gross = (l3_gross_ticket - l3_kill) * l3_price;
+	V.l4_gross = (l4_gross_ticket - l4_kill) * l4_price;
+	V.l5_gross = (l5_gross_ticket - l5_kill) * l5_price;
 
-V.sum_gross = V.l1_gross + V.l2_gross + V.l3_gross + V.l4_gross + V.l5_gross;
-V.sum_gross_ticket = l1_gross_ticket + l2_gross_ticket + l3_gross_ticket + l4_gross_ticket + l5_gross_ticket;
-V.sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
-V.total_gross_ticket_price = V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
-V.playable_on = new Date(show_date);
-switch (post_show_lockout_unit) {
-	case 'Days':
-		V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + post_show_lockout * 86400000));
-		break;
-	case 'Months':
-		V.playable_on = new Date(V.playable_on.setMonth(V.playable_on.getMonth() + post_show_lockout));
-		break;
-	default:
-		break;
-}
-var ve = JSON.parse(variable_expense);
-V.total_ve = $('#total_variable_expense').val();
+	V.sum_gross = V.l1_gross + V.l2_gross + V.l3_gross + V.l4_gross + V.l5_gross;
+	V.sum_gross_ticket = l1_gross_ticket + l2_gross_ticket + l3_gross_ticket + l4_gross_ticket + l5_gross_ticket;
+	V.sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
+	V.total_gross_ticket_price = V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
+	V.playable_on = new Date(show_date);
+	switch (post_show_lockout_unit) {
+		case 'Days':
+			V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + post_show_lockout * 86400000));
+			break;
+		case 'Months':
+			V.playable_on = new Date(V.playable_on.setMonth(V.playable_on.getMonth() + post_show_lockout));
+			break;
+		default:
+			break;
+	}
+	ve = JSON.parse(variable_expense);
+	V.total_ve = $('#total_variable_expense').val();
 
-V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
+	V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
 
-V.tour_production_expenses = app.utils.misc.calc_sum_from_array(JSON.parse(production_expense));
-V.general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense)) + parseFloatOr0(housenut_total);
-V.total_fixed_expenses = V.general_expenses_total + V.tour_production_expenses;
+	V.tour_production_expenses = app.utils.misc.calc_sum_from_array(JSON.parse(production_expense));
+	V.general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense)) + parseFloatOr0(housenut_total);
+	V.total_fixed_expenses = V.general_expenses_total + V.tour_production_expenses;
 
-V.tax_per_ticket_total = parseFloatOr0(tax_per_ticket * (V.sum_gross_ticket - V.sum_kill)).toFixed(2);
-V.tax_total = V.sum_gross - (V.sum_gross / (1 + tax / 100)) //Tax Total=Gross Potential-(Gross Potential/(Tax %+1))
-V.net_potential = V.sum_gross - V.tax_total - V.tax_per_ticket_total;
+	V.tax_per_ticket_total = parseFloatOr0(tax_per_ticket * (V.sum_gross_ticket - V.sum_kill)).toFixed(2);
+	V.tax_total = V.sum_gross - (V.sum_gross / (1 + tax / 100)) //Tax Total=Gross Potential-(Gross Potential/(Tax %+1))
+	V.net_potential = V.sum_gross - V.tax_total - V.tax_per_ticket_total;
 
-V.total_estimated_expenses = V.total_fixed_expenses;
+	V.total_estimated_expenses = V.total_fixed_expenses;
 
-V.aw_artist_split_percent = 0;
-V.aw_artist_split = 0;
-V.aw_artist_fee = parseFloat(artist_guarantee);
-V.aw_artist_production = 0;
-if (is_artist_production_buyout && is_artist_production_buyout == 1) {
-	V.aw_artist_fee += V.tour_production_expenses;
-	V.aw_artist_production = V.tour_production_expenses;
-}
-V.aw_promoter_split_percent = 0;
-V.aw_promoter_split = 0;
-V.aw_breakeven_tix = 0;
+	V.aw_artist_split_percent = 0;
+	V.aw_artist_split = 0;
+	V.aw_artist_fee = parseFloat(artist_guarantee);
+	V.aw_artist_production = 0;
+	if (is_artist_production_buyout && is_artist_production_buyout == 1) {
+		V.aw_artist_fee += V.tour_production_expenses;
+		V.aw_artist_production = V.tour_production_expenses;
+	}
+	V.aw_promoter_split_percent = 0;
+	V.aw_promoter_split = 0;
 
-V.total_comp_kill = artist_comp + production_comp + promotional_comp + house_comp + kill;
+	V.total_comp_kill = artist_comp + production_comp + promotional_comp + house_comp + kill;
 
 //format NAN
-$.each(V, function (i, v) {
-	if (isNumeric(V[i])) {
-		V[i] = Number(V[i]);
-	}
-});
-
-console.info(V);
+	$.each(V, function (i, v) {
+		if (isNumeric(V[i])) {
+			V[i] = Number(V[i]).toFixed(2);
+		}
+	});
+}
+recalculate_offer_values();
 %>
 
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>">
@@ -268,11 +269,11 @@ console.info(V);
 										   class="  form-control"></label>
 			<label class="col-xs-1"><input name="l1_kill" disabled step="any" value="<%= l1_kill %>"
 										   class="  form-control"></label>
-			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control"
+			<label class="col-xs-2"><input readonly class="l1 sellable_ticket text-blue form-control"
 										   value="<%= l1_gross_ticket - l1_kill %>"></input></label>
 			<label class="col-xs-2"><input name="l1_price" disabled step="any" value="<%= l1_price %>"
 										   class="money  form-control"></label>
-			<label class="col-xs-2"><input readonly class="money  gross text-blue form-control"
+			<label class="col-xs-2"><input readonly class="money l1 gross text-blue form-control"
 										   value="<%= V.l1_gross %>"></label>
 		</div>
 		<div class="row ticket_scaling">
@@ -281,11 +282,11 @@ console.info(V);
 										   class="  form-control"></label>
 			<label class="col-xs-1"><input name="l2_kill" disabled step="any" value="<%= l2_kill %>"
 										   class="  form-control"></label>
-			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control"
+			<label class="col-xs-2"><input readonly class="l2 sellable_ticket text-blue form-control"
 										   value="<%= l2_gross_ticket - l2_kill %>"></input></label>
 			<label class="col-xs-2"><input name="l2_price" disabled step="any" value="<%= l2_price %>"
 										   class="money  form-control"></label>
-			<label class="col-xs-2"><input readonly class="money  gross text-blue form-control"
+			<label class="col-xs-2"><input readonly class="money l2  gross text-blue form-control"
 										   value="<%= V.l2_gross %>"></label>
 		</div>
 		<div class="row ticket_scaling">
@@ -294,11 +295,11 @@ console.info(V);
 										   class="  form-control"></label>
 			<label class="col-xs-1"><input name="l3_kill" disabled step="any" value="<%= l3_kill %>"
 										   class="  form-control"></label>
-			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control"
+			<label class="col-xs-2"><input readonly class="l3 sellable_ticket text-blue form-control"
 										   value="<%= l3_gross_ticket - l3_kill %>"></input></label>
 			<label class="col-xs-2"><input name="l3_price" disabled step="any" value="<%= l3_price %>"
 										   class="money  form-control"></label>
-			<label class="col-xs-2"><input readonly class="money  gross text-blue form-control"
+			<label class="col-xs-2"><input readonly class="money l3  gross text-blue form-control"
 										   value="<%= V.l3_gross %>"></label>
 		</div>
 		<div class="row ticket_scaling">
@@ -307,11 +308,11 @@ console.info(V);
 										   class="  form-control"></label>
 			<label class="col-xs-1"><input name="l4_kill" disabled step="any" value="<%= l4_kill %>"
 										   class="  form-control"></label>
-			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control"
+			<label class="col-xs-2"><input readonly class="l4 sellable_ticket text-blue form-control"
 										   value="<%= l4_gross_ticket - l4_kill %>"></input></label>
 			<label class="col-xs-2"><input name="l4_price" disabled step="any" value="<%= l4_price %>"
 										   class="money  form-control"></label>
-			<label class="col-xs-2"><input readonly class="money  gross text-blue form-control"
+			<label class="col-xs-2"><input readonly class="money l4  gross text-blue form-control"
 										   value="<%= V.l4_gross %>"></label>
 		</div>
 		<div class="row ticket_scaling">
@@ -320,38 +321,37 @@ console.info(V);
 										   class="  form-control"></label>
 			<label class="col-xs-1"><input name="l5_kill" disabled step="any" value="<%= l5_kill %>"
 										   class="  form-control"></label>
-			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control"
+			<label class="col-xs-2"><input readonly class="l5 sellable_ticket text-blue form-control"
 										   value="<%= l5_gross_ticket - l5_kill %>"></input></label>
 			<label class="col-xs-2"><input name="l5_price" disabled step="any" value="<%= l5_price %>"
 										   class="money  form-control"></label>
-			<label class="col-xs-2"><input readonly class="money  gross text-blue form-control"
+			<label class="col-xs-2"><input readonly class="money l5  gross text-blue form-control"
 										   value="<%= V.l5_gross %>"></label>
 		</div>
 		<div class="row sum">
 			<label class="col-xs-1 ">Total Gross</label>
 			<label class="col-xs-2"><input id="gross_ticket" readonly value="<%= V.sum_gross_ticket %>"
 										   class="  form-control text-blue"></label>
-			<label class="col-xs-1"><input readonly step="any" value="<%= V.sum_kill %>"
+			<label class="col-xs-1"><input id="total_kill" readonly step="any" value="<%= V.sum_kill %>"
 										   class="  form-control text-blue"></label>
-			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control"
+			<label class="col-xs-2"><input readonly class="total sellable_ticket text-blue form-control"
 										   value="<%= V.sum_gross_ticket - V.sum_kill %>"></input></label>
 			<label class="col-xs-2"><input readonly id="average_ticket_price" step="any"
 										   class="money  form-control text-blue"
 										   value="<%= V.total_gross_ticket_price %>"></label>
-			<label class="col-xs-2"><input readonly class="money  gross text-blue form-control"
+			<label class="col-xs-2"><input readonly class="money total  gross text-blue form-control"
 										   value="<%= V.sum_gross %>"></label>
 		</div>
 		<div class="row average">
 			<label class="col-xs-1 ">Average</label>
-			<label class="col-xs-2"><input readonly value="<%= V.sum_gross_ticket / 5 %>"
+			<label class="col-xs-2"><input id="average_ticket" readonly value="<%= V.sum_gross_ticket / 5 %>"
 										   class="  form-control text-blue"></label>
-			<label class="col-xs-1"><input readonly step="any" value="<%= V.sum_kill / 5 %>"
+			<label class="col-xs-1"><input id="average_kill" readonly step="any" value="<%= V.sum_kill / 5 %>"
 										   class="  form-control text-blue"></label>
-			<label class="col-xs-2"><input readonly class="sellable_ticket text-blue form-control"
+			<label class="col-xs-2"><input readonly class="average sellable_ticket text-blue form-control"
 										   value="<%= (V.sum_gross_ticket - V.sum_kill) / 5 %>"></input></label>
-			<label class="col-xs-2"><input readonly step="any"
-										   class="money  form-control text-blue"></label>
-			<label class="col-xs-2"><input readonly class="money  gross text-blue form-control"
+			<label class="col-xs-2"></label>
+			<label class="col-xs-2"><input readonly class="money average gross text-blue form-control"
 										   value="<%= V.sum_gross / 5 %>"></label>
 		</div>
 		<div class="row">
@@ -366,7 +366,7 @@ console.info(V);
 		<div class="row">
 			<div class="col-xs-4"></div>
 			<label class="col-xs-2">Tax % </label>
-			<div class="col-xs-2 content-padded"><input disabled name="tax" step="any" value="<%= tax %>"></input>
+			<div class="col-xs-2 content-padded"><input disabled type="number" name="tax" step="any" value="<%= tax %>"></input>
 			</div>
 			<div class="col-xs-2 content-padded"><input id="tax_input" value="<%= V.tax_total %>"
 														class="money text-blue"></div>
@@ -597,15 +597,15 @@ console.info(V);
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="rental_note"
 										 value="<%= ve['rental_note'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="rental_flat_rate"
-										 value="<%= ve['rental_flat_rate'] %>"></div>
+										  value="<%= ve['rental_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="rental_per_ticket_dollar"
 										 value="<%= ve['rental_per_ticket_dollar'] %>"></div>
-			<div class="col-xs-1"><input class="form-control skip_ajax" name="rental_per_ticket_percent"
+			<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="rental_per_ticket_percent"
 										 value="<%= ve['rental_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="rental_min"
 										 value="<%= ve['rental_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="rental_max"
-										 value="<%= ve['rental_max'] %>"></div>
+										  value="<%= ve['rental_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="rental"></div>
 		</div>
@@ -614,15 +614,15 @@ console.info(V);
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="tixcom_note"
 										 value="<%= ve['tixcom_note'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tixcom_flat_rate"
-										 value="<%= ve['tixcom_flat_rate'] %>"></div>
+										  value="<%= ve['tixcom_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tixcom_per_ticket_dollar"
 										 value="<%= ve['tixcom_per_ticket_dollar'] %>"></div>
-			<div class="col-xs-1"><input class="form-control skip_ajax" name="tixcom_per_ticket_percent"
+			<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="tixcom_per_ticket_percent"
 										 value="<%= ve['tixcom_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tixcom_min"
 										 value="<%= ve['tixcom_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tixcom_max"
-										 value="<%= ve['tixcom_max'] %>"></div>
+										  value="<%= ve['tixcom_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="tixcom"></div>
 		</div>
@@ -631,15 +631,15 @@ console.info(V);
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="tix_service_fee_note"
 										 value="<%= ve['tix_service_fee_note'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tix_service_fee_flat_rate"
-										 value="<%= ve['tix_service_fee_flat_rate'] %>"></div>
+										  value="<%= ve['tix_service_fee_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tix_service_fee_per_ticket_dollar"
 										 value="<%= ve['tix_service_fee_per_ticket_dollar'] %>"></div>
-			<div class="col-xs-1"><input class="form-control skip_ajax" name="tix_service_fee_per_ticket_percent"
+			<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="tix_service_fee_per_ticket_percent"
 										 value="<%= ve['tix_service_fee_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tix_service_fee_min"
 										 value="<%= ve['tix_service_fee_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tix_service_fee_max"
-										 value="<%= ve['tix_service_fee_max'] %>"></div>
+										  value="<%= ve['tix_service_fee_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="tix_service_fee"></div>
 		</div>
@@ -648,15 +648,15 @@ console.info(V);
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="box_office_fee_note"
 										 value="<%= ve['box_office_fee_note'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="box_office_fee_flat_rate"
-										 value="<%= ve['box_office_fee_flat_rate'] %>"></div>
+										  value="<%= ve['box_office_fee_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="box_office_fee_per_ticket_dollar"
 										 value="<%= ve['box_office_fee_per_ticket_dollar'] %>"></div>
-			<div class="col-xs-1"><input class="form-control skip_ajax" name="box_office_fee_per_ticket_percent"
+			<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="box_office_fee_per_ticket_percent"
 										 value="<%= ve['box_office_fee_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="box_office_fee_min"
 										 value="<%= ve['box_office_fee_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="box_office_fee_max"
-										 value="<%= ve['box_office_fee_max'] %>"></div>
+										  value="<%= ve['box_office_fee_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="box_office_fee"></div>
 		</div>
@@ -665,15 +665,15 @@ console.info(V);
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="event_tax_note"
 										 value="<%= ve['event_tax_note'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="event_tax_flat_rate"
-										 value="<%= ve['event_tax_flat_rate'] %>"></div>
+										  value="<%= ve['event_tax_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="event_tax_per_ticket_dollar"
 										 value="<%= ve['event_tax_per_ticket_dollar'] %>"></div>
-			<div class="col-xs-1"><input class="form-control skip_ajax" name="event_tax_per_ticket_percent"
+			<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="event_tax_per_ticket_percent"
 										 value="<%= ve['event_tax_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="event_tax_min"
 										 value="<%= ve['event_tax_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="event_tax_max"
-										 value="<%= ve['event_tax_max'] %>"></div>
+										  value="<%= ve['event_tax_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="event_tax"></div>
 		</div>
@@ -682,15 +682,15 @@ console.info(V);
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="insurance_note"
 										 value="<%= ve['insurance_note'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="insurance_flat_rate"
-										 value="<%= ve['insurance_flat_rate'] %>"></div>
+										  value="<%= ve['insurance_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="insurance_per_ticket_dollar"
 										 value="<%= ve['insurance_per_ticket_dollar'] %>"></div>
-			<div class="col-xs-1"><input class="form-control skip_ajax" name="insurance_per_ticket_percent"
+			<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="insurance_per_ticket_percent"
 										 value="<%= ve['insurance_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="insurance_min"
 										 value="<%= ve['insurance_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="insurance_max"
-										 value="<%= ve['insurance_max'] %>"></div>
+										  value="<%= ve['insurance_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="insurance"></div>
 		</div>
@@ -699,15 +699,15 @@ console.info(V);
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="sesec_note"
 										 value="<%= ve['sesec_note'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_flat_rate"
-										 value="<%= ve['sesec_flat_rate'] %>"></div>
+										  value="<%= ve['sesec_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_per_ticket_dollar"
 										 value="<%= ve['sesec_per_ticket_dollar'] %>"></div>
-			<div class="col-xs-1"><input class="form-control skip_ajax" name="sesec_per_ticket_percent"
+			<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="sesec_per_ticket_percent"
 										 value="<%= ve['sesec_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_min"
 										 value="<%= ve['sesec_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_max"
-										 value="<%= ve['sesec_max'] %>"></div>
+										  value="<%= ve['sesec_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="sesec"></div>
 		</div>
@@ -718,12 +718,12 @@ console.info(V);
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="ascap_note"
 										 value="<%= ve['ascap_note'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="ascap_flat_rate"
-										 value="<%= ve['ascap_flat_rate'] %>"></div>
+										  value="<%= ve['ascap_flat_rate'] %>"></div>
 			<span class="col-xs-2"></span>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="ascap_min"
 										 value="<%= ve['ascap_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="ascap_max"
-										 value="<%= ve['ascap_max'] %>"></div>
+										  value="<%= ve['ascap_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="ascap"></div>
 		</div>
@@ -734,12 +734,12 @@ console.info(V);
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="bmi_note" value="<%= ve['bmi_note'] %>">
 			</div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_flat_rate"
-										 value="<%= ve['bmi_flat_rate'] %>"></div>
+										  value="<%= ve['bmi_flat_rate'] %>"></div>
 			<span class="col-xs-2"></span>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="bmi_min"
 										 value="<%= ve['bmi_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_max"
-										 value="<%= ve['bmi_max'] %>"></div>
+										  value="<%= ve['bmi_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="bmi"></div>
 		</div>
@@ -748,22 +748,22 @@ console.info(V);
 			<div class="col-xs-2"><input class="form-control skip_ajax" name="cc_fee_note"
 										 value="<%= ve['cc_fee_note'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_flat_rate"
-										 value="<%= ve['cc_fee_flat_rate'] %>"></div>
+										  value="<%= ve['cc_fee_flat_rate'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="cc_fee_per_ticket_dollar"
 										 value="<%= ve['cc_fee_per_ticket_dollar'] %>"></div>
-			<div class="col-xs-1"><input class="form-control skip_ajax" name="cc_fee_per_ticket_percent"
+			<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="cc_fee_per_ticket_percent"
 										 value="<%= ve['cc_fee_per_ticket_percent'] %>"></div>
 			<div class="col-xs-1"><input class="money  form-control skip_ajax" name="cc_fee_min"
 										 value="<%= ve['cc_fee_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_max"
-										 value="<%= ve['cc_fee_max'] %>"></div>
+										  value="<%= ve['cc_fee_max'] %>"></div>
 			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
 										 data-category="cc_fee"></div>
 		</div>
 		<div class="row">
 			<label class="col-xs-2 input_atomic">Est. CC Box Office Sales (%)</label>
-			<div class="col-xs-1 col-xs-offset-55"><input class="form-control skip_ajax" name="cc_box_office_sales_percent"
-										 value="<%= ve['cc_box_office_sales_percent'] %>"></div>
+			<div class="col-xs-1 col-xs-offset-45"><input type="number" step="any" class="form-control skip_ajax" name="cc_box_office_sales_percent"
+														  value="<%= ve['cc_box_office_sales_percent'] %>"></div>
 			<div class="col-xs-4"></div>
 		</div>
 		<div class="row">

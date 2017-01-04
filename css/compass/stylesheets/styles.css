@@ -280,11 +280,16 @@ input.form-control, input.money {
 }
 
 /* line 244, ../sass/styles.scss */
+.col-xs-offset-45 {
+  margin-left: 37.508333%;
+}
+
+/* line 245, ../sass/styles.scss */
 .col-xs-offset-55 {
   margin-left: 45.958333%;
 }
 
-/* line 245, ../sass/styles.scss */
+/* line 246, ../sass/styles.scss */
 .col-xs-offset-65 {
   margin-left: 54.16666667%;
 }

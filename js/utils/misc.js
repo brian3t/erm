@@ -324,6 +324,9 @@ function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(parseFloat(n));
 }
 function parseFloatOr0(v) {
+    if (typeof v == "string"){
+        v = v.replace('$', '').replace(',', '');
+    }
     v = parseFloat(v);
     if (isNaN(v)){
         v = 0;
