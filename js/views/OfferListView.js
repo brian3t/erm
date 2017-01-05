@@ -192,9 +192,10 @@ app.views.OfferView = Backbone.BBFormView.extend({
     after_render: function () {
         $(this.$el.find('.multi_select')).select2();
         $(this.$el.find('form[data-toggle="validator"]')).validator();
-        // this.$el.find('#var_expense input').trigger('change');
+        // this.$el.find('#var_expense input[name$="flat_rate"]').trigger('change');
         $('input.number').autoNumeric('init', {aSign: '$'});
         this.delegateEvents();
+
     },
     update_ve: function (e) {
         e = $(e.target);
@@ -208,7 +209,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         var min = $siblings.filter(function (i, v) {
             return v.name.indexOf('_min') != -1;
         });
-        min = parseFloatOr0(min.val())
+        min = parseFloatOr0(min.val());
         var max = $siblings.filter(function (i, v) {
             return v.name.indexOf('_max') != -1;
         });
@@ -259,12 +260,13 @@ app.views.OfferView = Backbone.BBFormView.extend({
         $('input.sellout_potential').each(function (i, v) {
             sellout_total += parseFloatOr0(v.value);
         });
+        sellout_total = sellout_total.toFixed(2);
 
         var $cc_fee_sellout = $('input.sellout_potential[data-category="cc_fee"]');
         var artist_split_percent = parseFloatOr0($('#aw_artist_split_percent').val());
         var $cc_box_office_sales_percent = $('input[name="cc_box_office_sales_percent"]');
         if ($cc_box_office_sales_percent.val() > 0) {
-            $cc_fee_sellout.val($cc_fee_sellout.val() * $cc_box_office_sales_percent.val() / 100);
+            $cc_fee_sellout.val(parseFloatOr0($cc_fee_sellout.val()) * $cc_box_office_sales_percent.val() / 100);
         }
         $('#total_variable_expense').val(sellout_total);
         var total_expense = parseFloatOr0($('#total_fixed_expenses').val()) + sellout_total;
