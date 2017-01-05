@@ -186,14 +186,14 @@ app.views.OfferView = Backbone.BBFormView.extend({
         this.$el.find('#production_expense').html(prod_exp_html);
         var edit_switch = $('.edit_switch');
         edit_switch.trigger('change');
-
+        $('input.money').autoNumeric('init', {aSign: '$'});
         return this.$el;
     },
     after_render: function () {
         $(this.$el.find('.multi_select')).select2();
         $(this.$el.find('form[data-toggle="validator"]')).validator();
         // this.$el.find('#var_expense input[name$="flat_rate"]').trigger('change');
-        $('input.number').autoNumeric('init', {aSign: '$'});
+        $('input.money').autoNumeric('init', {aSign: '$'});
         this.delegateEvents();
 
     },
@@ -288,6 +288,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         $('#aw_artist_split').val(artist_split);
         $('#aw_promoter_split').val(Number(split_point * (100 - artist_split_percent) / 100).toFixed(2));
         $('#aw_artist_walkout').val(artist_split + parseFloatOr0($('#aw_artist_production').val()));
+        $('input.money').autoNumeric('init', {aSign: '$'});
     }
 
 });

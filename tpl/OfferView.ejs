@@ -64,7 +64,7 @@ function recalculate_offer_values() {
 	V.aw_promoter_split_percent = 0;
 	V.aw_promoter_split = 0;
 
-	V.total_comp_kill = artist_comp + production_comp + promotional_comp + house_comp + kill;
+	V.total_comp_kill = Number(artist_comp + production_comp + promotional_comp + house_comp + kill).toFixed(0);
 
 //format NAN
 	$.each(V, function (i, v) {

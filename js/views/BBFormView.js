@@ -27,6 +27,7 @@ Backbone.BBFormView = Backbone.View.extend({
         return dom;
     },
     update_ajax: function (e) {
+        var flag_dont_update = false;
         var target = $(e.target);
         if (e.target.tagName == 'BUTTON' || target.hasClass('skip_ajax') || target.hasClass('file-caption') || target.prop('type') == 'file' || target.prop('readonly') == true) {
             return;
@@ -43,6 +44,10 @@ Backbone.BBFormView = Backbone.View.extend({
             wrapper_div.find(':input').each(function (i, e) {
                 e = $(e);
                 var key = e.data('key');
+                if (typeof key == 'undefined'){
+                    flag_dont_update = true;
+                    return;
+                }
                 var v = e.val();
                 if (e.prop('type') == 'checkbox') {
                     v = e.prop('checked');
@@ -52,6 +57,7 @@ Backbone.BBFormView = Backbone.View.extend({
                 }
                 inputs[key] = v;
             });
+            if (flag_dont_update) return;
             array_input.val(JSON.stringify(inputs));
             target = array_input;
         }
