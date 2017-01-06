@@ -18,13 +18,821 @@
 		<form class="account_info create" action="#" data-model="offer" data-toggle="validator" data-disable=true
 			  role="form">
 
+
+
 			<div class="form-group">
 				<div class="row">
-					<label class="col-xs-6">Offer Event ID<input name="event_id" type="text"
+					<label class="col-xs-6">Offer Event ID<input name="event_id"  type="text"
+
 																 class="form-control">
+					</label>
+					<label class="col-xs-6">Show# <br/><input name="show_number"  type="text"
+
+						> of <input name="show_total_num"  type="text"
+
+						>
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-xs-4">Agency<select name="agency_id"  type="text"
+
+														  class="form-control">
+							<% _.each(app.collections.companies.models, function (a_company) { %>
+							<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
+							<% }); %>
+						</select>
+					</label>
+
+					<label class="col-xs-4">Agent<select name="agent_id"  type="text"
+
+														 class="form-control">
+							<% _.each(app.collections.agents.models, function (an_agent) { %>
+							<option value="<%= an_agent.get('id') %>"><%= an_agent.get('name') %></option>
+							<% }); %>
+						</select>
+					</label>
+					<label class="col-xs-4">Status<select name="status" 
+
+														  class="form-control">
+							<option value="New" selected>New</option>
+							<option value="Submitted">Submitted</option>
+							<option value="Pending">Pending</option>
+							<option value="Reviewed">Reviewed</option>
+							<option value="Declined">Declined</option>
+							<option value="Confirmed">Confirmed</option>
+							<option value="Revised">Revised</option>
+							<option value="Signed">Signed</option>
+							<option value="Unsubmitted">Unsubmitted</option>
+						</select>
+					</label>
+
+				</div>
+
+				<div class="row">
+					<label class="col-xs-6">Booked By<input name="user_id"  hidden type="text"
+															value="<%= app.cur_user.get('id') %>">
+						<input readonly type="text"
+															value="<%= app.cur_user.getFullName() %>"
+															class="form-control">
+					</label>
+					<label class="col-xs-6">Offer Type<select name="offer_type"  type="text"
+
+															  class="form-control">
+							<option ></option>
+							<option >Icon</option>
+							<option >Co-Pro Promoter</option>
+							<option >Co-Pro Venue</option>
+							<option >3rd Party</option>
+						</select>
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-xs-6">Co-Pro Promoter<select name="copro_promoter_id" 
+
+																   class="form-control">
+							<% _.each(app.collections.promoters.models, function (a_promoter) { %>
+							<option value="<%= a_promoter.get('id') %>"><%= a_promoter.get('name') %></option>
+							<% }); %>
+						</select>
+					</label>
+					<label class="col-xs-6">Co-Pro Venue<select name="copro_venue_id" 
+
+																class="form-control">
+							<% _.each(app.collections.venues.models, function (a_venue) { %>
+							<option value="<%= a_venue.get('id') %>" ><%= a_venue.get('name') %></option>
+							<% }); %>
+						</select>
 					</label>
 				</div>
 			</div>
+			<h4>General Information</h4>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-6">Artist<select name="artist_id" 
+
+														  class="form-control">
+							<% _.each(app.collections.artists.models, function (an_artist) { %>
+							<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
+							<% }); %>
+						</select>
+					</label>
+					<label class="col-xs-6">Venue<select name="venue_id" 
+
+														 class="form-control">
+							<% _.each(app.collections.venues.models, function (a_venue) { %>
+							<option value="<%= a_venue.get('id') %>"><%= a_venue.get('name') %></option>
+							<% }); %>
+						</select>
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-xs-6">Show Date<input name="show_date"  type="date"
+
+															class="form-control">
+					</label>
+					<label class="col-xs-6">Show Date TBD<br><input name="is_tbd_date"  type="checkbox"
+						>
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-xs-4">Show Type<select name="show_type" 
+
+															 class="form-control">
+							<option ></option>
+							<option >Private</option>
+							<option >Public</option>
+							<option >College</option>
+							<option >College - Private</option>
+							<option >Casino</option>
+							<option >Fair</option>
+							<option >Festival</option>
+						</select>
+					</label>
+					<label class="col-xs-4">Doors<br><input name="doors"  type="time"
+															class="form-control">
+					</label>
+					<label class="col-xs-4">Showtime<br><input name="showtime"  type="time"
+															   class="form-control">
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-xs-12">Notes<textarea name="notes" 
+
+															class="form-control"></textarea>
+					</label>
+				</div>
+			</div>
+			<h4>Ticket Scaling</h4>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-3">On Sale Date<input name="on_sale_date" type="date" 
+
+															   class="form-control">
+					</label>
+					<label class="col-xs-1">TBD <br><input type="checkbox" 
+
+								 >
+					</label>
+					<label class="col-xs-5">Ticketing Company<select  name="ticketing_company_id"
+
+																	 class="form-control">
+							<% _.each(app.collections.ticketing_companies.models, function (a_company) { %>
+							<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
+							<% }); %>
+						</select>
+					</label>
+					<label class="col-xs-3">On Sale Date<input type="date" 
+
+															   class="form-control">
+					</label>
+				</div>
+				<br>
+				<div class="row">
+					<label class="col-xs-1 text-bold"> </label>
+					<label class="col-xs-2 text-bold">Gross Tickets</label>
+					<label class="col-xs-1 text-bold">Kills/Comps</label>
+					<label class="col-xs-2 text-bold">Sellable Tickets</label>
+					<label class="col-xs-2 text-bold">Ticket Price</label>
+					<label class="col-xs-2 text-bold">Level Gross</label>
+				</div>
+				<div class="row ticket_scaling">
+					<label class="col-xs-1 ">Level 1</label>
+					<label class="col-xs-2"><input name="l1_gross_ticket"
+												   class="  form-control"></label>
+					<label class="col-xs-1"><input name="l1_kill"  step="any"
+												   class="  form-control"></label>
+					<label class="col-xs-2"><input readonly class="l1 sellable_ticket text-blue form-control"
+												   ></input></label>
+					<label class="col-xs-2"><input name="l1_price"  step="any"
+												   class="money  form-control"></label>
+					<label class="col-xs-2"><input readonly class="money l1 gross text-blue form-control"
+												   ></label>
+				</div>
+				<div class="row ticket_scaling">
+					<label class="col-xs-1 ">Level 2</label>
+					<label class="col-xs-2"><input name="l2_gross_ticket"
+												   class="  form-control"></label>
+					<label class="col-xs-1"><input name="l2_kill"  step="any"
+												   class="  form-control"></label>
+					<label class="col-xs-2"><input readonly class="l2 sellable_ticket text-blue form-control"
+												   ></input></label>
+					<label class="col-xs-2"><input name="l2_price"  step="any"
+												   class="money  form-control"></label>
+					<label class="col-xs-2"><input readonly class="money l2  gross text-blue form-control"
+												   ></label>
+				</div>
+				<div class="row ticket_scaling">
+					<label class="col-xs-1 ">Level 3</label>
+					<label class="col-xs-2"><input name="l3_gross_ticket"
+												   class="  form-control"></label>
+					<label class="col-xs-1"><input name="l3_kill"  step="any"
+												   class="  form-control"></label>
+					<label class="col-xs-2"><input readonly class="l3 sellable_ticket text-blue form-control"
+												   ></input></label>
+					<label class="col-xs-2"><input name="l3_price"  step="any"
+												   class="money  form-control"></label>
+					<label class="col-xs-2"><input readonly class="money l3  gross text-blue form-control"
+												   ></label>
+				</div>
+				<div class="row ticket_scaling">
+					<label class="col-xs-1 ">Level 4</label>
+					<label class="col-xs-2"><input name="l4_gross_ticket"
+												   class="  form-control"></label>
+					<label class="col-xs-1"><input name="l4_kill"  step="any"
+												   class="  form-control"></label>
+					<label class="col-xs-2"><input readonly class="l4 sellable_ticket text-blue form-control"
+												   ></input></label>
+					<label class="col-xs-2"><input name="l4_price"  step="any"
+												   class="money  form-control"></label>
+					<label class="col-xs-2"><input readonly class="money l4  gross text-blue form-control"
+												   ></label>
+				</div>
+				<div class="row ticket_scaling">
+					<label class="col-xs-1 ">Level 5</label>
+					<label class="col-xs-2"><input name="l5_gross_ticket"
+												   class="  form-control"></label>
+					<label class="col-xs-1"><input name="l5_kill"  step="any"
+												   class="  form-control"></label>
+					<label class="col-xs-2"><input readonly class="l5 sellable_ticket text-blue form-control"
+												   ></input></label>
+					<label class="col-xs-2"><input name="l5_price"  step="any"
+												   class="money  form-control"></label>
+					<label class="col-xs-2"><input readonly class="money l5  gross text-blue form-control"
+												   ></label>
+				</div>
+
+
+				<div class="row">
+					<div class="col-xs-4"></div>
+					<label class="col-xs-2">Tax % </label>
+					<div class="col-xs-2 content-padded"><input  type="number" name="tax" step="any" ></input>
+					</div>
+					<div class="col-xs-2 content-padded"><input
+																class="money text-blue"></div>
+					<div class="col-xs-2 content-padded"><input  name="tax_note" placeholder="note"
+																></input>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4"></div>
+					<label class="col-xs-2">Tax per Ticket </label>
+					<div class="col-xs-2 content-padded"><input  name="tax_per_ticket" step="any" class="money "
+																></input></div>
+					<div class="col-xs-2 content-padded"></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4"></div>
+					<label class="col-xs-2">Facility Fee</label>
+					<div class="col-xs-2 content-padded"><input  name="facility_fee" step="any" class="money "
+																></input></div>
+					<div class="col-xs-2 content-padded"></div>
+					<div class="col-xs-2 content-padded"><input  name="facility_fee_note" placeholder="note"
+																></input></div>
+				</div>
+			</div>
+			<h4>Artist Deal</h4>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-3">Artist Guarantee<input  name="artist_guarantee"
+
+																   class="money form-control"></label>
+					<label class="col-xs-3">Artist Deposit <input  name="artist_deposit"
+																  type="text" class="money form-control"></label>
+					<label class="col-xs-3">Offer<select  name="artist_offer_type"
+														 class="form-control">
+							<option ></option>
+							<option >Guarantee</option>
+							<option >Split</option>
+							<option >Plus</option>
+							<option >Vs.</option>
+							<option >Backend</option>
+						</select></label>
+					<label class="col-xs-3">Artist Production Buyout <select name="is_artist_production_buyout"
+
+																			 type="text" class="form-control">
+							<option ></option>
+							<option >Yes</option>
+							<option >No</option>
+						</select>
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-xs-2">Artist Split %<input  name="artist_split"
+																 class="percent form-control"></label>
+					<label class="col-xs-2"></label>
+					<label class="col-xs-2">Promoter Profit %<input  name="promoter_profit"
+
+																	class=" form-control"></label>
+					//todob here
+					<label class="col-xs-2">Expense Application <select name="expense_application"
+																		>
+							<option ></option>
+							<option value="Net">Net</option>
+							<option value="Gross">Gross</option>
+						</select>
+					</label>
+					<label class="col-xs-4">Sponsorship<input  name="sponsorship"  type="text"
+															  class="form-control"></label>
+				</div>
+				<div class="row">
+					<label class="col-xs-3 has_inline_inputs">Radius Clause<br>
+						<input  name="radius_clause" type="number" step="1"
+							   class=" form-control">
+						<select  name="radius_clause_metric" >
+							<option ></option>
+							<option >Miles</option>
+							<option >KM</option>
+						</select></label>
+					<label class="col-xs-3 has_inline_inputs">Pre-Show Lockout <br>
+						<input  name="pre_show_lockout" type="number" step="1"
+							   class=" form-control">
+						<select  name="pre_show_lockout_unit" >
+							<option ></option>
+							<option >Days</option>
+							<option >Months</option>
+						</select></label>
+					<label class="col-xs-3 has_inline_inputs">Post-Show Lockout <br>
+						<input  name="post_show_lockout" type="number" step="1"
+							   class=" form-control">
+						<select  name="post_show_lockout_unit" >
+							<option ></option>
+							<option >Days</option>
+							<option >Months</option>
+						</select></label>
+					<label class="col-xs-3"></label>
+				</div>
+				<br>
+				<div class="row">
+					<label class="col-xs-12">Note<textarea  name="artist_deal_note"
+														   class="form-control"></textarea></label>
+				</div>
+			</div>
+			<h4>Support Artist Expenses</h4>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-xs-10"></div>
+					<label class="col-xs-2">Total</label>
+				</div>
+				<div class="row">
+					<label class="label_wo_input col-xs-3">Support Artist 1</label>
+					<span class="col-xs-7"><select name="support_artist_1_id"
+												   class="form-control">
+							<% _.each(app.collections.artists.models, function (an_artist) { %>
+							<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
+							<% }); %>
+						</select></span>
+					<span class="col-xs-2"><input name="support_artist_1_total"
+												  step="any" class="money  form-control"></span>
+				</div>
+				<div class="row">
+					<label class="label_wo_input col-xs-3">Support Artist 2</label>
+					<span class="col-xs-7"><select name="support_artist_2_id"
+												   class="form-control">
+							<% _.each(app.collections.artists.models, function (an_artist) { %>
+							<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
+							<% }); %>
+						</select></span>
+					<span class="col-xs-2"><input name="support_artist_2_total"
+												  step="any" class="money  form-control"></span>
+				</div>
+				<div class="row">
+					<label class="label_wo_input col-xs-3">Support Artist 3</label>
+					<span class="col-xs-7"><select name="support_artist_3_id"
+												   class="form-control">
+							<% _.each(app.collections.artists.models, function (an_artist) { %>
+							<option value="<%= an_artist.get('id') %>" ><%= an_artist.getFullName() %></option>
+							<% }); %>
+						</select></span>
+					<span class="col-xs-2"><input name="support_artist_3_total"
+												  step="any" class="money  form-control"></span>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<h4>General Expenses <input  hidden name="general_expense" type="text"
+										>
+			</h4>
+			<div  class="array_field_wrapper" data-array_field_id='general_expense_input'></div>
+			<div class="clearfix"></div>
+			<h4>Production <input  hidden name="production_expense" type="text"
+								  >
+			</h4>
+			<div  class="array_field_wrapper" data-array_field_id='production_expense_input'></div>
+			<br>
+			<h4>House</h4>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-4">House Nut Total<input name="housenut_total"  step="any"
+
+																  class="money  form-control"></label>
+				</div>
+				<div class="row">
+					<label class="col-xs-12">House Nut Expenses<textarea name="housenut_expense" 
+
+																		 class="form-control"></textarea>
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row input_atomic">
+					<label class="col-xs-10 text-right "><b>Tour Production Expenses</b></label>
+					<input step="any" class="money  col-xs-2 text-blue" 
+						   >
+				</div>
+				<div class="row input_atomic">
+					<label class="col-xs-10 text-right "><b>General Expenses</b></label>
+					<input step="any" class="money  col-xs-2 text-blue" 
+						   >
+				</div>
+				<div class="row input_atomic">
+					<label class="col-xs-10 text-right text_underlined "><b>Total Fixed Expenses</b></label>
+					<input step="any" class="money  col-xs-2 text-bold text-blue" 
+						  >
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="row col-xs-12">Notes<textarea name="general_expense_note" 
+
+															class="form-control"></textarea></label>
+			</div>
+			<h4>Variable Expenses</h4>
+			<div class="form-group var_expense" >
+				<div class="text-center row">
+					<label class="col-xs-2 col-xs-offset-55 ">Per Ticket</label>
+					<label class="col-xs-25">Cap</label>
+				</div>
+				<div class="row text-center">
+					<label class="col-xs-2 col-xs-offset-2">Notes</label>
+					<label class="col-xs-15">Flat Rate</label>
+					<label class="col-xs-1">$</label>
+					<label class="col-xs-1">%</label>
+					<label class="col-xs-1">Min</label>
+					<label class="col-xs-15">Max</label>
+					<label class="col-xs-2">Sell Out Potential</label>
+				</div>
+				<div class="row">
+					<label class="col-xs-2 input_atomic">Rental</label>
+					<div class="col-xs-2"><input class="form-control skip_ajax" name="rental_note"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="rental_flat_rate"
+												  ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="rental_per_ticket_dollar"
+												 ></div>
+					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="rental_per_ticket_percent"
+												 ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="rental_min"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="rental_max"
+												  ></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-xs-2 input_atomic">Tix Commission</label>
+					<div class="col-xs-2"><input class="form-control skip_ajax" name="tixcom_note"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tixcom_flat_rate"
+												  ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tixcom_per_ticket_dollar"
+												 ></div>
+					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="tixcom_per_ticket_percent"
+												 ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tixcom_min"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tixcom_max"
+												  ></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-xs-2 input_atomic">Tix Service Fees</label>
+					<div class="col-xs-2"><input class="form-control skip_ajax" name="tix_service_fee_note"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tix_service_fee_flat_rate"
+												  ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tix_service_fee_per_ticket_dollar"
+												 ></div>
+					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="tix_service_fee_per_ticket_percent"
+												 ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tix_service_fee_min"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tix_service_fee_max"
+												  ></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-xs-2 input_atomic">Box Office Fees</label>
+					<div class="col-xs-2"><input class="form-control skip_ajax" name="box_office_fee_note"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="box_office_fee_flat_rate"
+												  ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="box_office_fee_per_ticket_dollar"
+												 ></div>
+					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="box_office_fee_per_ticket_percent"
+												 ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="box_office_fee_min"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="box_office_fee_max"
+												  ></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-xs-2 input_atomic">Event Tax</label>
+					<div class="col-xs-2"><input class="form-control skip_ajax" name="event_tax_note"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="event_tax_flat_rate"
+												  ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="event_tax_per_ticket_dollar"
+												 ></div>
+					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="event_tax_per_ticket_percent"
+												 ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="event_tax_min"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="event_tax_max"
+												  ></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-xs-2 input_atomic">Insurance</label>
+					<div class="col-xs-2"><input class="form-control skip_ajax" name="insurance_note"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="insurance_flat_rate"
+												  ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="insurance_per_ticket_dollar"
+												 ></div>
+					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="insurance_per_ticket_percent"
+												 ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="insurance_min"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="insurance_max"
+												  ></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-xs-2 input_atomic">SESEC</label>
+					<div class="col-xs-2"><input class="form-control skip_ajax" name="sesec_note"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_flat_rate"
+												  ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_per_ticket_dollar"
+												 ></div>
+					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="sesec_per_ticket_percent"
+												 ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_min"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_max"
+												  ></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-xs-2 input_atomic">ASCAP
+						<button type="button"  data-toggle="modal" data-target="#ascap_modal">Update</button>
+					</label>
+					<div class="col-xs-2"><input class="form-control skip_ajax" name="ascap_note"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="ascap_flat_rate"
+												  ></div>
+					<span class="col-xs-2"></span>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="ascap_min"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="ascap_max"
+												  ></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-xs-2 input_atomic">BMI
+						<button type="button"  data-toggle="modal" data-target="#bmi_modal">Update</button>
+					</label>
+					<div class="col-xs-2"><input class="form-control skip_ajax" name="bmi_note" >
+					</div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_flat_rate"
+												  ></div>
+					<span class="col-xs-2"></span>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="bmi_min"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_max"
+												  ></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-xs-2 input_atomic">Credit Card Fees</label>
+					<div class="col-xs-2"><input class="form-control skip_ajax" name="cc_fee_note"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_flat_rate"
+												  ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="cc_fee_per_ticket_dollar"
+												 ></div>
+					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="cc_fee_per_ticket_percent"
+												 ></div>
+					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="cc_fee_min"
+												 ></div>
+					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_max"
+												  ></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-xs-2 input_atomic">Est. CC Box Office Sales (%)</label>
+					<div class="col-xs-1 col-xs-offset-45"><input type="number" step="any" class="form-control skip_ajax" name="cc_box_office_sales_percent"
+																  ></div>
+					<div class="col-xs-4"></div>
+				</div>
+				<div class="row">
+					<label class="col-xs-3 col-xs-offset-7 input_atomic underlined"><b>Total Variable Expenses</b></label>
+					<div class="col-xs-2">
+						<b></b>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="clearfix"></div>
+
+			<div class="col-xs-6">
+				<h4>Merchandise</h4>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-xs-5"></div>
+						<label class="col-xs-35">Venue Sells</label>
+						<label class="col-xs-35">Artist Sells</label>
+					</div>
+					<div class="row">
+						<label class="col-xs-5">Buyout</label>
+						<input class="col-xs-35	money" name="merch_buyout_venue_sell" >
+						<input class="col-xs-35	money	" name="merch_buyout_artist_sell" >
+					</div>
+					<div class="row">
+						<label class="col-xs-5">Artist Split (%)</label>
+						<input class="col-xs-35	" name="merch_artist_split_venue_sell" >
+						<input class="col-xs-35		" name="merch_artist_split_artist_sell" >
+					</div>
+					<div class="row">
+						<label class="col-xs-5">Venue Split (%)</label>
+						<input class="col-xs-35	text-blue" name="merch_venue_split_venue_sell" >
+						<input class="col-xs-35	text-blue	" name="merch_venue_split_artist_sell" >
+					</div>
+					<div class="row">
+						<label class="col-xs-5">Artist Split Media (%)</label>
+						<input class="col-xs-35	" name="merch_artist_split_media_venue_sell" >
+						<input class="col-xs-35		" name="merch_artist_split_media_artist_sell" >
+					</div>
+					<div class="row">
+						<label class="col-xs-5">Venue Split Media (%)</label>
+						<input class="col-xs-35	text-blue" name="merch_venue_split_media_venue_sell" >
+						<input class="col-xs-35	text-blue	" name="merch_venue_split_media_artist_sell" >
+					</div>
+					<div class="row">
+						<label class="col-xs-12">&nbsp;</label>
+					</div>
+					<div class="row">
+						<label class="col-xs-12" for="merch_note">Merchandise Note <textarea name="merch_note" class="form-control" ></textarea></label></div>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<h4>Comps & Kills</h4>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-xs-5"></div>
+						<label class="col-xs-35">Tickets</label>
+						<label class="col-xs-35">Notes</label>
+					</div>
+					<div class="row">
+						<label class="col-xs-5">Artist Comps</label>
+						<input class="col-xs-35	" type="number" step="1" name="artist_comp" >
+						<input class="col-xs-35	" name="artist_comp_note" >
+					</div>
+					<div class="row">
+						<label class="col-xs-5">Production Comps</label>
+						<input class="col-xs-35	" type="number" step="1" name="production_comp" >
+						<input class="col-xs-35	" name="production_comp_note" >
+					</div>
+					<div class="row">
+						<label class="col-xs-5">Promotional Comps</label>
+						<input class="col-xs-35	" type="number" step="1" name="promotional_comp" >
+						<input class="col-xs-35	" name="promotional_comp_note" >
+					</div>
+					<div class="row">
+						<label class="col-xs-5">House Comps</label>
+						<input class="col-xs-35	" type="number" step="1" name="house_comp" >
+						<input class="col-xs-35	" name="house_comp_note" >
+					</div>
+					<div class="row">
+						<label class="col-xs-5">Kills</label>
+						<input class="col-xs-35	" type="number" step="1" name="kill" >
+						<input class="col-xs-35	" name="kill_note" >
+					</div>
+					<div class="row">
+						<label class="col-xs-12" for="comp_kill_note">Comps & Kills Note <textarea name="comp_kill_note" class="form-control" ></textarea></label></div>
+
+				</div>
+			</div>
+
+			<br>
+			<div class="clearfix"></div>
+			<button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Offer</button>
+
+			<!-- Modals -->
+			<div class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="ascap_rules">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+										aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" >Update ASCAP Default Rates</h4>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<label class="col-xs-6">Event ID <input class="form-control" readonly type="text"
+																		></label>
+								<label class="col-xs-6">Artist <input class="form-control" readonly type="text"
+																	  ></label>
+								<label class="col-xs-6">Date <input class="form-control" readonly type="text"
+																	></label>
+								<label class="col-xs-6">Venue <input class="form-control" readonly type="text"
+																	 ></label>
+								<br>
+							</div>
+							<div class="row">
+								<label class="col-xs-9 input_atomic">ASCAP Rate 0 - 2500 Tickets (%)</label>
+								<span class="col-xs-3"><input class="form-control" name="ascap_0_2500"
+															  ></span>
+							</div>
+							<div class="row">
+								<label class="col-xs-9 input_atomic">ASCAP Rate 2501 - 5000 Tickets (%)</label>
+								<span class="col-xs-3"><input class="form-control" name="ascap_2501_5000"
+															  ></span>
+							</div>
+							<div class="row">
+								<label class="col-xs-9 input_atomic">ASCAP Rate 5001 - 10000 Tickets (%)</label>
+								<span class="col-xs-3"><input class="form-control" name="ascap_5001_10000"
+															  ></span>
+							</div>
+							<div class="row">
+								<label class="col-xs-9 input_atomic">ASCAP Rate 10001 - 25000 Tickets (%)</label>
+								<span class="col-xs-3"><input class="form-control" name="ascap_10001_25000"
+															  ></span>
+							</div>
+							<div class="row">
+								<label class="col-xs-9 input_atomic">ASCAP Rate 25001 - X Tickets (%)</label>
+								<span class="col-xs-3"><input class="form-control" name="ascap_25001_x"
+															  ></span>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="bmi_rules">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+										aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" >Update BMI Default Rates</h4>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<label class="col-xs-6">Event ID <input class="form-control" readonly type="text"
+																		></label>
+								<label class="col-xs-6">Artist <input class="form-control" readonly type="text"
+																	  ></label>
+								<label class="col-xs-6">Date <input class="form-control" readonly type="text"
+																	></label>
+								<label class="col-xs-6">Venue <input class="form-control" readonly type="text"
+																	 ></label>
+								<br>
+							</div>
+							<div class="row">
+								<label class="col-xs-9 input_atomic">BMI Rate 0 - 2500 Tickets (%)</label>
+								<span class="col-xs-3"><input class="form-control" name="bmi_0_2500" ></span>
+							</div>
+							<div class="row">
+								<label class="col-xs-9 input_atomic">BMI Rate 2501 - 5000 Tickets (%)</label>
+								<span class="col-xs-3"><input class="form-control" name="bmi_2501_5000"
+															  ></span>
+							</div>
+							<div class="row">
+								<label class="col-xs-9 input_atomic">BMI Rate 5001 - 10000 Tickets (%)</label>
+								<span class="col-xs-3"><input class="form-control" name="bmi_5001_10000"
+															  ></span>
+							</div>
+							<div class="row">
+								<label class="col-xs-9 input_atomic">BMI Rate 10001 - 25000 Tickets (%)</label>
+								<span class="col-xs-3"><input class="form-control" name="bmi_10001_25000"
+															  ></span>
+							</div>
+							<div class="row">
+								<label class="col-xs-9 input_atomic">BMI Rate 25001 - X Tickets (%)</label>
+								<span class="col-xs-3"><input class="form-control" name="bmi_25001_x"
+															  ></span>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
 
 
 			<div class="action_buttons">

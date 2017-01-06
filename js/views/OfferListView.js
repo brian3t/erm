@@ -269,11 +269,11 @@ app.views.OfferView = Backbone.BBFormView.extend({
             $cc_fee_sellout.val(parseFloatOr0($cc_fee_sellout.val()) * $cc_box_office_sales_percent.val() / 100);
         }
         $('#total_variable_expense').val(sellout_total);
-        var total_expense = parseFloatOr0($('#total_fixed_expenses').val()) + sellout_total;
+        var total_expense = parseFloatOr0($('#total_fixed_expenses').val()) + parseFloatOr0(sellout_total);
         var estimated_total = total_expense + parseFloatOr0($('#aw_artist_fee').val());
         var net_potential = parseFloatOr0($('#aw_net_potential').val());
         var split_point = net_potential - total_expense;
-        var artist_split = split_point * artist_split_percent / 100;
+        var artist_split = Number(split_point * artist_split_percent / 100).toFixed(2);
         var avg_tick_price = $('#average_ticket_price').val();
         var breakeven_tix = null;
         if (typeof avg_tick_price == 'string') {
@@ -287,7 +287,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         $('#aw_est_split_point').val(split_point);
         $('#aw_artist_split').val(artist_split);
         $('#aw_promoter_split').val(Number(split_point * (100 - artist_split_percent) / 100).toFixed(2));
-        $('#aw_artist_walkout').val(artist_split + parseFloatOr0($('#aw_artist_production').val()));
+        $('#aw_artist_walkout').val(Number(artist_split + parseFloatOr0($('#aw_artist_production').val())).toFixed(2));
         $('input.money').autoNumeric('init', {aSign: '$'});
     }
 
