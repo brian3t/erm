@@ -644,3 +644,9 @@ function rebind_html_elements() {
         $(this).val($(this).prop('checked')?1:0);
     });
 }
+$.notifyDefaults({
+    type: 'success',
+    placement: {
+        align: 'center'
+    }
+});

@@ -65,6 +65,7 @@ app.views.SettlementListView = Backbone.View.extend({
             success: function (new_model) {
                 self.toggle_create_item();
                 self.collection.add(new_model);
+                $.notify('Settlement successfully saved.', {type: 'success'});
             }, error: function (response) {
                 app_alert('There is an error saving this settlement. Please contact support for more information');
             }
@@ -81,6 +82,7 @@ app.views.SettlementListView = Backbone.View.extend({
                 var cur_model = self.collection.at(self.cur_model_index);
                 self.collection.remove(cur_model);
                 cur_model.destroy();
+                $.notify('Settlement deleted.', {type: 'info'})
             }
         });
     },

@@ -3,13 +3,88 @@
 	<div class="form-group">
 		<div class="row">
 			<label class="col-xs-6">Settlement ID <input name="settlement_id" disabled type="text"
-													 value="<%= settlement_id %>" class="form-control">
+														 value="<%= settlement_id %>" class="form-control">
 			</label>
 		</div>
+		<h3 class="row text-center">Show Info</h3>
+		<h4>Icon</h4>
+		<div class="form-group">
+			<div class="row">
+				<label class="col-xs-6">Icon Event ID<select name="first_party_event_id" value="<%= first_party_event_id %>"
+															 class="form-control">
+						<% _.each(app.collections.offers.models, function (an_offer) { %>
+						<option value="<%= an_offer.get('id') %>"><%= an_offer.get('event_id') %></option>
+						<% }); %>
+					</select>
+				</label>
+				<label class="col-xs-6">Icon Capacity<input name="first_party_capacity" value="<%= first_party_capacity %>" type="number" step="1"
+															class="form-control"></input>
+				</label>
+			</div>
+		</div>
+		<h4>3rd Party</h4>
+		<div class="form-group">
+			<div class="row">
+				<label class="col-xs-5">Event ID <select name="second_party_event_id" value="<%= second_party_event_id %>"
+														 class="form-control">
+						<% _.each(app.collections.offers.models, function (an_offer) { %>
+						<option value="<%= an_offer.get('id') %>"><%= an_offer.get('event_id') %></option>
+						<% }); %>
+					</select>
+				</label>
+				<label class="col-xs-5">3rd Party Capacity <input name="second_party_capacity" value="<%= second_party_capacity %>" type="number"
+																  step="1"
+																  class="form-control">
+				</label>
+				<label class="col-xs-2">Date <input name="second_party_date" value="<%= second_party_date %>" type="date"
+													class="form-control">
+				</label>
+
+			</div>
+			<div class="row">
+				<label class="col-xs-6">Artist <select name="second_party_artist_id" value="<%= second_party_artist_id %>"
+													   class="form-control">
+						<% _.each(app.collections.artists.models, function (an_artist) { %>
+						<option value="<%= an_artist.get('id') %>"><%= an_artist.get('first_name') + ' ' + an_artist.get('last_name') %></option>
+						<% }); %>
+					</select>
+				</label>
+				<label class="col-xs-6">Venue <select name="second_party_venue_id" value="<%= second_party_venue_id %>"
+													  class="form-control">
+						<% _.each(app.collections.venues.models, function (a_venue) { %>
+						<option value="<%= a_venue.get('id') %>"><%= a_venue.get('name') %></option>
+						<% }); %>
+					</select>
+				</label>
+			</div>
+		</div>
+		<br>
+		<div class="row"><label class="col-xs-12">Settlement Note <textarea name="note" value="<%= note %>"
+																			class="form-control"><%= note %></textarea>
+			</label>
+		</div>
+
+		<h4>Final Financials</h4>
+		<div class="form-group">
+			<div class="row">
+				<label class="col-xs-6">Artist Walkout Final<input name="artist_walkout_final" value="<%= artist_walkout_final %>" type="number"
+																   step="any" class="form-control">
+				</label>
+				<label class="col-xs-6">Ad Plan Final <input name="ad_plan_final" value="<%= ad_plan_final %>" type="number" step="any"
+															 class="form-control">
+				</label>
+			</div>
+			<div class="row">
+				<label class="col-xs-6">Promoter Revenue Final<input name="promoter_revenue_final" value="<%= promoter_revenue_final %>" type="number" step="any"
+
+																	 class="form-control">
+				</label>
+				<label class="col-xs-6">Ticket Sales Final <input name="ticket_sales_final" value="<%= ticket_sales_final %>" type="number" step="any"
+																  class="form-control">
+				</label>
+			</div>
+
+		</div>
 	</div>
-	<h4 class="text-center row">Show Info</h4>
-
-
-
 	<button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Settlement</button>
 </form>
