@@ -1,0 +1,13 @@
+    <!--<thead>-->
+    <!--<tr>-->
+    <!--<th>Username</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <tbody>
+    <% _.each(collection, function(settlement,i){ %>
+        <tr>
+            <td><a class="select_item" data-index="<%= i %>"><%= settlement.get('settlement_id') %></a></td>
+        </tr>
+    <% }); %>
+
+    </tbody>

@@ -8,7 +8,8 @@ app.routers.AppRouter = Backbone.Router.extend({
         "contact": "contact",
         "venues": "venues",
         "companies": "companies",
-        "offers": "offers"
+        "offers": "offers",
+        "settlements": "settlements"
         // ,"formulary/:f_id/:drug_id/:state": "formularyDetails"
     },
 
@@ -130,6 +131,20 @@ app.routers.AppRouter = Backbone.Router.extend({
         }
         app.slider.slidePage(app.offersView.$el);
         app.offersView.dom_ready();
+    },
+    settlements: function () {
+        // Since the home view never changes, we instantiate it and render it only once
+        if (!app.settlementsView) {
+            app.settlementsView = new app.views.SettlementsView();
+            app.settlementsView.render();
+        } else {
+            console.log('reusing settlementsView view');
+            app.settlementsView.delegateEvents(); // delegate events when the view is recycled
+            app.settlementsView.settlement_list_view.delegateEvents();
+            app.settlementsView.settlement_list_view.settlement_form_view.delegateEvents();
+        }
+        app.slider.slidePage(app.settlementsView.$el);
+        app.settlementsView.dom_ready();
     }
 
 });

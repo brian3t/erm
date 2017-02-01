@@ -16,6 +16,7 @@ var backboneInit = function () {
         "ContactView", "UserListView", "UserSearchListView", "UserView",
         "VenuesView", "VenueListView", "VenueSearchListView", "VenueView",
         "CompaniesView", "CompanyListView", "CompanySearchListView", "CompanyView",
+        "SettlementsView", "SettlementListView", "SettlementSearchListView", "SettlementView",
         "OffersView", "OfferListView", "OfferSearchListView", "OfferView"], function () {
         app.router = new app.routers.AppRouter();
         Backbone.history.stop();
@@ -65,6 +66,8 @@ var backboneInit = function () {
     app.collections.companies.fetch();
     app.collections.offers = new app.collections.Offer();
     app.collections.offers.fetch();
+    app.collections.settlements = new app.collections.Settlement();
+    app.collections.settlements.fetch();
     app.collections.agents = new app.collections.User_collection();
     app.collections.agents.url = config.restUrl + 'user?' + $.param({'line_of_business': 'Agency'});//param here to get agents only
     app.collections.agents.fetch();

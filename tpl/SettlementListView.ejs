@@ -1,0 +1,126 @@
+<div class="col-sm-2 col-xs-12">
+	<input type="search" id="settlement_search" class="col-xs-12" name="settlement_search"
+		   placeholder="Filter settlements">
+	<div id="settlement_search_list" class="col-xs-12 padded search_list">
+
+	</div>
+</div>
+<div class="col-sm-10 col-xs-12 form_wrapper">
+	<div class="action_buttons">
+		<button type="button" class="btn btn-primary toggle_create_mode create"><span
+					class="glyphicon glyphicon-plus"></span> Create new Settlement
+		</button>
+		<label><input class="edit_switch" type="checkbox">&nbsp;Edit mode is <span
+					class="toggle_state">off</span></label>
+	</div>
+	<hr>
+	<div id="settlement_form_wrapper" class="col-xs-12 edit_form_wrapper">
+	</div>
+	<div id="create_settlement" style="display: none">
+		<form class="account_info create" action="#" data-model="settlement" data-toggle="validator" data-disable=true
+			  role="form">
+
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-3">Settlement ID<input name="settlement_id" type="text"
+
+																class="form-control">
+					</label>
+				</div>
+			</div>
+			<h3 class="row text-center">Show Info</h3>
+			<h4>Icon</h4>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-6">Icon Event ID<select name="first_party_event_id"
+																 class="form-control">
+							<% _.each(app.collections.offers.models, function (an_offer) { %>
+							<option value="<%= an_offer.get('id') %>"><%= an_offer.get('event_id') %></option>
+							<% }); %>
+						</select>
+					</label>
+					<label class="col-xs-6">Icon Capacity<input name="first_part_capacity" type="number" step="1"
+																class="form-control"></input>
+					</label>
+				</div>
+			</div>
+			<h4>3rd Party</h4>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-5">Event ID <select name="second_party_event_id"
+															 class="form-control">
+							<% _.each(app.collections.offers.models, function (an_offer) { %>
+							<option value="<%= an_offer.get('id') %>"><%= an_offer.get('event_id') %></option>
+							<% }); %>
+						</select>
+					</label>
+					<label class="col-xs-5">3rd Party Capacity <input name="second_party_capacity" type="number"
+																	  step="1"
+																	  class="form-control">
+					</label>
+					<label class="col-xs-2">Date <input name="second_party_date" type="date"
+														class="form-control">
+					</label>
+
+				</div>
+				<div class="row">
+					<label class="col-xs-6">Artist <select name="second_party_artist_id"
+														   class="form-control">
+							<% _.each(app.collections.artists.models, function (an_artist) { %>
+							<option value="<%= an_artist.get('id') %>"><%= an_artist.get('first_name') + ' ' + an_artist.get('last_name') %></option>
+							<% }); %>
+						</select>
+					</label>
+					<label class="col-xs-6">Venue <select name="second_party_venue_id"
+														  class="form-control">
+							<% _.each(app.collections.venues.models, function (a_venue) { %>
+							<option value="<%= a_venue.get('id') %>"><%= a_venue.get('name') %></option>
+							<% }); %>
+						</select>
+					</label>
+				</div>
+			</div>
+			<br>
+			<div class="row"><label class="col-xs-12">Settlement Note <textarea name="note"
+																				class="form-control"></textarea>
+				</label>
+			</div>
+
+			<h4>Final Financials</h4>
+			<div class="form-group">
+				<div class="row">
+					<label class="col-xs-6">Artist Walkout Final<input name="artist_walkout_final" type="number"
+																	   step="any" class="form-control">
+					</label>
+					<label class="col-xs-6">Ad Plan Final <input name="ad_plan_final" type="number" step="any"
+															 class="form-control">
+					</label>
+				</div>
+				<div class="row">
+					<label class="col-xs-6">Promoter Revenue Final<input name="promoter_revenue_final" type="number" step="any"
+
+													   class="form-control">
+					</label>
+					<label class="col-xs-6">Ticket Sales Final <input name="ticket_sales_final" type="number" step="any"
+																  class="form-control">
+					</label>
+				</div>
+
+			</div>
+
+			<div class="action_buttons">
+				<button type="submit" class="btn btn-primary save" style="display: none"><span
+							class="glyphicon glyphicon-floppy-save"
+					></span> Save
+				</button>
+				<button type="button" class="btn btn-default reset" style="display: none"><span
+							class="glyphicon glyphicon-repeat"
+					></span> Reset Form
+				</button>
+				<button type="button" class="btn btn-default toggle_create_mode cancel" style="display: none">Cancel
+				</button>
+			</div>
+		</form>
+
+	</div>
+</div>
