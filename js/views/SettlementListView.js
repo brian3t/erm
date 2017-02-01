@@ -35,21 +35,23 @@ app.views.SettlementListView = Backbone.View.extend({
         var is_checked = $e.prop('checked');
         var $form = $($e.parentsUntil('.form_wrapper').parent().find('.edit_form_wrapper form.edit'));
         if (is_checked) {
+            $('.action_buttons .create').hide();
             span_text.text('on');
             $($form.find(':input')).removeAttr('disabled');
             this.$el.find('button.delete').show();
         }
         else {
+            $('.action_buttons .create').show();
             span_text.text('off');
             $($form.find(':input')).prop('disabled', true);
             this.$el.find('button.delete').hide();
         }
     },
     toggle_create_item: function () {
-        this.$create_btn.toggle();
-        this.$save_btn.toggle();
-        this.$reset_btn.toggle();
-        this.$cancel_btn.toggle();
+        $('.action_buttons .create').toggle();
+        $('.action_buttons .save').toggle();
+        $('.action_buttons .reset').toggle();
+        $('.action_buttons .cancel').toggle();
         this.$el.find('#settlement_form_wrapper').toggle();
         this.$el.find('#create_settlement').toggle();
         this.reset_form();
@@ -80,7 +82,7 @@ app.views.SettlementListView = Backbone.View.extend({
         app_confirm("Are you sure to delete this settlement?", function (response) {
             if (response == true || response == 1) {
                 var cur_model = self.collection.at(self.cur_model_index);
-                self.collection.remove(cur_model);
+                // self.collection.remove(cur_model);
                 cur_model.destroy();
                 $.notify('Settlement deleted.', {type: 'info'})
             }

@@ -34,6 +34,7 @@
 				<div class="row">
 					<label class="col-xs-6">Icon Event ID<select name="first_party_event_id"
 																 class="form-control">
+							<option value=""></option>
 							<% _.each(app.collections.offers.models, function (an_offer) { %>
 							<option value="<%= an_offer.get('id') %>"><%= an_offer.get('event_id') %></option>
 							<% }); %>
@@ -49,6 +50,7 @@
 				<div class="row">
 					<label class="col-xs-5">Event ID <select name="second_party_event_id"
 															 class="form-control">
+							<option value=""></option>
 							<% _.each(app.collections.offers.models, function (an_offer) { %>
 							<option value="<%= an_offer.get('id') %>"><%= an_offer.get('event_id') %></option>
 							<% }); %>
@@ -66,6 +68,7 @@
 				<div class="row">
 					<label class="col-xs-6">Artist <select name="second_party_artist_id"
 														   class="form-control">
+							<option value=""></option>
 							<% _.each(app.collections.artists.models, function (an_artist) { %>
 							<option value="<%= an_artist.get('id') %>"><%= an_artist.get('first_name') + ' ' + an_artist.get('last_name') %></option>
 							<% }); %>
@@ -73,6 +76,7 @@
 					</label>
 					<label class="col-xs-6">Venue <select name="second_party_venue_id"
 														  class="form-control">
+							<option value=""></option>
 							<% _.each(app.collections.venues.models, function (a_venue) { %>
 							<option value="<%= a_venue.get('id') %>"><%= a_venue.get('name') %></option>
 							<% }); %>
@@ -90,19 +94,18 @@
 			<div class="form-group">
 				<div class="row">
 					<label class="col-xs-6">Artist Walkout Final<input name="artist_walkout_final" type="number"
-																	   step="any" class="form-control">
+																	   step="any" class=" form-control" value="0">
 					</label>
-					<label class="col-xs-6">Ad Plan Final <input name="ad_plan_final" type="number" step="any"
-															 class="form-control">
+					<label class="col-xs-6">Ad Plan Final <input name="ad_plan_final" type="number" step="any" value="0"
+																 class=" form-control">
 					</label>
 				</div>
 				<div class="row">
 					<label class="col-xs-6">Promoter Revenue Final<input name="promoter_revenue_final" type="number" step="any"
-
-													   class="form-control">
+																		 value="0" class=" form-control">
 					</label>
-					<label class="col-xs-6">Ticket Sales Final <input name="ticket_sales_final" type="number" step="any"
-																  class="form-control">
+					<label class="col-xs-6">Ticket Sales Final <input name="ticket_sales_final" type="number" step="any" value="0"
+																	  class="form-control">
 					</label>
 				</div>
 
