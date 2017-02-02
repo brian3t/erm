@@ -48,10 +48,11 @@ app.views.SettlementListView = Backbone.View.extend({
         }
     },
     toggle_create_item: function () {
-        $('.action_buttons .create').toggle();
-        $('.action_buttons .save').toggle();
-        $('.action_buttons .reset').toggle();
-        $('.action_buttons .cancel').toggle();
+        this.$create_btn.toggle();
+        this.$save_btn.toggle();
+        this.$reset_btn.toggle();
+        this.$cancel_btn.toggle();
+
         this.$el.find('#settlement_form_wrapper').toggle();
         this.$el.find('#create_settlement').toggle();
         this.reset_form();
@@ -119,7 +120,7 @@ app.views.SettlementListView = Backbone.View.extend({
         var edit_switch = this.$el.find('.edit_switch');
         this.switchery = new Switchery(edit_switch[0]);
         edit_switch.trigger('change');
-        this.delegateEvents();
+        this.after_render();
         return this.el;
     },
     after_render: function () {
