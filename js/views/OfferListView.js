@@ -27,7 +27,8 @@ app.views.OfferListView = Backbone.View.extend({
         "click button.reset": "reset_form",
         "click button.save": "save_form",
         "click button.delete": "delete_model",
-        "change .edit_switch": "toggle_edit_mode"
+        "change .edit_switch": "toggle_edit_mode",
+        "click button.pdf": "pdf_item"
     },
     toggle_edit_mode: function (e) {
         var $e = $(e.currentTarget);
@@ -95,8 +96,11 @@ app.views.OfferListView = Backbone.View.extend({
         this.offer_form_view.model = this.collection.at(this.cur_model_index);
         this.offer_form_view.render();
         this.offer_form_view.after_render();
-    }
-    ,
+    },
+    pdf_item: function (e) {
+        var $target = $(e.currentTarget);
+        console.info(this.offer_form_view.model);
+    },
     offer_form_view: {},
     offer_search_list_view: {},
     render: function () {
