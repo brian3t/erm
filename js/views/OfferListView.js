@@ -98,8 +98,10 @@ app.views.OfferListView = Backbone.View.extend({
         this.offer_form_view.after_render();
     },
     pdf_item: function (e) {
-        var $target = $(e.currentTarget);
-        console.info(this.offer_form_view.model);
+        var curr_id = this.offer_form_view.model.get('id');
+        if (isInWeb){
+            window.open('http://admin.entertainmentdirectmetrics.com/offer/pdf', '_blank')
+        }
     },
     offer_form_view: {},
     offer_search_list_view: {},

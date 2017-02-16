@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b96c096c-e795-48c2-8061-7fa186bdd0d3" name="erm_aws" url="http://entertainmentdirectmetrics.com">
+        <fileTransfer host="entertainmentdirectmetrics.com" port="21" rootFolder="/html">
+          <advancedOptions>
+            <advancedOptions compatibilityMode="true" dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
