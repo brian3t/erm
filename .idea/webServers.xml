@@ -5,7 +5,7 @@
       <webServer id="b96c096c-e795-48c2-8061-7fa186bdd0d3" name="erm_aws" url="http://entertainmentdirectmetrics.com">
         <fileTransfer host="entertainmentdirectmetrics.com" port="21" rootFolder="/html">
           <advancedOptions>
-            <advancedOptions compatibilityMode="true" dataProtectionLevel="Private" />
+            <advancedOptions compatibilityMode="true" dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
           <option name="port" value="21" />
         </fileTransfer>

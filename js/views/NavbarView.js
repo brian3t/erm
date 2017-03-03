@@ -7,11 +7,12 @@ app.views.NavbarView = Backbone.View.extend({
     render: function () {
         this.$el.html(this.template(app.cur_user.attributes));
         this.delegateEvents();
-        this.$el.find('#back-to-top').click(function() {      // When arrow is clicked
+        this.$el.find('#back-to-top').click(function () {      // When arrow is clicked
             $('body,html').animate({
-                scrollTop : 0                       // Scroll to top of body
+                scrollTop: 0                       // Scroll to top of body
             }, 500);
         });
+        this.set_active();
         return this.$el;
     },
 
@@ -23,5 +24,18 @@ app.views.NavbarView = Backbone.View.extend({
         ratchet_popover_dismiss();
         document.cookie = "loginstring=";
         app.router.navigate('#', {trigger: true, replace: true});
+    },
+    set_active: function (menu) {
+        if (typeof menu == "undefined" || !menu) {
+            if (!_.isObject(Backbone) || !_.isObject(Backbone.history) || !Backbone.history.hasOwnProperty('fragment')){
+                return this;
+            }
+            menu = Backbone.history.getFragment();
+        }
+        this.$('li.menu').removeClass('active');
+        if (!_.isEmpty(menu)) {
+            this.$('li.menu.' + menu).addClass('active');
+        }
+        return this;
     }
 });

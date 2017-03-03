@@ -26,6 +26,11 @@ app.routers.AppRouter = Backbone.Router.extend({
                 nav_bar.find('li').removeClass('active');
                 nav_bar.find('li.menu.' + current_view).addClass('active');
                 rebind_html_elements();
+                setTimeout(function () {
+                    if (_.isEmpty($('#navbar').html())) {
+                        $('#navbar').hide().html(app.navbar_view.render()).fadeIn('fast');
+                    }
+                }, 500);
                 return result;
             }
         })(app.slider.slidePage);
@@ -61,7 +66,6 @@ app.routers.AppRouter = Backbone.Router.extend({
             app.dashboardView.delegateEvents(); // delegate events when the view is recycled
         }
         app.slider.slidePage(app.dashboardView.$el);
-
     },
     account_setting: function () {
         // Since the home view never changes, we instantiate it and render it only once
