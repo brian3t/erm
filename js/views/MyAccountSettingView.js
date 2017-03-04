@@ -10,6 +10,7 @@ app.views.MyAccountSettingView = Backbone.View.extend({
     },
     dom_ready: function () {
         $('#change_password').validator();
+        $('#account_info').validator();
     },
 
     events: {

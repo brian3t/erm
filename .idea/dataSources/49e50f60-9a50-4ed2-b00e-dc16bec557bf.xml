@@ -1201,12 +1201,12 @@ type</ColNames>
       <Position>38</Position>
       <DataType>char(80)|0</DataType>
     </column>
-    <index id="280" parent="11" name="company_id">
+    <column id="280" parent="11" name="last_login_at">
+      <Position>39</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="281" parent="11" name="company_id">
       <ColNames>company_id</ColNames>
-    </index>
-    <index id="281" parent="11" name="user_unique_email">
-      <ColNames>email</ColNames>
-      <Unique>1</Unique>
     </index>
     <index id="282" parent="11" name="user_unique_username">
       <ColNames>username</ColNames>
@@ -1220,11 +1220,7 @@ type</ColNames>
       <ColNames>username</ColNames>
       <UnderlyingIndexName>user_unique_username</UnderlyingIndexName>
     </key>
-    <key id="285" parent="11" name="user_unique_email">
-      <ColNames>email</ColNames>
-      <UnderlyingIndexName>user_unique_email</UnderlyingIndexName>
-    </key>
-    <foreign-key id="286" parent="11" name="user_ibfk_1">
+    <foreign-key id="285" parent="11" name="user_ibfk_1">
       <ColNames>company_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>company</RefTableName>
@@ -1232,174 +1228,174 @@ type</ColNames>
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
     </foreign-key>
-    <column id="287" parent="12" name="id">
+    <column id="286" parent="12" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="288" parent="12" name="name">
+    <column id="287" parent="12" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="289" parent="12" name="venue_type">
+    <column id="288" parent="12" name="venue_type">
       <Position>3</Position>
       <DataType>enum(&apos;&apos;, &apos;Amphitheater&apos;, &apos;Arena&apos;, &apos;Bandshell&apos;, &apos;Club&apos;, &apos;College&apos;, &apos;Concert Hall&apos;, &apos;Operahouse&apos;, &apos;Other&apos;, &apos;Private&apos;, &apos;Stadium&apos;, &apos;Theater&apos;)|0</DataType>
     </column>
-    <column id="290" parent="12" name="created_at">
+    <column id="289" parent="12" name="created_at">
       <Position>4</Position>
       <DataType>datetime|0</DataType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="291" parent="12" name="updated_at">
+    <column id="290" parent="12" name="updated_at">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="292" parent="12" name="previous_name">
+    <column id="291" parent="12" name="previous_name">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="293" parent="12" name="note">
+    <column id="292" parent="12" name="note">
       <Position>7</Position>
       <DataType>varchar(2000)|0</DataType>
     </column>
-    <column id="294" parent="12" name="ticket_rebate">
+    <column id="293" parent="12" name="ticket_rebate">
       <Position>8</Position>
       <DataType>varchar(8000)|0</DataType>
     </column>
-    <column id="295" parent="12" name="other_deal">
+    <column id="294" parent="12" name="other_deal">
       <Position>9</Position>
       <DataType>varchar(8000)|0</DataType>
     </column>
-    <column id="296" parent="12" name="address1">
+    <column id="295" parent="12" name="address1">
       <Position>10</Position>
       <DataType>varchar(2000)|0</DataType>
     </column>
-    <column id="297" parent="12" name="address2">
+    <column id="296" parent="12" name="address2">
       <Position>11</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="298" parent="12" name="city">
+    <column id="297" parent="12" name="city">
       <Position>12</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="299" parent="12" name="state">
+    <column id="298" parent="12" name="state">
       <Position>13</Position>
       <DataType>varchar(8)|0</DataType>
     </column>
-    <column id="300" parent="12" name="zipcode">
+    <column id="299" parent="12" name="zipcode">
       <Position>14</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="301" parent="12" name="country">
+    <column id="300" parent="12" name="country">
       <Position>15</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="302" parent="12" name="timezone">
+    <column id="301" parent="12" name="timezone">
       <Position>16</Position>
       <DataType>enum(&apos;&apos;, &apos;ACDT Australian Central Daylight Savings Time&apos;, &apos;ACST Australian Central Standard Time&apos;, &apos;ACT Acre Time&apos;, &apos;ACT ASEAN Common Time&apos;, &apos;ADT Atlantic Daylight Time&apos;, &apos;AEDT Australian Eastern Daylight Savings Time&apos;, &apos;AEST Australian Eastern Standard Time&apos;, &apos;AFT Afghanistan Time&apos;, &apos;AKDT Alaska Daylight Time&apos;, &apos;AKST Alaska Standard Time&apos;, &apos;AMST Amazon Summer Time (Brazil)[1]&apos;, &apos;AMT Amazon Time (Brazil)[2]&apos;, &apos;AMT Armenia Time&apos;, &apos;ART Argentina Time&apos;, &apos;AST Arabia Standard Time&apos;, &apos;AST Atlantic Standard Time&apos;, &apos;AWDT Australian Western Daylight Time&apos;, &apos;AWST Australian Western Standard Time&apos;, &apos;AZOST Azores Standard Time&apos;, &apos;AZT Azerbaijan Time&apos;, &apos;BDT Brunei Time&apos;, &apos;BDT Bangladesh Daylight Time (Bangladesh Daylight saving time keeps UTC+06 offset) [3]&apos;, &apos;BIOT British Indian Ocean Time&apos;, &apos;BIT Baker Island Time&apos;, &apos;BOT Bolivia Time&apos;, &apos;BRST Brasilia Summer Time&apos;, &apos;BRT Brasilia Time&apos;, &apos;BST Bangladesh Standard Time&apos;, &apos;BST Bougainville Standard Time[4]&apos;, &apos;BST British Summer Time (British Standard Time from Feb 1968 to Oct 1971)&apos;, &apos;BTT Bhutan Time&apos;, &apos;CAT Central Africa Time&apos;, &apos;CCT Cocos Islands Time&apos;, &apos;CDT Central Daylight Time (North America)&apos;, &apos;CDT Cuba Daylight Time[5]&apos;, &apos;CEDT Central European Daylight Time&apos;, &apos;CEST Central European Summer Time (Cf. HAEC)&apos;, &apos;CET Central European Time&apos;, &apos;CHADT Chatham Daylight Time&apos;, &apos;CHAST Chatham Standard Time&apos;, &apos;CHOT Choibalsan&apos;, &apos;ChST Chamorro Standard Time&apos;, &apos;CHUT Chuuk Time&apos;, &apos;CIST Clipperton Island Standard Time&apos;, &apos;CIT Central Indonesia Time&apos;, &apos;CKT Cook Island Time&apos;, &apos;CLST Chile Summer Time&apos;, &apos;CLT Chile Standard Time&apos;, &apos;COST Colombia Summer Time&apos;, &apos;COT Colombia Time&apos;, &apos;CST Central Standard Time (North America)&apos;, &apos;CST China Standard Time&apos;, &apos;CST Central Standard Time (Australia)&apos;, &apos;CST Central Summer Time (Australia)&apos;, &apos;CST Cuba Standard Time&apos;, &apos;CT China time&apos;, &apos;CVT Cape Verde Time&apos;, &apos;CWST Central Western Standard Time (Australia) unofficial&apos;, &apos;CXT Christmas Island Time&apos;, &apos;DAVT Davis Time&apos;, &apos;DDUT Dumont d&apos;&apos;Urville Time&apos;, &apos;DFT AIX specific equivalent of Central European Time[6]&apos;, &apos;EASST Easter Island Standard Summer Time&apos;, &apos;EAST Easter Island Standard Time&apos;, &apos;EAT East Africa Time&apos;, &apos;ECT Eastern Caribbean Time (does not recognise DST)&apos;, &apos;ECT Ecuador Time&apos;, &apos;EDT Eastern Daylight Time (North America)&apos;, &apos;EEDT Eastern European Daylight Time&apos;, &apos;EEST Eastern European Summer Time&apos;, &apos;EET Eastern European Time&apos;, &apos;EGST Eastern Greenland Summer Time&apos;, &apos;EGT Eastern Greenland Time&apos;, &apos;EIT Eastern Indonesian Time&apos;, &apos;EST Eastern Standard Time (North America)&apos;, &apos;EST Eastern Standard Time (Australia)&apos;, &apos;FET Further-eastern European Time&apos;, &apos;FJT Fiji Time&apos;, &apos;FKST Falkland Islands Standard Time&apos;, &apos;FKST Falkland Islands Summer Time&apos;, &apos;FKT Falkland Islands Time&apos;, &apos;FNT Fernando de Noronha Time&apos;, &apos;GALT Galapagos Time&apos;, &apos;GAMT Gambier Islands&apos;, &apos;GET Georgia Standard Time&apos;, &apos;GFT French Guiana Time&apos;, &apos;GILT Gilbert Island Time&apos;, &apos;GIT Gambier Island Time&apos;, &apos;GMT Greenwich Mean Time&apos;, &apos;GST South Georgia and the South Sandwich Islands&apos;, &apos;GST Gulf Standard Time&apos;, &apos;GYT Guyana Time&apos;, &apos;HADT Hawaii-Aleutian Daylight Time&apos;, &apos;HAEC Heure Avancée d&apos;&apos;Europe Centrale francised name for CEST&apos;, &apos;HAST Hawaii-Aleutian Standard Time&apos;, &apos;HKT Hong Kong Time&apos;, &apos;HMT Heard and McDonald Islands Time&apos;, &apos;HOVT Khovd Time&apos;, &apos;HST Hawaii Standard Time&apos;, &apos;IBST International Business Standard Time&apos;, &apos;ICT Indochina Time&apos;, &apos;IDT Israel Daylight Time&apos;, &apos;IOT Indian Ocean Time&apos;, &apos;IRDT Iran Daylight Time&apos;, &apos;IRKT Irkutsk Time&apos;, &apos;IRST Iran Standard Time&apos;, &apos;IST Indian Standard Time&apos;, &apos;IST Irish Standard Time[7]&apos;, &apos;IST Israel Standard Time&apos;, &apos;JST Japan Standard Time&apos;, &apos;KGT Kyrgyzstan time&apos;, &apos;KOST Kosrae Time&apos;, &apos;KRAT Krasnoyarsk Time&apos;, &apos;KST Korea Standard Time&apos;, &apos;LHST Lord Howe Standard Time&apos;, &apos;LHST Lord Howe Summer Time&apos;, &apos;LINT Line Islands Time&apos;, &apos;MAGT Magadan Time&apos;, &apos;MART Marquesas Islands Time&apos;, &apos;MAWT Mawson Station Time&apos;, &apos;MDT Mountain Daylight Time (North America)&apos;, &apos;MET Middle European Time Same zone as CET&apos;, &apos;MEST Middle European Summer Time Same zone as CEST&apos;, &apos;MHT Marshall Islands&apos;, &apos;MIST Macquarie Island Station Time&apos;, &apos;MIT Marquesas Islands Time&apos;, &apos;MMT Myanmar Time&apos;, &apos;MSK Moscow Time&apos;, &apos;MST Malaysia Standard Time&apos;, &apos;MST Mountain Standard Time (North America)&apos;, &apos;MST Myanmar Standard Time&apos;, &apos;MUT Mauritius Time&apos;, &apos;MVT Maldives Time&apos;, &apos;MYT Malaysia Time&apos;, &apos;NCT New Caledonia Time&apos;, &apos;NDT Newfoundland Daylight Time&apos;, &apos;NFT Norfolk Time&apos;, &apos;NPT Nepal Time&apos;, &apos;NST Newfoundland Standard Time&apos;, &apos;NT Newfoundland Time&apos;, &apos;NUT Niue Time&apos;, &apos;NZDT New Zealand Daylight Time&apos;, &apos;NZST New Zealand Standard Time&apos;, &apos;OMST Omsk Time&apos;, &apos;ORAT Oral Time&apos;, &apos;PDT Pacific Daylight Time (North America)&apos;, &apos;PET Peru Time&apos;, &apos;PETT Kamchatka Time&apos;, &apos;PGT Papua New Guinea Time&apos;, &apos;PHOT Phoenix Island Time&apos;, &apos;PKT Pakistan Standard Time&apos;, &apos;PMDT Saint Pierre and Miquelon Daylight time&apos;, &apos;PMST Saint Pierre and Miquelon Standard Time&apos;, &apos;PONT Pohnpei Standard Time&apos;, &apos;PST Pacific Standard Time (North America)&apos;, &apos;PST Philippine Standard Time&apos;, &apos;PYST Paraguay Summer Time (South America)[8]&apos;, &apos;PYT Paraguay Time (South America)[9]&apos;, &apos;RET Réunion Time&apos;, &apos;ROTT Rothera Research Station Time&apos;, &apos;SAKT Sakhalin Island time&apos;, &apos;SAMT Samara Time&apos;, &apos;SAST South African Standard Time&apos;, &apos;SBT Solomon Islands Time&apos;, &apos;SCT Seychelles Time&apos;, &apos;SGT Singapore Time&apos;, &apos;SLST Sri Lanka Standard Time&apos;, &apos;SRET Srednekolymsk Time&apos;, &apos;SRT Suriname Time&apos;, &apos;SST Samoa Standard Time&apos;, &apos;SST Singapore Standard Time&apos;, &apos;SYOT Showa Station Time&apos;, &apos;TAHT Tahiti Time&apos;, &apos;THA Thailand Standard Time&apos;, &apos;TFT Indian/Kerguelen&apos;, &apos;TJT Tajikistan Time&apos;, &apos;TKT Tokelau Time&apos;, &apos;TLT Timor Leste Time&apos;, &apos;TMT Turkmenistan Time&apos;, &apos;TOT Tonga Time&apos;, &apos;TVT Tuvalu Time&apos;, &apos;UCT Coordinated Universal Time&apos;, &apos;ULAT Ulaanbaatar Time&apos;, &apos;USZ1 Kaliningrad Time&apos;, &apos;UTC Coordinated Universal Time&apos;, &apos;UYST Uruguay Summer Time&apos;, &apos;UYT Uruguay Standard Time&apos;, &apos;UZT Uzbekistan Time&apos;, &apos;VET Venezuelan Standard Time&apos;, &apos;VLAT Vladivostok Time&apos;, &apos;VOLT Volgograd Time&apos;, &apos;VOST Vostok Station Time&apos;, &apos;VUT Vanuatu Time&apos;, &apos;WAKT Wake Island Time&apos;, &apos;WAST West Africa Summer Time&apos;, &apos;WAT West Africa Time&apos;, &apos;WEDT Western European Daylight Time&apos;, &apos;WEST Western European Summer Time&apos;, &apos;WET Western European Time&apos;, &apos;WIT Western Indonesian Time&apos;, &apos;WST Western Standard Time&apos;, &apos;YAKT Yakutsk Time&apos;, &apos;YEKT Yekaterinburg Time&apos;, &apos;Z Zulu Time (Coordinated Universal Time)&apos;)|0</DataType>
     </column>
-    <column id="303" parent="12" name="owner">
+    <column id="302" parent="12" name="owner">
       <Position>17</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="304" parent="12" name="company_id">
+    <column id="303" parent="12" name="company_id">
       <Position>18</Position>
       <Comment>Venue Manager</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="305" parent="12" name="general_info_email">
+    <column id="304" parent="12" name="general_info_email">
       <Position>19</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="306" parent="12" name="main_office_phone">
+    <column id="305" parent="12" name="main_office_phone">
       <Position>20</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="307" parent="12" name="box_office_phone">
+    <column id="306" parent="12" name="box_office_phone">
       <Position>21</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="308" parent="12" name="fax_phone">
+    <column id="307" parent="12" name="fax_phone">
       <Position>22</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="309" parent="12" name="other_phone">
+    <column id="308" parent="12" name="other_phone">
       <Position>23</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="310" parent="12" name="primary_ticketing_company_id">
+    <column id="309" parent="12" name="primary_ticketing_company_id">
       <Position>24</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="311" parent="12" name="other_seating_capacity">
+    <column id="310" parent="12" name="other_seating_capacity">
       <Position>25</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="312" parent="12" name="end_stage_seating_capacity">
+    <column id="311" parent="12" name="end_stage_seating_capacity">
       <Position>26</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="313" parent="12" name="full_stage_seating_capacity">
+    <column id="312" parent="12" name="full_stage_seating_capacity">
       <Position>27</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="314" parent="12" name="half_stage_seating_capacity">
+    <column id="313" parent="12" name="half_stage_seating_capacity">
       <Position>28</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="315" parent="12" name="in_the_round_seating_capacity">
+    <column id="314" parent="12" name="in_the_round_seating_capacity">
       <Position>29</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="316" parent="12" name="other_seating_capacity_name">
+    <column id="315" parent="12" name="other_seating_capacity_name">
       <Position>30</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="317" parent="12" name="other_seating_capacity_value">
+    <column id="316" parent="12" name="other_seating_capacity_value">
       <Position>31</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="318" parent="12" name="webpage">
+    <column id="317" parent="12" name="webpage">
       <Position>32</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="319" parent="12" name="facebook">
+    <column id="318" parent="12" name="facebook">
       <Position>33</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="320" parent="12" name="yahoo">
+    <column id="319" parent="12" name="yahoo">
       <Position>34</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="321" parent="12" name="linkedin">
+    <column id="320" parent="12" name="linkedin">
       <Position>35</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="322" parent="12" name="twitter">
+    <column id="321" parent="12" name="twitter">
       <Position>36</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="323" parent="12" name="instagram">
+    <column id="322" parent="12" name="instagram">
       <Position>37</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="324" parent="12" name="google">
+    <column id="323" parent="12" name="google">
       <Position>38</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <index id="325" parent="12" name="fk_venue_1_idx">
+    <index id="324" parent="12" name="fk_venue_1_idx">
       <ColNames>company_id</ColNames>
     </index>
-    <index id="326" parent="12" name="fk_venue_2_idx">
+    <index id="325" parent="12" name="fk_venue_2_idx">
       <ColNames>primary_ticketing_company_id</ColNames>
     </index>
-    <key id="327" parent="12" name="PRIMARY">
+    <key id="326" parent="12" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="328" parent="12" name="fk_venue_1">
+    <foreign-key id="327" parent="12" name="fk_venue_1">
       <ColNames>company_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>company</RefTableName>
@@ -1407,7 +1403,7 @@ type</ColNames>
       <OnUpdate>update</OnUpdate>
       <OnDelete>set-null</OnDelete>
     </foreign-key>
-    <foreign-key id="329" parent="12" name="fk_venue_2">
+    <foreign-key id="328" parent="12" name="fk_venue_2">
       <ColNames>primary_ticketing_company_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>company</RefTableName>

@@ -20,13 +20,15 @@
                 </div>
 
                 <div class="panel-body">
-                    <form class="edit" id="account_info" action="#" data-model="cur_user">
+                    <form class="edit" id="account_info" action="#" data-model="cur_user" data-toggle="validator" role="form">
                         <div class="form-group">
-                            <div class="row">
-                                <label class="col-xs-6">First Name <input name="first_name" type="text"
+                            <div class="row form-group has-feedback">
+                                <label class="col-xs-6">First Name <input name="first_name" type="text" required
                                                                           value="<%= first_name %>"
                                                                           class="form-control">
+                                    <div class="help-block with-errors"></div>
                                 </label>
+
                                 <label class="col-xs-6">Last Name <input name="last_name" type="text"
                                                                          value="<%= last_name %>" class="form-control">
                                 </label>
@@ -111,7 +113,7 @@
                                 </label>
                                 <label class="col-xs-6">Phone Number <input name="phone_number"
                                                                             class="form-control"
-                                                                            value=<%= phone_number %>
+                                                                            value="<%= phone_number %>"
                                                                             type="text"></label>
 
                             </div>

@@ -14,6 +14,7 @@ app.routers.AppRouter = Backbone.Router.extend({
     },
 
     initialize: function () {
+        var $navbar = $('#navbar');
         app.slider = new PageSlider($('body'));
         app.slider.slidePageSp = (function (_super) {
             return function () {
@@ -27,8 +28,8 @@ app.routers.AppRouter = Backbone.Router.extend({
                 nav_bar.find('li.menu.' + current_view).addClass('active');
                 rebind_html_elements();
                 setTimeout(function () {
-                    if (_.isEmpty($('#navbar').html())) {
-                        $('#navbar').hide().html(app.navbar_view.render()).fadeIn('fast');
+                    if (_.isEmpty($navbar.html()) && _.isObject(app.navbar_view)) {
+                        $navbar.hide().html(app.navbar_view.render()).fadeIn('fast');
                     }
                 }, 500);
                 return result;
