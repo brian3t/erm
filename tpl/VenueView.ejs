@@ -1,13 +1,13 @@
-<form class="edit account_info" action="#" data-model="user" data-id="<%= id %>">
+<form class="edit account_info" action="#" data-model="user" data-id="<%= id %>" data-toggle="validator" role="form">
 
 	<div class="form-group">
 		<div class="row">
 			<label class="col-xs-6">Venue Name<input name="name" disabled type="text"
-													 value="<%= name %>"
-													 class="form-control">
+													 value="<%= name %>" required class="form-control">
+				<div class="help-block with-errors"></div>
 			</label>
 			<label class="col-xs-6">Previous Name <input name="previous_name" disabled type="text"
-													 value="<%= previous_name %>" class="form-control">
+														 value="<%= previous_name %>" class="form-control">
 			</label>
 		</div>
 	</div>
@@ -39,12 +39,12 @@
 	<div class="form-group">
 		<div class="row">
 			<label class="col-xs-12">Ticket Rebate <textarea name="ticket_rebate" disabled type="text"
-														  value="<%= ticket_rebate %>" class="form-control"><%= ticket_rebate %></textarea>
+															 value="<%= ticket_rebate %>" class="form-control"><%= ticket_rebate %></textarea>
 			</label>
 		</div>
 		<div class="row">
 			<label class="col-xs-12">Other Deal <textarea name="other_deal" disabled type="text"
-													   value="<%= other_deal %>" class="form-control"><%= other_deal %></textarea>
+														  value="<%= other_deal %>" class="form-control"><%= other_deal %></textarea>
 			</label>
 		</div>
 	</div>
@@ -101,7 +101,8 @@
 					<option value="AZOST Azores Standard Time">AZOST Azores Standard Time</option>
 					<option value="AZT Azerbaijan Time">AZT Azerbaijan Time</option>
 					<option value="BDT Brunei Time">BDT Brunei Time</option>
-					<option value="BDT Bangladesh Daylight Time (Bangladesh Daylight saving time keeps UTC+06 offset) [3]">BDT Bangladesh Daylight Time (Bangladesh Daylight saving time keeps UTC+06 offset)
+					<option value="BDT Bangladesh Daylight Time (Bangladesh Daylight saving time keeps UTC+06 offset) [3]">BDT Bangladesh Daylight Time
+						(Bangladesh Daylight saving time keeps UTC+06 offset)
 						[3]
 					</option>
 					<option value="BIOT British Indian Ocean Time">BIOT British Indian Ocean Time</option>
@@ -111,7 +112,9 @@
 					<option value="BRT Brasilia Time">BRT Brasilia Time</option>
 					<option value="BST Bangladesh Standard Time">BST Bangladesh Standard Time</option>
 					<option value="BST Bougainville Standard Time[4]">BST Bougainville Standard Time[4]</option>
-					<option value="BST British Summer Time (British Standard Time from Feb 1968 to Oct 1971)">BST British Summer Time (British Standard Time from Feb 1968 to Oct 1971)</option>
+					<option value="BST British Summer Time (British Standard Time from Feb 1968 to Oct 1971)">BST British Summer Time (British Standard Time
+						from Feb 1968 to Oct 1971)
+					</option>
 					<option value="BTT Bhutan Time">BTT Bhutan Time</option>
 					<option value="CAT Central Africa Time">CAT Central Africa Time</option>
 					<option value="CCT Cocos Islands Time">CCT Cocos Islands Time</option>
@@ -175,7 +178,8 @@
 					<option value="GST Gulf Standard Time">GST Gulf Standard Time</option>
 					<option value="GYT Guyana Time">GYT Guyana Time</option>
 					<option value="HADT Hawaii-Aleutian Daylight Time">HADT Hawaii-Aleutian Daylight Time</option>
-					<option value="HAEC Heure Avancée d'Europe Centrale francised name for CEST">HAEC Heure Avancée d'Europe Centrale francised name for CEST</option>
+					<option value="HAEC Heure Avancée d'Europe Centrale francised name for CEST">HAEC Heure Avancée d'Europe Centrale francised name for CEST
+					</option>
 					<option value="HAST Hawaii-Aleutian Standard Time">HAST Hawaii-Aleutian Standard Time</option>
 					<option value="HKT Hong Kong Time">HKT Hong Kong Time</option>
 					<option value="HMT Heard and McDonald Islands Time">HMT Heard and McDonald Islands Time</option>
@@ -391,13 +395,13 @@
 		</div>
 		<div class="row">
 			<label class="col-xs-4">Twitter<input name="twitter" disabled type="text"
-												value="<%= twitter %>" class="form-control">
+												  value="<%= twitter %>" class="form-control">
 			</label>
 			<label class="col-xs-4">Instagram<input name="instagram" disabled type="text"
 													value="<%= instagram %>" class="form-control">
 			</label>
 			<label class="col-xs-4">Google<input name="google" disabled type="text"
-													value="<%= google %>" class="form-control">
+												 value="<%= google %>" class="form-control">
 			</label>
 		</div>
 	</div>
