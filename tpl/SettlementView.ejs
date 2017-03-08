@@ -1,5 +1,5 @@
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>">
-
+	<input type="hidden" name="company_id" value="<%= app.cur_user.get('company').get('id') %>">
 	<div class="form-group">
 		<div class="row">
 			<label class="col-xs-6">Settlement ID <input name="settlement_id" disabled required type="text"

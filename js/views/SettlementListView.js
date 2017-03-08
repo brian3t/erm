@@ -4,6 +4,7 @@
 app.views.SettlementListView = Backbone.View.extend({
     tagName: 'div',
     className: 'container row panel-body',
+    SettlementCollection: {},
     collection: {},
     cur_model_index: 0,//current model that is being selected out of collection
     $action_btns: {},
@@ -14,7 +15,12 @@ app.views.SettlementListView = Backbone.View.extend({
     switchery: {},
 
     initialize: function () {
-        this.collection = app.collections.settlements;
+        this.SettlementCollection = app.collections.Settlement.extend({
+            url: config.restUrl + 'settlement?' + $.param({
+                'company_id': app.cur_user.get('company').get('id')
+            })
+        });
+        this.collection = new this.SettlementCollection();
         this.collection.fetch();
         this.settlement_search_list_view = new app.views.SettlementSearchListView({collection: this.collection});
         this.settlement_form_view = new app.views.SettlementView();
@@ -28,7 +34,8 @@ app.views.SettlementListView = Backbone.View.extend({
         "click button.save": "save_form",
         "click button.delete": "delete_model",
         "change .edit_switch": "toggle_edit_mode"
-    },
+    }
+    ,
     toggle_edit_mode: function (e) {
         var $e = $(e.currentTarget);
         var span_text = $e.parentsUntil('div.row').find('span.toggle_state');
@@ -46,7 +53,8 @@ app.views.SettlementListView = Backbone.View.extend({
             $($form.find(':input')).prop('disabled', true);
             this.$el.find('button.delete').hide();
         }
-    },
+    }
+    ,
     toggle_create_item: function () {
         this.$create_btn.toggle();
         this.$save_btn.toggle();
@@ -56,7 +64,8 @@ app.views.SettlementListView = Backbone.View.extend({
         this.$el.find('#settlement_form_wrapper').toggle();
         this.$el.find('#create_settlement').toggle();
         this.reset_form();
-    },
+    }
+    ,
     save_form: function (e) {
         e.preventDefault();
         var $form = $(this.$el.find('#create_settlement > form'));
@@ -73,11 +82,13 @@ app.views.SettlementListView = Backbone.View.extend({
                 app_alert('There is an error saving this settlement. Please contact support for more information');
             }
         });
-    },
+    }
+    ,
     reset_form: function () {
         this.$el.find('#create_settlement > form').trigger('reset');
         $('.multi_select').select2('val', null);
-    },
+    }
+    ,
     delete_model: function (e) {
         var self = this;
         app_confirm("Are you sure to delete this settlement?", function (response) {
@@ -88,12 +99,14 @@ app.views.SettlementListView = Backbone.View.extend({
                 $.notify('Settlement deleted.', {type: 'info'})
             }
         });
-    },
+    }
+    ,
     filter_item: function (e) {
         this.settlement_search_list_view.text_to_filter = e.currentTarget.value.toLowerCase();
         this.settlement_search_list_view.render();
         this.settlement_search_list_view.after_render();
-    },
+    }
+    ,
     select_item: function (e) {
         var $target = $(e.currentTarget);
         this.cur_model_index = $target.data('index');
@@ -102,8 +115,10 @@ app.views.SettlementListView = Backbone.View.extend({
         this.settlement_form_view.after_render();
     }
     ,
-    settlement_form_view: {},
-    settlement_search_list_view: {},
+    settlement_form_view: {}
+    ,
+    settlement_search_list_view: {}
+    ,
     render: function () {
         this.$el.empty();
         //get first settlement in collection
@@ -122,7 +137,8 @@ app.views.SettlementListView = Backbone.View.extend({
         edit_switch.trigger('change');
         this.after_render();
         return this.el;
-    },
+    }
+    ,
     after_render: function () {
         this.$action_btns = $(this.$el.find('.action_buttons'));
         this.$create_btn = this.$action_btns.find('.create');

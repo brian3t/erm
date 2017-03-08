@@ -26,7 +26,7 @@ app.models.Settlement = Backbone.RelationalModel.extend({
 
 app.collections.Settlement = Backbone.Collection.extend({
     model: app.models.Settlement,
-    initialize: function () {
-        this.url = config.restUrl + 'settlement';
+    url: config.restUrl + 'settlement',
+    initialize: function (options) {
     }
 });
