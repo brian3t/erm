@@ -114,6 +114,12 @@ app.views.CompanyListView = Backbone.View.extend({
         this.company_search_list_view.after_render();
         var edit_switch = this.$el.find('.edit_switch');
         this.switchery = new Switchery(edit_switch[0]);
+
+        this.$action_btns = $(this.$el.find('.action_buttons'));
+        this.$create_btn = this.$action_btns.find('.create');
+        this.$save_btn = this.$action_btns.find('.save');
+        this.$reset_btn = this.$action_btns.find('.reset');
+        this.$cancel_btn = this.$action_btns.find('.cancel');
         this.delegateEvents();
         return this.el;
     },
