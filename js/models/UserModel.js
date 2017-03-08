@@ -65,7 +65,8 @@ app.models.User = Backbone.RelationalModel.extend({
 
 app.collections.User_collection = Backbone.Collection.extend({
     model: app.models.User,
-    initialize: function () {
-        this.url = config.restUrl + 'user?' + $.param({'company_id': app.cur_user.get('company').get('id')});
-    }
+    url: config.restUrl + 'user'
+    // initialize: function () {
+    //     this.url = config.restUrl + 'user?' + $.param({'company_id': app.cur_user.get('company').get('id')});
+    // }
 });

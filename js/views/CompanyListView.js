@@ -15,7 +15,9 @@ app.views.CompanyListView = Backbone.View.extend({
 
     initialize: function () {
         this.collection = app.collections.companies;
-        this.collection.fetch();
+        this.collection.models = this.collection.filter(function (v) {
+            return v.id == app.cur_user.get('company').get('id');
+        });
         this.company_search_list_view = new app.views.CompanySearchListView({collection: this.collection});
         this.company_form_view = new app.views.CompanyView();
         this.listenTo(this.collection, 'update', this.render);

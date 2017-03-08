@@ -4,6 +4,7 @@
 app.views.UserListView = Backbone.View.extend({
     tagName: 'div',
     className: 'container row panel-body',
+    UserCollection: {},
     collection: {},
     cur_model_index: 0,//current model that is being selected out of collection
     $action_btns: {},
@@ -29,8 +30,11 @@ app.views.UserListView = Backbone.View.extend({
             this.$el.find('button.delete').hide();
         }
     },
-    initialize: function () {
-        this.collection = new app.collections.User_collection();
+    initialize: function (options) {
+        this.UserCollection = app.collections.User_collection.extend({
+            url : config.restUrl + 'user?' + $.param({'company_id': app.cur_user.get('company').get('id')})
+        });
+        this.collection = new this.UserCollection();
         this.collection.fetch();
         this.user_search_list_view = new app.views.UserSearchListView({collection: this.collection});
         this.user_form_view = new app.views.UserView();

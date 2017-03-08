@@ -29,7 +29,7 @@ app.routers.AppRouter = Backbone.Router.extend({
                 rebind_html_elements();
                 setTimeout(function () {
                     if (_.isEmpty($navbar.html()) && _.isObject(app.navbar_view)) {
-                        $navbar.hide().html(app.navbar_view.render()).fadeIn('fast');
+                        $('#navbar').hide().html(app.navbar_view.render()).fadeIn('fast');
                     }
                 }, 500);
                 return result;
