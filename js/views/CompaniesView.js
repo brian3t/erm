@@ -13,7 +13,9 @@ app.views.CompaniesView = Backbone.View.extend({
         return this.el;
     },
     dom_ready: function () {
+        is_validator_initializing = true;
         $('form.account_info').validator();
+        is_validator_initializing = false;
         this.delegateEvents();
     }
 });

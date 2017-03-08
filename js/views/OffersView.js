@@ -15,6 +15,9 @@ app.views.OffersView = Backbone.View.extend({
     dom_ready: function () {
         this.delegateEvents();
         this.offer_list_view.offer_form_view.$el.find('input[name$="_flat_rate"]').trigger('change');
+        is_validator_initializing = true;
+        $('form.account_info').validator();
+        is_validator_initializing = false;
         $('input.money').autoNumeric('init', {aSign:'$'});
     }
 });

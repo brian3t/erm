@@ -212,7 +212,6 @@ app.views.UserView = Backbone.View.extend({
         var $edit_switch = $('.edit_switch');
         // $edit_switch.bootstrapToggle();
         $('.multi_select').select2();
-        $('form[data-toggle="validator"]').validator();
         this.delegateEvents();
     }
 

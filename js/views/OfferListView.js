@@ -4,6 +4,7 @@
 app.views.OfferListView = Backbone.View.extend({
     tagName: 'div',
     className: 'container row panel-body',
+    OfferCollection: {},
     collection: {},
     cur_model_index: 0,//current model that is being selected out of collection
     $action_btns: {},
@@ -14,7 +15,10 @@ app.views.OfferListView = Backbone.View.extend({
     switchery: {},
 
     initialize: function () {
-        this.collection = app.collections.offers;
+        this.OfferCollection = app.collections.Offer.extend({
+            url: config.restUrl + 'offer/search_by_company?' + $.param({'company_id': app.cur_user.get('company').get('id')})
+        });
+        this.collection = new this.OfferCollection();
         this.collection.fetch();
         this.offer_search_list_view = new app.views.OfferSearchListView({collection: this.collection});
         this.offer_form_view = new app.views.OfferView();
@@ -99,8 +103,8 @@ app.views.OfferListView = Backbone.View.extend({
     },
     pdf_item: function (e) {
         var curr_id = this.offer_form_view.model.get('id');
-        if (isInWeb){
-            window.open('http://admin.entertainmentdirectmetrics.com/offer/pdf?id='+curr_id, '_blank')
+        if (isInWeb) {
+            window.open('http://admin.entertainmentdirectmetrics.com/offer/pdf?id=' + curr_id, '_blank')
         }
     },
     offer_form_view: {},
@@ -197,7 +201,6 @@ app.views.OfferView = Backbone.BBFormView.extend({
     },
     after_render: function () {
         $(this.$el.find('.multi_select')).select2();
-        $(this.$el.find('form[data-toggle="validator"]')).validator();
         // this.$el.find('#var_expense input[name$="flat_rate"]').trigger('change');
         $('input.money').autoNumeric('init', {aSign: '$'});
         this.delegateEvents();
