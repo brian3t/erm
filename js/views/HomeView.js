@@ -39,7 +39,7 @@ app.views.HomeView = Backbone.View.extend({
                             if (!IS_LOCAL) {
                                 app.router.navigate('dashboard', {trigger: true});
                             } else {
-                                app.router.navigate('companies', {trigger: true});
+                                app.router.navigate('settlements', {trigger: true});
                                 $('.edit_switch').trigger('change');
                             }
                         }

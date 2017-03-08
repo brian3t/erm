@@ -2,8 +2,9 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-xs-6">Settlement ID <input name="settlement_id" disabled type="text"
+			<label class="col-xs-6">Settlement ID <input name="settlement_id" disabled required type="text"
 														 value="<%= settlement_id %>" class="form-control">
+				<div class="help-block with-errors"></div>
 			</label>
 		</div>
 		<h3 class="row text-center">Show Info</h3>
@@ -67,19 +68,19 @@
 		<h4>Final Financials</h4>
 		<div class="form-group">
 			<div class="row">
-				<label class="col-xs-6">Artist Walkout Final<input name="artist_walkout_final" value="<%= artist_walkout_final %>"
-																   class="money form-control">
+				<label class="col-xs-6">Artist Walkout Final<input name="artist_walkout_final" value="<%= artist_walkout_final %>" required class="money form-control">
+					<div class="help-block with-errors"></div>
 				</label>
-				<label class="col-xs-6">Ad Plan Final <input name="ad_plan_final" value="<%= ad_plan_final %>"
-															 class="money form-control">
+				<label class="col-xs-6">Ad Plan Final <input name="ad_plan_final" value="<%= ad_plan_final %>" required class="money form-control">
+					<div class="help-block with-errors"></div>
 				</label>
 			</div>
 			<div class="row">
-				<label class="col-xs-6">Promoter Revenue Final<input name="promoter_revenue_final" value="<%= promoter_revenue_final %>"
-																	 class="money form-control">
+				<label class="col-xs-6">Promoter Revenue Final<input name="promoter_revenue_final" value="<%= promoter_revenue_final %>" required class="money form-control">
+					<div class="help-block with-errors"></div>
 				</label>
-				<label class="col-xs-6">Ticket Sales Final <input name="ticket_sales_final" value="<%= ticket_sales_final %>" type="number" step="any"
-																  class="form-control">
+				<label class="col-xs-6">Ticket Sales Final <input name="ticket_sales_final" value="<%= ticket_sales_final %>" type="number" step="any" required class="form-control">
+					<div class="help-block with-errors"></div>
 				</label>
 			</div>
 
