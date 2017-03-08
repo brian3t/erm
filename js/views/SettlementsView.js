@@ -13,7 +13,9 @@ app.views.SettlementsView = Backbone.View.extend({
         return this.$el;
     },
     dom_ready: function () {
-        $('form.account_info').validator();
+        is_validator_initializing = true;
+        $('form.account_info').validator({});
+        is_validator_initializing = false;
         this.delegateEvents();
     }
 });

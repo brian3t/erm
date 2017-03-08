@@ -168,6 +168,9 @@ app.views.UserView = Backbone.View.extend({
         "change .multi_select": "update_ajax"
     },
     update_ajax: function (e) {
+        if (is_validator_initializing){
+            return;
+        }
         var target = $(e.target);
         if (e.target.tagName == 'BUTTON' || target.hasClass('file-caption') || target.prop('type') == 'file' || target.prop('readonly') == true) {
             return;

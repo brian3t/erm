@@ -7,6 +7,7 @@ var config = {
     restUrl: "https://api.entertainmentdirectmetrics.com/v1/",
     apiUrl: 'https://api.entertainmentdirectmetrics.com/'
 };
+var is_validator_initializing = false;
 if (IS_LOCAL) {
     config.restUrl = 'https://api.ermlocal/v1/';
     config.apiUrl = 'https://api.ermlocal/'

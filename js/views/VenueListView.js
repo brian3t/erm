@@ -4,6 +4,7 @@
 app.views.VenueListView = Backbone.View.extend({
     tagName: 'div',
     className: 'container row panel-body',
+    VenueCollection: {},
     collection: {},
     cur_model_index: 0,//current model that is being selected out of collection
     $action_btns: {},
@@ -14,7 +15,10 @@ app.views.VenueListView = Backbone.View.extend({
     switchery: {},
 
     initialize: function () {
-        this.collection = new app.collections.Venue_collection();
+        this.VenueCollection = app.collections.Venue_collection.extend({
+            url: config.restUrl + 'venue?' + $.param({'company_id': app.cur_user.get('company').get('id')})
+        });
+        this.collection = new this.VenueCollection();
         this.collection.fetch();
         this.venue_search_list_view = new app.views.VenueSearchListView({collection: this.collection});
         this.venue_form_view = new app.views.VenueView();
@@ -159,9 +163,13 @@ app.views.VenueView = Backbone.View.extend({
     model: app.models.Venue,
     events: {
         "blur .edit": "update_ajax",
-        "change .multi_select": "update_ajax",
+        "change .multi_select": "update_ajax"
     },
     update_ajax: function (e) {
+        if (is_validator_initializing){
+            return;
+        }
+
         var target = $(e.target);
         if (e.target.tagName == 'BUTTON' || target.hasClass('file-caption') || target.prop('type') == 'file' || target.prop('readonly') == true) {
             return;
@@ -205,7 +213,6 @@ app.views.VenueView = Backbone.View.extend({
         var $edit_switch = $('.edit_switch');
         // $edit_switch.bootstrapToggle();
         $('.multi_select').select2();
-        $('form[data-toggle="validator"]').validator();
         this.delegateEvents();
     }
 

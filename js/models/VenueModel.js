@@ -29,7 +29,7 @@ app.models.Venue = Backbone.RelationalModel.extend({
 
 app.collections.Venue_collection = Backbone.Collection.extend({
     model: app.models.Venue,
-    initialize: function () {
-        this.url = config.restUrl + 'venue';
+    url : config.restUrl + 'venue',
+    initialize: function (options) {
     }
 });

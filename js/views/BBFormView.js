@@ -27,6 +27,9 @@ Backbone.BBFormView = Backbone.View.extend({
         return dom;
     },
     update_ajax: function (e) {
+        if (is_validator_initializing){
+            return;
+        }
         var flag_dont_update = false;
         var target = $(e.target);
         if (e.target.tagName == 'BUTTON' || target.hasClass('skip_ajax') || target.hasClass('file-caption') || target.prop('type') == 'file' || target.prop('readonly') == true) {

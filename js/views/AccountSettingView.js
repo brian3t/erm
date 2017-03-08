@@ -23,6 +23,9 @@ app.views.AccountSettingView = Backbone.View.extend({
         "click #update_pwd": "update_pwd"
     },
     update_ajax: function (e) {
+        if (is_validator_initializing){
+            return;
+        }
         var target = $(e.target);
         if (target.hasClass('file-caption') || target.prop('type') == 'file') {
             return;
@@ -49,7 +52,9 @@ app.views.AccountSettingView = Backbone.View.extend({
         });
     },
     update_ajax_multi: function (e) {
-
+        if (is_validator_initializing){
+            return true;
+        }
     },
     update_pwd: function (e) {
         //verify current pwd

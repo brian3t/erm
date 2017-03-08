@@ -192,9 +192,7 @@ app.views.SettlementView = Backbone.BBFormView.extend({
     },
     after_render: function () {
         $(this.$el.find('.multi_select')).select2();
-        $(this.$el.find('form[data-toggle="validator"]')).validator();
         $('input.money').autoNumeric('init', {aSign: '$'});
-        $('form[data-toggle="validator"]').validator();
         this.delegateEvents();
     }
 });
