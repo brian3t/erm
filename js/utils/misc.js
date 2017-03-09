@@ -205,6 +205,15 @@ app.utils.misc = (function () {
                 }
             });
             return result;
+        },
+        json_parse: function (s) {
+            var result = {};
+            try {
+                result= JSON.parse(s);
+            } catch (e){
+                console.error("3t Error parsing string: " + s + " error: " + e);
+            }
+            return result;
         }
 
     }
@@ -332,4 +341,13 @@ function parseFloatOr0(v) {
         v = 0;
     }
     return v;
+}
+JSON.parse_3t = function (s) {
+    var result = {};
+    try {
+        result= JSON.parse(s);
+    } catch (e){
+        console.error("3t Error parsing string: " + s + " error: " + e);
+    }
+    return result;
 }

@@ -38,13 +38,30 @@ function recalculate_offer_values() {
 		default:
 			break;
 	}
-	ve = JSON.parse(variable_expense);
+	ve = {};
+	try {
+		ve = JSON.parse(variable_expense);
+	} catch (e) {
+		console.error("Error parsing var expense: " + variable_expense + " error: " + e);
+	}
 	V.total_ve = $('#total_variable_expense').val();
 
 	V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
-
-	V.tour_production_expenses = app.utils.misc.calc_sum_from_array(JSON.parse(production_expense));
-	V.general_expenses_total = app.utils.misc.calc_sum_from_array(JSON.parse(general_expense)) + parseFloatOr0(housenut_total);
+	var pe = {};
+	try {
+		pe = JSON.parse(production_expense);
+	} catch (e) {
+		console.error("Error parsing var expense: " + production_expense + " error: " + e);
+	}
+	V.tour_production_expenses = app.utils.misc.calc_sum_from_array(pe);
+	var ge = {};
+	try {
+		ge = JSON.parse(general_expense);
+	} catch (e) {
+		console.error("Error parsing var expense: " + general_expense + " error: " + e);
+	}
+	V.tour_production_expenses = app.utils.misc.calc_sum_from_array(pe);
+	V.general_expenses_total = app.utils.misc.calc_sum_from_array(ge) + parseFloatOr0(housenut_total);
 	V.total_fixed_expenses = V.general_expenses_total + V.tour_production_expenses;
 
 	V.tax_per_ticket_total = parseFloatOr0(tax_per_ticket * (V.sum_gross_ticket - V.sum_kill)).toFixed(2);
@@ -900,7 +917,8 @@ recalculate_offer_values();
 				<div class="col-xs-35	"></div>
 			</div>
 			<div class="row">
-				<label class="col-xs-12" for="comp_kill_note">Comps & Kills Note <textarea name="comp_kill_note" class="form-control" value="<%= comp_kill_note %>"><%= comp_kill_note %></textarea></label></div>
+				<label class="col-xs-12" for="comp_kill_note">Comps & Kills Note <textarea name="comp_kill_note" class="form-control"
+																						   value="<%= comp_kill_note %>"><%= comp_kill_note %></textarea></label></div>
 
 		</div>
 	</div>
