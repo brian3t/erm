@@ -119,14 +119,14 @@ app.views.VenueListView = Backbone.View.extend({
         var edit_switch = this.$el.find('.edit_switch');
         this.switchery = new Switchery(edit_switch[0]);
         this.delegateEvents();
+        return this.el;
+    },
+    after_render: function () {
         this.$action_btns = $('.action_buttons');
         this.$create_btn = this.$action_btns.find('.create');
         this.$save_btn = this.$action_btns.find('.save');
         this.$reset_btn = this.$action_btns.find('.reset');
         this.$cancel_btn = this.$action_btns.find('.cancel');
-        return this.el;
-    },
-    after_render: function () {
         this.delegateEvents();
     }
 });

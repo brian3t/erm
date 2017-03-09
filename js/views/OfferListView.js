@@ -51,10 +51,10 @@ app.views.OfferListView = Backbone.View.extend({
         }
     },
     toggle_create_item: function () {
-        this.$create_btn.toggle();
-        this.$save_btn.toggle();
-        this.$reset_btn.toggle();
-        this.$cancel_btn.toggle();
+        $('button.create').toggle();
+        $('button.save').toggle();
+        $('button.reset').toggle();
+        $('button.cancel').toggle();
         this.$el.find('#offer_form_wrapper').toggle();
         this.$el.find('#create_offer').toggle();
         this.reset_form();
@@ -117,7 +117,7 @@ app.views.OfferListView = Backbone.View.extend({
         if (_.isObject(first_offer)) {
             this.cur_model_index = 0;
             this.offer_form_view.model = first_offer;
-            $(this.$el.find('#offer_form_wrapper')).html(this.offer_form_view.render());
+            $('#offer_form_wrapper').html(this.offer_form_view.render());
             this.offer_form_view.after_render();
         }
         this.$el.find('#offer_search_list').html(this.offer_search_list_view.render());
@@ -129,7 +129,7 @@ app.views.OfferListView = Backbone.View.extend({
         return this.el;
     },
     after_render: function () {
-        this.$action_btns = $(this.$el.find('.action_buttons'));
+        this.$action_btns = $('.action_buttons');
         this.$create_btn = this.$action_btns.find('.create');
         this.$save_btn = this.$action_btns.find('.save');
         this.$reset_btn = this.$action_btns.find('.reset');
