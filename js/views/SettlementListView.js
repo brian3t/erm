@@ -56,10 +56,10 @@ app.views.SettlementListView = Backbone.View.extend({
     }
     ,
     toggle_create_item: function () {
-        this.$create_btn.toggle();
-        this.$save_btn.toggle();
-        this.$reset_btn.toggle();
-        this.$cancel_btn.toggle();
+        $('button.create').toggle();
+        $('button.save').toggle();
+        $('button.reset').toggle();
+        $('button.cancel').toggle();
 
         this.$el.find('#settlement_form_wrapper').toggle();
         this.$el.find('#create_settlement').toggle();

@@ -628,10 +628,10 @@ $(document).ready(function($){
     $('.first_level.panel-heading').click();
 });
 $(document).ajaxStart(function () {
-    $('body').addClass('whirl traditional');
+    $('div.page').addClass('whirl traditional');
 });
 $(document).ajaxComplete(function () {
-    $('body').removeClass('whirl traditional');
+    $('div.page').removeClass('whirl traditional');
 });
 $("input").keypress(function(event) {
     if (event.which == 13) {

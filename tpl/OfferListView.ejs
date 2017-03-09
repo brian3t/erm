@@ -1,4 +1,8 @@
 <div class="col-sm-2 col-xs-12">
+	<button type="button" class="btn btn-primary toggle_create_mode create"><span class="glyphicon glyphicon-plus"></span> Create new Offer
+	</button>
+	<div class="clearfix"></div>
+	<br>
 	<input type="search" id="offer_search" class="col-xs-12" name="offer_search" placeholder="Filter offers">
 	<div id="offer_search_list" class="col-xs-12 padded search_list">
 		<br/>
@@ -6,12 +10,6 @@
 </div>
 <div class="col-sm-10 col-xs-12 form_wrapper">
 	<div class="action_buttons">
-		<button type="button" class="btn btn-primary toggle_create_mode create"><span
-					class="glyphicon glyphicon-plus"></span> Create new Offer
-		</button>
-		<button type="button" class="btn btn-primary pdf create"><span
-					class="glyphicon glyphicon-floppy-save"></span> Generate Pdf
-		</button>
 		<label><input class="edit_switch" type="checkbox">&nbsp;Edit mode is <span class="toggle_state">on</span></label>
 	</div>
 	<hr>
@@ -846,91 +844,91 @@
 			</div>
 			<!-- Modals -->
 			<!--<div class="modal fade" id="ascap_modal_cr8" tabindex="-1" role="dialog" aria-labelledby="ascap_rules">-->
-				<!--<div class="modal-dialog" role="document">-->
-					<!--<div class="modal-content">-->
-						<!--<div class="modal-header">-->
-							<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
-										<!--aria-hidden="true">&times;</span></button>-->
-							<!--<h4 class="modal-title" id="ascap_rules">Update ASCAP Default Rates</h4>-->
-						<!--</div>-->
-						<!--<div class="modal-body">-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-6">Event ID <input class="form-control" readonly type="text">-->
-								<!--</label>-->
-								<!--<label class="col-xs-6">Artist <input class="form-control" readonly type="text"></label>-->
-								<!--<label class="col-xs-6">Date <input class="form-control" readonly type="text"></label>-->
-								<!--<label class="col-xs-6">Venue <input class="form-control" readonly type="text"></label>-->
-								<!--<br>-->
-							<!--</div>-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-9 input_atomic">ASCAP Rate 0 - 2500 Tickets (%)</label>-->
-								<!--<span class="col-xs-3"><input class="form-control" name="ascap_0_2500"></span>-->
-							<!--</div>-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-9 input_atomic">ASCAP Rate 2501 - 5000 Tickets (%)</label>-->
-								<!--<span class="col-xs-3"><input class="form-control" name="ascap_2501_5000"></span>-->
-							<!--</div>-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-9 input_atomic">ASCAP Rate 5001 - 10000 Tickets (%)</label>-->
-								<!--<span class="col-xs-3"><input class="form-control" name="ascap_5001_10000"></span>-->
-							<!--</div>-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-9 input_atomic">ASCAP Rate 10001 - 25000 Tickets (%)</label>-->
-								<!--<span class="col-xs-3"><input class="form-control" name="ascap_10001_25000"></span>-->
-							<!--</div>-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-9 input_atomic">ASCAP Rate 25001 - X Tickets (%)</label>-->
-								<!--<span class="col-xs-3"><input class="form-control" name="ascap_25001_x"></span>-->
-							<!--</div>-->
-						<!--</div>-->
-						<!--<div class="modal-footer">-->
-							<!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-						<!--</div>-->
-					<!--</div>-->
-				<!--</div>-->
+			<!--<div class="modal-dialog" role="document">-->
+			<!--<div class="modal-content">-->
+			<!--<div class="modal-header">-->
+			<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
+			<!--aria-hidden="true">&times;</span></button>-->
+			<!--<h4 class="modal-title" id="ascap_rules">Update ASCAP Default Rates</h4>-->
+			<!--</div>-->
+			<!--<div class="modal-body">-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-6">Event ID <input class="form-control" readonly type="text">-->
+			<!--</label>-->
+			<!--<label class="col-xs-6">Artist <input class="form-control" readonly type="text"></label>-->
+			<!--<label class="col-xs-6">Date <input class="form-control" readonly type="text"></label>-->
+			<!--<label class="col-xs-6">Venue <input class="form-control" readonly type="text"></label>-->
+			<!--<br>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-9 input_atomic">ASCAP Rate 0 - 2500 Tickets (%)</label>-->
+			<!--<span class="col-xs-3"><input class="form-control" name="ascap_0_2500"></span>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-9 input_atomic">ASCAP Rate 2501 - 5000 Tickets (%)</label>-->
+			<!--<span class="col-xs-3"><input class="form-control" name="ascap_2501_5000"></span>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-9 input_atomic">ASCAP Rate 5001 - 10000 Tickets (%)</label>-->
+			<!--<span class="col-xs-3"><input class="form-control" name="ascap_5001_10000"></span>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-9 input_atomic">ASCAP Rate 10001 - 25000 Tickets (%)</label>-->
+			<!--<span class="col-xs-3"><input class="form-control" name="ascap_10001_25000"></span>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-9 input_atomic">ASCAP Rate 25001 - X Tickets (%)</label>-->
+			<!--<span class="col-xs-3"><input class="form-control" name="ascap_25001_x"></span>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="modal-footer">-->
+			<!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--</div>-->
 			<!--</div>-->
 			<!--<div class="modal fade" id="bmi_modal_cr8" tabindex="-1" role="dialog" aria-labelledby="bmi_rules">-->
-				<!--<div class="modal-dialog" role="document">-->
-					<!--<div class="modal-content">-->
-						<!--<div class="modal-header">-->
-							<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
-										<!--aria-hidden="true">&times;</span></button>-->
-							<!--<h4 class="modal-title" id="bmi_rules">Update BMI Default Rates</h4>-->
-						<!--</div>-->
-						<!--<div class="modal-body">-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-6">Event ID <input class="form-control" readonly type="text"></label>-->
-								<!--<label class="col-xs-6">Artist <input class="form-control" readonly type="text"></label>-->
-								<!--<label class="col-xs-6">Date <input class="form-control" readonly type="text"></label>-->
-								<!--<label class="col-xs-6">Venue <input class="form-control" readonly type="text"></label>-->
-								<!--<br>-->
-							<!--</div>-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-9 input_atomic">BMI Rate 0 - 2500 Tickets (%)</label>-->
-								<!--<span class="col-xs-3"><input class="form-control" name="bmi_0_2500"></span>-->
-							<!--</div>-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-9 input_atomic">BMI Rate 2501 - 5000 Tickets (%)</label>-->
-								<!--<span class="col-xs-3"><input class="form-control" name="bmi_2501_5000"></span>-->
-							<!--</div>-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-9 input_atomic">BMI Rate 5001 - 10000 Tickets (%)</label>-->
-								<!--<span class="col-xs-3"><input class="form-control" name="bmi_5001_10000"></span>-->
-							<!--</div>-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-9 input_atomic">BMI Rate 10001 - 25000 Tickets (%)</label>-->
-								<!--<span class="col-xs-3"><input class="form-control" name="bmi_10001_25000"></span>-->
-							<!--</div>-->
-							<!--<div class="row">-->
-								<!--<label class="col-xs-9 input_atomic">BMI Rate 25001 - X Tickets (%)</label>-->
-								<!--<span class="col-xs-3"><input class="form-control" name="bmi_25001_x"></span>-->
-							<!--</div>-->
-						<!--</div>-->
-						<!--<div class="modal-footer">-->
-							<!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-						<!--</div>-->
-					<!--</div>-->
-				<!--</div>-->
+			<!--<div class="modal-dialog" role="document">-->
+			<!--<div class="modal-content">-->
+			<!--<div class="modal-header">-->
+			<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
+			<!--aria-hidden="true">&times;</span></button>-->
+			<!--<h4 class="modal-title" id="bmi_rules">Update BMI Default Rates</h4>-->
+			<!--</div>-->
+			<!--<div class="modal-body">-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-6">Event ID <input class="form-control" readonly type="text"></label>-->
+			<!--<label class="col-xs-6">Artist <input class="form-control" readonly type="text"></label>-->
+			<!--<label class="col-xs-6">Date <input class="form-control" readonly type="text"></label>-->
+			<!--<label class="col-xs-6">Venue <input class="form-control" readonly type="text"></label>-->
+			<!--<br>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-9 input_atomic">BMI Rate 0 - 2500 Tickets (%)</label>-->
+			<!--<span class="col-xs-3"><input class="form-control" name="bmi_0_2500"></span>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-9 input_atomic">BMI Rate 2501 - 5000 Tickets (%)</label>-->
+			<!--<span class="col-xs-3"><input class="form-control" name="bmi_2501_5000"></span>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-9 input_atomic">BMI Rate 5001 - 10000 Tickets (%)</label>-->
+			<!--<span class="col-xs-3"><input class="form-control" name="bmi_5001_10000"></span>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-9 input_atomic">BMI Rate 10001 - 25000 Tickets (%)</label>-->
+			<!--<span class="col-xs-3"><input class="form-control" name="bmi_10001_25000"></span>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<label class="col-xs-9 input_atomic">BMI Rate 25001 - X Tickets (%)</label>-->
+			<!--<span class="col-xs-3"><input class="form-control" name="bmi_25001_x"></span>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="modal-footer">-->
+			<!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--</div>-->
 			<!--</div>-->
 
 		</form>
