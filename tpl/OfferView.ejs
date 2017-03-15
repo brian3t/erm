@@ -134,14 +134,14 @@ recalculate_offer_values();
 												  value="<%= status %>"
 												  class="form-control">
 					<option value=""></option>
+					<option value="Confirmed">Confirmed</option>
+					<option value="Declined">Declined</option>
 					<option value="New">New</option>
-					<option value="Submitted">Submitted</option>
 					<option value="Pending">Pending</option>
 					<option value="Reviewed">Reviewed</option>
-					<option value="Declined">Declined</option>
-					<option value="Confirmed">Confirmed</option>
 					<option value="Revised">Revised</option>
 					<option value="Signed">Signed</option>
+					<option value="Submitted">Submitted</option>
 					<option value="Unsubmitted">Unsubmitted</option>
 				</select>
 			</label>
@@ -166,10 +166,10 @@ recalculate_offer_values();
 													  value="<%= offer_type %>"
 													  class="form-control">
 					<option value=""></option>
-					<option value="Icon">Icon</option>
+					<option value="3rd Party">3rd Party</option>
 					<option value="Co-Pro Promoter">Co-Pro Promoter</option>
 					<option value="Co-Pro Venue">Co-Pro Venue</option>
-					<option value="3rd Party">3rd Party</option>
+					<option value="Icon">Icon</option>
 				</select>
 			</label>
 		</div>
@@ -228,13 +228,13 @@ recalculate_offer_values();
 													 value="<%= show_type %>"
 													 class="form-control">
 					<option value=""></option>
-					<option value="Private">Private</option>
-					<option value="Public">Public</option>
+					<option value="Casino">Casino</option>
 					<option value="College">College</option>
 					<option value="College - Private">College - Private</option>
-					<option value="Casino">Casino</option>
 					<option value="Fair">Fair</option>
 					<option value="Festival">Festival</option>
+					<option value="Private">Private</option>
+					<option value="Public">Public</option>
 				</select>
 			</label>
 			<label class="col-xs-4">Doors<br><input name="doors" disabled type="time" value="<%= doors %>"
@@ -464,8 +464,8 @@ recalculate_offer_values();
 			<label class="col-xs-2">Expense Application <select name="expense_application"
 																value="<%= expense_application %>" class="form-control">
 					<option value=""></option>
-					<option value="Net">Net</option>
 					<option value="Gross">Gross</option>
+					<option value="Net">Net</option>
 				</select>
 			</label>
 			<label class="col-xs-4">Sponsorship<input disabled name="sponsorship" value="<%= sponsorship %>" type="text"
@@ -477,8 +477,8 @@ recalculate_offer_values();
 					   class=" form-control">
 				<select disabled name="radius_clause_metric" value="<%= radius_clause_metric %>">
 					<option value=""></option>
-					<option value="Miles">Miles</option>
 					<option value="KM">KM</option>
+					<option value="Miles">Miles</option>
 				</select></label>
 			<label class="col-xs-3 has_inline_inputs">Pre-Show Lockout <br>
 				<input disabled name="pre_show_lockout" type="number" step="1" value="<%= pre_show_lockout %>"
