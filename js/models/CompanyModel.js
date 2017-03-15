@@ -13,7 +13,8 @@ app.models.Company = Backbone.RelationalModel.extend({
 
 app.collections.Company = Backbone.Collection.extend({
     model: app.models.Company,
-    initialize: function () {
+    comparator: 'name',
+    initialize: function (model, options) {
         var param = {};
         if (!_.isEmpty(app.cur_user.get('company').get('id'))){
             param['company_id'] = app.cur_user.get('company').get('id');

@@ -1,6 +1,10 @@
 <%
 var V = {};//Array to store variables
 var ve = {};
+var variable_expense = variable_expense || "{}";
+var production_expense = production_expense || "{}";
+var general_expense = general_expense || "{}";
+var is_tbd_date = is_tbd_date || 0;
 function recalculate_offer_values() {
 	l1_price = parseFloatOr0(l1_price);
 	l2_price = parseFloatOr0(l2_price);
@@ -51,14 +55,14 @@ function recalculate_offer_values() {
 	try {
 		pe = JSON.parse(production_expense);
 	} catch (e) {
-		console.error("Error parsing var expense: " + production_expense + " error: " + e);
+		console.error("Error parsing prod expense: " + production_expense + " error: " + e);
 	}
 	V.tour_production_expenses = app.utils.misc.calc_sum_from_array(pe);
 	var ge = {};
 	try {
 		ge = JSON.parse(general_expense);
 	} catch (e) {
-		console.error("Error parsing var expense: " + general_expense + " error: " + e);
+		console.error("Error parsing gen expense: " + general_expense + " error: " + e);
 	}
 	V.tour_production_expenses = app.utils.misc.calc_sum_from_array(pe);
 	V.general_expenses_total = app.utils.misc.calc_sum_from_array(ge) + parseFloatOr0(housenut_total);
