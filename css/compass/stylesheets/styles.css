@@ -315,4 +315,9 @@ body {
   min-height: 100%;
 }
 
+/* line 258, ../sass/styles.scss */
+.form-control[readonly], .form-control[disabled] {
+  color: #03A9F4 !important;
+}
+
 /*# sourceMappingURL=styles.css.map */

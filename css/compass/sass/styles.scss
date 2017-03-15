@@ -255,3 +255,6 @@ html {
 body {
   min-height: 100%;
 }
+.form-control[readonly], .form-control[disabled]{
+  color: #03A9F4 !important;
+}
