@@ -37,17 +37,18 @@ app.views.CompanyListView = Backbone.View.extend({
         var is_checked = $e.prop('checked');
         var $form = $($e.parentsUntil('.form_wrapper').parent().find('.edit_form_wrapper form.edit'));
         if (is_checked) {
-            span_text.text('on');
+            span_text.text('On');
             $($form.find(':input')).removeAttr('disabled');
             this.$el.find('button.delete').show();
         }
         else {
-            span_text.text('off');
+            span_text.text('Off');
             $($form.find(':input')).prop('disabled', true);
             this.$el.find('button.delete').hide();
         }
     },
     toggle_create_item: function () {
+        $('.action_buttons.edit_switch_wrapper').toggle();
         $('button.create').toggle();
         $('button.save').toggle();
         $('button.reset').toggle();

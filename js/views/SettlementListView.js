@@ -43,19 +43,20 @@ app.views.SettlementListView = Backbone.View.extend({
         var $form = $($e.parentsUntil('.form_wrapper').parent().find('.edit_form_wrapper form.edit'));
         if (is_checked) {
             $('.action_buttons .create').hide();
-            span_text.text('on');
+            span_text.text('On');
             $($form.find(':input')).removeAttr('disabled');
             this.$el.find('button.delete').show();
         }
         else {
             $('.action_buttons .create').show();
-            span_text.text('off');
+            span_text.text('Off');
             $($form.find(':input')).prop('disabled', true);
             this.$el.find('button.delete').hide();
         }
     }
     ,
     toggle_create_item: function () {
+        $('.action_buttons.edit_switch_wrapper').toggle();
         $('button.create').toggle();
         $('button.save').toggle();
         $('button.reset').toggle();

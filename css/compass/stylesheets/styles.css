@@ -320,4 +320,9 @@ body {
   color: #03A9F4 !important;
 }
 
+/* line 261, ../sass/styles.scss */
+input[readonly] {
+  background-color: #fafafa;
+}
+
 /*# sourceMappingURL=styles.css.map */

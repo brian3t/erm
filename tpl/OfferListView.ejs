@@ -9,8 +9,8 @@
 	</div>
 </div>
 <div class="col-sm-10 col-xs-12 form_wrapper">
-	<div class="action_buttons">
-		<label><input class="edit_switch" type="checkbox">&nbsp;Edit mode is <span class="toggle_state">on</span></label>
+	<div class="action_buttons edit_switch_wrapper col-xs-2 col-xs-offset-10">
+		<label><input class="edit_switch" type="checkbox">&nbsp;Edit <span class="toggle_state">On</span></label>
 	</div>
 	<hr>
 	<div id="offer_form_wrapper" class="col-xs-12 edit_form_wrapper">
@@ -66,7 +66,14 @@
 					</label>
 
 				</div>
-
+				<div class="row">
+					<label class="col-xs-6">Created<input name="created_at" disabled readonly type="text"
+														  class="form-control">
+					</label>
+					<label class="col-xs-6">Revised<input name="updated_at" disabled readonly type="text"
+														  class="form-control">
+					</label>
+				</div>
 				<div class="row">
 					<label class="col-xs-6">Booked By<input name="user_id" hidden type="text"
 															value="<%= app.cur_user.get('id') %>">
@@ -260,34 +267,58 @@
 						></label>
 				</div>
 
-
+				<div class="row sum">
+					<label class="col-xs-1 ">Total Gross</label>
+					<label class="col-xs-2"><input   readonly class="  form-control text-blue gross_ticket"></label>
+					<label class="col-xs-1"><input   readonly step="any" class="  form-control text-blue total_kill"></label>
+					<label class="col-xs-2"><input readonly class="total sellable_ticket text-blue form-control"></input></label>
+					<label class="col-xs-2"><input readonly   step="any" class="money  form-control text-blue average_ticket_price"></label>
+					<label class="col-xs-2"><input readonly class="money total  gross text-blue form-control"></label>
+				</div>
+				<div class="row average">
+					<label class="col-xs-1 ">Average</label>
+					<label class="col-xs-2"><input   readonly class="  form-control text-blue average_ticket"></label>
+					<label class="col-xs-1"><input   readonly step="any" class="  form-control text-blue average_kill"></label>
+					<label class="col-xs-2"><input readonly class="average sellable_ticket text-blue form-control" ></input></label>
+					<label class="col-xs-2"></label>
+					<label class="col-xs-2"><input readonly class="money average gross text-blue form-control"></label>
+				</div>
+				<div class="row">
+					<div class="col-xs-4"></div>
+					<label class="col-xs-2 text_underlined">Gross Potential </label>
+					<div class="col-xs-2"></div>
+					<div class="col-xs-2 content-padded"><strong><input readonly id="gross_potential" step="any" class="money   text-blue"></input></strong></div>
+					<div class="col-xs-2"></div>
+				</div>
 				<div class="row">
 					<div class="col-xs-4"></div>
 					<label class="col-xs-2">Tax % </label>
 					<div class="col-xs-2 content-padded"><input type="number" name="tax" step="any"></input>
 					</div>
-					<div class="col-xs-2 content-padded"><input
-								class="money text-blue"></div>
-					<div class="col-xs-2 content-padded"><input name="tax_note" placeholder="note"
-						></input>
+					<div class="col-xs-2 content-padded"><input class="money text-blue"></div>
+					<div class="col-xs-2 content-padded"><input name="tax_note" placeholder="note"></input>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-4"></div>
 					<label class="col-xs-2">Tax per Ticket </label>
-					<div class="col-xs-2 content-padded"><input name="tax_per_ticket" step="any" class="money "
-						></input></div>
-					<div class="col-xs-2 content-padded"></div>
+					<div class="col-xs-2 content-padded"><input name="tax_per_ticket" step="any" class="money "></input></div>
+					<div class="col-xs-2 content-padded"><input readonly class="money tax_per_ticket_total"></div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4"></div>
+					<label class="col-xs-2 text_underlined">Net Potential </label>
+					<div class="col-xs-2"></div>
+					<div class="col-xs-2 content-padded"><b><input readonly class="money text-blue net_potential"></b></div>
 					<div class="col-xs-2"></div>
 				</div>
 				<div class="row">
 					<div class="col-xs-4"></div>
 					<label class="col-xs-2">Facility Fee</label>
-					<div class="col-xs-2 content-padded"><input name="facility_fee" step="any" class="money "
-						></input></div>
-					<div class="col-xs-2 content-padded"></div>
-					<div class="col-xs-2 content-padded"><input name="facility_fee_note" placeholder="note"
-						></input></div>
+					<div class="col-xs-2 content-padded"><input name="facility_fee" step="any" class="money "></input></div>
+					<div class="col-xs-2 content-padded"><input readonly class="money text-blue facility_fee_total"></div>
+					<div class="col-xs-2 content-padded"><input name="facility_fee_note" placeholder="note"></input></div>
 				</div>
 			</div>
 			<h4>Artist Deal</h4>
@@ -319,12 +350,11 @@
 				<div class="row">
 					<label class="col-xs-2">Artist Split %<input name="artist_split"
 																 class="percent form-control"></label>
-					<label class="col-xs-2"></label>
+					<label class="col-xs-2">Promoter Split % <input readonly type="text"
+																	class="form-control promoter_split"></label>
 					<label class="col-xs-2">Promoter Profit %<input name="promoter_profit"
-
 																	class=" form-control"></label>
-					<label class="col-xs-2">Expense Application <select name="expense_application"
-						>
+					<label class="col-xs-2">Expense Application <select name="expense_application">
 							<option></option>
 							<option value="Gross">Gross</option>
 							<option value="Net">Net</option>
@@ -358,12 +388,11 @@
 							<option>Days</option>
 							<option>Months</option>
 						</select></label>
-					<label class="col-xs-3"></label>
+					<label class="col-xs-3">Playable On <input readonly type="text" class="form-control text-blue playable_on"></label>
 				</div>
 				<br>
 				<div class="row">
-					<label class="col-xs-12">Note<textarea name="artist_deal_note"
-														   class="form-control"></textarea></label>
+					<label class="col-xs-12">Note<textarea name="artist_deal_note" class="form-control"></textarea></label>
 				</div>
 			</div>
 			<h4>Support Artist Expenses</h4>
@@ -404,6 +433,10 @@
 						</select></span>
 					<span class="col-xs-2"><input name="support_artist_3_total"
 												  step="any" class="money  form-control"></span>
+				</div>
+				<div class="row">
+					<label class="col-xs-10 text-right text_underlined">Total Support Expenses</label>
+					<span class="col-xs-2"> 	<input class="money  form-control text-blue support_artist_total" readonly type="text"></span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -482,7 +515,7 @@
 						></div>
 					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="rental_max"
 						></div>
-					<div class="col-xs-2"></div>
+					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="rental"></div>
 				</div>
 				<div class="row">
 					<label class="col-xs-2 input_atomic">Tix Commission</label>
@@ -498,7 +531,7 @@
 						></div>
 					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tixcom_max"
 						></div>
-					<div class="col-xs-2"></div>
+					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="tixcom"></div>
 				</div>
 				<div class="row">
 					<label class="col-xs-2 input_atomic">Tix Service Fees</label>
@@ -514,7 +547,7 @@
 						></div>
 					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tix_service_fee_max"
 						></div>
-					<div class="col-xs-2"></div>
+					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="tix_service_fee"></div>
 				</div>
 				<div class="row">
 					<label class="col-xs-2 input_atomic">Box Office Fees</label>
@@ -530,7 +563,7 @@
 						></div>
 					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="box_office_fee_max"
 						></div>
-					<div class="col-xs-2"></div>
+					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="box_office_fee"></div>
 				</div>
 				<div class="row">
 					<label class="col-xs-2 input_atomic">Event Tax</label>
@@ -546,7 +579,7 @@
 						></div>
 					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="event_tax_max"
 						></div>
-					<div class="col-xs-2"></div>
+					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="event_tax"></div>
 				</div>
 				<div class="row">
 					<label class="col-xs-2 input_atomic">Insurance</label>
@@ -562,7 +595,7 @@
 						></div>
 					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="insurance_max"
 						></div>
-					<div class="col-xs-2"></div>
+					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="insurance"></div>
 				</div>
 				<div class="row">
 					<label class="col-xs-2 input_atomic">SESEC</label>
@@ -578,7 +611,7 @@
 						></div>
 					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_max"
 						></div>
-					<div class="col-xs-2"></div>
+					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="sesec"></div>
 				</div>
 				<div class="row">
 					<label class="col-xs-2 input_atomic">ASCAP
@@ -593,7 +626,7 @@
 						></div>
 					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="ascap_max"
 						></div>
-					<div class="col-xs-2"></div>
+					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="ascap"></div>
 				</div>
 				<div class="row">
 					<label class="col-xs-2 input_atomic">BMI
@@ -608,7 +641,7 @@
 						></div>
 					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_max"
 						></div>
-					<div class="col-xs-2"></div>
+					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="bmi"></div>
 				</div>
 				<div class="row">
 					<label class="col-xs-2 input_atomic">Credit Card Fees</label>
@@ -624,24 +657,57 @@
 						></div>
 					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_max"
 						></div>
-					<div class="col-xs-2"></div>
+					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="cc_fee"></div>
 				</div>
 				<div class="row">
 					<label class="col-xs-2 input_atomic">Est. CC Box Office Sales (%)</label>
-					<div class="col-xs-1 col-xs-offset-45"><input type="number" step="any" class="form-control skip_ajax" name="cc_box_office_sales_percent"
-						></div>
+					<div class="col-xs-1 col-xs-offset-45"><input type="number" step="any" class="form-control skip_ajax" name="cc_box_office_sales_percent"></div>
 					<div class="col-xs-4"></div>
 				</div>
 				<div class="row">
 					<label class="col-xs-3 col-xs-offset-7 input_atomic underlined"><b>Total Variable Expenses</b></label>
-					<div class="col-xs-2">
-						<b></b>
-					</div>
+					<div class="col-xs-2"><b><input readonly class="money form-control skip_ajax text-blue total_variable_expense"></b></div>
 				</div>
 			</div>
 			<br>
 			<div class="clearfix"></div>
+			<h4>Artist Walkout</h4>
+			<div class="form-group">
+				<label class="col-xs-2 input_atomic">Net Potential</label>
+				<div class="col-xs-3"><input readonly class="money form-control text-blue aw_net_potential"></div>
+				<label class="col-xs-2 col-xs-offset-1 input_atomic">Est. Split Point</label>
+				<span class="col-xs-1"></span>
+				<div class="col-xs-3"><input readonly class="money form-control text-blue aw_est_split_point"></div>
+				<div class="clearfix"></div>
 
+				<label class="col-xs-2 input_atomic">Estimated Expenses</label>
+				<div class="col-xs-3"><input readonly class="money form-control text-blue aw_est_expense"></div>
+				<label class="col-xs-2 col-xs-offset-1 input_atomic">Artist Split (%)</label>
+				<div class="col-xs-1"><input readonly class="form-control text-blue aw_artist_split_percent"></div>
+				<div class="col-xs-3"><input readonly class="money form-control text-blue aw_artist_split"></div>
+				<div class="clearfix"></div>
+
+				<label class="col-xs-2 input_atomic">Artist Fees</label>
+				<div class="col-xs-3"><input readonly class="money form-control text-blue aw_artist_fee"></div>
+				<label class="col-xs-2 col-xs-offset-1 input_atomic">Promoter Split (%)</label>
+				<div class="col-xs-1"><input readonly class="form-control text-blue aw_promoter_split_percent"></div>
+				<div class="col-xs-3"><input readonly class="money form-control text-blue aw_promoter_split"></div>
+				<div class="clearfix"></div>
+
+				<label class="col-xs-2 input_atomic text_underline">Estimated Total</label>
+				<div class="col-xs-3"><input readonly class="money form-control text-blue aw_est_total"></div>
+				<label class="col-xs-2 col-xs-offset-1 input_atomic">Artist Production</label>
+				<span class="col-xs-1"></span>
+				<div class="col-xs-3"><input readonly class="money form-control text-blue aw_artist_production"></div>
+				<div class="clearfix"></div>
+
+				<label class="col-xs-2 input_atomic text_underline">Breakeven Tix</label>
+				<div class="col-xs-3"><b><input readonly type="number" class="form-control text-blue aw_breakeven_tix"></b></div>
+				<label class="col-xs-2 col-xs-offset-1 input_atomic">Artist Walkout</label>
+				<span class="col-xs-1"></span>
+				<div class="col-xs-3"><b><input readonly class="money form-control text-blue aw_artist_walkout"></b></div>
+				<div class="clearfix"></div>
+			</div>
 			<div class="col-xs-6">
 				<h4>Merchandise</h4>
 				<div class="form-group">
@@ -714,6 +780,11 @@
 						<label class="col-xs-5">Kills</label>
 						<input class="col-xs-35	" type="number" step="1" name="kill">
 						<input class="col-xs-35	" name="kill_note">
+					</div>
+					<div class="row">
+						<label class="col-xs-5 underlined">Total Comps & Kills</label>
+						<input readonly class="col-xs-35	text-blue total_comp_kill" type="number">
+						<div class="col-xs-35	"></div>
 					</div>
 					<div class="row">
 						<label class="col-xs-12" for="comp_kill_note">Comps & Kills Note <textarea name="comp_kill_note" class="form-control"></textarea></label></div>

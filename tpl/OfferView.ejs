@@ -400,9 +400,7 @@ recalculate_offer_values();
 			<label class="col-xs-2">Tax per Ticket </label>
 			<div class="col-xs-2 content-padded"><input disabled name="tax_per_ticket" step="any" class="money "
 														value="<%= tax_per_ticket %>"></input></div>
-			<div class="col-xs-2 content-padded"><input readonly id="tax_per_ticket_total"
-														value="<%= V.tax_per_ticket_total %>"
-														class="money "></div>
+			<div class="col-xs-2 content-padded"><input readonly id="tax_per_ticket_total" value="<%= V.tax_per_ticket_total %>" class="money "></div>
 			<div class="col-xs-2"></div>
 		</div>
 		<div class="row">
@@ -419,11 +417,8 @@ recalculate_offer_values();
 			<label class="col-xs-2">Facility Fee</label>
 			<div class="col-xs-2 content-padded"><input disabled name="facility_fee" step="any" class="money "
 														value="<%= facility_fee %>"></input></div>
-			<div class="col-xs-2 content-padded"><input readonly id="facility_fee_total"
-														value="<%= facility_fee * (V.sum_gross_ticket - V.sum_kill) %>"
-														class="money text-blue"></div>
-			<div class="col-xs-2 content-padded"><input disabled name="facility_fee_note" placeholder="note"
-														value="<%= facility_fee_note %>"></input></div>
+			<div class="col-xs-2 content-padded"><input readonly id="facility_fee_total" value="<%= facility_fee * (V.sum_gross_ticket - V.sum_kill) %>" class="money text-blue"></div>
+			<div class="col-xs-2 content-padded"><input disabled name="facility_fee_note" placeholder="note" value="<%= facility_fee_note %>"></input></div>
 		</div>
 	</div>
 	<h4>Artist Deal</h4>
@@ -761,8 +756,7 @@ recalculate_offer_values();
 										 value="<%= ve['bmi_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_max"
 										  value="<%= ve['bmi_max'] %>"></div>
-			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
-										 data-category="bmi"></div>
+			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="bmi"></div>
 		</div>
 		<div class="row">
 			<label class="col-xs-2 input_atomic">Credit Card Fees</label>
@@ -778,8 +772,7 @@ recalculate_offer_values();
 										 value="<%= ve['cc_fee_min'] %>"></div>
 			<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_max"
 										  value="<%= ve['cc_fee_max'] %>"></div>
-			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential"
-										 data-category="cc_fee"></div>
+			<div class="col-xs-2"><input readonly class="money  form-control skip_ajax text-blue sellout_potential" data-category="cc_fee"></div>
 		</div>
 		<div class="row">
 			<label class="col-xs-2 input_atomic">Est. CC Box Office Sales (%)</label>
@@ -789,9 +782,7 @@ recalculate_offer_values();
 		</div>
 		<div class="row">
 			<label class="col-xs-3 col-xs-offset-7 input_atomic underlined"><b>Total Variable Expenses</b></label>
-			<div class="col-xs-2">
-				<b><input readonly class="money  form-control skip_ajax text-blue" id="total_variable_expense"></b>
-			</div>
+			<div class="col-xs-2"><b><input readonly class="money  form-control skip_ajax text-blue" id="total_variable_expense"></b></div>
 		</div>
 	</div>
 	<br>

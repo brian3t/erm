@@ -258,3 +258,6 @@ body {
 .form-control[readonly], .form-control[disabled]{
   color: #03A9F4 !important;
 }
+input[readonly]{
+  background-color: #fafafa;
+}
