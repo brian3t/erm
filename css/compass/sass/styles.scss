@@ -245,9 +245,17 @@ body {
 div.in_edit_mode .user_gen {
   color: #333 !important;
 }
+div.in_edit_mode .sys_gen{
+  background-color: transparent;
+}
 div.edit_form_wrapper:not(.in_edit_mode) {
   input, select, textarea{
     color: #03A9F4 !important;
+  }
+}
+div.in_edit_mode{
+  input, select, textarea{
+    background-color: #fafafa;
   }
 }
 input[readonly] {

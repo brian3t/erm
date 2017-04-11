@@ -325,12 +325,22 @@ div.in_edit_mode .user_gen {
   color: #333 !important;
 }
 
-/* line 249, ../sass/styles.scss */
+/* line 248, ../sass/styles.scss */
+div.in_edit_mode .sys_gen {
+  background-color: transparent;
+}
+
+/* line 252, ../sass/styles.scss */
 div.edit_form_wrapper:not(.in_edit_mode) input, div.edit_form_wrapper:not(.in_edit_mode) select, div.edit_form_wrapper:not(.in_edit_mode) textarea {
   color: #03A9F4 !important;
 }
 
-/* line 253, ../sass/styles.scss */
+/* line 257, ../sass/styles.scss */
+div.in_edit_mode input, div.in_edit_mode select, div.in_edit_mode textarea {
+  background-color: #fafafa;
+}
+
+/* line 261, ../sass/styles.scss */
 input[readonly] {
   background-color: #fafafa;
 }
