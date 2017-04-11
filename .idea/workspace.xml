@@ -1,264 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cb85d7b-f82d-44cd-9859-9d21c2911b8f" name="Default" comment="Small fixes. Working on ASCAP.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/01a04e0c2a1e9dbded80b2071b5306ac5e6e004c/ie.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/01a04e0c2a1e9dbded80b2071b5306ac5e6e004c/print.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/01a04e0c2a1e9dbded80b2071b5306ac5e6e004c/screen.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/01a04e0c2a1e9dbded80b2071b5306ac5e6e004c/styles.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0706e4a9e8fff381160c8aea188159c77ce30ac6/_links.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0706e4a9e8fff381160c8aea188159c77ce30ac6/_lists.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0706e4a9e8fff381160c8aea188159c77ce30ac6/_text.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0706e4a9e8fff381160c8aea188159c77ce30ac6/_units.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0706e4a9e8fff381160c8aea188159c77ce30ac6/_vertical_rhythm.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/074312732b72c4ae7020a005dcf5d3c85b6b278c/ie.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/074312732b72c4ae7020a005dcf5d3c85b6b278c/print.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/074312732b72c4ae7020a005dcf5d3c85b6b278c/screen.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/074312732b72c4ae7020a005dcf5d3c85b6b278c/styles.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/09bb2b3ab3b1dfb3573d9e52852b50a0f8a268ef/_alternating-rows-and-columns.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/09bb2b3ab3b1dfb3573d9e52852b50a0f8a268ef/_borders.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/09bb2b3ab3b1dfb3573d9e52852b50a0f8a268ef/_scaffolding.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0ea6fc62d77276aaafbb5a29dbfed48c4a8d4df1/_compass.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0f6d9be876d71348096b3969a7d4c8b3d48e904f/_ellipsis.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0f6d9be876d71348096b3969a7d4c8b3d48e904f/_force-wrap.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0f6d9be876d71348096b3969a7d4c8b3d48e904f/_nowrap.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0f6d9be876d71348096b3969a7d4c8b3d48e904f/_replacement.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/10d707cef739f3f2eae67070a538697dee4583b2/_ellipsis.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/10d707cef739f3f2eae67070a538697dee4583b2/_force-wrap.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/10d707cef739f3f2eae67070a538697dee4583b2/_nowrap.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/10d707cef739f3f2eae67070a538697dee4583b2/_replacement.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/11d5babe5405feea54f3952a21500ceec9c46928/_base.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/11d5babe5405feea54f3952a21500ceec9c46928/_sprite-img.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/13b3bedb20fffdbc4c4c9881d3604f1258f7064a/_css3.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/13b3bedb20fffdbc4c4c9881d3604f1258f7064a/_support.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/13b3bedb20fffdbc4c4c9881d3604f1258f7064a/_typography.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/13b3bedb20fffdbc4c4c9881d3604f1258f7064a/_utilities.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/14900de63835ff397e8d548ea5b644c442a154b8/_compass.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/170dff0a570dbb782235f925d8140592bae13259/_color.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/170dff0a570dbb782235f925d8140592bae13259/_general.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/170dff0a570dbb782235f925d8140592bae13259/_sprites.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/170dff0a570dbb782235f925d8140592bae13259/_tables.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_clearfix.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_float.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_hacks.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_min.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_reset.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_tag-cloud.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/19b4028e242ba3965fd21b2895e0e19daa7344d1/_utilities.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/1a2e75c26a83e56f62a8e1b0c34c4c208128b59d/_grid-background.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/1d404468a1dda0c59d7e81d3bf462a9a9e7a57da/_alternating-rows-and-columns.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/1d404468a1dda0c59d7e81d3bf462a9a9e7a57da/_borders.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/1d404468a1dda0c59d7e81d3bf462a9a9e7a57da/_scaffolding.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/23275fd7aeff0a8831383a21152c9f935a1237a9/_color.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/23275fd7aeff0a8831383a21152c9f935a1237a9/_general.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/23275fd7aeff0a8831383a21152c9f935a1237a9/_sprites.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/23275fd7aeff0a8831383a21152c9f935a1237a9/_tables.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dac35df034aadad9e17c648af14f65e9b9e6299/_base.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dac35df034aadad9e17c648af14f65e9b9e6299/_sprite-img.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dcb14730bcff2b21e0022f539e84554b8ae112f/_bullets.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dcb14730bcff2b21e0022f539e84554b8ae112f/_horizontal-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dcb14730bcff2b21e0022f539e84554b8ae112f/_inline-block-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dcb14730bcff2b21e0022f539e84554b8ae112f/_inline-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/30fa77f3401905bae32047f2c282e87cb2f7c903/_grid-background.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/3586e6117594f676965da1265977b40396ac4256/_color.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/3586e6117594f676965da1265977b40396ac4256/_general.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/3586e6117594f676965da1265977b40396ac4256/_sprites.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/3586e6117594f676965da1265977b40396ac4256/_tables.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/50651c1aa81de33610c373746e707e108dc13a17/ie.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/50651c1aa81de33610c373746e707e108dc13a17/print.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/50651c1aa81de33610c373746e707e108dc13a17/screen.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/50651c1aa81de33610c373746e707e108dc13a17/styles.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/54c20ac37983cffc538372fff69aff5fd6a6081d/_links.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/54c20ac37983cffc538372fff69aff5fd6a6081d/_lists.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/54c20ac37983cffc538372fff69aff5fd6a6081d/_text.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/54c20ac37983cffc538372fff69aff5fd6a6081d/_units.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/54c20ac37983cffc538372fff69aff5fd6a6081d/_vertical_rhythm.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_clearfix.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_float.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_hacks.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_min.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_reset.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_tag-cloud.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/5be6be0baca563e00f409ed4046f98699a7af477/_css3.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/5be6be0baca563e00f409ed4046f98699a7af477/_reset.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/5be6be0baca563e00f409ed4046f98699a7af477/_support.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/5be6be0baca563e00f409ed4046f98699a7af477/_typography.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/5be6be0baca563e00f409ed4046f98699a7af477/_utilities.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/660120f5d0201d3dbe1ea907c5900b514aa2ea04/_grid-background.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/730d04e53119ad201b86fafbdfb3e9d3b72623c3/_brightness.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/730d04e53119ad201b86fafbdfb3e9d3b72623c3/_contrast.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/_support.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/css3/_background-size.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/css3/_images.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/css3/_inline-block.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/_links.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/_lists.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/_text.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/lists/_bullets.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/lists/_horizontal-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/text/_replacement.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_float.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_hacks.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_reset.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/_compass.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/_reset.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/_support.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/css3/_background-size.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/css3/_images.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/css3/_inline-block.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/_links.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/_lists.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/_text.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_bullets.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/text/_replacement.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_float.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_hacks.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_reset.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/_support.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_background-size.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_images.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_inline-block.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_links.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_lists.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_text.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_bullets.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/text/_replacement.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_float.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_hacks.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_reset.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7e1e35ff69fc10456e0ad20615b1dd632afd408f/_css3.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7e1e35ff69fc10456e0ad20615b1dd632afd408f/_reset.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7e1e35ff69fc10456e0ad20615b1dd632afd408f/_support.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7e1e35ff69fc10456e0ad20615b1dd632afd408f/_typography.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7e1e35ff69fc10456e0ad20615b1dd632afd408f/_utilities.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_animation.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_appearance.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_background-clip.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_background-origin.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_background-size.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_border-radius.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_box-shadow.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_box-sizing.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_columns.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_deprecated-support.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_filter.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_flexbox.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_font-face.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_hyphenation.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_images.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_inline-block.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_opacity.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_regions.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_text-shadow.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_transform.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_transition.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_user-interface.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7fe271fd97422bf0cf8cc69e9228dde1b995b12d/_base.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7fe271fd97422bf0cf8cc69e9228dde1b995b12d/_sprite-img.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8901eb38762f8e8a595f0178d7da618c58360468/_bullets.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8901eb38762f8e8a595f0178d7da618c58360468/_horizontal-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8901eb38762f8e8a595f0178d7da618c58360468/_inline-block-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8901eb38762f8e8a595f0178d7da618c58360468/_inline-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8cfc1aa1ae70e32606e4a738842e8d6cdd9419b0/_hover-link.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8cfc1aa1ae70e32606e4a738842e8d6cdd9419b0/_link-colors.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8cfc1aa1ae70e32606e4a738842e8d6cdd9419b0/_unstyled-link.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_animation.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_appearance.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_background-clip.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_background-origin.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_background-size.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_border-radius.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_box-shadow.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_box-sizing.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_columns.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_deprecated-support.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_filter.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_flexbox.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_font-face.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_hyphenation.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_images.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_inline-block.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_opacity.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_regions.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_text-shadow.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_transform.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_transition.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_user-interface.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9e0c11b69ed4cd790dd11b1e1be9147b6315b148/styles.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f1478a52e8047ae96bbae6e5f83d9935b5f6f66/_utilities.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_clearfix.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_float.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_hacks.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_min.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_reset.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_tag-cloud.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a0fcb2eab53a8ab7152a410fdf9d51815a28b30a/_bullets.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a0fcb2eab53a8ab7152a410fdf9d51815a28b30a/_horizontal-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a0fcb2eab53a8ab7152a410fdf9d51815a28b30a/_inline-block-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a0fcb2eab53a8ab7152a410fdf9d51815a28b30a/_inline-list.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a4df36ef75dac3a9b521841a5a5f32647bae9135/_hover-link.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a4df36ef75dac3a9b521841a5a5f32647bae9135/_link-colors.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a4df36ef75dac3a9b521841a5a5f32647bae9135/_unstyled-link.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/abf70da5cde950a2d59136791e8103e11705c7e2/_hover-link.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/abf70da5cde950a2d59136791e8103e11705c7e2/_link-colors.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/abf70da5cde950a2d59136791e8103e11705c7e2/_unstyled-link.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/b2734cb6bb5d8750e28398ce42f908187247d6a0/_utilities.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/b715b2fe8a0b850327c9355f1cfda2c5ecd7b7e4/_ellipsis.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/b715b2fe8a0b850327c9355f1cfda2c5ecd7b7e4/_force-wrap.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/b715b2fe8a0b850327c9355f1cfda2c5ecd7b7e4/_nowrap.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/b715b2fe8a0b850327c9355f1cfda2c5ecd7b7e4/_replacement.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/c99dc324e7fa1ee9e395aa7946013d77810cb420/_brightness.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/c99dc324e7fa1ee9e395aa7946013d77810cb420/_contrast.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cbe1e121e52519430d30606f77ed1dee355e1ac3/_links.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cbe1e121e52519430d30606f77ed1dee355e1ac3/_lists.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cbe1e121e52519430d30606f77ed1dee355e1ac3/_text.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cbe1e121e52519430d30606f77ed1dee355e1ac3/_units.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cbe1e121e52519430d30606f77ed1dee355e1ac3/_vertical_rhythm.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cdb5b7d7f213a7ffdda634d96aa3120ec4e5532c/_brightness.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cdb5b7d7f213a7ffdda634d96aa3120ec4e5532c/_contrast.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_animation.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_appearance.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_background-clip.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_background-origin.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_background-size.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_border-radius.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_box-shadow.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_box-sizing.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_columns.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_deprecated-support.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_filter.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_flexbox.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_font-face.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_hyphenation.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_images.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_inline-block.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_opacity.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_regions.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_text-shadow.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_transform.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_transition.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_user-interface.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/f2bf5e13b96d596df762c1dff11c6741fb40c8cb/_alternating-rows-and-columns.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/f2bf5e13b96d596df762c1dff11c6741fb40c8cb/_borders.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/f2bf5e13b96d596df762c1dff11c6741fb40c8cb/_scaffolding.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/f39575b88b5e25d2c60088d10bd08f2676dee163/_compass.scssc" afterPath="" />
+    <list default="true" id="1cb85d7b-f82d-44cd-9859-9d21c2911b8f" name="Default" comment="Remove">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/compass/sass/styles.scss" afterPath="$PROJECT_DIR$/css/compass/sass/styles.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/compass/stylesheets/styles.css" afterPath="$PROJECT_DIR$/css/compass/stylesheets/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/compass/stylesheets/styles.css.map" afterPath="$PROJECT_DIR$/css/compass/stylesheets/styles.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/compass/stylesheets/styles.min.css" afterPath="$PROJECT_DIR$/css/compass/stylesheets/styles.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/CompanyListView.js" afterPath="$PROJECT_DIR$/js/views/CompanyListView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/OfferListView.js" afterPath="$PROJECT_DIR$/js/views/OfferListView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/SettlementListView.js" afterPath="$PROJECT_DIR$/js/views/SettlementListView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/UserListView.js" afterPath="$PROJECT_DIR$/js/views/UserListView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/VenueListView.js" afterPath="$PROJECT_DIR$/js/views/VenueListView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/OfferListView.ejs" afterPath="$PROJECT_DIR$/tpl/OfferListView.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/OfferView.ejs" afterPath="$PROJECT_DIR$/tpl/OfferView.ejs" />
     </list>
     <ignored path="www.iws" />
@@ -315,8 +64,8 @@
       <file leaf-file-name="OfferView.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/OfferView.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+            <state relative-caret-position="546">
+              <caret line="430" column="62" lean-forward="false" selection-start-line="430" selection-start-column="62" selection-end-line="430" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -335,14 +84,14 @@
       <file leaf-file-name="styles.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/compass/sass/styles.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="226" column="27" lean-forward="false" selection-start-line="226" selection-start-column="27" selection-end-line="226" selection-end-column="27" />
+            <state relative-caret-position="396">
+              <caret line="235" column="6" lean-forward="false" selection-start-line="235" selection-start-column="6" selection-end-line="235" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
@@ -352,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+            <state relative-caret-position="292">
+              <caret line="17" column="57" lean-forward="true" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -426,7 +175,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>value=&quot;.*&quot;</find>
       <find>is_tbd</find>
       <find>&lt;%= .* %&gt;</find>
       <find>user_</find>
@@ -456,6 +204,7 @@
       <find>created</find>
       <find>sellab</find>
       <find>text-blue</find>
+      <find>placeholder</find>
     </findStrings>
     <replaceStrings>
       <replace>,\n</replace>
@@ -546,11 +295,11 @@
         <option value="$PROJECT_DIR$/js/views/SettlementListView.js" />
         <option value="$PROJECT_DIR$/js/views/UserListView.js" />
         <option value="$PROJECT_DIR$/js/views/VenueListView.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/tpl/OfferView.ejs" />
         <option value="$PROJECT_DIR$/tpl/OfferListView.ejs" />
-        <option value="$PROJECT_DIR$/css/compass/sass/styles.scss" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/css/compass/sass/styles.scss" />
+        <option value="$PROJECT_DIR$/tpl/OfferView.ejs" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -853,7 +602,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -1292,7 +1041,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1054" extended-state="7" />
+    <frame x="0" y="0" width="1920" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2318,26 +2067,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/compass/stylesheets/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/OfferView.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -2350,18 +2083,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/compass/sass/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="226" column="27" lean-forward="false" selection-start-line="226" selection-start-column="27" selection-end-line="226" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/compass/sass/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="235" column="6" lean-forward="false" selection-start-line="235" selection-start-column="6" selection-end-line="235" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/OfferView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="430" column="62" lean-forward="false" selection-start-line="430" selection-start-column="62" selection-end-line="430" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="17" column="57" lean-forward="true" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
           <folding />
         </state>
       </provider>

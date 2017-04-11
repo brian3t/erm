@@ -391,7 +391,7 @@ recalculate_offer_values();
 			</div>
 			<div class="col-xs-2 content-padded"><input id="tax_input" value="<%= V.tax_total %>"
 														class="money"></div>
-			<div class="col-xs-2 content-padded"><input disabled name="tax_note" placeholder="note"
+			<div class="col-xs-2 content-padded"><input disabled name="tax_note" placeholder=""
 														value="<%= tax_note %>"></input>
 			</div>
 		</div>
@@ -418,7 +418,7 @@ recalculate_offer_values();
 			<div class="col-xs-2 content-padded"><input disabled name="facility_fee" step="any" class="money "
 														value="<%= facility_fee %>"></input></div>
 			<div class="col-xs-2 content-padded"><input readonly id="facility_fee_total" value="<%= facility_fee * (V.sum_gross_ticket - V.sum_kill) %>" class="money  sys_gen"></div>
-			<div class="col-xs-2 content-padded"><input disabled name="facility_fee_note" placeholder="note" value="<%= facility_fee_note %>"></input></div>
+			<div class="col-xs-2 content-padded"><input disabled name="facility_fee_note" placeholder="" value="<%= facility_fee_note %>"></input></div>
 		</div>
 	</div>
 	<h4>Artist Deal</h4>

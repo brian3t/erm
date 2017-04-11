@@ -247,7 +247,7 @@ div.in_edit_mode .user_gen {
 }
 div.edit_form_wrapper:not(.in_edit_mode) {
   input, select, textarea{
-    color: #03A9F4;
+    color: #03A9F4 !important;
   }
 }
 input[readonly] {
