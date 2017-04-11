@@ -1,0 +1,2444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1cb85d7b-f82d-44cd-9859-9d21c2911b8f" name="Default" comment="Small fixes. Working on ASCAP.">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/01a04e0c2a1e9dbded80b2071b5306ac5e6e004c/ie.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/01a04e0c2a1e9dbded80b2071b5306ac5e6e004c/print.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/01a04e0c2a1e9dbded80b2071b5306ac5e6e004c/screen.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/01a04e0c2a1e9dbded80b2071b5306ac5e6e004c/styles.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0706e4a9e8fff381160c8aea188159c77ce30ac6/_links.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0706e4a9e8fff381160c8aea188159c77ce30ac6/_lists.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0706e4a9e8fff381160c8aea188159c77ce30ac6/_text.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0706e4a9e8fff381160c8aea188159c77ce30ac6/_units.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0706e4a9e8fff381160c8aea188159c77ce30ac6/_vertical_rhythm.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/074312732b72c4ae7020a005dcf5d3c85b6b278c/ie.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/074312732b72c4ae7020a005dcf5d3c85b6b278c/print.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/074312732b72c4ae7020a005dcf5d3c85b6b278c/screen.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/074312732b72c4ae7020a005dcf5d3c85b6b278c/styles.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/09bb2b3ab3b1dfb3573d9e52852b50a0f8a268ef/_alternating-rows-and-columns.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/09bb2b3ab3b1dfb3573d9e52852b50a0f8a268ef/_borders.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/09bb2b3ab3b1dfb3573d9e52852b50a0f8a268ef/_scaffolding.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0ea6fc62d77276aaafbb5a29dbfed48c4a8d4df1/_compass.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0f6d9be876d71348096b3969a7d4c8b3d48e904f/_ellipsis.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0f6d9be876d71348096b3969a7d4c8b3d48e904f/_force-wrap.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0f6d9be876d71348096b3969a7d4c8b3d48e904f/_nowrap.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/0f6d9be876d71348096b3969a7d4c8b3d48e904f/_replacement.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/10d707cef739f3f2eae67070a538697dee4583b2/_ellipsis.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/10d707cef739f3f2eae67070a538697dee4583b2/_force-wrap.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/10d707cef739f3f2eae67070a538697dee4583b2/_nowrap.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/10d707cef739f3f2eae67070a538697dee4583b2/_replacement.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/11d5babe5405feea54f3952a21500ceec9c46928/_base.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/11d5babe5405feea54f3952a21500ceec9c46928/_sprite-img.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/13b3bedb20fffdbc4c4c9881d3604f1258f7064a/_css3.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/13b3bedb20fffdbc4c4c9881d3604f1258f7064a/_support.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/13b3bedb20fffdbc4c4c9881d3604f1258f7064a/_typography.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/13b3bedb20fffdbc4c4c9881d3604f1258f7064a/_utilities.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/14900de63835ff397e8d548ea5b644c442a154b8/_compass.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/170dff0a570dbb782235f925d8140592bae13259/_color.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/170dff0a570dbb782235f925d8140592bae13259/_general.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/170dff0a570dbb782235f925d8140592bae13259/_sprites.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/170dff0a570dbb782235f925d8140592bae13259/_tables.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_clearfix.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_float.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_hacks.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_min.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_reset.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/17f944903a477bc9da483e8668a24ea1e1707770/_tag-cloud.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/19b4028e242ba3965fd21b2895e0e19daa7344d1/_utilities.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/1a2e75c26a83e56f62a8e1b0c34c4c208128b59d/_grid-background.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/1d404468a1dda0c59d7e81d3bf462a9a9e7a57da/_alternating-rows-and-columns.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/1d404468a1dda0c59d7e81d3bf462a9a9e7a57da/_borders.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/1d404468a1dda0c59d7e81d3bf462a9a9e7a57da/_scaffolding.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/23275fd7aeff0a8831383a21152c9f935a1237a9/_color.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/23275fd7aeff0a8831383a21152c9f935a1237a9/_general.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/23275fd7aeff0a8831383a21152c9f935a1237a9/_sprites.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/23275fd7aeff0a8831383a21152c9f935a1237a9/_tables.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dac35df034aadad9e17c648af14f65e9b9e6299/_base.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dac35df034aadad9e17c648af14f65e9b9e6299/_sprite-img.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dcb14730bcff2b21e0022f539e84554b8ae112f/_bullets.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dcb14730bcff2b21e0022f539e84554b8ae112f/_horizontal-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dcb14730bcff2b21e0022f539e84554b8ae112f/_inline-block-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/2dcb14730bcff2b21e0022f539e84554b8ae112f/_inline-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/30fa77f3401905bae32047f2c282e87cb2f7c903/_grid-background.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/3586e6117594f676965da1265977b40396ac4256/_color.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/3586e6117594f676965da1265977b40396ac4256/_general.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/3586e6117594f676965da1265977b40396ac4256/_sprites.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/3586e6117594f676965da1265977b40396ac4256/_tables.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/50651c1aa81de33610c373746e707e108dc13a17/ie.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/50651c1aa81de33610c373746e707e108dc13a17/print.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/50651c1aa81de33610c373746e707e108dc13a17/screen.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/50651c1aa81de33610c373746e707e108dc13a17/styles.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/54c20ac37983cffc538372fff69aff5fd6a6081d/_links.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/54c20ac37983cffc538372fff69aff5fd6a6081d/_lists.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/54c20ac37983cffc538372fff69aff5fd6a6081d/_text.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/54c20ac37983cffc538372fff69aff5fd6a6081d/_units.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/54c20ac37983cffc538372fff69aff5fd6a6081d/_vertical_rhythm.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_clearfix.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_float.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_hacks.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_min.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_reset.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/55915733475d620cf5f1eddb5e2479f5deec26ee/_tag-cloud.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/5be6be0baca563e00f409ed4046f98699a7af477/_css3.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/5be6be0baca563e00f409ed4046f98699a7af477/_reset.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/5be6be0baca563e00f409ed4046f98699a7af477/_support.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/5be6be0baca563e00f409ed4046f98699a7af477/_typography.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/5be6be0baca563e00f409ed4046f98699a7af477/_utilities.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/660120f5d0201d3dbe1ea907c5900b514aa2ea04/_grid-background.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/730d04e53119ad201b86fafbdfb3e9d3b72623c3/_brightness.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/730d04e53119ad201b86fafbdfb3e9d3b72623c3/_contrast.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/_support.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/css3/_background-size.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/css3/_images.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/css3/_inline-block.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/_links.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/_lists.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/_text.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/lists/_bullets.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/lists/_horizontal-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/typography/text/_replacement.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_float.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_hacks.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_reset.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/_compass.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/_reset.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/_support.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/css3/_background-size.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/css3/_images.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/css3/_inline-block.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/_links.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/_lists.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/_text.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_bullets.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/text/_replacement.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_float.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_hacks.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_reset.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/_support.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_background-size.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_images.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_inline-block.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_links.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_lists.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_text.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_bullets.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/text/_replacement.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_float.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_hacks.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_reset.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7e1e35ff69fc10456e0ad20615b1dd632afd408f/_css3.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7e1e35ff69fc10456e0ad20615b1dd632afd408f/_reset.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7e1e35ff69fc10456e0ad20615b1dd632afd408f/_support.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7e1e35ff69fc10456e0ad20615b1dd632afd408f/_typography.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7e1e35ff69fc10456e0ad20615b1dd632afd408f/_utilities.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_animation.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_appearance.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_background-clip.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_background-origin.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_background-size.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_border-radius.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_box-shadow.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_box-sizing.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_columns.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_deprecated-support.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_filter.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_flexbox.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_font-face.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_hyphenation.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_images.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_inline-block.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_opacity.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_regions.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_text-shadow.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_transform.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_transition.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7eafc0b2c40cdabc9228972602855993a669fd11/_user-interface.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7fe271fd97422bf0cf8cc69e9228dde1b995b12d/_base.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/7fe271fd97422bf0cf8cc69e9228dde1b995b12d/_sprite-img.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8901eb38762f8e8a595f0178d7da618c58360468/_bullets.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8901eb38762f8e8a595f0178d7da618c58360468/_horizontal-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8901eb38762f8e8a595f0178d7da618c58360468/_inline-block-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8901eb38762f8e8a595f0178d7da618c58360468/_inline-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8cfc1aa1ae70e32606e4a738842e8d6cdd9419b0/_hover-link.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8cfc1aa1ae70e32606e4a738842e8d6cdd9419b0/_link-colors.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/8cfc1aa1ae70e32606e4a738842e8d6cdd9419b0/_unstyled-link.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_animation.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_appearance.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_background-clip.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_background-origin.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_background-size.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_border-radius.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_box-shadow.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_box-sizing.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_columns.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_deprecated-support.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_filter.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_flexbox.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_font-face.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_hyphenation.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_images.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_inline-block.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_opacity.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_regions.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_text-shadow.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_transform.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_transition.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/969dd6d5e9e2788602231f4400ac815896dcca10/_user-interface.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9e0c11b69ed4cd790dd11b1e1be9147b6315b148/styles.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f1478a52e8047ae96bbae6e5f83d9935b5f6f66/_utilities.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_clearfix.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_float.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_hacks.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_min.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_reset.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/9f7b218adbb6a74a917c8b015a54f9c1501829d3/_tag-cloud.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a0fcb2eab53a8ab7152a410fdf9d51815a28b30a/_bullets.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a0fcb2eab53a8ab7152a410fdf9d51815a28b30a/_horizontal-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a0fcb2eab53a8ab7152a410fdf9d51815a28b30a/_inline-block-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a0fcb2eab53a8ab7152a410fdf9d51815a28b30a/_inline-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a4df36ef75dac3a9b521841a5a5f32647bae9135/_hover-link.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a4df36ef75dac3a9b521841a5a5f32647bae9135/_link-colors.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/a4df36ef75dac3a9b521841a5a5f32647bae9135/_unstyled-link.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/abf70da5cde950a2d59136791e8103e11705c7e2/_hover-link.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/abf70da5cde950a2d59136791e8103e11705c7e2/_link-colors.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/abf70da5cde950a2d59136791e8103e11705c7e2/_unstyled-link.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/b2734cb6bb5d8750e28398ce42f908187247d6a0/_utilities.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/b715b2fe8a0b850327c9355f1cfda2c5ecd7b7e4/_ellipsis.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/b715b2fe8a0b850327c9355f1cfda2c5ecd7b7e4/_force-wrap.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/b715b2fe8a0b850327c9355f1cfda2c5ecd7b7e4/_nowrap.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/b715b2fe8a0b850327c9355f1cfda2c5ecd7b7e4/_replacement.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/c99dc324e7fa1ee9e395aa7946013d77810cb420/_brightness.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/c99dc324e7fa1ee9e395aa7946013d77810cb420/_contrast.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cbe1e121e52519430d30606f77ed1dee355e1ac3/_links.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cbe1e121e52519430d30606f77ed1dee355e1ac3/_lists.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cbe1e121e52519430d30606f77ed1dee355e1ac3/_text.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cbe1e121e52519430d30606f77ed1dee355e1ac3/_units.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cbe1e121e52519430d30606f77ed1dee355e1ac3/_vertical_rhythm.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cdb5b7d7f213a7ffdda634d96aa3120ec4e5532c/_brightness.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/cdb5b7d7f213a7ffdda634d96aa3120ec4e5532c/_contrast.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_animation.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_appearance.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_background-clip.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_background-origin.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_background-size.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_border-radius.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_box-shadow.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_box-sizing.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_columns.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_deprecated-support.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_filter.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_flexbox.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_font-face.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_hyphenation.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_images.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_inline-block.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_opacity.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_regions.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_text-shadow.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_transform.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_transition.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/d011a45e2763f90a37120075f0a730deca0a7cc5/_user-interface.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/f2bf5e13b96d596df762c1dff11c6741fb40c8cb/_alternating-rows-and-columns.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/f2bf5e13b96d596df762c1dff11c6741fb40c8cb/_borders.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/f2bf5e13b96d596df762c1dff11c6741fb40c8cb/_scaffolding.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/compass/.sass-cache/f39575b88b5e25d2c60088d10bd08f2676dee163/_compass.scssc" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/compass/sass/styles.scss" afterPath="$PROJECT_DIR$/css/compass/sass/styles.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/compass/stylesheets/styles.css" afterPath="$PROJECT_DIR$/css/compass/stylesheets/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/compass/stylesheets/styles.css.map" afterPath="$PROJECT_DIR$/css/compass/stylesheets/styles.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/compass/stylesheets/styles.min.css" afterPath="$PROJECT_DIR$/css/compass/stylesheets/styles.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/CompanyListView.js" afterPath="$PROJECT_DIR$/js/views/CompanyListView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/OfferListView.js" afterPath="$PROJECT_DIR$/js/views/OfferListView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/SettlementListView.js" afterPath="$PROJECT_DIR$/js/views/SettlementListView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/UserListView.js" afterPath="$PROJECT_DIR$/js/views/UserListView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/VenueListView.js" afterPath="$PROJECT_DIR$/js/views/VenueListView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/OfferListView.ejs" afterPath="$PROJECT_DIR$/tpl/OfferListView.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/OfferView.ejs" afterPath="$PROJECT_DIR$/tpl/OfferView.ejs" />
+    </list>
+    <ignored path="www.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="erm@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="erm@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="user" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="www" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="OfferView.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/OfferView.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OfferListView.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/OfferListView.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="785" column="22" lean-forward="true" selection-start-line="785" selection-start-column="22" selection-end-line="785" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/compass/sass/styles.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="226" column="27" lean-forward="false" selection-start-line="226" selection-start-column="27" selection-end-line="226" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="499">
+              <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OfferListView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/views/OfferListView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyListView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/views/CompanyListView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="45" column="10" lean-forward="false" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+              <folding>
+                <marker date="1491881176566" expanded="true" signature="2135:2421" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettlementListView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/views/SettlementListView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="605">
+              <caret line="51" column="45" lean-forward="false" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserListView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VenueListView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/views/VenueListView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="548">
+              <caret line="52" column="6" lean-forward="false" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>value=&quot;.*&quot;</find>
+      <find>is_tbd</find>
+      <find>&lt;%= .* %&gt;</find>
+      <find>user_</find>
+      <find>copro</find>
+      <find>agenc</find>
+      <find>ticketing</find>
+      <find>support</find>
+      <find>status</find>
+      <find>expense</find>
+      <find>venue</find>
+      <find>offer</find>
+      <find>a_company</find>
+      <find>an_artist</find>
+      <find>usern</find>
+      <find>company</find>
+      <find>first</find>
+      <find>name=&quot;first_name&quot;</find>
+      <find>is_local</find>
+      <find>new pass</find>
+      <find>type</find>
+      <find>update_ajax</find>
+      <find>after_render</find>
+      <find>switchery</find>
+      <find>toggle_edit_mode:</find>
+      <find>toggle_edit_mode</find>
+      <find>sellabl</find>
+      <find>created</find>
+      <find>sellab</find>
+      <find>text-blue</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>,\n</replace>
+      <replace>':0,</replace>
+      <replace>2</replace>
+      <replace>3</replace>
+      <replace>4</replace>
+      <replace>5</replace>
+      <replace>parseFloatOr0</replace>
+      <replace>class=&quot;money</replace>
+      <replace>&gt;</replace>
+      <replace>settlement</replace>
+      <replace>an_offer</replace>
+      <replace>an_artist</replace>
+      <replace>a_venue</replace>
+      <replace />
+      <replace>sys_gen</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/tpl/AccountSettingView__plainhtml.html" />
+        <option value="$PROJECT_DIR$/tpl/MyAccountSettingsView.html" />
+        <option value="$PROJECT_DIR$/lib/page-slider.js" />
+        <option value="$PROJECT_DIR$/tpl/AccountSettingView.html" />
+        <option value="$PROJECT_DIR$/js/views/AccountSettingView.js" />
+        <option value="$PROJECT_DIR$/assets/css/components.css" />
+        <option value="$PROJECT_DIR$/assets/js/core/app.js" />
+        <option value="$PROJECT_DIR$/tpl/MyAccountSettingView.html" />
+        <option value="$PROJECT_DIR$/tpl/UserItemView.html" />
+        <option value="$PROJECT_DIR$/tpl/UserSearchListView.html" />
+        <option value="$PROJECT_DIR$/tpl/ContactView.html" />
+        <option value="$PROJECT_DIR$/spec.html" />
+        <option value="$PROJECT_DIR$/js/views/UserView_script.js" />
+        <option value="$PROJECT_DIR$/tpl/UserView.html" />
+        <option value="$PROJECT_DIR$/tpl/UserListView.html" />
+        <option value="$PROJECT_DIR$/js/models/UserModel.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.cvsignore" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.txt" />
+        <option value="$PROJECT_DIR$/tpl/HomeView.html" />
+        <option value="$PROJECT_DIR$/js/views/VenueView.js" />
+        <option value="$PROJECT_DIR$/tpl/VenueSearchListView.html" />
+        <option value="$PROJECT_DIR$/tpl/NavbarView.html" />
+        <option value="$PROJECT_DIR$/tpl/VenueListView.html" />
+        <option value="$PROJECT_DIR$/tpl/VenueView.html" />
+        <option value="$PROJECT_DIR$/tpl/HomeView.ejs" />
+        <option value="$PROJECT_DIR$/css/compass/stylesheetsstyles.css" />
+        <option value="$PROJECT_DIR$/css/compass/sass/styles.css" />
+        <option value="$PROJECT_DIR$/assets/css/site.css" />
+        <option value="$PROJECT_DIR$/css/compass/stylesheets/styles.css" />
+        <option value="$PROJECT_DIR$/tpl/CompanyView.ejs" />
+        <option value="$PROJECT_DIR$/js/views/ContactView.js" />
+        <option value="$PROJECT_DIR$/js/views/CompaniesView.js" />
+        <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/tpl/UserListView.ejs" />
+        <option value="$PROJECT_DIR$/js/views/BbListView.js" />
+        <option value="$PROJECT_DIR$/js/views/BbFormView.js" />
+        <option value="$PROJECT_DIR$/js/models/OfferModel.js" />
+        <option value="$PROJECT_DIR$/js/utils/misc.js" />
+        <option value="$PROJECT_DIR$/js/views/BBFormView.js" />
+        <option value="$PROJECT_DIR$/tpl/NavbarView.ejs" />
+        <option value="$PROJECT_DIR$/tpl/SettlementsView.ejs" />
+        <option value="$PROJECT_DIR$/tpl/SettlementView.ejs" />
+        <option value="$PROJECT_DIR$/js/views/SettlementsView.js" />
+        <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/js/models/SettlementModel.js" />
+        <option value="$PROJECT_DIR$/tpl/SettlementSearchListView.ejs" />
+        <option value="$PROJECT_DIR$/tpl/SettlementListView.ejs" />
+        <option value="$PROJECT_DIR$/tpl/UserView.ejs" />
+        <option value="$PROJECT_DIR$/js/views/MyAccountSettingView.js" />
+        <option value="$PROJECT_DIR$/js/routers/AppRouter.js" />
+        <option value="$PROJECT_DIR$/tpl/MyCompanySettingView.ejs" />
+        <option value="$PROJECT_DIR$/tpl/MyAccountSettingView.ejs" />
+        <option value="$PROJECT_DIR$/js/views/VenuesView.js" />
+        <option value="$PROJECT_DIR$/tpl/VenueView.ejs" />
+        <option value="$PROJECT_DIR$/tpl/VenueListView.ejs" />
+        <option value="$PROJECT_DIR$/js/views/HomeView.js" />
+        <option value="$PROJECT_DIR$/tpl/CompanyListView.ejs" />
+        <option value="$PROJECT_DIR$/js/views/OffersView.js" />
+        <option value="$PROJECT_DIR$/js/views/OfferListView.js" />
+        <option value="$PROJECT_DIR$/js/views/CompanyListView.js" />
+        <option value="$PROJECT_DIR$/js/views/SettlementListView.js" />
+        <option value="$PROJECT_DIR$/js/views/UserListView.js" />
+        <option value="$PROJECT_DIR$/js/views/VenueListView.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/tpl/OfferView.ejs" />
+        <option value="$PROJECT_DIR$/tpl/OfferListView.ejs" />
+        <option value="$PROJECT_DIR$/css/compass/sass/styles.scss" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1920" />
+    <option name="height" value="1054" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Control flow issuesJava</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Ignore</id>
+          </State>
+          <State>
+            <id>Initialization issuesJava</id>
+          </State>
+          <State>
+            <id>Internationalization issuesJava</id>
+          </State>
+          <State>
+            <id>JSON</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript validity issuesJavaScript</id>
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>Probable bugsPHP</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JSDuplicatedDeclaration</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource ProjectPane="true" />
+      <autoscrollFromSource ProjectPane="true" />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles.css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles.scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="TEXT&#10;Cvs" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js/views" />
+      <recent name="$PROJECT_DIR$/js/models" />
+      <recent name="$PROJECT_DIR$/tpl" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1cb85d7b-f82d-44cd-9859-9d21c2911b8f" name="Default" comment="" />
+      <created>1468029993866</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1468029993866</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Fix login padding.">
+      <created>1471493797410</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1471493797410</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fix css">
+      <created>1471494614615</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1471494614615</updated>
+    </task>
+    <task id="LOCAL-00003" summary="My Acnt Setting View html">
+      <created>1471851102560</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1471851102560</updated>
+    </task>
+    <task id="LOCAL-00004" summary="My Acnt Setting View html part 2 / 5">
+      <created>1472019905086</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1472019905086</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Profile file uploader">
+      <created>1472102028429</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1472102028429</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Multiselect Union memberships">
+      <created>1476671717564</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1476671717564</updated>
+    </task>
+    <task id="LOCAL-00007" summary="User list and edit form">
+      <created>1477889863224</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1477889863224</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Working on Contacts..">
+      <created>1478063208779</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1478063208779</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Working on Contacts..">
+      <created>1478389277984</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1478389277984</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Working on Contacts..">
+      <created>1478532585804</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1478532585804</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Working on Contacts..">
+      <created>1478532596203</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1478532596203</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Working on Contacts..">
+      <created>1478703959853</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1478703959854</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Address in contact">
+      <created>1478988656219</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1478988656219</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Contacts in same company only. Active Controller and BB Collection updated.">
+      <created>1478995149905</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1478995149905</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Clean up code.">
+      <created>1479134538691</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1479134538691</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Venue html">
+      <created>1479309134770</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1479309134770</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Venue html... Finalizing... need to add menu item icon">
+      <created>1479395500463</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1479395500463</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fix p3. Fix bootstrap icon.">
+      <created>1479919258803</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1479919258803</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fix the rest of P3.">
+      <created>1480040646463</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1480040646463</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Fix the rest of P3.">
+      <created>1480043375985</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1480043375985</updated>
+    </task>
+    <task id="LOCAL-00021" summary="11 29">
+      <created>1480527489457</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1480527489457</updated>
+    </task>
+    <task id="LOCAL-00022" summary="12 01">
+      <created>1480691140887</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1480691140888</updated>
+    </task>
+    <task id="LOCAL-00023" summary="12 05 Offer part 5/7">
+      <created>1481038491121</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1481038491121</updated>
+    </task>
+    <task id="LOCAL-00024" summary="12 05 Offer part 7/9">
+      <created>1481236615329</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1481236615329</updated>
+    </task>
+    <task id="LOCAL-00025" summary="12 05 Offer part 8/10 Var Expense">
+      <created>1481575273197</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1481575273197</updated>
+    </task>
+    <task id="LOCAL-00026" summary="12 12 Offer part 9/10 Var Expense. todob calculate total. buttons for ASACP and BMI">
+      <created>1481605215477</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1481605215477</updated>
+    </task>
+    <task id="LOCAL-00027" summary="12 12 Offer part 9/10 Var Expense. todob calculate total. buttons for ASACP and BMI">
+      <created>1481814688739</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1481814688739</updated>
+    </task>
+    <task id="LOCAL-00028" summary="12 12 Offer part 10/11 fixing numbers that say NAN.">
+      <created>1482860470712</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1482860470712</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Offer continue: fix money continued until general expense.">
+      <created>1483081098914</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1483081098914</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Fix money update.">
+      <created>1483082443313</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1483082443313</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Fix money update inside var expense. Fix tax %.">
+      <created>1483170382521</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1483170382521</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Offer: working on merch.">
+      <created>1483428347238</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1483428347238</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Fix CC fee.">
+      <created>1483604449109</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1483604449109</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Fixing Create Offer. Waiting for ERM API to include Settlement.">
+      <created>1483687479530</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1483687479530</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Settlement create. Working on edit...">
+      <created>1485930498265</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1485930498265</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Offer pdf link...">
+      <created>1487233322487</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1487233322487</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Require User first name">
+      <created>1488654059416</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1488654059416</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Require Venue name">
+      <created>1488698126195</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1488698126195</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Testing companies..">
+      <created>1488780324999</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1488780324999</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Fix form: rebind element after view reset.">
+      <created>1488945555639</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1488945555639</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Small fixes. Working on ASCAP.">
+      <created>1489036610898</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1489036610898</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1920" height="1054" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285568" sideWeight="0.5097561" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2541841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32780084" sideWeight="0.4902439" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14635417" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13541667" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32466182" sideWeight="0.49512196" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1578125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="GitLabIntegration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3274244" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="Clean up code." />
+    <MESSAGE value="Venue html" />
+    <MESSAGE value="Venue html... Finalizing... need to add menu item icon" />
+    <MESSAGE value="Fix p3. Fix bootstrap icon." />
+    <MESSAGE value="Fix the rest of P3." />
+    <MESSAGE value="11 29" />
+    <MESSAGE value="12 01" />
+    <MESSAGE value="12 05 Offer part 5/7" />
+    <MESSAGE value="12 05 Offer part 7/9" />
+    <MESSAGE value="12 05 Offer part 8/10 Var Expense" />
+    <MESSAGE value="12 12 Offer part 9/10 Var Expense. todob calculate total. buttons for ASACP and BMI" />
+    <MESSAGE value="12 12 Offer part 10/11 fixing numbers that say NAN." />
+    <MESSAGE value="Offer continue: fix money continued until general expense." />
+    <MESSAGE value="Fix money update." />
+    <MESSAGE value="Fix money update inside var expense. Fix tax %." />
+    <MESSAGE value="Offer: working on merch." />
+    <MESSAGE value="Fix CC fee." />
+    <MESSAGE value="Fixing Create Offer. Waiting for ERM API to include Settlement." />
+    <MESSAGE value="Settlement create. Working on edit..." />
+    <MESSAGE value="Offer pdf link..." />
+    <MESSAGE value="Require User first name" />
+    <MESSAGE value="Require Venue name" />
+    <MESSAGE value="Testing companies.." />
+    <MESSAGE value="Fix form: rebind element after view reset." />
+    <MESSAGE value="Small fixes. Working on ASCAP." />
+    <option name="LAST_COMMIT_MESSAGE" value="Small fixes. Working on ASCAP." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/models/UserModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="48" column="42" lean-forward="false" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4389">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4431">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4431">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4389">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4431">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/HomeView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4431">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/HomeView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4431">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4389">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4389">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4431">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4389">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2163">
+          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4389">
+          <caret line="211" column="30" lean-forward="false" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1869">
+          <caret line="89" column="25" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2919">
+          <caret line="141" column="30" lean-forward="false" selection-start-line="141" selection-start-column="30" selection-end-line="141" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1869">
+          <caret line="89" column="25" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2919">
+          <caret line="141" column="30" lean-forward="false" selection-start-line="141" selection-start-column="30" selection-end-line="141" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1869">
+          <caret line="89" column="25" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2919">
+          <caret line="141" column="30" lean-forward="false" selection-start-line="141" selection-start-column="30" selection-end-line="141" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1869">
+          <caret line="89" column="25" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1869">
+          <caret line="89" column="25" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserView_script.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="75" column="40" lean-forward="false" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserView_script.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="56" column="83" lean-forward="false" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserView_script.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="56" column="83" lean-forward="false" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
+    <entry file="file://$PROJECT_DIR$/js/views/UserView_script.js" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.cvsignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/HomeView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/ContactView.html" />
+    <entry file="file://$PROJECT_DIR$/js/models/UserModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="35" column="40" lean-forward="false" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="56" lean-forward="false" selection-start-line="0" selection-start-column="56" selection-end-line="0" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserSearchListView.html" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5923" lean-forward="false" selection-start-line="0" selection-start-column="5923" selection-end-line="0" selection-end-column="5923" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/VenueSearchListView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/NavbarView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/VenuesView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/VenueListView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/VenueView.html" />
+    <entry file="file://$PROJECT_DIR$/tpl/HomeView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="51" column="70" lean-forward="false" selection-start-line="51" selection-start-column="70" selection-end-line="51" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/compass/stylesheetsstyles.css" />
+    <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="4" column="944" lean-forward="false" selection-start-line="4" selection-start-column="944" selection-end-line="4" selection-end-column="944" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/compass/stylesheetsstyles.css.map" />
+    <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.css_0916">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/site.css" />
+    <entry file="file://$PROJECT_DIR$/assets/css/core.min.css_0916">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/compass/sass/styles.css" />
+    <entry file="file://$PROJECT_DIR$/css/compass/stylesheets/styles.min.css" />
+    <entry file="file://$PROJECT_DIR$/tpl/CompaniesView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/ContactView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="53" lean-forward="false" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/49e50f60-9a50-4ed2-b00e-dc16bec557bf/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/73f8e4f9/49e50f60-9a50-4ed2-b00e-dc16bec557bf/erm.offer">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/BbListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/73f8e4f9/49e50f60-9a50-4ed2-b00e-dc16bec557bf/erm.offer">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/73f8e4f9/49e50f60-9a50-4ed2-b00e-dc16bec557bf/erm.offer">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/models/OfferModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2310">
+          <caret line="110" column="31" lean-forward="false" selection-start-line="110" selection-start-column="31" selection-end-line="110" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/compass/stylesheets/styles.min.min.min.css" />
+    <entry file="file://$PROJECT_DIR$/css/compass/stylesheets/styles.css.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/autoNumeric.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31874">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="886">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="1632" column="20" lean-forward="false" selection-start-line="1632" selection-start-column="9" selection-end-line="1632" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/utils/misc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="249" column="20" lean-forward="true" selection-start-line="249" selection-start-column="20" selection-end-line="249" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34398">
+          <caret line="1638" column="11" lean-forward="false" selection-start-line="1638" selection-start-column="11" selection-end-line="1638" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/NavbarView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/VenueSearchListView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/SettlementsView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/RiderView.ejs" />
+    <entry file="file://$PROJECT_DIR$/tpl/SettlementView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/models/VenueModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/SettlementsView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/models/SettlementModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/SettlementSearchListView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/CompanyView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2016">
+          <caret line="6" column="71" lean-forward="false" selection-start-line="6" selection-start-column="71" selection-end-line="6" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/SettlementListView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1617">
+          <caret line="77" column="79" lean-forward="false" selection-start-line="77" selection-start-column="79" selection-end-line="77" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/ContactView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserListView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="58" lean-forward="false" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="74" lean-forward="true" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/routers/AppRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/MyCompanySettingView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2268">
+          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/AccountSettingView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/UserView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="80" lean-forward="false" selection-start-line="4" selection-start-column="80" selection-end-line="4" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/73f8e4f9/49e50f60-9a50-4ed2-b00e-dc16bec557bf/erm.user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/VenuesView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/MyAccountSettingView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="113" lean-forward="false" selection-start-line="22" selection-start-column="90" selection-end-line="22" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/VenueListView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/HomeView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="41" column="62" lean-forward="false" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/MyAccountSettingView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/CompaniesView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/VenueView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/CompanyListView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/AccountSettingView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/BBFormView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/VenuesView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/OffersView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/OffersView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/OfferListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/CompanyListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="45" column="10" lean-forward="false" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+          <folding>
+            <marker date="1491881176566" expanded="true" signature="2135:2421" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/SettlementListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="51" column="45" lean-forward="false" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/VenueListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="52" column="6" lean-forward="false" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/compass/stylesheets/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/OfferView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/OfferListView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="785" column="22" lean-forward="true" selection-start-line="785" selection-start-column="22" selection-end-line="785" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/compass/sass/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="226" column="27" lean-forward="false" selection-start-line="226" selection-start-column="27" selection-end-line="226" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>lodash-DefinitelyTyped</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>www</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

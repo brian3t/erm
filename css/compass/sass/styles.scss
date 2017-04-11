@@ -4,46 +4,39 @@
   font-weight: 100;
   src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v15/vzIUHo9z-oJ4WgkpPOtg13YhjbSpvc47ee6xR_80Hnw.woff) format('woff');
 }
-
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
   src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
-
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CrYjSnGjrRCn0pd9VQsnFOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
 }
-
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
-
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
-
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
   src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIrO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
-
 @mixin text-center {
   text-align: center;
 }
-
 .center-vert {
   @include text-center;
   display: block;
@@ -51,44 +44,34 @@
   margin: 0 auto;
 
 }
-
 div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   top: -3px;
 }
-
 .heading-elements {
   display: none
 }
-
 .navbar_teal, .navbar_teal a {
   color: white
 }
-
 .panel.clickable {
   cursor: pointer
 }
-
 .heading-elements.left {
   left: 0;
   right: inherit
 }
-
 .panel-title.with_elements {
   margin-left: 30px;
 }
-
 .icons-list a[data-action="collapse"]:after {
   content: "\ed5b";
 }
-
 .icons-list a.rotate-180[data-action="collapse"]:after {
   content: "\ed5a";
 }
-
 .contact-details {
   height: 140px;
 }
-
 .search_list {
   max-height: 300px;
   overflow-y: auto;
@@ -97,11 +80,9 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
     border-top: none;
   }
 }
-
 .whirl {
   position: relative
 }
-
 .whirl:before {
   content: "";
   z-index: 1;
@@ -114,7 +95,6 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   background-color: #999;
   opacity: 0.6
 }
-
 .whirl:after {
   z-index: 2;
   content: "";
@@ -131,12 +111,10 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   -webkit-animation: standard .75s infinite linear;
   animation: standard .75s infinite linear
 }
-
 .whirl.no-overlay:before {
   content: none;
   display: none
 }
-
 @-webkit-keyframes standard {
   from {
     -webkit-transform: rotate(0deg);
@@ -147,7 +125,6 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
     transform: rotate(360deg)
   }
 }
-
 @keyframes standard {
   from {
     -webkit-transform: rotate(0deg);
@@ -158,15 +135,12 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
     transform: rotate(360deg)
   }
 }
-
 .padded {
   padding: 5px
 }
-
 .text_underlined, .underlined {
   text-decoration: underline;
 }
-
 .has_inline_inputs {
   input, select {
     width: 50%;
@@ -177,12 +151,10 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
     margin-top: 8px;
   }
 }
-
 .input_atomic {
   line-height: 1.5384616;
   padding-top: 9px;
 }
-
 #back-to-top {
   background: transparent;
   margin: 0;
@@ -196,32 +168,26 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   text-decoration: none;
   color: #ffffff;
 }
-
 #back-to-top i {
   font-size: 300%;
 }
-
 .array_field_wrapper {
   float: left;
   input {
     font-size: 85%;
   }
 }
-
 .upload_in_progress {
   float: none;
   position: absolute
 }
-
 input[type='number'], input.money {
   text-align: right;
 }
-
 input.form-control, input.money {
   padding-right: 2px;
   padding-left: 2px;
 }
-
 .content-padded {
   padding-right: 2px;
   padding-left: 2px;
@@ -229,22 +195,40 @@ input.form-control, input.money {
     width: 100%;
   }
 }
-*[class^="col-"]{
+*[class^="col-"] {
   float: left;
   position: relative;
   min-height: 1px;
   padding-left: 10px;
   padding-right: 10px;
 }
-.col-xs-55{width: 48.958333335%}
-.col-xs-35{width: 26.16666666%}
-.col-xs-25{width: 19.33333333%}
-.col-xs-15{width: 12.5%}
-.col-xs-offset-15{margin-left: 12.5%}
-.col-xs-offset-45{margin-left: 37.508333%}
-.col-xs-offset-55{margin-left: 45.958333%}
-.col-xs-offset-65{margin-left: 54.16666667%}
-.form_wrapper{padding-top:3px;}
+.col-xs-55 {
+  width: 48.958333335%
+}
+.col-xs-35 {
+  width: 26.16666666%
+}
+.col-xs-25 {
+  width: 19.33333333%
+}
+.col-xs-15 {
+  width: 12.5%
+}
+.col-xs-offset-15 {
+  margin-left: 12.5%
+}
+.col-xs-offset-45 {
+  margin-left: 37.508333%
+}
+.col-xs-offset-55 {
+  margin-left: 45.958333%
+}
+.col-xs-offset-65 {
+  margin-left: 54.16666667%
+}
+.form_wrapper {
+  padding-top: 3px;
+}
 textarea {
   max-width: 100%;
   max-height: 100%;
@@ -255,9 +239,17 @@ html {
 body {
   min-height: 100%;
 }
-.form-control[readonly], .form-control[disabled]{
+.sys_gen, .user_gen {
   color: #03A9F4 !important;
 }
-input[readonly]{
+div.in_edit_mode .user_gen {
+  color: #333 !important;
+}
+div.edit_form_wrapper:not(.in_edit_mode) {
+  input, select, textarea{
+    color: #03A9F4;
+  }
+}
+input[readonly] {
   background-color: #fafafa;
 }

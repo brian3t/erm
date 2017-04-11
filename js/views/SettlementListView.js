@@ -42,12 +42,14 @@ app.views.SettlementListView = Backbone.View.extend({
         var is_checked = $e.prop('checked');
         var $form = $($e.parentsUntil('.form_wrapper').parent().find('.edit_form_wrapper form.edit'));
         if (is_checked) {
+            $('div.edit_form_wrapper').addClass('in_edit_mode');
             $('.action_buttons .create').hide();
             span_text.text('On');
             $($form.find(':input')).removeAttr('disabled');
             this.$el.find('button.delete').show();
         }
         else {
+            $('div.edit_form_wrapper').removeClass('in_edit_mode');
             $('.action_buttons .create').show();
             span_text.text('Off');
             $($form.find(':input')).prop('disabled', true);
