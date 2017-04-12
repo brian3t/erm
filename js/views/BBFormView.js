@@ -1,14 +1,20 @@
 Backbone.BBFormView = Backbone.View.extend({
-    print_table_from_array: function (a) {
+    print_table_from_array: function (a, is_disabled) {
         if (!_.isArray(a) && !_.isObject(a)) {
             return false;
+        }
+        if (typeof is_disabled === "undefined") {
+            is_disabled = true;
         }
         var dom = $('<div>').addClass('form-group');
         _.each(a, function (v, k, l) {
             var label = $('<label>').addClass('col-xs-2 input_atomic');
             label.text(k);
             var input_wrapper = $('<div class="col-xs-1">');
-            var input = $('<input disabled>').addClass('form-control');
+            var input = $('<input>').addClass('form-control');
+            if (is_disabled){
+                input.attr('disabled', true);
+            }
             //set checkbox here. updateajax to pull checked value too.
             if (v === true || v === 'true' || v === false || v === 'false') {
                 input.prop('type', 'checkbox');
@@ -27,7 +33,7 @@ Backbone.BBFormView = Backbone.View.extend({
         return dom;
     },
     update_ajax: function (e) {
-        if (is_validator_initializing){
+        if (is_validator_initializing) {
             return;
         }
         var flag_dont_update = false;
@@ -47,7 +53,7 @@ Backbone.BBFormView = Backbone.View.extend({
             wrapper_div.find(':input').each(function (i, e) {
                 e = $(e);
                 var key = e.data('key');
-                if (typeof key == 'undefined'){
+                if (typeof key == 'undefined') {
                     flag_dont_update = true;
                     return;
                 }

@@ -50,6 +50,24 @@ app.models.Offer = Backbone.RelationalModel.extend({
             this.venue = app.collections.venues.get(this.get('venue_id'));
         }
     },
+    get_general_expense:function () {
+        var gen_exp = this.get('general_expense');
+      if (gen_exp === '{}'){
+          this.reset_array_field();
+          return JSON.stringify(this.general_expense_array);
+      }  else {
+          return gen_exp;
+      }
+    },
+    get_production_expense:function () {
+        var prod_exp = this.get('production_expense');
+        if (prod_exp === '{}'){
+            this.reset_array_field();
+            return JSON.stringify(this.production_expense_array);
+        }  else {
+            return prod_exp;
+        }
+    },
     general_expense_array: {},
     production_expense_array: {},
     variable_expense_array: {},

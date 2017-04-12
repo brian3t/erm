@@ -1,7 +1,7 @@
 /*
  A list of Offers. With search box and list of items on the left
  */
-app.views.OfferListView = Backbone.View.extend({
+app.views.OfferListView = Backbone.BBFormView.extend({
     tagName: 'div',
     className: 'container row panel-body',
     OfferCollection: {},
@@ -53,6 +53,7 @@ app.views.OfferListView = Backbone.View.extend({
         }
     },
     toggle_create_item: function () {
+        var temp_model = new app.models.Offer();
         $('.action_buttons.edit_switch_wrapper').toggle();
         $('button.create').toggle();
         $('button.save').toggle();
@@ -61,6 +62,11 @@ app.views.OfferListView = Backbone.View.extend({
         this.$el.find('#offer_form_wrapper').toggle();
         this.$el.find('#create_offer').toggle();
         this.reset_form();
+        //reset gen exp and prod exp inputs
+        var gen_exp_html = this.print_table_from_array(temp_model.general_expense_array, false);
+        this.$el.find('.general_expense').html(gen_exp_html);
+        var prod_exp_html = this.print_table_from_array(temp_model.production_expense_array, false);
+        this.$el.find('.production_expense').html(prod_exp_html);
     },
     save_form: function (e) {
         e.preventDefault();
@@ -193,9 +199,9 @@ app.views.OfferView = Backbone.BBFormView.extend({
             }
             $(e).val(val);
         }, this);
-        var gen_exp_html = this.print_table_from_array(app.utils.misc.json_parse(this.model.get('general_expense')));
+        var gen_exp_html = this.print_table_from_array(app.utils.misc.json_parse(this.model.get_general_expense()));
         this.$el.find('#general_expense').html(gen_exp_html);
-        var prod_exp_html = this.print_table_from_array(JSON.parse_3t(this.model.get('production_expense')));
+        var prod_exp_html = this.print_table_from_array(JSON.parse_3t(this.model.get_production_expense()));
         this.$el.find('#production_expense').html(prod_exp_html);
         var edit_switch = $('.edit_switch');
         edit_switch.trigger('change');
