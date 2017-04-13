@@ -13,9 +13,11 @@
 			<div class="row">
 				<label class="col-xs-6">Icon Event ID<select name="first_party_event_id" value="<%= first_party_event_id %>"
 															 class="form-control">
+						<% if (typeof(app.collections.offers) !== "undefined") { %>
 						<% _.each(app.collections.offers.models, function (an_offer) { %>
 						<option value="<%= an_offer.get('id') %>"><%= an_offer.get('event_id') %></option>
 						<% }); %>
+						<% } %>
 					</select>
 				</label>
 				<label class="col-xs-6">Icon Capacity<input name="first_party_capacity" value="<%= first_party_capacity %>" type="number" step="1"
@@ -28,9 +30,11 @@
 			<div class="row">
 				<label class="col-xs-5">Event ID <select name="second_party_event_id" value="<%= second_party_event_id %>"
 														 class="form-control">
+						<% if (typeof(app.collections.offers) !== "undefined") { %>
 						<% _.each(app.collections.offers.models, function (an_offer) { %>
 						<option value="<%= an_offer.get('id') %>"><%= an_offer.get('event_id') %></option>
 						<% }); %>
+						<% } %>
 					</select>
 				</label>
 				<label class="col-xs-5">3rd Party Capacity <input name="second_party_capacity" value="<%= second_party_capacity %>" type="number"
@@ -45,16 +49,20 @@
 			<div class="row">
 				<label class="col-xs-6">Artist <select name="second_party_artist_id" value="<%= second_party_artist_id %>"
 													   class="form-control">
+						<% if (typeof(app.collections.artists) !== "undefined") { %>
 						<% _.each(app.collections.artists.models, function (an_artist) { %>
 						<option value="<%= an_artist.get('id') %>"><%= an_artist.get('first_name') + ' ' + an_artist.get('last_name') %></option>
 						<% }); %>
+						<% } %>
 					</select>
 				</label>
 				<label class="col-xs-6">Venue <select name="second_party_venue_id" value="<%= second_party_venue_id %>"
 													  class="form-control">
+						<% if (typeof(app.collections.venues) !== "undefined") { %>
 						<% _.each(app.collections.venues.models, function (a_venue) { %>
 						<option value="<%= a_venue.get('id') %>"><%= a_venue.get('name') %></option>
 						<% }); %>
+						<% } %>
 					</select>
 				</label>
 			</div>

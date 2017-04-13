@@ -394,9 +394,11 @@
 					<label class="col-xs-6">Venue Manager<select name="company_id"
 
 																 class="form-control">
+							<% if (typeof(app.collections.companies) !== "undefined") { %>
 							<% _.each(app.collections.companies.models, function (a_company) { %>
 							<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
 							<% }); %>
+							<% } %>
 						</select>
 					</label>
 				</div>
@@ -430,9 +432,11 @@
 				<div class="row">
 					<label class="col-xs-6">Primary Ticketing Company<select name="primary_ticketing_company_id"
 																			 class="form-control">
-							<% _.each(app.collections.companies.models, function (a_company) { %>
+							<% if (typeof(app.collections.ticketing_companies) !== "undefined") { %>
+							<% _.each(app.collections.ticketing_companies.models, function (a_company) { %>
 							<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
 							<% }); %>
+							<% } %>
 						</select>
 					</label>
 					<label class="col-xs-6">Other Seating Capacity<input name="other_seating_capacity"
