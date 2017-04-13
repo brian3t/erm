@@ -47,12 +47,3 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-
-function register()
-{
-    confirmDialog("Registration","Would you like to open the Commuter Connection Registration site in your web browser?",function(){
-        var ref = window.open(baseUrl+'CCRegistration.jsp', '_blank', 'location=yes');
-    });
-}
-
-

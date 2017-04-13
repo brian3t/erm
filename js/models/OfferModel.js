@@ -29,7 +29,7 @@ app.models.Offer = Backbone.RelationalModel.extend({
     populate_artist: function () {
         if (_.isNull(this.get('artist_id')))
             return;
-        if (app.collections.artists.length == 0){
+        if (typeof(app.collections.artists) !== 'object' || app.collections.artists.length === 0){
             var self = this;
             this.listenToOnce(app.collections.artists, 'sync', function () {
                 self.set('artist', app.collections.artists.get(self.get('artist_id')));
@@ -41,7 +41,7 @@ app.models.Offer = Backbone.RelationalModel.extend({
     populate_venue: function () {
         if (_.isNull(this.get('venue_id')))
             return;
-        if (app.collections.venues.length == 0){
+        if (typeof(app.collections.venues) !== 'object' || app.collections.venues.length === 0){
             var self = this;
             this.listenToOnce(app.collections.venues, 'sync', function () {
                 self.set('venue', app.collections.venues.get(self.get('venue_id')));
