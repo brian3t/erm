@@ -70,6 +70,8 @@ app.views.OfferListView = Backbone.BBFormView.extend({
     },
     save_form: function (e) {
         e.preventDefault();
+        this.update_json_array('.general_expense');
+        this.update_json_array('.production_expense');
         var $form = $(this.$el.find('#create_offer > form'));
         var form_data = flat_array_to_assoc($form.serializeArray());
         var new_offer = new app.models.Offer();

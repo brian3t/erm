@@ -5,6 +5,7 @@ var variable_expense = variable_expense || "{}";
 var production_expense = production_expense || "{}";
 var general_expense = general_expense || "{}";
 var is_tbd_date = is_tbd_date || 0;
+var is_on_sale_date_tbd = is_on_sale_date_tbd || 0;
 function recalculate_offer_values() {
 	l1_price = parseFloatOr0(l1_price);
 	l2_price = parseFloatOr0(l2_price);
@@ -588,17 +589,17 @@ recalculate_offer_values();
 	<div class="form-group">
 		<div class="row input_atomic">
 			<label class="col-xs-10 text-right "><b>Tour Production Expenses</b></label>
-			<input step="any" class="money  col-xs-2 " id="tour_production_expenses"
+			<input step="any" readonly class="money sys_gen col-xs-2 " id="tour_production_expenses"
 				   value="<%= V.tour_production_expenses %>">
 		</div>
 		<div class="row input_atomic">
 			<label class="col-xs-10 text-right "><b>General Expenses</b></label>
-			<input step="any" class="money  col-xs-2 " id="general_expenses_total"
+			<input step="any" readonly class="money sys_gen  col-xs-2 " id="general_expenses_total"
 				   value="<%= V.general_expenses_total %>">
 		</div>
 		<div class="row input_atomic">
 			<label class="col-xs-10 text-right text_underlined "><b>Total Fixed Expenses</b></label>
-			<input step="any" class="money  col-xs-2 text-bold " id="total_fixed_expenses"
+			<input step="any" readonly class="money sys_gen  col-xs-2 text-bold " id="total_fixed_expenses"
 				   value=<%= V.total_fixed_expenses %>>
 		</div>
 	</div>
