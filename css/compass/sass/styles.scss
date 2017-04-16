@@ -73,8 +73,8 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   height: 140px;
 }
 .search_list {
-  max-height: 300px;
-  overflow-y: auto;
+  overflow-y: scroll;
+  max-height: 75vh;
   overflow-x: hidden;
   table.item_list tr:first-child > td {
     border-top: none;
@@ -245,16 +245,16 @@ body {
 div.in_edit_mode .user_gen {
   color: #333 !important;
 }
-div.in_edit_mode .sys_gen{
+div.in_edit_mode .sys_gen {
   background-color: transparent;
 }
 div.edit_form_wrapper:not(.in_edit_mode) {
-  input, select, textarea{
+  input, select, textarea {
     color: #03A9F4 !important;
   }
 }
-div.in_edit_mode{
-  input, select, textarea{
+div.in_edit_mode {
+  input, select, textarea {
     background-color: #fafafa;
   }
 }

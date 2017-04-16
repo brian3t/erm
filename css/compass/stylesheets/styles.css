@@ -90,8 +90,8 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
 
 /* line 75, ../sass/styles.scss */
 .search_list {
-  max-height: 300px;
-  overflow-y: auto;
+  overflow-y: scroll;
+  max-height: 75vh;
   overflow-x: hidden;
 }
 /* line 79, ../sass/styles.scss */

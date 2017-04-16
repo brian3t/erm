@@ -79,6 +79,8 @@ $.extend(app, {
         var company_id = app.cur_user.get('company').get('id');
         /** @var Backbone.Model company **/
         var company_param = {company_id: company_id};
+        //todob temp disable
+        company_param = {};
 
         app.collections.companies = new app.collections.Company();
         app.collections.companies.fetch();
