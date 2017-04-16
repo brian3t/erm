@@ -111,7 +111,7 @@ app.utils.misc = (function () {
                 }
             }(document, 'script', 'facebook-jssdk'));
         }
-        ;
+    ;
     return {
         USSTATES: USSTATES,
         bindModal: bindModal,
@@ -209,8 +209,8 @@ app.utils.misc = (function () {
         json_parse: function (s) {
             var result = {};
             try {
-                result= JSON.parse(s);
-            } catch (e){
+                result = JSON.parse(s);
+            } catch (e) {
                 console.error("3t Error parsing string: " + s + " error: " + e);
             }
             return result;
@@ -264,12 +264,11 @@ function flat_array_to_assoc(arr) {
             if (e.length == 2) // ["first_name", "John"]
             {
                 var val = e[1];
-                if (typeof val=='string')
-                {
-                    val=val.replace('$','');
+                if (typeof val == 'string') {
+                    val = val.replace('$', '');
                 }
-                if (isNumeric(val)){
-                    val = Number(val.replace(/[^0-9\.]+/g,""));
+                if (isNumeric(val)) {
+                    val = Number(val.replace(/[^0-9\.]+/g, ""));
                     val = parseFloat(val);
                 }
                 if (!_.has(result, key)) {
@@ -333,11 +332,11 @@ function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(parseFloat(n)) && parseFloat(n).toString() === n;
 }
 function parseFloatOr0(v) {
-    if (typeof v == "string"){
+    if (typeof v == "string") {
         v = v.replace('$', '').replace(',', '');
     }
     v = parseFloat(v);
-    if (isNaN(v)){
+    if (isNaN(v)) {
         v = 0;
     }
     return v;
@@ -345,9 +344,24 @@ function parseFloatOr0(v) {
 JSON.parse_3t = function (s) {
     var result = {};
     try {
-        result= JSON.parse(s);
-    } catch (e){
+        result = JSON.parse(s);
+    } catch (e) {
         console.error("3t Error parsing string: " + s + " error: " + e);
     }
+    return result;
+}
+
+function print_option_fr_collection(collection_name, name_column) {
+    if (typeof name_column === "undefined" || !name_column) {
+        name_column = 'name';
+    }
+    var result = '<option value=""></option>';
+    if (typeof(app.collections[collection_name]) === "undefined") {
+        return result;
+    }
+
+    _.each(app.collections[collection_name].models, function (a_model) {
+        result += '<option value = "' + a_model.get('id') + '" >' + a_model.get(name_column) + '</option>';
+    });
     return result;
 }

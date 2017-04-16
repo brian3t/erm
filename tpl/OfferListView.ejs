@@ -26,15 +26,8 @@
 					<label class="col-xs-6">Show# <br/><input name="show_number" type="text"> of <input name="show_total_num" type="text"> </label>
 				</div>
 				<div class="row">
-					<label class="col-xs-4">Agency<select name="agency_id" type="text"
-
-														  class="form-control">
-							<% if (typeof(app.collections.companies) !== "undefined") { %>
-								<% _.each(app.collections.companies.models, function (a_company) { %>
-								<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
-								<% }); %>
-							<% } %>
-
+					<label class="col-xs-4">Agency<select name="agency_id"  class="form-control">
+							<% print_option_fr_collection('companies'); %>
 						</select>
 					</label>
 

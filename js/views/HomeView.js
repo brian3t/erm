@@ -28,7 +28,7 @@ app.views.HomeView = Backbone.View.extend({
             //disable the button so we can't resubmit while we wait
             $("#submitButton", this).attr("disabled", "disabled");
             $.post(config.restUrl + 'user/login', $('#login-form').serialize(), function (resp) {
-                if (resp.status == 'ok') {
+                if (resp.status === 'ok') {
                     document.cookie = 'loginstring=' + $('#login-form').serialize();
                     app.cur_user.set({id: resp.id, username: $('#username').val(), password: $('#password').val()});
                     // app.cur_profile.set(resp.profile);
@@ -39,7 +39,7 @@ app.views.HomeView = Backbone.View.extend({
                             if (!IS_LOCAL) {
                                 app.router.navigate('dashboard', {trigger: true});
                             } else {
-                                app.router.navigate('companies', {trigger: true});
+                                app.router.navigate('offers', {trigger: true});
                                 $('.edit_switch').trigger('change');
                             }
                         }
