@@ -32,6 +32,7 @@ app.routers.AppRouter = Backbone.Router.extend({
                         $('#navbar').hide().html(app.navbar_view.render()).fadeIn('fast');
                     }
                 }, 500);
+                $('div.page').removeClass('whirl traditional');
                 return result;
             }
         })(app.slider.slidePage);

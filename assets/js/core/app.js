@@ -633,6 +633,9 @@ $(document).ajaxStart(function () {
 $(document).ajaxComplete(function () {
     $('div.page').removeClass('whirl traditional');
 });
+function clear_ajax() {
+    $('div.page').removeClass('whirl traditional');
+}
 $("input").keypress(function(event) {
     if (event.which == 13) {
         event.preventDefault();

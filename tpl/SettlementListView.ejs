@@ -1,5 +1,5 @@
 <%
-var offer_opt = print_option_fr_collection('offers','event_id');
+var offer_opt = print_option_fr_collection('offers', 'event_id');
 var venue_opt = print_option_fr_collection('venues');
 var artist_opt = print_option_fr_collection('artists', 'fullname');
 %>
@@ -67,14 +67,12 @@ var artist_opt = print_option_fr_collection('artists', 'fullname');
 				<div class="row">
 					<label class="col-xs-6">Artist <select name="second_party_artist_id"
 														   class="form-control">
-							<option value=""></option>
-							<%=artist_opt%>
+							<%= artist_opt %>
 						</select>
 					</label>
 					<label class="col-xs-6">Venue <select name="second_party_venue_id"
 														  class="form-control">
-							<option value=""></option>
-							<%=venue_opt%>
+							<%= venue_opt %>
 						</select>
 					</label>
 				</div>
