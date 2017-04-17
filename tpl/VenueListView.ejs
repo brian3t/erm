@@ -1,3 +1,7 @@
+<%
+var comp_opt = print_option_fr_collection('companies');
+var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
+%>
 <div class="col-sm-2 col-xs-12">
 	<button type="button" class="btn btn-sm btn-primary toggle_create_mode create"><span class="glyphicon glyphicon-plus"></span> Create new Venue
 	</button>
@@ -394,11 +398,7 @@
 					<label class="col-xs-6">Venue Manager<select name="company_id"
 
 																 class="form-control">
-							<% if (typeof(app.collections.companies) !== "undefined") { %>
-							<% _.each(app.collections.companies.models, function (a_company) { %>
-							<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
-							<% }); %>
-							<% } %>
+							<%= comp_opt %>
 						</select>
 					</label>
 				</div>
@@ -432,11 +432,7 @@
 				<div class="row">
 					<label class="col-xs-6">Primary Ticketing Company<select name="primary_ticketing_company_id"
 																			 class="form-control">
-							<% if (typeof(app.collections.ticketing_companies) !== "undefined") { %>
-							<% _.each(app.collections.ticketing_companies.models, function (a_company) { %>
-							<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
-							<% }); %>
-							<% } %>
+							<%= ticketing_company_opt %>
 						</select>
 					</label>
 					<label class="col-xs-6">Other Seating Capacity<input name="other_seating_capacity"

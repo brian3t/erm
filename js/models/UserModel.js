@@ -48,7 +48,10 @@ app.models.User = Backbone.RelationalModel.extend({
             profile: {avatar: null}
         },
         get: function (args) {
-            return Backbone.RelationalModel.prototype.get.call(args);
+            if (args === 'fullname'){
+                return this.getFullName();
+            }
+            return Backbone.RelationalModel.prototype.get.call(this, args);
         },
         getFullName: function () {
             return this.get('first_name') + ' ' + this.get('last_name');

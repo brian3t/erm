@@ -6,6 +6,13 @@ var production_expense = production_expense || "{}";
 var general_expense = general_expense || "{}";
 var is_tbd_date = is_tbd_date || 0;
 var is_on_sale_date_tbd = is_on_sale_date_tbd || 0;
+var comp_opt = print_option_fr_collection('companies');
+var agent_opt = print_option_fr_collection('agents');
+var promoter_opt = print_option_fr_collection('promoters');
+var venue_opt = print_option_fr_collection('venues');
+var artist_opt = print_option_fr_collection('artists', 'fullname');
+var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
+
 function recalculate_offer_values() {
 	l1_price = parseFloatOr0(l1_price);
 	l2_price = parseFloatOr0(l2_price);
@@ -114,25 +121,15 @@ recalculate_offer_values();
 			</label>
 		</div>
 		<div class="row">
-			<label class="col-xs-4">Agency<select name="agency_id" disabled type="text"
-												  value="<%= agency_id %>"
+			<label class="col-xs-4">Agency<select name="agency_id" disabled value="<%= agency_id %>"
 												  class="form-control">
-					<% if (typeof(app.collections.companies) !== "undefined") { %>
-					<% _.each(app.collections.companies.models, function (a_company) { %>
-					<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
-					<% }); %>
-					<% } %>
+					<%= comp_opt %>
 				</select>
 			</label>
 
-			<label class="col-xs-4">Agent<select name="agent_id" disabled type="text"
-												 value="<%= agent_id %>"
+			<label class="col-xs-4">Agent<select name="agent_id" disabled value="<%= agent_id %>"
 												 class="form-control">
-					<% if (typeof(app.collections.agents) !== "undefined") { %>
-					<% _.each(app.collections.agents.models, function (an_agent) { %>
-					<option value="<%= an_agent.get('id') %>"><%= an_agent.get('name') %></option>
-					<% }); %>
-					<% } %>
+					<%= agent_opt %>
 				</select>
 			</label>
 			<label class="col-xs-4">Status<select name="status" disabled
@@ -182,19 +179,11 @@ recalculate_offer_values();
 			<label class="col-xs-6">Co-Pro Promoter<select name="copro_promoter_id" disabled
 														   value="<%= copro_promoter_id %>"
 														   class="form-control">
-					<% if (typeof(app.collections.promoters) !== "undefined") { %>
-					<% _.each(app.collections.promoters.models, function (a_promoter) { %>
-					<option value="<%= a_promoter.get('id') %>"><%= a_promoter.get('name') %></option>
-					<% }); %>
-					<% } %>
+					<%= promoter_opt %>
 				</select>
 			</label>
 			<label class="col-xs-6">Co-Pro Venue<select name="copro_venue_id" disabled value="<%= copro_venue_id %>" class="form-control">
-					<% if (typeof(app.collections.venues) !== "undefined") { %>
-					<% _.each(app.collections.venues.models, function (a_venue) { %>
-					<option value="<%= a_venue.get('id') %>"><%= a_venue.get('name') %></option>
-					<% }); %>
-					<% } %>
+					<%= venue_opt %>
 				</select>
 			</label>
 		</div>
@@ -203,19 +192,11 @@ recalculate_offer_values();
 	<div class="form-group">
 		<div class="row">
 			<label class="col-xs-6">Artist<select name="artist_id" disabled value="<%= artist_id %>" class="form-control">
-					<% if (typeof(app.collections.artists) !== "undefined") { %>
-					<% _.each(app.collections.artists.models, function (an_artist) { %>
-					<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
-					<% }); %>
-					<% } %>
+					<%= artist_opt %>
 				</select>
 			</label>
 			<label class="col-xs-6">Venue<select name="venue_id" disabled value="<%= venue_id %>" class="form-control">
-					<% if (typeof(app.collections.venues) !== "undefined") { %>
-					<% _.each(app.collections.venues.models, function (a_venue) { %>
-					<option value="<%= a_venue.get('id') %>"><%= a_venue.get('name') %></option>
-					<% }); %>
-					<% } %>
+					<%= venue_opt %>
 				</select>
 			</label>
 		</div>
@@ -225,14 +206,11 @@ recalculate_offer_values();
 													class="form-control">
 			</label>
 			<label class="col-xs-6">Show Date TBD<br><input name="is_tbd_date" disabled type="checkbox"
-															value="<%= is_tbd_date %>"
-						<%= is_tbd_date ? "checked=1" : "checked=0" %>
-				>
+															value="<%= is_tbd_date %>" <%= is_tbd_date ? "checked=1" : "checked=0" %> >
 			</label>
 		</div>
 		<div class="row">
-			<label class="col-xs-4">Show Type<select name="show_type" disabled
-													 value="<%= show_type %>"
+			<label class="col-xs-4">Show Type<select name="show_type" disabled value="<%= show_type %>"
 													 class="form-control">
 					<option value=""></option>
 					<option value="Casino">Casino</option>
@@ -252,8 +230,7 @@ recalculate_offer_values();
 			</label>
 		</div>
 		<div class="row">
-			<label class="col-xs-12">Notes<textarea name="notes" disabled
-													value="<%= notes %>"
+			<label class="col-xs-12">Notes<textarea name="notes" disabled value="<%= notes %>"
 													class="form-control"><%= notes %></textarea>
 			</label>
 		</div>
@@ -272,11 +249,7 @@ recalculate_offer_values();
 			<label class="col-xs-5">Ticketing Company<select disabled name="ticketing_company_id"
 															 value="<%= ticketing_company_id %>"
 															 class="form-control">
-					<% if (typeof(app.collections.ticketing_companies) !== "undefined") { %>
-					<% _.each(app.collections.ticketing_companies.models, function (a_company) { %>
-					<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
-					<% }); %>
-					<% } %>
+					<%= ticketing_company_opt%>
 				</select>
 			</label>
 			<label class="col-xs-3">On Sale Date<input type="date" disabled
@@ -520,11 +493,7 @@ recalculate_offer_values();
 			<label class="label_wo_input col-xs-3">Support Artist 1</label>
 			<span class="col-xs-7"><select name="support_artist_1_id" value="<%= support_artist_1_id %>"
 										   class="form-control">
-					<% if (typeof(app.collections.artists) !== "undefined") { %>
-					<% _.each(app.collections.artists.models, function (an_artist) { %>
-					<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
-					<% }); %>
-					<% } %>
+					<%= artist_opt%>
 				</select></span>
 			<span class="col-xs-2"><input name="support_artist_1_total" value="<%= support_artist_1_total %>"
 										  step="any" class="money  form-control"></span>
@@ -533,11 +502,7 @@ recalculate_offer_values();
 			<label class="label_wo_input col-xs-3">Support Artist 2</label>
 			<span class="col-xs-7"><select name="support_artist_2_id" value="<%= support_artist_2_id %>"
 										   class="form-control">
-					<% if (typeof(app.collections.artists) !== "undefined") { %>
-					<% _.each(app.collections.artists.models, function (an_artist) { %>
-					<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
-					<% }); %>
-					<% } %>
+					<%=artist_opt%>
 				</select></span>
 			<span class="col-xs-2"><input name="support_artist_2_total" value="<%= support_artist_2_total %>"
 										  step="any" class="money  form-control"></span>
@@ -546,11 +511,7 @@ recalculate_offer_values();
 			<label class="label_wo_input col-xs-3">Support Artist 3</label>
 			<span class="col-xs-7"><select name="support_artist_3_id" value="<%= support_artist_3_id %>"
 										   class="form-control">
-					<% if (typeof(app.collections.artists) !== "undefined") { %>
-					<% _.each(app.collections.artists.models, function (an_artist) { %>
-					<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
-					<% }); %>
-					<% } %>
+					<%=artist_opt%>
 				</select></span>
 			<span class="col-xs-2"><input name="support_artist_3_total" value="<%= support_artist_3_total %>"
 										  step="any" class="money  form-control"></span>

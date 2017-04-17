@@ -3,7 +3,9 @@ var comp_opt = print_option_fr_collection('companies');
 var agent_opt = print_option_fr_collection('agents');
 var promoter_opt = print_option_fr_collection('promoters');
 var venue_opt = print_option_fr_collection('venues');
- %>
+var artist_opt = print_option_fr_collection('artists', 'fullname');
+var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
+%>
 <div class="col-sm-2 col-xs-12">
 	<button type="button" class="btn btn-sm btn-primary toggle_create_mode create"><span class="glyphicon glyphicon-plus"></span> Create new Offer
 	</button>
@@ -32,7 +34,7 @@ var venue_opt = print_option_fr_collection('venues');
 					<label class="col-xs-6">Show# <br/><input name="show_number" type="text"> of <input name="show_total_num" type="text"> </label>
 				</div>
 				<div class="row">
-					<label class="col-xs-4">Agency<select name="agency_id"  class="form-control">
+					<label class="col-xs-4">Agency<select name="agency_id" class="form-control">
 							<%= comp_opt %>
 						</select>
 					</label>
@@ -94,37 +96,22 @@ var venue_opt = print_option_fr_collection('venues');
 			<div class="form-group">
 				<div class="row">
 					<label class="col-xs-6">Artist<select name="artist_id" class="form-control">
-							<% if (typeof(app.collections.artists) !== "undefined") { %>
-								<% _.each(app.collections.artists.models, function (an_artist) { %>
-								<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
-								<% }); %>
-							<% } %>
+							<%= artist_opt %>
 						</select>
 					</label>
-					<label class="col-xs-6">Venue<select name="venue_id"
-
-														 class="form-control">
-							<% if (typeof(app.collections.venues) !== "undefined") { %>
-								<% _.each(app.collections.venues.models, function (a_venue) { %>
-								<option value="<%= a_venue.get('id') %>"><%= a_venue.get('name') %></option>
-								<% }); %>
-							<% } %>
+					<label class="col-xs-6">Venue<select name="venue_id" class="form-control">
+							<%= venue_opt %>
 						</select>
 					</label>
 				</div>
 				<div class="row">
-					<label class="col-xs-6">Show Date<input name="show_date" type="date"
-
-															class="form-control">
+					<label class="col-xs-6">Show Date<input name="show_date" type="date" class="form-control">
 					</label>
-					<label class="col-xs-6">Show Date TBD<br><input name="is_tbd_date" type="checkbox"
-						>
+					<label class="col-xs-6">Show Date TBD<br><input name="is_tbd_date" type="checkbox">
 					</label>
 				</div>
 				<div class="row">
-					<label class="col-xs-4">Show Type<select name="show_type"
-
-															 class="form-control">
+					<label class="col-xs-4">Show Type<select name="show_type" class="form-control">
 							<option></option>
 							<option>Casino</option>
 							<option>College</option>
@@ -150,16 +137,10 @@ var venue_opt = print_option_fr_collection('venues');
 				<div class="row">
 					<label class="col-xs-3">On Sale Date<input name="on_sale_date" type="date" class="form-control">
 					</label>
-					<label class="col-xs-1">TBD <br><input type="checkbox"
-
-						>
+					<label class="col-xs-1">TBD <br><input type="checkbox">
 					</label>
 					<label class="col-xs-5">Ticketing Company<select name="ticketing_company_id" class="form-control">
-							<% if (typeof(app.collections.ticketing_companies) !== "undefined") { %>
-							<% _.each(app.collections.ticketing_companies.models, function (a_company) { %>
-							<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
-							<% }); %>
-							<% } %>
+							<%= ticketing_company_opt %>
 						</select>
 					</label>
 					<label class="col-xs-3">On Sale Date<input type="date" class="form-control">
@@ -192,8 +173,7 @@ var venue_opt = print_option_fr_collection('venues');
 												   class="  form-control"></label>
 					<label class="col-xs-1"><input name="l2_kill" step="any"
 												   class="  form-control"></label>
-					<label class="col-xs-2"><input readonly class="l2 sellable_ticket  sys_gen form-control"
-						></input></label>
+					<label class="col-xs-2"><input readonly class="l2 sellable_ticket  sys_gen form-control"></input></label>
 					<label class="col-xs-2"><input name="l2_price" step="any"
 												   class="money  form-control"></label>
 					<label class="col-xs-2"><input readonly class="money l2  gross  sys_gen form-control"
@@ -205,8 +185,7 @@ var venue_opt = print_option_fr_collection('venues');
 												   class="  form-control"></label>
 					<label class="col-xs-1"><input name="l3_kill" step="any"
 												   class="  form-control"></label>
-					<label class="col-xs-2"><input readonly class="l3 sellable_ticket  sys_gen form-control"
-						></input></label>
+					<label class="col-xs-2"><input readonly class="l3 sellable_ticket  sys_gen form-control"></input></label>
 					<label class="col-xs-2"><input name="l3_price" step="any"
 												   class="money  form-control"></label>
 					<label class="col-xs-2"><input readonly class="money l3  gross  sys_gen form-control"
@@ -218,8 +197,7 @@ var venue_opt = print_option_fr_collection('venues');
 												   class="  form-control"></label>
 					<label class="col-xs-1"><input name="l4_kill" step="any"
 												   class="  form-control"></label>
-					<label class="col-xs-2"><input readonly class="l4 sellable_ticket  sys_gen form-control"
-						></input></label>
+					<label class="col-xs-2"><input readonly class="l4 sellable_ticket  sys_gen form-control"></input></label>
 					<label class="col-xs-2"><input name="l4_price" step="any"
 												   class="money  form-control"></label>
 					<label class="col-xs-2"><input readonly class="money l4  gross  sys_gen form-control"
@@ -231,8 +209,7 @@ var venue_opt = print_option_fr_collection('venues');
 												   class="  form-control"></label>
 					<label class="col-xs-1"><input name="l5_kill" step="any"
 												   class="  form-control"></label>
-					<label class="col-xs-2"><input readonly class="l5 sellable_ticket  sys_gen form-control"
-						></input></label>
+					<label class="col-xs-2"><input readonly class="l5 sellable_ticket  sys_gen form-control"></input></label>
 					<label class="col-xs-2"><input name="l5_price" step="any"
 												   class="money  form-control"></label>
 					<label class="col-xs-2"><input readonly class="money l5  gross  sys_gen form-control"
@@ -375,37 +352,22 @@ var venue_opt = print_option_fr_collection('venues');
 				<div class="row">
 					<label class="label_wo_input col-xs-3">Support Artist 1</label>
 					<span class="col-xs-7"><select name="support_artist_1_id" class="form-control">
-							<% if (typeof(app.collections.artists) !== "undefined") { %>
-								<% _.each(app.collections.artists.models, function (an_artist) { %>
-								<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
-								<% }); %>
-							<% } %>
+							<%= artist_opt %>
 						</select></span>
-					<span class="col-xs-2"><input name="support_artist_1_total"
-												  step="any" class="money  form-control"></span>
+					<span class="col-xs-2"><input name="support_artist_1_total" step="any" class="money  form-control"></span>
 				</div>
 				<div class="row">
 					<label class="label_wo_input col-xs-3">Support Artist 2</label>
-					<span class="col-xs-7"><select name="support_artist_2_id"
-												   class="form-control">
-							<% if (typeof(app.collections.artists) !== "undefined") { %>
-								<% _.each(app.collections.artists.models, function (an_artist) { %>
-								<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
-								<% }); %>
-							<% } %>
+					<span class="col-xs-7"><select name="support_artist_2_id" class="form-control">
+							<%= artist_opt %>
 						</select></span>
-					<span class="col-xs-2"><input name="support_artist_2_total"
-												  step="any" class="money  form-control"></span>
+					<span class="col-xs-2"><input name="support_artist_2_total" step="any" class="money  form-control"></span>
 				</div>
 				<div class="row">
 					<label class="label_wo_input col-xs-3">Support Artist 3</label>
 					<span class="col-xs-7"><select name="support_artist_3_id"
 												   class="form-control">
-							<% if (typeof(app.collections.artists) !== "undefined") { %>
-								<% _.each(app.collections.artists.models, function (an_artist) { %>
-								<option value="<%= an_artist.get('id') %>"><%= an_artist.getFullName() %></option>
-								<% }); %>
-							<% } %>
+							<%= artist_opt %>
 						</select></span>
 					<span class="col-xs-2"><input name="support_artist_3_total"
 												  step="any" class="money  form-control"></span>
@@ -427,14 +389,10 @@ var venue_opt = print_option_fr_collection('venues');
 			<h4>House</h4>
 			<div class="form-group">
 				<div class="row">
-					<label class="col-xs-4">House Nut Total<input name="housenut_total" step="any"
-
-																  class="money  form-control"></label>
+					<label class="col-xs-4">House Nut Total<input name="housenut_total" step="any" class="money  form-control"></label>
 				</div>
 				<div class="row">
-					<label class="col-xs-12">House Nut Expenses<textarea name="housenut_expense"
-
-																		 class="form-control"></textarea>
+					<label class="col-xs-12">House Nut Expenses<textarea name="housenut_expense" class="form-control"></textarea>
 					</label>
 				</div>
 			</div>

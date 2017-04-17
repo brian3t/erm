@@ -1,3 +1,6 @@
+<%
+var comp_opt = print_option_fr_collection('companies');
+%>
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>" data-toggle="validator" role="form">
 
 	<div class="form-group">
@@ -299,14 +302,8 @@
 												value="<%= owner %>"
 												class="form-control">
 			</label>
-			<label class="col-xs-6">Venue Manager<select name="company_id" disabled
-														 value="<%= company_id %>"
-														 class="form-control">
-					<% if (typeof(app.collections.companies) !== "undefined") { %>
-					<% _.each(app.collections.companies.models, function (a_company) { %>
-					<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
-					<% }); %>
-					<% } %>
+			<label class="col-xs-6">Venue Manager<select name="company_id" disabled value="<%= company_id %>" class="form-control">
+					<%= comp_opt %>
 				</select>
 			</label>
 		</div>
@@ -340,11 +337,7 @@
 			<label class="col-xs-6">Primary Ticketing Company<select name="primary_ticketing_company_id" disabled
 																	 value="<%= primary_ticketing_company_id %>"
 																	 class="form-control">
-					<% if (typeof(app.collections.companies) !== "undefined") { %>
-					<% _.each(app.collections.companies.models, function (a_company) { %>
-					<option value="<%= a_company.get('id') %>"><%= a_company.get('name') %></option>
-					<% }); %>
-					<% } %>
+					<%= comp_opt %>
 				</select>
 			</label>
 			<label class="col-xs-6">Other Seating Capacity<input name="other_seating_capacity" disabled type="number"
