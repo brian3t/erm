@@ -12,6 +12,12 @@ var promoter_opt = print_option_fr_collection('promoters');
 var venue_opt = print_option_fr_collection('venues');
 var artist_opt = print_option_fr_collection('artists', 'fullname');
 var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
+if (_.isObject(created_at)){
+    created_at = '';
+}
+if (_.isObject(updated_at)){
+	updated_at = '';
+}
 
 function recalculate_offer_values() {
 	l1_price = parseFloatOr0(l1_price);
