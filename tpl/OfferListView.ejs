@@ -1,3 +1,9 @@
+<%
+var comp_opt = print_option_fr_collection('companies');
+var agent_opt = print_option_fr_collection('agents');
+var promoter_opt = print_option_fr_collection('promoters');
+var venue_opt = print_option_fr_collection('venues');
+ %>
 <div class="col-sm-2 col-xs-12">
 	<button type="button" class="btn btn-sm btn-primary toggle_create_mode create"><span class="glyphicon glyphicon-plus"></span> Create new Offer
 	</button>
@@ -27,16 +33,12 @@
 				</div>
 				<div class="row">
 					<label class="col-xs-4">Agency<select name="agency_id"  class="form-control">
-							<% print_option_fr_collection('companies'); %>
+							<%= comp_opt %>
 						</select>
 					</label>
 
 					<label class="col-xs-4">Agent<select name="agent_id" class="form-control">
-							<% if (typeof(app.collections.agents) !== "undefined") { %>
-								<% _.each(app.collections.agents.models, function (an_agent) { %>
-								<option value="<%= an_agent.get('id') %>"><%= an_agent.get('name') %></option>
-								<% }); %>
-							<% } %>
+							<%= agent_opt %>
 
 						</select>
 					</label>
@@ -78,20 +80,12 @@
 					<label class="col-xs-6">Co-Pro Promoter<select name="copro_promoter_id"
 
 																   class="form-control">
-							<% if (typeof(app.collections.promoters) !== "undefined") { %>
-								<% _.each(app.collections.promoters.models, function (a_promoter) { %>
-								<option value="<%= a_promoter.get('id') %>"><%= a_promoter.get('name') %></option>
-								<% }); %>
-							<% } %>
+							<%= promoter_opt %>
 
 						</select>
 					</label>
 					<label class="col-xs-6">Co-Pro Venue<select name="copro_venue_id" class="form-control">
-							<% if (typeof(app.collections.venues) !== "undefined") { %>
-								<% _.each(app.collections.venues.models, function (a_venue) { %>
-								<option value="<%= a_venue.get('id') %>"><%= a_venue.get('name') %></option>
-								<% }); %>
-							<% } %>
+							<%= venue_opt %>
 						</select>
 					</label>
 				</div>

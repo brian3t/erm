@@ -15,11 +15,12 @@ app.views.SettlementListView = Backbone.View.extend({
     switchery: {},
 
     initialize: function () {
-        this.SettlementCollection = app.collections.Settlement.extend({
+        /*this.SettlementCollection = app.collections.Settlement.extend({
             url: config.restUrl + 'settlement?' + $.param({
                 'company_id': app.cur_user.get('company').get('id')
             })
-        });
+        });*/
+        this.SettlementCollection = app.collections.Settlement;
         this.collection = new this.SettlementCollection();
         this.collection.fetch();
         this.settlement_search_list_view = new app.views.SettlementSearchListView({collection: this.collection});

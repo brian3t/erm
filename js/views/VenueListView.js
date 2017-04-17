@@ -15,9 +15,10 @@ app.views.VenueListView = Backbone.View.extend({
     switchery: {},
 
     initialize: function () {
-        this.VenueCollection = app.collections.Venue_collection.extend({
+        /*this.VenueCollection = app.collections.Venue_collection.extend({
             url: config.restUrl + 'venue?' + $.param({'company_id': app.cur_user.get('company').get('id')})
-        });
+        });*/
+        this.VenueCollection = app.collections.Venue_collection;
         this.collection = new this.VenueCollection();
         this.collection.fetch();
         this.venue_search_list_view = new app.views.VenueSearchListView({collection: this.collection});
