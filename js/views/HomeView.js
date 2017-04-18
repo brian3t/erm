@@ -34,6 +34,7 @@ app.views.HomeView = Backbone.View.extend({
                     // app.cur_profile.set(resp.profile);
                     var jqxhr = app.cur_user.fetch({
                         success: function () {
+                            app.prepare_collections();
                             app.navbar_view = new app.views.NavbarView({model: app.cur_user});
                             // app.router.dashboard();
                             if (!IS_LOCAL) {
@@ -47,7 +48,7 @@ app.views.HomeView = Backbone.View.extend({
 
                 } else {
                     var message = 'Oh nose! That password just won\'t work';
-                    if (resp.message == 'Username does not exist') {
+                    if (resp.message === 'Username does not exist') {
                         message = 'This email does not exist in our system';
                     }
                     $('#password').next('div.help-block').html('<ul class="list-unstyled"><li>' + message + '</li></ul>')
