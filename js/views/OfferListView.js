@@ -15,10 +15,10 @@ app.views.OfferListView = Backbone.BBFormView.extend({
     switchery: {},
 
     initialize: function () {
-        // this.OfferCollection = app.collections.Offer.extend({
-        //     url: config.restUrl + 'offer/search_by_company?' + $.param({'company_id': app.cur_user.get('company').get('id')})
-        // });
-        this.OfferCollection = app.collections.Offer;
+        this.OfferCollection = app.collections.Offer.extend({
+            url: config.restUrl + 'offer?' + $.param({'belong_company_id': app.cur_user.get('company').get('id')})
+        });
+        // this.OfferCollection = app.collections.Offer;
         this.collection = new this.OfferCollection();
         this.collection.fetch();
         this.offer_search_list_view = new app.views.OfferSearchListView({collection: this.collection});

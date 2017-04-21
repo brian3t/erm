@@ -56,6 +56,11 @@ var backboneInit = function () {
                         app.router.navigate('#', {trigger: true});
                     }
                 }, 'json');
+            } else {
+                if (!Backbone.History.started) {
+                    Backbone.history.start();
+                }
+                app.router.navigate('#', {trigger: true});
             }
         }
         else {
@@ -83,22 +88,22 @@ $.extend(app, {
         /** @var app.models.User app.cur_user **/
         var company_id = app.cur_user.get('company').get('id');
         /** @var Backbone.Model company **/
-        var company_param = {company_id: company_id};
-        //todob temp disable
-        company_param = {};
+        var company_param = {belong_company_id: company_id};
 
         app.collections.companies = new app.collections.Company();
-        app.collections.companies.url = config.restUrl + 'company?' + $.param({'belong_company_id': company_id});//param here to get agents only
+        app.collections.companies.url = config.restUrl + 'company?' + $.param(company_param);
         app.collections.companies.fetch();
         app.collections.offers = new app.collections.Offer();
+        app.collections.offers.url = config.restUrl + 'offer?' + $.param(company_param);
         app.collections.offers.fetch();
         app.collections.settlements = new app.collections.Settlement();
+        app.collections.settlements.url = config.restUrl + 'settlement?' + $.param(company_param);
         app.collections.settlements.fetch();
         app.collections.agents = new app.collections.User_collection();
         app.collections.agents.url = config.restUrl + 'user?' + $.param($.extend({'line_of_business': 'Agency'}, company_param));//param here to get agents only
         app.collections.agents.fetch();
         app.collections.promoters = new app.collections.Company();
-        app.collections.promoters.url = config.restUrl + 'company?' + $.param({'line_of_business': 'Promotion'});//param here to get promoters only
+        app.collections.promoters.url = config.restUrl + 'company?' + $.param($.extend({'line_of_business': 'Promotion'}, company_param));//param here to get promoters only
         app.collections.promoters.fetch();
         app.collections.venues = new app.collections.Venue_collection();
         app.collections.venues.url = config.restUrl + 'venue?' + $.param(company_param);
@@ -107,7 +112,7 @@ $.extend(app, {
         app.collections.artists.url = config.restUrl + 'user?' + $.param($.extend({'line_of_business': ['Artist', 'Talent']}, company_param));//param here to get agents only
         app.collections.artists.fetch();
         app.collections.ticketing_companies = new app.collections.Company();
-        app.collections.ticketing_companies.url = config.restUrl + 'company?' + $.param($.extend({'line_of_business': 'Ticketing'}, {}));//param here to get agents only
+        app.collections.ticketing_companies.url = config.restUrl + 'company?' + $.param($.extend({'line_of_business': 'Ticketing'}, company_param));//param here to get ticketing only
         app.collections.ticketing_companies.fetch();
     }
 });

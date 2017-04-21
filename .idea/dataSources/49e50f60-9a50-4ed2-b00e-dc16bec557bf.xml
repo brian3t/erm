@@ -1,1415 +1,1547 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="erm@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
     <root id="1"/>
     <schema id="2" parent="1" name="erm">
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
     <schema id="3" parent="1" name="information_schema"/>
-    <table id="4" parent="2" name="company"/>
-    <table id="5" parent="2" name="migration"/>
-    <table id="6" parent="2" name="offer"/>
-    <table id="7" parent="2" name="profile"/>
-    <table id="8" parent="2" name="settlement"/>
-    <table id="9" parent="2" name="social_account"/>
-    <table id="10" parent="2" name="token"/>
-    <table id="11" parent="2" name="user"/>
-    <table id="12" parent="2" name="venue"/>
-    <column id="13" parent="4" name="id">
+    <schema id="4" parent="1" name="erm_save"/>
+    <table id="5" parent="2" name="company"/>
+    <table id="6" parent="2" name="company_user"/>
+    <table id="7" parent="2" name="migration"/>
+    <table id="8" parent="2" name="offer"/>
+    <table id="9" parent="2" name="profile"/>
+    <table id="10" parent="2" name="settlement"/>
+    <table id="11" parent="2" name="social_account"/>
+    <table id="12" parent="2" name="token"/>
+    <table id="13" parent="2" name="user"/>
+    <table id="14" parent="2" name="venue"/>
+    <column id="15" parent="5" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="14" parent="4" name="name">
+    <column id="16" parent="5" name="name">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="15" parent="4" name="website">
+    <column id="17" parent="5" name="website">
       <Position>3</Position>
       <DataType>varchar(200)|0</DataType>
     </column>
-    <column id="16" parent="4" name="headline">
+    <column id="18" parent="5" name="headline">
       <Position>4</Position>
       <DataType>varchar(400)|0</DataType>
     </column>
-    <column id="17" parent="4" name="industry">
+    <column id="19" parent="5" name="industry">
       <Position>5</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="18" parent="4" name="phone_number">
+    <column id="20" parent="5" name="phone_number">
       <Position>6</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="19" parent="4" name="address1">
+    <column id="21" parent="5" name="address1">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="20" parent="4" name="address2">
+    <column id="22" parent="5" name="address2">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="21" parent="4" name="city">
+    <column id="23" parent="5" name="city">
       <Position>9</Position>
       <DataType>varchar(60)|0</DataType>
     </column>
-    <column id="22" parent="4" name="state">
+    <column id="24" parent="5" name="state">
       <Position>10</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="23" parent="4" name="postal_code">
+    <column id="25" parent="5" name="postal_code">
       <Position>11</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="24" parent="4" name="num_of_employee">
+    <column id="26" parent="5" name="num_of_employee">
       <Position>12</Position>
       <DataType>varchar(30)|0</DataType>
       <DefaultExpression>&apos;Not sure&apos;</DefaultExpression>
     </column>
-    <column id="25" parent="4" name="annual_revenue">
+    <column id="27" parent="5" name="annual_revenue">
       <Position>13</Position>
       <DataType>int(12)|0</DataType>
     </column>
-    <column id="26" parent="4" name="facebook_fans">
+    <column id="28" parent="5" name="facebook_fans">
       <Position>14</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="27" parent="4" name="twitter_handle">
+    <column id="29" parent="5" name="twitter_handle">
       <Position>15</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="28" parent="4" name="twitter_followers">
+    <column id="30" parent="5" name="twitter_followers">
       <Position>16</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="29" parent="4" name="timezone">
+    <column id="31" parent="5" name="timezone">
       <Position>17</Position>
       <DataType>enum(&apos;PST&apos;, &apos;CST&apos;, &apos;MST&apos;, &apos;EST&apos;, &apos;UTC&apos;)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;PST&apos;</DefaultExpression>
     </column>
-    <column id="30" parent="4" name="description">
+    <column id="32" parent="5" name="description">
       <Position>18</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="31" parent="4" name="line_of_business">
+    <column id="33" parent="5" name="line_of_business">
       <Position>19</Position>
       <DataType>enum(&apos;Agency&apos;, &apos;Artist&apos;, &apos;Business Management&apos;, &apos;Client&apos;, &apos;Consulting&apos;, &apos;Editing&apos;, &apos;Management&apos;, &apos;Merchandise&apos;, &apos;Network&apos;, &apos;Personal&apos;, &apos;Photography&apos;, &apos;Production Company&apos;, &apos;Promotion&apos;, &apos;Public Relations&apos;, &apos;Studio&apos;, &apos;Ticketing&apos;, &apos;Tour Management&apos;, &apos;Venue&apos;, &apos;Other&apos;)|0</DataType>
     </column>
-    <column id="32" parent="4" name="general_email">
+    <column id="34" parent="5" name="general_email">
       <Position>20</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="33" parent="4" name="country">
+    <column id="35" parent="5" name="country">
       <Position>21</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="34" parent="4" name="work_phone">
+    <column id="36" parent="5" name="work_phone">
       <Position>22</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="35" parent="4" name="fax">
+    <column id="37" parent="5" name="fax">
       <Position>23</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="36" parent="4" name="webpage">
+    <column id="38" parent="5" name="webpage">
       <Position>24</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="37" parent="4" name="facebook">
+    <column id="39" parent="5" name="facebook">
       <Position>25</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="38" parent="4" name="linkedin_company_page">
+    <column id="40" parent="5" name="linkedin_company_page">
       <Position>26</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="39" parent="4" name="yahoo">
+    <column id="41" parent="5" name="yahoo">
       <Position>27</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="40" parent="4" name="twitter">
+    <column id="42" parent="5" name="twitter">
       <Position>28</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="41" parent="4" name="instagram">
+    <column id="43" parent="5" name="instagram">
       <Position>29</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="42" parent="4" name="google">
+    <column id="44" parent="5" name="google">
       <Position>30</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="43" parent="4" name="note">
+    <column id="45" parent="5" name="note">
       <Position>31</Position>
       <DataType>varchar(5000)|0</DataType>
     </column>
-    <key id="44" parent="4" name="PRIMARY">
+    <column id="46" parent="5" name="belong_company_id">
+      <Position>32</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="47" parent="5" name="company_created_by_index">
+      <ColNames>belong_company_id</ColNames>
+    </index>
+    <key id="48" parent="5" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="45" parent="5" name="version">
-      <Position>1</Position>
-      <DataType>varchar(180)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="46" parent="5" name="apply_time">
-      <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <key id="47" parent="5" name="PRIMARY">
-      <ColNames>version</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="48" parent="6" name="id">
+    <foreign-key id="49" parent="5" name="company_id_fk">
+      <ColNames>belong_company_id</ColNames>
+      <RefSchemaName>erm</RefSchemaName>
+      <RefTableName>company</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="50" parent="6" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="49" parent="6" name="user_id">
+    <column id="51" parent="6" name="company_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="6" name="user_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="6" name="role">
+      <Position>4</Position>
+      <DataType>enum(&apos;administrator&apos;, &apos;member&apos;, &apos;client&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;member&apos;</DefaultExpression>
+    </column>
+    <index id="54" parent="6" name="company_id">
+      <ColNames>company_id
+user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="55" parent="6" name="user_id">
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="56" parent="6" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="57" parent="6" name="company_id">
+      <ColNames>company_id
+user_id</ColNames>
+      <UnderlyingIndexName>company_id</UnderlyingIndexName>
+    </key>
+    <key id="58" parent="6" name="user_id">
+      <ColNames>user_id</ColNames>
+      <UnderlyingIndexName>user_id</UnderlyingIndexName>
+    </key>
+    <foreign-key id="59" parent="6" name="company_user_ibfk_1">
+      <ColNames>company_id</ColNames>
+      <RefSchemaName>erm</RefSchemaName>
+      <RefTableName>company</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="60" parent="6" name="company_user_ibfk_2">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>erm</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="61" parent="7" name="version">
+      <Position>1</Position>
+      <DataType>varchar(180)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="7" name="apply_time">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="63" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>version</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="64" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="65" parent="8" name="user_id">
       <Position>2</Position>
       <Comment>Booked by</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="50" parent="6" name="offer_type">
+    <column id="66" parent="8" name="offer_type">
       <Position>3</Position>
       <DataType>enum(&apos;Icon&apos;, &apos;Co-Pro Promoter&apos;, &apos;Co-Pro Venue&apos;, &apos;3rd Party&apos;, &apos;&apos;)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="51" parent="6" name="copro_promoter_id">
+    <column id="67" parent="8" name="copro_promoter_id">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="52" parent="6" name="copro_venue_id">
+    <column id="68" parent="8" name="copro_venue_id">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="53" parent="6" name="event_id">
+    <column id="69" parent="8" name="event_id">
       <Position>6</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="54" parent="6" name="show_number">
+    <column id="70" parent="8" name="show_number">
       <Position>7</Position>
       <DataType>tinyint(3) unsigned|0</DataType>
     </column>
-    <column id="55" parent="6" name="show_total_num">
+    <column id="71" parent="8" name="show_total_num">
       <Position>8</Position>
       <DataType>tinyint(3) unsigned|0</DataType>
     </column>
-    <column id="56" parent="6" name="agency_id">
+    <column id="72" parent="8" name="agency_id">
       <Position>9</Position>
       <Comment>			</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="57" parent="6" name="agent_id">
+    <column id="73" parent="8" name="agent_id">
       <Position>10</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="58" parent="6" name="status">
+    <column id="74" parent="8" name="status">
       <Position>11</Position>
-      <DataType>enum(&apos;New&apos;, &apos;Submitted&apos;, &apos;Pending&apos;, &apos;Reviewed&apos;, &apos;Declined&apos;, &apos;Confirmed&apos;, &apos;Revised&apos;, &apos;Signed&apos;, &apos;Unsubmitted&apos;)|0</DataType>
+      <DataType>enum(&apos;New&apos;, &apos;Submitted&apos;, &apos;Pending&apos;, &apos;Reviewed&apos;, &apos;Declined&apos;, &apos;Confirmed&apos;, &apos;Revised&apos;, &apos;Signed&apos;, &apos;Unsubmitted&apos;, &apos;&apos;)|0</DataType>
       <DefaultExpression>&apos;New&apos;</DefaultExpression>
     </column>
-    <column id="59" parent="6" name="created_at">
+    <column id="75" parent="8" name="created_at">
       <Position>12</Position>
       <DataType>datetime|0</DataType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="60" parent="6" name="updated_at">
+    <column id="76" parent="8" name="updated_at">
       <Position>13</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="61" parent="6" name="artist_id">
+    <column id="77" parent="8" name="artist_id">
       <Position>14</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="62" parent="6" name="venue_id">
+    <column id="78" parent="8" name="venue_id">
       <Position>15</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="63" parent="6" name="show_date">
+    <column id="79" parent="8" name="show_date">
       <Position>16</Position>
       <DataType>date|0</DataType>
     </column>
-    <column id="64" parent="6" name="is_tbd_date">
+    <column id="80" parent="8" name="is_tbd_date">
       <Position>17</Position>
       <DataType>tinyint(1) unsigned|0</DataType>
     </column>
-    <column id="65" parent="6" name="show_type">
+    <column id="81" parent="8" name="show_type">
       <Position>18</Position>
       <DataType>enum(&apos;Private&apos;, &apos;Public&apos;, &apos;College&apos;, &apos;College - Private&apos;, &apos;Casino&apos;, &apos;Fair&apos;, &apos;Festival&apos;, &apos;&apos;)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="66" parent="6" name="doors">
+    <column id="82" parent="8" name="doors">
       <Position>19</Position>
       <DataType>time|0</DataType>
     </column>
-    <column id="67" parent="6" name="showtime">
+    <column id="83" parent="8" name="showtime">
       <Position>20</Position>
       <DataType>time|0</DataType>
     </column>
-    <column id="68" parent="6" name="notes">
+    <column id="84" parent="8" name="notes">
       <Position>21</Position>
       <DataType>varchar(2000)|0</DataType>
     </column>
-    <column id="69" parent="6" name="l1_gross_ticket">
+    <column id="85" parent="8" name="l1_gross_ticket">
       <Position>22</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="70" parent="6" name="l1_kill">
+    <column id="86" parent="8" name="l1_kill">
       <Position>23</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="71" parent="6" name="l1_price">
+    <column id="87" parent="8" name="l1_price">
       <Position>24</Position>
       <DataType>decimal(8)|0</DataType>
     </column>
-    <column id="72" parent="6" name="l2_gross_ticket">
+    <column id="88" parent="8" name="l2_gross_ticket">
       <Position>25</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="73" parent="6" name="l2_kill">
+    <column id="89" parent="8" name="l2_kill">
       <Position>26</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="74" parent="6" name="l2_price">
+    <column id="90" parent="8" name="l2_price">
       <Position>27</Position>
       <DataType>decimal(8)|0</DataType>
     </column>
-    <column id="75" parent="6" name="l3_gross_ticket">
+    <column id="91" parent="8" name="l3_gross_ticket">
       <Position>28</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="76" parent="6" name="l3_kill">
+    <column id="92" parent="8" name="l3_kill">
       <Position>29</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="77" parent="6" name="l3_price">
+    <column id="93" parent="8" name="l3_price">
       <Position>30</Position>
       <DataType>decimal(8)|0</DataType>
     </column>
-    <column id="78" parent="6" name="l4_gross_ticket">
+    <column id="94" parent="8" name="l4_gross_ticket">
       <Position>31</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="79" parent="6" name="l4_kill">
+    <column id="95" parent="8" name="l4_kill">
       <Position>32</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="80" parent="6" name="l4_price">
+    <column id="96" parent="8" name="l4_price">
       <Position>33</Position>
       <DataType>decimal(8)|0</DataType>
     </column>
-    <column id="81" parent="6" name="l5_gross_ticket">
+    <column id="97" parent="8" name="l5_gross_ticket">
       <Position>34</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="82" parent="6" name="l5_kill">
+    <column id="98" parent="8" name="l5_kill">
       <Position>35</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="83" parent="6" name="l5_price">
+    <column id="99" parent="8" name="l5_price">
       <Position>36</Position>
       <DataType>decimal(8)|0</DataType>
     </column>
-    <column id="84" parent="6" name="on_sale_date">
+    <column id="100" parent="8" name="on_sale_date">
       <Position>37</Position>
       <DataType>date|0</DataType>
     </column>
-    <column id="85" parent="6" name="is_on_sale_date_tbd">
+    <column id="101" parent="8" name="is_on_sale_date_tbd">
       <Position>38</Position>
       <DataType>tinyint(1) unsigned|0</DataType>
     </column>
-    <column id="86" parent="6" name="ticketing_company_id">
+    <column id="102" parent="8" name="ticketing_company_id">
       <Position>39</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="87" parent="6" name="seating_plan">
+    <column id="103" parent="8" name="seating_plan">
       <Position>40</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="88" parent="6" name="tax">
+    <column id="104" parent="8" name="tax">
       <Position>41</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="89" parent="6" name="tax_note">
+    <column id="105" parent="8" name="tax_note">
       <Position>42</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="90" parent="6" name="tax_per_ticket">
+    <column id="106" parent="8" name="tax_per_ticket">
       <Position>43</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="91" parent="6" name="facility_fee">
+    <column id="107" parent="8" name="facility_fee">
       <Position>44</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="92" parent="6" name="facility_fee_note">
+    <column id="108" parent="8" name="facility_fee_note">
       <Position>45</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="93" parent="6" name="artist_guarantee">
+    <column id="109" parent="8" name="artist_guarantee">
       <Position>46</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="94" parent="6" name="artist_deposit">
+    <column id="110" parent="8" name="artist_deposit">
       <Position>47</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="95" parent="6" name="artist_offer_type">
+    <column id="111" parent="8" name="artist_offer_type">
       <Position>48</Position>
       <DataType>enum(&apos;Guarantee&apos;, &apos;Split&apos;, &apos;Plus&apos;, &apos;Vs.&apos;, &apos;Backend&apos;, &apos;&apos;)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="96" parent="6" name="is_artist_production_buyout">
+    <column id="112" parent="8" name="is_artist_production_buyout">
       <Position>49</Position>
       <DataType>tinyint(1)|0</DataType>
     </column>
-    <column id="97" parent="6" name="artist_split">
+    <column id="113" parent="8" name="artist_split">
       <Position>50</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="98" parent="6" name="promoter_profit">
+    <column id="114" parent="8" name="promoter_profit">
       <Position>51</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="99" parent="6" name="expense_application">
+    <column id="115" parent="8" name="expense_application">
       <Position>52</Position>
       <DataType>enum(&apos;Net&apos;, &apos;Gross&apos;, &apos;&apos;)|0</DataType>
     </column>
-    <column id="100" parent="6" name="sponsorship">
+    <column id="116" parent="8" name="sponsorship">
       <Position>53</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="101" parent="6" name="radius_clause">
+    <column id="117" parent="8" name="radius_clause">
       <Position>54</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="102" parent="6" name="radius_clause_metric">
+    <column id="118" parent="8" name="radius_clause_metric">
       <Position>55</Position>
       <DataType>enum(&apos;Miles&apos;, &apos;KM&apos;, &apos;&apos;)|0</DataType>
     </column>
-    <column id="103" parent="6" name="pre_show_lockout">
+    <column id="119" parent="8" name="pre_show_lockout">
       <Position>56</Position>
       <DataType>smallint(6)|0</DataType>
     </column>
-    <column id="104" parent="6" name="pre_show_lockout_unit">
+    <column id="120" parent="8" name="pre_show_lockout_unit">
       <Position>57</Position>
       <DataType>enum(&apos;Days&apos;, &apos;Months&apos;, &apos;&apos;)|0</DataType>
     </column>
-    <column id="105" parent="6" name="post_show_lockout">
+    <column id="121" parent="8" name="post_show_lockout">
       <Position>58</Position>
       <DataType>smallint(6)|0</DataType>
     </column>
-    <column id="106" parent="6" name="post_show_lockout_unit">
+    <column id="122" parent="8" name="post_show_lockout_unit">
       <Position>59</Position>
       <DataType>enum(&apos;Days&apos;, &apos;Months&apos;, &apos;&apos;)|0</DataType>
     </column>
-    <column id="107" parent="6" name="artist_deal_note">
+    <column id="123" parent="8" name="artist_deal_note">
       <Position>60</Position>
       <DataType>varchar(3000)|0</DataType>
     </column>
-    <column id="108" parent="6" name="support_artist_1_id">
+    <column id="124" parent="8" name="support_artist_1_id">
       <Position>61</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="109" parent="6" name="support_artist_1_total">
+    <column id="125" parent="8" name="support_artist_1_total">
       <Position>62</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="110" parent="6" name="support_artist_2_id">
+    <column id="126" parent="8" name="support_artist_2_id">
       <Position>63</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="111" parent="6" name="support_artist_2_total">
+    <column id="127" parent="8" name="support_artist_2_total">
       <Position>64</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="112" parent="6" name="support_artist_3_id">
+    <column id="128" parent="8" name="support_artist_3_id">
       <Position>65</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="113" parent="6" name="support_artist_3_total">
+    <column id="129" parent="8" name="support_artist_3_total">
       <Position>66</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="114" parent="6" name="general_expense">
+    <column id="130" parent="8" name="general_expense">
       <Position>67</Position>
       <DataType>varchar(8000)|0</DataType>
+      <DefaultExpression>&apos;{}&apos;</DefaultExpression>
     </column>
-    <column id="115" parent="6" name="production_expense">
+    <column id="131" parent="8" name="production_expense">
       <Position>68</Position>
       <DataType>varchar(8000)|0</DataType>
+      <DefaultExpression>&apos;{}&apos;</DefaultExpression>
     </column>
-    <column id="116" parent="6" name="housenut_total">
+    <column id="132" parent="8" name="housenut_total">
       <Position>69</Position>
       <DataType>decimal(8,2)|0</DataType>
     </column>
-    <column id="117" parent="6" name="housenut_expense">
+    <column id="133" parent="8" name="housenut_expense">
       <Position>70</Position>
       <DataType>varchar(3000)|0</DataType>
     </column>
-    <column id="118" parent="6" name="general_expense_note">
+    <column id="134" parent="8" name="general_expense_note">
       <Position>71</Position>
       <DataType>varchar(3000)|0</DataType>
     </column>
-    <column id="119" parent="6" name="variable_expense">
+    <column id="135" parent="8" name="variable_expense">
       <Position>72</Position>
       <DataType>varchar(8000)|0</DataType>
+      <DefaultExpression>&apos;{}&apos;</DefaultExpression>
     </column>
-    <column id="120" parent="6" name="merch_buyout_venue_sell">
+    <column id="136" parent="8" name="merch_buyout_venue_sell">
       <Position>73</Position>
       <DataType>decimal(8,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <column id="121" parent="6" name="merch_buyout_artist_sell">
+    <column id="137" parent="8" name="merch_buyout_artist_sell">
       <Position>74</Position>
       <DataType>decimal(8,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <column id="122" parent="6" name="merch_artist_split_venue_sell">
+    <column id="138" parent="8" name="merch_artist_split_venue_sell">
       <Position>75</Position>
       <DataType>decimal(8,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <column id="123" parent="6" name="merch_artist_split_artist_sell">
+    <column id="139" parent="8" name="merch_artist_split_artist_sell">
       <Position>76</Position>
       <DataType>decimal(8,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <column id="124" parent="6" name="merch_artist_split_media_venue_sell">
+    <column id="140" parent="8" name="merch_artist_split_media_venue_sell">
       <Position>79</Position>
       <DataType>decimal(8,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <column id="125" parent="6" name="merch_artist_split_media_artist_sell">
+    <column id="141" parent="8" name="merch_artist_split_media_artist_sell">
       <Position>80</Position>
       <DataType>decimal(8,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <column id="126" parent="6" name="merch_note">
+    <column id="142" parent="8" name="merch_note">
       <Position>83</Position>
       <DataType>varchar(3000)|0</DataType>
     </column>
-    <column id="127" parent="6" name="artist_comp">
+    <column id="143" parent="8" name="artist_comp">
       <Position>84</Position>
       <DataType>mediumint(8) unsigned|0</DataType>
     </column>
-    <column id="128" parent="6" name="artist_comp_note">
+    <column id="144" parent="8" name="artist_comp_note">
       <Position>85</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="129" parent="6" name="production_comp">
+    <column id="145" parent="8" name="production_comp">
       <Position>86</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="130" parent="6" name="production_comp_note">
+    <column id="146" parent="8" name="production_comp_note">
       <Position>87</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="131" parent="6" name="promotional_comp">
+    <column id="147" parent="8" name="promotional_comp">
       <Position>88</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="132" parent="6" name="promotional_comp_note">
+    <column id="148" parent="8" name="promotional_comp_note">
       <Position>89</Position>
       <Comment>															</Comment>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="133" parent="6" name="house_comp">
+    <column id="149" parent="8" name="house_comp">
       <Position>90</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="134" parent="6" name="house_comp_note">
+    <column id="150" parent="8" name="house_comp_note">
       <Position>91</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="135" parent="6" name="kill">
+    <column id="151" parent="8" name="kill">
       <Position>92</Position>
       <DataType>mediumint(9)|0</DataType>
     </column>
-    <column id="136" parent="6" name="kill_note">
+    <column id="152" parent="8" name="kill_note">
       <Position>93</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="137" parent="6" name="comp_kill_note">
+    <column id="153" parent="8" name="comp_kill_note">
       <Position>94</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="138" parent="6" name="merch_venue_split_venue_sell">
+    <column id="154" parent="8" name="merch_venue_split_venue_sell">
       <Position>77</Position>
       <DataType>decimal(10,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <column id="139" parent="6" name="merch_venue_split_artist_sell">
+    <column id="155" parent="8" name="merch_venue_split_artist_sell">
       <Position>78</Position>
       <DataType>decimal(10,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <column id="140" parent="6" name="ascap_0_2500">
+    <column id="156" parent="8" name="ascap_0_2500">
       <Position>95</Position>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="141" parent="6" name="ascap_2501_5000">
+    <column id="157" parent="8" name="ascap_2501_5000">
       <Position>96</Position>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="142" parent="6" name="ascap_5001_10000">
+    <column id="158" parent="8" name="ascap_5001_10000">
       <Position>97</Position>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="143" parent="6" name="ascap_10001_25000">
+    <column id="159" parent="8" name="ascap_10001_25000">
       <Position>98</Position>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="144" parent="6" name="ascap_25001_x">
+    <column id="160" parent="8" name="ascap_25001_x">
       <Position>99</Position>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="145" parent="6" name="bmi_0_2500">
+    <column id="161" parent="8" name="bmi_0_2500">
       <Position>100</Position>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="146" parent="6" name="bmi_2501_5000">
+    <column id="162" parent="8" name="bmi_2501_5000">
       <Position>101</Position>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="147" parent="6" name="bmi_5001_10000">
+    <column id="163" parent="8" name="bmi_5001_10000">
       <Position>102</Position>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="148" parent="6" name="bmi_10001_25000">
+    <column id="164" parent="8" name="bmi_10001_25000">
       <Position>103</Position>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="149" parent="6" name="bmi_25001_x">
+    <column id="165" parent="8" name="bmi_25001_x">
       <Position>104</Position>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="150" parent="6" name="merch_venue_split_media_venue_sell">
+    <column id="166" parent="8" name="merch_venue_split_media_venue_sell">
       <Position>81</Position>
       <DataType>decimal(10,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <column id="151" parent="6" name="merch_venue_split_media_artist_sell">
+    <column id="167" parent="8" name="merch_venue_split_media_artist_sell">
       <Position>82</Position>
       <DataType>decimal(10,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <index id="152" parent="6" name="fk_offer_1_idx">
+    <column id="168" parent="8" name="belong_company_id">
+      <Position>105</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="169" parent="8" name="fk_offer_1_idx">
       <ColNames>user_id</ColNames>
     </index>
-    <index id="153" parent="6" name="fk_offer_agency_idx">
+    <index id="170" parent="8" name="fk_offer_agency_idx">
       <ColNames>agency_id</ColNames>
     </index>
-    <index id="154" parent="6" name="fk_offer_agent_idx">
+    <index id="171" parent="8" name="fk_offer_agent_idx">
       <ColNames>agent_id</ColNames>
     </index>
-    <index id="155" parent="6" name="fk_offer_artist_idx">
+    <index id="172" parent="8" name="fk_offer_artist_idx">
       <ColNames>artist_id</ColNames>
     </index>
-    <index id="156" parent="6" name="fk_offer_copro_promoter_idx">
+    <index id="173" parent="8" name="fk_offer_copro_promoter_idx">
       <ColNames>copro_promoter_id</ColNames>
     </index>
-    <index id="157" parent="6" name="fk_offer_copro_venue_idx">
+    <index id="174" parent="8" name="fk_offer_copro_venue_idx">
       <ColNames>copro_venue_id</ColNames>
     </index>
-    <index id="158" parent="6" name="fk_offer_support_artist_1_idx">
+    <index id="175" parent="8" name="fk_offer_support_artist_1_idx">
       <ColNames>support_artist_1_id</ColNames>
     </index>
-    <index id="159" parent="6" name="fk_offer_support_artist_2_idx">
+    <index id="176" parent="8" name="fk_offer_support_artist_2_idx">
       <ColNames>support_artist_2_id</ColNames>
     </index>
-    <index id="160" parent="6" name="fk_offer_support_artist_3_idx">
+    <index id="177" parent="8" name="fk_offer_support_artist_3_idx">
       <ColNames>support_artist_3_id</ColNames>
     </index>
-    <index id="161" parent="6" name="fk_offer_ticketing_company_idx">
+    <index id="178" parent="8" name="fk_offer_ticketing_company_idx">
       <ColNames>ticketing_company_id</ColNames>
     </index>
-    <index id="162" parent="6" name="fk_offer_venue_idx">
+    <index id="179" parent="8" name="fk_offer_venue_idx">
       <ColNames>venue_id</ColNames>
     </index>
-    <index id="163" parent="6" name="event_id">
-      <ColNames>event_id</ColNames>
-      <Unique>1</Unique>
+    <index id="180" parent="8" name="offer_created_by_index">
+      <ColNames>belong_company_id</ColNames>
     </index>
-    <key id="164" parent="6" name="PRIMARY">
+    <key id="181" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="165" parent="6" name="event_id">
-      <ColNames>event_id</ColNames>
-      <UnderlyingIndexName>event_id</UnderlyingIndexName>
-    </key>
-    <foreign-key id="166" parent="6" name="fk_booked_by">
+    <foreign-key id="182" parent="8" name="fk_booked_by">
       <ColNames>user_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="167" parent="6" name="fk_offer_copro_promoter">
+    <foreign-key id="183" parent="8" name="fk_offer_copro_promoter">
       <ColNames>copro_promoter_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>company</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="168" parent="6" name="fk_offer_copro_venue">
+    <foreign-key id="184" parent="8" name="fk_offer_copro_venue">
       <ColNames>copro_venue_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>venue</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="169" parent="6" name="fk_offer_agency">
+    <foreign-key id="185" parent="8" name="fk_offer_agency">
       <ColNames>agency_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>company</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="170" parent="6" name="fk_offer_agent">
+    <foreign-key id="186" parent="8" name="fk_offer_agent">
       <ColNames>agent_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="171" parent="6" name="fk_offer_artist">
+    <foreign-key id="187" parent="8" name="fk_offer_artist">
       <ColNames>artist_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="172" parent="6" name="fk_offer_venue">
+    <foreign-key id="188" parent="8" name="fk_offer_venue">
       <ColNames>venue_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>venue</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="173" parent="6" name="fk_offer_ticketing_company">
+    <foreign-key id="189" parent="8" name="fk_offer_ticketing_company">
       <ColNames>ticketing_company_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>company</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="174" parent="6" name="fk_offer_support_artist_1">
+    <foreign-key id="190" parent="8" name="fk_offer_support_artist_1">
       <ColNames>support_artist_1_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="175" parent="6" name="fk_offer_support_artist_2">
+    <foreign-key id="191" parent="8" name="fk_offer_support_artist_2">
       <ColNames>support_artist_2_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="176" parent="6" name="fk_offer_support_artist_3">
+    <foreign-key id="192" parent="8" name="fk_offer_support_artist_3">
       <ColNames>support_artist_3_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="177" parent="7" name="user_id">
+    <foreign-key id="193" parent="8" name="offer_id_fk">
+      <ColNames>belong_company_id</ColNames>
+      <RefSchemaName>erm</RefSchemaName>
+      <RefTableName>company</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="194" parent="9" name="user_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="178" parent="7" name="name">
+    <column id="195" parent="9" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="179" parent="7" name="public_email">
+    <column id="196" parent="9" name="public_email">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="180" parent="7" name="gravatar_email">
+    <column id="197" parent="9" name="gravatar_email">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="181" parent="7" name="gravatar_id">
+    <column id="198" parent="9" name="gravatar_id">
       <Position>5</Position>
       <DataType>varchar(32)|0</DataType>
     </column>
-    <column id="182" parent="7" name="location">
+    <column id="199" parent="9" name="location">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="183" parent="7" name="website">
+    <column id="200" parent="9" name="website">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="184" parent="7" name="bio">
+    <column id="201" parent="9" name="bio">
       <Position>8</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="185" parent="7" name="avatar">
+    <column id="202" parent="9" name="avatar">
       <Position>9</Position>
       <DataType>varchar(300)|0</DataType>
     </column>
-    <column id="186" parent="7" name="timezone">
+    <column id="203" parent="9" name="timezone">
       <Position>10</Position>
       <DataType>varchar(40)|0</DataType>
     </column>
-    <key id="187" parent="7" name="PRIMARY">
+    <key id="204" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="188" parent="7" name="fk_user_profile">
+    <foreign-key id="205" parent="9" name="fk_user_profile">
       <ColNames>user_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="189" parent="8" name="id">
+    <column id="206" parent="10" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="190" parent="8" name="settlement_id">
-      <Position>2</Position>
+    <column id="207" parent="10" name="settlement_id">
+      <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="191" parent="8" name="created_at">
-      <Position>3</Position>
-      <DataType>datetime|0</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
-    </column>
-    <column id="192" parent="8" name="updated_at">
+    <column id="208" parent="10" name="created_at">
       <Position>4</Position>
       <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="193" parent="8" name="first_party_id">
+    <column id="209" parent="10" name="updated_at">
       <Position>5</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="210" parent="10" name="first_party_id">
+      <Position>6</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="194" parent="8" name="first_party_event_id">
-      <Position>6</Position>
-      <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="195" parent="8" name="first_party_capacity">
+    <column id="211" parent="10" name="first_party_event_id">
       <Position>7</Position>
-      <DataType>int(10) unsigned|0</DataType>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <DataType>int(11)|0</DataType>
     </column>
-    <column id="196" parent="8" name="second_party_event_id">
+    <column id="212" parent="10" name="first_party_capacity">
       <Position>8</Position>
-      <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="197" parent="8" name="second_party_capacity">
-      <Position>9</Position>
       <DataType>int(10) unsigned|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="198" parent="8" name="second_party_date">
+    <column id="213" parent="10" name="second_party_event_id">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="214" parent="10" name="second_party_capacity">
       <Position>10</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="215" parent="10" name="second_party_date">
+      <Position>11</Position>
       <DataType>date|0</DataType>
     </column>
-    <column id="199" parent="8" name="second_party_artist_id">
-      <Position>11</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="200" parent="8" name="second_party_venue_id">
+    <column id="216" parent="10" name="second_party_artist_id">
       <Position>12</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="201" parent="8" name="note">
+    <column id="217" parent="10" name="second_party_venue_id">
       <Position>13</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="218" parent="10" name="note">
+      <Position>14</Position>
       <DataType>varchar(8000)|0</DataType>
     </column>
-    <column id="202" parent="8" name="artist_walkout_final">
-      <Position>14</Position>
-      <DataType>decimal(14,2)|0</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
-    </column>
-    <column id="203" parent="8" name="ad_plan_final">
+    <column id="219" parent="10" name="artist_walkout_final">
       <Position>15</Position>
       <DataType>decimal(14,2)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <column id="204" parent="8" name="promoter_revenue_final">
+    <column id="220" parent="10" name="ad_plan_final">
       <Position>16</Position>
       <DataType>decimal(14,2)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <column id="205" parent="8" name="ticket_sales_final">
+    <column id="221" parent="10" name="promoter_revenue_final">
       <Position>17</Position>
       <DataType>decimal(14,2)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
-    <index id="206" parent="8" name="first_party_event_id">
-      <ColNames>first_party_event_id</ColNames>
-    </index>
-    <index id="207" parent="8" name="first_party_id">
-      <ColNames>first_party_id</ColNames>
-    </index>
-    <index id="208" parent="8" name="second_party_artist_id">
+    <column id="222" parent="10" name="ticket_sales_final">
+      <Position>18</Position>
+      <DataType>decimal(14,2)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
+    </column>
+    <column id="223" parent="10" name="company_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="224" parent="10" name="belong_company_id">
+      <Position>19</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="225" parent="10" name="second_party_artist_id">
       <ColNames>second_party_artist_id</ColNames>
     </index>
-    <index id="209" parent="8" name="second_party_event_id">
-      <ColNames>second_party_event_id</ColNames>
-    </index>
-    <index id="210" parent="8" name="second_party_venue_id">
+    <index id="226" parent="10" name="second_party_venue_id">
       <ColNames>second_party_venue_id</ColNames>
     </index>
-    <index id="211" parent="8" name="settlement_id">
+    <index id="227" parent="10" name="settlement_id">
       <ColNames>settlement_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="212" parent="8" name="PRIMARY">
+    <index id="228" parent="10" name="settlement_company_id_fk">
+      <ColNames>company_id</ColNames>
+    </index>
+    <index id="229" parent="10" name="settlement_created_by_index">
+      <ColNames>belong_company_id</ColNames>
+    </index>
+    <key id="230" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="213" parent="8" name="settlement_id">
+    <key id="231" parent="10" name="settlement_id">
       <ColNames>settlement_id</ColNames>
       <UnderlyingIndexName>settlement_id</UnderlyingIndexName>
     </key>
-    <foreign-key id="214" parent="8" name="settlement_ibfk_1">
-      <ColNames>first_party_id</ColNames>
+    <foreign-key id="232" parent="10" name="settlement_company_id_fk">
+      <ColNames>company_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>company</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="215" parent="8" name="settlement_ibfk_2">
-      <ColNames>first_party_event_id</ColNames>
-      <RefSchemaName>erm</RefSchemaName>
-      <RefTableName>offer</RefTableName>
-      <RefColNames>event_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
-    </foreign-key>
-    <foreign-key id="216" parent="8" name="settlement_ibfk_3">
-      <ColNames>second_party_event_id</ColNames>
-      <RefSchemaName>erm</RefSchemaName>
-      <RefTableName>offer</RefTableName>
-      <RefColNames>event_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
-    </foreign-key>
-    <foreign-key id="217" parent="8" name="settlement_ibfk_4">
+    <foreign-key id="233" parent="10" name="settlement_ibfk_4">
       <ColNames>second_party_artist_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="218" parent="8" name="settlement_ibfk_5">
+    <foreign-key id="234" parent="10" name="settlement_ibfk_5">
       <ColNames>second_party_venue_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>venue</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="219" parent="9" name="id">
+    <foreign-key id="235" parent="10" name="settlement_id_fk">
+      <ColNames>belong_company_id</ColNames>
+      <RefSchemaName>erm</RefSchemaName>
+      <RefTableName>company</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="236" parent="11" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="220" parent="9" name="user_id">
+    <column id="237" parent="11" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="221" parent="9" name="provider">
+    <column id="238" parent="11" name="provider">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="222" parent="9" name="client_id">
+    <column id="239" parent="11" name="client_id">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="223" parent="9" name="data">
+    <column id="240" parent="11" name="data">
       <Position>5</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="224" parent="9" name="code">
+    <column id="241" parent="11" name="code">
       <Position>6</Position>
       <DataType>varchar(32)|0</DataType>
     </column>
-    <column id="225" parent="9" name="created_at">
+    <column id="242" parent="11" name="created_at">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="226" parent="9" name="email">
+    <column id="243" parent="11" name="email">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="227" parent="9" name="username">
+    <column id="244" parent="11" name="username">
       <Position>9</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <index id="228" parent="9" name="account_unique">
+    <index id="245" parent="11" name="account_unique">
       <ColNames>provider
 client_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="229" parent="9" name="account_unique_code">
+    <index id="246" parent="11" name="account_unique_code">
       <ColNames>code</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="230" parent="9" name="fk_user_account">
+    <index id="247" parent="11" name="fk_user_account">
       <ColNames>user_id</ColNames>
     </index>
-    <key id="231" parent="9" name="PRIMARY">
+    <key id="248" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="232" parent="9" name="account_unique">
+    <key id="249" parent="11" name="account_unique">
       <ColNames>provider
 client_id</ColNames>
       <UnderlyingIndexName>account_unique</UnderlyingIndexName>
     </key>
-    <key id="233" parent="9" name="account_unique_code">
+    <key id="250" parent="11" name="account_unique_code">
       <ColNames>code</ColNames>
       <UnderlyingIndexName>account_unique_code</UnderlyingIndexName>
     </key>
-    <foreign-key id="234" parent="9" name="fk_user_account">
+    <foreign-key id="251" parent="11" name="fk_user_account">
       <ColNames>user_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnDelete>delete</OnDelete>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="235" parent="10" name="user_id">
+    <column id="252" parent="12" name="user_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="236" parent="10" name="code">
+    <column id="253" parent="12" name="code">
       <Position>2</Position>
       <DataType>varchar(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="237" parent="10" name="created_at">
+    <column id="254" parent="12" name="created_at">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="238" parent="10" name="type">
+    <column id="255" parent="12" name="type">
       <Position>4</Position>
       <DataType>smallint(6)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="239" parent="10" name="token_unique">
+    <index id="256" parent="12" name="token_unique">
       <ColNames>user_id
 code
 type</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="240" parent="10" name="token_unique">
+    <key id="257" parent="12" name="token_unique">
       <ColNames>user_id
 code
 type</ColNames>
       <UnderlyingIndexName>token_unique</UnderlyingIndexName>
     </key>
-    <foreign-key id="241" parent="10" name="fk_user_token">
+    <foreign-key id="258" parent="12" name="fk_user_token">
       <ColNames>user_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnDelete>delete</OnDelete>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="242" parent="11" name="id">
+    <column id="259" parent="13" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="243" parent="11" name="username">
+    <column id="260" parent="13" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="244" parent="11" name="company_id">
+    <column id="261" parent="13" name="company_id">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
     </column>
-    <column id="245" parent="11" name="email">
+    <column id="262" parent="13" name="email">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="246" parent="11" name="password_hash">
+    <column id="263" parent="13" name="password_hash">
       <Position>5</Position>
       <DataType>varchar(60)|0</DataType>
     </column>
-    <column id="247" parent="11" name="auth_key">
+    <column id="264" parent="13" name="auth_key">
       <Position>6</Position>
       <DataType>varchar(32)|0</DataType>
     </column>
-    <column id="248" parent="11" name="confirmed_at">
+    <column id="265" parent="13" name="confirmed_at">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="249" parent="11" name="unconfirmed_email">
+    <column id="266" parent="13" name="unconfirmed_email">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="250" parent="11" name="blocked_at">
+    <column id="267" parent="13" name="blocked_at">
       <Position>9</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="251" parent="11" name="registration_ip">
+    <column id="268" parent="13" name="registration_ip">
       <Position>10</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="252" parent="11" name="created_at">
+    <column id="269" parent="13" name="created_at">
       <Position>11</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="253" parent="11" name="updated_at">
+    <column id="270" parent="13" name="updated_at">
       <Position>12</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="254" parent="11" name="flags">
+    <column id="271" parent="13" name="flags">
       <Position>13</Position>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="255" parent="11" name="first_name">
+    <column id="272" parent="13" name="first_name">
       <Position>14</Position>
       <DataType>varchar(80)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos; &apos;</DefaultExpression>
     </column>
-    <column id="256" parent="11" name="last_name">
+    <column id="273" parent="13" name="last_name">
       <Position>15</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="257" parent="11" name="job_title">
+    <column id="274" parent="13" name="job_title">
       <Position>16</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <column id="258" parent="11" name="line_of_business">
+    <column id="275" parent="13" name="line_of_business">
       <Position>17</Position>
       <DataType>enum(&apos;Artist&apos;, &apos;Management&apos;, &apos;Agency&apos;, &apos;Promotion&apos;, &apos;Venue&apos;, &apos;Network&apos;, &apos;Studio&apos;, &apos;Public Relations&apos;, &apos;Consulting&apos;, &apos;Talent&apos;, &apos;Client&apos;, &apos;Production Company&apos;, &apos;Photography&apos;, &apos;Editing&apos;, &apos;Business Management&apos;, &apos;Tour Management&apos;, &apos;Personal&apos;, &apos;Other&apos;)|0</DataType>
     </column>
-    <column id="259" parent="11" name="union_memberships">
+    <column id="276" parent="13" name="union_memberships">
       <Position>18</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="260" parent="11" name="note">
+    <column id="277" parent="13" name="note">
       <Position>19</Position>
       <DataType>varchar(2000)|0</DataType>
     </column>
-    <column id="261" parent="11" name="phone_number_type">
+    <column id="278" parent="13" name="phone_number_type">
       <Position>20</Position>
       <DataType>enum(&apos;Home&apos;, &apos;Business&apos;, &apos;Cell&apos;, &apos;Fax&apos;, &apos;Other&apos;, &apos;&apos;)|0</DataType>
     </column>
-    <column id="262" parent="11" name="phone_number">
+    <column id="279" parent="13" name="phone_number">
       <Position>21</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="263" parent="11" name="birthdate">
+    <column id="280" parent="13" name="birthdate">
       <Position>22</Position>
       <DataType>date|0</DataType>
     </column>
-    <column id="264" parent="11" name="website_url">
+    <column id="281" parent="13" name="website_url">
       <Position>23</Position>
       <DataType>varchar(400)|0</DataType>
     </column>
-    <column id="265" parent="11" name="twitter_id">
+    <column id="282" parent="13" name="twitter_id">
       <Position>24</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="266" parent="11" name="facebook_id">
+    <column id="283" parent="13" name="facebook_id">
       <Position>25</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="267" parent="11" name="instagram_id">
+    <column id="284" parent="13" name="instagram_id">
       <Position>26</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="268" parent="11" name="google_id">
+    <column id="285" parent="13" name="google_id">
       <Position>27</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="269" parent="11" name="yahoo_id">
+    <column id="286" parent="13" name="yahoo_id">
       <Position>28</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="270" parent="11" name="linkedin_id">
+    <column id="287" parent="13" name="linkedin_id">
       <Position>29</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="271" parent="11" name="work_phone">
+    <column id="288" parent="13" name="work_phone">
       <Position>30</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="272" parent="11" name="mobile_phone">
+    <column id="289" parent="13" name="mobile_phone">
       <Position>31</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="273" parent="11" name="home_phone">
+    <column id="290" parent="13" name="home_phone">
       <Position>32</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="274" parent="11" name="address1">
+    <column id="291" parent="13" name="address1">
       <Position>33</Position>
       <DataType>varchar(2000)|0</DataType>
     </column>
-    <column id="275" parent="11" name="address2">
+    <column id="292" parent="13" name="address2">
       <Position>34</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="276" parent="11" name="city">
+    <column id="293" parent="13" name="city">
       <Position>35</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="277" parent="11" name="state">
+    <column id="294" parent="13" name="state">
       <Position>36</Position>
       <DataType>char(80)|0</DataType>
     </column>
-    <column id="278" parent="11" name="zipcode">
+    <column id="295" parent="13" name="zipcode">
       <Position>37</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="279" parent="11" name="country">
+    <column id="296" parent="13" name="country">
       <Position>38</Position>
       <DataType>char(80)|0</DataType>
     </column>
-    <column id="280" parent="11" name="last_login_at">
+    <column id="297" parent="13" name="last_login_at">
       <Position>39</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="281" parent="11" name="company_id">
+    <column id="298" parent="13" name="belong_company_id">
+      <Position>40</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="299" parent="13" name="company_id">
       <ColNames>company_id</ColNames>
     </index>
-    <index id="282" parent="11" name="user_unique_username">
+    <index id="300" parent="13" name="user_unique_username">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="283" parent="11" name="PRIMARY">
+    <index id="301" parent="13" name="user_created_by_index">
+      <ColNames>belong_company_id</ColNames>
+    </index>
+    <key id="302" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="284" parent="11" name="user_unique_username">
+    <key id="303" parent="13" name="user_unique_username">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>user_unique_username</UnderlyingIndexName>
     </key>
-    <foreign-key id="285" parent="11" name="user_ibfk_1">
+    <foreign-key id="304" parent="13" name="user_ibfk_1">
       <ColNames>company_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>company</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>delete</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="286" parent="12" name="id">
+    <foreign-key id="305" parent="13" name="user_belong_company_fk">
+      <ColNames>belong_company_id</ColNames>
+      <RefSchemaName>erm</RefSchemaName>
+      <RefTableName>company</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="306" parent="14" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="287" parent="12" name="name">
+    <column id="307" parent="14" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="288" parent="12" name="venue_type">
+    <column id="308" parent="14" name="venue_type">
       <Position>3</Position>
       <DataType>enum(&apos;&apos;, &apos;Amphitheater&apos;, &apos;Arena&apos;, &apos;Bandshell&apos;, &apos;Club&apos;, &apos;College&apos;, &apos;Concert Hall&apos;, &apos;Operahouse&apos;, &apos;Other&apos;, &apos;Private&apos;, &apos;Stadium&apos;, &apos;Theater&apos;)|0</DataType>
     </column>
-    <column id="289" parent="12" name="created_at">
+    <column id="309" parent="14" name="created_at">
       <Position>4</Position>
       <DataType>datetime|0</DataType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="290" parent="12" name="updated_at">
+    <column id="310" parent="14" name="updated_at">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="291" parent="12" name="previous_name">
+    <column id="311" parent="14" name="previous_name">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="292" parent="12" name="note">
+    <column id="312" parent="14" name="note">
       <Position>7</Position>
       <DataType>varchar(2000)|0</DataType>
     </column>
-    <column id="293" parent="12" name="ticket_rebate">
+    <column id="313" parent="14" name="ticket_rebate">
       <Position>8</Position>
       <DataType>varchar(8000)|0</DataType>
     </column>
-    <column id="294" parent="12" name="other_deal">
+    <column id="314" parent="14" name="other_deal">
       <Position>9</Position>
       <DataType>varchar(8000)|0</DataType>
     </column>
-    <column id="295" parent="12" name="address1">
+    <column id="315" parent="14" name="address1">
       <Position>10</Position>
       <DataType>varchar(2000)|0</DataType>
     </column>
-    <column id="296" parent="12" name="address2">
+    <column id="316" parent="14" name="address2">
       <Position>11</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="297" parent="12" name="city">
+    <column id="317" parent="14" name="city">
       <Position>12</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="298" parent="12" name="state">
+    <column id="318" parent="14" name="state">
       <Position>13</Position>
       <DataType>varchar(8)|0</DataType>
     </column>
-    <column id="299" parent="12" name="zipcode">
+    <column id="319" parent="14" name="zipcode">
       <Position>14</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="300" parent="12" name="country">
+    <column id="320" parent="14" name="country">
       <Position>15</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="301" parent="12" name="timezone">
+    <column id="321" parent="14" name="timezone">
       <Position>16</Position>
       <DataType>enum(&apos;&apos;, &apos;ACDT Australian Central Daylight Savings Time&apos;, &apos;ACST Australian Central Standard Time&apos;, &apos;ACT Acre Time&apos;, &apos;ACT ASEAN Common Time&apos;, &apos;ADT Atlantic Daylight Time&apos;, &apos;AEDT Australian Eastern Daylight Savings Time&apos;, &apos;AEST Australian Eastern Standard Time&apos;, &apos;AFT Afghanistan Time&apos;, &apos;AKDT Alaska Daylight Time&apos;, &apos;AKST Alaska Standard Time&apos;, &apos;AMST Amazon Summer Time (Brazil)[1]&apos;, &apos;AMT Amazon Time (Brazil)[2]&apos;, &apos;AMT Armenia Time&apos;, &apos;ART Argentina Time&apos;, &apos;AST Arabia Standard Time&apos;, &apos;AST Atlantic Standard Time&apos;, &apos;AWDT Australian Western Daylight Time&apos;, &apos;AWST Australian Western Standard Time&apos;, &apos;AZOST Azores Standard Time&apos;, &apos;AZT Azerbaijan Time&apos;, &apos;BDT Brunei Time&apos;, &apos;BDT Bangladesh Daylight Time (Bangladesh Daylight saving time keeps UTC+06 offset) [3]&apos;, &apos;BIOT British Indian Ocean Time&apos;, &apos;BIT Baker Island Time&apos;, &apos;BOT Bolivia Time&apos;, &apos;BRST Brasilia Summer Time&apos;, &apos;BRT Brasilia Time&apos;, &apos;BST Bangladesh Standard Time&apos;, &apos;BST Bougainville Standard Time[4]&apos;, &apos;BST British Summer Time (British Standard Time from Feb 1968 to Oct 1971)&apos;, &apos;BTT Bhutan Time&apos;, &apos;CAT Central Africa Time&apos;, &apos;CCT Cocos Islands Time&apos;, &apos;CDT Central Daylight Time (North America)&apos;, &apos;CDT Cuba Daylight Time[5]&apos;, &apos;CEDT Central European Daylight Time&apos;, &apos;CEST Central European Summer Time (Cf. HAEC)&apos;, &apos;CET Central European Time&apos;, &apos;CHADT Chatham Daylight Time&apos;, &apos;CHAST Chatham Standard Time&apos;, &apos;CHOT Choibalsan&apos;, &apos;ChST Chamorro Standard Time&apos;, &apos;CHUT Chuuk Time&apos;, &apos;CIST Clipperton Island Standard Time&apos;, &apos;CIT Central Indonesia Time&apos;, &apos;CKT Cook Island Time&apos;, &apos;CLST Chile Summer Time&apos;, &apos;CLT Chile Standard Time&apos;, &apos;COST Colombia Summer Time&apos;, &apos;COT Colombia Time&apos;, &apos;CST Central Standard Time (North America)&apos;, &apos;CST China Standard Time&apos;, &apos;CST Central Standard Time (Australia)&apos;, &apos;CST Central Summer Time (Australia)&apos;, &apos;CST Cuba Standard Time&apos;, &apos;CT China time&apos;, &apos;CVT Cape Verde Time&apos;, &apos;CWST Central Western Standard Time (Australia) unofficial&apos;, &apos;CXT Christmas Island Time&apos;, &apos;DAVT Davis Time&apos;, &apos;DDUT Dumont d&apos;&apos;Urville Time&apos;, &apos;DFT AIX specific equivalent of Central European Time[6]&apos;, &apos;EASST Easter Island Standard Summer Time&apos;, &apos;EAST Easter Island Standard Time&apos;, &apos;EAT East Africa Time&apos;, &apos;ECT Eastern Caribbean Time (does not recognise DST)&apos;, &apos;ECT Ecuador Time&apos;, &apos;EDT Eastern Daylight Time (North America)&apos;, &apos;EEDT Eastern European Daylight Time&apos;, &apos;EEST Eastern European Summer Time&apos;, &apos;EET Eastern European Time&apos;, &apos;EGST Eastern Greenland Summer Time&apos;, &apos;EGT Eastern Greenland Time&apos;, &apos;EIT Eastern Indonesian Time&apos;, &apos;EST Eastern Standard Time (North America)&apos;, &apos;EST Eastern Standard Time (Australia)&apos;, &apos;FET Further-eastern European Time&apos;, &apos;FJT Fiji Time&apos;, &apos;FKST Falkland Islands Standard Time&apos;, &apos;FKST Falkland Islands Summer Time&apos;, &apos;FKT Falkland Islands Time&apos;, &apos;FNT Fernando de Noronha Time&apos;, &apos;GALT Galapagos Time&apos;, &apos;GAMT Gambier Islands&apos;, &apos;GET Georgia Standard Time&apos;, &apos;GFT French Guiana Time&apos;, &apos;GILT Gilbert Island Time&apos;, &apos;GIT Gambier Island Time&apos;, &apos;GMT Greenwich Mean Time&apos;, &apos;GST South Georgia and the South Sandwich Islands&apos;, &apos;GST Gulf Standard Time&apos;, &apos;GYT Guyana Time&apos;, &apos;HADT Hawaii-Aleutian Daylight Time&apos;, &apos;HAEC Heure Avancée d&apos;&apos;Europe Centrale francised name for CEST&apos;, &apos;HAST Hawaii-Aleutian Standard Time&apos;, &apos;HKT Hong Kong Time&apos;, &apos;HMT Heard and McDonald Islands Time&apos;, &apos;HOVT Khovd Time&apos;, &apos;HST Hawaii Standard Time&apos;, &apos;IBST International Business Standard Time&apos;, &apos;ICT Indochina Time&apos;, &apos;IDT Israel Daylight Time&apos;, &apos;IOT Indian Ocean Time&apos;, &apos;IRDT Iran Daylight Time&apos;, &apos;IRKT Irkutsk Time&apos;, &apos;IRST Iran Standard Time&apos;, &apos;IST Indian Standard Time&apos;, &apos;IST Irish Standard Time[7]&apos;, &apos;IST Israel Standard Time&apos;, &apos;JST Japan Standard Time&apos;, &apos;KGT Kyrgyzstan time&apos;, &apos;KOST Kosrae Time&apos;, &apos;KRAT Krasnoyarsk Time&apos;, &apos;KST Korea Standard Time&apos;, &apos;LHST Lord Howe Standard Time&apos;, &apos;LHST Lord Howe Summer Time&apos;, &apos;LINT Line Islands Time&apos;, &apos;MAGT Magadan Time&apos;, &apos;MART Marquesas Islands Time&apos;, &apos;MAWT Mawson Station Time&apos;, &apos;MDT Mountain Daylight Time (North America)&apos;, &apos;MET Middle European Time Same zone as CET&apos;, &apos;MEST Middle European Summer Time Same zone as CEST&apos;, &apos;MHT Marshall Islands&apos;, &apos;MIST Macquarie Island Station Time&apos;, &apos;MIT Marquesas Islands Time&apos;, &apos;MMT Myanmar Time&apos;, &apos;MSK Moscow Time&apos;, &apos;MST Malaysia Standard Time&apos;, &apos;MST Mountain Standard Time (North America)&apos;, &apos;MST Myanmar Standard Time&apos;, &apos;MUT Mauritius Time&apos;, &apos;MVT Maldives Time&apos;, &apos;MYT Malaysia Time&apos;, &apos;NCT New Caledonia Time&apos;, &apos;NDT Newfoundland Daylight Time&apos;, &apos;NFT Norfolk Time&apos;, &apos;NPT Nepal Time&apos;, &apos;NST Newfoundland Standard Time&apos;, &apos;NT Newfoundland Time&apos;, &apos;NUT Niue Time&apos;, &apos;NZDT New Zealand Daylight Time&apos;, &apos;NZST New Zealand Standard Time&apos;, &apos;OMST Omsk Time&apos;, &apos;ORAT Oral Time&apos;, &apos;PDT Pacific Daylight Time (North America)&apos;, &apos;PET Peru Time&apos;, &apos;PETT Kamchatka Time&apos;, &apos;PGT Papua New Guinea Time&apos;, &apos;PHOT Phoenix Island Time&apos;, &apos;PKT Pakistan Standard Time&apos;, &apos;PMDT Saint Pierre and Miquelon Daylight time&apos;, &apos;PMST Saint Pierre and Miquelon Standard Time&apos;, &apos;PONT Pohnpei Standard Time&apos;, &apos;PST Pacific Standard Time (North America)&apos;, &apos;PST Philippine Standard Time&apos;, &apos;PYST Paraguay Summer Time (South America)[8]&apos;, &apos;PYT Paraguay Time (South America)[9]&apos;, &apos;RET Réunion Time&apos;, &apos;ROTT Rothera Research Station Time&apos;, &apos;SAKT Sakhalin Island time&apos;, &apos;SAMT Samara Time&apos;, &apos;SAST South African Standard Time&apos;, &apos;SBT Solomon Islands Time&apos;, &apos;SCT Seychelles Time&apos;, &apos;SGT Singapore Time&apos;, &apos;SLST Sri Lanka Standard Time&apos;, &apos;SRET Srednekolymsk Time&apos;, &apos;SRT Suriname Time&apos;, &apos;SST Samoa Standard Time&apos;, &apos;SST Singapore Standard Time&apos;, &apos;SYOT Showa Station Time&apos;, &apos;TAHT Tahiti Time&apos;, &apos;THA Thailand Standard Time&apos;, &apos;TFT Indian/Kerguelen&apos;, &apos;TJT Tajikistan Time&apos;, &apos;TKT Tokelau Time&apos;, &apos;TLT Timor Leste Time&apos;, &apos;TMT Turkmenistan Time&apos;, &apos;TOT Tonga Time&apos;, &apos;TVT Tuvalu Time&apos;, &apos;UCT Coordinated Universal Time&apos;, &apos;ULAT Ulaanbaatar Time&apos;, &apos;USZ1 Kaliningrad Time&apos;, &apos;UTC Coordinated Universal Time&apos;, &apos;UYST Uruguay Summer Time&apos;, &apos;UYT Uruguay Standard Time&apos;, &apos;UZT Uzbekistan Time&apos;, &apos;VET Venezuelan Standard Time&apos;, &apos;VLAT Vladivostok Time&apos;, &apos;VOLT Volgograd Time&apos;, &apos;VOST Vostok Station Time&apos;, &apos;VUT Vanuatu Time&apos;, &apos;WAKT Wake Island Time&apos;, &apos;WAST West Africa Summer Time&apos;, &apos;WAT West Africa Time&apos;, &apos;WEDT Western European Daylight Time&apos;, &apos;WEST Western European Summer Time&apos;, &apos;WET Western European Time&apos;, &apos;WIT Western Indonesian Time&apos;, &apos;WST Western Standard Time&apos;, &apos;YAKT Yakutsk Time&apos;, &apos;YEKT Yekaterinburg Time&apos;, &apos;Z Zulu Time (Coordinated Universal Time)&apos;)|0</DataType>
     </column>
-    <column id="302" parent="12" name="owner">
+    <column id="322" parent="14" name="owner">
       <Position>17</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="303" parent="12" name="company_id">
+    <column id="323" parent="14" name="company_id">
       <Position>18</Position>
       <Comment>Venue Manager</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="304" parent="12" name="general_info_email">
+    <column id="324" parent="14" name="general_info_email">
       <Position>19</Position>
       <DataType>varchar(80)|0</DataType>
     </column>
-    <column id="305" parent="12" name="main_office_phone">
+    <column id="325" parent="14" name="main_office_phone">
       <Position>20</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="306" parent="12" name="box_office_phone">
+    <column id="326" parent="14" name="box_office_phone">
       <Position>21</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="307" parent="12" name="fax_phone">
+    <column id="327" parent="14" name="fax_phone">
       <Position>22</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="308" parent="12" name="other_phone">
+    <column id="328" parent="14" name="other_phone">
       <Position>23</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="309" parent="12" name="primary_ticketing_company_id">
+    <column id="329" parent="14" name="primary_ticketing_company_id">
       <Position>24</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="310" parent="12" name="other_seating_capacity">
+    <column id="330" parent="14" name="other_seating_capacity">
       <Position>25</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="311" parent="12" name="end_stage_seating_capacity">
+    <column id="331" parent="14" name="end_stage_seating_capacity">
       <Position>26</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="312" parent="12" name="full_stage_seating_capacity">
+    <column id="332" parent="14" name="full_stage_seating_capacity">
       <Position>27</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="313" parent="12" name="half_stage_seating_capacity">
+    <column id="333" parent="14" name="half_stage_seating_capacity">
       <Position>28</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="314" parent="12" name="in_the_round_seating_capacity">
+    <column id="334" parent="14" name="in_the_round_seating_capacity">
       <Position>29</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="315" parent="12" name="other_seating_capacity_name">
+    <column id="335" parent="14" name="other_seating_capacity_name">
       <Position>30</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="316" parent="12" name="other_seating_capacity_value">
+    <column id="336" parent="14" name="other_seating_capacity_value">
       <Position>31</Position>
       <DataType>int(6)|0</DataType>
     </column>
-    <column id="317" parent="12" name="webpage">
+    <column id="337" parent="14" name="webpage">
       <Position>32</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="318" parent="12" name="facebook">
+    <column id="338" parent="14" name="facebook">
       <Position>33</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="319" parent="12" name="yahoo">
+    <column id="339" parent="14" name="yahoo">
       <Position>34</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="320" parent="12" name="linkedin">
+    <column id="340" parent="14" name="linkedin">
       <Position>35</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="321" parent="12" name="twitter">
+    <column id="341" parent="14" name="twitter">
       <Position>36</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="322" parent="12" name="instagram">
+    <column id="342" parent="14" name="instagram">
       <Position>37</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <column id="323" parent="12" name="google">
+    <column id="343" parent="14" name="google">
       <Position>38</Position>
       <DataType>varchar(800)|0</DataType>
     </column>
-    <index id="324" parent="12" name="fk_venue_1_idx">
+    <column id="344" parent="14" name="belong_company_id">
+      <Position>39</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="345" parent="14" name="fk_venue_1_idx">
       <ColNames>company_id</ColNames>
     </index>
-    <index id="325" parent="12" name="fk_venue_2_idx">
+    <index id="346" parent="14" name="fk_venue_2_idx">
       <ColNames>primary_ticketing_company_id</ColNames>
     </index>
-    <key id="326" parent="12" name="PRIMARY">
+    <index id="347" parent="14" name="venue_created_by_index">
+      <ColNames>belong_company_id</ColNames>
+    </index>
+    <key id="348" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="327" parent="12" name="fk_venue_1">
+    <foreign-key id="349" parent="14" name="fk_venue_1">
       <ColNames>company_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>company</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
       <OnDelete>set-null</OnDelete>
     </foreign-key>
-    <foreign-key id="328" parent="12" name="fk_venue_2">
+    <foreign-key id="350" parent="14" name="fk_venue_2">
       <ColNames>primary_ticketing_company_id</ColNames>
       <RefSchemaName>erm</RefSchemaName>
       <RefTableName>company</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
       <OnDelete>set-null</OnDelete>
+    </foreign-key>
+    <foreign-key id="351" parent="14" name="venue_belong_company_fk">
+      <ColNames>belong_company_id</ColNames>
+      <RefSchemaName>erm</RefSchemaName>
+      <RefTableName>company</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
   </database-model>
 </dataSource>
