@@ -116,8 +116,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+            <state relative-caret-position="320">
+              <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -706,13 +706,6 @@
       <option name="presentableId" value="Default" />
       <updated>1468029993866</updated>
     </task>
-    <task id="LOCAL-00006" summary="Multiselect Union memberships">
-      <created>1476671717564</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1476671717564</updated>
-    </task>
     <task id="LOCAL-00007" summary="User list and edit form">
       <created>1477889863224</created>
       <option name="number" value="00007" />
@@ -1049,7 +1042,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492753361410</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="DEV api server. Remember to rename local to erm.ermapi too.">
+      <created>1492753834300</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1492753834300</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1124,7 +1124,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Fix money update." />
     <MESSAGE value="Fix money update inside var expense. Fix tax %." />
     <MESSAGE value="Offer: working on merch." />
     <MESSAGE value="Fix CC fee." />
@@ -1149,7 +1148,8 @@
     <MESSAGE value="Fix blank email." />
     <MESSAGE value="Test logo." />
     <MESSAGE value="Big update: Company and Users." />
-    <option name="LAST_COMMIT_MESSAGE" value="Big update: Company and Users." />
+    <MESSAGE value="DEV api server. Remember to rename local to erm.ermapi too." />
+    <option name="LAST_COMMIT_MESSAGE" value="DEV api server. Remember to rename local to erm.ermapi too." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2108,8 +2108,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        <state relative-caret-position="320">
+          <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
           <folding />
         </state>
       </provider>

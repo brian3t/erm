@@ -14,8 +14,8 @@ if (IS_LOCAL) {
     config.apiUrl = 'https://api.ermapi/'
 }
 if (IS_DEV) {
-    config.restUrl = 'http://api.theeverestapp/v1/';
-    config.apiUrl = 'http://api.theeverestapp/'
+    config.restUrl = 'http://api.theeverestapp.com/v1/';
+    config.apiUrl = 'http://api.theeverestapp.com/'
 }
 var backboneInit = function () {
     var login_params = {};
