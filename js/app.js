@@ -88,6 +88,7 @@ $.extend(app, {
         company_param = {};
 
         app.collections.companies = new app.collections.Company();
+        app.collections.companies.url = config.restUrl + 'company?' + $.param({'belong_company_id': company_id});//param here to get agents only
         app.collections.companies.fetch();
         app.collections.offers = new app.collections.Offer();
         app.collections.offers.fetch();
