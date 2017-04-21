@@ -89,7 +89,6 @@ $.extend(app, {
         var company_id = app.cur_user.get('company').get('id');
         /** @var Backbone.Model company **/
         var company_param = {belong_company_id: company_id};
-
         app.collections.companies = new app.collections.Company();
         app.collections.companies.url = config.restUrl + 'company?' + $.param(company_param);
         app.collections.companies.fetch();
