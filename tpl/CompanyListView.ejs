@@ -18,7 +18,7 @@
 	<div id="create_company" class="in_edit_mode" style="display: none">
 		<form class="account_info create" action="#" data-model="company" data-toggle="validator" data-disable=true
 			  role="form">
-
+			<input type="hidden" name="belong_company_id" value="<%= app.cur_user.get('company').get('id') %>">
 			<div class="form-group">
 				<div class="row">
 					<label class="col-xs-6">Company Name<input name="name" type="text" required

@@ -33,10 +33,10 @@ app.views.UserListView = Backbone.View.extend({
         }
     },
     initialize: function (options) {
-        /*this.UserCollection = app.collections.User_collection.extend({
-            url : config.restUrl + 'user?' + $.param({'company_id': app.cur_user.get('company').get('id')})
-        });*/
-        this.UserCollection = app.collections.User_collection;
+        this.UserCollection = app.collections.User_collection.extend({
+            url : config.restUrl + 'user?' + $.param({'belong_company_id': app.cur_user.get('company').get('id')})
+        });
+        // this.UserCollection = app.collections.User_collection;
         this.collection = new this.UserCollection();
         this.collection.fetch();
         this.user_search_list_view = new app.views.UserSearchListView({collection: this.collection});

@@ -9,8 +9,8 @@ var config = {
 };
 var is_validator_initializing = false;
 if (IS_LOCAL) {
-    config.restUrl = 'https://api.ermlocal/v1/';
-    config.apiUrl = 'https://api.ermlocal/'
+    config.restUrl = 'https://api.ermapi/v1/';
+    config.apiUrl = 'https://api.ermapi/'
 }
 var backboneInit = function () {
     var login_params = {};
