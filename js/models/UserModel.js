@@ -70,8 +70,9 @@ app.models.User = Backbone.RelationalModel.extend({
 app.collections.User_collection = Backbone.Collection.extend({
     model: app.models.User,
     url: config.restUrl + 'user',
-    comparator: 'first_name'
-    // initialize: function () {
+    comparator: function (a) {
+        return a.get('first_name').toLowerCase();
+    }    // initialize: function () {
     //     this.url = config.restUrl + 'user?' + $.param({'company_id': app.cur_user.get('company').get('id')});
     // }
 });

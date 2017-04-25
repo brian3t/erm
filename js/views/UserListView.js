@@ -82,7 +82,7 @@ app.views.UserListView = Backbone.View.extend({
     },
     reset_form: function () {
         this.$el.find('#create_user > form').trigger('reset');
-        $('.multi_select').select2('val', null);
+        $('.multi_select').select2().select2('val', null);
     },
     delete_model: function (e) {
         var self = this;

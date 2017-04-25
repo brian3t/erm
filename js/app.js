@@ -113,6 +113,7 @@ $.extend(app, {
         app.collections.ticketing_companies = new app.collections.Company();
         app.collections.ticketing_companies.url = config.restUrl + 'company?' + $.param($.extend({'line_of_business': 'Ticketing'}, company_param));//param here to get ticketing only
         app.collections.ticketing_companies.fetch();
+        app.collections.ticketing_companies.sort();
     }
 });
 var capp = {

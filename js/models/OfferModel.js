@@ -185,7 +185,9 @@ app.models.Offer = Backbone.RelationalModel.extend({
 app.collections.Offer = Backbone.Collection.extend({
     model: app.models.Offer,
     url : config.restUrl + 'offer',
-    comparator: 'event_id',
+    comparator: function (a) {
+        return a.get('event_id').toLowerCase();
+    },
     initialize: function (event) {
         // var param = {};
         // if (!_.isEmpty(app.cur_user.get('id'))){

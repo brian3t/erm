@@ -27,7 +27,9 @@ app.models.Settlement = Backbone.RelationalModel.extend({
 app.collections.Settlement = Backbone.Collection.extend({
     model: app.models.Settlement,
     url: config.restUrl + 'settlement',
-    comparator: 'settlement_id',
+    comparator: function (a) {
+        return a.get('settlement_id').toLowerCase();
+    },
     initialize: function (options) {
     }
 });
