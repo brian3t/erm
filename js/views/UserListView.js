@@ -34,7 +34,7 @@ app.views.UserListView = Backbone.View.extend({
     },
     initialize: function (options) {
         this.UserCollection = app.collections.User_collection.extend({
-            url : config.restUrl + 'user?' + $.param({'belong_company_id': app.cur_user.get('company').get('id')})
+            url: config.restUrl + 'user?' + $.param({'belong_company_id': app.cur_user.get('company').get('id')})
         });
         // this.UserCollection = app.collections.User_collection;
         this.collection = new this.UserCollection();
@@ -69,7 +69,9 @@ app.views.UserListView = Backbone.View.extend({
         var new_user = new app.models.User();
         new_user.setCompany(app.cur_user.get('company'));
         new_user.set('username', 'contact_' + form_data['first_name'].replace(' ', '') + (new Date).toISOString() + Math.random().toString().substr(1, 3));
-        form_data['email'] = 'contact_' + form_data['first_name'].replace(' ', '') + '@' + (new Date).getTime() + '.' + Math.random().toString().substr(1, 3);
+        if (_.isEmpty(form_data['email'])) {
+            form_data['email'] = 'contact_' + form_data['first_name'].replace(' ', '') + '@' + (new Date).getTime() + '.' + Math.random().toString().substr(1, 3);
+        }
         var self = this;
         new_user.save(form_data, {
             success: function (new_model) {
@@ -172,7 +174,7 @@ app.views.UserView = Backbone.View.extend({
         "change .multi_select": "update_ajax"
     },
     update_ajax: function (e) {
-        if (is_validator_initializing){
+        if (is_validator_initializing) {
             return;
         }
         var target = $(e.target);
