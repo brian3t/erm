@@ -137,7 +137,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 				<div class="row">
 					<label class="col-xs-3">On Sale Date<input name="on_sale_date" type="date" class="form-control">
 					</label>
-					<label class="col-xs-1">TBD <br><input type="checkbox">
+					<label class="col-xs-1">TBD <br><input type="checkbox" name="is_on_sale_date_tbd">
 					</label>
 					<label class="col-xs-5">Ticketing Company<select name="ticketing_company_id" class="form-control">
 							<%= ticketing_company_opt %>
@@ -161,7 +161,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 												   class="  form-control"></label>
 					<label class="col-xs-1"><input name="l1_kill" step="any"
 												   class="  form-control"></label>
-					<label class="col-xs-2"><input readonly class="l1 sellable_ticket  sys_gen form-control"></input></label>
+					<label class="col-xs-2"><input readonly class="l1 sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"><input name="l1_price" step="any"
 												   class="money  form-control"></label>
 					<label class="col-xs-2"><input readonly class="money l1 gross  sys_gen form-control"
@@ -173,7 +173,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 												   class="  form-control"></label>
 					<label class="col-xs-1"><input name="l2_kill" step="any"
 												   class="  form-control"></label>
-					<label class="col-xs-2"><input readonly class="l2 sellable_ticket  sys_gen form-control"></input></label>
+					<label class="col-xs-2"><input readonly class="l2 sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"><input name="l2_price" step="any"
 												   class="money  form-control"></label>
 					<label class="col-xs-2"><input readonly class="money l2  gross  sys_gen form-control"
@@ -185,7 +185,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 												   class="  form-control"></label>
 					<label class="col-xs-1"><input name="l3_kill" step="any"
 												   class="  form-control"></label>
-					<label class="col-xs-2"><input readonly class="l3 sellable_ticket  sys_gen form-control"></input></label>
+					<label class="col-xs-2"><input readonly class="l3 sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"><input name="l3_price" step="any"
 												   class="money  form-control"></label>
 					<label class="col-xs-2"><input readonly class="money l3  gross  sys_gen form-control"
@@ -197,7 +197,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 												   class="  form-control"></label>
 					<label class="col-xs-1"><input name="l4_kill" step="any"
 												   class="  form-control"></label>
-					<label class="col-xs-2"><input readonly class="l4 sellable_ticket  sys_gen form-control"></input></label>
+					<label class="col-xs-2"><input readonly class="l4 sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"><input name="l4_price" step="any"
 												   class="money  form-control"></label>
 					<label class="col-xs-2"><input readonly class="money l4  gross  sys_gen form-control"
@@ -209,7 +209,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 												   class="  form-control"></label>
 					<label class="col-xs-1"><input name="l5_kill" step="any"
 												   class="  form-control"></label>
-					<label class="col-xs-2"><input readonly class="l5 sellable_ticket  sys_gen form-control"></input></label>
+					<label class="col-xs-2"><input readonly class="l5 sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"><input name="l5_price" step="any"
 												   class="money  form-control"></label>
 					<label class="col-xs-2"><input readonly class="money l5  gross  sys_gen form-control"
@@ -220,7 +220,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<label class="col-xs-1 ">Total Gross</label>
 					<label class="col-xs-2"><input readonly class="  form-control  sys_gen gross_ticket"></label>
 					<label class="col-xs-1"><input readonly step="any" class="  form-control  sys_gen total_kill"></label>
-					<label class="col-xs-2"><input readonly class="total sellable_ticket  sys_gen form-control"></input></label>
+					<label class="col-xs-2"><input readonly class="total sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"><input readonly step="any" class="money  form-control  sys_gen average_ticket_price"></label>
 					<label class="col-xs-2"><input readonly class="money total  gross  sys_gen form-control"></label>
 				</div>
@@ -228,7 +228,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<label class="col-xs-1 ">Average</label>
 					<label class="col-xs-2"><input readonly class="  form-control  sys_gen average_ticket"></label>
 					<label class="col-xs-1"><input readonly step="any" class="  form-control  sys_gen average_kill"></label>
-					<label class="col-xs-2"><input readonly class="average sellable_ticket  sys_gen form-control"></input></label>
+					<label class="col-xs-2"><input readonly class="average sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"></label>
 					<label class="col-xs-2"><input readonly class="money average gross  sys_gen form-control"></label>
 				</div>
@@ -236,23 +236,23 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<div class="col-xs-4"></div>
 					<label class="col-xs-2 text_underlined">Gross Potential </label>
 					<div class="col-xs-2"></div>
-					<div class="col-xs-2 content-padded"><strong><input readonly id="gross_potential" step="any" class="money    sys_gen"></input></strong>
+					<div class="col-xs-2 content-padded"><strong><input readonly step="any" class="money  gross_potential  sys_gen"></strong>
 					</div>
 					<div class="col-xs-2"></div>
 				</div>
 				<div class="row">
 					<div class="col-xs-4"></div>
 					<label class="col-xs-2">Tax % </label>
-					<div class="col-xs-2 content-padded"><input type="number" name="tax" step="any"></input>
+					<div class="col-xs-2 content-padded"><input type="number" name="tax" step="any">
 					</div>
 					<div class="col-xs-2 content-padded"><input class="money"></div>
-					<div class="col-xs-2 content-padded"><input name="tax_note" placeholder="note"></input>
+					<div class="col-xs-2 content-padded"><input name="tax_note" placeholder="note">
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-4"></div>
 					<label class="col-xs-2">Tax per Ticket </label>
-					<div class="col-xs-2 content-padded"><input name="tax_per_ticket" step="any" class="money "></input></div>
+					<div class="col-xs-2 content-padded"><input name="tax_per_ticket" step="any" class="money "></div>
 					<div class="col-xs-2 content-padded"><input readonly class="money tax_per_ticket_total"></div>
 					<div class="col-xs-2"></div>
 				</div>
@@ -266,9 +266,9 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 				<div class="row">
 					<div class="col-xs-4"></div>
 					<label class="col-xs-2">Facility Fee</label>
-					<div class="col-xs-2 content-padded"><input name="facility_fee" step="any" class="money "></input></div>
+					<div class="col-xs-2 content-padded"><input name="facility_fee" step="any" class="money "></div>
 					<div class="col-xs-2 content-padded"><input readonly class="money  sys_gen facility_fee_total"></div>
-					<div class="col-xs-2 content-padded"><input name="facility_fee_note" placeholder="note"></input></div>
+					<div class="col-xs-2 content-padded"><input name="facility_fee_note" placeholder="note"></div>
 				</div>
 			</div>
 			<h4>Artist Deal</h4>
@@ -399,209 +399,207 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 			<div class="form-group">
 				<div class="row input_atomic">
 					<label class="col-xs-10 text-right "><b>Tour Production Expenses</b></label>
-					<input step="any" class="money  col-xs-2  "
-					>
+					<input readonly step="any" class="money  col-xs-2 sys_gen  ">
 				</div>
 				<div class="row input_atomic">
 					<label class="col-xs-10 text-right "><b>General Expenses</b></label>
-					<input step="any" class="money  col-xs-2  "
-					>
+					<input readonly step="any" class="money  col-xs-2 sys_gen ">
 				</div>
 				<div class="row input_atomic">
 					<label class="col-xs-10 text-right text_underlined "><b>Total Fixed Expenses</b></label>
-					<input step="any" class="money  col-xs-2 text-bold  "
-					>
+					<input readonly step="any" class="money total_fixed_expenses col-xs-2 text-bold sys_gen ">
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="row col-xs-12">Notes<textarea name="general_expense_note"
-
-															class="form-control"></textarea></label>
+				<label class="row col-xs-12">Notes<textarea name="general_expense_note" class="form-control"></textarea></label>
 			</div>
 			<h4>Variable Expenses</h4>
-			<div class="form-group var_expense">
-				<div class="text-center row">
-					<label class="col-xs-2 col-xs-offset-55 ">Per Ticket</label>
-					<label class="col-xs-25">Cap</label>
-				</div>
-				<div class="row text-center">
-					<label class="col-xs-2 col-xs-offset-2">Notes</label>
-					<label class="col-xs-15">Flat Rate</label>
-					<label class="col-xs-1">$</label>
-					<label class="col-xs-1">%</label>
-					<label class="col-xs-1">Min</label>
-					<label class="col-xs-15">Max</label>
-					<label class="col-xs-2">Sell Out Potential</label>
-				</div>
-				<div class="row">
-					<label class="col-xs-2 input_atomic">Rental</label>
-					<div class="col-xs-2"><input class="form-control skip_ajax" name="rental_note"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="rental_flat_rate"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="rental_per_ticket_dollar"
-						></div>
-					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="rental_per_ticket_percent"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="rental_min"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="rental_max"
-						></div>
-					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="rental"></div>
-				</div>
-				<div class="row">
-					<label class="col-xs-2 input_atomic">Tix Commission</label>
-					<div class="col-xs-2"><input class="form-control skip_ajax" name="tixcom_note"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tixcom_flat_rate"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tixcom_per_ticket_dollar"
-						></div>
-					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="tixcom_per_ticket_percent"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tixcom_min"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tixcom_max"
-						></div>
-					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="tixcom"></div>
-				</div>
-				<div class="row">
-					<label class="col-xs-2 input_atomic">Tix Service Fees</label>
-					<div class="col-xs-2"><input class="form-control skip_ajax" name="tix_service_fee_note"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tix_service_fee_flat_rate"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tix_service_fee_per_ticket_dollar"
-						></div>
-					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="tix_service_fee_per_ticket_percent"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tix_service_fee_min"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tix_service_fee_max"
-						></div>
-					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="tix_service_fee">
+			<input hidden id="variable_expense_input_cr8" class="variable_expense_input" name="variable_expense" type="text">
+			<div id="var_expense_cr8" class="array_field_wrapper" data-array_field_id='variable_expense_input'>
+				<div class="form-group var_expense">
+					<div class="text-center row">
+						<label class="col-xs-2 col-xs-offset-55 ">Per Ticket</label>
+						<label class="col-xs-25">Cap</label>
 					</div>
-				</div>
-				<div class="row">
-					<label class="col-xs-2 input_atomic">Box Office Fees</label>
-					<div class="col-xs-2"><input class="form-control skip_ajax" name="box_office_fee_note"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="box_office_fee_flat_rate"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="box_office_fee_per_ticket_dollar"
-						></div>
-					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="box_office_fee_per_ticket_percent"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="box_office_fee_min"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="box_office_fee_max"
-						></div>
-					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="box_office_fee">
+					<div class="row text-center">
+						<label class="col-xs-2 col-xs-offset-2">Notes</label>
+						<label class="col-xs-15">Flat Rate</label>
+						<label class="col-xs-1">$</label>
+						<label class="col-xs-1">%</label>
+						<label class="col-xs-1">Min</label>
+						<label class="col-xs-15">Max</label>
+						<label class="col-xs-2">Sell Out Potential</label>
 					</div>
-				</div>
-				<div class="row">
-					<label class="col-xs-2 input_atomic">Event Tax</label>
-					<div class="col-xs-2"><input class="form-control skip_ajax" name="event_tax_note"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="event_tax_flat_rate"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="event_tax_per_ticket_dollar"
-						></div>
-					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="event_tax_per_ticket_percent"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="event_tax_min"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="event_tax_max"
-						></div>
-					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="event_tax"></div>
-				</div>
-				<div class="row">
-					<label class="col-xs-2 input_atomic">Insurance</label>
-					<div class="col-xs-2"><input class="form-control skip_ajax" name="insurance_note"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="insurance_flat_rate"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="insurance_per_ticket_dollar"
-						></div>
-					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="insurance_per_ticket_percent"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="insurance_min"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="insurance_max"
-						></div>
-					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="insurance"></div>
-				</div>
-				<div class="row">
-					<label class="col-xs-2 input_atomic">SESEC</label>
-					<div class="col-xs-2"><input class="form-control skip_ajax" name="sesec_note"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_flat_rate"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_per_ticket_dollar"
-						></div>
-					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="sesec_per_ticket_percent"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_min"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_max"
-						></div>
-					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="sesec"></div>
-				</div>
-				<div class="row">
-					<label class="col-xs-2 input_atomic">ASCAP
-						<button type="button" data-toggle="modal" data-target="#ascap_modal_cr8">Update</button>
-					</label>
-					<div class="col-xs-2"><input class="form-control skip_ajax" name="ascap_note"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="ascap_flat_rate"
-						></div>
-					<span class="col-xs-2"></span>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="ascap_min"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="ascap_max"
-						></div>
-					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="ascap"></div>
-				</div>
-				<div class="row">
-					<label class="col-xs-2 input_atomic">BMI
-						<button type="button" data-toggle="modal" data-target="#bmi_modal_cr8">Update</button>
-					</label>
-					<div class="col-xs-2"><input class="form-control skip_ajax" name="bmi_note">
+					<div class="row">
+						<label class="col-xs-2 input_atomic">Rental</label>
+						<div class="col-xs-2"><input class="form-control skip_ajax" name="rental_note"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="rental_flat_rate"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="rental_per_ticket_dollar"
+							></div>
+						<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="rental_per_ticket_percent"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="rental_min"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="rental_max"
+							></div>
+						<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="rental"></div>
 					</div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_flat_rate"
-						></div>
-					<span class="col-xs-2"></span>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="bmi_min"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_max"
-						></div>
-					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="bmi"></div>
-				</div>
-				<div class="row">
-					<label class="col-xs-2 input_atomic">Credit Card Fees</label>
-					<div class="col-xs-2"><input class="form-control skip_ajax" name="cc_fee_note"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_flat_rate"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="cc_fee_per_ticket_dollar"
-						></div>
-					<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="cc_fee_per_ticket_percent"
-						></div>
-					<div class="col-xs-1"><input class="money  form-control skip_ajax" name="cc_fee_min"
-						></div>
-					<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_max"
-						></div>
-					<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="cc_fee"></div>
-				</div>
-				<div class="row">
-					<label class="col-xs-2 input_atomic">Est. CC Box Office Sales (%)</label>
-					<div class="col-xs-1 col-xs-offset-45"><input type="number" step="any" class="form-control skip_ajax" name="cc_box_office_sales_percent">
+					<div class="row">
+						<label class="col-xs-2 input_atomic">Tix Commission</label>
+						<div class="col-xs-2"><input class="form-control skip_ajax" name="tixcom_note"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tixcom_flat_rate"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tixcom_per_ticket_dollar"
+							></div>
+						<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="tixcom_per_ticket_percent"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tixcom_min"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tixcom_max"
+							></div>
+						<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="tixcom"></div>
 					</div>
-					<div class="col-xs-4"></div>
-				</div>
-				<div class="row">
-					<label class="col-xs-3 col-xs-offset-7 input_atomic underlined"><b>Total Variable Expenses</b></label>
-					<div class="col-xs-2"><b><input readonly class="money form-control skip_ajax  sys_gen total_variable_expense"></b></div>
+					<div class="row">
+						<label class="col-xs-2 input_atomic">Tix Service Fees</label>
+						<div class="col-xs-2"><input class="form-control skip_ajax" name="tix_service_fee_note"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tix_service_fee_flat_rate"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tix_service_fee_per_ticket_dollar"
+							></div>
+						<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="tix_service_fee_per_ticket_percent"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="tix_service_fee_min"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="tix_service_fee_max"
+							></div>
+						<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="tix_service_fee">
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-xs-2 input_atomic">Box Office Fees</label>
+						<div class="col-xs-2"><input class="form-control skip_ajax" name="box_office_fee_note"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="box_office_fee_flat_rate"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="box_office_fee_per_ticket_dollar"
+							></div>
+						<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="box_office_fee_per_ticket_percent"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="box_office_fee_min"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="box_office_fee_max"
+							></div>
+						<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="box_office_fee">
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-xs-2 input_atomic">Event Tax</label>
+						<div class="col-xs-2"><input class="form-control skip_ajax" name="event_tax_note"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="event_tax_flat_rate"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="event_tax_per_ticket_dollar"
+							></div>
+						<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="event_tax_per_ticket_percent"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="event_tax_min"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="event_tax_max"
+							></div>
+						<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="event_tax"></div>
+					</div>
+					<div class="row">
+						<label class="col-xs-2 input_atomic">Insurance</label>
+						<div class="col-xs-2"><input class="form-control skip_ajax" name="insurance_note"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="insurance_flat_rate"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="insurance_per_ticket_dollar"
+							></div>
+						<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="insurance_per_ticket_percent"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="insurance_min"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="insurance_max"
+							></div>
+						<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="insurance"></div>
+					</div>
+					<div class="row">
+						<label class="col-xs-2 input_atomic">SESEC</label>
+						<div class="col-xs-2"><input class="form-control skip_ajax" name="sesec_note"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_flat_rate"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_per_ticket_dollar"
+							></div>
+						<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="sesec_per_ticket_percent"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_min"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_max"
+							></div>
+						<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="sesec"></div>
+					</div>
+					<div class="row">
+						<label class="col-xs-2 input_atomic">ASCAP
+							<button type="button" data-toggle="modal" data-target="#ascap_modal_cr8">Update</button>
+						</label>
+						<div class="col-xs-2"><input class="form-control skip_ajax" name="ascap_note"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="ascap_flat_rate"
+							></div>
+						<span class="col-xs-2"></span>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="ascap_min"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="ascap_max"
+							></div>
+						<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="ascap"></div>
+					</div>
+					<div class="row">
+						<label class="col-xs-2 input_atomic">BMI
+							<button type="button" data-toggle="modal" data-target="#bmi_modal_cr8">Update</button>
+						</label>
+						<div class="col-xs-2"><input class="form-control skip_ajax" name="bmi_note">
+						</div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_flat_rate"
+							></div>
+						<span class="col-xs-2"></span>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="bmi_min"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="bmi_max"
+							></div>
+						<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="bmi"></div>
+					</div>
+					<div class="row">
+						<label class="col-xs-2 input_atomic">Credit Card Fees</label>
+						<div class="col-xs-2"><input class="form-control skip_ajax" name="cc_fee_note"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_flat_rate"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="cc_fee_per_ticket_dollar"
+							></div>
+						<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="cc_fee_per_ticket_percent"
+							></div>
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="cc_fee_min"
+							></div>
+						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="cc_fee_max"
+							></div>
+						<div class="col-xs-2"><input readonly class="money  form-control skip_ajax  sys_gen sellout_potential" data-category="cc_fee"></div>
+					</div>
+					<div class="row">
+						<label class="col-xs-2 input_atomic">Est. CC Box Office Sales (%)</label>
+						<div class="col-xs-1 col-xs-offset-45"><input type="number" step="any" class="form-control skip_ajax" name="cc_box_office_sales_percent">
+						</div>
+						<div class="col-xs-4"></div>
+					</div>
+					<div class="row">
+						<label class="col-xs-3 col-xs-offset-7 input_atomic underlined"><b>Total Variable Expenses</b></label>
+						<div class="col-xs-2"><b><input readonly class="money form-control skip_ajax  sys_gen total_variable_expense"></b></div>
+					</div>
 				</div>
 			</div>
 			<br>

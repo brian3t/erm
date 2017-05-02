@@ -365,3 +365,13 @@ function print_option_fr_collection(collection_name, name_column) {
     });
     return result;
 }
+
+/**
+ * Extract variables from BB model
+ * @param model Backbone.Model
+ */
+function extract_from_model(model) {
+    if (!model instanceof Backbone.Model){
+        return false;
+    }
+}
