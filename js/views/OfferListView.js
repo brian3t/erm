@@ -320,7 +320,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
     pdf_item: function (e) {
         var curr_id = this.offer_form_view.model.get('id');
         if (isInWeb) {
-            window.open('http://admin.entertainmentdirectmetrics.com/offer/pdf?id=' + curr_id, '_blank')
+            window.open(BACKEND_URL + 'offer/pdf?id=' + curr_id, '_blank')
         }
     },
     offer_form_view: {},
