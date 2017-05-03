@@ -109,6 +109,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         var promotional_comp = $co.find('input[name="promotional_comp"]').val() || 0;
         var house_comp = $co.find('input[name="house_comp"]').val() || 0;
         var kill = $co.find('input[name="kill"]').val() || 0;
+        var facility_fee = $co.find('input[name="facility_fee"]').val() || 0;
 
         var l1_price = parseFloatOr0($co.find('input[name="l1_price"]').val()),
             l2_price = parseFloatOr0($co.find('input[name="l2_price"]').val()),
@@ -191,18 +192,19 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         V.aw_promoter_split = 0;
 
         V.total_comp_kill = Number(artist_comp + production_comp + promotional_comp + house_comp + kill).toFixed(0);
-
+        V.total_sellable_ticket = V.sum_gross_ticket - V.sum_kill;
+        V.average_ticket = V.sum_gross_ticket / 5;
+        V.average_kill = V.sum_kill / 5;
+        V.sellable_ticket = (V.sum_gross_ticket - V.sum_kill) / 5;
+        V.average_gross = V.sum_gross / 5;
+        V.facility_fee_total = facility_fee * (V.sum_gross_ticket - V.sum_kill);
 //format NAN
         $.each(V, function (i, v) {
             if (isNumeric(V[i])) {
                 V[i] = Number(V[i]).toFixed(2);
             }
-        });
-        //bind to html
-        $.each(V, function (i, v) {
-            // console.info(i);
-            // console.info(v);
-            var a = 1;
+            //bind to html
+            $co.find('input.sys_gen.' + i).val(v);
         });
     },
     recalculate_aw_values_cr8: function () {
@@ -413,7 +415,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
 
         if (e instanceof jQuery) {//create mode real-time update
             ve_form = $('#var_expense_cr8');
-            gross_potential = parseFloatOr0(e.find('.gross_potential').val()); here gross potential
+            gross_potential = parseFloatOr0(e.find('.gross_potential').val());
             gross_ticket = parseFloatOr0(e.find('.gross_ticket').val());
         }else {
             if (e === null){

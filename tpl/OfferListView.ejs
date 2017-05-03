@@ -164,7 +164,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<label class="col-xs-2"><input readonly class="l1 sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"><input name="l1_price" step="any"
 												   class="money  form-control"></label>
-					<label class="col-xs-2"><input readonly class="money l1 gross  sys_gen form-control"
+					<label class="col-xs-2"><input readonly class="money l1 gross l1_gross  sys_gen form-control"
 						></label>
 				</div>
 				<div class="row ticket_scaling">
@@ -176,7 +176,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<label class="col-xs-2"><input readonly class="l2 sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"><input name="l2_price" step="any"
 												   class="money  form-control"></label>
-					<label class="col-xs-2"><input readonly class="money l2  gross  sys_gen form-control"
+					<label class="col-xs-2"><input readonly class="money l2  gross l2_gross sys_gen form-control"
 						></label>
 				</div>
 				<div class="row ticket_scaling">
@@ -188,7 +188,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<label class="col-xs-2"><input readonly class="l3 sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"><input name="l3_price" step="any"
 												   class="money  form-control"></label>
-					<label class="col-xs-2"><input readonly class="money l3  gross  sys_gen form-control"
+					<label class="col-xs-2"><input readonly class="money l3  gross l3_gross sys_gen form-control"
 						></label>
 				</div>
 				<div class="row ticket_scaling">
@@ -200,7 +200,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<label class="col-xs-2"><input readonly class="l4 sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"><input name="l4_price" step="any"
 												   class="money  form-control"></label>
-					<label class="col-xs-2"><input readonly class="money l4  gross  sys_gen form-control"
+					<label class="col-xs-2"><input readonly class="money l4  gross l4_gross sys_gen form-control"
 						></label>
 				</div>
 				<div class="row ticket_scaling">
@@ -212,7 +212,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<label class="col-xs-2"><input readonly class="l5 sellable_ticket  sys_gen form-control"></label>
 					<label class="col-xs-2"><input name="l5_price" step="any"
 												   class="money  form-control"></label>
-					<label class="col-xs-2"><input readonly class="money l5  gross  sys_gen form-control"
+					<label class="col-xs-2"><input readonly class="money l5  gross l5_gross sys_gen form-control"
 						></label>
 				</div>
 
@@ -220,9 +220,9 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<label class="col-xs-1 ">Total Gross</label>
 					<label class="col-xs-2"><input readonly class="  form-control  sys_gen gross_ticket"></label>
 					<label class="col-xs-1"><input readonly step="any" class="  form-control  sys_gen total_kill"></label>
-					<label class="col-xs-2"><input readonly class="total sellable_ticket  sys_gen form-control"></label>
-					<label class="col-xs-2"><input readonly step="any" class="money  form-control  sys_gen average_ticket_price"></label>
-					<label class="col-xs-2"><input readonly class="money total  gross  sys_gen form-control"></label>
+					<label class="col-xs-2"><input readonly class="total sellable_ticket total_sellable_ticket sys_gen form-control"></label>
+					<label class="col-xs-2"><input readonly step="any" class="money  form-control  sys_gen total_gross_ticket_price"></label>
+					<label class="col-xs-2"><input readonly class="money total  gross sum_gross sys_gen form-control"></label>
 				</div>
 				<div class="row average">
 					<label class="col-xs-1 ">Average</label>
@@ -236,7 +236,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<div class="col-xs-4"></div>
 					<label class="col-xs-2 text_underlined">Gross Potential </label>
 					<div class="col-xs-2"></div>
-					<div class="col-xs-2 content-padded"><strong><input readonly step="any" class="money  gross_potential  sys_gen"></strong>
+					<div class="col-xs-2 content-padded"><strong><input readonly step="any" class="money  gross_potential sum_gross sys_gen"></strong>
 					</div>
 					<div class="col-xs-2"></div>
 				</div>
@@ -245,7 +245,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<label class="col-xs-2">Tax % </label>
 					<div class="col-xs-2 content-padded"><input type="number" name="tax" step="any">
 					</div>
-					<div class="col-xs-2 content-padded"><input class="money"></div>
+					<div class="col-xs-2 content-padded"><input class="money sys_gen tax_total"></div>
 					<div class="col-xs-2 content-padded"><input name="tax_note" placeholder="note">
 					</div>
 				</div>
@@ -253,7 +253,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<div class="col-xs-4"></div>
 					<label class="col-xs-2">Tax per Ticket </label>
 					<div class="col-xs-2 content-padded"><input name="tax_per_ticket" step="any" class="money "></div>
-					<div class="col-xs-2 content-padded"><input readonly class="money tax_per_ticket_total"></div>
+					<div class="col-xs-2 content-padded"><input readonly class="money tax_per_ticket_total sys_gen"></div>
 					<div class="col-xs-2"></div>
 				</div>
 				<div class="row">

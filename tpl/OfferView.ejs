@@ -285,7 +285,7 @@ recalculate_offer_values();
 			<label class="col-xs-1"><input name="l1_kill" disabled step="any" value="<%= l1_kill %>"
 										   class="  form-control"></label>
 			<label class="col-xs-2"><input readonly class="l1 sellable_ticket  sys_gen form-control"
-										   value="<%= l1_gross_ticket - l1_kill %>"></input></label>
+										   value="<%= l1_gross_ticket - l1_kill %>"></label>
 			<label class="col-xs-2"><input name="l1_price" disabled step="any" value="<%= l1_price %>"
 										   class="money  form-control"></label>
 			<label class="col-xs-2"><input readonly class="money l1 gross  sys_gen form-control"
@@ -298,7 +298,7 @@ recalculate_offer_values();
 			<label class="col-xs-1"><input name="l2_kill" disabled step="any" value="<%= l2_kill %>"
 										   class="  form-control"></label>
 			<label class="col-xs-2"><input readonly class="l2 sellable_ticket  sys_gen form-control"
-										   value="<%= l2_gross_ticket - l2_kill %>"></input></label>
+										   value="<%= l2_gross_ticket - l2_kill %>"></label>
 			<label class="col-xs-2"><input name="l2_price" disabled step="any" value="<%= l2_price %>"
 										   class="money  form-control"></label>
 			<label class="col-xs-2"><input readonly class="money l2  gross  sys_gen form-control"
@@ -311,7 +311,7 @@ recalculate_offer_values();
 			<label class="col-xs-1"><input name="l3_kill" disabled step="any" value="<%= l3_kill %>"
 										   class="  form-control"></label>
 			<label class="col-xs-2"><input readonly class="l3 sellable_ticket  sys_gen form-control"
-										   value="<%= l3_gross_ticket - l3_kill %>"></input></label>
+										   value="<%= l3_gross_ticket - l3_kill %>"></label>
 			<label class="col-xs-2"><input name="l3_price" disabled step="any" value="<%= l3_price %>"
 										   class="money  form-control"></label>
 			<label class="col-xs-2"><input readonly class="money l3  gross  sys_gen form-control"
@@ -324,7 +324,7 @@ recalculate_offer_values();
 			<label class="col-xs-1"><input name="l4_kill" disabled step="any" value="<%= l4_kill %>"
 										   class="  form-control"></label>
 			<label class="col-xs-2"><input readonly class="l4 sellable_ticket  sys_gen form-control"
-										   value="<%= l4_gross_ticket - l4_kill %>"></input></label>
+										   value="<%= l4_gross_ticket - l4_kill %>"></label>
 			<label class="col-xs-2"><input name="l4_price" disabled step="any" value="<%= l4_price %>"
 										   class="money  form-control"></label>
 			<label class="col-xs-2"><input readonly class="money l4  gross  sys_gen form-control"
@@ -337,7 +337,7 @@ recalculate_offer_values();
 			<label class="col-xs-1"><input name="l5_kill" disabled step="any" value="<%= l5_kill %>"
 										   class="  form-control"></label>
 			<label class="col-xs-2"><input readonly class="l5 sellable_ticket  sys_gen form-control"
-										   value="<%= l5_gross_ticket - l5_kill %>"></input></label>
+										   value="<%= l5_gross_ticket - l5_kill %>"></label>
 			<label class="col-xs-2"><input name="l5_price" disabled step="any" value="<%= l5_price %>"
 										   class="money  form-control"></label>
 			<label class="col-xs-2"><input readonly class="money l5  gross  sys_gen form-control"
@@ -350,7 +350,7 @@ recalculate_offer_values();
 			<label class="col-xs-1"><input id="total_kill" readonly step="any" value="<%= V.sum_kill %>"
 										   class="  form-control  sys_gen"></label>
 			<label class="col-xs-2"><input readonly class="total sellable_ticket  sys_gen form-control"
-										   value="<%= V.sum_gross_ticket - V.sum_kill %>"></input></label>
+										   value="<%= V.sum_gross_ticket - V.sum_kill %>"></label>
 			<label class="col-xs-2"><input readonly id="average_ticket_price" step="any"
 										   class="money  form-control  sys_gen"
 										   value="<%= V.total_gross_ticket_price %>"></label>
@@ -364,7 +364,7 @@ recalculate_offer_values();
 			<label class="col-xs-1"><input id="average_kill" readonly step="any" value="<%= V.sum_kill / 5 %>"
 										   class="  form-control  sys_gen"></label>
 			<label class="col-xs-2"><input readonly class="average sellable_ticket  sys_gen form-control"
-										   value="<%= (V.sum_gross_ticket - V.sum_kill) / 5 %>"></input></label>
+										   value="<%= (V.sum_gross_ticket - V.sum_kill) / 5 %>"></label>
 			<label class="col-xs-2"></label>
 			<label class="col-xs-2"><input readonly class="money average gross  sys_gen form-control"
 										   value="<%= V.sum_gross / 5 %>"></label>
@@ -381,19 +381,19 @@ recalculate_offer_values();
 		<div class="row">
 			<div class="col-xs-4"></div>
 			<label class="col-xs-2">Tax % </label>
-			<div class="col-xs-2 content-padded"><input disabled type="number" name="tax" step="any" value="<%= tax %>"></input>
+			<div class="col-xs-2 content-padded"><input disabled type="number" name="tax" step="any" value="<%= tax %>">
 			</div>
 			<div class="col-xs-2 content-padded"><input id="tax_input" value="<%= V.tax_total %>"
 														class="money"></div>
 			<div class="col-xs-2 content-padded"><input disabled name="tax_note" placeholder=""
-														value="<%= tax_note %>"></input>
+														value="<%= tax_note %>">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-4"></div>
 			<label class="col-xs-2">Tax per Ticket </label>
 			<div class="col-xs-2 content-padded"><input disabled name="tax_per_ticket" step="any" class="money "
-														value="<%= tax_per_ticket %>"></input></div>
+														value="<%= tax_per_ticket %>"></div>
 			<div class="col-xs-2 content-padded"><input readonly id="tax_per_ticket_total" value="<%= V.tax_per_ticket_total %>" class="money  sys_gen"></div>
 			<div class="col-xs-2"></div>
 		</div>
@@ -410,9 +410,9 @@ recalculate_offer_values();
 			<div class="col-xs-4"></div>
 			<label class="col-xs-2">Facility Fee</label>
 			<div class="col-xs-2 content-padded"><input disabled name="facility_fee" step="any" class="money "
-														value="<%= facility_fee %>"></input></div>
+														value="<%= facility_fee %>"></div>
 			<div class="col-xs-2 content-padded"><input readonly id="facility_fee_total" value="<%= facility_fee * (V.sum_gross_ticket - V.sum_kill) %>" class="money  sys_gen"></div>
-			<div class="col-xs-2 content-padded"><input disabled name="facility_fee_note" placeholder="" value="<%= facility_fee_note %>"></input></div>
+			<div class="col-xs-2 content-padded"><input disabled name="facility_fee_note" placeholder="" value="<%= facility_fee_note %>"></div>
 		</div>
 	</div>
 	<h4>Artist Deal</h4>
