@@ -442,10 +442,14 @@ app.views.OfferView = Backbone.BBFormView.extend({
         } else {
             if (e === null) {
                 e = $('#var_expense_cr8');//upon saving create form
+                ve_form = $('#var_expense_cr8');
+                gross_potential = parseFloatOr0($('#create_offer .gross_potential').val());
+                gross_ticket = parseFloatOr0($('#create_offer .sum_gross_ticket').val());
+            } else {
+                e = $(e.target);
+                gross_potential = parseFloatOr0($('#gross_potential').val());
+                gross_ticket = parseFloatOr0($('#gross_ticket').val());
             }
-            e = $(e.target);
-            gross_potential = parseFloatOr0($('#gross_potential').val());
-            gross_ticket = parseFloatOr0($('#gross_ticket').val());
         }
 
         var ve_values = flat_array_to_assoc(ve_form.find(':input:not([readonly])').serializeArray());
