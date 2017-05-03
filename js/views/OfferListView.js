@@ -34,7 +34,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         "click button.delete": "delete_model",
         "change .edit_switch": "toggle_edit_mode",
         "click button.pdf": "pdf_item",
-        "change #create_offer input": "update_field_cr8"
+        "blur #create_offer input": "update_field_cr8"
     },
     toggle_edit_mode: function (e) {
         var $e = $(e.currentTarget);
@@ -74,6 +74,15 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         var $co = $('#create_offer');//wrapper div
         this.update_json_array('.general_expense');
         this.offer_form_view.update_ve($co.find('input[name=rental_note]'), false);
+        this.offer_form_view.update_ve($co.find('input[name=tixcom_note]'), false);
+        this.offer_form_view.update_ve($co.find('input[name=tix_service_fee_note]'), false);
+        this.offer_form_view.update_ve($co.find('input[name=box_office_fee_note]'), false);
+        this.offer_form_view.update_ve($co.find('input[name=event_tax_note]'), false);
+        this.offer_form_view.update_ve($co.find('input[name=insurance_note]'), false);
+        this.offer_form_view.update_ve($co.find('input[name=sesec_note]'), false);
+        this.offer_form_view.update_ve($co.find('input[name=ascap_note]'), false);
+        this.offer_form_view.update_ve($co.find('input[name=bmi_note]'), false);
+        this.offer_form_view.update_ve($co.find('input[name=cc_fee_note]'), false);
         this.recalculate_aw_values_cr8();
         this.update_json_array('.var_expense');
         this.update_json_array('.production_expense');
@@ -92,24 +101,25 @@ app.views.OfferListView = Backbone.BBFormView.extend({
             general_expense = '{}';
         }
         var is_tbd_date = $co.find('input[name="is_tbd_date"]').val() || 0;
-        var is_on_sale_date_tbd = $co.find('input[name="is_on_sale_date_tbd"]').val() || 0;
+        var is_on_sale_date_tbd = parseFloatOr0($co.find('input[name="is_on_sale_date_tbd"]').val());
         var show_date = $co.find('input[name="show_date"]').val() || 'today';
-        var post_show_lockout = $co.find('input[name="post_show_lockout"]').val();
-        var post_show_lockout_unit = $co.find('input[name="post_show_lockout_unit"]').val();
-        var support_artist_1_total = $co.find('input[name="support_artist_1_total"]').val() || 0;
-        var support_artist_2_total = $co.find('input[name="support_artist_2_total"]').val() || 0;
-        var support_artist_3_total = $co.find('input[name="support_artist_3_total"]').val() || 0;
-        var housenut_total = $co.find('input[name="housenut_total"]').val() || 0;
+        var post_show_lockout = parseInt($co.find('input[name="post_show_lockout"]').val());
+        var post_show_lockout_unit = $co.find('select[name="post_show_lockout_unit"]').val();
+        var support_artist_1_total = parseFloatOr0($co.find('input[name="support_artist_1_total"]').val());
+        var support_artist_2_total = parseFloatOr0($co.find('input[name="support_artist_2_total"]').val());
+        var support_artist_3_total = parseFloatOr0($co.find('input[name="support_artist_3_total"]').val());
+        var housenut_total = parseFloatOr0($co.find('input[name="housenut_total"]').val());
         var is_artist_production_buyout = $co.find('input[name="is_artist_production_buyout"]').val();
-        var tax_per_ticket = $co.find('input[name="tax_per_ticket"]').val();
-        var tax = $co.find('input[name="tax"]').val() || 0;
-        var artist_guarantee = $co.find('input[name="artist_guarantee"]').val() || 0;
-        var artist_comp = $co.find('input[name="artist_comp"]').val() || 0;
-        var production_comp = $co.find('input[name="production_comp"]').val() || 0;
-        var promotional_comp = $co.find('input[name="promotional_comp"]').val() || 0;
-        var house_comp = $co.find('input[name="house_comp"]').val() || 0;
-        var kill = $co.find('input[name="kill"]').val() || 0;
-        var facility_fee = $co.find('input[name="facility_fee"]').val() || 0;
+        var tax_per_ticket = parseFloatOr0($co.find('input[name="tax_per_ticket"]').val());
+        var tax = parseFloatOr0($co.find('input[name="tax"]').val());
+        var artist_guarantee = parseFloatOr0($co.find('input[name="artist_guarantee"]').val());
+        var artist_comp = parseFloatOr0($co.find('input[name="artist_comp"]').val());
+        var production_comp = parseFloatOr0($co.find('input[name="production_comp"]').val());
+        var promotional_comp = parseFloatOr0($co.find('input[name="promotional_comp"]').val());
+        var house_comp = parseFloatOr0($co.find('input[name="house_comp"]').val());
+        var kill = parseFloatOr0($co.find('input[name="kill"]').val());
+        var facility_fee = parseFloatOr0($co.find('input[name="facility_fee"]').val());
+        var artist_split = parseFloatOr0($co.find('input[name="artist_split"]').val());
 
         var l1_price = parseFloatOr0($co.find('input[name="l1_price"]').val()),
             l2_price = parseFloatOr0($co.find('input[name="l2_price"]').val()),
@@ -136,6 +146,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         V.sum_gross_ticket = l1_gross_ticket + l2_gross_ticket + l3_gross_ticket + l4_gross_ticket + l5_gross_ticket;
         V.sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
         V.total_gross_ticket_price = (V.sum_gross_ticket - V.sum_kill == 0) ? 0 : V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
+        V.total_gross_ticket_price = Number(V.total_gross_ticket_price).toFixed(2);
         V.playable_on = new Date(show_date);
         switch (post_show_lockout_unit) {
             case 'Days':
@@ -146,6 +157,11 @@ app.views.OfferListView = Backbone.BBFormView.extend({
                 break;
             default:
                 break;
+        }
+        if (_.isDate(V.playable_on) && _.isFinite(V.playable_on.getTime())) {
+            V.playable_on = V.playable_on.toDateString();
+        } else {
+            V.playable_on = '';
         }
         ve = {};
         try {
@@ -188,23 +204,29 @@ app.views.OfferListView = Backbone.BBFormView.extend({
             V.aw_artist_fee += V.tour_production_expenses;
             V.aw_artist_production = V.tour_production_expenses;
         }
-        V.aw_promoter_split_percent = 0;
-        V.aw_promoter_split = 0;
+        V.aw_promoter_split_percent = 100 - artist_split;
+        // V.aw_promoter_split = 0;
 
         V.total_comp_kill = Number(artist_comp + production_comp + promotional_comp + house_comp + kill).toFixed(0);
         V.total_sellable_ticket = V.sum_gross_ticket - V.sum_kill;
         V.average_ticket = V.sum_gross_ticket / 5;
         V.average_kill = V.sum_kill / 5;
         V.sellable_ticket = (V.sum_gross_ticket - V.sum_kill) / 5;
+        V.l1_sellable_ticket = (l1_gross_ticket - l1_kill);
+        V.l2_sellable_ticket = (l2_gross_ticket - l2_kill);
+        V.l3_sellable_ticket = (l3_gross_ticket - l3_kill);
+        V.l4_sellable_ticket = (l4_gross_ticket - l4_kill);
+        V.l5_sellable_ticket = (l5_gross_ticket - l5_kill);
         V.average_gross = V.sum_gross / 5;
         V.facility_fee_total = facility_fee * (V.sum_gross_ticket - V.sum_kill);
+        V.promoter_split = 100 - artist_split;
 //format NAN
         $.each(V, function (i, v) {
             if (isNumeric(V[i])) {
                 V[i] = Number(V[i]).toFixed(2);
             }
             //bind to html
-            $co.find('input.sys_gen.' + i).val(v);
+            $co.find('input.sys_gen.' + i).val(V[i]);
         });
     },
     recalculate_aw_values_cr8: function () {
@@ -231,9 +253,9 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         var total_expense = parseFloatOr0($co.find('.total_fixed_expenses').val()) + parseFloatOr0(sellout_total);
         var estimated_total = total_expense + parseFloatOr0($co.find('.aw_artist_fee').val());
         var net_potential = parseFloatOr0($co.find('.aw_net_potential').val());
-        var split_point = net_potential - total_expense;
+        var split_point = Number(net_potential - total_expense).toFixed(2);
         var artist_split = Number(split_point * artist_split_percent / 100).toFixed(2);
-        var avg_tick_price = $co.find('.average_ticket_price').val();
+        var avg_tick_price = $co.find('.total_gross_ticket_price').val();
         var breakeven_tix = null;
         if (typeof avg_tick_price == 'string') {
             avg_tick_price = parseFloatOr0(avg_tick_price.replace('$', ''));
@@ -246,7 +268,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         $co.find('.aw_est_split_point').val(split_point);
         $co.find('.aw_artist_split').val(artist_split);
         $co.find('.aw_promoter_split').val(Number(split_point * (100 - artist_split_percent) / 100).toFixed(2));
-        $co.find('.aw_artist_walkout').val(Number(artist_split + parseFloatOr0($('#aw_artist_production').val())).toFixed(2));
+        $co.find('.aw_artist_walkout').val(Number(artist_split + parseFloatOr0($co.find('.aw_artist_production').val())).toFixed(2));
         $('input.money').autoNumeric('init', {aSign: '$'});
     },
     save_form: function (e) {
@@ -415,10 +437,10 @@ app.views.OfferView = Backbone.BBFormView.extend({
 
         if (e instanceof jQuery) {//create mode real-time update
             ve_form = $('#var_expense_cr8');
-            gross_potential = parseFloatOr0(e.find('.gross_potential').val());
-            gross_ticket = parseFloatOr0(e.find('.gross_ticket').val());
-        }else {
-            if (e === null){
+            gross_potential = parseFloatOr0($('#create_offer .gross_potential').val());
+            gross_ticket = parseFloatOr0($('#create_offer .sum_gross_ticket').val());
+        } else {
+            if (e === null) {
                 e = $('#var_expense_cr8');//upon saving create form
             }
             e = $(e.target);

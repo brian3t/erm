@@ -329,7 +329,7 @@ function lat_lng_distance(lat1, lon1, lat2, lon2, unit) {
     return dist;
 }
 function isNumeric(n) {
-    return !isNaN(parseFloat(n)) && isFinite(parseFloat(n)) && parseFloat(n).toString() === n;
+    return !isNaN(parseFloat(n)) && isFinite(parseFloat(n)) && parseFloat(n).toString() == n;
 }
 function parseFloatOr0(v) {
     if (typeof v == "string") {
