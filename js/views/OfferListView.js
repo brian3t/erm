@@ -169,7 +169,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         } catch (e) {
             console.error("Cr8 Error parsing var expense: " + variable_expense + " error: " + e);
         }
-        this.offer_form_view.update_ve(null, false);
+        // this.offer_form_view.update_ve(null, false);
         V.total_ve = $('#total_variable_expense').val();
 
         V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
