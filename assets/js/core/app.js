@@ -1,17 +1,16 @@
 /* ------------------------------------------------------------------------------
-*
-*  # Template JS core
-*
-*  Core JS file with default functionality configuration
-*
-*  Version: 1.2
-*  Latest update: Dec 11, 2015
-*
-* ---------------------------------------------------------------------------- */
+ *
+ *  # Template JS core
+ *
+ *  Core JS file with default functionality configuration
+ *
+ *  Version: 1.2
+ *  Latest update: Dec 11, 2015
+ *
+ * ---------------------------------------------------------------------------- */
 $.fx.speeds._default = 1000;
 
-element_ready = function(){
-
+element_ready = function () {
 
     // ========================================
     //
@@ -31,8 +30,6 @@ element_ready = function(){
     containerHeight();
 
 
-
-
     // ========================================
     //
     // Heading elements
@@ -48,15 +45,14 @@ element_ready = function(){
 
 
     // Toggle visible state of heading elements
-    $('.panel-heading').on('click', function(e) {
-        if (e.target.nodeName !=='A'){
+    $('.panel-heading').on('click', function (e) {
+        if (e.target.nodeName !== 'A') {
             return;
         }
         // $(this).parent().children('.heading-elements').toggleClass('visible');
         $(this).parent().find('.icon-arrow-right13').toggle();
         $(this).parent().find('.icon-arrow-down12').toggle();
     });
-
 
 
     // Breadcrumb elements toggler
@@ -67,11 +63,9 @@ element_ready = function(){
 
 
     // Toggle visible state of breadcrumb elements
-    $('.breadcrumb-elements-toggle').on('click', function() {
+    $('.breadcrumb-elements-toggle').on('click', function () {
         $(this).parent().children('.breadcrumb-elements').toggleClass('visible');
     });
-
-
 
 
     // ========================================
@@ -99,8 +93,6 @@ element_ready = function(){
     $('.dropdown-content a[data-toggle="tab"]').on('click', function (e) {
         $(this).tab('show');
     });
-
-
 
 
     // ========================================
@@ -134,7 +126,7 @@ element_ready = function(){
 
         // For demo purposes
         window.setTimeout(function () {
-           $(block).unblock();
+            $(block).unblock();
         }, 2000);
     });
 
@@ -161,7 +153,7 @@ element_ready = function(){
 
         // For demo purposes
         window.setTimeout(function () {
-           $(block).unblock();
+            $(block).unblock();
         }, 2000);
     });
 
@@ -187,10 +179,9 @@ element_ready = function(){
 
         // For demo purposes
         window.setTimeout(function () {
-           $(block).unblock();
+            $(block).unblock();
         }, 2000);
     });
-
 
 
     // Collapse elements
@@ -246,7 +237,6 @@ element_ready = function(){
     });
 
 
-
     // Remove elements
     // -------------------------
 
@@ -257,7 +247,7 @@ element_ready = function(){
 
         containerHeight(); // recalculate page height
 
-        $panelClose.slideUp(150, function() {
+        $panelClose.slideUp(150, function () {
             $(this).remove();
         });
     });
@@ -270,12 +260,10 @@ element_ready = function(){
 
         containerHeight(); // recalculate page height
 
-        $categoryClose.slideUp(150, function() {
+        $categoryClose.slideUp(150, function () {
             $(this).remove();
         });
     });
-
-
 
 
     // ========================================
@@ -301,7 +289,6 @@ element_ready = function(){
     $('.dropdown-menu:not(.dropdown-content), .dropdown-menu:not(.dropdown-content) .dropdown-submenu').has('li.active').addClass('active').parents('.navbar-nav .dropdown:not(.language-switch), .navbar-nav .dropup:not(.language-switch)').addClass('active');
 
 
-
     // Main navigation tooltips positioning
     // -------------------------
 
@@ -310,7 +297,6 @@ element_ready = function(){
         placement: 'right',
         container: 'body'
     });
-
 
 
     // Collapsible functionality
@@ -344,8 +330,6 @@ element_ready = function(){
     });
 
 
-
-
     // ========================================
     //
     // Sidebars
@@ -363,7 +347,6 @@ element_ready = function(){
         // Toggle min sidebar class
         $('body').toggleClass('sidebar-xs');
     });
-
 
 
     // Sidebar controls
@@ -408,7 +391,6 @@ element_ready = function(){
 
         $('body').toggleClass('sidebar-all-hidden');
     });
-
 
 
     //
@@ -515,7 +497,6 @@ element_ready = function(){
     });
 
 
-
     // Mobile sidebar controls
     // -------------------------
 
@@ -547,15 +528,14 @@ element_ready = function(){
     });
 
 
-
     // Mobile sidebar setup
     // -------------------------
 
-    $(window).on('resize', function() {
-        setTimeout(function() {
+    $(window).on('resize', function () {
+        setTimeout(function () {
             containerHeight();
 
-            if($(window).width() <= 768) {
+            if ($(window).width() <= 768) {
 
                 // Add mini sidebar indicator
                 $('body').addClass('sidebar-xs-indicator');
@@ -578,20 +558,17 @@ element_ready = function(){
                 $('body').removeClass('sidebar-mobile-main sidebar-mobile-secondary sidebar-mobile-detached sidebar-mobile-opposite');
 
                 // Revert left detached position
-                if($('body').hasClass('has-detached-left')) {
+                if ($('body').hasClass('has-detached-left')) {
                     $('.sidebar-detached').insertBefore('.container-detached');
                 }
 
                 // Revert right detached position
-                else if($('body').hasClass('has-detached-right')) {
+                else if ($('body').hasClass('has-detached-right')) {
                     $('.sidebar-detached').insertAfter('.container-detached');
                 }
             }
         }, 100);
     }).resize();
-
-
-
 
     // ========================================
     //
@@ -612,7 +589,7 @@ element_ready = function(){
 
     $('.panel.clickable>div.panel-heading').bind('click', function (e) {
         $e = $(e.target);
-        if ($e.prop('tagName') == "A" && $e.data('action') == 'collapse'){
+        if ($e.prop('tagName') == "A" && $e.data('action') == 'collapse') {
             return;
         }
         $panel = $($(e.target).closest('.panel.clickable'));
@@ -623,8 +600,9 @@ element_ready = function(){
     // $('.multi_select').select2();
     $(document).trigger('select2_ready');
     // $('input[type="file"]').fileinput();
+    $('input[type=date]').datetimepicker({format: 'Y-m-d', timepicker: false});
 };
-$(document).ready(function($){
+$(document).ready(function ($) {
     $('.first_level.panel-heading').click();
 });
 $(document).ajaxStart(function () {
@@ -636,7 +614,7 @@ $(document).ajaxComplete(function () {
 function clear_ajax() {
     $('div.page').removeClass('whirl traditional');
 }
-$("input").keypress(function(event) {
+$("input").keypress(function (event) {
     if (event.which == 13) {
         event.preventDefault();
         $("form").submit();
@@ -644,7 +622,7 @@ $("input").keypress(function(event) {
 });
 function rebind_html_elements() {
     $('input[type="checkbox"]').on('change', function (e) {
-        $(this).val($(this).prop('checked')?1:0);
+        $(this).val($(this).prop('checked') ? 1 : 0);
     });
 }
 $.notifyDefaults({

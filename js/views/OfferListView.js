@@ -69,6 +69,10 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         this.$el.find('.general_expense').html(gen_exp_html);
         var prod_exp_html = this.print_table_from_array(temp_model.production_expense_array, false);
         this.$el.find('.production_expense').html(prod_exp_html);
+        //make sure delete button isn't shown
+        if ($('.toggle_state').text() == 'On'){
+            $('button.delete').hide();
+        }
     },
     update_field_cr8: function () {
         var $co = $('#create_offer');//wrapper div
@@ -342,6 +346,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         this.switchery = new Switchery(edit_switch[0]);
         edit_switch.trigger('change');
         this.delegateEvents();
+        $('input[type=date]').datetimepicker({format: 'Y-m-d', timepicker: false});
         return this.el;
     },
     after_render: function () {
@@ -413,6 +418,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         var edit_switch = $('.edit_switch');
         edit_switch.trigger('change');
         $('input.money').autoNumeric('init', {aSign: '$'});
+        $('input[type=date]').datetimepicker({format: 'Y-m-d', timepicker: false});
         return this.$el;
     },
     after_render: function () {
