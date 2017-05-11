@@ -347,6 +347,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         edit_switch.trigger('change');
         this.delegateEvents();
         $('input[type=date]').datetimepicker({format: 'Y-m-d', timepicker: false});
+        $('input[type=time]').datetimepicker({format: 'h:i:s', timepicker: true, datepicker:false});
         return this.el;
     },
     after_render: function () {
@@ -419,6 +420,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         edit_switch.trigger('change');
         $('input.money').autoNumeric('init', {aSign: '$'});
         $('input[type=date]').datetimepicker({format: 'Y-m-d', timepicker: false});
+        $('input[type=time]').datetimepicker({format: 'h:i:s', timepicker: true, datepicker:false});
         return this.$el;
     },
     after_render: function () {
