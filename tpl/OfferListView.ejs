@@ -144,7 +144,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 							<%= ticketing_company_opt %>
 						</select>
 					</label>
-					<label class="col-xs-3">On Sale Date<input type="date" class="form-control">
+					<label class="col-xs-3">Seating Plan<input name="seating_plan" type="text" maxlength="80" class="form-control">
 					</label>
 				</div>
 				<br>
@@ -535,7 +535,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 							></div>
 						<div class="col-xs-15"><input class="money  form-control skip_ajax" name="sesec_flat_rate"
 							></div>
-						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_per_ticket_dollar"
+						<div class="col-xs-1"><input class="money  form-control skip_ajax" name="sesec_per_ticket_dollar" data-decimalPlacesOverride="4" value="0.024"
 							></div>
 						<div class="col-xs-1"><input type="number" step="any" class="form-control skip_ajax" name="sesec_per_ticket_percent"
 							></div>
@@ -754,27 +754,27 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 							</div>
 							<div class="row">
 								<label class="col-xs-9 input_atomic">ASCAP Rate 0 - 2500 Tickets (%)</label>
-								<span class="col-xs-3"><input class="form-control" name="ascap_0_2500"
+								<span class="col-xs-3"><input class="form-control" name="ascap_0_2500" value="0.85"
 									></span>
 							</div>
 							<div class="row">
 								<label class="col-xs-9 input_atomic">ASCAP Rate 2501 - 5000 Tickets (%)</label>
-								<span class="col-xs-3"><input class="form-control" name="ascap_2501_5000"
+								<span class="col-xs-3"><input class="form-control" name="ascap_2501_5000" value="0.45"
 									></span>
 							</div>
 							<div class="row">
 								<label class="col-xs-9 input_atomic">ASCAP Rate 5001 - 10000 Tickets (%)</label>
-								<span class="col-xs-3"><input class="form-control" name="ascap_5001_10000"
+								<span class="col-xs-3"><input class="form-control" name="ascap_5001_10000" value="0.30"
 									></span>
 							</div>
 							<div class="row">
 								<label class="col-xs-9 input_atomic">ASCAP Rate 10001 - 25000 Tickets (%)</label>
-								<span class="col-xs-3"><input class="form-control" name="ascap_10001_25000"
+								<span class="col-xs-3"><input class="form-control" name="ascap_10001_25000" value="0.25"
 									></span>
 							</div>
 							<div class="row">
 								<label class="col-xs-9 input_atomic">ASCAP Rate 25001 - X Tickets (%)</label>
-								<span class="col-xs-3"><input class="form-control" name="ascap_25001_x"
+								<span class="col-xs-3"><input class="form-control" name="ascap_25001_x" value="0.15"
 									></span>
 							</div>
 						</div>
@@ -806,26 +806,26 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 							</div>
 							<div class="row">
 								<label class="col-xs-9 input_atomic">BMI Rate 0 - 2500 Tickets (%)</label>
-								<span class="col-xs-3"><input class="form-control" name="bmi_0_2500"></span>
+								<span class="col-xs-3"><input class="form-control" name="bmi_0_2500" value="0.85"></span>
 							</div>
 							<div class="row">
 								<label class="col-xs-9 input_atomic">BMI Rate 2501 - 5000 Tickets (%)</label>
-								<span class="col-xs-3"><input class="form-control" name="bmi_2501_5000"
+								<span class="col-xs-3"><input class="form-control" name="bmi_2501_5000" value="0.65"
 									></span>
 							</div>
 							<div class="row">
 								<label class="col-xs-9 input_atomic">BMI Rate 5001 - 10000 Tickets (%)</label>
-								<span class="col-xs-3"><input class="form-control" name="bmi_5001_10000"
+								<span class="col-xs-3"><input class="form-control" name="bmi_5001_10000" value="0.45"
 									></span>
 							</div>
 							<div class="row">
 								<label class="col-xs-9 input_atomic">BMI Rate 10001 - 25000 Tickets (%)</label>
-								<span class="col-xs-3"><input class="form-control" name="bmi_10001_25000"
+								<span class="col-xs-3"><input class="form-control" name="bmi_10001_25000" value="0.35"
 									></span>
 							</div>
 							<div class="row">
 								<label class="col-xs-9 input_atomic">BMI Rate 25001 - X Tickets (%)</label>
-								<span class="col-xs-3"><input class="form-control" name="bmi_25001_x"
+								<span class="col-xs-3"><input class="form-control" name="bmi_25001_x" value="0.20"
 									></span>
 							</div>
 						</div>

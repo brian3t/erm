@@ -70,7 +70,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         var prod_exp_html = this.print_table_from_array(temp_model.production_expense_array, false);
         this.$el.find('.production_expense').html(prod_exp_html);
         //make sure delete button isn't shown
-        if ($('.toggle_state').text() == 'On'){
+        if ($('.toggle_state').text() == 'On') {
             $('button.delete').hide();
         }
     },
@@ -113,7 +113,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         var support_artist_2_total = parseFloatOr0($co.find('input[name="support_artist_2_total"]').val());
         var support_artist_3_total = parseFloatOr0($co.find('input[name="support_artist_3_total"]').val());
         var housenut_total = parseFloatOr0($co.find('input[name="housenut_total"]').val());
-        var is_artist_production_buyout = $co.find('input[name="is_artist_production_buyout"]').val();
+        var is_artist_production_buyout = $co.find(':input[name="is_artist_production_buyout"]').val();
         var tax_per_ticket = parseFloatOr0($co.find('input[name="tax_per_ticket"]').val());
         var tax = parseFloatOr0($co.find('input[name="tax"]').val());
         var artist_guarantee = parseFloatOr0($co.find('input[name="artist_guarantee"]').val());
@@ -204,7 +204,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         V.aw_artist_split = 0;
         V.aw_artist_fee = parseFloat(artist_guarantee);
         V.aw_artist_production = 0;
-        if (is_artist_production_buyout && is_artist_production_buyout == 1) {
+        if (is_artist_production_buyout && (is_artist_production_buyout == 1 || is_artist_production_buyout == 'Yes')) {
             V.aw_artist_fee += V.tour_production_expenses;
             V.aw_artist_production = V.tour_production_expenses;
         }
@@ -273,7 +273,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         $co.find('.aw_artist_split').val(artist_split);
         $co.find('.aw_promoter_split').val(Number(split_point * (100 - artist_split_percent) / 100).toFixed(2));
         $co.find('.aw_artist_walkout').val(Number(artist_split + parseFloatOr0($co.find('.aw_artist_production').val())).toFixed(2));
-        $('input.money').autoNumeric('init', {aSign: '$'});
+        b3_autonumeric();
     },
     save_form: function (e) {
         e.preventDefault();
@@ -341,13 +341,20 @@ app.views.OfferListView = Backbone.BBFormView.extend({
             this.offer_form_view.after_render();
         }
         this.$el.find('#offer_search_list').html(this.offer_search_list_view.render());
+
+        is_validator_initializing = true;//turn off ajax update
+        this.$el.find('input[name=rental_note],input[name=tixcom_note],input[name=tix_service_fee_note],' +
+            'input[name=box_office_fee_note],input[name=event_tax_note],input[name=insurance_note],' +
+            'input[name=sesec_note],input[name=ascap_note],input[name=bmi_note],input[name=cc_fee_note]').trigger('blur');
+        is_validator_initializing = false;
+
         this.offer_search_list_view.after_render();
         var edit_switch = this.$el.find('.edit_switch');
         this.switchery = new Switchery(edit_switch[0]);
         edit_switch.trigger('change');
         this.delegateEvents();
         $('input[type=date]').datetimepicker({format: 'Y-m-d', timepicker: false});
-        $('input[type=time]').datetimepicker({format: 'h:i:s', timepicker: true, datepicker:false});
+        $('input[type=time]').datetimepicker({format: 'h:i:s', timepicker: true, datepicker: false});
         return this.el;
     },
     after_render: function () {
@@ -394,7 +401,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
     events: {
         "blur .edit": "update_ajax",
         "change .multi_select": "update_ajax",
-        "change #var_expense :input": "update_ve"
+        "blur #var_expense :input": "update_ve"
     },
     initialize: function () {
         this.delegateEvents();
@@ -416,28 +423,40 @@ app.views.OfferView = Backbone.BBFormView.extend({
         this.$el.find('#general_expense').html(gen_exp_html);
         var prod_exp_html = this.print_table_from_array(JSON.parse_3t(this.model.get_production_expense()));
         this.$el.find('#production_expense').html(prod_exp_html);
+
+        is_validator_initializing = true;//turn off ajax update
+        this.$el.find('input[name=rental_note],input[name=tixcom_note],input[name=tix_service_fee_note],' +
+            'input[name=box_office_fee_note],input[name=event_tax_note],input[name=insurance_note],' +
+            'input[name=sesec_note],input[name=ascap_note],input[name=bmi_note],input[name=cc_fee_note]').trigger('blur');
+        is_validator_initializing = false;
+
         var edit_switch = $('.edit_switch');
         edit_switch.trigger('change');
-        $('input.money').autoNumeric('init', {aSign: '$'});
+        b3_autonumeric();
+
         $('input[type=date]').datetimepicker({format: 'Y-m-d', timepicker: false});
-        $('input[type=time]').datetimepicker({format: 'h:i:s', timepicker: true, datepicker:false});
+        $('input[type=time]').datetimepicker({format: 'h:i:s', timepicker: true, datepicker: false});
         return this.$el;
     },
     after_render: function () {
         $(this.$el.find('.multi_select')).select2();
         // this.$el.find('#var_expense input[name$="flat_rate"]').trigger('change');
-        $('input.money').autoNumeric('init', {aSign: '$'});
+        b3_autonumeric();
         this.delegateEvents();
 
     },
     /**
      * Update variable expense values.
      * @param e Event or jQuery. This is variable expense input, such as rental_flat_rate
+     * @param real_time_update boolean This is true if this is real-time update
      * @param save_rest boolean Whether or not to initiate a RESTful patch
      */
-    update_ve: function (e, save_rest) {
+    update_ve: function (e, save_rest, real_time_update) {
         if (typeof save_rest === "undefined") {
             save_rest = true;
+        }
+        if (typeof real_time_update === "undefined") {
+            real_time_update = false;
         }
         var ve_form = $('#var_expense');
         var gross_potential = 0;
@@ -458,6 +477,11 @@ app.views.OfferView = Backbone.BBFormView.extend({
                 gross_potential = parseFloatOr0($('#gross_potential').val());
                 gross_ticket = parseFloatOr0($('#gross_ticket').val());
             }
+        }
+        if (real_time_update) {
+            e = $(e.target);
+            gross_potential = parseFloatOr0($('#gross_potential').val());
+            gross_ticket = parseFloatOr0($('#gross_ticket').val());
         }
 
         var ve_values = flat_array_to_assoc(ve_form.find(':input:not([readonly])').serializeArray());
@@ -505,7 +529,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         if (max != 0 && sellout_potential > max) {
             sellout_potential = max;
         }
-        $sellout_potential.val(sellout_potential);
+        $sellout_potential.val(Number(sellout_potential).toFixed(2));
         if (save_rest === true) {
             this.model.save('variable_expense', JSON.stringify(ve_values), {patch: true, success: self.recalculate_aw_values});
         } else {
@@ -550,7 +574,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         $('#aw_artist_split').val(artist_split);
         $('#aw_promoter_split').val(Number(split_point * (100 - artist_split_percent) / 100).toFixed(2));
         $('#aw_artist_walkout').val(Number(artist_split + parseFloatOr0($('#aw_artist_production').val())).toFixed(2));
-        $('input.money').autoNumeric('init', {aSign: '$'});
+        b3_autonumeric();
     }
 
 });

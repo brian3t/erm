@@ -18,6 +18,6 @@ app.views.OffersView = Backbone.View.extend({
         is_validator_initializing = true;
         $('form.account_info').validator();
         is_validator_initializing = false;
-        $('input.money').autoNumeric('init', {aSign:'$'});
+        b3_autonumeric();
     }
 });

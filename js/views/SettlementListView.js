@@ -207,12 +207,12 @@ app.views.SettlementView = Backbone.BBFormView.extend({
         }, this);
         var edit_switch = $('.edit_switch');
         edit_switch.trigger('change');
-        $('input.money').autoNumeric('init', {aSign: '$'});
+        b3_autonumeric();
         return this.$el;
     },
     after_render: function () {
         $(this.$el.find('.multi_select')).select2();
-        $('input.money').autoNumeric('init', {aSign: '$'});
+        b3_autonumeric();
         this.delegateEvents();
     }
 });

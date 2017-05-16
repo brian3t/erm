@@ -64,6 +64,9 @@ Backbone.BBFormView = Backbone.View.extend({
                 if (typeof v == 'string') {
                     v = v.replace("$", "");
                 }
+                if (target.hasClass('money')) {
+                    val = val.replace('$', '').replace('.00', '');
+                }
                 inputs[key] = v;
             });
             if (flag_dont_update) return;
@@ -75,7 +78,7 @@ Backbone.BBFormView = Backbone.View.extend({
             return -1;
         }
         if (target.hasClass('money')) {
-            val = val.replace('$', '').replace('.00', '').replace(',', '');
+            val = val.replace('$', '').replace('.00', '');
         }
         if (isNumeric(val)) {
             val = parseFloat(val);
@@ -96,11 +99,14 @@ Backbone.BBFormView = Backbone.View.extend({
                 setTimeout(function () {
                     target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
                     self.render(true);
+                    bs_close_all_modals();
                 }, 2000);
             }, error: function () {
                 target.prevAll('span.glyphicon-upload').remove();
+                bs_close_all_modals();
             }
         });
+        bs_close_all_modals();
     },
     /**
      * Push value of current element el to the related JSON array field
@@ -125,6 +131,9 @@ Backbone.BBFormView = Backbone.View.extend({
             }
             if (typeof v === 'string') {
                 v = v.replace("$", "");
+            }
+            if (e.hasClass('money')) {
+                v = v.replace('$', '').replace('.0000', '').replace('.00', '');
             }
             inputs[key] = v;
         });

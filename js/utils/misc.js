@@ -333,7 +333,7 @@ function isNumeric(n) {
 }
 function parseFloatOr0(v) {
     if (typeof v == "string") {
-        v = v.replace('$', '').replace(',', '');
+        v = v.replace('$', '');
     }
     v = parseFloat(v);
     if (isNaN(v)) {
@@ -374,4 +374,22 @@ function extract_from_model(model) {
     if (!model instanceof Backbone.Model){
         return false;
     }
+}
+
+/**
+ * Bootstrap helper: Closes all modals. Remove fade-in if present.
+ */
+function bs_close_all_modals() {
+    $('.modal, [role="dialog"]').modal('hide');
+    $('.modal-backdrop').remove();
+    $('body').removeClass('modal-open');
+}
+
+/**
+ * initialize autonumeric for all .money, except those with decimal places override
+ */
+function b3_autonumeric() {
+    var an_options = {currencySymbol: '$',unformatOnSubmit: true};
+    $('input.money:not([data-decimalPlacesOverride]):not(.sys_gen)').autoNumeric('init', an_options);
+    $('input[data-decimalPlacesOverride=4]:not(.sys_gen)').autoNumeric('init',$.extend(an_options, {decimalPlacesOverride:4}));
 }
