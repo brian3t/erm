@@ -331,9 +331,24 @@ function lat_lng_distance(lat1, lon1, lat2, lon2, unit) {
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(parseFloat(n)) && parseFloat(n).toString() == n;
 }
+
+/**
+ * Check if string is a money string
+ * @param v
+ * @returns {boolean}
+ */
+function is_money(v) {
+    if (typeof v !== 'string'){
+        return false
+    }
+    return /^\$*([\d,])+(\.*\d{2,})*$/.test(v);//$1,234.5678
+}
 function parseFloatOr0(v) {
     if (typeof v == "string") {
         v = v.replace('$', '');
+    }
+    if (is_money(v)){
+        v = v.replace(',', '');
     }
     v = parseFloat(v);
     if (isNaN(v)) {

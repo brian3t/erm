@@ -168,7 +168,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
             V.playable_on = '';
         }
         ve = {};
-        try {
+        if (typeof variable_expense !== 'undefined') try {
             ve = JSON.parse(variable_expense);
         } catch (e) {
             console.error("Cr8 Error parsing var expense: " + variable_expense + " error: " + e);
@@ -178,14 +178,14 @@ app.views.OfferListView = Backbone.BBFormView.extend({
 
         V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
         var pe = {};
-        try {
+        if (typeof production_expense !== 'undefined') try {
             pe = JSON.parse(production_expense);
         } catch (e) {
             console.error("Cr8 Error parsing prod expense: " + production_expense + " error: " + e);
         }
         V.tour_production_expenses = app.utils.misc.calc_sum_from_array(pe);
         var ge = {};
-        try {
+        if (typeof general_expense !== 'undefined') try {
             ge = JSON.parse(general_expense);
         } catch (e) {
             console.error("Cr8 Error parsing gen expense: " + general_expense + " error: " + e);
@@ -461,6 +461,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         var ve_form = $('#var_expense');
         var gross_potential = 0;
         var gross_ticket = 0;
+        var att = this.model.attributes;
 
         if (e instanceof jQuery) {//create mode real-time update
             ve_form = $('#var_expense_cr8');
@@ -535,6 +536,68 @@ app.views.OfferView = Backbone.BBFormView.extend({
         } else {
             $('#variable_expense_input_cr8').val(JSON.stringify(ve_values));//this is quickfix for Create Mode
         }
+
+        //calculate ASCAP and BMI
+        var form = e.closest('form');
+        var rate = 0;
+        if (gross_ticket < 0) {
+        }
+        else if (gross_ticket <= 2500) {
+            rate = parseFloatOr0(form.find('input[name="ascap_0_2500"]').val()) / 100;
+        }
+        else if (gross_ticket <= 5000) {
+            rate = parseFloatOr0(form.find('input[name="ascap_2501_5000"]').val()) / 100;
+        }
+        else if (gross_ticket <= 10000) {
+            rate = parseFloatOr0(form.find('input[name="ascap_5001_10000"]').val()) / 100;
+        }
+        else if (gross_ticket <= 25000) {
+            rate = parseFloatOr0(form.find('input[name="ascap_10001_25000"]').val()) / 100;
+        }
+        else {
+            rate = parseFloatOr0(form.find('input[name="ascap_25001_x"]').val()) / 100;
+        }
+        var ascap_sellout_potential = Number(rate * gross_potential).toFixed(2);
+        var ascap_max = parseFloatOr0(form.find('input[name="ascap_max"]').val());
+        if (ascap_max > 0 && ascap_sellout_potential > ascap_max){
+            ascap_sellout_potential = ascap_max;
+        }
+        var ascap_flat_rate = parseFloatOr0(form.find('input[name="ascap_flat_rate"]').val());
+        if (ascap_flat_rate > 0){
+            ascap_sellout_potential = ascap_flat_rate;
+        }
+        form.find('input.sys_gen.sellout_potential[data-category="ascap"]').val(ascap_sellout_potential);
+        
+        rate = 0;
+        if (gross_ticket < 0) {
+        }
+        else if (gross_ticket <= 2500) {
+            rate = parseFloatOr0(form.find('input[name="bmi_0_2500"]').val()) / 100;
+        }
+        else if (gross_ticket <= 5000) {
+            rate = parseFloatOr0(form.find('input[name="bmi_2501_5000"]').val()) / 100;
+        }
+        else if (gross_ticket <= 10000) {
+            rate = parseFloatOr0(form.find('input[name="bmi_5001_10000"]').val()) / 100;
+        }
+        else if (gross_ticket <= 25000) {
+            rate = parseFloatOr0(form.find('input[name="bmi_10001_25000"]').val()) / 100;
+        }
+        else {
+            rate = parseFloatOr0(form.find('input[name="bmi_25001_x"]').val()) / 100;
+        }
+        var bmi_sellout_potential = Number(rate * gross_potential).toFixed(2);
+        var bmi_max = parseFloatOr0(form.find('input[name="bmi_max"]').val());
+        if (bmi_max > 0 && bmi_sellout_potential > bmi_max){
+            bmi_sellout_potential = bmi_max;
+        }
+        var bmi_flat_rate = parseFloatOr0(form.find('input[name="bmi_flat_rate"]').val());
+        if (bmi_flat_rate > 0){
+            bmi_sellout_potential = bmi_flat_rate;
+        }
+        form.find('input.sys_gen.sellout_potential[data-category="bmi"]').val(bmi_sellout_potential);
+
+
     },
     recalculate_aw_values: function () {
         //now update sellout potential
