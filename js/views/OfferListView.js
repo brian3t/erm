@@ -342,11 +342,21 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         }
         this.$el.find('#offer_search_list').html(this.offer_search_list_view.render());
 
-        is_validator_initializing = true;//turn off ajax update
-        this.$el.find('input[name=rental_note],input[name=tixcom_note],input[name=tix_service_fee_note],' +
-            'input[name=box_office_fee_note],input[name=event_tax_note],input[name=insurance_note],' +
-            'input[name=sesec_note],input[name=ascap_note],input[name=bmi_note],input[name=cc_fee_note]').trigger('blur');
-        is_validator_initializing = false;
+        // is_validator_initializing = true;//turn off ajax update
+        this.offer_form_view.update_ve(this.$el.find('input[name=rental_note]'), false);
+        this.offer_form_view.update_ve(this.$el.find('input[name=tixcom_note]'), false);
+        this.offer_form_view.update_ve(this.$el.find('input[name=tix_service_fee_note]'), false);
+        this.offer_form_view.update_ve(this.$el.find('input[name=box_office_fee_note]'), false);
+        this.offer_form_view.update_ve(this.$el.find('input[name=event_tax_note]'), false);
+        this.offer_form_view.update_ve(this.$el.find('input[name=insurance_note]'), false);
+        this.offer_form_view.update_ve(this.$el.find('input[name=sesec_note]'), false);
+        this.offer_form_view.update_ve(this.$el.find('input[name=ascap_note]'), false);
+        this.offer_form_view.update_ve(this.$el.find('input[name=bmi_note]'), false);
+        this.offer_form_view.update_ve(this.$el.find('input[name=cc_fee_note]'), false);
+        // this.$el.find('input[name=rental_note],input[name=tixcom_note],input[name=tix_service_fee_note],' +
+        //     'input[name=box_office_fee_note],input[name=event_tax_note],input[name=insurance_note],' +
+        //     'input[name=sesec_note],input[name=ascap_note],input[name=bmi_note],input[name=cc_fee_note]').trigger('blur');
+        // is_validator_initializing = false;
 
         this.offer_search_list_view.after_render();
         var edit_switch = this.$el.find('.edit_switch');
@@ -424,11 +434,16 @@ app.views.OfferView = Backbone.BBFormView.extend({
         var prod_exp_html = this.print_table_from_array(JSON.parse_3t(this.model.get_production_expense()));
         this.$el.find('#production_expense').html(prod_exp_html);
 
-        is_validator_initializing = true;//turn off ajax update
-        this.$el.find('input[name=rental_note],input[name=tixcom_note],input[name=tix_service_fee_note],' +
-            'input[name=box_office_fee_note],input[name=event_tax_note],input[name=insurance_note],' +
-            'input[name=sesec_note],input[name=ascap_note],input[name=bmi_note],input[name=cc_fee_note]').trigger('blur');
-        is_validator_initializing = false;
+        this.update_ve(this.$el.find('input[name=rental_note]'), false);
+        this.update_ve(this.$el.find('input[name=tixcom_note]'), false);
+        this.update_ve(this.$el.find('input[name=tix_service_fee_note]'), false);
+        this.update_ve(this.$el.find('input[name=box_office_fee_note]'), false);
+        this.update_ve(this.$el.find('input[name=event_tax_note]'), false);
+        this.update_ve(this.$el.find('input[name=insurance_note]'), false);
+        this.update_ve(this.$el.find('input[name=sesec_note]'), false);
+        this.update_ve(this.$el.find('input[name=ascap_note]'), false);
+        this.update_ve(this.$el.find('input[name=bmi_note]'), false);
+        this.update_ve(this.$el.find('input[name=cc_fee_note]'), false);
 
         var edit_switch = $('.edit_switch');
         edit_switch.trigger('change');
