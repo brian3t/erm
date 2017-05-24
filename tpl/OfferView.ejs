@@ -12,10 +12,10 @@ var promoter_opt = print_option_fr_collection('promoters');
 var venue_opt = print_option_fr_collection('venues');
 var artist_opt = print_option_fr_collection('artists', 'fullname');
 var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
-if (_.isObject(created_at)){
-    created_at = '';
+if (_.isObject(created_at)) {
+	created_at = '';
 }
-if (_.isObject(updated_at)){
+if (_.isObject(updated_at)) {
 	updated_at = '';
 }
 
@@ -52,6 +52,7 @@ function recalculate_offer_values() {
 	V.sum_gross_ticket = l1_gross_ticket + l2_gross_ticket + l3_gross_ticket + l4_gross_ticket + l5_gross_ticket;
 	V.sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
 	V.total_gross_ticket_price = V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
+	V.average_ticket_price = V.total_gross_ticket_price;
 	V.playable_on = new Date(show_date);
 	switch (post_show_lockout_unit) {
 		case 'Days':
@@ -93,7 +94,7 @@ function recalculate_offer_values() {
 	V.tax_total = V.sum_gross - (V.sum_gross / (1 + tax / 100)); //Tax Total=Gross Potential-(Gross Potential/(Tax %+1))
 	V.net_potential = V.sum_gross - V.tax_total - V.tax_per_ticket_total;
 
-	V.total_estimated_expenses = V.total_fixed_expenses;
+	V.aw_est_expense = V.total_estimated_expenses = V.total_fixed_expenses;
 
 	V.aw_artist_split_percent = 0;
 	V.aw_artist_split = 0;
@@ -105,6 +106,9 @@ function recalculate_offer_values() {
 	}
 	V.aw_promoter_split_percent = 0;
 	V.aw_promoter_split = 0;
+	V.aw_est_total = V.aw_est_expense + V.aw_artist_fee;
+	V.aw_breakeven_tix = (V.average_ticket_price > 0) ? V.aw_est_total / V.average_ticket_price : 0;
+
 	artist_comp = Number(artist_comp);
 	production_comp = Number(production_comp);
 	promotional_comp = Number(promotional_comp);
@@ -265,7 +269,7 @@ recalculate_offer_values();
 			<label class="col-xs-5">Ticketing Company<select disabled name="ticketing_company_id"
 															 value="<%= ticketing_company_id %>"
 															 class="form-control">
-					<%= ticketing_company_opt%>
+					<%= ticketing_company_opt %>
 				</select>
 			</label>
 			<label class="col-xs-3">Seating Plan<input disabled name="seating_plan"
@@ -415,7 +419,8 @@ recalculate_offer_values();
 			<label class="col-xs-2">Facility Fee</label>
 			<div class="col-xs-2 content-padded"><input disabled name="facility_fee" step="any" class="money "
 														value="<%= facility_fee %>"></div>
-			<div class="col-xs-2 content-padded"><input readonly id="facility_fee_total" value="<%= facility_fee * (V.sum_gross_ticket - V.sum_kill) %>" class="money  sys_gen"></div>
+			<div class="col-xs-2 content-padded"><input readonly id="facility_fee_total" value="<%= facility_fee * (V.sum_gross_ticket - V.sum_kill) %>"
+														class="money  sys_gen"></div>
 			<div class="col-xs-2 content-padded"><input disabled name="facility_fee_note" placeholder="" value="<%= facility_fee_note %>"></div>
 		</div>
 	</div>
@@ -509,7 +514,7 @@ recalculate_offer_values();
 			<label class="label_wo_input col-xs-3">Support Artist 1</label>
 			<span class="col-xs-7"><select name="support_artist_1_id" value="<%= support_artist_1_id %>"
 										   class="form-control">
-					<%= artist_opt%>
+					<%= artist_opt %>
 				</select></span>
 			<span class="col-xs-2"><input name="support_artist_1_total" value="<%= support_artist_1_total %>"
 										  step="any" class="money  form-control"></span>
@@ -518,7 +523,7 @@ recalculate_offer_values();
 			<label class="label_wo_input col-xs-3">Support Artist 2</label>
 			<span class="col-xs-7"><select name="support_artist_2_id" value="<%= support_artist_2_id %>"
 										   class="form-control">
-					<%=artist_opt%>
+					<%= artist_opt %>
 				</select></span>
 			<span class="col-xs-2"><input name="support_artist_2_total" value="<%= support_artist_2_total %>"
 										  step="any" class="money  form-control"></span>
@@ -527,7 +532,7 @@ recalculate_offer_values();
 			<label class="label_wo_input col-xs-3">Support Artist 3</label>
 			<span class="col-xs-7"><select name="support_artist_3_id" value="<%= support_artist_3_id %>"
 										   class="form-control">
-					<%=artist_opt%>
+					<%= artist_opt %>
 				</select></span>
 			<span class="col-xs-2"><input name="support_artist_3_total" value="<%= support_artist_3_total %>"
 										  step="any" class="money  form-control"></span>
@@ -862,7 +867,8 @@ recalculate_offer_values();
 				<label class="col-xs-12">&nbsp;</label>
 			</div>
 			<div class="row">
-				<label class="col-xs-12" for="merch_note">Merchandise Note <textarea name="merch_note" class="form-control" value="<%= merch_note %>"><%= merch_note %></textarea></label></div>
+				<label class="col-xs-12" for="merch_note">Merchandise Note <textarea name="merch_note" class="form-control"
+																					 value="<%= merch_note %>"><%= merch_note %></textarea></label></div>
 		</div>
 	</div>
 	<div class="col-xs-6">
@@ -905,7 +911,8 @@ recalculate_offer_values();
 			</div>
 			<div class="row">
 				<label class="col-xs-12" for="comp_kill_note">Comps & Kills Note <textarea name="comp_kill_note" class="form-control"
-																						   value="<%= comp_kill_note %>"><%= comp_kill_note %></textarea></label></div>
+																						   value="<%= comp_kill_note %>"><%= comp_kill_note %></textarea></label>
+			</div>
 
 		</div>
 	</div>
