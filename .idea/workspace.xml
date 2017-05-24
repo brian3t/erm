@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cb85d7b-f82d-44cd-9859-9d21c2911b8f" name="Default" comment="">
+    <list default="true" id="1cb85d7b-f82d-44cd-9859-9d21c2911b8f" name="Default" comment="Version 1.4.7. Fix">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/views/OfferView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/HomeView.ejs" afterPath="$PROJECT_DIR$/tpl/HomeView.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/BBFormView.js" afterPath="$PROJECT_DIR$/js/views/BBFormView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/OfferListView.js" afterPath="$PROJECT_DIR$/js/views/OfferListView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/OfferListView.ejs" afterPath="$PROJECT_DIR$/tpl/OfferListView.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/OfferView.ejs" afterPath="$PROJECT_DIR$/tpl/OfferView.ejs" />
     </list>
     <ignored path="www.iws" />
@@ -130,28 +134,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OfferView.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OfferView.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/OfferView.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="110" column="0" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-              <folding>
-                <marker date="1495607131550" expanded="true" signature="1105:4626" ph="{...}" />
-                <marker date="1495607131550" expanded="true" signature="35254:35317" ph="..." />
-              </folding>
+            <state relative-caret-position="323">
+              <caret line="59" column="44" lean-forward="true" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OfferListView.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/views/OfferListView.js">
+      <file leaf-file-name="OfferView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/views/OfferView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5229">
-              <caret line="450" column="0" lean-forward="false" selection-start-line="450" selection-start-column="0" selection-end-line="450" selection-end-column="0" />
-              <folding>
-                <element signature="e#3259#12808#0" expanded="false" />
-                <element signature="e#12853#15280#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="686">
+              <caret line="250" column="88" lean-forward="false" selection-start-line="250" selection-start-column="88" selection-end-line="250" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="88" column="47" lean-forward="true" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -182,8 +190,28 @@
       <file leaf-file-name="BBFormView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/BBFormView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+            <state relative-caret-position="168">
+              <caret line="80" column="75" lean-forward="true" selection-start-line="80" selection-start-column="75" selection-end-line="80" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OfferListView.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/OfferListView.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="329" column="51" lean-forward="true" selection-start-line="329" selection-start-column="51" selection-end-line="329" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeView.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tpl/HomeView.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -201,36 +229,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>update_aj</find>
-      <find>update_ajax</find>
-      <find>.replace(',', '')</find>
-      <find>replace(',', '')</find>
-      <find>replace(','</find>
-      <find>artist</find>
-      <find>is_artist_production_buyout</find>
-      <find>age</find>
-      <find>is_on_sale_date_tbd</find>
-      <find>ex</find>
-      <find>radius</find>
-      <find>select</find>
-      <find>post_show_lockout_unit</find>
-      <find>sesec</find>
-      <find>total_gross</find>
-      <find>potential</find>
-      <find>ascap</find>
-      <find>$co</find>
-      <find>.offer_form_view</find>
-      <find>artist_prod</find>
-      <find>1</find>
-      <find>1.</find>
-      <find>1.4</find>
-      <find>1.4.</find>
-      <find>walkout</find>
       <find>1.4.6</find>
       <find>aw_artist_walkout</find>
-      <find>aw_artist_split</find>
       <find>aw_est_expense</find>
       <find>average_ticket_price</find>
+      <find>est_split</find>
+      <find>aw_est_split_point</find>
+      <find>aw_breakeven_tix</find>
+      <find>aw_est_total</find>
+      <find>total_var</find>
+      <find>total_estimated_expenses</find>
+      <find>promoter_spl</find>
+      <find>aw_promoter_split_percent</find>
+      <find>promoter_split</find>
+      <find>recalculate_aw_values</find>
+      <find>aw_artist_split_percent</find>
+      <find>artist_split</find>
+      <find>aw_artist_split</find>
+      <find>aw_promoter_split</find>
+      <find>5</find>
+      <find>!=</find>
+      <find>/ 5</find>
+      <find>V.</find>
+      <find>num_of_ticket_level</find>
+      <find>(V.num_of_ticket_level &gt; 0) ?</find>
+      <find>num_of</find>
+      <find>tax_total</find>
+      <find>toDateString</find>
+      <find>playable_</find>
+      <find>playabl</find>
+      <find>playable_on</find>
     </findStrings>
     <replaceStrings>
       <replace>,\n</replace>
@@ -255,6 +283,9 @@
       <replace>.trigger('blur');</replace>
       <replace>bmi</replace>
       <replace>this.$el</replace>
+      <replace>aw_est_expense</replace>
+      <replace>aw_artist_split</replace>
+      <replace>!==</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/js/models</dir>
@@ -335,17 +366,18 @@
         <option value="$PROJECT_DIR$/tpl/CompanyListView.ejs" />
         <option value="$PROJECT_DIR$/tpl/UserListView.ejs" />
         <option value="$PROJECT_DIR$/lib/autoNumeric.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/views/SettlementListView.js" />
         <option value="$PROJECT_DIR$/js/views/OffersView.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_18.json" />
-        <option value="$PROJECT_DIR$/js/views/BBFormView.js" />
-        <option value="$PROJECT_DIR$/tpl/OfferListView.ejs" />
         <option value="$PROJECT_DIR$/js/utils/misc.js" />
         <option value="$PROJECT_DIR$/js/local.js" />
-        <option value="$PROJECT_DIR$/js/views/OfferListView.js" />
         <option value="$PROJECT_DIR$/tpl/HomeView.ejs" />
+        <option value="$PROJECT_DIR$/js/views/BBFormView.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/views/OfferView.js" />
         <option value="$PROJECT_DIR$/tpl/OfferView.ejs" />
+        <option value="$PROJECT_DIR$/js/views/OfferListView.js" />
+        <option value="$PROJECT_DIR$/tpl/OfferListView.ejs" />
       </list>
     </option>
   </component>
@@ -366,6 +398,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
+    <option name="y" value="-1" />
     <option name="width" value="1922" />
     <option name="height" value="1061" />
   </component>
@@ -504,7 +538,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
+              <option name="myItemId" value="erm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -514,7 +548,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
+              <option name="myItemId" value="erm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -528,7 +562,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
+              <option name="myItemId" value="erm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -542,7 +576,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
+              <option name="myItemId" value="erm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -624,6 +658,17 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
       <module name="" />
       <envs />
       <method />
@@ -1078,7 +1123,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1922" height="1061" extended-state="0" />
+    <frame x="-1" y="-1" width="1922" height="1061" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883817" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1089,9 +1134,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1265625" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1265625" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13489583" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3226141" sideWeight="0.49512196" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1578125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1104,6 +1148,7 @@
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32572615" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3212121" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3226141" sideWeight="0.49512196" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1179,13 +1224,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2163">
-          <caret line="103" column="1" lean-forward="false" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/views/DrugView.js" />
     <entry file="file://$PROJECT_DIR$/js/views/UserListView.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1652,13 +1690,13 @@
     <entry file="dbDummy://dbtable:/73f8e4f9/49e50f60-9a50-4ed2-b00e-dc16bec557bf/erm.offer" />
     <entry file="file://$PROJECT_DIR$/css/compass/stylesheets/styles.min.min.min.css" />
     <entry file="file://$PROJECT_DIR$/css/compass/stylesheets/styles.css.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
@@ -1963,13 +2001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/OffersView.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/UserListView.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -2013,13 +2044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/OfferListView.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11340">
-          <caret line="540" column="35" lean-forward="false" selection-start-line="540" selection-start-column="35" selection-end-line="540" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/views/SettlementListView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4305">
@@ -2035,13 +2059,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_18.json" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="54" column="59" lean-forward="false" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/models/OfferModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
@@ -2068,30 +2085,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/views/BBFormView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/views/OfferListView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5229">
-          <caret line="450" column="0" lean-forward="false" selection-start-line="450" selection-start-column="0" selection-end-line="450" selection-end-column="0" />
-          <folding>
-            <element signature="e#3259#12808#0" expanded="false" />
-            <element signature="e#12853#15280#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/views/NavbarView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2099,7 +2096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2107,6 +2103,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/NavbarView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/BBFormView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="80" column="75" lean-forward="true" selection-start-line="80" selection-start-column="75" selection-end-line="80" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="88" column="47" lean-forward="true" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/OfferView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="686">
+          <caret line="250" column="88" lean-forward="false" selection-start-line="250" selection-start-column="88" selection-end-line="250" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/OffersView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="49" lean-forward="false" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/OfferView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="59" column="44" lean-forward="true" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/OfferListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="160" column="26" lean-forward="true" selection-start-line="160" selection-start-column="26" selection-end-line="160" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/OfferListView.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="329" column="51" lean-forward="true" selection-start-line="329" selection-start-column="51" selection-end-line="329" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -2116,25 +2174,6 @@
         <state relative-caret-position="126">
           <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/NavbarView.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/OfferView.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="110" column="0" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding>
-            <marker date="1495607131550" expanded="true" signature="1105:4626" ph="{...}" />
-            <marker date="1495607131550" expanded="true" signature="35254:35317" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>

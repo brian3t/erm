@@ -246,7 +246,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 					<label class="col-xs-2">Tax % </label>
 					<div class="col-xs-2 content-padded"><input type="number" name="tax" step="any">
 					</div>
-					<div class="col-xs-2 content-padded"><input class="money sys_gen tax_total"></div>
+					<div class="col-xs-2 content-padded"><input readonly class="money sys_gen tax_total"></div>
 					<div class="col-xs-2 content-padded"><input name="tax_note" placeholder="note">
 					</div>
 				</div>
@@ -337,7 +337,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 							<option>Days</option>
 							<option>Months</option>
 						</select></label>
-					<label class="col-xs-3">Playable On <input readonly type="text" class="form-control  sys_gen playable_on"></label>
+					<label class="col-xs-3">Playable On <input readonly type="text" class="form-control  sys_gen playable_on_date_string"></label>
 				</div>
 				<br>
 				<div class="row">

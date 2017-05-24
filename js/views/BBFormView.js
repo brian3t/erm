@@ -65,7 +65,7 @@ Backbone.BBFormView = Backbone.View.extend({
                     v = v.replace("$", "");
                 }
                 if (target.hasClass('money')) {
-                    val = val.replace('$', '').replace('.00', '');
+                    val = val.replace('$', '').replace('.00', '').replace(',', '');
                 }
                 inputs[key] = v;
             });
@@ -78,7 +78,7 @@ Backbone.BBFormView = Backbone.View.extend({
             return -1;
         }
         if (target.hasClass('money')) {
-            val = val.replace('$', '').replace('.00', '');
+            val = val.replace('$', '').replace('.00', '').replace(',', '');
         }
         if (isNumeric(val)) {
             val = parseFloat(val);

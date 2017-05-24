@@ -47,25 +47,33 @@ function recalculate_offer_values() {
 	V.l3_gross = (l3_gross_ticket - l3_kill) * l3_price;
 	V.l4_gross = (l4_gross_ticket - l4_kill) * l4_price;
 	V.l5_gross = (l5_gross_ticket - l5_kill) * l5_price;
+	V.num_of_ticket_level = ((l1_gross_ticket - l1_kill !== 0) ? 1 : 0) + ((l2_gross_ticket - l2_kill !== 0) ? 1 : 0) + ((l3_gross_ticket - l3_kill !== 0) ? 1 : 0) +
+			((l4_gross_ticket - l4_kill !== 0) ? 1 : 0) + ((l5_gross_ticket - l5_kill !== 0) ? 1 : 0);
 
 	V.sum_gross = V.l1_gross + V.l2_gross + V.l3_gross + V.l4_gross + V.l5_gross;
 	V.sum_gross_ticket = l1_gross_ticket + l2_gross_ticket + l3_gross_ticket + l4_gross_ticket + l5_gross_ticket;
 	V.sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
-	V.total_gross_ticket_price = V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
-	V.average_ticket_price = V.total_gross_ticket_price;
-	V.playable_on = new Date(show_date);
-	switch (post_show_lockout_unit) {
-		case 'Days':
-			V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + post_show_lockout * 86400000));
-			break;
-		case 'Months':
-			V.playable_on = new Date(V.playable_on.setMonth(V.playable_on.getMonth() + post_show_lockout));
-			break;
-		default:
-			break;
+	V.total_gross_ticket_price = (V.sum_gross_ticket - V.sum_kill == 0) ? 0 : V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
+	V.average_ticket_price = parseFloat(Number(V.total_gross_ticket_price).toFixed(2));
+	console.info("post_show_lockout_unit" + post_show_lockout_unit);
+	if (!_.isNull(post_show_lockout) && post_show_lockout_unit !== '') {
+		V.playable_on = new Date(show_date);
+		switch (post_show_lockout_unit) {
+			case 'Days':
+				V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + post_show_lockout * 86400000));
+				break;
+			case 'Months':
+				V.playable_on = new Date(V.playable_on.setMonth(V.playable_on.getMonth() + post_show_lockout));
+				break;
+			default:
+				break;
+		}
+		V.playable_on_date_string = V.playable_on.toDateString();
+	} else {
+	    V.playable_on_date_string = '';
 	}
 	ve = {};
-	try {
+	if (typeof variable_expense !== 'undefined') try {
 		ve = JSON.parse(variable_expense);
 	} catch (e) {
 		console.error("Error parsing var expense: " + variable_expense + " error: " + e);
@@ -74,14 +82,14 @@ function recalculate_offer_values() {
 
 	V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
 	var pe = {};
-	try {
+	if (typeof production_expense !== 'undefined') try {
 		pe = JSON.parse(production_expense);
 	} catch (e) {
 		console.error("Error parsing prod expense: " + production_expense + " error: " + e);
 	}
 	V.tour_production_expenses = app.utils.misc.calc_sum_from_array(pe);
 	var ge = {};
-	try {
+	if (typeof general_expense !== 'undefined') try {
 		ge = JSON.parse(general_expense);
 	} catch (e) {
 		console.error("Error parsing gen expense: " + general_expense + " error: " + e);
@@ -100,11 +108,11 @@ function recalculate_offer_values() {
 	V.aw_artist_split = 0;
 	V.aw_artist_fee = parseFloat(artist_guarantee);
 	V.aw_artist_production = 0;
-	if (is_artist_production_buyout && is_artist_production_buyout == 1) {
+	if (is_artist_production_buyout && (is_artist_production_buyout == 1 || is_artist_production_buyout == 'Yes')) {
 		V.aw_artist_fee += V.tour_production_expenses;
 		V.aw_artist_production = V.tour_production_expenses;
 	}
-	V.aw_promoter_split_percent = 0;
+	V.aw_promoter_split_percent = 100 - artist_split;
 	V.aw_promoter_split = 0;
 	V.aw_est_total = V.aw_est_expense + V.aw_artist_fee;
 	V.aw_breakeven_tix = (V.average_ticket_price > 0) ? V.aw_est_total / V.average_ticket_price : 0;
@@ -367,15 +375,15 @@ recalculate_offer_values();
 		</div>
 		<div class="row average">
 			<label class="col-xs-1 ">Average</label>
-			<label class="col-xs-2"><input id="average_ticket" readonly value="<%= V.sum_gross_ticket / 5 %>"
+			<label class="col-xs-2"><input id="average_ticket" readonly value="<%= (V.num_of_ticket_level > 0) ? V.sum_gross_ticket / V.num_of_ticket_level : 0 %>"
 										   class="  form-control  sys_gen"></label>
-			<label class="col-xs-1"><input id="average_kill" readonly step="any" value="<%= V.sum_kill / 5 %>"
+			<label class="col-xs-1"><input id="average_kill" readonly step="any" value="<%= (V.num_of_ticket_level > 0) ? V.sum_kill / V.num_of_ticket_level : 0 %>"
 										   class="  form-control  sys_gen"></label>
 			<label class="col-xs-2"><input readonly class="average sellable_ticket  sys_gen form-control"
-										   value="<%= (V.sum_gross_ticket - V.sum_kill) / 5 %>"></label>
+										   value="<%= (V.num_of_ticket_level > 0) ? (V.sum_gross_ticket - V.sum_kill) / V.num_of_ticket_level : 0 %>"></label>
 			<label class="col-xs-2"></label>
 			<label class="col-xs-2"><input readonly class="money average gross  sys_gen form-control"
-										   value="<%= V.sum_gross / 5 %>"></label>
+										   value="<%= (V.num_of_ticket_level > 0) ? V.sum_gross / V.num_of_ticket_level : 0 %>"></label>
 		</div>
 		<div class="row">
 			<div class="col-xs-4"></div>
@@ -391,8 +399,8 @@ recalculate_offer_values();
 			<label class="col-xs-2">Tax % </label>
 			<div class="col-xs-2 content-padded"><input disabled type="number" name="tax" step="any" value="<%= tax %>">
 			</div>
-			<div class="col-xs-2 content-padded"><input id="tax_input" value="<%= V.tax_total %>"
-														class="money"></div>
+			<div class="col-xs-2 content-padded"><input readonly id="tax_input" value="<%= V.tax_total %>"
+														class="money sys_gen"></div>
 			<div class="col-xs-2 content-padded"><input disabled name="tax_note" placeholder=""
 														value="<%= tax_note %>">
 			</div>
@@ -495,7 +503,7 @@ recalculate_offer_values();
 					<option value="Months">Months</option>
 				</select></label>
 			<label class="col-xs-3">Playable On <input readonly id="playable_on"
-													   value="<%= V.playable_on.toDateString() %>" type="text"
+													   value="<%= V.playable_on_date_string %>" type="text"
 													   class="form-control  sys_gen"></label>
 		</div>
 		<br>
@@ -808,7 +816,7 @@ recalculate_offer_values();
 									 value="<%= V.aw_artist_fee %>"></div>
 		<label class="col-xs-2 col-xs-offset-1 input_atomic">Promoter Split (%)</label>
 		<div class="col-xs-1"><input readonly class="form-control  sys_gen" id="aw_promoter_split_percent"
-									 value="<%= 100 - artist_split %>"></div>
+									 value="<%= V.aw_promoter_split_percent %>"></div>
 		<div class="col-xs-3"><input readonly class="money form-control  sys_gen" id="aw_promoter_split"></div>
 		<div class="clearfix"></div>
 
