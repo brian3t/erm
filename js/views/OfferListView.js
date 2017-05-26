@@ -155,6 +155,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         V.average_ticket_price = parseFloat(Number(V.total_gross_ticket_price).toFixed(2));
         if (!_.isNull(post_show_lockout) && post_show_lockout_unit !== '') {
             V.playable_on = new Date(show_date);
+            V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + 86400000));//move forward 1 day
             switch (post_show_lockout_unit) {
                 case 'Days':
                     V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + post_show_lockout * 86400000));
@@ -176,7 +177,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
             console.error("Cr8 Error parsing var expense: " + variable_expense + " error: " + e);
         }
         // this.offer_form_view.update_ve(null, false);
-        V.total_ve = $co.find('.total_variable_expense').val();
+        V.total_ve = parseFloatOr0($co.find('.total_variable_expense').val());
 
         V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
         var pe = {};
@@ -200,9 +201,10 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         V.tax_total = V.sum_gross - (V.sum_gross / (1 + tax / 100)); //Tax Total=Gross Potential-(Gross Potential/(Tax %+1))
         V.net_potential = V.sum_gross - V.tax_total - V.tax_per_ticket_total;
 
-        V.aw_est_expense = V.total_estimated_expenses = V.total_fixed_expenses;
+        V.total_estimated_expenses = V.total_fixed_expenses;
+        V.aw_est_expense = Number(V.total_fixed_expenses + V.total_ve).toFixed(2);
 
-        V.aw_artist_split_percent = artist_split;
+            V.aw_artist_split_percent = artist_split;
         V.aw_artist_fee = parseFloat(artist_guarantee);
         V.aw_artist_production = 0;
         if (is_artist_production_buyout && (is_artist_production_buyout == 1 || is_artist_production_buyout == 'Yes')) {

@@ -73,29 +73,37 @@ app.views.OfferView = Backbone.BBFormView.extend({
         }
         var ve_form = $('#var_expense');
         var gross_potential = 0;
-        var gross_ticket = 0;
+        var gross_ticket = 0, net_potential = 0, sellable_ticket = 0;
         var att = this.model.attributes;
 
         if (e instanceof jQuery) {//create mode real-time update
             ve_form = $('#var_expense_cr8');
             gross_potential = parseFloatOr0($('#create_offer .gross_potential').val());
+            net_potential = parseFloatOr0($('#create_offer .net_potential').val());
             gross_ticket = parseFloatOr0($('#create_offer .sum_gross_ticket').val());
+            sellable_ticket = parseFloatOr0($('#create_offer .total.sellable_ticket').val());
         } else {
             if (e === null) {
                 e = $('#var_expense_cr8');//upon saving create form
                 ve_form = $('#var_expense_cr8');
                 gross_potential = parseFloatOr0($('#create_offer .gross_potential').val());
+                net_potential = parseFloatOr0($('#create_offer .net_potential').val());
                 gross_ticket = parseFloatOr0($('#create_offer .sum_gross_ticket').val());
+                sellable_ticket = parseFloatOr0($('#create_offer .total.sellable_ticket').val());
             } else {
                 e = $(e.target);
                 gross_potential = parseFloatOr0($('#gross_potential').val());
+                net_potential = parseFloatOr0($('#net_potential').val());
                 gross_ticket = parseFloatOr0($('#gross_ticket').val());
+                sellable_ticket = parseFloatOr0($('form.edit .total.sellable_ticket').val());
             }
         }
         if (real_time_update) {
             e = $(e.target);
             gross_potential = parseFloatOr0($('#gross_potential').val());
+            net_potential = parseFloatOr0($('#net_potential').val());
             gross_ticket = parseFloatOr0($('#gross_ticket').val());
+            sellable_ticket = parseFloatOr0($('form.edit .total.sellable_ticket').val());
         }
 
         var ve_values = flat_array_to_assoc(ve_form.find(':input:not([readonly])').serializeArray());
@@ -132,10 +140,10 @@ app.views.OfferView = Backbone.BBFormView.extend({
         var $sellout_potential = $(e.parent().parent().find(':input[readonly]'));
         var sellout_potential = 0;
         if (per_tix_percent > 0) {
-            sellout_potential = gross_potential * per_tix_percent / 100;
+            sellout_potential = net_potential * per_tix_percent / 100;
         }
         if (per_tix_dollar > 0) {
-            sellout_potential = gross_ticket * per_tix_dollar;
+            sellout_potential = sellable_ticket * per_tix_dollar;
         }
         if (flat_rate > 0) {
             sellout_potential = flat_rate;
@@ -170,7 +178,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         else {
             rate = parseFloatOr0(form.find('input[name="ascap_25001_x"]').val()) / 100;
         }
-        var ascap_sellout_potential = Number(rate * gross_potential).toFixed(2);
+        var ascap_sellout_potential = Number(rate * net_potential).toFixed(2);
         var ascap_max = parseFloatOr0(form.find('input[name="ascap_max"]').val());
         if (ascap_max > 0 && ascap_sellout_potential > ascap_max){
             ascap_sellout_potential = ascap_max;
@@ -199,7 +207,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         else {
             rate = parseFloatOr0(form.find('input[name="bmi_25001_x"]').val()) / 100;
         }
-        var bmi_sellout_potential = Number(rate * gross_potential).toFixed(2);
+        var bmi_sellout_potential = Number(rate * net_potential).toFixed(2);
         var bmi_max = parseFloatOr0(form.find('input[name="bmi_max"]').val());
         if (bmi_max > 0 && bmi_sellout_potential > bmi_max){
             bmi_sellout_potential = bmi_max;

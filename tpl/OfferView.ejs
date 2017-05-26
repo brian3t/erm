@@ -55,9 +55,9 @@ function recalculate_offer_values() {
 	V.sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
 	V.total_gross_ticket_price = (V.sum_gross_ticket - V.sum_kill == 0) ? 0 : V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
 	V.average_ticket_price = parseFloat(Number(V.total_gross_ticket_price).toFixed(2));
-	console.info("post_show_lockout_unit" + post_show_lockout_unit);
 	if (!_.isNull(post_show_lockout) && post_show_lockout_unit !== '') {
 		V.playable_on = new Date(show_date);
+		V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + 86400000));//move forward 1 day
 		switch (post_show_lockout_unit) {
 			case 'Days':
 				V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + post_show_lockout * 86400000));
@@ -70,7 +70,7 @@ function recalculate_offer_values() {
 		}
 		V.playable_on_date_string = V.playable_on.toDateString();
 	} else {
-	    V.playable_on_date_string = '';
+		V.playable_on_date_string = '';
 	}
 	ve = {};
 	if (typeof variable_expense !== 'undefined') try {
@@ -78,7 +78,7 @@ function recalculate_offer_values() {
 	} catch (e) {
 		console.error("Error parsing var expense: " + variable_expense + " error: " + e);
 	}
-	V.total_ve = $('#total_variable_expense').val();
+	V.total_ve = parseFloatOr0($('#total_variable_expense').val());
 
 	V.support_artist_total = parseFloatOr0(support_artist_1_total) + parseFloatOr0(support_artist_2_total) + parseFloatOr0(support_artist_3_total);
 	var pe = {};
@@ -102,12 +102,14 @@ function recalculate_offer_values() {
 	V.tax_total = V.sum_gross - (V.sum_gross / (1 + tax / 100)); //Tax Total=Gross Potential-(Gross Potential/(Tax %+1))
 	V.net_potential = V.sum_gross - V.tax_total - V.tax_per_ticket_total;
 
-	V.aw_est_expense = V.total_estimated_expenses = V.total_fixed_expenses;
+	V.total_estimated_expenses = V.total_fixed_expenses;
+	V.aw_est_expense = Number(V.total_fixed_expenses + V.total_ve).toFixed(2);
 
 	V.aw_artist_split_percent = 0;
 	V.aw_artist_split = 0;
 	V.aw_artist_fee = parseFloat(artist_guarantee);
 	V.aw_artist_production = 0;
+	console.info("is_artist_production_buyout" + is_artist_production_buyout);
 	if (is_artist_production_buyout && (is_artist_production_buyout == 1 || is_artist_production_buyout == 'Yes')) {
 		V.aw_artist_fee += V.tour_production_expenses;
 		V.aw_artist_production = V.tour_production_expenses;
@@ -375,9 +377,11 @@ recalculate_offer_values();
 		</div>
 		<div class="row average">
 			<label class="col-xs-1 ">Average</label>
-			<label class="col-xs-2"><input id="average_ticket" readonly value="<%= (V.num_of_ticket_level > 0) ? V.sum_gross_ticket / V.num_of_ticket_level : 0 %>"
+			<label class="col-xs-2"><input id="average_ticket" readonly
+										   value="<%= (V.num_of_ticket_level > 0) ? V.sum_gross_ticket / V.num_of_ticket_level : 0 %>"
 										   class="  form-control  sys_gen"></label>
-			<label class="col-xs-1"><input id="average_kill" readonly step="any" value="<%= (V.num_of_ticket_level > 0) ? V.sum_kill / V.num_of_ticket_level : 0 %>"
+			<label class="col-xs-1"><input id="average_kill" readonly step="any"
+										   value="<%= (V.num_of_ticket_level > 0) ? V.sum_kill / V.num_of_ticket_level : 0 %>"
 										   class="  form-control  sys_gen"></label>
 			<label class="col-xs-2"><input readonly class="average sellable_ticket  sys_gen form-control"
 										   value="<%= (V.num_of_ticket_level > 0) ? (V.sum_gross_ticket - V.sum_kill) / V.num_of_ticket_level : 0 %>"></label>
