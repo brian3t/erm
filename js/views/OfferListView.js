@@ -153,7 +153,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         V.total_gross_ticket_price = (V.sum_gross_ticket - V.sum_kill == 0) ? 0 : V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
         V.total_gross_ticket_price = Number(V.total_gross_ticket_price).toFixed(2);
         V.average_ticket_price = parseFloat(Number(V.total_gross_ticket_price).toFixed(2));
-        if (!_.isNull(post_show_lockout) && post_show_lockout_unit !== '') {
+        if (!_.isNaN(post_show_lockout) && post_show_lockout_unit !== '') {
             V.playable_on = new Date(show_date);
             V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + 86400000));//move forward 1 day
             switch (post_show_lockout_unit) {

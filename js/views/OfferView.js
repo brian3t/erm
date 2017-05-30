@@ -61,7 +61,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
     /**
      * Update variable expense values.
      * @param e Event or jQuery. This is variable expense input, such as rental_flat_rate
-     * @param real_time_update boolean This is true if this is real-time update
+     * @param real_time_update boolean. True if this is real-time update
      * @param save_rest boolean Whether or not to initiate a RESTful patch
      */
     update_ve: function (e, save_rest, real_time_update) {
@@ -195,17 +195,17 @@ app.views.OfferView = Backbone.BBFormView.extend({
         else if (gross_ticket <= 2500) {
             rate = parseFloatOr0(form.find('input[name="bmi_0_2500"]').val()) / 100;
         }
+        else if (gross_ticket <= 3500) {
+            rate = parseFloatOr0(form.find('input[name="bmi_2501_3500"]').val()) / 100;
+        }
         else if (gross_ticket <= 5000) {
-            rate = parseFloatOr0(form.find('input[name="bmi_2501_5000"]').val()) / 100;
+            rate = parseFloatOr0(form.find('input[name="bmi_3501_5000"]').val()) / 100;
         }
         else if (gross_ticket <= 10000) {
             rate = parseFloatOr0(form.find('input[name="bmi_5001_10000"]').val()) / 100;
         }
-        else if (gross_ticket <= 25000) {
-            rate = parseFloatOr0(form.find('input[name="bmi_10001_25000"]').val()) / 100;
-        }
         else {
-            rate = parseFloatOr0(form.find('input[name="bmi_25001_x"]').val()) / 100;
+            rate = parseFloatOr0(form.find('input[name="bmi_10001_x"]').val()) / 100;
         }
         var bmi_sellout_potential = Number(rate * net_potential).toFixed(2);
         var bmi_max = parseFloatOr0(form.find('input[name="bmi_max"]').val());

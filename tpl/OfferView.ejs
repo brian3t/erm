@@ -55,7 +55,7 @@ function recalculate_offer_values() {
 	V.sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
 	V.total_gross_ticket_price = (V.sum_gross_ticket - V.sum_kill == 0) ? 0 : V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
 	V.average_ticket_price = parseFloat(Number(V.total_gross_ticket_price).toFixed(2));
-	if (!_.isNull(post_show_lockout) && post_show_lockout_unit !== '') {
+	if (!_.isNaN(post_show_lockout) && post_show_lockout_unit !== '') {
 		V.playable_on = new Date(show_date);
 		V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + 86400000));//move forward 1 day
 		switch (post_show_lockout_unit) {
@@ -1011,9 +1011,14 @@ recalculate_offer_values();
 						<span class="col-xs-3"><input class="form-control" name="bmi_0_2500" value="<%= bmi_0_2500 %>"></span>
 					</div>
 					<div class="row">
-						<label class="col-xs-9 input_atomic">BMI Rate 2501 - 5000 Tickets (%)</label>
-						<span class="col-xs-3"><input class="form-control" name="bmi_2501_5000"
-													  value="<%= bmi_2501_5000 %>"></span>
+						<label class="col-xs-9 input_atomic">BMI Rate 2501 - 3500 Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="bmi_2501_3500"
+													  value="<%= bmi_2501_3500 %>"></span>
+					</div>
+					<div class="row">
+						<label class="col-xs-9 input_atomic">BMI Rate 3501 - 5000 Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="bmi_3501_5000"
+													  value="<%= bmi_3501_5000 %>"></span>
 					</div>
 					<div class="row">
 						<label class="col-xs-9 input_atomic">BMI Rate 5001 - 10000 Tickets (%)</label>
@@ -1021,14 +1026,9 @@ recalculate_offer_values();
 													  value="<%= bmi_5001_10000 %>"></span>
 					</div>
 					<div class="row">
-						<label class="col-xs-9 input_atomic">BMI Rate 10001 - 25000 Tickets (%)</label>
-						<span class="col-xs-3"><input class="form-control" name="bmi_10001_25000"
-													  value="<%= bmi_10001_25000 %>"></span>
-					</div>
-					<div class="row">
-						<label class="col-xs-9 input_atomic">BMI Rate 25001 - X Tickets (%)</label>
-						<span class="col-xs-3"><input class="form-control" name="bmi_25001_x"
-													  value="<%= bmi_25001_x %>"></span>
+						<label class="col-xs-9 input_atomic">BMI Rate 10001 - X Tickets (%)</label>
+						<span class="col-xs-3"><input class="form-control" name="bmi_10001_x"
+													  value="<%= bmi_10001_x %>"></span>
 					</div>
 				</div>
 				<div class="modal-footer">
