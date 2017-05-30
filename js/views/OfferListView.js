@@ -106,7 +106,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         }
         var is_tbd_date = $co.find('input[name="is_tbd_date"]').val() || 0;
         var is_on_sale_date_tbd = parseFloatOr0($co.find('input[name="is_on_sale_date_tbd"]').val());
-        var show_date = $co.find('input[name="show_date"]').val() || 'today';
+        var show_date = $co.find('input[name="show_date"]').val();
         var post_show_lockout = parseInt($co.find('input[name="post_show_lockout"]').val());
         var post_show_lockout_unit = $co.find('select[name="post_show_lockout_unit"]').val();
         var support_artist_1_total = parseFloatOr0($co.find('input[name="support_artist_1_total"]').val());
@@ -153,20 +153,19 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         V.total_gross_ticket_price = (V.sum_gross_ticket - V.sum_kill == 0) ? 0 : V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
         V.total_gross_ticket_price = Number(V.total_gross_ticket_price).toFixed(2);
         V.average_ticket_price = parseFloat(Number(V.total_gross_ticket_price).toFixed(2));
-        if (!_.isNaN(post_show_lockout) && post_show_lockout_unit !== '') {
-            V.playable_on = new Date(show_date);
-            V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + 86400000));//move forward 1 day
+        if (!_.isNaN(post_show_lockout) && post_show_lockout_unit !== '' && !_.isEmpty(show_date)) {
+            V.playable_on = moment(show_date,'YYYY-MM-DD').add(1, 'day');//move forward 1 day
             switch (post_show_lockout_unit) {
                 case 'Days':
-                    V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + post_show_lockout * 86400000));
+                    V.playable_on.add(post_show_lockout,'day');// = new Date(V.playable_on.setTime(V.playable_on.getTime() + post_show_lockout * 86400000));
                     break;
                 case 'Months':
-                    V.playable_on = new Date(V.playable_on.setMonth(V.playable_on.getMonth() + post_show_lockout));
+                    V.playable_on.add(post_show_lockout,'month');// = new Date(V.playable_on.setMonth(V.playable_on.getMonth() + post_show_lockout));
                     break;
                 default:
                     break;
             }
-            V.playable_on_date_string = V.playable_on.toDateString();
+            V.playable_on_date_string = V.playable_on.format('YYYY-MM-DD');
         } else {
             V.playable_on_date_string = '';
         }
@@ -212,7 +211,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
             V.aw_artist_production = V.tour_production_expenses;
         }
         V.aw_promoter_split_percent = 100 - artist_split;
-        V.aw_est_total = V.aw_est_expense + V.aw_artist_fee;
+        V.aw_est_total = Number(V.aw_est_expense + V.aw_artist_fee).toFixed(2);
         V.aw_breakeven_tix = (V.average_ticket_price > 0) ? V.aw_est_total / V.average_ticket_price : 0;
 
         V.total_comp_kill = Number(artist_comp + production_comp + promotional_comp + house_comp + kill).toFixed(0);

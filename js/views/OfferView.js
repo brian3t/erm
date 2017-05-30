@@ -81,7 +81,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
             gross_potential = parseFloatOr0($('#create_offer .gross_potential').val());
             net_potential = parseFloatOr0($('#create_offer .net_potential').val());
             gross_ticket = parseFloatOr0($('#create_offer .sum_gross_ticket').val());
-            sellable_ticket = parseFloatOr0($('#create_offer .total.sellable_ticket').val());
+            sellable_ticket = parseFloatOr0($('#create_offer .total_sellable_ticket').val());
         } else {
             if (e === null) {
                 e = $('#var_expense_cr8');//upon saving create form
@@ -89,13 +89,13 @@ app.views.OfferView = Backbone.BBFormView.extend({
                 gross_potential = parseFloatOr0($('#create_offer .gross_potential').val());
                 net_potential = parseFloatOr0($('#create_offer .net_potential').val());
                 gross_ticket = parseFloatOr0($('#create_offer .sum_gross_ticket').val());
-                sellable_ticket = parseFloatOr0($('#create_offer .total.sellable_ticket').val());
+                sellable_ticket = parseFloatOr0($('#create_offer .total_sellable_ticket').val());
             } else {
                 e = $(e.target);
                 gross_potential = parseFloatOr0($('#gross_potential').val());
                 net_potential = parseFloatOr0($('#net_potential').val());
                 gross_ticket = parseFloatOr0($('#gross_ticket').val());
-                sellable_ticket = parseFloatOr0($('form.edit .total.sellable_ticket').val());
+                sellable_ticket = parseFloatOr0($('form.edit .total_sellable_ticket').val());
             }
         }
         if (real_time_update) {
@@ -103,7 +103,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
             gross_potential = parseFloatOr0($('#gross_potential').val());
             net_potential = parseFloatOr0($('#net_potential').val());
             gross_ticket = parseFloatOr0($('#gross_ticket').val());
-            sellable_ticket = parseFloatOr0($('form.edit .total.sellable_ticket').val());
+            sellable_ticket = parseFloatOr0($('form.edit .total_sellable_ticket').val());
         }
 
         var ve_values = flat_array_to_assoc(ve_form.find(':input:not([readonly])').serializeArray());

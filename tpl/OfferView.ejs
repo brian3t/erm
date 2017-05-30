@@ -55,20 +55,19 @@ function recalculate_offer_values() {
 	V.sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
 	V.total_gross_ticket_price = (V.sum_gross_ticket - V.sum_kill == 0) ? 0 : V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
 	V.average_ticket_price = parseFloat(Number(V.total_gross_ticket_price).toFixed(2));
-	if (!_.isNaN(post_show_lockout) && post_show_lockout_unit !== '') {
-		V.playable_on = new Date(show_date);
-		V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + 86400000));//move forward 1 day
+	if (!_.isNaN(post_show_lockout) && post_show_lockout_unit !== '' && !_.isEmpty(show_date)) {
+		V.playable_on = moment(show_date,'YYYY-MM-DD').add(1, 'day');//move forward 1 day
 		switch (post_show_lockout_unit) {
 			case 'Days':
-				V.playable_on = new Date(V.playable_on.setTime(V.playable_on.getTime() + post_show_lockout * 86400000));
+				V.playable_on.add(post_show_lockout,'day');// = new Date(V.playable_on.setTime(V.playable_on.getTime() + post_show_lockout * 86400000));
 				break;
 			case 'Months':
-				V.playable_on = new Date(V.playable_on.setMonth(V.playable_on.getMonth() + post_show_lockout));
+				V.playable_on.add(post_show_lockout,'month');// = new Date(V.playable_on.setMonth(V.playable_on.getMonth() + post_show_lockout));
 				break;
 			default:
 				break;
 		}
-		V.playable_on_date_string = V.playable_on.toDateString();
+		V.playable_on_date_string = V.playable_on.format('YYYY-MM-DD');
 	} else {
 		V.playable_on_date_string = '';
 	}
@@ -116,7 +115,7 @@ function recalculate_offer_values() {
 	}
 	V.aw_promoter_split_percent = 100 - artist_split;
 	V.aw_promoter_split = 0;
-	V.aw_est_total = V.aw_est_expense + V.aw_artist_fee;
+	V.aw_est_total = Number(V.aw_est_expense + V.aw_artist_fee).toFixed(2);
 	V.aw_breakeven_tix = (V.average_ticket_price > 0) ? V.aw_est_total / V.average_ticket_price : 0;
 
 	artist_comp = Number(artist_comp);
@@ -367,11 +366,9 @@ recalculate_offer_values();
 										   class="  form-control  sys_gen"></label>
 			<label class="col-xs-1"><input id="total_kill" readonly step="any" value="<%= V.sum_kill %>"
 										   class="  form-control  sys_gen"></label>
-			<label class="col-xs-2"><input readonly class="total sellable_ticket  sys_gen form-control"
+			<label class="col-xs-2"><input readonly class="total total_sellable_ticket  sys_gen form-control"
 										   value="<%= V.sum_gross_ticket - V.sum_kill %>"></label>
-			<label class="col-xs-2"><input readonly id="average_ticket_price" step="any"
-										   class="money  form-control  sys_gen"
-										   value="<%= V.total_gross_ticket_price %>"></label>
+			<label class="col-xs-2"></label>
 			<label class="col-xs-2"><input readonly class="money total  gross  sys_gen form-control"
 										   value="<%= V.sum_gross %>"></label>
 		</div>
@@ -385,7 +382,9 @@ recalculate_offer_values();
 										   class="  form-control  sys_gen"></label>
 			<label class="col-xs-2"><input readonly class="average sellable_ticket  sys_gen form-control"
 										   value="<%= (V.num_of_ticket_level > 0) ? (V.sum_gross_ticket - V.sum_kill) / V.num_of_ticket_level : 0 %>"></label>
-			<label class="col-xs-2"></label>
+			<label class="col-xs-2"><input readonly id="average_ticket_price" step="any"
+										   class="money  form-control  sys_gen"
+										   value="<%= V.total_gross_ticket_price %>"></label>
 			<label class="col-xs-2"><input readonly class="money average gross  sys_gen form-control"
 										   value="<%= (V.num_of_ticket_level > 0) ? V.sum_gross / V.num_of_ticket_level : 0 %>"></label>
 		</div>

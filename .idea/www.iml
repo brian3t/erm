@@ -9,5 +9,6 @@
     <orderEntry type="library" name="underscore-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="BackboneJS" level="project" />
     <orderEntry type="library" name="misc.js" level="project" />
+    <orderEntry type="library" name="Moment" level="application" />
   </component>
 </module>
