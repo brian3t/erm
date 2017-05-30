@@ -142,8 +142,12 @@ app.views.OfferView = Backbone.BBFormView.extend({
         if (per_tix_percent > 0) {
             sellout_potential = net_potential * per_tix_percent / 100;
         }
+        var sellable_or_gross_ticket = sellable_ticket;
+        if (['event_tax', 'insurance', 'sesec', 'bmi', 'ascap'].indexOf($sellout_potential.data('category')) !== -1) {
+            sellable_or_gross_ticket = gross_ticket;
+        }
         if (per_tix_dollar > 0) {
-            sellout_potential = sellable_ticket * per_tix_dollar;
+            sellout_potential = sellable_or_gross_ticket * per_tix_dollar;
         }
         if (flat_rate > 0) {
             sellout_potential = flat_rate;
@@ -180,11 +184,11 @@ app.views.OfferView = Backbone.BBFormView.extend({
         }
         var ascap_sellout_potential = Number(rate * net_potential).toFixed(2);
         var ascap_max = parseFloatOr0(form.find('input[name="ascap_max"]').val());
-        if (ascap_max > 0 && ascap_sellout_potential > ascap_max){
+        if (ascap_max > 0 && ascap_sellout_potential > ascap_max) {
             ascap_sellout_potential = ascap_max;
         }
         var ascap_flat_rate = parseFloatOr0(form.find('input[name="ascap_flat_rate"]').val());
-        if (ascap_flat_rate > 0){
+        if (ascap_flat_rate > 0) {
             ascap_sellout_potential = ascap_flat_rate;
         }
         form.find('input.sys_gen.sellout_potential[data-category="ascap"]').val(ascap_sellout_potential);
@@ -209,11 +213,11 @@ app.views.OfferView = Backbone.BBFormView.extend({
         }
         var bmi_sellout_potential = Number(rate * net_potential).toFixed(2);
         var bmi_max = parseFloatOr0(form.find('input[name="bmi_max"]').val());
-        if (bmi_max > 0 && bmi_sellout_potential > bmi_max){
+        if (bmi_max > 0 && bmi_sellout_potential > bmi_max) {
             bmi_sellout_potential = bmi_max;
         }
         var bmi_flat_rate = parseFloatOr0(form.find('input[name="bmi_flat_rate"]').val());
-        if (bmi_flat_rate > 0){
+        if (bmi_flat_rate > 0) {
             bmi_sellout_potential = bmi_flat_rate;
         }
         form.find('input.sys_gen.sellout_potential[data-category="bmi"]').val(bmi_sellout_potential);
