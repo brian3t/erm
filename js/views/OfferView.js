@@ -235,11 +235,13 @@ app.views.OfferView = Backbone.BBFormView.extend({
 
         //calculate total
         var sellout_total = 0;
-        this.$el.find('input.sellout_potential').each(function (i, v) {
-            // if ($(v).data('category') !== 'cc_fee') {
+        if (_.isObject(this.$el)) {
+            this.$el.find('input.sellout_potential').each(function (i, v) {
+                // if ($(v).data('category') !== 'cc_fee') {
                 sellout_total += parseFloatOr0(v.value);
-            // }
-        });
+                // }
+            });
+        }
         sellout_total = sellout_total.toFixed(2);
 
         var $cc_fee_sellout = $('input.sellout_potential[data-category="cc_fee"]');
