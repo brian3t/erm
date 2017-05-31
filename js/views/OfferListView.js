@@ -216,7 +216,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
             V.aw_artist_production = V.tour_production_expenses;
         }
         V.aw_promoter_split_percent = 100 - artist_split;
-        V.aw_est_total = Number(V.aw_est_expense + V.aw_artist_fee).toFixed(2);
+        V.aw_est_total = Number(parseFloat(V.aw_est_expense) + V.aw_artist_fee).toFixed(2);
         V.aw_breakeven_tix = (V.average_ticket_price > 0) ? V.aw_est_total / V.average_ticket_price : 0;
 
         V.total_comp_kill = Number(artist_comp + production_comp + promotional_comp + house_comp + kill).toFixed(0);
