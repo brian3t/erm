@@ -298,6 +298,9 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         var new_offer = new app.models.Offer();
         // new_offer.setOrganizer(app.cur_offer.get('offer'));
         var self = this;
+        if (form_data.hasOwnProperty('artist_guarantee')){
+            form_data.artist_guarantee = form_data.artist_guarantee.replace(',', '');
+        }
         new_offer.save(form_data, {
             success: function (new_model) {
                 self.toggle_create_item();
