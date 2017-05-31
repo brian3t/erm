@@ -13,6 +13,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
     $reset_btn: {},
     $cancel_btn: {},
     switchery: {},
+    is_edit_mode: false,
 
     initialize: function () {
         this.OfferCollection = app.collections.Offer.extend({
@@ -46,12 +47,14 @@ app.views.OfferListView = Backbone.BBFormView.extend({
             span_text.text('On');
             $($form.find(':input')).removeAttr('disabled');
             this.$el.find('button.delete').show();
+            this.is_edit_mode = true;
         }
         else {
             $('div.edit_form_wrapper').removeClass('in_edit_mode');
             span_text.text('Off');
             $($form.find(':input')).prop('disabled', true);
             this.$el.find('button.delete').hide();
+            this.is_edit_mode = false;
         }
     },
     toggle_create_item: function () {

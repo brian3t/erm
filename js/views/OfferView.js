@@ -29,16 +29,16 @@ app.views.OfferView = Backbone.BBFormView.extend({
         var prod_exp_html = this.print_table_from_array(JSON.parse_3t(this.model.get_production_expense()));
         this.$el.find('#production_expense').html(prod_exp_html);
 
-        this.update_ve(this.$el.find('input[name=rental_note]'), false);
-        this.update_ve(this.$el.find('input[name=tixcom_note]'), false);
-        this.update_ve(this.$el.find('input[name=tix_service_fee_note]'), false);
-        this.update_ve(this.$el.find('input[name=box_office_fee_note]'), false);
-        this.update_ve(this.$el.find('input[name=event_tax_note]'), false);
-        this.update_ve(this.$el.find('input[name=insurance_note]'), false);
-        this.update_ve(this.$el.find('input[name=sesec_note]'), false);
-        this.update_ve(this.$el.find('input[name=ascap_note]'), false);
-        this.update_ve(this.$el.find('input[name=bmi_note]'), false);
-        this.update_ve(this.$el.find('input[name=cc_fee_note]'), false);
+        this.update_ve(this.$el.find('input[name=rental_note]'), false, true);
+        this.update_ve(this.$el.find('input[name=tixcom_note]'), false, true);
+        this.update_ve(this.$el.find('input[name=tix_service_fee_note]'), false, true);
+        this.update_ve(this.$el.find('input[name=box_office_fee_note]'), false, true);
+        this.update_ve(this.$el.find('input[name=event_tax_note]'), false, true);
+        this.update_ve(this.$el.find('input[name=insurance_note]'), false, true);
+        this.update_ve(this.$el.find('input[name=sesec_note]'), false, true);
+        this.update_ve(this.$el.find('input[name=ascap_note]'), false, true);
+        this.update_ve(this.$el.find('input[name=bmi_note]'), false, true);
+        this.update_ve(this.$el.find('input[name=cc_fee_note]'), false, true);
 
 
         var edit_switch = $('.edit_switch');
@@ -99,7 +99,11 @@ app.views.OfferView = Backbone.BBFormView.extend({
             }
         }
         if (real_time_update) {
-            e = $(e.target);
+            if (e.hasOwnProperty('target')) {//this is fired by event
+                e = $(e.target);
+            }
+            //else, it should be element passed by this->render
+            e = $(e);
             gross_potential = parseFloatOr0($('#gross_potential').val());
             net_potential = parseFloatOr0($('#net_potential').val());
             gross_ticket = parseFloatOr0($('#gross_ticket').val());
@@ -231,8 +235,10 @@ app.views.OfferView = Backbone.BBFormView.extend({
 
         //calculate total
         var sellout_total = 0;
-        $('input.sellout_potential').each(function (i, v) {
-            sellout_total += parseFloatOr0(v.value);
+        this.$el.find('input.sellout_potential').each(function (i, v) {
+            // if ($(v).data('category') !== 'cc_fee') {
+                sellout_total += parseFloatOr0(v.value);
+            // }
         });
         sellout_total = sellout_total.toFixed(2);
 
@@ -246,7 +252,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         var total_expense = parseFloatOr0($('#total_fixed_expenses').val()) + parseFloatOr0(sellout_total);
         var aw_est_total = total_expense + parseFloatOr0($('#aw_artist_fee').val());
         var net_potential = parseFloatOr0($('#aw_net_potential').val());
-        var split_point = net_potential - total_expense;
+        var split_point = Number(net_potential - total_expense).toFixed(2);
         var aw_artist_split = parseFloat(Number(split_point * artist_split_percent / 100).toFixed(2));
         var avg_tick_price = $('#average_ticket_price').val();
         var breakeven_tix = null;
