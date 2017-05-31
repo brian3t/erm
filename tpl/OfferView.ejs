@@ -108,7 +108,7 @@ function recalculate_offer_values() {
 	V.aw_artist_split = 0;
 	V.aw_artist_fee = parseFloat(artist_guarantee);//todob here
 	V.aw_artist_production = 0;
-	console.info("is_artist_production_buyout" + is_artist_production_buyout);
+//	console.info("is_artist_production_buyout" + is_artist_production_buyout);
 	if (is_artist_production_buyout && (is_artist_production_buyout == 1 || is_artist_production_buyout == 'Yes')) {
 		V.aw_artist_fee += V.tour_production_expenses;
 		V.aw_artist_production = V.tour_production_expenses;
@@ -862,7 +862,7 @@ recalculate_offer_values();
 			<div class="row">
 				<label class="col-xs-5">Venue Split (%)</label>
 				<input class="col-xs-35	" name="merch_venue_split_venue_sell" value="<%= merch_venue_split_venue_sell %>">
-				<input class="col-xs-35		" name="merch_venue_split_artist_sell" value="<%= merch_venue_split_artist_sell %>">
+				<input class="col-xs-35	sys_gen	" value="<%= 100 - merch_artist_split_artist_sell %>">
 			</div>
 			<div class="row">
 				<label class="col-xs-5">Artist Split Media (%)</label>
@@ -872,7 +872,7 @@ recalculate_offer_values();
 			<div class="row">
 				<label class="col-xs-5">Venue Split Media (%)</label>
 				<input class="col-xs-35	" name="merch_venue_split_media_venue_sell" value="<%= merch_venue_split_media_venue_sell %>">
-				<input class="col-xs-35		" name="merch_venue_split_media_artist_sell" value="<%= merch_venue_split_media_artist_sell %>">
+				<input class="col-xs-35	sys_gen	" value="<%= 100 - merch_artist_split_media_artist_sell %>">
 			</div>
 			<div class="row">
 				<label class="col-xs-12">&nbsp;</label>

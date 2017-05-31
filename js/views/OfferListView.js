@@ -124,6 +124,8 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         var kill = parseFloatOr0($co.find('input[name="kill"]').val());
         var facility_fee = parseFloatOr0($co.find('input[name="facility_fee"]').val());
         var artist_split = parseFloatOr0($co.find('input[name="artist_split"]').val());
+        var merch_artist_split_artist_sell = parseFloatOr0($co.find('input[name="merch_artist_split_artist_sell"]').val());
+        var merch_artist_split_media_artist_sell = parseFloatOr0($co.find('input[name="merch_artist_split_media_artist_sell"]').val());
 
         var l1_price = parseFloatOr0($co.find('input[name="l1_price"]').val()),
             l2_price = parseFloatOr0($co.find('input[name="l2_price"]').val()),
@@ -228,6 +230,9 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         V.average_gross = (V.num_of_ticket_level > 0) ? V.sum_gross / V.num_of_ticket_level : 0;
         V.facility_fee_total = facility_fee * (V.sum_gross_ticket - V.sum_kill);
         V.promoter_split = 100 - artist_split;
+        V.merch_venue_split_artist_sell = 100 - merch_artist_split_artist_sell;
+        V.merch_venue_split_media_artist_sell = 100 - merch_artist_split_media_artist_sell;
+
 //format NAN
         $.each(V, function (i, v) {
             if (isNumeric(V[i])) {
