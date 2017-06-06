@@ -25,6 +25,8 @@ Backbone.BBFormView = Backbone.View.extend({
                 } else {
                     input.prop('checked', false);
                 }
+            } else {
+                input.addClass('money');
             }
             input.data('key', k);
             input.val(v);
@@ -64,8 +66,8 @@ Backbone.BBFormView = Backbone.View.extend({
                 if (typeof v == 'string') {
                     v = v.replace("$", "");
                 }
-                if (target.hasClass('money')) {
-                    val = val.replace('$', '').replace('.00', '').replace(',', '');
+                if (target.hasClass('money') && typeof v == 'string') {
+                    v = v.replace('$', '').replace('.00', '').replace(',', '');
                 }
                 inputs[key] = v;
             });

@@ -48,7 +48,7 @@ app.models.User = Backbone.RelationalModel.extend({
             profile: {avatar: null}
         },
         get: function (args) {
-            if (args === 'fullname'){
+            if (args === 'fullname') {
                 return this.getFullName();
             }
             return Backbone.RelationalModel.prototype.get.call(this, args);
@@ -56,12 +56,11 @@ app.models.User = Backbone.RelationalModel.extend({
         getFullName: function () {
             return this.get('first_name') + ' ' + this.get('last_name');
         },
-        setCompany: function (company) {
+        setBelongCompany: function (company) {
             this.company = company;
-            this.set('company_id', company.get('id'));
+            this.set('belong_company_id', company.get('id'));
         }
-    }
-    ,
+    },
     {
         state: null
     }

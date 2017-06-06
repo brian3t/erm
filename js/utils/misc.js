@@ -199,6 +199,9 @@ app.utils.misc = (function () {
             }
             var result = 0;
             _.each(a, function (v) {
+                if (typeof v === 'string'){
+                    v = v.replace('$', '').replace('.00', '').replace(',', '');
+                }
                 if (isNumeric(v)) {
                     v = parseFloat(v);
                     result += v;

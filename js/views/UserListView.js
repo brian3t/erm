@@ -67,7 +67,7 @@ app.views.UserListView = Backbone.View.extend({
         var $form = $(this.$el.find('#create_user > form'));
         var form_data = flat_array_to_assoc($form.serializeArray());
         var new_user = new app.models.User();
-        new_user.setCompany(app.cur_user.get('company'));
+        new_user.setBelongCompany(app.cur_user.get('company'));
         new_user.set('username', 'contact_' + form_data['first_name'].replace(' ', '') + (new Date).toISOString() + Math.random().toString().substr(1, 3));
         if (_.isEmpty(form_data['email'])) {
             form_data['email'] = 'contact_' + form_data['first_name'].replace(' ', '') + '@' + (new Date).getTime() + '.' + Math.random().toString().substr(1, 3);
@@ -210,6 +210,14 @@ app.views.UserView = Backbone.View.extend({
 
     render: function () {
         this.$el.html(this.template(this.model.attributes));
+        var selects = this.$el.find('select');
+        _.each(selects, function (e) {
+            var val = this.model.get($(e).prop('name'));
+            if (val == null) {
+                val = '';
+            }
+            $(e).val(val);
+        }, this);
         var union = this.$el.find(':input[name="union_memberships"]').select2();
         union.val(this.model.get('union_memberships')).trigger('change');
         return this.$el;
