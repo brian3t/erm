@@ -199,7 +199,7 @@ app.utils.misc = (function () {
             }
             var result = 0;
             _.each(a, function (v) {
-                if (typeof v === 'string'){
+                if (typeof v === 'string') {
                     v = v.replace('$', '').replace('.00', '').replace(',', '');
                 }
                 if (isNumeric(v)) {
@@ -341,7 +341,7 @@ function isNumeric(n) {
  * @returns {boolean}
  */
 function is_money(v) {
-    if (typeof v !== 'string'){
+    if (typeof v !== 'string') {
         return false
     }
     return /^\$*([\d,])+(\.*\d{2,})*$/.test(v);//$1,234.5678
@@ -350,7 +350,7 @@ function parseFloatOr0(v) {
     if (typeof v == "string") {
         v = v.replace('$', '');
     }
-    if (is_money(v)){
+    if (is_money(v)) {
         v = v.replace(',', '');
     }
     v = parseFloat(v);
@@ -389,7 +389,7 @@ function print_option_fr_collection(collection_name, name_column) {
  * @param model Backbone.Model
  */
 function extract_from_model(model) {
-    if (!model instanceof Backbone.Model){
+    if (!model instanceof Backbone.Model) {
         return false;
     }
 }
@@ -407,7 +407,23 @@ function bs_close_all_modals() {
  * initialize autonumeric for all .money, except those with decimal places override
  */
 function b3_autonumeric() {
-    var an_options = {currencySymbol: '$',unformatOnSubmit: true};
-    $('input.money:not([data-decimalPlacesOverride]):not(.sys_gen)').autoNumeric('init', an_options);
-    $('input[data-decimalPlacesOverride=4]:not(.sys_gen)').autoNumeric('init',$.extend(an_options, {decimalPlacesOverride:4}));
+    var an_options = {currencySymbol: '$', unformatOnSubmit: true};
+    $('input.money:not([data-decimalPlacesOverride])').each(function (i, v) {
+        if (typeof $(v).data('autoNumeric') == 'object') {
+            var save_val = $(v).val();
+            $(v).autoNumeric('destroy');
+            $(v).autoNumeric('init', an_options);
+            $(v).autoNumeric('set', save_val);
+        } else {
+            $(v).autoNumeric('init', an_options);
+        }
+    });
+    $('input[data-decimalPlacesOverride=4]').autoNumeric('init', $.extend(an_options, {decimalPlacesOverride: 4}));
+    var save_aw_est_expense = $('#aw_est_expense').val();
+    if (typeof $('#aw_net_potential').data('autoNumeric') === 'object') {
+        save_aw_est_expense = $('#aw_est_expense').autoNumeric('get');
+    }
+    $('#aw_est_expense').autoNumeric('destroy');
+    $('#aw_est_expense').autoNumeric('init', {currencySymbol: '$', unformatOnSubmit: true,});
+    $('#aw_est_expense').autoNumeric('set', save_aw_est_expense);
 }

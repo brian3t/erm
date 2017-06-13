@@ -225,7 +225,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
             bmi_sellout_potential = bmi_flat_rate;
         }
         form.find('input.sys_gen.sellout_potential[data-category="bmi"]').val(bmi_sellout_potential);
-
+        b3_autonumeric();
 
     },
     recalculate_aw_values: function () {
@@ -263,8 +263,8 @@ app.views.OfferView = Backbone.BBFormView.extend({
             breakeven_tix = (avg_tick_price !== 0) ? Number(aw_est_total / avg_tick_price).toFixed(0) : null;
         } else avg_tick_price = null;
 
-        $('#aw_est_expense').val(total_expense);
-        $('#aw_est_total').val(aw_est_total);
+        $('#aw_est_expense').val(Number(total_expense).toFixed(2));
+        $('#aw_est_total').val(Number(aw_est_total).toFixed(2));
         $('#aw_breakeven_tix').val(breakeven_tix);
         $('#aw_est_split_point').val(split_point);
         $('#aw_artist_split').val(aw_artist_split);

@@ -244,6 +244,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
             //bind to html
             $co.find('input.sys_gen.' + i).val(V[i]);
         });
+        b3_autonumeric();
     },
     recalculate_aw_values_cr8: function () {
         //update sellout potential of create form
@@ -278,8 +279,8 @@ app.views.OfferListView = Backbone.BBFormView.extend({
             breakeven_tix = (avg_tick_price != 0) ? Number(estimated_total / avg_tick_price).toFixed(0) : null;
         } else avg_tick_price = null;
 
-        $co.find('.aw_est_expense').val(total_expense);
-        $co.find('.aw_est_total').val(estimated_total);
+        $co.find('.aw_est_expense').val(Number(total_expense).toFixed(2));
+        $co.find('.aw_est_total').val(Number(estimated_total).toFixed(2));
         $co.find('.aw_breakeven_tix').val(breakeven_tix);
         $co.find('.aw_est_split_point').val(split_point);
         $co.find('.aw_artist_split').val(aw_artist_split);
@@ -335,6 +336,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         this.offer_form_view.model = this.collection.at(this.cur_model_index);
         this.offer_form_view.render();
         this.offer_form_view.after_render();
+        b3_autonumeric();
     },
     pdf_item: function (e) {
         var curr_id = this.offer_form_view.model.get('id');
