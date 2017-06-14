@@ -601,7 +601,7 @@ element_ready = function () {
     $(document).trigger('select2_ready');
     // $('input[type="file"]').fileinput();
     $('input[type=date]').datetimepicker({format: 'Y-m-d'});
-    $('input.time_input').datetimepicker({format: 'g:i A'});
+    $('input.time_input').datetimepicker({format: 'hh:mm A'});
 };
 $(document).ready(function ($) {
     $('.first_level.panel-heading').click();

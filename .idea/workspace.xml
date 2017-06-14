@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1cb85d7b-f82d-44cd-9859-9d21c2911b8f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/core/app.js" afterPath="$PROJECT_DIR$/assets/js/core/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/views/OfferListView.js" afterPath="$PROJECT_DIR$/js/views/OfferListView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/OfferSearchListView.ejs" afterPath="$PROJECT_DIR$/tpl/OfferSearchListView.ejs" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OfferListView.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OfferListView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/OfferListView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+            <state relative-caret-position="386">
+              <caret line="384" column="0" lean-forward="false" selection-start-line="384" selection-start-column="0" selection-end-line="384" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#3361#14416#0" expanded="false" />
@@ -104,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/core/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12306">
-              <caret line="595" column="57" lean-forward="false" selection-start-line="595" selection-start-column="57" selection-end-line="595" selection-end-column="57" />
+            <state relative-caret-position="644">
+              <caret line="601" column="43" lean-forward="true" selection-start-line="601" selection-start-column="43" selection-end-line="601" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -117,8 +117,8 @@
       <file leaf-file-name="OfferView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/OfferView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="48" column="66" lean-forward="false" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
+            <state relative-caret-position="581">
+              <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -196,7 +196,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>datetimepicker({format: 'H:i:s'</find>
       <find>.</find>
       <find>.cs</find>
       <find>.css</find>
@@ -226,6 +225,7 @@
       <find>data-index</find>
       <find>filter_item</find>
       <find>cur_model_id</find>
+      <find>timepicker</find>
     </findStrings>
     <replaceStrings>
       <replace>,\n</replace>
@@ -345,12 +345,12 @@
         <option value="$PROJECT_DIR$/js/utils/misc.js" />
         <option value="$PROJECT_DIR$/tpl/OfferView.ejs" />
         <option value="$PROJECT_DIR$/tpl/OfferListView.ejs" />
-        <option value="$PROJECT_DIR$/assets/js/core/app.js" />
         <option value="$PROJECT_DIR$/js/views/OfferView.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/lib/bootstrap-datetimepicker.css" />
         <option value="$PROJECT_DIR$/tpl/OfferSearchListView.ejs" />
         <option value="$PROJECT_DIR$/js/views/OfferListView.js" />
+        <option value="$PROJECT_DIR$/assets/js/core/app.js" />
       </list>
     </option>
   </component>
@@ -974,13 +974,6 @@
       <option name="presentableId" value="Default" />
       <updated>1468029993866</updated>
     </task>
-    <task id="LOCAL-00031" summary="Fix money update inside var expense. Fix tax %.">
-      <created>1483170382521</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1483170382521</updated>
-    </task>
     <task id="LOCAL-00032" summary="Offer: working on merch.">
       <created>1483428347238</created>
       <option name="number" value="00032" />
@@ -1317,7 +1310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1497456206793</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Fix minor filter issue">
+      <created>1497456710470</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1497456710470</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1436,7 +1436,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Test logo." />
     <MESSAGE value="Big update: Company and Users." />
     <MESSAGE value="DEV api server. Remember to rename local to erm.ermapi too." />
     <MESSAGE value="Limit offer, venue, settlement." />
@@ -1461,7 +1460,8 @@
     <MESSAGE value="Version 1.4.7.3. Fix issues 100,103,99,57,55,54,46,42,74" />
     <MESSAGE value="Version 1.4.7.4. Fix issues 107 108 104 109 110 105" />
     <MESSAGE value="Version 1.4.7.4. Missing files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.4.7.4. Missing files." />
+    <MESSAGE value="Fix minor filter issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix minor filter issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2408,22 +2408,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/core/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12306">
-          <caret line="595" column="57" lean-forward="false" selection-start-line="595" selection-start-column="57" selection-end-line="595" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/views/OfferView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="48" column="66" lean-forward="false" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
@@ -2456,10 +2440,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/OfferView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/views/OfferListView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+        <state relative-caret-position="386">
+          <caret line="384" column="0" lean-forward="false" selection-start-line="384" selection-start-column="0" selection-end-line="384" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#3361#14416#0" expanded="false" />
@@ -2469,6 +2461,14 @@
             <element signature="e#18177#18527#0" expanded="false" />
             <element signature="e#19099#19274#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/core/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="601" column="43" lean-forward="true" selection-start-line="601" selection-start-column="43" selection-end-line="601" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
