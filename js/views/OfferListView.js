@@ -6,7 +6,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
     className: 'container row panel-body',
     OfferCollection: {},
     collection: {},
-    cur_model_index: 0,//current model that is being selected out of collection
+    cur_model_id: null,//current model that is being selected out of collection
     $action_btns: {},
     $create_btn: {},
     $save_btn: {},
@@ -319,7 +319,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         var self = this;
         app_confirm("Are you sure to delete this offer?", function (response) {
             if (response == true || response == 1) {
-                var cur_model = self.collection.at(self.cur_model_index);
+                var cur_model = self.collection.at(self.cur_model_id);
                 self.collection.remove(cur_model);
                 cur_model.destroy();
             }
@@ -332,8 +332,8 @@ app.views.OfferListView = Backbone.BBFormView.extend({
     },
     select_item: function (e) {
         var $target = $(e.currentTarget);
-        this.cur_model_index = $target.data('index');
-        this.offer_form_view.model = this.collection.at(this.cur_model_index);
+        this.cur_model_id = $target.data('id');
+        this.offer_form_view.model = this.collection.get(this.cur_model_id);
         this.offer_form_view.render();
         this.offer_form_view.after_render();
         b3_autonumeric();
@@ -352,7 +352,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         var first_offer = this.collection.first();
         this.$el.html(this.template());
         if (_.isObject(first_offer)) {
-            this.cur_model_index = 0;
+            this.cur_model_id = first_offer.id;
             this.offer_form_view.model = first_offer;
             $('#offer_form_wrapper').html(this.offer_form_view.render());
             this.offer_form_view.after_render();
