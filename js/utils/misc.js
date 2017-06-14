@@ -407,23 +407,26 @@ function bs_close_all_modals() {
  * initialize autonumeric for all .money, except those with decimal places override
  */
 function b3_autonumeric() {
-    var an_options = {currencySymbol: '$', unformatOnSubmit: true};
+    var an_options = {currencySymbol: '$', unformatOnSubmit: true, noSeparatorOnFocus: true};
     $('input.money:not([data-decimalPlacesOverride])').each(function (i, v) {
         if (typeof $(v).data('autoNumeric') == 'object') {
-            var save_val = $(v).val();
-            $(v).autoNumeric('destroy');
-            $(v).autoNumeric('init', an_options);
-            $(v).autoNumeric('set', save_val);
+            $(v).autoNumeric('reSet');
         } else {
             $(v).autoNumeric('init', an_options);
         }
     });
-    $('input[data-decimalPlacesOverride=4]').autoNumeric('init', $.extend(an_options, {decimalPlacesOverride: 4}));
-    var save_aw_est_expense = $('#aw_est_expense').val();
-    if (typeof $('#aw_net_potential').data('autoNumeric') === 'object') {
-        save_aw_est_expense = $('#aw_est_expense').autoNumeric('get');
-    }
-    $('#aw_est_expense').autoNumeric('destroy');
-    $('#aw_est_expense').autoNumeric('init', {currencySymbol: '$', unformatOnSubmit: true,});
-    $('#aw_est_expense').autoNumeric('set', save_aw_est_expense);
+    $('input[data-decimalPlacesOverride=4]').each(function (i, v) {
+        if (typeof $(v).data('autoNumeric') == 'object') {
+            $(v).autoNumeric('reSet');
+        } else {
+            $(v).autoNumeric('init', $.extend(an_options, {decimalPlacesOverride: 4}));
+        }
+    })
+    // var save_aw_est_expense = $('#aw_est_expense').val();
+    // if (typeof $('#aw_net_potential').data('autoNumeric') === 'object') {
+    //     save_aw_est_expense = $('#aw_est_expense').autoNumeric('get');
+    // }
+    // $('#aw_est_expense').autoNumeric('destroy');
+    // $('#aw_est_expense').autoNumeric('init', {currencySymbol: '$', unformatOnSubmit: true,});
+    // $('#aw_est_expense').autoNumeric('set', save_aw_est_expense);
 }

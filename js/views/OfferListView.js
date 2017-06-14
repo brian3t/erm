@@ -380,8 +380,8 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         this.switchery = new Switchery(edit_switch[0]);
         edit_switch.trigger('change');
         this.delegateEvents();
-        $('input[type=date]').datetimepicker({format: 'Y-m-d', timepicker: false});
-        $('input[type=time]').datetimepicker({format: 'h:i:s', timepicker: true, datepicker: false});
+        $('input[type=date]').datetimepicker({format: 'Y-m-d'});
+        $('input.time_input').datetimepicker({format: 'g:i A'});
         return this.el;
     },
     after_render: function () {
@@ -408,9 +408,9 @@ app.views.OfferSearchListView = Backbone.View.extend({
         var self = this;
         var models = this.collection;
         models = models.filter(function (v) {
-            if (this.text_to_filter == '') return true;
-            var booked_by = v.get('user');
-            return true;//todob implement filter here
+            if (_.isUndefined(self.text_to_filter) || self.text_to_filter === '' || _.isNull(self.text_to_filter) ) return true;
+            var event_id = v.get('event_id').toLowerCase();
+            return event_id.indexOf(self.text_to_filter.toLowerCase()) !== -1;
         });
         this.$el.html(this.template({collection: models}));
         this.delegateEvents();

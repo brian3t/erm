@@ -45,8 +45,8 @@ app.views.OfferView = Backbone.BBFormView.extend({
         edit_switch.trigger('change');
         b3_autonumeric();
 
-        $('input[type=date]').datetimepicker({format: 'Y-m-d', timepicker: false});
-        $('input[type=time]').datetimepicker({format: 'h:i:s', timepicker: true, datepicker: false});
+        $('input[type=date]').datetimepicker({format: 'Y-m-d'});
+        $('input.time_input').datetimepicker({format: 'hh:mm A'});
         this.recalculate_aw_values();
         return this.$el;
     },
@@ -143,8 +143,12 @@ app.views.OfferView = Backbone.BBFormView.extend({
         //start assigning sellout potential
         var $sellout_potential = $(e.parent().parent().find(':input[readonly]'));
         var sellout_potential = 0;
+        var net_or_gross_potential = gross_potential;
+        if (['tixcom', 'box_office_fee'].indexOf($sellout_potential.data('category')) !== -1) {
+            net_or_gross_potential = net_potential;
+        }
         if (per_tix_percent > 0) {
-            sellout_potential = net_potential * per_tix_percent / 100;
+            sellout_potential = net_or_gross_potential * per_tix_percent / 100;
         }
         var sellable_or_gross_ticket = sellable_ticket;
         if (['event_tax', 'insurance', 'sesec', 'bmi', 'ascap'].indexOf($sellout_potential.data('category')) !== -1) {

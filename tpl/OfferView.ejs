@@ -253,11 +253,11 @@ recalculate_offer_values();
 					<option value="Public">Public</option>
 				</select>
 			</label>
-			<label class="col-xs-4">Doors<br><input name="doors" disabled type="time" value="<%= doors %>"
-													class="form-control">
+			<label class="col-xs-4">Doors<br><input name="doors" disabled value="<%= doors %>"
+													class="form-control time_input">
 			</label>
-			<label class="col-xs-4">Showtime<br><input name="showtime" disabled type="time" value="<%= showtime %>"
-													   class="form-control">
+			<label class="col-xs-4">Showtime<br><input name="showtime" disabled value="<%= showtime %>"
+													   class="form-control time_input">
 			</label>
 		</div>
 		<div class="row">
@@ -834,7 +834,7 @@ recalculate_offer_values();
 		<div class="clearfix"></div>
 
 		<label class="col-xs-2 input_atomic text_underline">Breakeven Tix</label>
-		<div class="col-xs-3"><b><input readonly type="number" class="form-control  sys_gen" id="aw_breakeven_tix"></b>
+		<div class="col-xs-3"><b><input step="1" readonly type="number" class="form-control  sys_gen" id="aw_breakeven_tix"></b>
 		</div>
 		<label class="col-xs-2 col-xs-offset-1 input_atomic">Artist Walkout</label>
 		<span class="col-xs-1"></span>

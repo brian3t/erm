@@ -600,8 +600,8 @@ element_ready = function () {
     // $('.multi_select').select2();
     $(document).trigger('select2_ready');
     // $('input[type="file"]').fileinput();
-    $('input[type=date]').datetimepicker({format: 'Y-m-d', timepicker: false});
-    $('input[type=time]').datetimepicker({format: 'h:i:s', timepicker: true, datepicker:false});
+    $('input[type=date]').datetimepicker({format: 'Y-m-d'});
+    $('input.time_input').datetimepicker({format: 'g:i A'});
 };
 $(document).ready(function ($) {
     $('.first_level.panel-heading').click();
