@@ -600,7 +600,7 @@ element_ready = function () {
     // $('.multi_select').select2();
     $(document).trigger('select2_ready');
     // $('input[type="file"]').fileinput();
-    $('input[type=date]').datetimepicker({format: 'Y-m-d'});
+    $('input[type=date]').datetimepicker({format: 'Y-MM-DD'});
     $('input.time_input').datetimepicker({format: 'hh:mm A'});
 };
 $(document).ready(function ($) {

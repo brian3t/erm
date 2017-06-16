@@ -104,6 +104,9 @@ $.extend(app, {
         app.collections.promoters = new app.collections.Company();
         app.collections.promoters.url = config.restUrl + 'company?' + $.param($.extend({'line_of_business': 'Promotion'}, company_param));//param here to get promoters only
         app.collections.promoters.fetch();
+        app.collections.agencies = new app.collections.Company();
+        app.collections.agencies.url = config.restUrl + 'company?' + $.param($.extend({'line_of_business': 'Agency'}, company_param));//param here to get promoters only
+        app.collections.agencies.fetch();
         app.collections.venues = new app.collections.Venue_collection();
         app.collections.venues.url = config.restUrl + 'venue?' + $.param(company_param);
         app.collections.venues.fetch();

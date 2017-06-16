@@ -8,6 +8,7 @@ var general_expense = general_expense || "{}";
 var is_tbd_date = is_tbd_date || 0;
 var is_on_sale_date_tbd = is_on_sale_date_tbd || 0;
 var comp_opt = print_option_fr_collection('companies');
+var agency_opt = print_option_fr_collection('agencies');
 var agent_opt = print_option_fr_collection('agents','fullname');
 var promoter_opt = print_option_fr_collection('promoters');
 var venue_opt = print_option_fr_collection('venues');
@@ -56,7 +57,7 @@ function recalculate_offer_values() {
 	V.sum_kill = l1_kill + l2_kill + l3_kill + l4_kill + l5_kill;
 	V.total_gross_ticket_price = (V.sum_gross_ticket - V.sum_kill == 0) ? 0 : V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
 	V.average_ticket_price = parseFloat(Number(V.total_gross_ticket_price).toFixed(2));
-	if (!_.isNaN(post_show_lockout) && post_show_lockout_unit !== '' && !_.isEmpty(show_date)) {
+	if (!_.isNaN(post_show_lockout) && post_show_lockout !=0 && post_show_lockout_unit !== '' && !_.isEmpty(show_date)) {
 		V.playable_on = moment(show_date,'YYYY-MM-DD').add(1, 'day');//move forward 1 day
 		switch (post_show_lockout_unit) {
 			case 'Days':
@@ -154,7 +155,7 @@ recalculate_offer_values();
 		<div class="row">
 			<label class="col-xs-4">Agency<select name="agency_id" disabled value="<%= agency_id %>"
 												  class="form-control">
-					<%= comp_opt %>
+					<%= agency_opt %>
 				</select>
 			</label>
 

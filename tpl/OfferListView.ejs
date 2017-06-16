@@ -1,6 +1,7 @@
 <%
 //this is create form
 var comp_opt = print_option_fr_collection('companies');
+var agency_opt = print_option_fr_collection('agencies');
 var agent_opt = print_option_fr_collection('agents','fullname');
 var promoter_opt = print_option_fr_collection('promoters');
 var venue_opt = print_option_fr_collection('venues');
@@ -37,7 +38,7 @@ var ticketing_company_opt = print_option_fr_collection('ticketing_companies');
 				</div>
 				<div class="row">
 					<label class="col-xs-4">Agency<select name="agency_id" class="form-control">
-							<%= comp_opt %>
+							<%= agency_opt %>
 						</select>
 					</label>
 

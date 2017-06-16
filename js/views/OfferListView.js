@@ -158,7 +158,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         V.total_gross_ticket_price = (V.sum_gross_ticket - V.sum_kill == 0) ? 0 : V.sum_gross / (V.sum_gross_ticket - V.sum_kill);
         V.total_gross_ticket_price = Number(V.total_gross_ticket_price).toFixed(2);
         V.average_ticket_price = parseFloat(Number(V.total_gross_ticket_price).toFixed(2));
-        if (!_.isNaN(post_show_lockout) && post_show_lockout_unit !== '' && !_.isEmpty(show_date)) {
+        if (!_.isNaN(post_show_lockout) && post_show_lockout != 0 && post_show_lockout_unit !== '' && !_.isEmpty(show_date)) {
             V.playable_on = moment(show_date,'YYYY-MM-DD').add(1, 'day');//move forward 1 day
             switch (post_show_lockout_unit) {
                 case 'Days':
@@ -380,7 +380,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         this.switchery = new Switchery(edit_switch[0]);
         edit_switch.trigger('change');
         this.delegateEvents();
-        $('input[type=date]').datetimepicker({format: 'Y-m-d'});
+        $('input[type=date]').datetimepicker({format: 'Y-MM-DD'});
         $('input.time_input').datetimepicker({format: 'hh:mm A'});
         return this.el;
     },
