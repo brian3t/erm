@@ -160,7 +160,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         if (flat_rate > 0) {
             sellout_potential = flat_rate;
         }
-        if (max !== 0) {
+        if (max !== 0 && flat_rate === 0) {
             sellout_potential = max;
         }
         $sellout_potential.val(Number(sellout_potential).toFixed(2));
