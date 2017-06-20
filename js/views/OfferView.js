@@ -160,7 +160,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         if (flat_rate > 0) {
             sellout_potential = flat_rate;
         }
-        if (max != 0) {
+        if (max !== 0) {
             sellout_potential = max;
         }
         $sellout_potential.val(Number(sellout_potential).toFixed(2));
@@ -190,11 +190,11 @@ app.views.OfferView = Backbone.BBFormView.extend({
         else {
             rate = parseFloatOr0(form.find('input[name="ascap_25001_x"]').val()) / 100;
         }
-        var ascap_sellout_potential = Number(rate * net_potential).toFixed(2);
-        var ascap_max = parseFloatOr0(form.find('input[name="ascap_max"]').val());
-        if (ascap_max > 0 && ascap_sellout_potential > ascap_max) {
-            ascap_sellout_potential = ascap_max;
-        }
+        var ascap_sellout_potential = Number(rate * net_potential).trimNum(2);
+        // var ascap_max = parseFloatOr0(form.find('input[name="ascap_max"]').val());
+        // if (ascap_max > 0 && ascap_sellout_potential > ascap_max) {
+        //     ascap_sellout_potential = ascap_max;
+        // }
         var ascap_flat_rate = parseFloatOr0(form.find('input[name="ascap_flat_rate"]').val());
         if (ascap_flat_rate > 0) {
             ascap_sellout_potential = ascap_flat_rate;
@@ -219,11 +219,11 @@ app.views.OfferView = Backbone.BBFormView.extend({
         else {
             rate = parseFloatOr0(form.find('input[name="bmi_10001_x"]').val()) / 100;
         }
-        var bmi_sellout_potential = Number(rate * net_potential).toFixed(2);
-        var bmi_max = parseFloatOr0(form.find('input[name="bmi_max"]').val());
-        if (bmi_max > 0 && bmi_sellout_potential > bmi_max) {
-            bmi_sellout_potential = bmi_max;
-        }
+        var bmi_sellout_potential = Number(rate * net_potential).trimNum(2);
+        // var bmi_max = parseFloatOr0(form.find('input[name="bmi_max"]').val());
+        // if (bmi_max > 0 && bmi_sellout_potential > bmi_max) {
+        //     bmi_sellout_potential = bmi_max;
+        // }
         var bmi_flat_rate = parseFloatOr0(form.find('input[name="bmi_flat_rate"]').val());
         if (bmi_flat_rate > 0) {
             bmi_sellout_potential = bmi_flat_rate;

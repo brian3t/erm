@@ -451,3 +451,11 @@ function b3_autonumeric() {
     // $('#aw_est_expense').autoNumeric('init', {currencySymbol: '$', unformatOnSubmit: true,});
     // $('#aw_est_expense').autoNumeric('set', save_aw_est_expense);
 }
+Number.prototype.trimNum = function (places, rounding) {
+    if (rounding != 'floor' && rounding != 'ceil') {
+        rounding = 'round'
+    }
+    var result, num = this, multiplier = Math.pow(10, places);
+    result = Math[rounding](num * multiplier) / multiplier;
+    return Number(result);
+}
