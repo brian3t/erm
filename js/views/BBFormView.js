@@ -12,7 +12,7 @@ Backbone.BBFormView = Backbone.View.extend({
             label.text(k);
             var input_wrapper = $('<div class="col-xs-1">');
             var input = $('<input>').addClass('form-control');
-            if (is_disabled){
+            if (is_disabled) {
                 input.attr('disabled', true);
             }
             //set checkbox here. updateajax to pull checked value too.
@@ -27,6 +27,9 @@ Backbone.BBFormView = Backbone.View.extend({
                 }
             } else {
                 input.addClass('money');
+                if (_.isEmpty(v) || v == 0 || v == '$0.00' || v == 0.00) {
+                    v = '';
+                }
             }
             input.data('key', k);
             input.val(v);

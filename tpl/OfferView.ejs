@@ -110,7 +110,7 @@ function recalculate_offer_values() {
 	V.aw_artist_split = 0;
 	V.aw_artist_fee = parseFloat(artist_guarantee);//todob here
 	V.aw_artist_production = 0;
-	console.info("is_artist_production_buyout" + is_artist_production_buyout);
+//	console.info("is_artist_production_buyout" + is_artist_production_buyout);
 	if (is_artist_production_buyout && (is_artist_production_buyout == 1 || is_artist_production_buyout == 'Yes')) {
 		V.aw_artist_fee += V.tour_production_expenses;
 		V.aw_artist_production = V.tour_production_expenses;
@@ -131,6 +131,9 @@ function recalculate_offer_values() {
 	$.each(V, function (i, v) {
 		if (isNumeric(V[i])) {
 			V[i] = Number(V[i]).toFixed(2);
+		}
+		if (V[i] == 0 || [i] == 0.00 || [i] == '$0.00'){
+		    V[i] = '';
 		}
 	});
 	b3_autonumeric();

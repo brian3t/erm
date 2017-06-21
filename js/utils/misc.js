@@ -428,7 +428,7 @@ function bs_close_all_modals() {
  * initialize autonumeric for all .money, except those with decimal places override
  */
 function b3_autonumeric() {
-    var an_options = {currencySymbol: '$', unformatOnSubmit: true, noSeparatorOnFocus: true};
+    var an_options = {currencySymbol: '$', unformatOnSubmit: true};
     $('input.money:not([data-decimalPlacesOverride])').each(function (i, v) {
         if (typeof $(v).data('autoNumeric') == 'object') {
             $(v).autoNumeric('reSet');
@@ -441,6 +441,15 @@ function b3_autonumeric() {
             $(v).autoNumeric('reSet');
         } else {
             $(v).autoNumeric('init', $.extend(an_options, {decimalPlacesOverride: 4}));
+        }
+    });
+    $('.money').on('focus', function (e) {
+        if (this.value == 0 || this.value === '$0.00') {
+            $(this).val('');
+            this.focus();
+            this.select();
+            this.setSelectionRange(0, this.value.length);
+            var a = 1;
         }
     })
     // var save_aw_est_expense = $('#aw_est_expense').val();
