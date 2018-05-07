@@ -1,6 +1,6 @@
 const IS_DEBUG = true;
 const CLEAR_LOCAL_STORAGE = true;
-const IS_LOCAL = (document.URL.indexOf('local') !== -1);
+const IS_INWEB = (document.URL.indexOf('local') !== -1);
 const IS_DEV = (document.URL.indexOf('theeverestapp') !== -1);
 var app = {views: {}, models: {}, routers: {}, utils: {}, adapters: {}, collections: {}};
 var current_pos = {};
@@ -10,8 +10,8 @@ var config = {
 };
 var is_validator_initializing = false;
 if (IS_LOCAL) {
-    config.restUrl = 'https://api.ermapi/v1/';
-    config.apiUrl = 'https://api.ermapi/'
+    config.restUrl = BACKEND_URL + 'v1/';
+    config.apiUrl = BACKEND_URL;
 }
 if (IS_DEV) {
     config.restUrl = 'http://api.theeverestapp.com/v1/';
