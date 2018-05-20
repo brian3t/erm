@@ -1,5 +1,6 @@
-    <tbody>
+<tbody>
     <% _.each(collection, function(marketing,i){ %>
+    <% console.log(marketing.get('offer')) %>
         <tr>
             <td><a class="select_item" data-index="<%= i %>"><%= marketing.get('offer').event_id %></a></td>
         </tr>

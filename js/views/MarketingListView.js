@@ -150,6 +150,7 @@ app.views.MarketingSearchListView = Backbone.View.extend({
         models = models.filter(function (v) {
             if (this.text_to_filter === '') return true;
             let event_id = v.get('offer').event_id;
+            if (_.isEmpty(event_id)) return true;
             return (event_id.toLowerCase().indexOf(self.text_to_filter) !== -1);
         });
         this.$el.html(this.template({collection: models}));
