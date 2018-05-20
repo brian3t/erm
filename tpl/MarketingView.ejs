@@ -1,0 +1,21 @@
+<%
+%>
+<form class="edit account_info" action="#" data-model="user" data-id="<%= id %>" data-toggle="validator" role="form">
+
+	<input type="hidden" name="user_id" value="<%= user_id %>">
+
+	<div class="form-group">
+		<div class="row">
+			<label class="col-xs-6">Event ID<input name="offer_id" type="text" required class="form-control">
+				<div class="help-block with-errors"></div>
+			</label>
+		</div>
+	</div>
+
+	<h4>Links</h4>
+	<div class="form-group">
+
+	</div>
+
+	<button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Marketing</button>
+</form>

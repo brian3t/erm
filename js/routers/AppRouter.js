@@ -7,6 +7,7 @@ app.routers.AppRouter = Backbone.Router.extend({
         "account_setting": "account_setting",
         "contact": "contact",
         "venues": "venues",
+        "marketings": "marketings",
         "companies": "companies",
         "offers": "offers",
         "settlements": "settlements"
@@ -109,6 +110,20 @@ app.routers.AppRouter = Backbone.Router.extend({
         }
         app.slider.slidePage(app.venuesView.$el);
         app.venuesView.dom_ready();
+    },
+    marketings: function () {
+        // Since the home view never changes, we instantiate it and render it only once
+        if (!app.marketingsView) {
+            app.marketingsView = new app.views.MarketingsView();
+            app.marketingsView.render();
+        } else {
+            console.log('reusing marketingsView view');
+            app.marketingsView.delegateEvents(); // delegate events when the view is recycled
+            app.marketingsView.marketing_list_view.delegateEvents();
+            app.marketingsView.marketing_list_view.marketing_form_view.delegateEvents();
+        }
+        app.slider.slidePage(app.marketingsView.$el);
+        app.marketingsView.dom_ready();
     },
     companies: function () {
         // Since the home view never changes, we instantiate it and render it only once

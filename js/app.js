@@ -22,6 +22,7 @@ var backboneInit = function () {
     app.utils.templates.load(["NavbarView", "HomeView", "MyAccountSettingView", "AccountSettingView", "DashboardView",
         "ContactView", "UserListView", "UserSearchListView", "UserView",
         "VenuesView", "VenueListView", "VenueSearchListView", "VenueView",
+        "MarketingsView", "MarketingListView", "MarketingSearchListView", "MarketingView",
         "CompaniesView", "CompanyListView", "CompanySearchListView", "CompanyView",
         "SettlementsView", "SettlementListView", "SettlementSearchListView", "SettlementView",
         "OffersView", "OfferListView", "OfferSearchListView", "OfferView"], function () {
@@ -110,6 +111,8 @@ $.extend(app, {
         app.collections.venues = new app.collections.Venue_collection();
         app.collections.venues.url = config.restUrl + 'venue?' + $.param(company_param);
         app.collections.venues.fetch();
+        app.collections.marketings = new app.collections.Marketing_collection();
+        app.collections.marketings.fetch();
         app.collections.artists = new app.collections.User_collection();
         app.collections.artists.url = config.restUrl + 'user?' + $.param($.extend({'line_of_business': ['Artist', 'Talent']}, company_param));//param here to get agents only
         app.collections.artists.fetch();
