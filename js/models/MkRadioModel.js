@@ -7,7 +7,7 @@ app.models.MkRadio = Backbone.RelationalModel.extend({
             key: 'marketing',
             relatedModel: 'app.models.Marketing',
             reverseRelation:{
-                key:'radios',
+                key:'mk_radios',
                 includeInJSON:'id'
             }
         }],

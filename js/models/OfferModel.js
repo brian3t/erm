@@ -1,25 +1,34 @@
 "use strict";
 app.models.Offer = Backbone.RelationalModel.extend({
     urlRoot: config.restUrl + 'offer',
-    relations: [{
-        type: Backbone.HasOne,
-        key: 'user',
-        autoFetch: true,
-        relatedModel: 'app.models.User',
-        reverseRelation: {
-            key: 'offer',
-            includeInJSON: 'id'
+    relations: [
+        {
+            type: Backbone.HasOne,
+            key: 'user',
+            autoFetch: true,
+            relatedModel: 'app.models.User',
+            reverseRelation: {
+                key: 'offer',
+                includeInJSON: 'id'
+            }
         }
-    }
-    , {
-        type: Backbone.HasOne,
-        key: 'artist',
-        relatedModel: 'app.models.User',
-        reverseRelation: {
-            key: 'offer_as_artist',
-            includeInJSON: false
+        , {
+            type: Backbone.HasOne,
+            key: 'artist',
+            relatedModel: 'app.models.User',
+            reverseRelation: {
+                key: 'offer_as_artist',
+                includeInJSON: false
+            }
+        }, {
+            type: Backbone.HasOne,
+            key: 'marketing',
+            relatedModel: 'app.models.Marketing',
+            reverseRelation: {
+                key: 'offer',
+                includeInJSON: false
+            }
         }
-    }
     ],
     venue: {},
     after_sync: function () {
@@ -29,7 +38,7 @@ app.models.Offer = Backbone.RelationalModel.extend({
     populate_artist: function () {
         if (_.isNull(this.get('artist_id')))
             return;
-        if (typeof(app.collections.artists) !== 'object' || app.collections.artists.length === 0){
+        if (typeof(app.collections.artists) !== 'object' || app.collections.artists.length === 0) {
             var self = this;
             this.listenToOnce(app.collections.artists, 'sync', function () {
                 self.set('artist', app.collections.artists.get(self.get('artist_id')));
@@ -41,7 +50,7 @@ app.models.Offer = Backbone.RelationalModel.extend({
     populate_venue: function () {
         if (_.isNull(this.get('venue_id')))
             return;
-        if (typeof(app.collections.venues) !== 'object' || app.collections.venues.length === 0){
+        if (typeof(app.collections.venues) !== 'object' || app.collections.venues.length === 0) {
             var self = this;
             this.listenToOnce(app.collections.venues, 'sync', function () {
                 self.set('venue', app.collections.venues.get(self.get('venue_id')));
@@ -50,21 +59,21 @@ app.models.Offer = Backbone.RelationalModel.extend({
             this.venue = app.collections.venues.get(this.get('venue_id'));
         }
     },
-    get_general_expense:function () {
+    get_general_expense: function () {
         var gen_exp = this.get('general_expense');
-      if (gen_exp === '{}'){
-          this.reset_array_field();
-          return JSON.stringify(this.general_expense_array);
-      }  else {
-          return gen_exp;
-      }
+        if (gen_exp === '{}') {
+            this.reset_array_field();
+            return JSON.stringify(this.general_expense_array);
+        } else {
+            return gen_exp;
+        }
     },
-    get_production_expense:function () {
+    get_production_expense: function () {
         var prod_exp = this.get('production_expense');
-        if (prod_exp === '{}'){
+        if (prod_exp === '{}') {
             this.reset_array_field();
             return JSON.stringify(this.production_expense_array);
-        }  else {
+        } else {
             return prod_exp;
         }
     },
@@ -184,7 +193,7 @@ app.models.Offer = Backbone.RelationalModel.extend({
 
 app.collections.Offer = Backbone.Collection.extend({
     model: app.models.Offer,
-    url : config.restUrl + 'offer',
+    url: config.restUrl + 'offer',
     comparator: function (a) {
         return a.get('event_id').toLowerCase();
     },

@@ -29,6 +29,15 @@ app.models.User = Backbone.RelationalModel.extend({
             autoFetch: true
         }, {
             type: Backbone.HasMany,
+            key: 'marketing',
+            relatedModel: 'app.models.Marketing',
+            reverseRelation: {
+                key: 'createdby',
+                includeInJSON: 'id'
+            },
+            autoFetch: true
+        }, {
+            type: Backbone.HasMany,
             key: 'offer_as_artist',
             relatedModel: 'app.models.Offer',
             reverseRelation: {

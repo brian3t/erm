@@ -22,16 +22,4 @@ app.models.Profile = Backbone.RelationalModel.extend({
         user_id: null,
         website: null
     }
-    // ,
-//     {
-//     id_commuter: null,
-//     enrolled: null,
-//     username: null,
-//     addresses: {},
-//     commuter_data: {},
-//     arrive_after: null,
-//     hashed_password: null,
-//     remember_checkbox: null
-//
-// }
 );
