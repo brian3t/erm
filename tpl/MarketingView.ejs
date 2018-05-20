@@ -1,4 +1,5 @@
 <%
+// console.log(offer)
 %>
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>" data-toggle="validator" role="form">
 
@@ -6,16 +7,15 @@
 
 	<div class="form-group">
 		<div class="row">
-			<label class="col-xs-6">Event ID<input name="offer_id" type="text" required class="form-control">
-				<div class="help-block with-errors"></div>
+			<label class="col-xs-6">Event ID<input name="offer_id" value="<%= offer.event_id %>" type="text" required class="form-control">
+				<span class="help-block with-errors"></span>
+			</label>
+			<label class="col-xs-6">Budget<input name="budget" value="<%= budget %>" type="text" class="form-control">
+				<span class="help-block with-errors"></span>
 			</label>
 		</div>
 	</div>
 
-	<h4>Links</h4>
-	<div class="form-group">
-
-	</div>
 
 	<button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Marketing</button>
 </form>
