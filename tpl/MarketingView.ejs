@@ -1,5 +1,5 @@
 <%
-// console.log(mk_radios.first())
+console.log(mk_radios.first())
 %>
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>" data-toggle="validator" role="form">
 
@@ -16,17 +16,53 @@
             </label>
         </div>
         <h5>Radio</h5>
-        <% mk_radios.each((mk_radio) => {
-            let {station, format, contact} = mk_radio.attributes
-        %>
-        <div class="row">
-            Station: <%= station %>
-            Format: <%= format %>
-            Contact: <%= contact %>
+        <div class="table-responsive">
+            <table class="table table-bordered table-condensed">
+                <tr>
+                    <th>Paid</th>
+                    <th colspan="2">Station</th>
+                    <th>Format</th>
+                    <th>Contact</th>
+                    <th colspan="2">Phone/Email</th>
+                    <th>Promo Mentions</th>
+                    <th>Promo Tickets</th>
+                    <th>Promo Value</th>
+                    <th>Promo Run</th>
+                    <th>Paid Run</th>
+                    <th>#Paid Spots</th>
+                    <th>:30</th>
+                    <th>:60</th>
+                    <th class="warning">Gross</th>
+                    <th class="success">Net</th>
+                </tr>
+                <% mk_radios.each((mk_radio) => {
+                    let {station, format, contact, contact_phone_email, promo_mentions, promo_tickets,
+                        promo_value, promo_run_from, promo_run_to, paid_run_from, paid_run_to, paid_spots,
+                        thirty, sixty, gross, net} = mk_radio.attributes
+                %>
+
+                    <tr>
+                        <td> Paid By TEST </td>
+                        <td colspan="2"> <%= station %> </td>
+                        <td> <%= format %> </td>
+                        <td> <%= contact %> </td>
+                        <td colspan="2"> <%= contact_phone_email %> </td>
+                        <td> <%= promo_mentions %> </td>
+                        <td> <%= promo_tickets %> </td>
+                        <td> <%= promo_value %> </td>
+                        <td> <%= promo_run_from %> to <%= promo_run_to %> </td>
+                        <td> <%= paid_run_from %> to <%= paid_run_to %> </td>
+                        <td> <%= paid_spots %> </td>
+                        <td> <%= thirty %> </td>
+                        <td> <%= sixty %> </td>
+                        <td> <%= gross %> </td>
+                        <td> <%= net %> </td>
+                    </tr>
+                <% })
+                delete station
+                %>
+            </table>
         </div>
-        <% })
-        delete station
-        %>
     </div>
 
 

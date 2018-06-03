@@ -3,3 +3,4 @@
 *.css.map
 /assets/images/logo.png
 /js/local.js
+/.idea/deployment.xml

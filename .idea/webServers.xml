@@ -10,6 +10,9 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
+      <webServer id="e570766d-a46b-4429-a083-9905ad71507b" name="erm server" url="http://erm">
+        <fileTransfer port="0" mountedRoot="/Volumes/www/erm" accessType="MOUNT" />
+      </webServer>
     </option>
   </component>
 </project>
