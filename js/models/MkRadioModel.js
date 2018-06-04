@@ -3,14 +3,19 @@ app.models.MkRadio = Backbone.RelationalModel.extend({
         },
         // urlRoot: config.restUrl + '/profile',
         relations: [{
-            type:Backbone.HasOne,
+            type: Backbone.HasOne,
             key: 'marketing',
             relatedModel: 'app.models.Marketing',
-            reverseRelation:{
-                key:'mk_radios',
-                includeInJSON:'id'
+            reverseRelation: {
+                key: 'mk_radios',
+                includeInJSON: 'id'
             }
-        }],
+        },
+            {
+                type: Backbone.HasOne,
+                key: 'company_id',
+                relatedModel: 'app.models.Company',
+            }],
 
         localStorage: false,
     }

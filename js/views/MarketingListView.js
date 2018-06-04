@@ -207,10 +207,15 @@ app.views.MarketingView = Backbone.View.extend({
     },
 
     render: function () {
-        this.$el.html(this.template(this.model.attributes));
+        let mk_radios = this.model.get('mk_radios');
+        let mk_radios_gross_sum = mk_radios.reduce((acc, b)=>
+           acc + b.get('gross')
+        );
+        console.log(mk_radios_gross_sum);
+        this.$el.html(this.template(_.extend(this.model.attributes)));
         let selects = this.$el.find('select');
         _.each(selects, function (e) {
-            $(e).val(this.model.get($(e).prop('name')));//todob dont remember what this does
+            $(e).val(this.model.get($(e).prop('name')));//dont remember what this does
         }, this);
         return this.$el;
     },

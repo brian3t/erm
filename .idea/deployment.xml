@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="erm_aws">
+  <component name="PublishConfigData" autoUpload="Always" serverName="erm server" preserveTimestamps="false" autoUploadExternalChanges="true">
     <serverData>
+      <paths name="erm server">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="erm_aws">
         <serverdata>
           <mappings>
@@ -9,13 +16,7 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="superbappsolutions.com">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/erm" local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
