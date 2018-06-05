@@ -2,5 +2,6 @@
 .sass-cache/
 *.css.map
 /assets/images/logo.png
+assets/images/logo.png
 /js/local.js
 /.idea/deployment.xml
