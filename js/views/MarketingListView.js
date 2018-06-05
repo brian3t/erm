@@ -208,9 +208,20 @@ app.views.MarketingView = Backbone.View.extend({
 
     render: function () {
         let mk_radios = this.model.get('mk_radios').models;
-        let mk_radios_gross_sum = 0;
-        mk_radios.forEach((e) => mk_radios_gross_sum += parseFloat(e.get('gross')));
-        this.$el.html(this.template(_.extend(this.model.attributes,{mk_radios_gross_sum: mk_radios_gross_sum})));
+        let mk_radios_gross_sum = 0, mk_radios_net_sum = 0;
+        mk_radios.forEach((e) => {
+            mk_radios_gross_sum += parseFloat(e.get('gross'));
+            mk_radios_net_sum += parseFloat(e.get('net'));
+        });
+        let mk_televisions = this.model.get('mk_televisions').models;
+        let mk_televisions_gross_sum = 0, mk_televisions_net_sum = 0;
+        mk_televisions.forEach((e) => {
+            mk_televisions_gross_sum += parseFloat(e.get('gross'));
+            mk_televisions_net_sum += parseFloat(e.get('net'));
+        });
+
+        this.$el.html(this.template(_.extend(this.model.attributes,{mk_radios_gross_sum: mk_radios_gross_sum, mk_radios_net_sum: mk_radios_net_sum, mk_televisions_gross_sum: mk_televisions_gross_sum,
+            mk_televisions_net_sum: mk_televisions_net_sum})));
         let selects = this.$el.find('select');
         _.each(selects, function (e) {
             $(e).val(this.model.get($(e).prop('name')));//dont remember what this does

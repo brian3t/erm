@@ -261,6 +261,68 @@ div.in_edit_mode {
 input[readonly] {
   background-color: #fafafa;
 }
-.c1{width: 5%} .c2{width: 10%} .c3{width: 15%} .c4{width: 20%}.c5{width: 25%}.c6{width: 30%}.c7{width: 35%}
-.c8{width: 40%}.c9{width: 45%}.c10{width: 50%}.c11{width: 55%}.c12{width: 60%}.c13{width: 65%}
-.c14{width: 70%}.c15{width: 75%}.c16{width: 80%}.c17{width: 85%}.c18{width: 90%}.c19{width: 95%}.c20{width: 100%}
+.c1 {
+  width: 5%
+}
+.c2 {
+  width: 10%
+}
+.c3 {
+  width: 15%
+}
+.c4 {
+  width: 20%
+}
+.c5 {
+  width: 25%
+}
+.c6 {
+  width: 30%
+}
+.c7 {
+  width: 35%
+}
+.c8 {
+  width: 40%
+}
+.c9 {
+  width: 45%
+}
+.c10 {
+  width: 50%
+}
+.c11 {
+  width: 55%
+}
+.c12 {
+  width: 60%
+}
+.c13 {
+  width: 65%
+}
+.c14 {
+  width: 70%
+}
+.c15 {
+  width: 75%
+}
+.c16 {
+  width: 80%
+}
+.c17 {
+  width: 85%
+}
+.c18 {
+  width: 90%
+}
+.c19 {
+  width: 95%
+}
+.c20 {
+  width: 100%
+}
+@media (min-width: 1025px) {
+  .container {
+    width: 100%;
+  }
+}

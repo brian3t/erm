@@ -28,6 +28,15 @@ app.models.Marketing = Backbone.RelationalModel.extend({
                 includeInJSON: 'id'
             },
             autoFetch: true
+        }, {
+            type: Backbone.HasMany,
+            key: 'mk_televisions',
+            relatedModel: 'app.models.MkTelevision',
+            reverseRelation: {
+                key: 'marketing',
+                includeInJSON: 'id'
+            },
+            autoFetch: true
         }
         ],
         localStorage: false,
