@@ -1,6 +1,6 @@
 <%
     mk = mk_radios.first();
-// console.log(mk)
+    console.log(mk_radios_gross_sum)
 %>
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>" data-toggle="validator" role="form">
 
@@ -56,10 +56,16 @@
                         <td> <%= paid_spots %> </td>
                         <td> <%= thirty %> </td>
                         <td> <%= sixty %> </td>
-                        <td> <%= gross %> </td>
-                        <td> <%= net %> </td>
+                        <td class="warning"> <%= gross %> </td>
+                        <td class="success"> <%= net %> </td>
                     </tr>
                 <% }) %>
+                <tr>
+                    <td colspan="13"> </td>
+                    <td colspan="2"> <b>SUB TOTAL</b> </td>
+                    <td class="warning numeric"> <%= mk_radios_gross_sum %> </td>
+                    <td class="success numeric"> <%= 9 %> </td>
+                </tr>
             </table>
         </div>
     </div>

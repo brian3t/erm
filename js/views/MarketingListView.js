@@ -165,13 +165,13 @@ app.views.MarketingView = Backbone.View.extend({
     tagName: "div",
     id: "marketing_form",
     className: "col-sm-12",
-    model: app.models.Marketing ,
+    model: app.models.Marketing,
     events: {
         "blur .edit": "update_ajax",
         "change .multi_select": "update_ajax"
     },
     update_ajax: function (e) {
-        if (is_validator_initializing){
+        if (is_validator_initializing) {
             return;
         }
 
@@ -207,12 +207,10 @@ app.views.MarketingView = Backbone.View.extend({
     },
 
     render: function () {
-        let mk_radios = this.model.get('mk_radios');
-        let mk_radios_gross_sum = mk_radios.reduce((acc, b)=>
-           acc + b.get('gross')
-        );
-        console.log(mk_radios_gross_sum);
-        this.$el.html(this.template(_.extend(this.model.attributes)));
+        let mk_radios = this.model.get('mk_radios').models;
+        let mk_radios_gross_sum = 0;
+        mk_radios.forEach((e) => mk_radios_gross_sum += parseFloat(e.get('gross')));
+        this.$el.html(this.template(_.extend(this.model.attributes,{mk_radios_gross_sum: mk_radios_gross_sum})));
         let selects = this.$el.find('select');
         _.each(selects, function (e) {
             $(e).val(this.model.get($(e).prop('name')));//dont remember what this does
