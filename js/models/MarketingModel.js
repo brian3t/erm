@@ -4,14 +4,6 @@ app.models.Marketing = Backbone.RelationalModel.extend({
         urlRoot: config.restUrl + 'marketing',
         relations: [{
             type: Backbone.HasOne,
-            key: 'createdby',
-            relatedModel: app.models.User,
-            reverseRelation: {
-                key: 'marketing',
-                includeInJSON: 'id'
-            }
-        }, {
-            type: Backbone.HasOne,
             key: 'offer',
             relatedModel: 'app.models.Offer',
             reverseRelation: {

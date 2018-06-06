@@ -14,14 +14,6 @@ app.models.Offer = Backbone.RelationalModel.extend({
         }
         , {
             type: Backbone.HasOne,
-            key: 'artist',
-            relatedModel: 'app.models.User',
-            reverseRelation: {
-                key: 'offer_as_artist',
-                includeInJSON: false
-            }
-        }, {
-            type: Backbone.HasOne,
             key: 'marketing',
             relatedModel: 'app.models.Marketing',
             reverseRelation: {

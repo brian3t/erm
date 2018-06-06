@@ -15,7 +15,8 @@ app.models.User = Backbone.RelationalModel.extend({
             key: 'profile',
             relatedModel: 'app.models.Profile',
             reverseRelation: {
-                key: 'user',
+                key: 'belongs_to',
+                relatedModel: 'app.models.User',
                 includeInJSON: 'id'
             }
         }, {
@@ -24,6 +25,7 @@ app.models.User = Backbone.RelationalModel.extend({
             relatedModel: 'app.models.Offer',
             reverseRelation: {
                 key: 'user',
+                relatedModel: 'app.models.User',
                 includeInJSON: 'id'
             },
             autoFetch: true
@@ -33,6 +35,7 @@ app.models.User = Backbone.RelationalModel.extend({
             relatedModel: 'app.models.Marketing',
             reverseRelation: {
                 key: 'createdby',
+                relatedModel: 'app.models.User',
                 includeInJSON: 'id'
             },
             autoFetch: true
@@ -42,6 +45,7 @@ app.models.User = Backbone.RelationalModel.extend({
             relatedModel: 'app.models.Offer',
             reverseRelation: {
                 key: 'artist',
+                relatedModel: 'app.models.User',
                 includeInJSON: false
             }
         }],
@@ -52,9 +56,12 @@ app.models.User = Backbone.RelationalModel.extend({
         // profile: {avatar: null},
 
         defaults: {
-            twitter_id: null,
-            company: {name: null},
-            profile: {avatar: null}
+            // twitter_id: null,
+            // company: {name: null},
+            // profile: {avatar: null},
+            // offer: {event_id: null},
+            // marketing: {},
+            // offer_as_artist: {}
         },
         get: function (args) {
             if (args === 'fullname') {
