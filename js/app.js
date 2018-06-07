@@ -87,11 +87,11 @@ $.extend(app, {
      */
     prepare_collections: function () {
         /** @var app.models.User app.cur_user **/
-        var company_id = app.cur_user.get('company').get('id');
+        let company_id = app.cur_user.get('company').get('id');
         /** @var Backbone.Model company **/
-        var company_param = {belong_company_id: company_id};
+        let company_param = {belong_company_id: company_id};
         app.collections.companies = new app.collections.Company();
-        app.collections.companies.url = config.restUrl + 'company?' + $.param(company_param);
+        app.collections.companies.url = config.restUrl + 'company?';//todob debugging Remove this in prod + $.param(company_param);
         app.collections.companies.fetch();
         app.collections.offers = new app.collections.Offer();
         app.collections.offers.url = config.restUrl + 'offer?' + $.param(company_param);

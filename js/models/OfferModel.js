@@ -4,16 +4,6 @@ app.models.Offer = Backbone.RelationalModel.extend({
     relations: [
         {
             type: Backbone.HasOne,
-            key: 'user',
-            autoFetch: true,
-            relatedModel: 'app.models.User',
-            reverseRelation: {
-                key: 'offer',
-                includeInJSON: 'id'
-            }
-        }
-        , {
-            type: Backbone.HasOne,
             key: 'marketing',
             relatedModel: 'app.models.Marketing',
             reverseRelation: {

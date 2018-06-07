@@ -1,14 +1,5 @@
 app.models.Company = Backbone.RelationalModel.extend({
-    urlRoot: config.restUrl + 'company',
-    relations: [{
-        type: Backbone.HasMany,
-        key: 'user',
-        relatedModel: 'app.models.User',
-        reverseRelation:{
-            key:'company',
-            includeInJSON:'id'
-        }
-    }]
+    urlRoot: config.restUrl + 'company'
 });
 
 app.collections.Company = Backbone.Collection.extend({
