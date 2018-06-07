@@ -231,12 +231,26 @@ app.views.MarketingView = Backbone.View.extend({
             mk_prints_net_sum += parseFloat(e.get('net'));
         });
 
+        let mk_productions = this.model.get('mk_productions').models, mk_productions_gross_sum = 0, mk_productions_net_sum = 0;
+        mk_productions.forEach((e) => {
+            mk_productions_gross_sum += parseFloat(e.get('gross'));
+            mk_productions_net_sum += parseFloat(e.get('net'));
+        });
+
+        let mk_miscs = this.model.get('mk_miscs').models, mk_miscs_gross_sum = 0, mk_miscs_net_sum = 0;
+        mk_miscs.forEach((e) => {
+            mk_miscs_gross_sum += parseFloat(e.get('gross'));
+            mk_miscs_net_sum += parseFloat(e.get('net'));
+        });
+
         this.$el.html(this.template(_.extend(this.model.attributes,
             {
                 mk_radios_gross_sum: mk_radios_gross_sum, mk_radios_net_sum: mk_radios_net_sum,
                 mk_televisions_gross_sum: mk_televisions_gross_sum, mk_televisions_net_sum: mk_televisions_net_sum,
                 mk_internets_gross_sum: mk_internets_gross_sum, mk_internets_net_sum: mk_internets_net_sum,
-                mk_prints_gross_sum: mk_prints_gross_sum, mk_prints_net_sum: mk_prints_net_sum
+                mk_prints_gross_sum: mk_prints_gross_sum, mk_prints_net_sum: mk_prints_net_sum,
+                mk_productions_gross_sum: mk_productions_gross_sum, mk_productions_net_sum: mk_productions_net_sum,
+                mk_miscs_gross_sum: mk_miscs_gross_sum, mk_miscs_net_sum: mk_miscs_net_sum
             })));
         let selects = this.$el.find('select');
         _.each(selects, function (e) {

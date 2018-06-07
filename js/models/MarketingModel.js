@@ -3,6 +3,15 @@ app.models.Marketing = Backbone.RelationalModel.extend({
         },
         urlRoot: config.restUrl + 'marketing',
         relations: [{
+            type: Backbone.HasOne,
+            key: 'offer',
+            relatedModel: 'app.models.Offer',
+            reverseRelation: {
+                key: 'marketing',
+                includeInJSON: 'id'
+            },
+            autoFetch: true
+        }, {
             type: Backbone.HasMany,
             key: 'mk_radios',
             relatedModel: 'app.models.MkRadio',
@@ -33,6 +42,24 @@ app.models.Marketing = Backbone.RelationalModel.extend({
             type: Backbone.HasMany,
             key: 'mk_prints',
             relatedModel: 'app.models.MkPrint',
+            reverseRelation: {
+                key: 'marketing',
+                includeInJSON: 'id'
+            },
+            autoFetch: true
+        }, {
+            type: Backbone.HasMany,
+            key: 'mk_productions',
+            relatedModel: 'app.models.MkProduction',
+            reverseRelation: {
+                key: 'marketing',
+                includeInJSON: 'id'
+            },
+            autoFetch: true
+        }, {
+            type: Backbone.HasMany,
+            key: 'mk_miscs',
+            relatedModel: 'app.models.MkMisc',
             reverseRelation: {
                 key: 'marketing',
                 includeInJSON: 'id'

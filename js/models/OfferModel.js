@@ -2,15 +2,6 @@
 app.models.Offer = Backbone.RelationalModel.extend({
     urlRoot: config.restUrl + 'offer',
     relations: [
-        {
-            type: Backbone.HasOne,
-            key: 'marketing',
-            relatedModel: 'app.models.Marketing',
-            reverseRelation: {
-                key: 'offer',
-                includeInJSON: false
-            }
-        }
     ],
     venue: {},
     after_sync: function () {
