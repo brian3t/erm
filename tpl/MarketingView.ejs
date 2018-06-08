@@ -1,6 +1,6 @@
 <%
 // mk = mk_radios.first();
-    window.offer = offer;
+window.offer = offer;
 %>
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>" data-toggle="validator" role="form">
 
@@ -235,6 +235,78 @@
                     <td><b>SUB TOTAL</b></td>
                     <td class="warning numeric"> <%= mk_prints_gross_sum %> </td>
                     <td class="success numeric"> <%= mk_prints_net_sum %> </td>
+                </tr>
+            </table>
+        </div>
+
+        <h5>Production</h5>
+        <div class="table-responsive">
+            <table class="table table-bordered table-condensed">
+                <tr>
+                    <th colspan="2">Paid</th>
+                    <th colspan="2">Company</th>
+                    <th colspan="2">Type</th>
+                    <th colspan="2">Contact</th>
+                    <th colspan="3">Phone/Email</th>
+                    <th colspan="6"></th>
+                    <th class="warning">Gross</th>
+                    <th class="success">Net</th>
+                </tr>
+                <% mk_productions.each((mk_production) => {
+                    let {
+                        company_id, provider_company, type, contact, phone_email, gross, net
+                    } = mk_production.attributes
+                %>
+                <tr>
+                    <td colspan="2"> <%= company_id.get('name') %> </td>
+                    <td colspan="2"> <%= provider_company %> </td>
+                    <td colspan="2"> <%= type %> </td>
+                    <td colspan="2"> <%= contact %> </td>
+                    <td colspan="3"> <%= phone_email %> </td>
+                    <td colspan="6"></td>
+                    <td class="warning"> <%= gross %> </td>
+                    <td class="success"> <%= net %> </td>
+                </tr>
+                <% }) %>
+                <tr>
+                    <td colspan="15"></td>
+                    <td colspan="2"><b>SUB TOTAL</b></td>
+                    <td class="warning numeric"> <%= mk_productions_gross_sum %> </td>
+                    <td class="success numeric"> <%= mk_productions_net_sum %> </td>
+                </tr>
+            </table>
+        </div>
+
+        <h5>Misc</h5>
+        <div class="table-responsive">
+            <table class="table table-bordered table-condensed">
+                <tr>
+                    <th colspan="2">Paid</th>
+                    <th colspan="2">Company</th>
+                    <th colspan="8">Description</th>
+                    <th colspan="5"></th>
+                    <th class="warning">Gross</th>
+                    <th class="success">Net</th>
+                </tr>
+                <% mk_miscs.each((mk_misc) => {
+                    let {
+                        company_id, provider_company, description, gross, net
+                    } = mk_misc.attributes
+                %>
+                <tr>
+                    <td colspan="2"> <%= company_id.get('name') %> </td>
+                    <td colspan="2"> <%= provider_company %> </td>
+                    <td colspan="8"> <%= description %> </td>
+                    <td colspan="5"></td>
+                    <td class="warning"> <%= gross %> </td>
+                    <td class="success"> <%= net %> </td>
+                </tr>
+                <% }) %>
+                <tr>
+                    <td colspan="15"></td>
+                    <td colspan="2"><b>SUB TOTAL</b></td>
+                    <td class="warning numeric"> <%= mk_miscs_gross_sum %> </td>
+                    <td class="success numeric"> <%= mk_miscs_net_sum %> </td>
                 </tr>
             </table>
         </div>
