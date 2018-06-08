@@ -1,7 +1,39 @@
 <%
 // mk = mk_radios.first();
-window.offer = offer;
+    window.offer = offer
 %>
+<div class="row">
+    <div class="col-xs-6">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><%= offer.get('artist').getFullName() %> SHOW</div>
+            <div class="panel-body">
+                <!-- List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="col-sm-2 col-xs-4">ARTIST</span><span class="col-sm-4 col-xs-8"><%= offer.get('artist').getFullName() %></span>
+                        <span class="col-sm-2 col-xs-4">ONSALE DATE</span><span class="col-sm-4 col-xs-8"><%= offer.get('on_sale_date') %></span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="col-sm-2 col-xs-4">DATE</span><span class="col-sm-4 col-xs-8"><%= offer.get('show_date') %></span>
+                        <span class="col-sm-2 col-xs-4">ONSALE TIME</span><span class="col-sm-4 col-xs-8"></span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="col-sm-2 col-xs-4">CITY</span><span class="col-sm-4 col-xs-8"><%= offer.get('venue').get('city') %></span>
+                        <span class="col-sm-2 col-xs-4">TICKET PRICE</span><span class="col-sm-4 col-xs-8"><%= offer.get('l1_price') %></span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="col-sm-2 col-xs-4">VENUE</span><span class="col-sm-4 col-xs-8"><%= offer.get('venue').get('name') %></span>
+                        <span class="col-sm-2 col-xs-4">TICKET INFO</span><span class="col-sm-4 col-xs-8"><%= offer.get('ticketing_company').get('name') %></span>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
 <form class="edit account_info" action="#" data-model="user" data-id="<%= id %>" data-toggle="validator" role="form">
 
     <input type="hidden" name="user_id" value="<%= user_id %>">

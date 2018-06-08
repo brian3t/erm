@@ -337,6 +337,9 @@ function isNumeric(n) {
     var parsed_string = parsed.toString();//100.5
     //check if parsed_string == n; //here n is 100.50 preg must discard trailing zero after dot
     var parsed_string_int_decimal = parsed_string.split('.');
+    if (n === null){
+        return false;
+    }
     var n_int_decimal = n.toString().split('.');
     if (parsed_string_int_decimal.length !== n_int_decimal.length) {
         return false;
