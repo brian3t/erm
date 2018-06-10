@@ -383,6 +383,25 @@ function parseFloatOr0(v) {
     }
     return v;
 }
+/*
+parse Float 2 decimal places. return 0 if not float
+ */
+function pf2d(v) {
+    if (typeof v == "string") {
+        v = v.replace('$', '');
+    }
+    if (is_money(v)) {
+        v = v.replace(',', '');
+    }
+    v = parseFloat(v).toFixed(2);
+    if (isNaN(v)) {
+        v = 0;
+    } else {
+        v = parseFloat(v);
+    }
+    return v;
+}
+
 JSON.parse_3t = function (s) {
     var result = {};
     try {
@@ -432,7 +451,7 @@ function bs_close_all_modals() {
  */
 function b3_autonumeric() {
     var an_options = {currencySymbol: '$', unformatOnSubmit: true};
-    $('input.money:not([data-decimalPlacesOverride])').each(function (i, v) {
+    $('input.money:not([data-decimalPlacesOverride]), span.money:not([data-decimalPlacesOverride])').each(function (i, v) {
         if (typeof $(v).data('autoNumeric') == 'object') {
             $(v).autoNumeric('reSet');
         } else {

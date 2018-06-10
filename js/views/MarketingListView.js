@@ -207,6 +207,7 @@ app.views.MarketingView = Backbone.View.extend({
     },
 
     render: function () {
+        this.model.calculate_summary();
         let mk_radios = this.model.get('mk_radios').models;
         let mk_radios_gross_sum = 0, mk_radios_net_sum = 0;
         mk_radios.forEach((e) => {
@@ -250,7 +251,8 @@ app.views.MarketingView = Backbone.View.extend({
                 mk_internets_gross_sum: mk_internets_gross_sum, mk_internets_net_sum: mk_internets_net_sum,
                 mk_prints_gross_sum: mk_prints_gross_sum, mk_prints_net_sum: mk_prints_net_sum,
                 mk_productions_gross_sum: mk_productions_gross_sum, mk_productions_net_sum: mk_productions_net_sum,
-                mk_miscs_gross_sum: mk_miscs_gross_sum, mk_miscs_net_sum: mk_miscs_net_sum
+                mk_miscs_gross_sum: mk_miscs_gross_sum, mk_miscs_net_sum: mk_miscs_net_sum,
+                model: this.model
             })));
         let selects = this.$el.find('select');
         _.each(selects, function (e) {
@@ -262,6 +264,7 @@ app.views.MarketingView = Backbone.View.extend({
         let $edit_switch = $('.edit_switch');
         // $edit_switch.bootstrapToggle();
         $('.multi_select').select2();
+        b3_autonumeric();
         this.delegateEvents();
     }
 

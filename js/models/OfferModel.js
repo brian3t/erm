@@ -1,8 +1,11 @@
 "use strict";
 app.models.Offer = Backbone.RelationalModel.extend({
     urlRoot: config.restUrl + 'offer',
-    relations: [
-    ],
+    relations: [{
+        type: Backbone.HasOne,
+        key: 'venue_id',
+        relatedModel: app.models.Venue,
+    }],
     venue: {},
     after_sync: function () {
         this.populate_artist();
@@ -49,6 +52,16 @@ app.models.Offer = Backbone.RelationalModel.extend({
         } else {
             return prod_exp;
         }
+    },
+    //here override get venue
+    pull_venue: function () {
+        let venue = this.get('venue');
+        if (venue === null) {
+            venue = {
+                get: () => ''
+            }
+        }
+        return venue;
     },
     general_expense_array: {},
     production_expense_array: {},
