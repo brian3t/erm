@@ -4,15 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/js/views/MarketingListView.js" line="209" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6756bc04-a7d8-4f42-8104-088a8630195d" name="Default" comment="Done cleaning up bb relational. Fix error where company is not found. Todob: re-enact company belongs company in PROD; do proper check in EJS templates.">
+    <list default="true" id="6756bc04-a7d8-4f42-8104-088a8630195d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/compass/sass/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/compass/sass/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/compass/stylesheets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compass/stylesheets/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/compass/stylesheets/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compass/stylesheets/styles.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/models/MarketingModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/models/MarketingModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/models/OfferModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/models/OfferModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/utils/misc.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils/misc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/MarketingListView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/MarketingListView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpl/MarketingView.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/MarketingView.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,6 +48,13 @@
         <item name="erm@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="erm: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="marketing: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="erm@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="erm: schema" type="c314c289:MysqlImplModel$Schema" />
         <item name="mk_internet: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -64,8 +65,8 @@
       <file leaf-file-name="MarketingModel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/models/MarketingModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="102" column="72" lean-forward="true" selection-start-line="102" selection-start-column="72" selection-end-line="102" selection-end-column="72" />
+            <state relative-caret-position="735">
+              <caret line="110" column="45" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
               <folding>
                 <element signature="e#169#431#0" />
                 <element signature="e#433#702#0" />
@@ -96,24 +97,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarketingView.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MarketingView.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/MarketingView.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="144" lean-forward="true" selection-start-line="27" selection-start-column="144" selection-end-line="27" selection-end-column="154" />
+            <state relative-caret-position="322">
+              <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
               <folding>
                 <element signature="e#2013#2019#1#HTML" expanded="true" />
                 <element signature="e#2169#2175#1#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="colors.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/css/colors.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="418" column="14" lean-forward="true" selection-start-line="418" selection-start-column="14" selection-end-line="418" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -240,9 +232,9 @@
         <option value="$PROJECT_DIR$/css/compass/sass/styles.scss" />
         <option value="$PROJECT_DIR$/js/utils/misc.js" />
         <option value="$PROJECT_DIR$/js/views/MarketingListView.js" />
+        <option value="$PROJECT_DIR$/assets/css/colors.min.css" />
         <option value="$PROJECT_DIR$/js/models/MarketingModel.js" />
         <option value="$PROJECT_DIR$/tpl/MarketingView.ejs" />
-        <option value="$PROJECT_DIR$/assets/css/colors.min.css" />
       </list>
     </option>
   </component>
@@ -388,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528407241652</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Done Marketing view paid companies. Working on: math check.">
+      <created>1528611015475</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1528611015475</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -405,7 +404,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="right" id="Remote Host" order="3" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1234375" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1234375" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.15364583" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -435,7 +434,8 @@
     <MESSAGE value="Working on marketingsview radios summary lines. Next: television" />
     <MESSAGE value="Cleaning up bb relational. Todo: double check offers not showing" />
     <MESSAGE value="Done cleaning up bb relational. Fix error where company is not found. Todob: re-enact company belongs company in PROD; do proper check in EJS templates." />
-    <option name="LAST_COMMIT_MESSAGE" value="Done cleaning up bb relational. Fix error where company is not found. Todob: re-enact company belongs company in PROD; do proper check in EJS templates." />
+    <MESSAGE value="Done Marketing view paid companies. Working on: math check." />
+    <option name="LAST_COMMIT_MESSAGE" value="Done Marketing view paid companies. Working on: math check." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -720,6 +720,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/colors.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret column="1894" lean-forward="true" selection-start-column="1894" selection-end-column="1894" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/colors.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="418" column="14" lean-forward="true" selection-start-line="418" selection-start-column="14" selection-end-line="418" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/misc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -736,8 +750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/models/MarketingModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="102" column="72" lean-forward="true" selection-start-line="102" selection-start-column="72" selection-end-line="102" selection-end-column="72" />
+        <state relative-caret-position="735">
+          <caret line="110" column="45" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
           <folding>
             <element signature="e#169#431#0" />
             <element signature="e#433#702#0" />
@@ -749,28 +763,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/colors.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret column="1894" lean-forward="true" selection-start-column="1894" selection-end-column="1894" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/MarketingView.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="144" lean-forward="true" selection-start-line="27" selection-start-column="144" selection-end-line="27" selection-end-column="154" />
+        <state relative-caret-position="322">
+          <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
           <folding>
             <element signature="e#2013#2019#1#HTML" expanded="true" />
             <element signature="e#2169#2175#1#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/colors.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="418" column="14" lean-forward="true" selection-start-line="418" selection-start-column="14" selection-end-line="418" selection-end-column="14" />
         </state>
       </provider>
     </entry>

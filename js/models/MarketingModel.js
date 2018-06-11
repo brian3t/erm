@@ -108,7 +108,7 @@ app.models.Marketing = Backbone.RelationalModel.extend({
 
             all_gross = all_gross.toFixed(2);
             all_net = all_net.toFixed(2);
-            all_ticket = all_ticket.toFixed(2);
+            all_ticket = parseInt(all_ticket);
             this._summary = {all_gross: all_gross, all_net: all_net, all_ticket: all_ticket, companies: companies};
             // console.log(`sum: `);
             // console.log(this._summary);

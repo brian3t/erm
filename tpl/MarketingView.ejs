@@ -24,11 +24,11 @@ let summary = model.get_summary()
         <div class="panel panel-default">
             <div class="panel-heading">Math Check</div>
             <div class="panel-body text-bold">
-                <span class="col-xs-4">Must Equal Zero</span><span class="col-xs-4">AD BUDGET</span><span class="col-xs-4"><span class="money">6500</span></span>
-                <span class="col-xs-4"><span class="money">0</span></span><span class="col-xs-4 bg-orange-300">TOTAL GROSS</span><span class="col-xs-4 bg-orange-300"><span class="money">4141.56</span></span>
-                <span class="col-xs-4">&nbsp;</span><span class="col-xs-4">REMAINING</span><span class="col-xs-4"><span class="money">2323.45</span></span>
-                <span class="col-xs-4">&nbsp;</span><span class="col-xs-4">TOT TICKETS</span><span class="col-xs-4"><span class="money">100</span></span>
-                <span class="col-xs-4"><span class="money">0</span></span><span class="col-xs-4 bg-green">TOTAL NET</span><span class="col-xs-4 bg-green"><span class="money">4141.56</span></span>
+                <span class="col-xs-4">Must Equal Zero</span><span class="col-xs-4">AD BUDGET</span><span class="col-xs-4"><span class="money"><%= budget %></span></span>
+                <span class="col-xs-4"><span class="money">0</span></span><span class="col-xs-4 bg-orange-300">TOTAL GROSS</span><span class="col-xs-4 bg-orange-300"><span class="money"><%= summary.all_gross %></span></span>
+                <span class="col-xs-4">&nbsp;</span><span class="col-xs-4">REMAINING</span><span class="col-xs-4"><span class="money"><%= budget - summary.all_gross %></span></span>
+                <span class="col-xs-4">&nbsp;</span><span class="col-xs-4">TOT TICKETS</span><span class="col-xs-4"><%= summary.all_ticket %></span>
+                <span class="col-xs-4"><span class="money">0</span></span><span class="col-xs-4 bg-green">TOTAL NET</span><span class="col-xs-4 bg-green"><span class="money"><%= summary.all_net %></span></span>
             </div>
         </div>
     </div>
@@ -47,6 +47,11 @@ let summary = model.get_summary()
                     <td><span class="money"><%= net %></span></td>
                 </tr>
                 <% }) %>
+                <tr>
+                    <td><b>TOTAL</b></td>
+                    <td><b><span class="money"><%= summary.all_gross %></span></b></td>
+                    <td><b><span class="money"><%= summary.all_net %></span></b></td>
+                </tr>
             </table>
         </div>
     </div>
