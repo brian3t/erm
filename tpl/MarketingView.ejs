@@ -3,15 +3,16 @@
 // offer = offer
 let venue = offer.pull_venue()
 let summary = model.get_summary()
+let artist_name = (offer.get('artist')?offer.get('artist').getFullName():'')
 // window.venue = venue
 %>
 <div class="row">
     <div class="col-xs-6">
         <div class="panel panel-default">
             <!-- Default panel contents -->
-            <div class="panel-heading"><%= offer.get('artist').getFullName() %> SHOW</div>
+            <div class="panel-heading"><%= artist_name %> SHOW</div>
             <div class="panel-body">
-                <span class="col-sm-2 col-xs-4">ARTIST</span><span class="col-sm-4 col-xs-8"><%= offer.get('artist').getFullName() %>&nbsp;</span>
+                <span class="col-sm-2 col-xs-4">ARTIST</span><span class="col-sm-4 col-xs-8"><%= artist_name %>&nbsp;</span>
                 <span class="col-sm-2 col-xs-4">ONSALE DATE</span><span class="col-sm-4 col-xs-8"><%= offer.get('on_sale_date') %>&nbsp;</span>
                 <span class="col-sm-2 col-xs-4">DATE</span><span class="col-sm-4 col-xs-8"><%= offer.get('show_date') %>&nbsp;</span>
                 <span class="col-sm-2 col-xs-4">ONSALE TIME</span><span class="col-sm-4 col-xs-8">&nbsp;</span>

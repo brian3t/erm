@@ -4,9 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/js/views/MarketingListView.js" line="209" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6756bc04-a7d8-4f42-8104-088a8630195d" name="Default" comment="">
+    <list default="true" id="6756bc04-a7d8-4f42-8104-088a8630195d" name="Default" comment="Finish Marketing View mode.">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/models/MarketingModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/models/MarketingModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpl/MarketingView.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/MarketingView.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,8 +100,8 @@
       <file leaf-file-name="MarketingView.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/MarketingView.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+            <state relative-caret-position="336">
+              <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
               <folding>
                 <element signature="e#2013#2019#1#HTML" expanded="true" />
                 <element signature="e#2169#2175#1#HTML" expanded="true" />
@@ -157,7 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.c8</find>
       <find>model.</find>
       <find>radio</find>
       <find>mk_tv</find>
@@ -187,6 +186,7 @@
       <find>gross</find>
       <find>ticket</find>
       <find>bg-teal</find>
+      <find>fullna</find>
     </findStrings>
     <replaceStrings>
       <replace>tv</replace>
@@ -303,9 +303,14 @@
   <component name="PropertiesComponent">
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/js/local.js" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -387,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528611015475</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Finish Marketing View mode.">
+      <created>1528680735691</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1528680735691</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -399,13 +411,14 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005208" side_tool="true" weight="0.3277311" />
       <window_info anchor="bottom" id="Migrations" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="File Transfer" order="8" sideWeight="0.49791667" visible="true" weight="0.32878152" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49947917" weight="0.32878152" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49722221" weight="0.32809225" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.3296875" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.1234375" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.15364583" />
+      <window_info anchor="right" id="Database" order="3" weight="0.15364583" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -417,7 +430,6 @@
       <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.32983193" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="File Transfer" order="8" sideWeight="0.49791667" visible="true" weight="0.32878152" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +447,8 @@
     <MESSAGE value="Cleaning up bb relational. Todo: double check offers not showing" />
     <MESSAGE value="Done cleaning up bb relational. Fix error where company is not found. Todob: re-enact company belongs company in PROD; do proper check in EJS templates." />
     <MESSAGE value="Done Marketing view paid companies. Working on: math check." />
-    <option name="LAST_COMMIT_MESSAGE" value="Done Marketing view paid companies. Working on: math check." />
+    <MESSAGE value="Finish Marketing View mode." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish Marketing View mode." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -765,8 +778,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/MarketingView.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+        <state relative-caret-position="336">
+          <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
           <folding>
             <element signature="e#2013#2019#1#HTML" expanded="true" />
             <element signature="e#2169#2175#1#HTML" expanded="true" />
