@@ -331,13 +331,14 @@ function lat_lng_distance(lat1, lon1, lat2, lon2, unit) {
     }
     return dist;
 }
+
 function isNumeric(n) {
     var parsed_string_match_original = false;
     var parsed = parseFloat(n);
     var parsed_string = parsed.toString();//100.5
     //check if parsed_string == n; //here n is 100.50 preg must discard trailing zero after dot
     var parsed_string_int_decimal = parsed_string.split('.');
-    if (n === null){
+    if (n === null) {
         return false;
     }
     var n_int_decimal = n.toString().split('.');
@@ -370,6 +371,7 @@ function is_money(v) {
     }
     return /^\$*([\d,])+(\.*\d{2,})*$/.test(v);//$1,234.5678
 }
+
 function parseFloatOr0(v) {
     if (typeof v == "string") {
         v = v.replace('$', '');
@@ -383,6 +385,7 @@ function parseFloatOr0(v) {
     }
     return v;
 }
+
 /*
 parse Float 2 decimal places. return 0 if not float
  */
@@ -412,7 +415,13 @@ JSON.parse_3t = function (s) {
     return result;
 }
 
-function print_option_fr_collection(collection_name, name_column) {
+/**
+ * Backbone print options from a collection
+ * @param collection_name e.g. venue
+ * @param name_column e.g. name
+ * @returns {string}
+ */
+function print_option_fr_collection(collection_name, name_column, id_column = 'id') {
     if (typeof name_column === "undefined" || !name_column) {
         name_column = 'name';
     }
@@ -422,7 +431,7 @@ function print_option_fr_collection(collection_name, name_column) {
     }
 
     _.each(app.collections[collection_name].models, function (a_model) {
-        result += '<option value = "' + a_model.get('id') + '" >' + a_model.get(name_column) + '</option>';
+        result += '<option value = "' + a_model.get(id_column) + '" >' + a_model.get(name_column) + '</option>';
     });
     return result;
 }
@@ -482,6 +491,7 @@ function b3_autonumeric() {
     // $('#aw_est_expense').autoNumeric('init', {currencySymbol: '$', unformatOnSubmit: true,});
     // $('#aw_est_expense').autoNumeric('set', save_aw_est_expense);
 }
+
 Number.prototype.trimNum = function (places, rounding) {
     if (rounding != 'floor' && rounding != 'ceil') {
         rounding = 'round'
@@ -489,4 +499,41 @@ Number.prototype.trimNum = function (places, rounding) {
     var result, num = this, multiplier = Math.pow(10, places);
     result = Math[rounding](num * multiplier) / multiplier;
     return Number(result);
+}
+
+/**
+ * Print a select html, select a selected option
+ * @private
+ */
+function b3_print_und_select(name = '', id = name, sel_class = '', options = [], selected_option = null, attributes = {}) {
+    let select = `<select id="${id}" name="${name}" class="${sel_class}" value=${selected_option} `;
+    let val = '', text = '';
+
+    $.each(attributes, (k, v) => {
+        select += ` ${k}=${v} `;
+    });
+    select+= '>';
+
+    options.forEach(option => {
+        if (_.isArray(option)) {
+            val = option[0];
+            if (option.length == 2) {
+                text = option[1];
+            } else {
+                text = val;
+            }
+        } else {
+            val = option;
+            text = option;
+        }
+        select += `<option value="${val}"`;
+        if (val === selected_option){
+            // select += ' selected="selected" ';
+            select += ' selected ';
+        }
+        select += `>${text}</option>`;
+    })
+
+    select += '</select>';
+    return select;
 }

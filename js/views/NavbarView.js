@@ -7,11 +7,6 @@ app.views.NavbarView = Backbone.View.extend({
     render: function () {
         this.$el.html(this.template(app.cur_user.attributes));
         this.delegateEvents();
-        this.$el.find('#back-to-top').click(function () {      // When arrow is clicked
-            $('body,html').animate({
-                scrollTop: 0                       // Scroll to top of body
-            }, 500);
-        });
         this.set_active();
         return this.$el;
     },

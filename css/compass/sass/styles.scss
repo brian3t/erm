@@ -156,7 +156,6 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   padding-top: 9px;
 }
 #back-to-top {
-  background: transparent;
   margin: 0;
   position: fixed;
   bottom: 0;
@@ -167,9 +166,11 @@ div.form-control-feedback > [class^="icon-"], [class*=" icon-"] {
   display: none;
   text-decoration: none;
   color: #ffffff;
-}
-#back-to-top i {
-  font-size: 300%;
+  i {
+    font-size: 300%;
+    background: #26A69A;
+    border-radius: 5px;
+  }
 }
 .array_field_wrapper {
   float: left;
@@ -326,7 +327,14 @@ input[readonly] {
     width: 100%;
   }
 }
-table.table{
+table.table {
   table-layout: fixed;
 }
-span.money{display:inline-block; width: 100%; text-align: right}
+span.money {
+  display: inline-block;
+  width: 100%;
+  text-align: right
+}
+.wauto {
+  width: auto
+}

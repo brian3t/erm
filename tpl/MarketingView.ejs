@@ -3,7 +3,9 @@
 // offer = offer
 let venue = offer.pull_venue()
 let summary = model.get_summary()
-let artist_name = (offer.get('artist')?offer.get('artist').getFullName():'')
+let artist_name = (offer.get('artist') ? offer.get('artist').getFullName() : '')
+let offer_opt = print_option_fr_collection('offers', 'event_id');
+let comp_opt = print_option_fr_collection('companies');
 // window.venue = venue
 %>
 <div class="row">
@@ -26,10 +28,13 @@ let artist_name = (offer.get('artist')?offer.get('artist').getFullName():'')
             <div class="panel-heading">Math Check</div>
             <div class="panel-body text-bold">
                 <span class="col-xs-4">Must Equal Zero</span><span class="col-xs-4">AD BUDGET</span><span class="col-xs-4"><span class="money"><%= budget %></span></span>
-                <span class="col-xs-4"><span class="money">0</span></span><span class="col-xs-4 bg-orange-300">TOTAL GROSS</span><span class="col-xs-4 bg-orange-300"><span class="money"><%= summary.all_gross %></span></span>
-                <span class="col-xs-4">&nbsp;</span><span class="col-xs-4">REMAINING</span><span class="col-xs-4"><span class="money"><%= budget - summary.all_gross %></span></span>
+                <span class="col-xs-4"><span class="money">0</span></span><span class="col-xs-4 bg-orange-300">TOTAL GROSS</span><span class="col-xs-4 bg-orange-300"><span
+                            class="money"><%= summary.all_gross %></span></span>
+                <span class="col-xs-4">&nbsp;</span><span class="col-xs-4">REMAINING</span><span class="col-xs-4"><span
+                            class="money"><%= budget - summary.all_gross %></span></span>
                 <span class="col-xs-4">&nbsp;</span><span class="col-xs-4">TOT TICKETS</span><span class="col-xs-4"><%= summary.all_ticket %></span>
-                <span class="col-xs-4"><span class="money">0</span></span><span class="col-xs-4 bg-green">TOTAL NET</span><span class="col-xs-4 bg-green"><span class="money"><%= summary.all_net %></span></span>
+                <span class="col-xs-4"><span class="money">0</span></span><span class="col-xs-4 bg-green">TOTAL NET</span><span class="col-xs-4 bg-green"><span
+                            class="money"><%= summary.all_net %></span></span>
             </div>
         </div>
     </div>
@@ -64,310 +69,315 @@ let artist_name = (offer.get('artist')?offer.get('artist').getFullName():'')
 
     <div class="form-group">
         <div class="row">
-            <label class="col-xs-6">Event ID<input name="offer_id" value="<%= offer.get('event_id') %>" type="text"
-                                                   required class="form-control">
+            <label class="col-xs-6">Event ID
+                <select name="offer_id" disabled val="<%= offer_id %>"
+                        class="form-control">
+                    <%= offer_opt %>
+                </select>
                 <span class="help-block with-errors"></span>
             </label>
-            <label class="col-xs-6">Budget<input name="budget" value="<%= budget %>" type="text" class="form-control">
+            <label class="col-xs-6">Budget<input name="budget" disabled value="<%= budget %>" type="text" class="form-control">
                 <span class="help-block with-errors"></span>
             </label>
-        </div>
-        <h5>Radio</h5>
-        <div class="table-responsive">
-            <table class="table table-bordered table-condensed">
-                <tr>
-                    <th>Paid</th>
-                    <th colspan="2">Station</th>
-                    <th>Format</th>
-                    <th>Contact</th>
-                    <th colspan="2">Phone/Email</th>
-                    <th>Promo Mentions</th>
-                    <th>Promo Tickets</th>
-                    <th>Promo Value</th>
-                    <th>Promo Run</th>
-                    <th>Paid Run</th>
-                    <th>#Paid Spots</th>
-                    <th>:30</th>
-                    <th>:60</th>
-                    <th class="warning">Gross</th>
-                    <th class="success">Net</th>
-                </tr>
-                <% mk_radios.each((mk_radio) => {
-                    let {
-                        company_id, station, format, contact, contact_phone_email, promo_mentions, promo_tickets,
-                        promo_value, promo_run_from, promo_run_to, paid_run_from, paid_run_to, paid_spots,
-                        thirty, sixty, gross, net
-                    } = mk_radio.attributes
-                %>
-                <tr>
-                    <td> <%= company_id.get('name') %> </td>
-                    <td colspan="2"> <%= station %> </td>
-                    <td> <%= format %> </td>
-                    <td> <%= contact %> </td>
-                    <td colspan="2"> <%= contact_phone_email %> </td>
-                    <td> <%= promo_mentions %> </td>
-                    <td> <%= promo_tickets %> </td>
-                    <td> <%= promo_value %> </td>
-                    <td> <%= promo_run_from %> to <%= promo_run_to %> </td>
-                    <td> <%= paid_run_from %> to <%= paid_run_to %> </td>
-                    <td> <%= paid_spots %> </td>
-                    <td> <%= thirty %> </td>
-                    <td> <%= sixty %> </td>
-                    <td class="warning"> <%= gross %> </td>
-                    <td class="success"> <%= net %> </td>
-                </tr>
-                <% }) %>
-                <tr>
-                    <td colspan="13"></td>
-                    <td colspan="2"><b>SUB TOTAL</b></td>
-                    <td class="warning numeric"> <%= mk_radios_gross_sum %> </td>
-                    <td class="success numeric"> <%= mk_radios_net_sum %> </td>
-                </tr>
-            </table>
-        </div>
-
-        <h5>Television</h5>
-        <div class="table-responsive">
-            <table class="table table-bordered table-condensed">
-                <tr>
-                    <th>Paid</th>
-                    <th colspan="2">Company</th>
-                    <th>Format</th>
-                    <th>Contact</th>
-                    <th colspan="2">Phone/Email</th>
-                    <th>Impressions</th>
-                    <th>Promo Tickets</th>
-                    <th>Promo Value</th>
-                    <th>Promo Run</th>
-                    <th>Paid Run</th>
-                    <th>Qty</th>
-                    <th colspan="2">DG Code</th>
-                    <th class="warning">Gross</th>
-                    <th class="success">Net</th>
-                </tr>
-                <% mk_televisions.each((mk_tv) => {
-                    let {
-                        company_id, tv_company, format, contact, phone_email, impressions, promo_tickets,
-                        promo_value, promo_run_from, promo_run_to, paid_run_from, paid_run_to, qty,
-                        dg_code, gross, net
-                    } = mk_tv.attributes
-                %>
-                <tr>
-                    <td> <%= company_id.get('name') %> </td>
-                    <td colspan="2"> <%= tv_company %> </td>
-                    <td> <%= format %> </td>
-                    <td> <%= contact %> </td>
-                    <td colspan="2"> <%= phone_email %> </td>
-                    <td> <%= impressions %> </td>
-                    <td> <%= promo_tickets %> </td>
-                    <td> <%= promo_value %> </td>
-                    <td> <%= promo_run_from %> to <%= promo_run_to %> </td>
-                    <td> <%= paid_run_from %> to <%= paid_run_to %> </td>
-                    <td> <%= qty %> </td>
-                    <td colspan="2"> <%= dg_code %> </td>
-                    <td class="warning"> <%= gross %> </td>
-                    <td class="success"> <%= net %> </td>
-                </tr>
-                <% }) %>
-                <tr>
-                    <td colspan="13"></td>
-                    <td colspan="2"><b>SUB TOTAL</b></td>
-                    <td class="warning numeric"> <%= mk_televisions_gross_sum %> </td>
-                    <td class="success numeric"> <%= mk_televisions_net_sum %> </td>
-                </tr>
-            </table>
-        </div>
-
-        <h5>Internet</h5>
-        <div class="table-responsive">
-            <table class="table table-bordered table-condensed">
-                <tr>
-                    <th>Paid</th>
-                    <th colspan="2">Company</th>
-                    <th>Format</th>
-                    <th>Contact</th>
-                    <th colspan="2">Phone/Email</th>
-                    <th>Impressions</th>
-                    <th>Promo Tickets</th>
-                    <th>Promo Value</th>
-                    <th>Promo Run</th>
-                    <th>Paid Run</th>
-                    <th>Qty</th>
-                    <th colspan="2">DG Code</th>
-                    <th class="warning">Gross</th>
-                    <th class="success">Net</th>
-                </tr>
-                <% mk_internets.each((mk_internet) => {
-                    let {
-                        company_id, provider_company, format, contact, phone_email, impressions, promo_tickets,
-                        promo_value, promo_run_from, promo_run_to, paid_run_from, paid_run_to, qty,
-                        comments, gross, net
-                    } = mk_internet.attributes
-                %>
-                <tr>
-                    <td> <%= company_id.get('name') %> </td>
-                    <td colspan="2"> <%= provider_company %> </td>
-                    <td> <%= format %> </td>
-                    <td> <%= contact %> </td>
-                    <td colspan="2"> <%= phone_email %> </td>
-                    <td> <%= impressions %> </td>
-                    <td> <%= promo_tickets %> </td>
-                    <td> <%= promo_value %> </td>
-                    <td> <%= promo_run_from %> to <%= promo_run_to %> </td>
-                    <td> <%= paid_run_from %> to <%= paid_run_to %> </td>
-                    <td> <%= qty %> </td>
-                    <td colspan="2"> <%= comments %> </td>
-                    <td class="warning"> <%= gross %> </td>
-                    <td class="success"> <%= net %> </td>
-                </tr>
-                <% }) %>
-                <tr>
-                    <td colspan="13"></td>
-                    <td colspan="2"><b>SUB TOTAL</b></td>
-                    <td class="warning numeric"> <%= mk_internets_gross_sum %> </td>
-                    <td class="success numeric"> <%= mk_internets_net_sum %> </td>
-                </tr>
-            </table>
-        </div>
-
-        <h5>Print</h5>
-        <div class="table-responsive">
-            <table class="table table-bordered table-condensed">
-                <tr>
-                    <th>Paid</th>
-                    <th>Print Media</th>
-                    <th>Type</th>
-                    <th>Contact</th>
-                    <th>Phone/Email</th>
-                    <th>Size</th>
-                    <th>Promo Tickets</th>
-                    <th>Promo Run</th>
-                    <th>Paid Run</th>
-                    <th>Promo Value</th>
-                    <th>Qty</th>
-                    <th>M</th>
-                    <th>T</th>
-                    <th>W</th>
-                    <th>T</th>
-                    <th>F</th>
-                    <th>S</th>
-                    <th>S</th>
-                    <th class="warning">Gross</th>
-                    <th class="success">Net</th>
-                </tr>
-                <% mk_prints.each((mk_print) => {
-                    let {
-                        company_id, print_media, type, contact, phone_email, size, promo_tickets,
-                        promo_value, promo_run_from, promo_run_to, paid_run_from, paid_run_to, qty,
-                        monday, tuesday, wednesday, thursday, friday, saturday, sunday,
-                        gross, net
-                    } = mk_print.attributes
-                %>
-                <tr>
-                    <td> <%= company_id.get('name') %> </td>
-                    <td> <%= print_media %> </td>
-                    <td> <%= type %> </td>
-                    <td> <%= contact %> </td>
-                    <td> <%= phone_email %> </td>
-                    <td> <%= size %> </td>
-                    <td> <%= promo_tickets %> </td>
-                    <td> <%= promo_run_from %> to <%= promo_run_to %> </td>
-                    <td> <%= paid_run_from %> to <%= paid_run_to %> </td>
-                    <td> <%= promo_value %> </td>
-                    <td> <%= qty %> </td>
-                    <td> <%= monday %> </td>
-                    <td> <%= tuesday %> </td>
-                    <td> <%= wednesday %> </td>
-                    <td> <%= thursday %> </td>
-                    <td> <%= friday %> </td>
-                    <td> <%= saturday %> </td>
-                    <td> <%= sunday %> </td>
-                    <td class="warning"> <%= gross %> </td>
-                    <td class="success"> <%= net %> </td>
-                </tr>
-                <% }) %>
-                <tr>
-                    <td colspan="17"></td>
-                    <td><b>SUB TOTAL</b></td>
-                    <td class="warning numeric"> <%= mk_prints_gross_sum %> </td>
-                    <td class="success numeric"> <%= mk_prints_net_sum %> </td>
-                </tr>
-            </table>
-        </div>
-
-        <h5>Production</h5>
-        <div class="table-responsive">
-            <table class="table table-bordered table-condensed">
-                <tr>
-                    <th colspan="2">Paid</th>
-                    <th colspan="2">Company</th>
-                    <th colspan="2">Type</th>
-                    <th colspan="2">Contact</th>
-                    <th colspan="3">Phone/Email</th>
-                    <th colspan="6"></th>
-                    <th class="warning">Gross</th>
-                    <th class="success">Net</th>
-                </tr>
-                <% mk_productions.each((mk_production) => {
-                    let {
-                        company_id, provider_company, type, contact, phone_email, gross, net
-                    } = mk_production.attributes
-                %>
-                <tr>
-                    <td colspan="2"> <%= company_id.get('name') %> </td>
-                    <td colspan="2"> <%= provider_company %> </td>
-                    <td colspan="2"> <%= type %> </td>
-                    <td colspan="2"> <%= contact %> </td>
-                    <td colspan="3"> <%= phone_email %> </td>
-                    <td colspan="6"></td>
-                    <td class="warning"> <%= gross %> </td>
-                    <td class="success"> <%= net %> </td>
-                </tr>
-                <% }) %>
-                <tr>
-                    <td colspan="15"></td>
-                    <td colspan="2"><b>SUB TOTAL</b></td>
-                    <td class="warning numeric"> <%= mk_productions_gross_sum %> </td>
-                    <td class="success numeric"> <%= mk_productions_net_sum %> </td>
-                </tr>
-            </table>
-        </div>
-
-        <h5>Misc</h5>
-        <div class="table-responsive">
-            <table class="table table-bordered table-condensed">
-                <tr>
-                    <th colspan="2">Paid</th>
-                    <th colspan="2">Company</th>
-                    <th colspan="8">Description</th>
-                    <th colspan="5"></th>
-                    <th class="warning">Gross</th>
-                    <th class="success">Net</th>
-                </tr>
-                <% mk_miscs.each((mk_misc) => {
-                    let {
-                        company_id, provider_company, description, gross, net
-                    } = mk_misc.attributes
-                %>
-                <tr>
-                    <td colspan="2"> <%= company_id.get('name') %> </td>
-                    <td colspan="2"> <%= provider_company %> </td>
-                    <td colspan="8"> <%= description %> </td>
-                    <td colspan="5"></td>
-                    <td class="warning"> <%= gross %> </td>
-                    <td class="success"> <%= net %> </td>
-                </tr>
-                <% }) %>
-                <tr>
-                    <td colspan="15"></td>
-                    <td colspan="2"><b>SUB TOTAL</b></td>
-                    <td class="warning numeric"> <%= mk_miscs_gross_sum %> </td>
-                    <td class="success numeric"> <%= mk_miscs_net_sum %> </td>
-                </tr>
-            </table>
         </div>
     </div>
 
 
     <button type="button" style="display: none;" class="btn btn-xs btn-danger delete">Delete This Marketing</button>
 </form>
+
+<h5>Radio</h5>
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>Paid</th>
+            <th colspan="2">Station</th>
+            <th>Format</th>
+            <th>Contact</th>
+            <th colspan="2">Phone/Email</th>
+            <th>Promo Mentions</th>
+            <th>Promo Tickets</th>
+            <th>Promo Value</th>
+            <th>Promo Run</th>
+            <th>Paid Run</th>
+            <th>#Paid Spots</th>
+            <th>:30</th>
+            <th>:60</th>
+            <th class="warning">Gross</th>
+            <th class="success">Net</th>
+        </tr>
+        <% mk_radios.each((mk_radio) => {
+            let {
+                company_id, station, format, contact, contact_phone_email, promo_mentions, promo_tickets,
+                promo_value, promo_run_from, promo_run_to, paid_run_from, paid_run_to, paid_spots,
+                thirty, sixty, gross, net
+            } = mk_radio.attributes
+        %>
+        <tr class="edit edit_form_wrapper" action="#" data-model="mk_radios" data-id="id" data-toggle="validator" role="form">
+            <td><select name="company_id" val="<%= company_id.get('id') %>" class="edit_mode"> <%= comp_opt %> </select><span
+                        class="view_mode"><%= company_id.get('name') %></span></td>
+            <td colspan="2"> <%= station %> </td>
+            <td> <%= format %> </td>
+            <td> <%= contact %> </td>
+            <td colspan="2"> <%= contact_phone_email %> </td>
+            <td> <%= promo_mentions %> </td>
+            <td> <%= promo_tickets %> </td>
+            <td> <%= promo_value %> </td>
+            <td> <%= promo_run_from %> to <%= promo_run_to %> </td>
+            <td> <%= paid_run_from %> to <%= paid_run_to %> </td>
+            <td> <%= paid_spots %> </td>
+            <td> <%= thirty %> </td>
+            <td> <%= sixty %> </td>
+            <td class="warning"> <%= gross %> </td>
+            <td class="success"> <%= net %> </td>
+        </tr>
+        <% }) %>
+        <tr>
+            <td colspan="13"></td>
+            <td colspan="2"><b>SUB TOTAL</b></td>
+            <td class="warning numeric"> <%= mk_radios_gross_sum %> </td>
+            <td class="success numeric"> <%= mk_radios_net_sum %> </td>
+        </tr>
+    </table>
+</div>
+
+<h5>Television</h5>
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>Paid</th>
+            <th colspan="2">Company</th>
+            <th>Format</th>
+            <th>Contact</th>
+            <th colspan="2">Phone/Email</th>
+            <th>Impressions</th>
+            <th>Promo Tickets</th>
+            <th>Promo Value</th>
+            <th>Promo Run</th>
+            <th>Paid Run</th>
+            <th>Qty</th>
+            <th colspan="2">DG Code</th>
+            <th class="warning">Gross</th>
+            <th class="success">Net</th>
+        </tr>
+        <% mk_televisions.each((mk_tv) => {
+            let {
+                company_id, tv_company, format, contact, phone_email, impressions, promo_tickets,
+                promo_value, promo_run_from, promo_run_to, paid_run_from, paid_run_to, qty,
+                dg_code, gross, net
+            } = mk_tv.attributes
+        %>
+        <tr>
+            <td> <%= company_id.get('name') %> </td>
+            <td colspan="2"> <%= tv_company %> </td>
+            <td> <%= format %> </td>
+            <td> <%= contact %> </td>
+            <td colspan="2"> <%= phone_email %> </td>
+            <td> <%= impressions %> </td>
+            <td> <%= promo_tickets %> </td>
+            <td> <%= promo_value %> </td>
+            <td> <%= promo_run_from %> to <%= promo_run_to %> </td>
+            <td> <%= paid_run_from %> to <%= paid_run_to %> </td>
+            <td> <%= qty %> </td>
+            <td colspan="2"> <%= dg_code %> </td>
+            <td class="warning"> <%= gross %> </td>
+            <td class="success"> <%= net %> </td>
+        </tr>
+        <% }) %>
+        <tr>
+            <td colspan="13"></td>
+            <td colspan="2"><b>SUB TOTAL</b></td>
+            <td class="warning numeric"> <%= mk_televisions_gross_sum %> </td>
+            <td class="success numeric"> <%= mk_televisions_net_sum %> </td>
+        </tr>
+    </table>
+</div>
+
+<h5>Internet</h5>
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>Paid</th>
+            <th colspan="2">Company</th>
+            <th>Format</th>
+            <th>Contact</th>
+            <th colspan="2">Phone/Email</th>
+            <th>Impressions</th>
+            <th>Promo Tickets</th>
+            <th>Promo Value</th>
+            <th>Promo Run</th>
+            <th>Paid Run</th>
+            <th>Qty</th>
+            <th colspan="2">DG Code</th>
+            <th class="warning">Gross</th>
+            <th class="success">Net</th>
+        </tr>
+        <% mk_internets.each((mk_internet) => {
+            let {
+                company_id, provider_company, format, contact, phone_email, impressions, promo_tickets,
+                promo_value, promo_run_from, promo_run_to, paid_run_from, paid_run_to, qty,
+                comments, gross, net
+            } = mk_internet.attributes
+        %>
+        <tr>
+            <td> <%= company_id.get('name') %> </td>
+            <td colspan="2"> <%= provider_company %> </td>
+            <td> <%= format %> </td>
+            <td> <%= contact %> </td>
+            <td colspan="2"> <%= phone_email %> </td>
+            <td> <%= impressions %> </td>
+            <td> <%= promo_tickets %> </td>
+            <td> <%= promo_value %> </td>
+            <td> <%= promo_run_from %> to <%= promo_run_to %> </td>
+            <td> <%= paid_run_from %> to <%= paid_run_to %> </td>
+            <td> <%= qty %> </td>
+            <td colspan="2"> <%= comments %> </td>
+            <td class="warning"> <%= gross %> </td>
+            <td class="success"> <%= net %> </td>
+        </tr>
+        <% }) %>
+        <tr>
+            <td colspan="13"></td>
+            <td colspan="2"><b>SUB TOTAL</b></td>
+            <td class="warning numeric"> <%= mk_internets_gross_sum %> </td>
+            <td class="success numeric"> <%= mk_internets_net_sum %> </td>
+        </tr>
+    </table>
+</div>
+
+<h5>Print</h5>
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>Paid</th>
+            <th>Print Media</th>
+            <th>Type</th>
+            <th>Contact</th>
+            <th>Phone/Email</th>
+            <th>Size</th>
+            <th>Promo Tickets</th>
+            <th>Promo Run</th>
+            <th>Paid Run</th>
+            <th>Promo Value</th>
+            <th>Qty</th>
+            <th>M</th>
+            <th>T</th>
+            <th>W</th>
+            <th>T</th>
+            <th>F</th>
+            <th>S</th>
+            <th>S</th>
+            <th class="warning">Gross</th>
+            <th class="success">Net</th>
+        </tr>
+        <% mk_prints.each((mk_print) => {
+            let {
+                company_id, print_media, type, contact, phone_email, size, promo_tickets,
+                promo_value, promo_run_from, promo_run_to, paid_run_from, paid_run_to, qty,
+                monday, tuesday, wednesday, thursday, friday, saturday, sunday,
+                gross, net
+            } = mk_print.attributes
+        %>
+        <tr>
+            <td> <%= company_id.get('name') %> </td>
+            <td> <%= print_media %> </td>
+            <td> <%= type %> </td>
+            <td> <%= contact %> </td>
+            <td> <%= phone_email %> </td>
+            <td> <%= size %> </td>
+            <td> <%= promo_tickets %> </td>
+            <td> <%= promo_run_from %> to <%= promo_run_to %> </td>
+            <td> <%= paid_run_from %> to <%= paid_run_to %> </td>
+            <td> <%= promo_value %> </td>
+            <td> <%= qty %> </td>
+            <td> <%= monday %> </td>
+            <td> <%= tuesday %> </td>
+            <td> <%= wednesday %> </td>
+            <td> <%= thursday %> </td>
+            <td> <%= friday %> </td>
+            <td> <%= saturday %> </td>
+            <td> <%= sunday %> </td>
+            <td class="warning"> <%= gross %> </td>
+            <td class="success"> <%= net %> </td>
+        </tr>
+        <% }) %>
+        <tr>
+            <td colspan="17"></td>
+            <td><b>SUB TOTAL</b></td>
+            <td class="warning numeric"> <%= mk_prints_gross_sum %> </td>
+            <td class="success numeric"> <%= mk_prints_net_sum %> </td>
+        </tr>
+    </table>
+</div>
+
+<h5>Production</h5>
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th colspan="2">Paid</th>
+            <th colspan="2">Company</th>
+            <th colspan="2">Type</th>
+            <th colspan="2">Contact</th>
+            <th colspan="3">Phone/Email</th>
+            <th colspan="6"></th>
+            <th class="warning">Gross</th>
+            <th class="success">Net</th>
+        </tr>
+        <% mk_productions.each((mk_production) => {
+            let {
+                company_id, provider_company, type, contact, phone_email, gross, net
+            } = mk_production.attributes
+        %>
+        <tr>
+            <td colspan="2"> <%= company_id.get('name') %> </td>
+            <td colspan="2"> <%= provider_company %> </td>
+            <td colspan="2"> <%= type %> </td>
+            <td colspan="2"> <%= contact %> </td>
+            <td colspan="3"> <%= phone_email %> </td>
+            <td colspan="6"></td>
+            <td class="warning"> <%= gross %> </td>
+            <td class="success"> <%= net %> </td>
+        </tr>
+        <% }) %>
+        <tr>
+            <td colspan="15"></td>
+            <td colspan="2"><b>SUB TOTAL</b></td>
+            <td class="warning numeric"> <%= mk_productions_gross_sum %> </td>
+            <td class="success numeric"> <%= mk_productions_net_sum %> </td>
+        </tr>
+    </table>
+</div>
+
+<h5>Misc</h5>
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th colspan="2">Paid</th>
+            <th colspan="2">Company</th>
+            <th colspan="8">Description</th>
+            <th colspan="5"></th>
+            <th class="warning">Gross</th>
+            <th class="success">Net</th>
+        </tr>
+        <% mk_miscs.each((mk_misc) => {
+            let {
+                company_id, provider_company, description, gross, net
+            } = mk_misc.attributes
+        %>
+        <tr>
+            <td colspan="2"> <%= company_id.get('name') %> </td>
+            <td colspan="2"> <%= provider_company %> </td>
+            <td colspan="8"> <%= description %> </td>
+            <td colspan="5"></td>
+            <td class="warning"> <%= gross %> </td>
+            <td class="success"> <%= net %> </td>
+        </tr>
+        <% }) %>
+        <tr>
+            <td colspan="15"></td>
+            <td colspan="2"><b>SUB TOTAL</b></td>
+            <td class="warning numeric"> <%= mk_miscs_gross_sum %> </td>
+            <td class="success numeric"> <%= mk_miscs_net_sum %> </td>
+        </tr>
+    </table>
+</div>

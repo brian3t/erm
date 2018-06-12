@@ -12,6 +12,7 @@ app.views.MarketingListView = Backbone.View.extend({
     $save_btn: {},
     $reset_btn: {},
     $cancel_btn: {},
+    edit_switch: {},
     switchery: {},
 
     initialize: function () {
@@ -35,7 +36,10 @@ app.views.MarketingListView = Backbone.View.extend({
         "change .edit_switch": "toggle_edit_mode"
     },
     toggle_edit_mode: function (e) {
-        let $e = $(e.currentTarget);
+        let $e = this.edit_switch;
+        if (typeof e === 'object' && e.hasOwnProperty('currentTarget')) {
+            $e = $(e.currentTarget);
+        }
         let span_text = $e.parentsUntil('div.row').find('span.toggle_state');
         let is_checked = $e.prop('checked');
         let $form = $($e.parentsUntil('.form_wrapper').parent().find('.edit_form_wrapper form.edit'));
@@ -44,12 +48,18 @@ app.views.MarketingListView = Backbone.View.extend({
             span_text.text('On');
             $($form.find(':input')).removeAttr('disabled');
             this.$el.find('button.delete').show();
+            this.$el.find('.view_mode').hide();
+            this.$el.find('.edit_mode').show();
+            this.$el.find('table').addClass('wauto');
         }
         else {
             $('div.edit_form_wrapper').removeClass('in_edit_mode');
             span_text.text('Off');
             $($form.find(':input')).prop('disabled', true);
             this.$el.find('button.delete').hide();
+            this.$el.find('.view_mode').show();
+            this.$el.find('.edit_mode').hide();
+            this.$el.find('table').removeClass('wauto');
         }
     },
     toggle_create_item: function () {
@@ -103,6 +113,8 @@ app.views.MarketingListView = Backbone.View.extend({
         this.marketing_form_view.model = this.collection.at(this.cur_model_index);
         this.marketing_form_view.render();
         this.marketing_form_view.after_render();
+        this.toggle_edit_mode();
+        this.listenTo(this.marketing_form_view.model, 'change', this.toggle_edit_mode);
     }
     ,
     marketing_form_view: {},
@@ -117,11 +129,13 @@ app.views.MarketingListView = Backbone.View.extend({
             this.marketing_form_view.model = first_marketing;
             $('#marketing_form_wrapper').html(this.marketing_form_view.render());
             this.marketing_form_view.after_render();
+            this.listenTo(this.marketing_form_view.model, 'change', this.toggle_edit_mode);
         }
         this.$el.find('#marketing_search_list').html(this.marketing_search_list_view.render());
         this.marketing_search_list_view.after_render();
-        let edit_switch = this.$el.find('.edit_switch');
-        this.switchery = new Switchery(edit_switch[0]);
+        this.edit_switch = this.$el.find('.edit_switch');
+        this.switchery = new Switchery(this.edit_switch[0]);
+        this.after_render();
         this.delegateEvents();
         return this.el;
     },
@@ -131,6 +145,11 @@ app.views.MarketingListView = Backbone.View.extend({
         this.$save_btn = this.$action_btns.find('.save');
         this.$reset_btn = this.$action_btns.find('.reset');
         this.$cancel_btn = this.$action_btns.find('.cancel');
+        let selects = this.$el.find('select');
+        _.each(selects, function (e) {
+            $(e).val($(e).attr('val'));//populate selects with underscore printed `value` attr
+        }, this);
+        this.toggle_edit_mode();
         this.delegateEvents();
     }
 });
@@ -187,6 +206,7 @@ app.views.MarketingView = Backbone.View.extend({
         if (!is_multi_select) {
             target.before('<span class="glyphicon glyphicon-upload"></span>');
         }
+        let self = this;
         this.model.save(new_attr, {
             patch: true, success: function () {
                 target.prevAll('span.glyphicon-upload').remove();

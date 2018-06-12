@@ -31,6 +31,11 @@ app.routers.AppRouter = Backbone.Router.extend({
                 setTimeout(function () {
                     if (_.isEmpty($navbar.html()) && _.isObject(app.navbar_view)) {
                         $('#navbar').hide().html(app.navbar_view.render()).fadeIn('fast');
+                        app.navbar_view.$el.find('#back-to-top').click(function () {      // When arrow is clicked
+                            $('body,html').animate({
+                                scrollTop: 0                       // Scroll to top of body
+                            }, 500);
+                        });
                     }
                 }, 500);
                 $('div.page').removeClass('whirl traditional');
