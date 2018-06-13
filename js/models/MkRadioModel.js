@@ -1,7 +1,7 @@
 app.models.MkRadio = Backbone.RelationalModel.extend({
         initialize: function () {
         },
-        // urlRoot: config.restUrl + '/profile',
+        urlRoot: config.restUrl + 'mk-radio',
         relations: [
             {
                 type: Backbone.HasOne,

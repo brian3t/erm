@@ -50,7 +50,7 @@ app.views.MarketingListView = Backbone.View.extend({
             this.$el.find('button.delete').show();
             this.$el.find('.view_mode').hide();
             this.$el.find('.edit_mode').show();
-            this.$el.find('table').addClass('wauto');
+            this.$el.find('table.has_edit_elements').addClass('wauto');
         }
         else {
             $('div.edit_form_wrapper').removeClass('in_edit_mode');
@@ -200,14 +200,22 @@ app.views.MarketingView = Backbone.View.extend({
         }
         let is_multi_select = target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple');
         let form = target.parents('form');
-        let model = form.data('model');//marketing plan
+        if (form.length === 0){
+            form = target.closest('.edit_form_wrapper');
+        }
+        let model = this.model;
+        if (form.data('collection')){
+            let model_name = form.data('collection');//mkRadio
+            let id = form.find('input[name="id"]').val();
+            model = this.model.get(model_name).get(id);
+        }
         let new_attr = {};
         new_attr[target.prop('name')] = target.val();
         if (!is_multi_select) {
             target.before('<span class="glyphicon glyphicon-upload"></span>');
         }
         let self = this;
-        this.model.save(new_attr, {
+        model.save(new_attr, {
             patch: true, success: function () {
                 target.prevAll('span.glyphicon-upload').remove();
                 if (is_multi_select) {
