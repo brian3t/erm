@@ -4,7 +4,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
     className: "col-sm-12",
     model: app.models.Offer,
     events: {
-        "blur .edit": "update_ajax",
+        "change .edit": "update_ajax",
         "change .multi_select": "update_ajax",
         "blur #var_expense :input": "update_ve"
     },
@@ -45,8 +45,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         edit_switch.trigger('change');
         b3_autonumeric();
 
-        $('input[type=date]').datetimepicker({format: 'Y-MM-DD'});
-        $('input.time_input').datetimepicker({format: 'hh:mm A'});
+        $('input.date').datepicker({format: 'yyyy-mm-dd'});
         this.recalculate_aw_values();
         return this.$el;
     },

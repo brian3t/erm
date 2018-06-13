@@ -212,11 +212,6 @@ else {
 
         event.eventName = "deviceready";
 
-        // if (document.createEvent) {
-        //     document.dispatchEvent(event);
-        // } else {
-        //     document.fireEvent("on" + event.eventType, event);
-        // }
     });
     capp.initialize();
 }

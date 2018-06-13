@@ -25,6 +25,7 @@ app.views.MarketingListView = Backbone.View.extend({
         this.marketing_search_list_view = new app.views.MarketingSearchListView({collection: this.collection});
         this.marketing_form_view = new app.views.MarketingView();
         this.listenTo(this.collection, 'update', this.render);
+        this.listenTo(capp.event_bus, 'marketing_view_rendered', this.toggle_edit_mode)
     },
     events: {
         "click a.select_item": "select_item",
@@ -48,8 +49,8 @@ app.views.MarketingListView = Backbone.View.extend({
             span_text.text('On');
             $($form.find(':input')).removeAttr('disabled');
             this.$el.find('button.delete').show();
-            this.$el.find('.view_mode').hide();
-            this.$el.find('.edit_mode').show();
+            this.$el.find('.for_view_mode').hide();
+            this.$el.find('.for_edit_mode').show();
             this.$el.find('table.has_edit_elements').addClass('wauto');
         }
         else {
@@ -57,10 +58,18 @@ app.views.MarketingListView = Backbone.View.extend({
             span_text.text('Off');
             $($form.find(':input')).prop('disabled', true);
             this.$el.find('button.delete').hide();
-            this.$el.find('.view_mode').show();
-            this.$el.find('.edit_mode').hide();
+            this.$el.find('.for_view_mode').show();
+            this.$el.find('.for_edit_mode').hide();
             this.$el.find('table').removeClass('wauto');
         }
+        this.rebind_underscore_val();
+        $('input.date').datepicker({format: 'yyyy-mm-dd'});
+    },
+    rebind_underscore_val: function () {
+        let selects = this.$el.find('select');
+        _.each(selects, function (e) {
+            $(e).val($(e).attr('val'));//populate selects with underscore printed `value` attr
+        }, this);
     },
     toggle_create_item: function () {
         $('.action_buttons.edit_switch_wrapper').toggle();
@@ -110,11 +119,11 @@ app.views.MarketingListView = Backbone.View.extend({
     select_item: function (e) {
         let $target = $(e.currentTarget);
         this.cur_model_index = $target.data('index');
-        this.marketing_form_view.model = this.collection.at(this.cur_model_index);
+        this.marketing_form_view.set_model(this.collection.at(this.cur_model_index));
         this.marketing_form_view.render();
         this.marketing_form_view.after_render();
         this.toggle_edit_mode();
-        this.listenTo(this.marketing_form_view.model, 'change', this.toggle_edit_mode);
+        this.listenTo(this.marketing_form_view.model, 'change', this.render);
     }
     ,
     marketing_form_view: {},
@@ -126,10 +135,10 @@ app.views.MarketingListView = Backbone.View.extend({
         this.$el.html(this.template());
         if (_.isObject(first_marketing)) {
             this.cur_model_index = 0;
-            this.marketing_form_view.model = first_marketing;
+            this.marketing_form_view.set_model(first_marketing);
             $('#marketing_form_wrapper').html(this.marketing_form_view.render());
             this.marketing_form_view.after_render();
-            this.listenTo(this.marketing_form_view.model, 'change', this.toggle_edit_mode);
+            this.listenTo(this.marketing_form_view.model, 'change', this.render);
         }
         this.$el.find('#marketing_search_list').html(this.marketing_search_list_view.render());
         this.marketing_search_list_view.after_render();
@@ -145,10 +154,6 @@ app.views.MarketingListView = Backbone.View.extend({
         this.$save_btn = this.$action_btns.find('.save');
         this.$reset_btn = this.$action_btns.find('.reset');
         this.$cancel_btn = this.$action_btns.find('.cancel');
-        let selects = this.$el.find('select');
-        _.each(selects, function (e) {
-            $(e).val($(e).attr('val'));//populate selects with underscore printed `value` attr
-        }, this);
         this.toggle_edit_mode();
         this.delegateEvents();
     }
@@ -186,10 +191,12 @@ app.views.MarketingView = Backbone.View.extend({
     className: "col-sm-12",
     model: app.models.Marketing,
     events: {
-        "blur .edit": "update_ajax",
+        "change .edit": "update_ajax",
         "change .multi_select": "update_ajax"
     },
     update_ajax: function (e) {
+        e.stopPropagation();
+        e.preventDefault();
         if (is_validator_initializing) {
             return;
         }
@@ -200,11 +207,11 @@ app.views.MarketingView = Backbone.View.extend({
         }
         let is_multi_select = target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple');
         let form = target.parents('form');
-        if (form.length === 0){
+        if (form.length === 0) {
             form = target.closest('.edit_form_wrapper');
         }
         let model = this.model;
-        if (form.data('collection')){
+        if (form.data('collection')) {
             let model_name = form.data('collection');//mkRadio
             let id = form.find('input[name="id"]').val();
             model = this.model.get(model_name).get(id);
@@ -224,6 +231,7 @@ app.views.MarketingView = Backbone.View.extend({
                 target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
                 setTimeout(function () {
                     target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
+                    capp.event_bus.trigger('marketing_child_model_changed');
                 }, 2000);
             }, error: function () {
                 target.prevAll('span.glyphicon-upload').remove();
@@ -232,6 +240,8 @@ app.views.MarketingView = Backbone.View.extend({
     },
     initialize: function () {
         this.delegateEvents();
+        this.listenTo(capp.event_bus, 'marketing_child_model_changed', this.render);
+        //this.listenTo(capp.event_bus, 'dp.hide', this.update_ajax);
     },
 
     render: function () {
@@ -282,11 +292,19 @@ app.views.MarketingView = Backbone.View.extend({
                 mk_miscs_gross_sum: mk_miscs_gross_sum, mk_miscs_net_sum: mk_miscs_net_sum,
                 model: this.model
             })));
+        this.rebind_underscore_val();
+        capp.event_bus.trigger('marketing_view_rendered');
+        this.after_render();
+        return this.$el;
+    },
+    set_model(new_model) {
+        this.model = new_model;
+    },
+    rebind_underscore_val: function () {
         let selects = this.$el.find('select');
         _.each(selects, function (e) {
-            $(e).val(this.model.get($(e).prop('name')));//dont remember what this does
+            $(e).val($(e).attr('val'));//populate selects with underscore printed `value` attr
         }, this);
-        return this.$el;
     },
     after_render: function () {
         let $edit_switch = $('.edit_switch');
@@ -294,6 +312,7 @@ app.views.MarketingView = Backbone.View.extend({
         $('.multi_select').select2();
         b3_autonumeric();
         this.delegateEvents();
+        // $(document).on('dp.hide', (e) => {e.preventDefault(); e.stopPropagation(); capp.event_bus.trigger('dp.hide', e); return false;});
     }
 
 });

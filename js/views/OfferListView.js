@@ -380,8 +380,7 @@ app.views.OfferListView = Backbone.BBFormView.extend({
         this.switchery = new Switchery(edit_switch[0]);
         edit_switch.trigger('change');
         this.delegateEvents();
-        $('input[type=date]').datetimepicker({format: 'Y-MM-DD'});
-        $('input.time_input').datetimepicker({format: 'hh:mm A'});
+        $('input.date').datepicker({format: 'yyyy-mm-dd'});
         return this.el;
     },
     after_render: function () {

@@ -236,9 +236,9 @@ recalculate_offer_values();
 			</label>
 		</div>
 		<div class="row">
-			<label class="col-xs-6">Show Date<input name="show_date" disabled type="date"
+			<label class="col-xs-6">Show Date<input name="show_date" disabled
 													value="<%= show_date %>"
-													class="form-control">
+													class="form-control date">
 			</label>
 			<label class="col-xs-6">Show Date TBD<br><input name="is_tbd_date" disabled type="checkbox"
 															value="<%= is_tbd_date %>" <%= is_tbd_date ? "checked=1" : "" %> >
@@ -273,9 +273,9 @@ recalculate_offer_values();
 	<h4>Ticket Scaling</h4>
 	<div class="form-group">
 		<div class="row">
-			<label class="col-xs-3">On Sale Date<input name="on_sale_date" type="date" disabled
+			<label class="col-xs-3">On Sale Date<input name="on_sale_date" disabled
 													   value="<%= on_sale_date %>"
-													   class="form-control">
+													   class="form-control date">
 			</label>
 			<label class="col-xs-1">TBD <br><input name="is_on_sale_date_tbd" type="checkbox" disabled
 												   value="<%= is_on_sale_date_tbd %>"

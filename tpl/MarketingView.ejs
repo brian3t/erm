@@ -117,16 +117,22 @@ let comp_opt = print_option_fr_collection('companies');
         <tr class="edit edit_form_wrapper" data-collection='mk_radios' data-id="id" data-toggle="validator">
             <td>
                 <input type="hidden" name="id" value="<%= mk_radio.get('id') %>">
-                <select name="company_id" val="<%= company_id.get('id') %>" class="edit_mode"> <%= comp_opt %> </select><span
-                        class="view_mode"><%= company_id.get('name') %></span></td>
-            <td colspan="2"> <%= station %> </td>
-            <td> <%= format %> </td>
-            <td> <%= contact %> </td>
-            <td colspan="2"> <%= contact_phone_email %> </td>
-            <td> <%= promo_mentions %> </td>
-            <td> <%= promo_tickets %> </td>
-            <td> <%= promo_value %> </td>
-            <td> <%= promo_run_from %> to <%= promo_run_to %> </td>
+                <select name="company_id" val="<%= company_id.get('id') %>" class="for_edit_mode"> <%= comp_opt %> </select><span
+                        class="for_view_mode"><%= company_id.get('name') %></span></td>
+            <td colspan="2"><input class="for_edit_mode" type="text" name="station" value="<%= station %>"><span class="for_view_mode"><%= station %></span></td>
+            <td> <input class="for_edit_mode" type="text" name="format" value="<%= format %>"><span class="for_view_mode"><%= format %></span> </td>
+            <td> <input class="for_edit_mode" type="text" name="contact" value="<%= contact %>"><span class="for_view_mode"><%= contact %></span> </td>
+            <td colspan="2"> <input class="for_edit_mode" type="text" name="contact_phone_email" value="<%= contact_phone_email %>"><span class="for_view_mode"><%= contact_phone_email %></span> </td>
+            
+            <td> <input class="for_edit_mode" type="number" name="promo_mentions" value="<%= promo_mentions %>"><span class="for_view_mode"><%= promo_mentions %></span> </td>
+            <td> <input class="for_edit_mode" type="number" name="promo_tickets" value="<%= promo_tickets %>"><span class="for_view_mode"><%= promo_tickets %></span> </td>
+            <td> <input class="for_edit_mode" type="number" name="promo_value" value="<%= promo_value %>"><span class="for_view_mode"><%= promo_value %></span> </td>
+            <td> <input class="for_edit_mode trigger_ajax date" type="text" name="promo_run_from" value="<%= promo_run_from %>"/><span class="for_view_mode"><%= promo_run_from %> to <%= promo_run_to %> </span> </td>
+            <td> <input class="for_edit_mode" type="text" name="contact" value="<%= contact %>"><span class="for_view_mode"><%= contact %></span> </td>
+            <td> <input class="for_edit_mode" type="text" name="contact" value="<%= contact %>"><span class="for_view_mode"><%= contact %></span> </td>
+            <td> <input class="for_edit_mode" type="text" name="contact" value="<%= contact %>"><span class="for_view_mode"><%= contact %></span> </td>
+            <td> <input class="for_edit_mode" type="text" name="contact" value="<%= contact %>"><span class="for_view_mode"><%= contact %></span> </td>
+            <td> </td>
             <td> <%= paid_run_from %> to <%= paid_run_to %> </td>
             <td> <%= paid_spots %> </td>
             <td> <%= thirty %> </td>
