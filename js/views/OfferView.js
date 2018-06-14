@@ -45,7 +45,7 @@ app.views.OfferView = Backbone.BBFormView.extend({
         edit_switch.trigger('change');
         b3_autonumeric();
 
-        $('input.date').datepicker({format: 'yyyy-mm-dd'});
+        $('input.date').datepicker({format: 'yyyy-mm-dd', autoclose: true});
         this.recalculate_aw_values();
         return this.$el;
     },

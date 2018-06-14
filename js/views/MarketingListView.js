@@ -63,7 +63,7 @@ app.views.MarketingListView = Backbone.View.extend({
             this.$el.find('table').removeClass('wauto');
         }
         this.rebind_underscore_val();
-        $('input.date').datepicker({format: 'yyyy-mm-dd'});
+        $('input.date').datepicker({format: 'yyyy-mm-dd', autoclose: true});
     },
     rebind_underscore_val: function () {
         let selects = this.$el.find('select');
