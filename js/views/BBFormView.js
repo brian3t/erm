@@ -38,35 +38,46 @@ Backbone.BBFormView = Backbone.View.extend({
         return dom;
     },
     update_ajax: function (e) {
+        e.stopPropagation();
+        e.preventDefault();
         if (is_validator_initializing) {
             return;
         }
-        var flag_dont_update = false;
-        var target = $(e.target);
-        if (e.target.tagName == 'BUTTON' || target.hasClass('skip_ajax') || target.hasClass('file-caption') || target.prop('type') == 'file' || target.prop('readonly') == true) {
+        let flag_dont_update = false;
+        let target = $(e.target);
+        if (e.target.tagName === 'BUTTON' || target.hasClass('skip_ajax') || target.hasClass('file-caption') || target.prop('type') === 'file' || target.prop('readonly') === true) {
             return;
         }
-        var is_multi_select = target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple');
-        var form = target.parents('form');
-        var model = form.data('model');//offer
-        var new_attr = {};
+        let is_multi_select = target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple');
+        let form = target.parents('form');
+        if (form.length === 0) {
+            form = target.closest('.edit_form_wrapper');
+        }
+
+        let model = this.model;
+        if (form.data('collection')) {//dealing with child model
+            let collection_name = form.data('collection');//mk_radios
+            let id = form.find('input[name="id"]').val();
+            model = this.model.get(collection_name).get(id);
+        }
+        let new_attr = {};
         if (_.isEmpty(target.prop('name'))) {
             //update ajax to the related JSON array field
-            var wrapper_div = $(target.parents('div.array_field_wrapper'));
-            var array_input = $('#' + wrapper_div.data('array_field_id'));
-            var inputs = {};
+            let wrapper_div = $(target.parents('div.array_field_wrapper'));
+            let array_input = $('#' + wrapper_div.data('array_field_id'));
+            let inputs = {};
             wrapper_div.find(':input').each(function (i, e) {
                 e = $(e);
-                var key = e.data('key');
+                let key = e.data('key');
                 if (typeof key == 'undefined') {
                     flag_dont_update = true;
                     return;
                 }
-                var v = e.val();
-                if (e.prop('type') == 'checkbox') {
+                let v = e.val();
+                if (e.prop('type') === 'checkbox') {
                     v = e.prop('checked');
                 }
-                if (typeof v == 'string') {
+                if (typeof v === 'string') {
                     v = v.replace("$", "");
                 }
                 if (target.hasClass('money') && typeof v == 'string') {
@@ -78,8 +89,8 @@ Backbone.BBFormView = Backbone.View.extend({
             array_input.val(JSON.stringify(inputs));
             target = array_input;
         }
-        var val = target.val();
-        if (typeof val == 'undefined') {
+        let val = target.val();
+        if (typeof val === 'undefined') {
             return -1;
         }
         if (target.hasClass('money')) {
@@ -92,8 +103,8 @@ Backbone.BBFormView = Backbone.View.extend({
         if (!is_multi_select && target.parent().is('label')) {
             target.before('<span class="glyphicon glyphicon-upload"></span>');
         }
-        var self = this;
-        this.model.save(new_attr, {
+        let self = this;
+        model.save(new_attr, {
             patch: true, success: function () {
                 target.prevAll('span.glyphicon-upload').remove();
                 if (is_multi_select) {
@@ -103,7 +114,7 @@ Backbone.BBFormView = Backbone.View.extend({
                 target.before('<span class="glyphicon glyphicon-ok-circle upload_in_progress"></span>');
                 setTimeout(function () {
                     target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
-                    self.render(true);
+                    self.render(true);//todob move this to event listenTo
                     bs_close_all_modals();
                 }, 2000);
             }, error: function () {

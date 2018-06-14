@@ -2,6 +2,11 @@ const IS_DEBUG = true;
 const CLEAR_LOCAL_STORAGE = true;
 const IS_INWEB = (document.URL.indexOf('local') !== -1);
 const IS_DEV = (document.URL.indexOf('theeverestapp') !== -1);
+const NOTY_OPTS = {
+    timeout: 3000,
+    layout: 'topCenter',
+    theme: 'nest',
+};
 var app = {views: {}, models: {}, routers: {}, utils: {}, adapters: {}, collections: {}};
 var current_pos = {};
 var config = {
@@ -250,6 +255,7 @@ function doOnOrientationChange() {
             break;
     }
 }
+
 app_confirm = function (message, callback, title) {
     if (isInWeb) {
         var response = confirm(message);

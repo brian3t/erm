@@ -5,7 +5,7 @@ app.models.Company = Backbone.RelationalModel.extend({
 app.collections.Company = Backbone.Collection.extend({
     model: app.models.Company,
     comparator: function (a) {
-        return a.get('name').toLowerCase();
+        return (a.get('name')? a.get('name').toLowerCase(): true);
     },
     initialize: function (model, options) {
         var param = {};

@@ -7,8 +7,12 @@ app.models.MkRadio = Backbone.RelationalModel.extend({
                 type: Backbone.HasOne,
                 key: 'company_id',
                 relatedModel: 'app.models.Company',
+                includeInJSON: 'id'
             }],
-
         localStorage: false,
+        defaults: {
+            gross: 0,
+            net: 0
+        }
     }
 );

@@ -119,13 +119,11 @@ app.views.MarketingListView = Backbone.View.extend({
     select_item: function (e) {
         let $target = $(e.currentTarget);
         this.cur_model_index = $target.data('index');
-        this.marketing_form_view.set_model(this.collection.at(this.cur_model_index));
+        this.set_model_to_child_view(this.collection.at(this.cur_model_index), this.marketing_form_view);
         this.marketing_form_view.render();
         this.marketing_form_view.after_render();
         this.toggle_edit_mode();
-        this.listenTo(this.marketing_form_view.model, 'change', this.render);
-    }
-    ,
+    },
     marketing_form_view: {},
     marketing_search_list_view: {},
     render: function () {
@@ -135,10 +133,9 @@ app.views.MarketingListView = Backbone.View.extend({
         this.$el.html(this.template());
         if (_.isObject(first_marketing)) {
             this.cur_model_index = 0;
-            this.marketing_form_view.set_model(first_marketing);
+            this.set_model_to_child_view(first_marketing, this.marketing_form_view);
             $('#marketing_form_wrapper').html(this.marketing_form_view.render());
             this.marketing_form_view.after_render();
-            this.listenTo(this.marketing_form_view.model, 'change', this.render);
         }
         this.$el.find('#marketing_search_list').html(this.marketing_search_list_view.render());
         this.marketing_search_list_view.after_render();
@@ -156,6 +153,13 @@ app.views.MarketingListView = Backbone.View.extend({
         this.$cancel_btn = this.$action_btns.find('.cancel');
         this.toggle_edit_mode();
         this.delegateEvents();
+    },
+    set_model_to_child_view: function (model, child_view) {
+        child_view.set_model(model);
+        // this.listenTo(model, 'change', this.render);
+        //listen to all related child models
+        // this.listenTo(model.get('mk_radios'), 'add', this.render);
+        // this.listenTo(model.get('mk_radios'), 'change', this.render);
     }
 });
 
@@ -184,135 +188,4 @@ app.views.MarketingSearchListView = Backbone.View.extend({
     after_render: function () {
         this.delegateEvents();
     }
-});
-app.views.MarketingView = Backbone.View.extend({
-    tagName: "div",
-    id: "marketing_form",
-    className: "col-sm-12",
-    model: app.models.Marketing,
-    events: {
-        "change .edit": "update_ajax",
-        "change .multi_select": "update_ajax"
-    },
-    update_ajax: function (e) {
-        e.stopPropagation();
-        e.preventDefault();
-        if (is_validator_initializing) {
-            return;
-        }
-
-        let target = $(e.target);
-        if (e.target.tagName === 'BUTTON' || target.hasClass('file-caption') || target.prop('type') === 'file' || target.prop('readonly') === true) {
-            return;
-        }
-        let is_multi_select = target.hasClass('multi_select') || target.hasClass('select2-search__field') || target.hasClass('select2-selection--multiple');
-        let form = target.parents('form');
-        if (form.length === 0) {
-            form = target.closest('.edit_form_wrapper');
-        }
-        let model = this.model;
-        if (form.data('collection')) {
-            let model_name = form.data('collection');//mkRadio
-            let id = form.find('input[name="id"]').val();
-            model = this.model.get(model_name).get(id);
-        }
-        let new_attr = {};
-        new_attr[target.prop('name')] = target.val();
-        if (!is_multi_select) {
-            target.before('<span class="glyphicon glyphicon-upload"></span>');
-        }
-        let self = this;
-        model.save(new_attr, {
-            patch: true, success: function () {
-                target.prevAll('span.glyphicon-upload').remove();
-                if (is_multi_select) {
-                    return;
-                }
-                target.before('<span class="glyphicon glyphicon-ok-circle"></span>');
-                setTimeout(function () {
-                    target.prevAll('span.glyphicon-ok-circle').fadeOut(1400).remove();
-                    capp.event_bus.trigger('marketing_child_model_changed');
-                }, 2000);
-            }, error: function () {
-                target.prevAll('span.glyphicon-upload').remove();
-            }
-        });
-    },
-    initialize: function () {
-        this.delegateEvents();
-        this.listenTo(capp.event_bus, 'marketing_child_model_changed', this.render);
-        //this.listenTo(capp.event_bus, 'dp.hide', this.update_ajax);
-    },
-
-    render: function () {
-        this.model.calculate_summary();
-        let mk_radios = this.model.get('mk_radios').models;
-        let mk_radios_gross_sum = 0, mk_radios_net_sum = 0;
-        mk_radios.forEach((e) => {
-            mk_radios_gross_sum += parseFloat(e.get('gross'));
-            mk_radios_net_sum += parseFloat(e.get('net'));
-        });
-        let mk_televisions = this.model.get('mk_televisions').models;
-        let mk_televisions_gross_sum = 0, mk_televisions_net_sum = 0;
-        mk_televisions.forEach((e) => {
-            mk_televisions_gross_sum += parseFloat(e.get('gross'));
-            mk_televisions_net_sum += parseFloat(e.get('net'));
-        });
-        let mk_internets = this.model.get('mk_internets').models, mk_internets_gross_sum = 0, mk_internets_net_sum = 0;
-        mk_internets.forEach((e) => {
-            mk_internets_gross_sum += parseFloat(e.get('gross'));
-            mk_internets_net_sum += parseFloat(e.get('net'));
-        });
-
-        let mk_prints = this.model.get('mk_prints').models, mk_prints_gross_sum = 0, mk_prints_net_sum = 0;
-        mk_prints.forEach((e) => {
-            mk_prints_gross_sum += parseFloat(e.get('gross'));
-            mk_prints_net_sum += parseFloat(e.get('net'));
-        });
-
-        let mk_productions = this.model.get('mk_productions').models, mk_productions_gross_sum = 0, mk_productions_net_sum = 0;
-        mk_productions.forEach((e) => {
-            mk_productions_gross_sum += parseFloat(e.get('gross'));
-            mk_productions_net_sum += parseFloat(e.get('net'));
-        });
-
-        let mk_miscs = this.model.get('mk_miscs').models, mk_miscs_gross_sum = 0, mk_miscs_net_sum = 0;
-        mk_miscs.forEach((e) => {
-            mk_miscs_gross_sum += parseFloat(e.get('gross'));
-            mk_miscs_net_sum += parseFloat(e.get('net'));
-        });
-
-        this.$el.html(this.template(_.extend(this.model.attributes,
-            {
-                mk_radios_gross_sum: mk_radios_gross_sum, mk_radios_net_sum: mk_radios_net_sum,
-                mk_televisions_gross_sum: mk_televisions_gross_sum, mk_televisions_net_sum: mk_televisions_net_sum,
-                mk_internets_gross_sum: mk_internets_gross_sum, mk_internets_net_sum: mk_internets_net_sum,
-                mk_prints_gross_sum: mk_prints_gross_sum, mk_prints_net_sum: mk_prints_net_sum,
-                mk_productions_gross_sum: mk_productions_gross_sum, mk_productions_net_sum: mk_productions_net_sum,
-                mk_miscs_gross_sum: mk_miscs_gross_sum, mk_miscs_net_sum: mk_miscs_net_sum,
-                model: this.model
-            })));
-        this.rebind_underscore_val();
-        capp.event_bus.trigger('marketing_view_rendered');
-        this.after_render();
-        return this.$el;
-    },
-    set_model(new_model) {
-        this.model = new_model;
-    },
-    rebind_underscore_val: function () {
-        let selects = this.$el.find('select');
-        _.each(selects, function (e) {
-            $(e).val($(e).attr('val'));//populate selects with underscore printed `value` attr
-        }, this);
-    },
-    after_render: function () {
-        let $edit_switch = $('.edit_switch');
-        // $edit_switch.bootstrapToggle();
-        $('.multi_select').select2();
-        b3_autonumeric();
-        this.delegateEvents();
-        // $(document).on('dp.hide', (e) => {e.preventDefault(); e.stopPropagation(); capp.event_bus.trigger('dp.hide', e); return false;});
-    }
-
 });
