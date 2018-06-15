@@ -11,8 +11,12 @@ app.views.MarketingView = Backbone.BBFormView.extend({
     },
     set_model(model) {
         this.model = model;
-        this.listenTo(this.model.get('mk_radios'), 'change', this.render);
+        this.listenTo(this.model.get('mk_internets'), 'update', this.render);
+        this.listenTo(this.model.get('mk_miscs'), 'update', this.render);
+        this.listenTo(this.model.get('mk_prints'), 'update', this.render);
+        this.listenTo(this.model.get('mk_productions'), 'update', this.render);
         this.listenTo(this.model.get('mk_radios'), 'update', this.render);
+        this.listenTo(this.model.get('mk_televisions'), 'update', this.render);
     },
     add_row: function (e) {
         //find out what collection fired this
