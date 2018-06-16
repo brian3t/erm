@@ -30,7 +30,7 @@ app.views.MarketingListView = Backbone.View.extend({
     events: {
         "click a.select_item": "select_item",
         "keyup #marketing_search": "filter_item",
-        "click button.toggle_create_mode": "toggle_create_item",
+        "click button.create_item": "create_item",
         "click button.reset": "reset_form",
         "click button.save": "save_form",
         "click button.delete": "delete_model",
@@ -71,15 +71,34 @@ app.views.MarketingListView = Backbone.View.extend({
             $(e).val($(e).attr('val'));//populate selects with underscore printed `value` attr
         }, this);
     },
-    toggle_create_item: function () {
-        $('.action_buttons.edit_switch_wrapper').toggle();
-        $('button.create').toggle();
-        $('button.save').toggle();
-        $('button.reset').toggle();
-        $('button.cancel').toggle();
-        this.$el.find('#marketing_form_wrapper').toggle();
-        this.$el.find('#create_marketing').toggle();
-        this.reset_form();
+    /**
+     * pull all event_id that does not have a marketing yet, and has status confirmed
+     */
+    pull_offers_wo_marketing: function () {
+        let offers_confirmed = app.collections.offers.where({status: "Confirmed"});
+        let offers_confirmed_wo_mark = offers_confirmed.filter((offer) => {
+            return offer.get('marketing').length === 0;
+        });
+        return offers_confirmed_wo_mark.pluck('id');
+    },
+    create_item: function () {
+        if (this.pull_offers_wo_marketing().length === 0){
+            return false;//todob continue here
+        }
+        let new_marketing = new app.models.Marketing();
+        new_marketing.save({user_id: app.cur_user.get('id')}, {
+            success: () => {
+                $(this.$el.find('.edit_switch')).prop('checked', 'checked');
+                this.collection.add(new_marketing);
+            },
+            error: () => {
+                new Noty(_.extend({
+                        text: 'There was an issue adding a new Marketing Plan. Please try again later or contact our support',
+                        type: 'error'
+                    },
+                    NOTY_OPTS)).show()
+            }
+        });
     },
     save_form: function (e) {
         e.preventDefault();
@@ -90,7 +109,6 @@ app.views.MarketingListView = Backbone.View.extend({
         let self = this;
         new_marketing.save(form_data, {
             success: function (new_model) {
-                self.toggle_create_item();
                 self.collection.add(new_model);
             }, error: function (response) {
                 app_alert('There is an error saving this marketing plan. Please contact support for more information');
@@ -146,6 +164,7 @@ app.views.MarketingListView = Backbone.View.extend({
         return this.el;
     },
     after_render: function () {
+        //todob if all events are taken, disable create btn
         this.$action_btns = $('.action_buttons');
         this.$create_btn = this.$action_btns.find('.create');
         this.$save_btn = this.$action_btns.find('.save');

@@ -23,15 +23,14 @@ let comp_opt = print_option_fr_collection('companies');
             </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">Math Check</div>
+            <div class="panel-heading">Summary</div>
             <div class="panel-body text-bold">
-                <span class="col-xs-4">Must Equal Zero</span><span class="col-xs-4">AD BUDGET</span><span class="col-xs-4"><span class="money"><%= budget %></span></span>
-                <span class="col-xs-4"><span class="money">0</span></span><span class="col-xs-4 bg-orange-300">TOTAL GROSS</span><span class="col-xs-4 bg-orange-300"><span
+                <span class="col-xs-6">AD BUDGET</span><span class="col-xs-6"><span class="money"><%= budget %></span></span>
+                <span class="col-xs-6 bg-orange-300">TOTAL GROSS</span><span class="col-xs-6 bg-orange-300"><span
                             class="money"><%= summary.all_gross %></span></span>
-                <span class="col-xs-4">&nbsp;</span><span class="col-xs-4">REMAINING</span><span class="col-xs-4"><span
-                            class="money"><%= budget - summary.all_gross %></span></span>
-                <span class="col-xs-4">&nbsp;</span><span class="col-xs-4">TOT TICKETS</span><span class="col-xs-4"><%= summary.all_ticket %></span>
-                <span class="col-xs-4"><span class="money">0</span></span><span class="col-xs-4 bg-green">TOTAL NET</span><span class="col-xs-4 bg-green"><span
+                <span class="col-xs-6">REMAINING</span><span class="col-xs-6"><span class="money"><%= budget - summary.all_gross %></span></span>
+                <span class="col-xs-6">TOT TICKETS</span><span class="col-xs-6 text-right"><%= summary.all_ticket %></span>
+                <span class="col-xs-6 bg-green">TOTAL NET</span><span class="col-xs-6 bg-green"><span
                             class="money"><%= summary.all_net %></span></span>
             </div>
         </div>
@@ -414,7 +413,8 @@ let comp_opt = print_option_fr_collection('companies');
                 <input type="hidden" name="id" value="<%= mk_production.get('id') %>">
                 <select name="company_id" val="<%= company_id.get('id') %>" class="for_edit_mode"> <%= comp_opt %> </select><span
                         class="for_view_mode"><%= company_id.get('name') %></span></td>
-            <td colspan="2"><input class="for_edit_mode" type="text" name="provider_company" value="<%= provider_company %>"><span class="for_view_mode"><%= provider_company %></span></td>
+            <td colspan="2"><input class="for_edit_mode" type="text" name="provider_company" value="<%= provider_company %>"><span
+                        class="for_view_mode"><%= provider_company %></span></td>
             <td colspan="2"><input class="for_edit_mode" type="text" name="type" value="<%= type %>"><span class="for_view_mode"><%= type %></span></td>
             <td colspan="2"><input class="for_edit_mode" type="text" name="contact" value="<%= contact %>"><span class="for_view_mode"><%= contact %></span></td>
             <td colspan="3"><input class="for_edit_mode" type="text" name="phone_email" value="<%= phone_email %>"><span class="for_view_mode"><%= phone_email %></span></td>
@@ -463,7 +463,8 @@ let comp_opt = print_option_fr_collection('companies');
                 <input type="hidden" name="id" value="<%= mk_misc.get('id') %>">
                 <select name="company_id" val="<%= company_id.get('id') %>" class="for_edit_mode"> <%= comp_opt %> </select><span
                         class="for_view_mode"><%= company_id.get('name') %></span></td>
-            <td colspan="2"><input class="for_edit_mode" type="text" name="provider_company" value="<%= provider_company %>"><span class="for_view_mode"><%= provider_company %></span></td>
+            <td colspan="2"><input class="for_edit_mode" type="text" name="provider_company" value="<%= provider_company %>"><span
+                        class="for_view_mode"><%= provider_company %></span></td>
             <td colspan="8"><input class="for_edit_mode" type="text" name="description" value="<%= description %>"><span class="for_view_mode"><%= description %></span></td>
             <td colspan="6"></td>
             <td class="warning"><input class="for_edit_mode" type="text" name="gross" value="<%= gross %>"><span class="for_view_mode"><%= gross %></span></td>
