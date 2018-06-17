@@ -79,16 +79,21 @@ app.views.MarketingListView = Backbone.View.extend({
         let offers_confirmed_wo_mark = offers_confirmed.filter((offer) => {
             return offer.get('marketing').length === 0;
         });
-        return offers_confirmed_wo_mark.pluck('id');
+        return _.pluck(offers_confirmed_wo_mark, 'id');
     },
     create_item: function () {
-        if (this.pull_offers_wo_marketing().length === 0){
-            return false;//todob continue here
+        let offers_wo_marketing = this.pull_offers_wo_marketing();
+        if (offers_wo_marketing.length === 0) {
+            return false;
         }
-        let new_marketing = new app.models.Marketing();
+        let new_marketing = new app.models.Marketing({offer_id: offers_wo_marketing.shift()});
         new_marketing.save({user_id: app.cur_user.get('id')}, {
             success: () => {
-                $(this.$el.find('.edit_switch')).prop('checked', 'checked');
+                if (!_.isObject(this.switchery)){
+                    return this.render();
+                }
+                $(this.switchery.element).prop('checked', true);//change state of Edit switchery
+                this.switchery.setPosition();
                 this.collection.add(new_marketing);
             },
             error: () => {
@@ -134,7 +139,7 @@ app.views.MarketingListView = Backbone.View.extend({
         this.marketing_search_list_view.render();
         this.marketing_search_list_view.after_render();
     },
-    select_item: function (e) {
+    select_item: function (e, cur_model_index = null) {
         let $target = $(e.currentTarget);
         this.cur_model_index = $target.data('index');
         this.set_model_to_child_view(this.collection.at(this.cur_model_index), this.marketing_form_view);
