@@ -95,6 +95,7 @@ app.views.MarketingListView = Backbone.View.extend({
                 $(this.switchery.element).prop('checked', true);//change state of Edit switchery
                 this.switchery.setPosition();
                 this.collection.add(new_marketing);
+                this.select_item(null, (this.collection.length - 1));
             },
             error: () => {
                 new Noty(_.extend({
@@ -140,8 +141,7 @@ app.views.MarketingListView = Backbone.View.extend({
         this.marketing_search_list_view.after_render();
     },
     select_item: function (e, cur_model_index = null) {
-        let $target = $(e.currentTarget);
-        this.cur_model_index = $target.data('index');
+        this.cur_model_index = cur_model_index || $(e.currentTarget).data('index');
         this.set_model_to_child_view(this.collection.at(this.cur_model_index), this.marketing_form_view);
         this.marketing_form_view.render();
         this.marketing_form_view.after_render();
