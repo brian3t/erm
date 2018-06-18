@@ -89,12 +89,19 @@ app.views.MarketingListView = Backbone.View.extend({
         let new_marketing = new app.models.Marketing({offer_id: offers_wo_marketing.shift()});
         new_marketing.save({user_id: app.cur_user.get('id')}, {
             success: () => {
-                if (!_.isObject(this.switchery)){
+                new Noty(_.extend({
+                        text: 'New marketing plan created',
+                        type: 'success'
+                    },
+                    NOTY_OPTS)).show();
+                if (!_.isObject(this.switchery)) {
                     return this.render();
                 }
+                this.collection.add(new_marketing);
+                this.select_item(null, (this.collection.length - 1));//todob clear search box here
                 $(this.switchery.element).prop('checked', true);//change state of Edit switchery
                 this.switchery.setPosition();
-                this.collection.add(new_marketing);
+                this.toggle_edit_mode();
             },
             error: () => {
                 new Noty(_.extend({
@@ -126,11 +133,15 @@ app.views.MarketingListView = Backbone.View.extend({
     },
     delete_model: function (e) {
         let self = this;
-        app_confirm("Are you sure to delete this marketing?", function (response) {
+        app_confirm("Are you sure to delete this marketing?", (response) => {
             if (response === true || response === 1) {
                 let cur_model = self.collection.at(self.cur_model_index);
                 self.collection.remove(cur_model);
-                cur_model.destroy();
+                cur_model.destroy({
+                    success: () => {
+                        this.render();
+                    }
+                });
             }
         });
     },
@@ -140,8 +151,10 @@ app.views.MarketingListView = Backbone.View.extend({
         this.marketing_search_list_view.after_render();
     },
     select_item: function (e, cur_model_index = null) {
-        let $target = $(e.currentTarget);
-        this.cur_model_index = $target.data('index');
+        this.cur_model_index = cur_model_index;
+        if (cur_model_index === null && _.isObject(e)) {
+            this.cur_model_index = $(e.currentTarget).data('index');
+        }
         this.set_model_to_child_view(this.collection.at(this.cur_model_index), this.marketing_form_view);
         this.marketing_form_view.render();
         this.marketing_form_view.after_render();
@@ -161,6 +174,12 @@ app.views.MarketingListView = Backbone.View.extend({
             this.marketing_form_view.after_render();
         }
         this.$el.find('#marketing_search_list').html(this.marketing_search_list_view.render());
+        //if all events are taken, disable create btn
+        if (this.pull_offers_wo_marketing().length === 0){
+            $(this.$el.find('button.create_item')).prop('disabled', true);
+        } else {
+            $(this.$el.find('button.create_item')).removeProp('disabled');
+        }
         this.marketing_search_list_view.after_render();
         this.edit_switch = this.$el.find('.edit_switch');
         this.switchery = new Switchery(this.edit_switch[0]);
@@ -169,7 +188,6 @@ app.views.MarketingListView = Backbone.View.extend({
         return this.el;
     },
     after_render: function () {
-        //todob if all events are taken, disable create btn
         this.$action_btns = $('.action_buttons');
         this.$create_btn = this.$action_btns.find('.create');
         this.$save_btn = this.$action_btns.find('.save');

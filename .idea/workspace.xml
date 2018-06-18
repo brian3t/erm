@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/js/views/MarketingListView.js" line="141" />
+    <bookmark url="file://$PROJECT_DIR$/js/views/MarketingListView.js" line="152" />
     <bookmark url="file://$PROJECT_DIR$/tpl/MarketingView.ejs" line="4" />
     <bookmark url="file://$PROJECT_DIR$/js/views/MarketingListView.js" line="88" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6756bc04-a7d8-4f42-8104-088a8630195d" name="Default" comment="Working on create button">
+    <list default="true" id="6756bc04-a7d8-4f42-8104-088a8630195d" name="Default" comment="Working on create button.. auto focus new record -&gt; cancel button deletes record">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/views/MarketingListView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/MarketingListView.js" afterDir="false" />
     </list>
@@ -33,24 +33,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="erm@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="erm@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="erm@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="erm: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="erm@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="erm: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="marketing: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -67,8 +49,8 @@
       <file leaf-file-name="MarketingListView.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/views/MarketingListView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="131" column="50" lean-forward="true" selection-start-line="131" selection-start-column="50" selection-end-line="131" selection-end-column="50" />
+            <state relative-caret-position="359">
+              <caret line="137" column="73" lean-forward="true" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -156,14 +138,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>render</find>
-      <find>Create new Marketing</find>
       <find>self.render</find>
       <find>promo_mentions</find>
       <find>sixty</find>
       <find>mk_radio</find>
       <find>contact_phone_email</find>
-      <find>listen</find>
       <find>mk_television</find>
       <find>tv_company</find>
       <find>dg_code</find>
@@ -180,12 +159,15 @@
       <find>type</find>
       <find>toggle_create_mode</find>
       <find>toggle_create_item</find>
-      <find>create_item</find>
       <find>switcher</find>
       <find>xs-4</find>
       <find>pull_events_wo_marketing: function () {</find>
       <find>events</find>
       <find>switchery</find>
+      <find>create_item</find>
+      <find>delete_</find>
+      <find>listen</find>
+      <find>delete_mod</find>
     </findStrings>
     <replaceStrings>
       <replace>gross</replace>
@@ -285,6 +267,36 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Changed Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="erm" type="cbb8eebc:String" user="erm" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="erm" type="cbb8eebc:String" user="erm" />
+              <item name="css/compass/sass" type="cbb8eebc:String" user="css/compass/sass" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Default">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="erm" type="cbb8eebc:String" user="erm" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="erm" type="cbb8eebc:String" user="erm" />
+              <item name="css/compass/sass" type="cbb8eebc:String" user="css/compass/sass" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -346,36 +358,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Changed Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="erm" type="cbb8eebc:String" user="erm" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="erm" type="cbb8eebc:String" user="erm" />
-              <item name="css/compass/sass" type="cbb8eebc:String" user="css/compass/sass" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <subPane subId="Default">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="erm" type="cbb8eebc:String" user="erm" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="erm" type="cbb8eebc:String" user="erm" />
-              <item name="css/compass/sass" type="cbb8eebc:String" user="css/compass/sass" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -422,6 +404,9 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -508,11 +493,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529129004336</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Working on create button.. auto focus new record -&gt; cancel button deletes record">
+      <created>1529194986101</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1529194986101</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1054" extended-state="7" />
+    <frame x="0" y="0" width="1920" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -520,17 +512,17 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005208" side_tool="true" weight="0.3277311" />
       <window_info anchor="bottom" id="Migrations" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49722221" weight="0.32809225" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49947917" weight="0.32719836" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49722221" weight="0.32809225" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.3296875" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4779874" visible="true" weight="0.16458334" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48319328" visible="true" weight="0.16458334" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.15364583" />
-      <window_info id="Structure" order="1" sideWeight="0.5089005" side_tool="true" weight="0.16458334" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.5168067" side_tool="true" visible="true" weight="0.16458334" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" sideWeight="0.5220126" side_tool="true" weight="0.16458334" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -587,7 +579,8 @@
     <MESSAGE value="Mk Radio ready for Ajax edit. MkRadioModel must have defaults for gross and net. Refactor update_ajax() in BBFORM." />
     <MESSAGE value="Fix Noty library." />
     <MESSAGE value="Working on create button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on create button" />
+    <MESSAGE value="Working on create button.. auto focus new record -&gt; cancel button deletes record" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on create button.. auto focus new record -&gt; cancel button deletes record" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -895,8 +888,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/views/MarketingListView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="131" column="50" lean-forward="true" selection-start-line="131" selection-start-column="50" selection-end-line="131" selection-end-column="50" />
+        <state relative-caret-position="359">
+          <caret line="137" column="73" lean-forward="true" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
         </state>
       </provider>
     </entry>
