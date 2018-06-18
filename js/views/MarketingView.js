@@ -3,6 +3,7 @@ app.views.MarketingView = Backbone.BBFormView.extend({
     id: "marketing_form",
     className: "col-sm-12",
     model: app.models.Marketing,
+    parent_view: {},
     events: {
         "change .edit": "update_ajax",
         "change .multi_select": "update_ajax",
@@ -118,7 +119,8 @@ app.views.MarketingView = Backbone.BBFormView.extend({
                 mk_prints_gross_sum: mk_prints_gross_sum, mk_prints_net_sum: mk_prints_net_sum,
                 mk_productions_gross_sum: mk_productions_gross_sum, mk_productions_net_sum: mk_productions_net_sum,
                 mk_miscs_gross_sum: mk_miscs_gross_sum, mk_miscs_net_sum: mk_miscs_net_sum,
-                model: this.model
+                model: this.model,
+                offers_wo_marketing: app.collections.offers.filter_wo_marketing(this.model.get('offer'))
             })));
         this.rebind_underscore_val();
         capp.event_bus.trigger('marketing_view_rendered');

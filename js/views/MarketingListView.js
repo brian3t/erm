@@ -24,6 +24,7 @@ app.views.MarketingListView = Backbone.View.extend({
         this.collection.fetch();
         this.marketing_search_list_view = new app.views.MarketingSearchListView({collection: this.collection});
         this.marketing_form_view = new app.views.MarketingView();
+        this.marketing_form_view.parent_view = this;
         this.listenTo(this.collection, 'update', this.render);
         this.listenTo(capp.event_bus, 'marketing_view_rendered', this.toggle_edit_mode)
     },
@@ -80,6 +81,11 @@ app.views.MarketingListView = Backbone.View.extend({
             return offer.get('marketing').length === 0;
         });
         return _.pluck(offers_confirmed_wo_mark, 'id');
+    },
+    pull_offers_collection_wo_marketing: function () {
+        return app.collections.offers.filter((offer) => {
+            return (offer.get('marketing').length === 0 && offer.get('status') === "Confirmed");
+        });
     },
     create_item: function () {
         let offers_wo_marketing = this.pull_offers_wo_marketing();
@@ -182,7 +188,7 @@ app.views.MarketingListView = Backbone.View.extend({
         }
         this.$el.find('#marketing_search_list').html(this.marketing_search_list_view.render());
         //if all events are taken, disable create btn
-        if (this.pull_offers_wo_marketing().length === 0){
+        if (this.pull_offers_wo_marketing().length === 0) {
             $(this.$el.find('button.create_item')).prop('disabled', true);
         } else {
             $(this.$el.find('button.create_item')).removeProp('disabled');

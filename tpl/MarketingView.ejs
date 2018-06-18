@@ -3,6 +3,8 @@ let venue = offer.pull_venue()
 let summary = model.get_summary()
 let artist_name = (offer.get('artist') ? offer.get('artist').getFullName() : '')
 let offer_opt = print_option_fr_collection('offers', 'event_id');
+let offer_wo_marketing_opt = print_option_fr_collection(offers_wo_marketing, 'event_id')
+console.log( offers_wo_marketing )
 let comp_opt = print_option_fr_collection('companies');
 %>
 
@@ -69,7 +71,7 @@ let comp_opt = print_option_fr_collection('companies');
             <label class="col-xs-6">Event ID
                 <select name="offer_id" disabled val="<%= offer_id %>"
                         class="form-control">
-                    <%= offer_opt %>
+                    <%= offer_wo_marketing_opt %>
                 </select>
                 <span class="help-block with-errors"></span>
             </label>

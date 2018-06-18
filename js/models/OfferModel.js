@@ -198,5 +198,15 @@ app.collections.Offer = Backbone.Collection.extend({
             model.reset_array_field();
         });
         return result;
+    },
+    filter_wo_marketing: function (add_back = null) {
+        let result = new app.collections.Offer(this.filter((offer) => {
+                return (offer.get('marketing').length === 0 && offer.get('status') === "Confirmed");
+            })
+        );
+        if (add_back !== null) {
+            result.add(add_back);
+        }
+        return result;
     }
 });

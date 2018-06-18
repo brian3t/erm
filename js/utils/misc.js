@@ -417,7 +417,7 @@ JSON.parse_3t = function (s) {
 
 /**
  * Backbone print options from a collection
- * @param collection_name e.g. venue
+ * @param collection_name e.g. 'venue' Can be a Collection Object too
  * @param name_column e.g. name
  * @returns {string}
  */
@@ -426,11 +426,17 @@ function print_option_fr_collection(collection_name, name_column, id_column = 'i
         name_column = 'name';
     }
     var result = '<option value=""></option>';
-    if (typeof(app.collections[collection_name]) === "undefined") {
-        return result;
+    let collection = app.collections[collection_name];
+    if (typeof(collection) === "undefined") {
+        if (collection_name instanceof Backbone.Collection){
+            collection = collection_name;
+        } else
+        {
+            return result;
+        }
     }
 
-    _.each(app.collections[collection_name].models, function (a_model) {
+    _.each(collection.models, function (a_model) {
         result += '<option value = "' + a_model.get(id_column) + '" >' + a_model.get(name_column) + '</option>';
     });
     return result;
