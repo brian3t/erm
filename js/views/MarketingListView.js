@@ -98,7 +98,9 @@ app.views.MarketingListView = Backbone.View.extend({
                     return this.render();
                 }
                 this.collection.add(new_marketing);
-                this.select_item(null, (this.collection.length - 1));//todob clear search box here
+                this.select_item(null, (this.collection.length - 1));
+                //clear search box
+                this.$el.find('#marketing_search').val('').trigger('keyup');
                 $(this.switchery.element).prop('checked', true);//change state of Edit switchery
                 this.switchery.setPosition();
                 this.toggle_edit_mode();
@@ -139,6 +141,11 @@ app.views.MarketingListView = Backbone.View.extend({
                 self.collection.remove(cur_model);
                 cur_model.destroy({
                     success: () => {
+                        new Noty(_.extend({
+                                text: 'Marketing plan was deleted successfully',
+                                type: 'success'
+                            },
+                            NOTY_OPTS)).show();
                         this.render();
                     }
                 });
@@ -219,7 +226,7 @@ app.views.MarketingSearchListView = Backbone.View.extend({
         let models = this.collection;
         models = models.filter(function (v) {
             if (this.text_to_filter === '') return true;
-            let event_id = v.get('offer').event_id;
+            let event_id = v.get('offer').get('event_id');
             if (_.isEmpty(event_id)) return true;
             return (event_id.toLowerCase().indexOf(self.text_to_filter) !== -1);
         });
