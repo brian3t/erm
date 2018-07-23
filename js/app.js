@@ -1,4 +1,4 @@
-const IS_DEBUG = true;
+const IS_DEBUG = false;
 const CLEAR_LOCAL_STORAGE = true;
 const IS_INWEB = (document.URL.indexOf('local') !== -1);
 const IS_DEV = (document.URL.indexOf('theeverestapp') !== -1);
